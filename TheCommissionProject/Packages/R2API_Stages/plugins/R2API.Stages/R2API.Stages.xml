@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Stages</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.StageRegistration">
+            <summary>
+            Class for adding and registering SceneDefs
+            </summary>
+        </member>
+        <member name="M:R2API.StageRegistration.AddSceneDef(RoR2.SceneDef,BepInEx.PluginInfo)">
+            <summary>
+            Adds a SceneDef to your Mod's ContentPack
+            </summary>
+            <param name="sceneDef">The SceneDef to add</param>
+            <param name="plugin">Your mod plugin</param>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneCollections">
+            <summary>
+            A debug util to print each SceneDef in a loop and their respective Weights. All variants of a locale should add up to 1.
+            </summary>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneCollections(System.Int32)">
+            <summary>
+            A debug util to print each SceneDef in a loop and their respective Weights. All variants of a locale should add up to 1.
+            </summary>
+            <param name="stageNumber">The stages in that stage position</param>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneVariants(System.String)">
+            <summary>
+            A debug util to print each Scene variant of a specific locale.
+            </summary>
+            <param name="key">The baseSceneName (ie. "golemplains")</param>
+        </member>
+        <member name="M:R2API.StageRegistration.RegisterSceneDefToLoop(RoR2.SceneDef)">
+            <summary>
+            Registers the SceneDef into the loop. Any SceneDef registered with the same baseSceneName as another SceneDef will be counted as a variant.
+            Variants will have their weights split equally amongst each other. Don't use this method for scenes that aren't part of the loop (Stages 1-5).
+            </summary>
+            <param name="sceneDef">The SceneDef being registered</param>
+        </member>
+        <member name="M:R2API.StageRegistration.BlacklistSceneDef(RoR2.SceneDef,BepInEx.PluginInfo)">
+            <summary>
+            Blacklists SceneDefs from entering the loop. If the Scene is already in the loop it removes it.
+            </summary>
+            <param name="sceneDef">The SceneDef being blacklisted</param>
+            <param name="plugin">Your mod plugin. Your mod will be printed to prevent malicious blacklisting.</param>
+        </member>
+        <member name="M:R2API.StageRegistration.BlacklistSceneDef(System.String,BepInEx.PluginInfo)">
+            <summary>
+            Blacklists SceneDefs from entering the loop. If the Scene is already in the loop it removes it.
+            </summary>
+            <param name="address">The address of the SceneDef being blacklisted</param>
+            <param name="plugin">Your mod plugin. Your mod will be printed to prevent malicious blacklisting.</param>
+        </member>
+        <member name="M:R2API.StageRegistration.InBlackList(RoR2.SceneDef)">
+            <summary>
+            Returns true if the SceneDef is in the blacklist.
+            </summary>
+            <param name="sceneDef">The SceneDef in question</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.StageRegistration.MakeBazaarSeerMaterial(UnityEngine.Texture2D)">
+            <summary>
+            Returns a material for the bazaar seers.
+            </summary>
+            <param name="texture">The texture to be put in the material</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.StageRegistration.MakeBazaarSeerMaterial(RoR2.SceneDef)">
+            <summary>
+            Returns a material for the bazaar seers.
+            </summary>
+            <param name="sceneDef">The SceneDef to be used to make the material. A preview texture must be in the SceneDef.</param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.StageRegistration.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

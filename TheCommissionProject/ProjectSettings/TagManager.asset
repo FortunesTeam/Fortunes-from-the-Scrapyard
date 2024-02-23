@@ -2,8 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  tags:
+  - Colored
+  - BulletCollide
+  - InitialBurst
+  - Chest
+  - CamAttachPoint
   layers:
   - Default
   - TransparentFX
@@ -13,23 +17,23 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FakeActor
+  - NoCollision
+  - Pickups
+  - World
+  - EntityPrecise
+  - Debris
+  - Projectile
+  - CollideWithCharacterHullOnly
+  - ManualRender
+  - Ragdoll
+  - NoDraw
+  - PrefabBrush
+  - PostProcess
+  - UI, WorldSpace
+  - PlayerBody
+  - EnemyBody
+  - TriggerZone
   - 
   - 
   - 
@@ -40,4 +44,3 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0

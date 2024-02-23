@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.ArtifactCode</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.ScriptableObjects.ArtifactCode">
+            <summary>
+            Scriptable object to ease the creation of Artifact codes.
+            </summary>
+        </member>
+        <member name="F:R2API.ScriptableObjects.ArtifactCode.middleRow">
+            <summary>
+            Compound values that represent the middle 3 compounds. For a list of accepted vanilla compound values, check ArtifactCodeAPI.CompoundValues
+            </summary>
+        </member>
+        <member name="F:R2API.ScriptableObjects.ArtifactCode.bottomRow">
+            <summary>
+            Compound values that represent the bottom 3 compounds. For a list of accepted vanila compound values, check ArtifactCodeAPI.CompoundValues
+            </summary>
+        </member>
+        <member name="F:R2API.ScriptableObjects.ArtifactCode.hashAsset">
+            <summary>
+            The Sha256HashAsset stored in this Scriptable Object.
+            </summary>
+        </member>
+        <member name="M:R2API.ScriptableObjects.ArtifactCode.Start">
+            <summary>
+            Creates the Sha256HashAsset
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.PluginGUID">
+            <summary>
+            GUID of the plugin, usually used for the <see cref="T:BepInEx.BepInDependency"/> Attribute.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.PluginName">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCode(RoR2.ArtifactDef,RoR2.Sha256HashAsset)">
+            <summary>
+            Add a custom Artifact code to the SkyMeadow Artifact portal dialer.
+            The artifactDef must exist within the initialized ArtifactCatalog for it to properly added to the portal dialer.
+            </summary>
+            <param name="artifactDef">The artifactDef tied to the artifact code.</param>
+            <param name="sha256HashAsset">The artifact code.</param>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCode(RoR2.ArtifactDef,R2API.ScriptableObjects.ArtifactCode)">
+            <summary>
+            Add a custom Artifact code to the SkyMeadow Artifact portal dialer.
+            The artifactDef must exist within the initialized ArtifactCatalog for it to properly added to the portal dialer.
+            </summary>
+            <param name="artifactDef">The artifactDef tied to the artifact code.</param>
+            <param name="artifactCode">The artifactCode written in the ArtifactCodeScriptableObject.</param>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCode(RoR2.ArtifactDef,System.UInt64,System.UInt64,System.UInt64,System.UInt64)">
+            <summary>
+            Add a custom Artifact code to the SkyMeadow Artifact portal dialer.
+            The artifactDef must exist within the initialized Artifactcatalog for it to be properly added to the portal dialer.
+            </summary>
+            <param name="artifactDef">The artifactDef tied to the artifact code.</param>
+            <param name="code_00_07">The values printed by R2API when a code is inputted.</param>
+            <param name="code_08_15">The values printed by R2API when a code is inputted.</param>
+            <param name="code_16_23">The values printed by R2API when a code is inputted.</param>
+            <param name="code_24_31">The values printed by R2API when a code is inputted.</param>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCode(RoR2.ArtifactDef,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Add a custom Artifact code to the SkyMeadow Artifact portal dialer.
+            The artifactDef must exist within the initialized ArtifactCatalog for it to be properly added to the portal dialer.
+            </summary>
+            <param name="artifactDef">The artifactDef tied to the artifact code.</param>
+            <param name="CompoundValues">An IEnumerable of type "int" with a size of 9 filled with compound values.</param>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCompound(RoR2.ArtifactCompoundDef)">
+            <summary>
+            Add a custom Artifact Compound to the SkyMeadow's Artifact Buttons.
+            </summary>
+            <param name="artifactCompoundDef">The Artifact Compound to add. The value in the def must be unique, otherwise if a duplicate is found, it doesnt add the compound.</param>
+            <returns>True if added to the button prefab, false otherwise.</returns>
+        </member>
+        <member name="M:R2API.ArtifactCodeAPI.AddCompound(System.Int32,UnityEngine.Material,UnityEngine.GameObject)">
+            <summary>
+            Add a custom Artifact Compound to the SkyMeadow's Artifact Buttons
+            </summary>
+            <param name="compoundValue">The Value of the Compound.</param>
+            <param name="compoundDecalMaterial">The Decal Material of the Compound.</param>
+            <param name="compoundModelPrefab">The Model Prefab of the Compound.</param>
+            <returns></returns>
+        </member>
+        <member name="T:R2API.ArtifactCodeAPI.CompoundValues">
+            <summary>
+            Contains the values of Vanilla risk of rain 2 Artifact Compounds.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.CompoundValues.Empty">
+            <summary>
+            Value of the Empty compound.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.CompoundValues.Square">
+            <summary>
+            Value of the Square compound.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.CompoundValues.Circle">
+            <summary>
+            Value of the Circle compound.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.CompoundValues.Triangle">
+            <summary>
+            Value for the Triangle compound.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.CompoundValues.Diamond">
+            <summary>
+            Value for the Diamond compound.
+            </summary>
+        </member>
+        <member name="F:R2API.ArtifactCodeAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

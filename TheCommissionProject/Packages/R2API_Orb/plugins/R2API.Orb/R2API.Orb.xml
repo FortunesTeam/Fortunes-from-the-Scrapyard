@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Orb</name>
+    </assembly>
+    <members>
+        <member name="P:R2API.OrbAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.OrbAPI.AddOrb(System.Type)">
+            <summary>
+            Adds an Orb to the orb catalog.
+            This must be called during plugin Awake() or OnEnable().
+            The type must be a subclass of RoR2.Orbs.Orb
+            </summary>
+            <param name="t">The type of the orb being added</param>
+            <returns>True if orb will be added</returns>
+        </member>
+        <member name="M:R2API.OrbAPI.AddOrb``1">
+            <summary>
+            Adds an Orb to the orb catalog.
+            This must be called during pplpugin Awake() or OnEnable()
+            The type of <typeparamref name="TOrb"/> must be a subclass of RoR2.Orbs.Orb
+            </summary>
+            <typeparam name="TOrb">The Type of orb being added</typeparam>
+            <returns>True if the orb will be added</returns>
+        </member>
+        <member name="F:R2API.OrbAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

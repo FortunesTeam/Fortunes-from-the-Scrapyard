@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.DamageType</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.DamageAPI">
+            <summary>
+            API for handling DamageTypes added by mods
+            </summary>
+        </member>
+        <member name="P:R2API.DamageAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="P:R2API.DamageAPI.ModdedDamageTypeCount">
+            <summary>
+            Reserved ModdedDamageTypes count
+            </summary>
+        </member>
+        <member name="M:R2API.DamageAPI.ReserveDamageType">
+            <summary>
+            Reserve ModdedDamageType to use it with
+            <see cref="M:R2API.DamageAPI.AddModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)"/>,
+            <see cref="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)"/> and
+            <see cref="M:R2API.DamageAPI.HasModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to DamageInfo instance. You can add more than one damage type to one DamageInfo
+            </summary>
+            <param name="damageInfo"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.BulletAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to BulletAttack instance. You can add more than one damage type to one BulletAttack
+            </summary>
+            <param name="bulletAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.Orbs.DamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to DamageOrb instance. You can add more than one damage type to one DamageOrb
+            </summary>
+            <param name="damageOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.Orbs.GenericDamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to GenericDamageOrb instance. You can add more than one damage type to one GenericDamageOrb
+            </summary>
+            <param name="genericDamageOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.Orbs.LightningOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to LightningOrb instance. You can add more than one damage type to one LightningOrb
+            </summary>
+            <param name="lightningOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.BlastAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to BlastAttack instance. You can add more than one damage type to one BlastAttack
+            </summary>
+            <param name="blastAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.OverlapAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to OverlapAttack instance. You can add more than one damage type to one OverlapAttack
+            </summary>
+            <param name="overlapAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.AddModdedDamageType(RoR2.DotController.DotStack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Adding ModdedDamageType to DotController.DotStack instance. You can add more than one damage type to one DotController.DotStack
+            </summary>
+            <param name="dotStack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from DamageInfo instance.
+            </summary>
+            <param name="damageInfo"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.BulletAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from BulletAttack instance.
+            </summary>
+            <param name="bulletAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.Orbs.DamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from DamageOrb instance.
+            </summary>
+            <param name="damageOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.Orbs.GenericDamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from GenericDamageOrb instance.
+            </summary>
+            <param name="genericDamageOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.Orbs.LightningOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from LightningOrb instance.
+            </summary>
+            <param name="lightningOrb"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.BlastAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from BlastAttack instance.
+            </summary>
+            <param name="blastAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.OverlapAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from OverlapAttack instance.
+            </summary>
+            <param name="overlapAttack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.RemoveModdedDamageType(RoR2.DotController.DotStack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Removing ModdedDamageType from DotController.DotStack instance.
+            </summary>
+            <param name="dotStack"></param>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.DamageInfo,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if DamageInfo instance has ModdedDamageType assigned. One DamageInfo can have more than one damage type.
+            </summary>
+            <param name="damageInfo"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.BulletAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if BulletAttack instance has ModdedDamageType assigned. One BulletAttack can have more than one damage type.
+            </summary>
+            <param name="bulletAttack"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.Orbs.DamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if DamageOrb instance has ModdedDamageType assigned. One DamageOrb can have more than one damage type.
+            </summary>
+            <param name="damageOrb"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.Orbs.GenericDamageOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if GenericDamageOrb instance has ModdedDamageType assigned. One GenericDamageOrb can have more than one damage type.
+            </summary>
+            <param name="genericDamageOrb"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.Orbs.LightningOrb,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if LightningOrb instance has ModdedDamageType assigned. One LightningOrb can have more than one damage type.
+            </summary>
+            <param name="lightningOrb"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.BlastAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if BlastAttack instance has ModdedDamageType assigned. One BlastAttack can have more than one damage type.
+            </summary>
+            <param name="blastAttack"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.OverlapAttack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if OverlapAttack instance has ModdedDamageType assigned. One OverlapAttack can have more than one damage type.
+            </summary>
+            <param name="overlapAttack"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.HasModdedDamageType(RoR2.DotController.DotStack,R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if DotController.DotStack instance has ModdedDamageType assigned. One DotController.DotStack can have more than one damage type.
+            </summary>
+            <param name="dotStack"></param>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.DamageInfo)">
+            <summary>
+            Returns ModdedDamageTypeHolder for DamageInfo instance.
+            </summary>
+            <param name="damageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.BulletAttack)">
+            <summary>
+            Returns ModdedDamageTypeHolder for BulletAttack instance.
+            </summary>
+            <param name="bulletAttack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.Orbs.DamageOrb)">
+            <summary>
+            Returns ModdedDamageTypeHolder for DamageOrb instance.
+            </summary>
+            <param name="damageOrb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.Orbs.GenericDamageOrb)">
+            <summary>
+            Returns ModdedDamageTypeHolder for GenericDamageOrb instance.
+            </summary>
+            <param name="genericDamageOrb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.Orbs.LightningOrb)">
+            <summary>
+            Returns ModdedDamageTypeHolder for LightningOrb instance.
+            </summary>
+            <param name="lightningOrb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.BlastAttack)">
+            <summary>
+            Returns ModdedDamageTypeHolder for BlastAttack instance.
+            </summary>
+            <param name="blastAttack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.OverlapAttack)">
+            <summary>
+            Returns ModdedDamageTypeHolder for OverlapAttack instance.
+            </summary>
+            <param name="overlapAttack"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.GetModdedDamageTypeHolder(RoR2.DotController.DotStack)">
+            <summary>
+            Returns ModdedDamageTypeHolder for DotController.DotStack instance.
+            </summary>
+            <param name="dotStack"></param>
+            <returns></returns>
+        </member>
+        <member name="T:R2API.DamageAPI.ModdedDamageTypeHolder">
+            <summary>
+            Holds flag values of ModdedDamageType.
+            </summary>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.Add(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Enable ModdedDamageType for this instance
+            </summary>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.Remove(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Disable ModdedDamageType for this instance
+            </summary>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.Has(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if ModdedDamageType is enabled
+            </summary>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.DamageInfo)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DamageInfo instance (completely replacing already set values)
+            </summary>
+            <param name="damageInfo"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.BulletAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the BulletAttack instance (completely replacing already set values)
+            </summary>
+            <param name="bulletAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.Orbs.DamageOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DamageOrb instance (completely replacing already set values)
+            </summary>
+            <param name="damageOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.Orbs.GenericDamageOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the GenericDamageOrb instance (completely replacing already set values)
+            </summary>
+            <param name="genericDamageOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.Orbs.LightningOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the LightningOrb instance (completely replacing already set values)
+            </summary>
+            <param name="lightningOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.BlastAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the BlastAttack instance (completely replacing already set values)
+            </summary>
+            <param name="blastAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.OverlapAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the OverlapAttack instance (completely replacing already set values)
+            </summary>
+            <param name="overlapAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.CopyTo(RoR2.DotController.DotStack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DotController.DotStack instance (completely replacing already set values)
+            </summary>
+            <param name="dotStack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.MakeCopy">
+            <summary>
+            Makes a copy of this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.ReadFromNetworkReader(UnityEngine.Networking.NetworkReader)">
+            <summary>
+            Reads compressed value from the NerworkReader. More info about that can be found in the PRs:
+            https://github.com/risk-of-thunder/R2API/pull/284
+            https://github.com/risk-of-thunder/R2API/pull/464
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolder.WriteToNetworkWriter(UnityEngine.Networking.NetworkWriter)">
+            <summary>
+            Writes compressed value to the NerworkWriter. More info about that can be found in the PRs:
+            https://github.com/risk-of-thunder/R2API/pull/284
+            https://github.com/risk-of-thunder/R2API/pull/464
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.DamageAPI.ModdedDamageTypeHolderComponent">
+            <summary>
+            Holds flag values of ModdedDamageType. The main usage is for projectiles. Add this component to your prefab.
+            </summary>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.Add(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Enable ModdedDamageType for this instance
+            </summary>
+            <param name="moddedDamageType"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.Remove(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Disable ModdedDamageType for this instance
+            </summary>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.Has(R2API.DamageAPI.ModdedDamageType)">
+            <summary>
+            Checks if ModdedDamageType is enabled
+            </summary>
+            <param name="moddedDamageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.DamageInfo)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DamageInfo instance (completely replacing already set values)
+            </summary>
+            <param name="damageInfo"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.BulletAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the BulletAttack instance (completely replacing already set values)
+            </summary>
+            <param name="bulletAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.Orbs.DamageOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DamageOrb instance (completely replacing already set values)
+            </summary>
+            <param name="damageOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.Orbs.GenericDamageOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the GenericDamageOrb instance (completely replacing already set values)
+            </summary>
+            <param name="genericDamageOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.Orbs.LightningOrb)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the LightningOrb instance (completely replacing already set values)
+            </summary>
+            <param name="lightningOrb"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.BlastAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the BlastAttack instance (completely replacing already set values)
+            </summary>
+            <param name="blastAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.OverlapAttack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the OverlapAttack instance (completely replacing already set values)
+            </summary>
+            <param name="overlapAttack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.CopyTo(RoR2.DotController.DotStack)">
+            <summary>
+            Copies enabled ModdedDamageTypes to the DotController.DotStack instance (completely replacing already set values)
+            </summary>
+            <param name="dotStack"></param>
+        </member>
+        <member name="M:R2API.DamageAPI.ModdedDamageTypeHolderComponent.MakeHolder">
+            <summary>
+            Create ModdedDamageTypeHolder using values of this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.DamageAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

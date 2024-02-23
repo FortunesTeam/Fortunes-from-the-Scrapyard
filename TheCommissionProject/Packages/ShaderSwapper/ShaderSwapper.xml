@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShaderSwapper</name>
+    </assembly>
+    <members>
+        <member name="T:ShaderSwapper.ShaderSwapper">
+            <summary>
+            A static library for upgrading stubbed shaders to actual shaders at runtime.
+            </summary>
+        </member>
+        <member name="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShadersAsync(UnityEngine.AssetBundle)">
+            <summary>
+            Asynchronously upgrade all stubbed shaders in an asset bundle to real shaders.
+            </summary>
+            <remarks>
+            See the mod page for example usage.
+            </remarks>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> which can be started as a <see cref="T:UnityEngine.Coroutine"/> or yielded in an <see cref="T:RoR2.ContentManagement.IContentPackProvider"/>.</returns>
+        </member>
+        <member name="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShaderAsync(UnityEngine.Material)">
+            <summary>
+            Asynchronously convert the stubbed shader of a single material to a real shader.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> which can be started as a <see cref="T:UnityEngine.Coroutine"/> or yielded in an <see cref="T:RoR2.ContentManagement.IContentPackProvider"/>.</returns>
+        </member>
+        <member name="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShaders(UnityEngine.AssetBundle)">
+            <summary>
+            Immediately upgrade all stubbed shaders in an asset bundle to real shaders.
+            </summary>
+            <remarks>
+            This method will block the main thread until completed. <see cref="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShadersAsync(UnityEngine.AssetBundle)"/> should be used instead.
+            </remarks>
+        </member>
+        <member name="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShader(UnityEngine.Material)">
+            <summary>
+            Immediately convert the stubbed shader of a single material to a real shader.
+            </summary>
+            <remarks>
+            This method will block the main thread until completed. <see cref="M:ShaderSwapper.ShaderSwapper.UpgradeStubbedShaderAsync(UnityEngine.Material)"/> should be used instead.
+            </remarks>
+        </member>
+    </members>
+</doc>
