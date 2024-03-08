@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RoR2;
+using RoR2.ExpansionManagement;
 
 namespace TheCommission
 {
@@ -21,20 +22,17 @@ namespace TheCommission
 
         public IEnumerator LoadStaticContentAsync(LoadStaticContentAsyncArgs args)
         {
-            var enumerator = CommissionAssets.Initialize(args);
-            
+            var enumerator = CommissionAssets.Initialize();
+
             while (enumerator.MoveNext())
                 yield return null;
 
-            var expansionRequest = new CommissionAssets.AssetRequest<ExpansionDef>
-            {
-                TargetAssetNameAttribute = "CommissionExpansion",
-                BundleEnum = CommissionBundle.Main
-            };
-            
-            enumerator = expansionRequest.Load();
-            while (enumerator.MoveNext()) yield return null;
-            
+            var expansionRequest = CommissionAssets.LoadAssetAsync<ExpansionDef>("CommissionExpansion", CommissionBundle.Main);
+
+            expansionRequest.StartLoad();
+            while (!expansionRequest.IsComplete)
+                yield return null; 
+
             RuntimeContentPack.expansionDefs.AddSingle(expansionRequest.Asset);
 
             for (int i = 0; i < _loadDispatchers.Length; i++)
