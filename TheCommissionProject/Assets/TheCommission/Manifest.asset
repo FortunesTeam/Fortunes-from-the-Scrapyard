@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StagingPaths:
   - <BuildPathPlugins>
-  rootFolderName: MyLang
+  rootFolderName: CommissionLang
   languageFolders:
   - languageName: en
     languageFiles: []
@@ -71,7 +71,7 @@ MonoBehaviour:
   StagingPaths:
   - <BuildPathPlugins>
   definitions:
-  - {fileID: 0}
+  - {fileID: 5897886265953266890, guid: 9fdec71e297fea345b198dabf6a1481d, type: 3}
 --- !u!114 &114211852988908172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +106,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StagingPaths:
   - <BuildPathAssets>
-  assetBundles: []
+  assetBundles:
+  - assetBundleName: tcmain
+    assets:
+    - {fileID: 11400000, guid: 7e4fff6b36a40aa4590cc211ea5f692e, type: 2}
 --- !u!114 &114987763159783732
 MonoBehaviour:
   m_ObjectHideFlags: 0

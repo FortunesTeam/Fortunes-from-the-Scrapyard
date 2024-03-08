@@ -74,7 +74,6 @@ namespace TheCommission
             Main main = Main.Instance;
             _loadDispatchers = new Func<IEnumerator>[]
             {
-
             };
 
             _fieldAssignDispatchers = new Func<IEnumerator>[]
