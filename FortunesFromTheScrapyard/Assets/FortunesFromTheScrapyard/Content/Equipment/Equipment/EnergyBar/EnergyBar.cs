@@ -41,8 +41,8 @@ namespace FortunesFromTheScrapyard.Equipment
             SkillLocator skill = body.skillLocator;
             if(skill != null)
             {
-                skill.ApplyAmmoPack();
-                body.AddTimedBuffAuthority(FortunesContent.contentPack.buffDefs.Find("EnergyBarBuffDef").buffIndex, speedBonusDuration);
+                body.healthComponent.ForceShieldRegen();
+                body.healthComponent.Heal(body.healthComponent.fullHealth * 0.25f, default);
                 return true;
             }
             return false;

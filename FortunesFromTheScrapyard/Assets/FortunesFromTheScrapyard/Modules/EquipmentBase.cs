@@ -28,11 +28,15 @@ namespace FortunesFromTheScrapyard.Equipment
         public abstract void Hooks();
         public virtual void Init()
         {
-            equipDef = FortunesContent.contentPack.equipmentDefs.Find(equipName);
+            On.RoR2.EquipmentSlot.PerformEquipmentAction += PerformEquipmentAction;
+        }
+        public virtual EquipmentDef GetEquipDef()
+        {
+            return FortunesContent.contentPack.equipmentDefs.Find(equipName);
         }
         internal bool PerformEquipmentAction(On.RoR2.EquipmentSlot.orig_PerformEquipmentAction orig, EquipmentSlot self, EquipmentDef equipmentDef)
         {
-            if (equipmentDef == equipDef)
+            if (equipmentDef == GetEquipDef())
             {
                 return ActivateEquipment(self);
             }

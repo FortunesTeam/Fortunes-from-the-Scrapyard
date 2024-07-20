@@ -33,8 +33,6 @@ namespace FortunesFromTheScrapyard.Items
         public override void Hooks()
         {
             GetHitBehavior += HeadphoneOnHit;
-            On.EntityStates.AI.BaseAIState.AimAt += DisorientAimAt;
-            On.EntityStates.AI.BaseAIState.AimInDirection += DisorientAimDirection;
             On.RoR2.HealthComponent.TakeDamage += DisorientDamage;
         }
 
@@ -45,26 +43,6 @@ namespace FortunesFromTheScrapyard.Items
                 damageInfo.damage *= 1 + disorientDamage;
             }
             orig(self, damageInfo);
-        }
-
-        private void DisorientAimDirection(On.EntityStates.AI.BaseAIState.orig_AimInDirection orig, EntityStates.AI.BaseAIState self, ref BaseAI.BodyInputs dest, Vector3 aimDirection)
-        {
-            if (self.body && self.body.HasBuff(FortunesContent.contentPack.buffDefs.Find("Disorient")))
-            {
-                orig(self, ref dest, UnityEngine.Random.onUnitSphere);
-                dest.desiredAimDirection = UnityEngine.Random.onUnitSphere;
-            }
-            else orig(self, ref dest, aimDirection);
-        }
-
-        private void DisorientAimAt(On.EntityStates.AI.BaseAIState.orig_AimAt orig, EntityStates.AI.BaseAIState self, ref BaseAI.BodyInputs dest, BaseAI.Target aimTarget)
-        {
-            if (self.body && self.body.HasBuff(FortunesContent.contentPack.buffDefs.Find("Disorient")))
-            {
-                orig(self, ref dest, aimTarget);
-                dest.desiredAimDirection = UnityEngine.Random.onUnitSphere;
-            }
-            else orig(self, ref dest, aimTarget);
         }
 
         private void HeadphoneOnHit(CharacterBody attackerBody, DamageInfo damageInfo, CharacterBody victimBody)
