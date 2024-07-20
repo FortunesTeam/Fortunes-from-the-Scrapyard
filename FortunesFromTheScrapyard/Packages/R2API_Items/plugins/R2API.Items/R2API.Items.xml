@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Items</name>
+    </assembly>
+    <members>
+        <member name="P:R2API.ItemAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.ItemAPI.Add(R2API.CustomItem)">
+            <summary>
+            Add a custom item to the list of available items.
+            Value for ItemDef.ItemIndex can be ignored.
+            We can't give you the ItemIndex anymore in the method return param. Instead use ItemCatalog.FindItemIndex after catalog are init
+            If this is called after the ItemCatalog inits then this will return false and ignore the custom item.
+            </summary>
+            <param name="item">The item to add.</param>
+            <returns>true if added, false otherwise</returns>
+        </member>
+        <member name="M:R2API.ItemAPI.Add(R2API.CustomEquipment)">
+            <summary>
+            Add a custom equipment item to the list of available items.
+            Value for EquipmentDef.equipmentIndex can be ignored.
+            We can't give you the EquipmentIndex anymore in the method return param. Instead use EquipmentCatalog.FindEquipmentIndex after catalog are init
+            If this is called after the EquipmentCatalog inits then this will return false and ignore the custom equipment item.
+            </summary>
+            <param name="item">The equipment item to add.</param>
+            <returns>true if added, false otherwise</returns>
+        </member>
+        <member name="M:R2API.ItemAPI.AddItemTag(System.String)">
+            <summary>
+            Add a custom item tag to the list of item tags.
+            If this is called after the ItemCatalog inits then this will return -1 and ignore the custom item tag.
+            </summary>
+            <param name="name">The tag to add.</param>
+            <returns>ItemTag value if added or already existent, (-1) cast to ItemTag otherwise</returns>
+        </member>
+        <member name="M:R2API.ItemAPI.FindItemTagByName(System.String)">
+            <summary>
+            Gets ItemTag value for tag of given name
+            </summary>
+            <param name="name">The tag name string to match</param>
+            <returns>ItemTag value if found,(-1) cast to ItemTag otherwise</returns>
+        </member>
+        <member name="M:R2API.ItemAPI.ApplyTagToItem(System.String,RoR2.ItemDef)">
+            <summary>
+            Applies given ItemTag to the ItemDef (by Tag Name Overload)
+            </summary>
+            <param name="tagName">The name of the tag to apply</param>
+            <param name="item"> The ItemDef to apply the tag to</param>
+        </member>
+        <member name="M:R2API.ItemAPI.ApplyTagToItem(RoR2.ItemTag,RoR2.ItemDef)">
+            <summary>
+            Applies given ItemTag to the ItemDef
+            </summary>
+            <param name="tag">The ItemTag to apply</param>
+            <param name="item"> The ItemDef to apply the tag to</param>
+        </member>
+        <member name="M:R2API.ItemAPI.DoNotAutoIDRSFor(System.String)">
+            <summary>
+            Prevents bodies and charactermodels matching this name from having nonspecific item display rules applied to them
+            </summary>
+            <param name="bodyPrefabOrCharacterModelName">The string to match</param>
+        </member>
+        <member name="M:R2API.ItemAPI.DoNotAutoIDRSFor(UnityEngine.GameObject)">
+            <summary>
+            Prevent prefabs with this name having nonspecific item display rules applied to them
+            </summary>
+            <param name="bodyPrefab">The body prefab to match</param>
+        </member>
+        <member name="F:R2API.ItemAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="P:R2API.ItemDisplayRuleDict.Item(System.String)">
+            <summary>
+            Get the applicable rule for this charactermodel. Returns the default rules if no specific rule is found.
+            </summary>
+            <param name="bodyPrefabName">The model to look for. Null and empty strings are also accepted.</param>
+            <returns>The item display rules for this model, or the default rules if no specifics are found.</returns>
+        </member>
+        <member name="M:R2API.ItemDisplayRuleDict.Add(System.String,RoR2.ItemDisplayRule[])">
+            <summary>
+            Equivalent to using the set property of the indexer, but added bonus is the ability to ignore the array wrapper normally needed.
+            </summary>
+            <param name="bodyPrefabName"></param>
+            <param name="itemDisplayRules"></param>
+        </member>
+        <member name="M:R2API.ItemDisplayRuleDict.TryGetRules(System.String,RoR2.ItemDisplayRule[]@)">
+            <summary>
+            Safe way of getting a characters rules, with the promise that the out is always filled.
+            </summary>
+            <param name="bodyPrefabName"></param>
+            <param name="itemDisplayRules">The specific rules for this model, or if false is returned, the default rules.</param>
+            <returns>True if there's a specific rule for this model. False otherwise.</returns>
+        </member>
+        <member name="P:R2API.ItemDisplayRuleDict.DefaultRules">
+            <summary>
+            The default rules to apply when no matching model is found.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

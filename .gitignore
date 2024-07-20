@@ -73,3 +73,28 @@ crashlytics-build.properties
 
 TheCommissionProject/Packages/mmhook-assemblies
 TheCommissionProject/Packages/Risk of Rain 2
+
+#RoR2 Packages Folder
+Packages/Risk of Rain 2
+#ThunderKit root folder & Logs
+ThunderKit/
+Assets/ThunderKitSettings/Logs/
+
+##-------##
+## wwise ##
+##-------##
+WwiseProject/.cache/
+WwiseProject/*.prof
+WwiseProject/*_WwiseProject.*.validationcache
+WwiseProject/*_WwiseProject.*.wsettings
+WwiseProject/**/*.akd
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+#notes:
+#1) if any other files go in Assets/Wwise/Editor/ProjectData/ besides AkWwiseProjectData.asset*,
+#then don't ignore Assets/Wwise/Editor/ProjectData.meta. If AkWwiseProjectData.asset is the only item in there,
+#then, it's OK to ignore this file.
+Assets/Wwise/Editor/ProjectData.meta
+Assets/Wwise/Deployment/Plugins/Mac/*
+#Integration zips
+WwiseUnityIntegration_Windows_Src.zip
+WwiseUnityIntegration_Mac_Src.zip
