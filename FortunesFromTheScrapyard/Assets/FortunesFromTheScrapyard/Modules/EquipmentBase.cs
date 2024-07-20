@@ -28,6 +28,7 @@ namespace FortunesFromTheScrapyard.Equipment
         public abstract void Hooks();
         public virtual void Init()
         {
+            Hooks();
             On.RoR2.EquipmentSlot.PerformEquipmentAction += PerformEquipmentAction;
         }
         public virtual EquipmentDef GetEquipDef()

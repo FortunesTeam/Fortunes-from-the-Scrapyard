@@ -55,14 +55,15 @@ namespace FortunesFromTheScrapyard
             Modules.Language.TryPrintOutput("FortunesSkills.txt");*/
 
             //Survivor.instance.InitializeCharacterMaster();
-
+            
             FortunesContent.Initialize();
 
-            BeginInitializing<ItemBase>(allTypes);
+            BeginInitializingItems<ItemBase>(allTypes);
 
+            BeginInitializingEquipment<EquipmentBase>(allTypes);
         }
 
-        private void BeginInitializing<T>(Type[] allTypes) where T : ItemBase
+        private void BeginInitializingItems<T>(Type[] allTypes) where T : ItemBase
         {
             Type baseType = typeof(T);
             if (!baseType.IsAbstract)
@@ -79,6 +80,27 @@ namespace FortunesFromTheScrapyard
             }
         }    
         void InitializeBaseType(ItemBase obj)
+        {
+            obj.Init();
+        }
+
+        private void BeginInitializingEquipment<T>(Type[] allTypes) where T : EquipmentBase
+        {
+            Type baseType = typeof(T);
+            if (!baseType.IsAbstract)
+            {
+                return;
+            }
+
+            IEnumerable<Type> objTypesOfBaseType = allTypes.Where(type => !type.IsAbstract && type.IsSubclassOf(baseType));
+
+            foreach (var objType in objTypesOfBaseType)
+            {
+                T obj = (T)System.Activator.CreateInstance(objType);
+                InitializeEquipmentBaseType(obj as EquipmentBase);
+            }
+        }    
+        void InitializeEquipmentBaseType(EquipmentBase obj)
         {
             obj.Init();
         }
