@@ -111,9 +111,9 @@ namespace FortunesFromTheScrapyard.Items.Content
             item = "_ENERGY_";
             currentItem = prefix + item;
             Language.Add(currentItem + "NAME", "Energy Bar");
-            Language.Add(currentItem + "PICKUP", "Reset all other cooldowns, then gain a brief speed boost.");
-            Language.Add(currentItem + "DESC", $"Reset all {Tokens.UtilityText("ability cooldowns")}, then " +
-            $"increase {Tokens.UtilityText("movement speed")} by {Tokens.UtilityText(Tokens.ConvertDecimal(EnergyBar.speedBonus))} " +
+            Language.Add(currentItem + "PICKUP", "Restore 25% of your max health, being recharing shields and gain a brief speed boost.");
+            Language.Add(currentItem + "DESC", $"Restore {Tokens.HealingText(Tokens.ConvertDecimal(EnergyBar.healAmount) + " max health")}, begin recharging {Tokens.HealingText("shield")}, " +
+            $",and increase {Tokens.UtilityText("movement speed")} by {Tokens.UtilityText(Tokens.ConvertDecimal(EnergyBar.speedBonus))} " +
             $"for {Tokens.UtilityText(EnergyBar.speedBonusDuration.ToString())} seconds.");
             Language.Add(currentItem + "LORE", "ow");
             #endregion

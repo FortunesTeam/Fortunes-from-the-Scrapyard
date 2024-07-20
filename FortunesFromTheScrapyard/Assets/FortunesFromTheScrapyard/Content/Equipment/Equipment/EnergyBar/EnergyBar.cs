@@ -6,18 +6,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 using static R2API.RecalculateStatsAPI;
 
 namespace FortunesFromTheScrapyard.Equipment
 {
     public class EnergyBar : EquipmentBase<EnergyBar>
     {
-        [AutoConfig("Cooldown", 12f)]
-        public static float cooldown = 12f;
-        [AutoConfig("Speed Bonus", 0.45f)]
+        [AutoConfig("Cooldown", 25f)]
+        public static float cooldown = 25f;
+        [AutoConfig("Speed Bonus", 0.35f)]
         public static float speedBonus = 0.45f;
-        [AutoConfig("Speed Bonus Duration", 5f)]
-        public static float speedBonusDuration = 5f;
+        [AutoConfig("Speed Bonus Duration", 2.5f)]
+        public static float speedBonusDuration = 2.5f;
+
+        public static float healAmount = 0.25f;
 
         public override void Init()
         {
@@ -41,8 +44,12 @@ namespace FortunesFromTheScrapyard.Equipment
             SkillLocator skill = body.skillLocator;
             if(skill != null)
             {
+                if(NetworkServer.active)
+                {
+                    body.AddTimedBuff(FortunesContent.contentPack.buffDefs.Find("EnergyBarBuffDef"), speedBonusDuration);
+                }
                 body.healthComponent.ForceShieldRegen();
-                body.healthComponent.Heal(body.healthComponent.fullHealth * 0.25f, default);
+                body.healthComponent.Heal(body.healthComponent.fullHealth * healAmount, default);
                 return true;
             }
             return false;
