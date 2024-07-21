@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2841649C-710B-4757-8283-B938276F06DB}" SchemaVersion="97">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{2841649C-710B-4757-8283-B938276F06DB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2841649C-710B-4757-8283-B938276F06DB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="sfx_energybar_use" ID="{B61F9546-CE0A-42B0-8DEB-10C6AA8EC3C7}" ShortID="784067981">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}">
+							<Language>SFX</Language>
+							<AudioFile>EnergyBar.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="427419216"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

@@ -27,6 +27,7 @@ namespace FortunesFromTheScrapyard.Items
         public static bool roulette = true;
         public override void Initialize()
         {
+            /*
             On.RoR2.PurchaseInteraction.OnInteractionBegin += MultitoolInteract;
             if (terminals)
                 On.RoR2.ShopTerminalBehavior.DropPickup += MultitoolTerminal;
@@ -44,6 +45,7 @@ namespace FortunesFromTheScrapyard.Items
                 IL.RoR2.ShrineCombatBehavior.AddShrineStack += MultitoolCombat;
 
             On.RoR2.CharacterMaster.OnServerStageBegin += TryRegenerateMultitool;
+            */
         }
 
         public override bool IsAvailable(ContentPack contentPack)

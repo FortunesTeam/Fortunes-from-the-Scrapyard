@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="4204904655">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3697235005" Language="SFX" Hash="2052650044">
+			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
+			<ShortName>FortunesBank</ShortName>
+			<Path>FortunesBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3280223896" Name="sfx_energybar_use" ObjectPath="\Events\Default Work Unit\sfx_energybar_use" DurationType="OneShot" DurationMin="0.576916" DurationMax="0.576916"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="427419216" Language="SFX">
+					<ShortName>EnergyBar.wav</ShortName>
+					<Path>SFX\EnergyBar_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

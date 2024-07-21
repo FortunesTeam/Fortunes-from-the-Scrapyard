@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: EnergyBar
   m_EditorClassIdentifier: 
-  pickupModelPrefab: {fileID: 0}
-  cooldown: 12
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: a39e5b8e974ae2e40945e3f65bb61277,
+    type: 3}
+  cooldown: 45
   nameToken: SCRAPYARD_EQUIP_ENERGYBAR_NAME
   pickupToken: SCRAPYARD_EQUIP_ENERGYBAR_PICKUP
   descriptionToken: SCRAPYARD_EQUIP_ENERGYBAR_DESC
   loreToken: SCRAPYARD_EQUIP_ENERGYBAR_LORE
-  pickupIconSprite: {fileID: 0}
+  pickupIconSprite: {fileID: 21300000, guid: c1cd9e1152ad4a04fa29745d9d0bf931, type: 3}
   unlockableDef: {fileID: 0}
   colorIndex: 5
   canDrop: 1

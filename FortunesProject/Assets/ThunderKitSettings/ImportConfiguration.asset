@@ -248,7 +248,7 @@ MonoBehaviour:
     description: R2API_DamageType
     dependedncyID: RiskofThunder-R2API_DamageType
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -257,7 +257,7 @@ MonoBehaviour:
     description: R2API_Deployable
     dependedncyID: RiskofThunder-R2API_Deployable
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -266,7 +266,7 @@ MonoBehaviour:
     description: R2API_Difficulty
     dependedncyID: RiskofThunder-R2API_Difficulty
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -275,7 +275,7 @@ MonoBehaviour:
     description: R2API_Director
     dependedncyID: RiskofThunder-R2API_Director
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -285,7 +285,7 @@ MonoBehaviour:
     description: R2API_Dot
     dependedncyID: RiskofThunder-R2API_Dot
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -294,7 +294,7 @@ MonoBehaviour:
     description: R2API_Elites
     dependedncyID: RiskofThunder-R2API_Elites
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core

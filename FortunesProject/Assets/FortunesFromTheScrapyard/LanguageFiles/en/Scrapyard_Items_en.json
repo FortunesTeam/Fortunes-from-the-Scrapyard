@@ -1,7 +1,7 @@
 {
   "strings": {
     "SCRAPYARD_EXPANSION_NAME": "Fortunes from the Scrapyard.",
-    "SCRAPYARD_EXPANSION_DESC":  "Enables the content from the mod Fortunes from the Scrapyard.",
+    "SCRAPYARD_EXPANSION_DESC": "Enables the content from the mod Fortunes from the Scrapyard.",
     "SCRAPYARD_ITEM_TAKEOUT_NAME": "Takeout",
     "SCRAPYARD_ITEM_TAKEOUT_PICKUP": "Gain a random stat buff for the rest of the stage.",
     "SCRAPYARD_ITEM_TAKEOUT_DESC": "On the <style=cIsUtility>beginning of each stage</style>, gain a random <style=cIsDamage>damage</style>, <style=cIsUtility>movement speed</style>, or <style=cIsHealing>base health regeneration</style> buff until the stage ends. Can increase base damage by <style=cIsDamage>{0}%</style> <style=cStack>(+{1}% per stack)</style>, movement speed by <style=cIsUtility>{2}%</style> <style=cStack>(+{3}% per stack)</style>, or base health regeneration by <style=cIsHealing>{4} hp/s</style> <style=cStack>({5} hp/s per stack)</style>",
@@ -22,13 +22,21 @@
     "SCRAPYARD_ITEM_LETHALINJECTION_PICKUP": "High damage afflicts permanent execute.",
     "SCRAPYARD_ITEM_LETHALINJECTION_DESC": "Hits that deal <style=cIsDamage>more than 400% damage</style> also inflict a toxin that <style=cIsHealth>permanently</style> reduces maximum health by <style=cIsDamage>1%</style> every 0,5 seconds. Toxin lasts for <style=cIsUtility>5</style> seconds <style=cStack>(+2,5 per stack)</style>.",
     "SCRAPYARD_ITEM_LETHALINJECTION_LORE": "ow",
-    "SCRAPYARD_ITEM_COUNTERFITCURRENCY_NAME": "Counterfeit Currency",
-    "SCRAPYARD_ITEM_COUNTERFITCURRENCY_PICKUP": "Begin each stage with extra gold... <style=cIsHealth>BUT gain less gold.</style>",
-    "SCRAPYARD_ITEM_COUNTERFITCURRENCY_DESC": "Begin each stage with <style=cIsDamage>${0} gold</style> <style=cStack>(+${1} per stack)</style>. <style=cIsUtility>Scales over time.</style> <style=cIsHealth>ALL other sources of income</style> are reduced by <style=cIsHealth>-{2}%</style> <style=cStack>(-{3}% per stack)</style>.",
-    "SCRAPYARD_ITEM_COUNTERFITCURRENCY_LORE": "ow",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_NAME": "Counterfeit Currency",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_PICKUP": "Begin each stage with extra gold... <style=cIsHealth>BUT gain less gold.</style>",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_DESC": "Begin each stage with <style=cIsDamage>${0} gold</style> <style=cStack>(+${1} per stack)</style>. <style=cIsUtility>Scales over time.</style> <style=cIsHealth>ALL other sources of income</style> are reduced by <style=cIsHealth>-{2}%</style> <style=cStack>(-{3}% per stack)</style>.",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_LORE": "ow",
     "SCRAPYARD_EQUIP_ENERGYBAR_NAME": "Energy Bar",
-    "SCRAPYARD_EQUIP_ENERGYBAR_PICKUP": "Restore {0}% of your max health, being recharing shields and gain a brief speed boost.",
-    "SCRAPYARD_EQUIP_ENERGYBAR_DESC": "Restore <style=cIsHealing>{0}% max health</style>, begin recharging <style=cIsHealing>shield</style>, ,and increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{1}%</style> for <style=cIsUtility>{2}</style> seconds.",
-    "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "ow"
+    "SCRAPYARD_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharing shields.",
+    "SCRAPYARD_EQUIP_ENERGYBAR_DESC": "Increase <style=cIsHealing>health regen</style> by <style=cIsHealing>{1500}%</style> and increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{1}%</style> for <style=cIsUtility>{2}</style> seconds. Additionally begin recharging <style=cIsHealing>shield</style>. ",
+    "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "ow",
+    "SCRAPYARD_EQUIP_SPRAYCAN_NAME": "Spray Can",
+    "SCRAPYARD_EQUIP_SPRAYCAN_PICKUP": "Outdated.",
+    "SCRAPYARD_EQUIP_SPRAYCAN_DESC": "Outdated.",
+    "SCRAPYARD_EQUIP_SPRAYCAN_LORE": "ow",
+    "SCRAPYARD_ITEM_FAULTYTURBO_NAME": "Faulty Turbo",
+    "SCRAPYARD_ITEM_FAULTYTURBO_PICKUP": "Chance to gain a massive speedboost while sprinting.",
+    "SCRAPYARD_ITEM_FAULTYTURBO_DESC": "<style=cIsDamage>{5}% chance</style> <style=cStack>(+{5}% per stack)</style> every <style=cIsUtility>{1}</style> second to increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{60}%</style> for <style=cIsUtility>{3}</style> seconds <style=cStack>(+{1.5} per stack)</style>.",
+    "SCRAPYARD_ITEM_FAULTYTURBO_LORE": "Mmm, turbo boost."
   }
 }

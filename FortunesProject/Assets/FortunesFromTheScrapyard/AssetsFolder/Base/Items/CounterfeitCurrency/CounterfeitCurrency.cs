@@ -9,7 +9,7 @@ namespace FortunesFromTheScrapyard.Items
 {
     public class CounterfeitCurrency : ScrapyardItem
     {
-        public const string TOKEN = "SCRAPYARD_ITEM_LUNARMONEY_DESC";
+        public const string TOKEN = "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 0)]

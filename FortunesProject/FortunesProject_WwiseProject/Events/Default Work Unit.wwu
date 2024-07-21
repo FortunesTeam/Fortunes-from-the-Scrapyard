@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C5B4D477-E335-4E58-BDE6-F8AB7816DBCD}" SchemaVersion="97">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{C5B4D477-E335-4E58-BDE6-F8AB7816DBCD}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C5B4D477-E335-4E58-BDE6-F8AB7816DBCD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="sfx_energybar_use" ID="{F1986A0A-959D-4E6E-BE36-223464CFCDBD}">
+					<ChildrenList>
+						<Action Name="" ID="{EEF03256-5475-471F-ABFD-C27F02EAA506}" ShortID="241075895">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_energybar_use" ID="{B61F9546-CE0A-42B0-8DEB-10C6AA8EC3C7}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

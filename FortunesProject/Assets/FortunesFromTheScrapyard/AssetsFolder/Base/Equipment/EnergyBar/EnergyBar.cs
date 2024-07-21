@@ -12,14 +12,14 @@ namespace FortunesFromTheScrapyard.Equipments
         public const string TOKEN = "SCRAPYARD_EQUIP_ENERGYBAR_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
+        [FormatToken(TOKEN, 0)]
+        public static float regenAmount = 15f;
+        [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float speedBonus = 0.45f;
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, 2)]
-        public static float speedBonusDuration = 2.5f;
-        [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float healAmount = 0.25f;
+        public static float speedBonusDuration = 2f;
         public override bool Execute(EquipmentSlot slot)
         {
             CharacterBody body = slot.characterBody;
@@ -31,7 +31,6 @@ namespace FortunesFromTheScrapyard.Equipments
                     body.AddTimedBuff(ScrapyardContent.Buffs.bdEnergyBar, speedBonusDuration);
                 }
                 body.healthComponent.ForceShieldRegen();
-                body.healthComponent.Heal(body.healthComponent.fullHealth * healAmount, default);
                 return true;
             }
             return false;
@@ -46,6 +45,7 @@ namespace FortunesFromTheScrapyard.Equipments
         {
             int buffCount = sender.GetBuffCount(ScrapyardContent.Buffs.bdEnergyBar);
             args.moveSpeedMultAdd += speedBonus * buffCount;
+            args.regenMultAdd += regenAmount * buffCount;
         }
 
         public override bool IsAvailable(ContentPack contentPack)
