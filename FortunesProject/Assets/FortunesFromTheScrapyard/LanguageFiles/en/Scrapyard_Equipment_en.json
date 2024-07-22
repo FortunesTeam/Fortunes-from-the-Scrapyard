@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "SCRAPYARD_EQUIP_ENERGYBAR_NAME": "Energy Bar",
+    "SCRAPYARD_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharing shields.",
+    "SCRAPYARD_EQUIP_ENERGYBAR_DESC": "Increase <style=cIsHealing>health regen</style> by <style=cIsHealing>{0}%</style> and <style=cIsUtility>movement speed</style> by <style=cIsUtility>{1}%</style> for <style=cIsUtility>{2}</style> seconds. Additionally begin recharging <style=cIsHealing>shield</style>. ",
+    "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "ow"
+  }
+}

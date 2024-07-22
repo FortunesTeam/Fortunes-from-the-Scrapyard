@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01757c054bc917a4dacb91a6f472f7b6, type: 3}
+  m_Name: acFaultyTurbo
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 7cf09244ede405649b7be57e095b1db9, type: 2}
+  - {fileID: 11400000, guid: 609f5219df785a348b36005cfc35fe9b, type: 2}
+  itemDisplayPrefabs:
+  - {fileID: 3890030943585171948, guid: 9d1d9ea759a0ca54dad2f9583dc9c86e, type: 3}
+  itemDef: {fileID: 11400000, guid: 7cf09244ede405649b7be57e095b1db9, type: 2}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: Multitool
+  m_EditorClassIdentifier: 
+  deprecatedTier: 1
+  _itemTierDef: {fileID: 0}
+  nameToken: SCRAPYARD_ITEM_MULTITOOL_NAME
+  pickupToken: SCRAPYARD_ITEM_MULTITOOL_PICKUP
+  descriptionToken: SCRAPYARD_ITEM_MULTITOOL_DESC
+  loreToken: SCRAPYARD_ITEM_MULTITOOL_LORE
+  unlockableDef: {fileID: 0}
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: c8f364de13a13a74494cdbf95215100d,
+    type: 3}
+  pickupIconSprite: {fileID: 21300000, guid: 13d8a4b62bb6d5f4fb4c45a20ad1d858, type: 3}
+  hidden: 0
+  canRemove: 1
+  tags: 1200000003000000
+  requiredExpansion: {fileID: 11400000, guid: 6f84110d73cce4c4985ff8d773a4382d, type: 2}

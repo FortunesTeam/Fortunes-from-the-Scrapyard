@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdEnergyBar
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: 21300000, guid: 246448f1ef4378e45b93c515b35521ef, type: 3}
   buffColor: {r: 0.92941624, g: 0.9433962, b: 0.7164471, a: 1}
   canStack: 1
   eliteDef: {fileID: 0}

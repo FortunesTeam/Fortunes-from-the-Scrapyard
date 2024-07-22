@@ -12,7 +12,7 @@ namespace FortunesFromTheScrapyard.Equipments
         public const string TOKEN = "SCRAPYARD_EQUIP_ENERGYBAR_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
-        [FormatToken(TOKEN, 0)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float regenAmount = 15f;
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
@@ -31,6 +31,7 @@ namespace FortunesFromTheScrapyard.Equipments
                     body.AddTimedBuff(ScrapyardContent.Buffs.bdEnergyBar, speedBonusDuration);
                 }
                 body.healthComponent.ForceShieldRegen();
+                Util.PlaySound("sfx_energybar_use", body.gameObject);
                 return true;
             }
             return false;

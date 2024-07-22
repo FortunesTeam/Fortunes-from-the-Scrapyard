@@ -140,11 +140,12 @@ namespace FortunesFromTheScrapyard
         {
             public static BuffDef bdEnergyBar;
             public static BuffDef bdDisorient;
-            public static BuffDef dbdSprayCan;
+            public static BuffDef bdSprayCan;
             public static BuffDef bdTakeoutDmg;
             public static BuffDef bdTakeoutSpeed;
             public static BuffDef bdTakeoutRegen;
             public static BuffDef bdFaultyTurbo;
+            public static BuffDef bdLethalInjection;
         }
     }
 }
