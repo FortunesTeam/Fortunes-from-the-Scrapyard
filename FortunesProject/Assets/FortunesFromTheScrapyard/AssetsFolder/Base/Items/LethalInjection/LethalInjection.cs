@@ -15,16 +15,13 @@ namespace FortunesFromTheScrapyard.Items
         public const string TOKEN = "SCRAPYARD_ITEM_LETHALINJECTION_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 0)]
-        public static int toxinDurationBase = 10;
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float toxinPercentBase = 0.5f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 1)]
-        public static int toxinDurationStack = 5;
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        public static float toxinPercentStack = 0.5f;
 
-        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 2)]
-        public static float toxinInterval = 0.5f;
         public static GameObject lethalInjectionPrefab;
         public override void Initialize()
         {
@@ -68,18 +65,17 @@ namespace FortunesFromTheScrapyard.Items
                 {
                     if (NetworkServer.active)
                     {
-                        int injectionStacks = (int)(GetStackValue(toxinDurationBase, toxinDurationStack, stack) * damageInfo.procCoefficient);
+                        if (NetworkServer.active) victimBody.AddBuff(ScrapyardContent.Buffs.bdLethalInjection);
+                        float injectionExecuteDamagePercentage = (damageInfo.damage / victimHealth.fullCombinedHealth) * (GetStackValue(toxinPercentBase, toxinPercentStack, stack) * damageInfo.procCoefficient);
                         InjectionBehavior injection = victimBody.gameObject.EnsureComponent<InjectionBehavior>();
-                        injection.hostBody = victimBody;
-                        injection.AddStacks(injectionStacks);
+                        if(injection.hostBody != victimBody) injection.hostBody = victimBody;
+                        injection.AddStacks(injectionExecuteDamagePercentage);
                         Vector3 position = damageInfo.position;
                         Vector3 forward = victimBody.corePosition - position;
                         float magnitude = forward.magnitude;
                         Quaternion rotation = Util.QuaternionSafeLookRotation(forward);
                         GameObject injectionProjectile = LethalInjection.lethalInjectionPrefab;
-                        injectionProjectile.GetComponent<ProjectileImpactExplosion>().lifetimeAfterImpact = injection.interval * injection.stacksRemaining;
                         ProjectileManager.instance.FireProjectile(injectionProjectile, position, rotation, damageInfo.attacker, 0f, 100f, false, DamageColorIndex.Default, null, victimBody.healthComponent.alive ? (magnitude * 5f) : (-1f));
-
                     }
                 }
 
@@ -131,40 +127,15 @@ namespace FortunesFromTheScrapyard.Items
         public class InjectionBehavior : MonoBehaviour
         {
             internal CharacterBody hostBody;
-            public float interval => LethalInjection.toxinInterval;
-            private float stopwatch = 0;
-            public int stacksRemaining = 0;
             public float injectionExecuteThreshold;
             public void Start()
             {
                 if (hostBody == null) hostBody = GetComponent<CharacterBody>();
             }
-            public void AddStacks(int stacksToAdd)
+            public void AddStacks(float percentageToAdd)
             {
-                stacksRemaining += stacksToAdd;
-                stopwatch = 0;
-            }
-            public void FixedUpdate()
-            {
-                if (hostBody != null)
-                {
-                    if (stacksRemaining > 0)
-                    {
-                        stopwatch += Time.fixedDeltaTime;
-                        if (stopwatch > interval)
-                        {
-                            if(NetworkServer.active) hostBody.AddBuff(ScrapyardContent.Buffs.bdLethalInjection);
-                            hostBody.statsDirty = true;
-                            injectionExecuteThreshold = Util.ConvertAmplificationPercentageIntoReductionPercentage(hostBody.GetBuffCount(ScrapyardContent.Buffs.bdLethalInjection) / 100f);
-                            stacksRemaining--;
-                            stopwatch -= interval;
-                        }
-                    }
-                    else
-                    {
-                        stopwatch = 0;
-                    }
-                }
+                hostBody.statsDirty = true;
+                injectionExecuteThreshold += Util.ConvertAmplificationPercentageIntoReductionPercentage(percentageToAdd);
             }
         }
     }

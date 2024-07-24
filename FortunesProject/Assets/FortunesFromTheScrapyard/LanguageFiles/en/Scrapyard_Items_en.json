@@ -20,7 +20,7 @@
     "SCRAPYARD_ITEM_MULTITOOLCONSUMED_LORE": "ow",
     "SCRAPYARD_ITEM_LETHALINJECTION_NAME": "Lethal Injection",
     "SCRAPYARD_ITEM_LETHALINJECTION_PICKUP": "High damage afflicts permanent execute.",
-    "SCRAPYARD_ITEM_LETHALINJECTION_DESC": "Hits that deal <style=cIsDamage>more than 400% damage</style> also inflict a toxin that <style=cIsHealth>permanently</style> reduces maximum health by <style=cIsDamage>1%</style> every {2} seconds. Toxin lasts for <style=cIsUtility>{0}</style> seconds <style=cStack>(+{1} per stack)</style>.",
+    "SCRAPYARD_ITEM_LETHALINJECTION_DESC": "Hits that deal <style=cIsDamage>more than 400% damage</style> also inflict a toxin that <style=cIsHealth>permanently</style> reduces maximum health by <style=cIsDamage>{0}%</style> <style=cStack>(+{1}% per stack)</style> of the damage dealt.",
     "SCRAPYARD_ITEM_LETHALINJECTION_LORE": "ow",
     "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_NAME": "Counterfeit Currency",
     "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_PICKUP": "Begin each stage with extra gold... <style=cIsHealth>BUT gain less gold.</style>",

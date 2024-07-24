@@ -15,12 +15,8 @@ namespace FortunesFromTheScrapyard.Items
         public static int stackChance = 7;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static float poisonTotalDamage = 2;
-        private static DotBuffDef _dotBuffDef;
         public override void Initialize()
         {
-            _dotBuffDef = AssetCollection.FindAsset<DotBuffDef>("dbdSprayCan");
-            _dotBuffDef.Init();
-            _dotBuffDef.DotDef.damageColorIndex = DamageColorIndex.Poison;
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -31,11 +27,6 @@ namespace FortunesFromTheScrapyard.Items
         public override ScrapyardAssetRequest LoadAssetRequest()
         {
             return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acSprayCan", ScrapyardBundle.Indev);
-        }
-
-        public override void ModifyContentPack(ContentPack contentPack)
-        {
-            contentPack.buffDefs.AddSingle(_dotBuffDef);
         }
 
         public class SprayCanBehaviour : BaseItemBodyBehavior, IOnDamageDealtServerReceiver
@@ -53,22 +44,7 @@ namespace FortunesFromTheScrapyard.Items
                     if ((damageInfo != null) ? damageInfo.inflictor : null)
                     {
                         ProjectileDamage component = damageInfo.inflictor.GetComponent<ProjectileDamage>();
-                        if (component && component.useDotMaxStacksFromAttacker)
-                        {
-                            maxStacksFromAttacker = new uint?(component.dotMaxStacksFromAttacker);
-                        }
                     }
-
-                    InflictDotInfo inflictDotInfo = new InflictDotInfo
-                    {
-                        attackerObject = damageInfo.attacker,
-                        victimObject = damageReport.victimBody.gameObject,
-                        totalDamage = new float?(damageInfo.damage * poisonTotalDamage),
-                        damageMultiplier = 1f,
-                        dotIndex = _dotBuffDef.DotIndex,
-                        maxStacksFromAttacker = maxStacksFromAttacker
-                    };
-                    DotController.InflictDot(ref inflictDotInfo);
                 }
             }
         }
