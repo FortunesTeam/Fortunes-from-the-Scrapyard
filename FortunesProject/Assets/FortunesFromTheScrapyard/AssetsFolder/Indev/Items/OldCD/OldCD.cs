@@ -37,7 +37,7 @@ namespace FortunesFromTheScrapyard.Items
                 GenericSkill secondary = skillSlot.characterBody.skillLocator.secondary;
                 GenericSkill utility = skillSlot.characterBody.skillLocator.utility;
                 GenericSkill special = skillSlot.characterBody.skillLocator.special;
-                bool primaryIsJartificer = skillSlot.skillDef.requiredStock > 0;
+                bool primaryIsJartificer = skillSlot.baseRechargeInterval > 0.5f;
 
                 if(primaryIsJartificer)
                 {

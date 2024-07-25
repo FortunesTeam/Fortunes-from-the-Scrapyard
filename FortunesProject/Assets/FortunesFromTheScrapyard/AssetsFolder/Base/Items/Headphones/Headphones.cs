@@ -70,8 +70,10 @@ namespace FortunesFromTheScrapyard.Items
             public void OnDamageDealtServer(DamageReport damageReport)
             {
                 if (!NetworkServer.active) { return; }
+
                 CharacterBody attackerBody = damageReport.attacker.GetComponent<CharacterBody>();
                 CharacterBody victimBody = damageReport.victimBody;
+
                 if (attackerBody && !damageReport.damageInfo.HasModdedDamageType(HeadphonesDamage))
                 {
                     if (victimBody.HasBuff(ScrapyardContent.Buffs.bdDisorient) && damageReport.damageInfo.dotIndex == DotController.DotIndex.None)
@@ -86,7 +88,7 @@ namespace FortunesFromTheScrapyard.Items
                         blastAttack.teamIndex = attackerBody.teamComponent.teamIndex;
                         blastAttack.baseDamage = damageReport.damageDealt * Headphones.GetStackValue(headphoneBaseDamage, headphoneDamageStack, attackerBody.inventory.GetItemCount(ScrapyardContent.Items.Headphones));
                         blastAttack.baseForce = 100f;
-                        blastAttack.position = base.transform.position;
+                        blastAttack.position = damageReport.damageInfo.position;
                         blastAttack.radius = Headphones.GetStackValue(headphoneRaduisBase, headphoneRaduisStack, attackerBody.inventory.GetItemCount(ScrapyardContent.Items.Headphones));
                         blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                         // blastAttack.bonusForce = Vector3.zero;
