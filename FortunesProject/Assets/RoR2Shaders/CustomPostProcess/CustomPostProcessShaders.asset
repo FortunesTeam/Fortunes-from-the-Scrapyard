@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1229136950, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: CustomPostProcessShaders
+  m_EditorClassIdentifier:
+  assets:
+  - {fileID: 4800000, guid: 0752f4eba1104a24fbc855557fbdf48d, type: 2}
+  - {fileID: 4800000, guid: e87ee6b85c59fe24cacecf625e689ef9, type: 2}
+  - {fileID: 4800000, guid: 3bad83105e80bb14eb1b8e2f043f97bc, type: 2}
+  - {fileID: 4800000, guid: d445fccb169c6404eb02c096cb29e1ae, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01757c054bc917a4dacb91a6f472f7b6, type: 3}
+  m_Name: acHeadphones
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: a2498b6d26c5890418219b9016751489, type: 2}
+  - {fileID: 11400000, guid: 077f66b79eeba7e4d8545ba772c3bcac, type: 2}
+  - {fileID: 8419368069463075683, guid: b9ffe6fe3d59aff4e942cf77e0b09e33, type: 3}
+  itemDisplayPrefabs:
+  - {fileID: 3890030943585171948, guid: 46e15a2381979ef4580f99894bfea6ca, type: 3}
+  itemDef: {fileID: 11400000, guid: a2498b6d26c5890418219b9016751489, type: 2}

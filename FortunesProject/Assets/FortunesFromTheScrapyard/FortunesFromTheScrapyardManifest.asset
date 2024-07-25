@@ -122,6 +122,9 @@ MonoBehaviour:
   - assetBundleName: fortunesindev
     assets:
     - {fileID: 102900000, guid: 04daa874dedc0ba4fb03b4de151fa8cb, type: 3}
+  - assetBundleName: fortunesbase
+    assets:
+    - {fileID: 102900000, guid: e675b6423b32f5448a7717e6f7423ce5, type: 3}
 --- !u!114 &114987763159783732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +141,7 @@ MonoBehaviour:
   - <BuildPathSoundbanks>
   includeMetaFiles: 0
   files:
-  - {fileID: 102900000, guid: dae993271eb6eac44baa8e0a9cced241, type: 3}
+  - {fileID: 102900000, guid: 40adcd62573bdb24e9b2ecc41fada75e, type: 3}
 --- !u!114 &8324102109481770816
 MonoBehaviour:
   m_ObjectHideFlags: 0

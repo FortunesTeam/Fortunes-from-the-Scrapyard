@@ -4,11 +4,11 @@
   <CreatedPicker>true</CreatedPicker>
   <CreateWwiseGlobal>true</CreateWwiseGlobal>
   <CreateWwiseListener>true</CreateWwiseListener>
-  <GenerateSoundBanksAsPreBuildStep>false</GenerateSoundBanksAsPreBuildStep>
+  <GenerateSoundBanksAsPreBuildStep>true</GenerateSoundBanksAsPreBuildStep>
   <ShowMissingRigidBodyWarning>true</ShowMissingRigidBodyWarning>
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
-  <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
+  <SoundbankPath>aa</SoundbankPath>
   <WwiseInstallationPathMac />
-  <WwiseInstallationPathWindows>D:\ProgramFiles\Wwise 2019.2.12.7544</WwiseInstallationPathWindows>
+  <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise2019.2.12.7544</WwiseInstallationPathWindows>
   <WwiseProjectPath>../FortunesProject_WwiseProject/FortunesProject_WwiseProject.wproj</WwiseProjectPath>
 </WwiseSettings>

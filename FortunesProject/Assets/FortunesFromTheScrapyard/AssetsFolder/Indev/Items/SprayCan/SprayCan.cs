@@ -21,7 +21,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override bool IsAvailable(ContentPack contentPack)
         {
-            return true;
+            return false;
         }
 
         public override ScrapyardAssetRequest LoadAssetRequest()
@@ -50,3 +50,4 @@ namespace FortunesFromTheScrapyard.Items
         }
     }
 }
+    

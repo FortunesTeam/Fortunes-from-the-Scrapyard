@@ -2,7 +2,8 @@
     "name": "FortunesFromTheScrapyard",
     "references": [
         "GUID:08e20a9dcb84ac748840227dcac08af2",
-        "GUID:a44f47cf3ada4435dbc516bad0bc86fe"
+        "GUID:a44f47cf3ada4435dbc516bad0bc86fe",
+        "GUID:c17544094b9341941b07459969ff8258"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -36,7 +37,11 @@
         "R2API.Director.dll",
         "MonoMod.Utils.dll",
         "Mono.Cecil.Pdb.dll",
-        "R2API.Language.dll"
+        "R2API.Language.dll",
+        "R2API.TempVisualEffect.dll",
+        "Unity.ResourceManager.dll",
+        "ShaderSwapper.dll",
+        "UnityEngine.SpatialTracking.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

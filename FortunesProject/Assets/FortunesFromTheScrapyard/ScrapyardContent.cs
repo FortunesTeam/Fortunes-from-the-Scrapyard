@@ -73,7 +73,17 @@ namespace FortunesFromTheScrapyard
         {
             yield break;
         }
+        /*
+        private IEnumerator LoadSoundBank()
+        {
+            ScrapyardAssetRequest<GameObject> request = ScrapyardAssets.LoadAssetAsync<GameObject>("ScrapyardSoundInitializer", ScrapyardBundle.Main);
+            while (!request.isComplete)
+                yield return null;
 
+            UnityEngine.Object.Instantiate(request.asset);
+            yield break;
+        }
+        */
         private IEnumerator AddExampleExpansionDef()
         {
             ScrapyardAssetRequest<ExpansionDef> request = ScrapyardAssets.LoadAssetAsync<ExpansionDef>("ScrapyardExpansionDef", ScrapyardBundle.Main);
@@ -90,6 +100,7 @@ namespace FortunesFromTheScrapyard
             ScrapyardAssets.onScrapyardAssetsInitialized += () =>
             {
                 _parallelPreLoadDispatchers.Add(AddExampleExpansionDef);
+                //_parallelPreLoadDispatchers.Add(LoadSoundBank);
             };
         }
 
@@ -129,6 +140,8 @@ namespace FortunesFromTheScrapyard
             public static ItemDef Takeout;
             public static ItemDef CounterfitCurrency;
             public static ItemDef FaultyTurbo;
+            public static ItemDef OldCD;
+            public static ItemDef DuctTape;
         }
 
         public static class Equipments
@@ -146,6 +159,7 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdTakeoutRegen;
             public static BuffDef bdFaultyTurbo;
             public static BuffDef bdLethalInjection;
+            public static BuffDef bdDuctTape;
         }
     }
 }

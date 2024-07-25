@@ -38,5 +38,10 @@ namespace FortunesFromTheScrapyard
 
             LanguageFileLoader.AddLanguageFilesFromMod(this, "ScrapyardLanguage");
         }
+
+        private void Start()
+        {
+            ScrapyardSoundbank.Init();
+        }
     }
 }

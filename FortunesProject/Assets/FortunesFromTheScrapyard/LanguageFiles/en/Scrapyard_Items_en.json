@@ -33,6 +33,14 @@
     "SCRAPYARD_ITEM_FAULTYTURBO_NAME": "Faulty Turbo",
     "SCRAPYARD_ITEM_FAULTYTURBO_PICKUP": "Chance to gain a massive speedboost while sprinting.",
     "SCRAPYARD_ITEM_FAULTYTURBO_DESC": "<style=cIsDamage>{4}% chance</style> <style=cStack>(+{5}% per stack)</style> every <style=cIsUtility>{3}</style> second to increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> for <style=cIsUtility>{1}</style> seconds <style=cStack>(+{2} per stack)</style>.",
-    "SCRAPYARD_ITEM_FAULTYTURBO_LORE": "Mmm, turbo boost."
+    "SCRAPYARD_ITEM_FAULTYTURBO_LORE": "Mmm, turbo boost.",
+    "SCRAPYARD_ITEM_OLDCD_NAME": "Old CD",
+    "SCRAPYARD_ITEM_OLDCD_PICKUP": ".",
+    "SCRAPYARD_ITEM_OLDCD_DESC": ".",
+    "SCRAPYARD_ITEM_OLDCD_LORE": "Mmm, CD.",
+    "SCRAPYARD_ITEM_TAPE_NAME": "Duct Tape",
+    "SCRAPYARD_ITEM_TAPE_PICKUP": ".",
+    "SCRAPYARD_ITEM_TAPE_DESC": ".",
+    "SCRAPYARD_ITEM_TAPE_LORE": "Mmm, Tape."
   }
 }

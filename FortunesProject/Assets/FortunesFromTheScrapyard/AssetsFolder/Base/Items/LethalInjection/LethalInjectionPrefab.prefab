@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3012242332223778003}
   - component: {fileID: 6889124023558059290}
   - component: {fileID: 6813017744832617731}
+  - component: {fileID: 2188872195921258824}
   m_Layer: 14
   m_Name: LethalInjectionPrefab
   m_TagString: Untagged
@@ -288,6 +289,28 @@ MonoBehaviour:
   lifetimeAfterImpact: 5
   lifetimeRandomOffset: 0
   transformSpace: 0
+--- !u!114 &2188872195921258824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867932828267146543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8abcbe3764a23a4b8ec083c1d7e832c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &3867932828298743402
 GameObject:
   m_ObjectHideFlags: 0

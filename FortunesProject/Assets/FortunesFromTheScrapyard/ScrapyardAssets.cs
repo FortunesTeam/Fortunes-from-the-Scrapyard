@@ -43,7 +43,8 @@ namespace FortunesFromTheScrapyard
         Main,
         Equipments,
         Items,
-        Indev
+        Indev,
+        Base
     }
     /// <summary>
     /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.
@@ -60,6 +61,7 @@ namespace FortunesFromTheScrapyard
         private const string EQUIPMENTS = "fortunesequipments";
         private const string ITEMS = "fortunesitems";
         private const string INDEV = "fortunesindev";
+        private const string BASE = "fortunesbase";
 
         private static string AssetBundleFolderPath => Path.Combine(Path.GetDirectoryName(ScrapyardMain.instance.Info.Location), ASSET_BUNDLE_FOLDER_NAME);
 
@@ -247,6 +249,7 @@ namespace FortunesFromTheScrapyard
                 case EQUIPMENTS: exampleBundle = ScrapyardBundle.Equipments; break;
                 case ITEMS: exampleBundle = ScrapyardBundle.Items; break;
                 case INDEV: exampleBundle = ScrapyardBundle.Indev; break;
+                case BASE: exampleBundle = ScrapyardBundle.Base; break;
 
                 //This path does not match any of the non scene bundles, could be a scene, we will mark these on only this ocassion as "StreamedScene".
                 default: exampleBundle = ScrapyardBundle.StreamedScene; break;

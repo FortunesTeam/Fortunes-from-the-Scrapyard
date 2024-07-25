@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="1220964245">
+		<SoundBank Id="3697235005" Language="SFX" Hash="3009270396">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
@@ -27,11 +27,11 @@
 			<IncludedMemoryFiles>
 				<File Id="427419216" Language="SFX">
 					<ShortName>EnergyBar.wav</ShortName>
-					<Path>SFX\EnergyBar_F9F8BD2F.wem</Path>
+					<Path>SFX\EnergyBar_D56E3E00.wem</Path>
 				</File>
 				<File Id="506165882" Language="SFX">
 					<ShortName>air-or-steam-pressure-release-29600.wav</ShortName>
-					<Path>SFX\air-or-steam-pressure-release-29600_79A8E4CD.wem</Path>
+					<Path>SFX\air-or-steam-pressure-release-29600_C0992993.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>
