@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdDisorient
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: 21300000, guid: d334ce40983949444abe82d0d8a15f24, type: 3}
   buffColor: {r: 0.498131, g: 0.5341374, b: 0.5471698, a: 1}
   canStack: 0
   eliteDef: {fileID: 0}
