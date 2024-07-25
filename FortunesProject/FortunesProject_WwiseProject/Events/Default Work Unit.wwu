@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_lethalinjection_activate" ID="{2FE8AB15-8F83-49A6-852C-446B30D81B6A}">
+					<ChildrenList>
+						<Action Name="" ID="{BED76310-7985-4D60-AF20-21526E8AB451}" ShortID="331810899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_lethalinjection_activate" ID="{49B438DE-89AE-4AA2-B393-E3E77D803A57}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

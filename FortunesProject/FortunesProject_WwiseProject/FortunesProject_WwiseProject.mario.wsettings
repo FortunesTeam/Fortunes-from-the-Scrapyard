@@ -3,6 +3,8 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{1A98D6B6-10ED-46D6-8D50-BFC23AB3CD8A}">
 			<PropertyList>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\mario\Downloads\"/>
+				<Property Name="Event Action List\{2FE8AB15-8F83-49A6-852C-446B30D81B6A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F1986A0A-959D-4E6E-BE36-223464CFCDBD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">

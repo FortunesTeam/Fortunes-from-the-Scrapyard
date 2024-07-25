@@ -3,7 +3,37 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{2841649C-710B-4757-8283-B938276F06DB}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="sfx_energybar_use" ID="{B61F9546-CE0A-42B0-8DEB-10C6AA8EC3C7}" ShortID="784067981">
+				<ActorMixer Name="SFX" ID="{2F92C768-3D89-4766-A81B-826C621EA20C}" ShortID="298816042">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{8FB1C7EF-DADA-42E6-85F7-AAB3EE191847}" ShortID="404145256">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Volume_SFX" ID="{C67D06D9-9B18-4B7B-B8B9-06221143807D}" WorkUnitID="{C0D3DB4A-2AF0-495C-ACEB-1A46DFB4A9C0}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{6FC7E64D-9D96-410C-96C5-EA45B74876AA}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
@@ -13,18 +43,110 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}">
-							<Language>SFX</Language>
-							<AudioFile>EnergyBar.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="427419216"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<ActorMixer Name="RandomPitch" ID="{FB9356D3-88AF-4EE7-A6EE-04A3AC09DE8A}" ShortID="17156773">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2EB71B84-72E5-49BF-9F03-5E4FA501D515}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="177"/>
+													<Property Name="Min" Type="Real64" Value="-152"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_lethalinjection_activate" ID="{49B438DE-89AE-4AA2-B393-E3E77D803A57}" ShortID="648849197">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>1060</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="air-or-steam-pressure-release-29600" ID="{A95F56B1-E3A1-49F1-A93F-1F6A9B8D5723}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.865344193282699"/>
+												<Property Name="FadeOutShape" Type="int16" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.50633989201062"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>air-or-steam-pressure-release-29600.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="506165882"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="air-or-steam-pressure-release-29600" ID="{A95F56B1-E3A1-49F1-A93F-1F6A9B8D5723}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_energybar_use" ID="{B61F9546-CE0A-42B0-8DEB-10C6AA8EC3C7}" ShortID="784067981">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.410826352663636"/>
+												<Property Name="FadeOutShape" Type="int16" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.438249270410705"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>EnergyBar.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="427419216"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="EnergyBar" ID="{09381F68-3815-4E22-BC73-AC26159AB652}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

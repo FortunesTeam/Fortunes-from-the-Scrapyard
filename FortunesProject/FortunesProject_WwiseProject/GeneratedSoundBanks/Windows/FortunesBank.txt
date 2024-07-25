@@ -1,6 +1,11 @@
 Event	ID	Name			Wwise Object Path	Notes
 	3280223896	sfx_energybar_use			\Default Work Unit\sfx_energybar_use	
+	3491240262	sfx_lethalinjection_activate			\Default Work Unit\sfx_lethalinjection_activate	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	427419216	sfx_energybar_use	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\EnergyBar_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_energybar_use		101896
+	427419216	sfx_energybar_use	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\EnergyBar_F9F8BD2F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_energybar_use		77436
+	506165882	sfx_lethalinjection_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\air-or-steam-pressure-release-29600_79A8E4CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lethalinjection_activate		132924
 

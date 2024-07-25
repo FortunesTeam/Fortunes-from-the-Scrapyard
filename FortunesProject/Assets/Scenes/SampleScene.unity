@@ -530,5 +530,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: LethalInjectionGhost
       objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0.17089105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707168605899752262, guid: 9f87e48d3a238054c81385ee97ac6e98,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f87e48d3a238054c81385ee97ac6e98, type: 3}
