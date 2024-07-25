@@ -29,10 +29,10 @@ namespace FortunesFromTheScrapyard.Items
         public static float checkInterval = 1f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 4)]
-        public static float baseChance = 0.05f;
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 5)]
-        public static float chancePerStack = 0.05f;
+        [FormatToken(TOKEN, 4)]
+        public static float baseChance = 5f;
+        [FormatToken(TOKEN, 5)]
+        public static float chancePerStack = 5f;
 
         public static BuffDef speedBuff;
         public override void Initialize()
@@ -78,7 +78,7 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval)
                 {
                     timer = 0f;
-                    if (Random.Range(0f, 1f) <= GetStackValue(baseChance, chancePerStack, stack))
+                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack), body.master))
                     {
                         if(NetworkServer.active)
                         {

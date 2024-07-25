@@ -90,7 +90,7 @@ namespace FortunesFromTheScrapyard
         public static string Format(object data, int i, string member)
         {
 #if UNITY_EDITOR
-            return $"['{nameof(ScrapyardLog)}')]: {data} | Line={i} : Member={member}";
+            return $"['{nameof(FortunesFromTheScrapyard.ScrapyardLog)}')]: {data} | Line={i} : Member={member}";
 #else
             return $"{data} | Line={i} : Member={member}";
 #endif
