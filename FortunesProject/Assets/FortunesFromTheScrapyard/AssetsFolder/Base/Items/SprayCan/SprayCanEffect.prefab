@@ -19295,7 +19295,7 @@ MonoBehaviour:
   positionAtReferencedTransform: 0
   parentToReferencedTransform: 0
   applyScale: 1
-  soundName: sfx_spray_activate
+  soundName: sfx_spraycan_activate
   disregardZScale: 0
 --- !u!114 &3358766388113857954
 MonoBehaviour:

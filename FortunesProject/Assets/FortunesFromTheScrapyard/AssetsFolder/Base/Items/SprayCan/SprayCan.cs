@@ -22,7 +22,7 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 1)]
-        public static int baseCooldown = 10;
+        public static int baseCooldown = 7;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
@@ -49,7 +49,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override ScrapyardAssetRequest LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acSprayCan", ScrapyardBundle.Indev);
+            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acSprayCan", ScrapyardBundle.Items);
         }
 
         public class SprayCanBehavior : BaseItemBodyBehavior, IOnIncomingDamageOtherServerReciever
@@ -72,7 +72,7 @@ namespace FortunesFromTheScrapyard.Items
                     if(body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
                     {
                         body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, 0);
-                        for(int i = 0; i <= 10; i++)
+                        for(int i = 0; i <= baseCooldown; i++)
                         {
                             body.AddTimedBuff(ScrapyardContent.Buffs.bdSprayCanCooldown, i);
                         }

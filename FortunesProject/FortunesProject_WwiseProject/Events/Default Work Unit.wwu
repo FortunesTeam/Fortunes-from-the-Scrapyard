@@ -25,6 +25,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_spraycan_activate" ID="{A3CBBA68-E906-4DE3-9128-990E0ABA7EAC}">
+					<ChildrenList>
+						<Action Name="" ID="{08D6C57A-DB2B-4E65-BC2C-585C5D69048D}" ShortID="546045471">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_spraycan_activate" ID="{F2A9061D-E8E1-4F6B-8E44-6ED9CC9B1754}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_ducttape_active" ID="{5CACF5FC-9B86-4D16-A9A4-BDCCF3A40AB6}">
+					<ChildrenList>
+						<Action Name="" ID="{A7887022-C148-4FEB-8D85-2ACFB8D0FBE3}" ShortID="215508073">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_ducttape_active" ID="{CA6A2F2A-CA58-4DFB-B2F5-72D609BCA90D}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

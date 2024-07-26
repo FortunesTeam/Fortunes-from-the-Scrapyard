@@ -1,6 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1927010350	sfx_spraycan_activate			\Default Work Unit\sfx_spraycan_activate	
 	3280223896	sfx_energybar_use			\Default Work Unit\sfx_energybar_use	
 	3491240262	sfx_lethalinjection_activate			\Default Work Unit\sfx_lethalinjection_activate	
+	3730456474	sfx_ducttape_active			\Default Work Unit\sfx_ducttape_active	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
@@ -8,4 +10,6 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	427419216	sfx_energybar_use	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\EnergyBar_D56E3E00.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_energybar_use		77436
 	506165882	sfx_lethalinjection_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\air-or-steam-pressure-release-29600_C0992993.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lethalinjection_activate		132924
+	575963976	sfx_ducttape_active	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\sfx_ducttape_active_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_ducttape_active		118848
+	704960360	sfx_spraycan_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\SFX\sfx_spraycan_activate_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_spraycan_activate		184384
 
