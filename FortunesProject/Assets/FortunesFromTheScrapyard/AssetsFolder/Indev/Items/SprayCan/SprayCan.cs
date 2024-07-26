@@ -4,24 +4,47 @@ using RoR2.ContentManagement;
 using MSU;
 using MSU.Config;
 using RoR2.Items;
+using static FortunesFromTheScrapyard.Items.LethalInjection;
+using UnityEngine.Networking;
+using UnityEngine;
+using R2API;
+using UnityEngine.UIElements;
 
 namespace FortunesFromTheScrapyard.Items
 {
     public class SprayCan : ScrapyardItem
     {
+        public const string TOKEN = "SCRAPYARD_ITEM_SPRAYCAN_DESC";
+
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        public static int baseChance = 11;
+        [FormatToken(TOKEN, 0)]
+        public static int baseUses = 20;
+
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        public static int stackChance = 7;
+        [FormatToken(TOKEN, 1)]
+        public static int baseCooldown = 10;
+
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        public static float poisonTotalDamage = 2;
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        public static float baseDamageRequirement = 3f;
+
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
+        public static float baseDamageCoefficient = 2f;
+
+        public static GameObject sprayCanEffect;
+
+        public static DamageAPI.ModdedDamageType SprayCanProc;
+
         public override void Initialize()
         {
+            SprayCanProc = DamageAPI.ReserveDamageType();
+            sprayCanEffect = AssetCollection.FindAsset<GameObject>("SprayCanEffect");
         }
 
         public override bool IsAvailable(ContentPack contentPack)
         {
-            return false;
+            return true;
         }
 
         public override ScrapyardAssetRequest LoadAssetRequest()
@@ -29,21 +52,105 @@ namespace FortunesFromTheScrapyard.Items
             return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acSprayCan", ScrapyardBundle.Indev);
         }
 
-        public class SprayCanBehaviour : BaseItemBodyBehavior, IOnDamageDealtServerReceiver
+        public class SprayCanBehavior : BaseItemBodyBehavior, IOnIncomingDamageOtherServerReciever
         {
+            [ItemDefAssociation]
             public static ItemDef GetItemDef() => ScrapyardContent.Items.SprayCan;
 
-            public void OnDamageDealtServer(DamageReport damageReport)
+            private int maxUses = 0;
+
+            private int uses;
+
+            public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             {
-                DamageInfo damageInfo = damageReport.damageInfo;
-                float chance = GetStackValue(baseChance, stackChance, stack);
-                float finalChance = Util.ConvertAmplificationPercentageIntoReductionPercentage(chance);
-                if (Util.CheckRoll(finalChance, damageReport.attackerMaster))
+                if (!NetworkServer.active)
                 {
-                    uint? maxStacksFromAttacker = null;
-                    if ((damageInfo != null) ? damageInfo.inflictor : null)
+                    return;
+                }
+                if (body && damageInfo.damage / body.damage >= 3 && !damageInfo.HasModdedDamageType(SprayCanProc))
+                {
+                    if(body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
                     {
-                        ProjectileDamage component = damageInfo.inflictor.GetComponent<ProjectileDamage>();
+                        body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, 0);
+                        for(int i = 0; i <= 10; i++)
+                        {
+                            body.AddTimedBuff(ScrapyardContent.Buffs.bdSprayCanCooldown, i);
+                        }
+                        if(body.GetItemCount(GetItemDef()) > 0)
+                        {
+                            DamageInfo SprayCanDamage = new DamageInfo
+                            {
+                                damage = Util.OnHitProcDamage(damageInfo.damage, body.damage, baseDamageCoefficient),
+                                damageColorIndex = DamageColorIndex.Item,
+                                damageType = DamageType.Generic,
+                                attacker = damageInfo.attacker,
+                                crit = damageInfo.crit,
+                                force = Vector3.zero,
+                                inflictor = null,
+                                position = damageInfo.position,
+                                procChainMask = damageInfo.procChainMask,
+                                procCoefficient = 1f
+                            };
+                            EffectManager.SimpleImpactEffect(sprayCanEffect, damageInfo.position, Vector3.up, transmit: true);
+                            victimHealthComponent.TakeDamage(SprayCanDamage);
+                            ConsumeUse();
+                        }
+                    }
+                }
+            }
+
+            private void ConsumeUse()
+            {
+                uses--;
+                if(uses + baseUses == maxUses)
+                {
+                    body.inventory.RemoveItem(GetItemDef());
+                    body.inventory.GiveItem(ScrapyardContent.Items.SprayCanConsumed);
+                }
+            }
+
+            private void OnDisable()
+            {
+                if (NetworkServer.active && body)
+                {
+                    if (body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
+                    {
+                        body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, 0);
+                    }
+                    if (body.HasBuff(ScrapyardContent.Buffs.bdSprayCanCooldown))
+                    {
+                        body.RemoveBuff(ScrapyardContent.Buffs.bdSprayCanCooldown);
+                    }
+                }
+
+                uses = 0;
+                maxUses = 0;
+            }
+
+            private void FixedUpdate()
+            {
+                if (maxUses > body.GetItemCount(GetItemDef()) * baseUses)
+                {
+                    maxUses = body.GetItemCount(GetItemDef()) * baseUses;
+                    if(uses != maxUses) uses -= baseUses;
+                }
+                else if (maxUses < body.GetItemCount(GetItemDef()) * baseUses)
+                {
+                    maxUses = body.GetItemCount(GetItemDef()) * baseUses;
+                    if (uses != maxUses) uses += baseUses;
+                }
+
+                if(NetworkServer.active && body)
+                {
+                    bool onCooldown = body.HasBuff(ScrapyardContent.Buffs.bdSprayCanCooldown);
+                    bool ready = body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady);
+                    if (!onCooldown && !ready)
+                    {
+                        body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, uses);
+                    }
+                    if (ready && onCooldown)
+                    {
+                        body.RemoveBuff(ScrapyardContent.Buffs.bdSprayCanReady);
                     }
                 }
             }

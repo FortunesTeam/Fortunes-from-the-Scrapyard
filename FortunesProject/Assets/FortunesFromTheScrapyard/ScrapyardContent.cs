@@ -137,6 +137,7 @@ namespace FortunesFromTheScrapyard
             public static ItemDef Multitool;
             public static ItemDef MultitoolConsumed;
             public static ItemDef SprayCan;
+            public static ItemDef SprayCanConsumed;
             public static ItemDef Takeout;
             public static ItemDef CounterfitCurrency;
             public static ItemDef FaultyTurbo;
@@ -153,7 +154,8 @@ namespace FortunesFromTheScrapyard
         {
             public static BuffDef bdEnergyBar;
             public static BuffDef bdDisorient;
-            public static BuffDef bdSprayCan;
+            public static BuffDef bdSprayCanCooldown;
+            public static BuffDef bdSprayCanReady;
             public static BuffDef bdTakeoutDmg;
             public static BuffDef bdTakeoutSpeed;
             public static BuffDef bdTakeoutRegen;

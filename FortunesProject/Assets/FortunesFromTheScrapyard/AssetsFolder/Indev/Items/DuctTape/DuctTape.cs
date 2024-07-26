@@ -51,7 +51,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override ScrapyardAssetRequest LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acDuctTape", ScrapyardBundle.Items);
+            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acDuctTape", ScrapyardBundle.Indev);
         }
         public class DuctTapeBehaviour : BaseItemBodyBehavior
         {

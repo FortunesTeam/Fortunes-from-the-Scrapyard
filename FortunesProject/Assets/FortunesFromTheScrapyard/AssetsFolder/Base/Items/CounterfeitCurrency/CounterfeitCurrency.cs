@@ -72,7 +72,6 @@ namespace FortunesFromTheScrapyard.Items
             {
                 incomeModifier *= (1 - incomePenaltyBase);
                 incomeModifier *= Mathf.Pow(1 - incomePenaltyStack, itemCount - 1);
-                Debug.Log(incomeModifier);
             }
             return incomeModifier;
         }

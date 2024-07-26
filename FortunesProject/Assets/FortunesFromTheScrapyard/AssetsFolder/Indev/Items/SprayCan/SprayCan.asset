@@ -19,8 +19,9 @@ MonoBehaviour:
   descriptionToken: SCRAPYARD_ITEM_SPRAYCAN_DESC
   loreToken: SCRAPYARD_ITEM_SPRAYCAN_LORE
   unlockableDef: {fileID: 0}
-  pickupModelPrefab: {fileID: 0}
-  pickupIconSprite: {fileID: 0}
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: 3b0956983d26e864294dfbb3d90dfe3f,
+    type: 3}
+  pickupIconSprite: {fileID: 21300000, guid: 09962d2a04edaab43a1261040a39e378, type: 3}
   hidden: 0
   canRemove: 1
   tags: 01000000

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdDuctTape
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: 21300000, guid: a7debdbb024d8e54ca7c885c9e15cbbc, type: 3}
   buffColor: {r: 0.7167323, g: 0.8207547, b: 0.7162246, a: 1}
   canStack: 0
   eliteDef: {fileID: 0}

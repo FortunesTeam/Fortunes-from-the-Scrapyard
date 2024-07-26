@@ -37,10 +37,10 @@ namespace FortunesFromTheScrapyard.Items
 
         public static GameObject headphonesShockwavePrefab;
 
-        public static DamageAPI.ModdedDamageType HeadphonesDamage;
+        public static DamageAPI.ModdedDamageType HeadphonesProc;
         public override void Initialize()
         {
-            HeadphonesDamage = DamageAPI.ReserveDamageType();
+            HeadphonesProc = DamageAPI.ReserveDamageType();
 
             headphonesShockwavePrefab = AssetCollection.FindAsset<GameObject>("HeadphoneShockwaveEffect");
 
@@ -63,22 +63,21 @@ namespace FortunesFromTheScrapyard.Items
             contentPack.AddContentFromAssetCollection(AssetCollection);
         }
 
-        public class HeadphonesBehaviour : BaseItemBodyBehavior, IOnDamageDealtServerReceiver
+        public class HeadphonesBehaviour : BaseItemBodyBehavior, IOnIncomingDamageOtherServerReciever
         {
             [ItemDefAssociation]
             public static ItemDef GetItemDef() => ScrapyardContent.Items.Headphones;
-            public void OnDamageDealtServer(DamageReport damageReport)
+            public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             {
                 if (!NetworkServer.active) { return; }
 
-                CharacterBody attackerBody = damageReport.attacker.GetComponent<CharacterBody>();
-                CharacterBody victimBody = damageReport.victimBody;
+                CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
 
-                if (attackerBody && !damageReport.damageInfo.HasModdedDamageType(HeadphonesDamage))
+                if (attackerBody && !damageInfo.HasModdedDamageType(HeadphonesProc))
                 {
-                    if (victimBody.HasBuff(ScrapyardContent.Buffs.bdDisorient) && damageReport.damageInfo.dotIndex == DotController.DotIndex.None)
+                    if (victimHealthComponent.body.HasBuff(ScrapyardContent.Buffs.bdDisorient) && damageInfo.dotIndex == DotController.DotIndex.None)
                     {
-                        victimBody.RemoveBuff(ScrapyardContent.Buffs.bdDisorient);
+                        victimHealthComponent.body.RemoveBuff(ScrapyardContent.Buffs.bdDisorient);
 
                         BlastAttack blastAttack = new BlastAttack();
 
@@ -86,31 +85,32 @@ namespace FortunesFromTheScrapyard.Items
                         blastAttack.attacker = attackerBody.gameObject;
                         blastAttack.inflictor = null;
                         blastAttack.teamIndex = attackerBody.teamComponent.teamIndex;
-                        blastAttack.baseDamage = damageReport.damageDealt * Headphones.GetStackValue(headphoneBaseDamage, headphoneDamageStack, attackerBody.inventory.GetItemCount(ScrapyardContent.Items.Headphones));
+                        blastAttack.baseDamage = attackerBody.damage * GetStackValue(headphoneBaseDamage, headphoneDamageStack, attackerBody.inventory.GetItemCount(GetItemDef()));
                         blastAttack.baseForce = 100f;
-                        blastAttack.position = damageReport.damageInfo.position;
-                        blastAttack.radius = Headphones.GetStackValue(headphoneRaduisBase, headphoneRaduisStack, attackerBody.inventory.GetItemCount(ScrapyardContent.Items.Headphones));
+                        blastAttack.position = damageInfo.position;
+                        blastAttack.radius = GetStackValue(headphoneRaduisBase, headphoneRaduisStack, attackerBody.inventory.GetItemCount(GetItemDef()));
                         blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                         // blastAttack.bonusForce = Vector3.zero;
                         blastAttack.damageType = DamageType.Shock5s;
-                        blastAttack.AddModdedDamageType(HeadphonesDamage);
+                        blastAttack.damageColorIndex = DamageColorIndex.Item;
+                        blastAttack.AddModdedDamageType(HeadphonesProc);
                         blastAttack.Fire();
                         
                         EffectManager.SpawnEffect(headphonesShockwavePrefab, new EffectData
                         {
-                            origin = damageReport.damageInfo.position,
+                            origin = damageInfo.position,
                             rotation = Quaternion.identity,
                             scale = 2f
-                        }, false);
+                        }, true);
 
                     }
-                    else if (!victimBody.HasBuff(ScrapyardContent.Buffs.bdDisorient))
+                    else if (!victimHealthComponent.body.HasBuff(ScrapyardContent.Buffs.bdDisorient))
                     {
-                        float procChance = chanceBase * damageReport.damageInfo.procCoefficient;
+                        float procChance = chanceBase * damageInfo.procCoefficient;
                         float adjustedProcChance = Util.ConvertAmplificationPercentageIntoReductionPercentage(procChance);
-                        if (Util.CheckRoll(adjustedProcChance, damageReport.attackerMaster))
+                        if (Util.CheckRoll(adjustedProcChance, attackerBody.master))
                         {
-                            victimBody.AddBuff(ScrapyardContent.Buffs.bdDisorient);
+                            victimHealthComponent.body.AddBuff(ScrapyardContent.Buffs.bdDisorient);
                         }
                     }
                 }

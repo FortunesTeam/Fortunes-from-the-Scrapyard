@@ -41,7 +41,8 @@
         "R2API.TempVisualEffect.dll",
         "Unity.ResourceManager.dll",
         "ShaderSwapper.dll",
-        "UnityEngine.SpatialTracking.dll"
+        "UnityEngine.SpatialTracking.dll",
+        "LegacyResourcesAPI.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

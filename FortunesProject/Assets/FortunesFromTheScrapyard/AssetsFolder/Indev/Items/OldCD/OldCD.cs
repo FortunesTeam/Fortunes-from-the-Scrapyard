@@ -61,7 +61,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override ScrapyardAssetRequest LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acOldCD", ScrapyardBundle.Items);
+            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acOldCD", ScrapyardBundle.Indev);
         }
     }
 }
