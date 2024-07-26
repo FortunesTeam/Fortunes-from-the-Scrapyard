@@ -15,7 +15,7 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float healthThreshold = 0.35f;
+        public static float healthThreshold = 0.4f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float healthThresholdPerStack = 0.025f;

@@ -30,7 +30,7 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
-        public static float baseDamageCoefficient = 2f;
+        public static float baseDamageCoefficient = 2.5f;
 
         public static GameObject sprayCanEffect;
 
