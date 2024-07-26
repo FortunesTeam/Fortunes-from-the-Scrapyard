@@ -47,6 +47,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_cd_1" ID="{61D8A285-43BD-4351-81A5-7A5568513C18}">
+					<ChildrenList>
+						<Action Name="" ID="{822029EA-CD86-4C94-90CB-84E168A429F7}" ShortID="822012504">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_cd_1" ID="{FC33510C-8AC0-4C92-A60B-510C48C709B2}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_cd_2" ID="{8D49596D-65D2-4E1F-943D-EC02FAE23850}">
+					<ChildrenList>
+						<Action Name="" ID="{51E4F052-3A3B-406C-B741-8D883BD01A27}" ShortID="33662932">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_cd_2" ID="{1B2F4CD4-2CEE-470D-A864-99AD767ECAC6}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_cd_3" ID="{D268B377-8E9A-4FFC-BDB2-1D0E5ECAD6FD}">
+					<ChildrenList>
+						<Action Name="" ID="{2D16F8CF-854D-4E18-B2BF-D7D3B9A882D7}" ShortID="397947427">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_cd_3" ID="{20D7F7D9-EE92-494E-82FE-3976A21B6282}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

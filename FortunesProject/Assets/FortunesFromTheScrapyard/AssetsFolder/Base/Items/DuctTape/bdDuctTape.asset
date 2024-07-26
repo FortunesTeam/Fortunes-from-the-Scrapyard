@@ -20,4 +20,4 @@ MonoBehaviour:
   isDebuff: 0
   isCooldown: 0
   isHidden: 0
-  startSfx: {fileID: 11400000, guid: 0d2f4e815d237204084f3de14a9e32d7, type: 2}
+  startSfx: {fileID: 0}

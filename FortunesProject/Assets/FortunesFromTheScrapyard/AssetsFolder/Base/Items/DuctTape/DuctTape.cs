@@ -64,7 +64,11 @@ namespace FortunesFromTheScrapyard.Items
                 {
                     if (body.healthComponent.health <= body.healthComponent.fullCombinedHealth * GetStackValue(healthThreshold, healthThresholdPerStack, body.GetItemCount(GetItemDef())))
                     {
-                        if (!body.HasBuff(ScrapyardContent.Buffs.bdDuctTape)) body.AddBuff(ScrapyardContent.Buffs.bdDuctTape);
+                        if (!body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))
+                        {
+                            Util.PlaySound("sfx_ducttape_active", body.gameObject);
+                            body.AddBuff(ScrapyardContent.Buffs.bdDuctTape);
+                        }
                     }
                     else if (body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))
                     {

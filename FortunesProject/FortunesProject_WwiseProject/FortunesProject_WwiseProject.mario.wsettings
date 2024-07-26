@@ -5,7 +5,11 @@
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\mario\Downloads\"/>
 				<Property Name="Event Action List\{2FE8AB15-8F83-49A6-852C-446B30D81B6A}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{5CACF5FC-9B86-4D16-A9A4-BDCCF3A40AB6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{61D8A285-43BD-4351-81A5-7A5568513C18}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8D49596D-65D2-4E1F-943D-EC02FAE23850}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{A3CBBA68-E906-4DE3-9128-990E0ABA7EAC}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{D268B377-8E9A-4FFC-BDB2-1D0E5ECAD6FD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F1986A0A-959D-4E6E-BE36-223464CFCDBD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">

@@ -21,8 +21,14 @@ namespace FortunesFromTheScrapyard.Items
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float cooldownReductionStack = 0.025f;
 
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        public static bool weezerEnabled = true;
+
+        public static GameObject WeezerEffect;
         public override void Initialize()
         {
+            WeezerEffect = AssetCollection.FindAsset<GameObject>("WeezerEffect");
+
             On.RoR2.GenericSkill.OnExecute += GenericSkill_OnExecute;
         }
 
@@ -45,6 +51,37 @@ namespace FortunesFromTheScrapyard.Items
                     if (skillSlot != secondary) secondary.rechargeStopwatch += secondary.cooldownRemaining * refund;
                     if (skillSlot != utility) utility.rechargeStopwatch += utility.cooldownRemaining * refund;
                     if (skillSlot != special) special.rechargeStopwatch += special.cooldownRemaining * refund;
+
+                    if(weezerEnabled)
+                    {
+                        int randomSFX;
+                        if (skillSlot == primary)
+                        {
+                            randomSFX = UnityEngine.Random.Range(0, 1);
+
+                            switch (randomSFX)
+                            {
+                                case 0:
+                                    {
+                                        Util.PlaySound("sfx_cd_1", skillSlot.gameObject);
+                                        break;
+                                    }
+                                case 1:
+                                    {
+                                        Util.PlaySound("sfx_cd_2", skillSlot.gameObject);
+                                        break;
+                                    }
+                            }
+                        }
+                        else
+                        {
+                            if (skillSlot == secondary) Util.PlaySound("sfx_cd_1", skillSlot.gameObject);
+                            if (skillSlot == utility) Util.PlaySound("sfx_cd_2", skillSlot.gameObject);
+                            if (skillSlot == special) Util.PlaySound("sfx_cd_3", skillSlot.gameObject);
+                        }
+                    }
+                    
+                    EffectManager.SimpleImpactEffect(WeezerEffect, skillSlot.characterBody.corePosition, Vector3.up, transmit: true);
                 }
             }
         }
@@ -61,7 +98,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override ScrapyardAssetRequest LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acOldCD", ScrapyardBundle.Indev);
+            return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acOldCD", ScrapyardBundle.Items);
         }
     }
 }

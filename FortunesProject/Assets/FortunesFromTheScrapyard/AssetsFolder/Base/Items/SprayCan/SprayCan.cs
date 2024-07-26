@@ -61,6 +61,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private int uses;
 
+            private bool wasConsumed = false;
             public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             {
                 if (!NetworkServer.active)
@@ -102,6 +103,7 @@ namespace FortunesFromTheScrapyard.Items
             private void ConsumeUse()
             {
                 uses--;
+                wasConsumed = true;
                 if(uses + baseUses == maxUses)
                 {
                     body.inventory.RemoveItem(GetItemDef());
@@ -132,19 +134,20 @@ namespace FortunesFromTheScrapyard.Items
                 if (maxUses > body.GetItemCount(GetItemDef()) * baseUses)
                 {
                     maxUses = body.GetItemCount(GetItemDef()) * baseUses;
-                    if(uses != maxUses) uses -= baseUses;
+                    if (!wasConsumed) uses -= baseUses;
+                    else wasConsumed = false;
                 }
-                else if (maxUses < body.GetItemCount(GetItemDef()) * baseUses)
+                if (maxUses < body.GetItemCount(GetItemDef()) * baseUses)
                 {
                     maxUses = body.GetItemCount(GetItemDef()) * baseUses;
-                    if (uses != maxUses) uses += baseUses;
+                    uses += baseUses;
                 }
 
                 if(NetworkServer.active && body)
                 {
                     bool onCooldown = body.HasBuff(ScrapyardContent.Buffs.bdSprayCanCooldown);
                     bool ready = body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady);
-                    if (!onCooldown && !ready)
+                    if (!onCooldown && !ready || maxUses != body.GetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady) && !onCooldown)
                     {
                         body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, uses);
                     }
