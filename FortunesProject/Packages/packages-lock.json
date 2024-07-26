@@ -241,11 +241,10 @@
       "dependencies": {}
     },
     "riskofthunder-ror2editorkit": {
-      "version": "https://github.com/risk-of-thunder/RoR2EditorKit.git",
+      "version": "file:RoR2EditorKit",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "1f026446ee48832fc8f81f64d2e5a1fc65ad6889"
+      "source": "embedded",
+      "dependencies": {}
     },
     "riskofthunder-ror2importextensions": {
       "version": "https://github.com/risk-of-thunder/RoR2ImportExtensions.git#1.4.1",
