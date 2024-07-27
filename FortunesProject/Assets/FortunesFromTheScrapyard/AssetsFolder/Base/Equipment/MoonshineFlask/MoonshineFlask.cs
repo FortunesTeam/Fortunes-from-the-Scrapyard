@@ -37,6 +37,8 @@ namespace FortunesFromTheScrapyard.Equipments
         public static GameObject missEffect;
 
         public static GameObject explosionEffect;
+
+        public static DamageAPI.ModdedDamageType MoonshineProc;
         public override bool Execute(EquipmentSlot slot)
         {
             CharacterBody body = slot.characterBody;
@@ -45,7 +47,6 @@ namespace FortunesFromTheScrapyard.Equipments
             {
                 if (NetworkServer.active)
                 {
-                    if (body.HasBuff(ScrapyardContent.Buffs.bdMoonshineFlask)) body.RemoveOldestTimedBuff(ScrapyardContent.Buffs.bdMoonshineFlask);
                     body.AddTimedBuff(ScrapyardContent.Buffs.bdMoonshineFlask, buffDuration);
                 }
                 Util.PlaySound("sfx_moonshine_use", body.gameObject);
@@ -56,6 +57,8 @@ namespace FortunesFromTheScrapyard.Equipments
 
         public override void Initialize()
         {
+            MoonshineProc = DamageAPI.ReserveDamageType();
+
             moonShineEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Tonic/TonicBuffEffect.prefab").WaitForCompletion().InstantiateClone("MoonshinePrefab", false);
 
             bool tempAdd(CharacterBody body) => body.HasBuff(ScrapyardContent.Buffs.bdMoonshineFlask);
@@ -112,9 +115,9 @@ namespace FortunesFromTheScrapyard.Equipments
             public static BuffDef GetBuffDef() => ScrapyardContent.Buffs.bdMoonshineFlask;
             public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             { 
-                if(damageInfo.dotIndex == DotController.DotIndex.None) 
+                if(damageInfo.dotIndex == DotController.DotIndex.None && !damageInfo.HasModdedDamageType(MoonshineProc)) 
                 {
-                    if (CharacterBody.HasBuff(GetBuffDef()) && !Util.CheckRoll(chanceToHit, CharacterBody.master.luck))
+                    if (CharacterBody.HasBuff(GetBuffDef()) && !Util.CheckRoll(Util.ConvertAmplificationPercentageIntoReductionPercentage(chanceToHit / CharacterBody.GetBuffCount(GetBuffDef())), CharacterBody.master.luck))
                     {
                         EffectManager.SpawnEffect(effectData: new EffectData
                         {
@@ -155,6 +158,7 @@ namespace FortunesFromTheScrapyard.Equipments
                             blastAttack.damageColorIndex = DamageColorIndex.Item;
                             blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                             blastAttack.damageType = damageInfo.damageType;
+                            blastAttack.AddModdedDamageType(MoonshineProc);
                             blastAttack.Fire();
 
                             CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);

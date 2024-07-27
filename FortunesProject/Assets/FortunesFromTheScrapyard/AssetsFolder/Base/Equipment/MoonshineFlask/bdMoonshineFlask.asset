@@ -15,7 +15,7 @@ MonoBehaviour:
   iconPath: 
   iconSprite: {fileID: 0}
   buffColor: {r: 0.7176471, g: 0.7853192, b: 0.94509804, a: 1}
-  canStack: 0
+  canStack: 1
   eliteDef: {fileID: 0}
   isDebuff: 0
   isCooldown: 0

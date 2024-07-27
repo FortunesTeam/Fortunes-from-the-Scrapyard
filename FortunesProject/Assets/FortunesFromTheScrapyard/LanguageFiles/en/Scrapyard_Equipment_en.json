@@ -6,8 +6,8 @@
     "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "ow",
     "SCRAPYARD_EQUIP_MOONSHINE_NAME": "Moonshine Flask",
     "SCRAPYARD_EQUIP_MOONSHINE_PICKUP": "Attacks have a chance to miss but every miss causes your attacks to explode.",
-    "SCRAPYARD_EQUIP_MOONSHINE_DESC": "<style=cIsDamage>{0}%</style> chance to miss but every miss causes your next attack to explode dealing <style=cIsDamage>{1}%</style> <style=cStack>(+{1}% per miss)</style> damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
+    "SCRAPYARD_EQUIP_MOONSHINE_DESC": "<style=cIsDamage>{0}%</style> <style=cStack>(+{0}% per drink)</style> chance to miss but every miss causes your next attack to explode dealing <style=cIsDamage>{1}%</style> <style=cStack>(+{1}% per miss)</style> damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
     "SCRAPYARD_EQUIP_MOONSHINE_LORE": "ow",
-    "SCRAPYARD_EQUIP_MOONSHINE_POPUP":  "MISSED!"
+    "SCRAPYARD_EQUIP_MOONSHINE_POPUP": "MISSED!"
   }
 }
