@@ -37,6 +37,8 @@ namespace FortunesFromTheScrapyard.Items
 
         public static GameObject headphonesShockwavePrefab;
 
+        public static GameObject headphonesVisualEffect;
+
         public static DamageAPI.ModdedDamageType HeadphonesProc;
         public override void Initialize()
         {
@@ -44,8 +46,15 @@ namespace FortunesFromTheScrapyard.Items
 
             headphonesShockwavePrefab = AssetCollection.FindAsset<GameObject>("HeadphoneShockwaveEffect");
 
+            headphonesVisualEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercExposeEffect.prefab").WaitForCompletion().InstantiateClone("HeadphonesVisualEffect");
+
+            //Needs better texture
+            headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetTexture("_MainTex", AssetCollection.FindAsset<Texture>("texSwirl"));
+            headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetTexture("_RemapTex", Addressables.LoadAssetAsync<Texture>("RoR2/Base/Common/ColorRamps/texRampHook.png").WaitForCompletion());
+            headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetFloat("_AlphaBoost", 20);
+
             bool tempAdd(CharacterBody body) => body.HasBuff(ScrapyardContent.Buffs.bdDisorient);
-            TempVisualEffectAPI.AddTemporaryVisualEffect(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercExposeEffect.prefab").WaitForCompletion(), tempAdd);
+            TempVisualEffectAPI.AddTemporaryVisualEffect(headphonesVisualEffect, tempAdd);
         }
 
         public override bool IsAvailable(ContentPack contentPack)

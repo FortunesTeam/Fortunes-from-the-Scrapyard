@@ -30,9 +30,9 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 4)]
-        public static float baseChance = 5f;
+        public static float baseChance = 10f;
         [FormatToken(TOKEN, 5)]
-        public static float chancePerStack = 5f;
+        public static float chancePerStack = 10f;
 
         public static BuffDef speedBuff;
         public override void Initialize()
@@ -84,6 +84,7 @@ namespace FortunesFromTheScrapyard.Items
                         {
                             if (body.HasBuff(speedBuff)) body.RemoveOldestTimedBuff(speedBuff);
                             body.AddTimedBuff(speedBuff, GetStackValue(baseDuration, baseDurationStack, stack));
+                            Util.PlaySound("sfx_turbo_start", body.gameObject);
                         }
                     }
                 }

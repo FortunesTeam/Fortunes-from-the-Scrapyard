@@ -42,7 +42,8 @@
         "Unity.ResourceManager.dll",
         "ShaderSwapper.dll",
         "UnityEngine.SpatialTracking.dll",
-        "LegacyResourcesAPI.dll"
+        "LegacyResourcesAPI.dll",
+        "R2API.Prefab.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

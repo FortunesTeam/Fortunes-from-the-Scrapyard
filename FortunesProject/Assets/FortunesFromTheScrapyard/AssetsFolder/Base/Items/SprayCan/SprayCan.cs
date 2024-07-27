@@ -104,7 +104,7 @@ namespace FortunesFromTheScrapyard.Items
             {
                 uses--;
                 wasConsumed = true;
-                if(uses + baseUses == maxUses)
+                if(uses <= maxUses - baseUses)
                 {
                     body.inventory.RemoveItem(GetItemDef());
                     body.inventory.GiveItem(ScrapyardContent.Items.SprayCanConsumed);

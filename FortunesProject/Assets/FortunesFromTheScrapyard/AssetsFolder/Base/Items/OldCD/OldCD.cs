@@ -15,11 +15,11 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float cooldownReduction = 0.025f;
+        public static float cooldownReduction = 0.1f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float cooldownReductionStack = 0.025f;
+        public static float cooldownReductionStack = 0.1f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static bool weezerEnabled = true;
@@ -38,12 +38,12 @@ namespace FortunesFromTheScrapyard.Items
 
             if(skillSlot.characterBody.HasItem(ScrapyardContent.Items.OldCD))
             {
-                float refund = GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD));
+                float refund = Util.ConvertAmplificationPercentageIntoReductionPercentage(GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD)));
                 GenericSkill primary = skillSlot.characterBody.skillLocator.primary;
                 GenericSkill secondary = skillSlot.characterBody.skillLocator.secondary;
                 GenericSkill utility = skillSlot.characterBody.skillLocator.utility;
                 GenericSkill special = skillSlot.characterBody.skillLocator.special;
-                bool primaryIsJartificer = skillSlot.baseRechargeInterval > 0.5f;
+                bool primaryIsJartificer = skillSlot.baseRechargeInterval >= 0.5f;
 
                 if(primaryIsJartificer)
                 {

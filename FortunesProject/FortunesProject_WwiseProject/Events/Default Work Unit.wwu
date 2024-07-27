@@ -80,6 +80,61 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_lunarmoney_start" ID="{B8D1A747-447C-47C9-9B2C-198D3A60414E}">
+					<ChildrenList>
+						<Action Name="" ID="{5BF1B9EA-2D6D-4A4E-A5F0-4C2ED48EEDCE}" ShortID="738348755">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_lunarmoney_start" ID="{30814DCD-B47D-44F6-A05F-09C0695216CB}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_turbo_start" ID="{88901154-0DE6-4750-81BA-B10D63D7CD06}">
+					<ChildrenList>
+						<Action Name="" ID="{875621B7-1705-4150-8DFA-A6A51A45F8AA}" ShortID="874860499">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_turbo_start" ID="{23A7954C-5374-41D0-B557-765645734A05}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_headphones_activate" ID="{D8A56927-8FE3-4F9E-98BC-20EB7620A3D5}">
+					<ChildrenList>
+						<Action Name="" ID="{4117E332-0D9A-4BC1-A6DC-FA23CACE7CD8}" ShortID="740785732">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_headphones_activate" ID="{97DFE28F-4E07-46C7-A58F-7109F8A2F669}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_moonshine_use" ID="{5473C270-9809-45F0-AC31-34AB6F6FF45E}">
+					<ChildrenList>
+						<Action Name="" ID="{3D698B3B-5BCF-4D23-8DFF-16CADFD09F5D}" ShortID="764869756">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_moonshine_use" ID="{E42FD9C6-E591-457F-B846-5474406EE3BB}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="sfx_moonshine_miss" ID="{E21C0DD6-2A91-493A-B2D7-564A556CD2ED}">
+					<ChildrenList>
+						<Action Name="" ID="{B13F1C16-0A7A-44EC-AD97-B9A9F3D2A30F}" ShortID="582293087">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_moonshine_miss" ID="{7640FFBB-54F2-472A-9BC7-EC229D0B1674}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -9766,7 +9766,7 @@ MonoBehaviour:
   positionAtReferencedTransform: 0
   parentToReferencedTransform: 0
   applyScale: 1
-  soundName: Play_captain_m2_tazer_bounce
+  soundName: sfx_headphones_activate
   disregardZScale: 0
 --- !u!114 &8419368069463075685
 MonoBehaviour:

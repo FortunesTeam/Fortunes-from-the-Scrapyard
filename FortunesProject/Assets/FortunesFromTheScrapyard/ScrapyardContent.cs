@@ -148,6 +148,7 @@ namespace FortunesFromTheScrapyard
         public static class Equipments
         {
             public static EquipmentDef EnergyBar;
+            public static EquipmentDef MoonshineFlask;
         }
 
         public static class Buffs
@@ -162,6 +163,8 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdFaultyTurbo;
             public static BuffDef bdLethalInjection;
             public static BuffDef bdDuctTape;
+            public static BuffDef bdMoonshineFlask;
+            public static BuffDef bdMoonshineStack;
         }
     }
 }

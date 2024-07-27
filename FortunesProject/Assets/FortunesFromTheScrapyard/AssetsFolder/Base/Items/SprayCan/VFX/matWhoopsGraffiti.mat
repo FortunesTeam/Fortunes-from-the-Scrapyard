@@ -80,7 +80,7 @@ Material:
     - _CloudNormalMap: 0
     - _CloudOffsetOn: 0
     - _CloudsOn: 1
-    - _Cull: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DepthOffset: 0
     - _DetailNormalMapScale: 1
@@ -126,7 +126,7 @@ Material:
     - _VertexAlphaOn: 0
     - _VertexColorOn: 0
     - _VertexOffsetOn: 0
-    - _ZTest: 4
+    - _ZTest: 8
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

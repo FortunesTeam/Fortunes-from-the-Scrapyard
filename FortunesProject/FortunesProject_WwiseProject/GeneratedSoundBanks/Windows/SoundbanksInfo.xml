@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="1508702023">
+		<SoundBank Id="3697235005" Language="SFX" Hash="1855702">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
@@ -26,13 +26,24 @@
 				<Event Id="73920334" Name="sfx_cd_3" ObjectPath="\Events\Default Work Unit\sfx_cd_3" DurationType="OneShot" DurationMin="1.697822" DurationMax="2.053168"/>
 				<Event Id="3730456474" Name="sfx_ducttape_active" ObjectPath="\Events\Default Work Unit\sfx_ducttape_active" DurationType="OneShot" DurationMin="0.607935" DurationMax="0.735174"/>
 				<Event Id="3280223896" Name="sfx_energybar_use" ObjectPath="\Events\Default Work Unit\sfx_energybar_use" DurationType="OneShot" DurationMin="0.395657" DurationMax="0.478467"/>
+				<Event Id="666364388" Name="sfx_headphones_activate" ObjectPath="\Events\Default Work Unit\sfx_headphones_activate" DurationType="OneShot" DurationMin="0.588086" DurationMax="0.711170"/>
 				<Event Id="3491240262" Name="sfx_lethalinjection_activate" ObjectPath="\Events\Default Work Unit\sfx_lethalinjection_activate" DurationType="OneShot" DurationMin="0.737244" DurationMax="0.891546"/>
+				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start" DurationType="OneShot" DurationMin="1.949381" DurationMax="2.357378"/>
 				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate" DurationType="OneShot" DurationMin="0.943348" DurationMax="1.140786"/>
+				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start" DurationType="OneShot" DurationMin="0.872126" DurationMax="1.054658"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="97956577" Language="SFX">
 					<ShortName>sfx_cd_2.wav</ShortName>
 					<Path>SFX\sfx_cd_2_10C4C929.wem</Path>
+				</File>
+				<File Id="240724819" Language="SFX">
+					<ShortName>sfx_headphones_activate.wav</ShortName>
+					<Path>SFX\sfx_headphones_activate_10C4C929.wem</Path>
+				</File>
+				<File Id="253797691" Language="SFX">
+					<ShortName>sfx_turbo_start.wav</ShortName>
+					<Path>SFX\sfx_turbo_start_10C4C929.wem</Path>
 				</File>
 				<File Id="427419216" Language="SFX">
 					<ShortName>EnergyBar.wav</ShortName>
@@ -57,6 +68,10 @@
 				<File Id="704960360" Language="SFX">
 					<ShortName>sfx_spraycan_activate.wav</ShortName>
 					<Path>SFX\sfx_spraycan_activate_10C4C929.wem</Path>
+				</File>
+				<File Id="710233405" Language="SFX">
+					<ShortName>sfx_lunarmoney_start.wav</ShortName>
+					<Path>SFX\sfx_lunarmoney_start_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>

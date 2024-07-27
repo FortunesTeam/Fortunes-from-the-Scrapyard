@@ -19,10 +19,10 @@ namespace FortunesFromTheScrapyard.Items
         public static int freeMoneyStack = 50;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
-        public static float incomePenaltyBase = 0.25f;
+        public static float incomePenaltyBase = 0.2f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
-        public static float incomePenaltyStack = 0.25f;
+        public static float incomePenaltyStack = 0.2f;
 
         public override void Initialize()
         {
@@ -39,6 +39,7 @@ namespace FortunesFromTheScrapyard.Items
                 float freeMoney = GetStackValue(freeMoneyBase, freeMoneyStack, itemCount);
                 float freeMoneyCompensated = freeMoney / CalculateIncomeModifier(itemCount);
                 self.GiveMoney((uint)Run.instance.GetDifficultyScaledCost((int)freeMoneyCompensated, Run.instance.difficultyCoefficient));
+                Util.PlaySound("sfx_lunarmoney_start", body.gameObject);    
             }
             orig(self, body);
         }
