@@ -50,7 +50,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0ece7223c0d3554284d5852f75bc679, type: 2}
+  - {fileID: 2100000, guid: 4b3c197d79a7954469cb89ed1e1300d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
         m_CallState: 2
   _teamIndex: 0
   ownerBody: {fileID: 0}
-  buff: {fileID: 11400000, guid: 2b4e3c0db86ffda468aed53714390d9d, type: 2}
+  buff: {fileID: 11400000, guid: df090254639399c42b2b4575304b42ef, type: 2}
 --- !u!1 &7355088243589263518
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0ece7223c0d3554284d5852f75bc679, type: 2}
+  - {fileID: 2100000, guid: 4b3c197d79a7954469cb89ed1e1300d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 7355088244062692336}
   - component: {fileID: 7355088244062692343}
   m_Layer: 0
-  m_Name: PotstickersRangeIndicator
+  m_Name: ChickenRangeIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -94,10 +94,10 @@ namespace FortunesFromTheScrapyard.Items
                         blastAttack.attacker = attackerBody.gameObject;
                         blastAttack.inflictor = null;
                         blastAttack.teamIndex = attackerBody.teamComponent.teamIndex;
-                        blastAttack.baseDamage = attackerBody.damage * GetStackValue(headphoneBaseDamage, headphoneDamageStack, attackerBody.inventory.GetItemCount(GetItemDef()));
+                        blastAttack.baseDamage = attackerBody.damage * GetStackValue(headphoneBaseDamage, headphoneDamageStack, attackerBody.GetItemCount(GetItemDef()));
                         blastAttack.baseForce = 100f;
                         blastAttack.position = damageInfo.position;
-                        blastAttack.radius = GetStackValue(headphoneRaduisBase, headphoneRaduisStack, attackerBody.inventory.GetItemCount(GetItemDef()));
+                        blastAttack.radius = GetStackValue(headphoneRaduisBase, headphoneRaduisStack, attackerBody.GetItemCount(GetItemDef()));
                         blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                         // blastAttack.bonusForce = Vector3.zero;
                         blastAttack.damageType = DamageType.Shock5s;

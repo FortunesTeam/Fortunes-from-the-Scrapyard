@@ -250,8 +250,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8349950665300345919}
   - component: {fileID: 8349950665300345905}
-  - component: {fileID: 8349950665300345904}
-  m_Layer: 0
+  - component: {fileID: 8180525284658632110}
+  m_Layer: 15
   m_Name: ProximityTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8349950665300345904
+--- !u!114 &8180525284658632110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8349950665300345918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f8b98319eb380479cc90facc971499, type: 3}
+  m_Script: {fileID: 11500000, guid: 63a76e44eb7359a45a3485e98cd690f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerEvents:
