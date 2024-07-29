@@ -165,6 +165,8 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdDuctTape;
             public static BuffDef bdMoonshineFlask;
             public static BuffDef bdMoonshineStack;
+            public static BuffDef bdPotstickers;
+            public static BuffDef bdNoodles;
         }
     }
 }

@@ -16,6 +16,6 @@ MonoBehaviour:
   requiredEntitlement: {fileID: 0}
   nameToken: SCRAPYARD_EXPANSION_NAME
   descriptionToken: SCRAPYARD_EXPANSION_DESC
-  iconSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  disabledIconSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  iconSprite: {fileID: 21300000, guid: ba1cad8b6761eee40bc0773ddab205a9, type: 3}
+  disabledIconSprite: {fileID: 21300000, guid: 7904d9b326fcb08469124ca925726319, type: 3}
   runBehaviorPrefab: {fileID: 0}
