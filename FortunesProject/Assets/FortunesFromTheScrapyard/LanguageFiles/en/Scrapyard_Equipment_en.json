@@ -1,13 +1,13 @@
 {
   "strings": {
     "SCRAPYARD_EQUIP_ENERGYBAR_NAME": "Energy Bar",
-    "SCRAPYARD_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharing shields.",
-    "SCRAPYARD_EQUIP_ENERGYBAR_DESC": "Increase <style=cIsHealing>health regen</style> by <style=cIsHealing>{0}%</style> and <style=cIsUtility>movement speed</style> by <style=cIsUtility>{1}%</style> for <style=cIsUtility>{2}</style> seconds. Additionally begin recharging <style=cIsHealing>shield</style>. ",
-    "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "ow",
+    "SCRAPYARD_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharging shields.",
+    "SCRAPYARD_EQUIP_ENERGYBAR_DESC": "Increase <style=cIsHealing>base health regeneration</style> by <style=cIsHealing>{0}%</style> and <style=cIsUtility>movement speed</style> by <style=cIsUtility>{1}%</style> for <style=cIsUtility>{2}</style> seconds. Begin recharging <style=cIsHealing>shield</style>.",
+    "SCRAPYARD_EQUIP_ENERGYBAR_LORE": "The Energy bar has been fueling different worlds’ competitors and robotic athletes for centuries. With enough grams of plant (and other proteins) per bar, as well as high fructose syrups and artificial flavors, this Energy Bar is THE delicious, plant-and-other-based bar that challenges all the expectations of possible food. It remains the final reflection of our ongoing commitment to crafting foods with purpose, for business and for the galaxy.",
     "SCRAPYARD_EQUIP_MOONSHINE_NAME": "Moonshine Flask",
     "SCRAPYARD_EQUIP_MOONSHINE_PICKUP": "Attacks have a chance to miss but every miss causes your attacks to explode.",
-    "SCRAPYARD_EQUIP_MOONSHINE_DESC": "<style=cIsDamage>{0}%</style> <style=cStack>(+{0}% per drink)</style> chance to miss but every miss causes your next attack to explode dealing <style=cIsDamage>{1}%</style> <style=cStack>(+{1}% per miss)</style> damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
-    "SCRAPYARD_EQUIP_MOONSHINE_LORE": "ow",
+    "SCRAPYARD_EQUIP_MOONSHINE_DESC": "Drink the Moonshine, gaining <style=cIsDamage>{0}%</style> <style=cStack>(+{0}% per drink)</style> chance to miss. Every miss causes your next hit attack to explode dealing <style=cIsDamage>{1}%</style> of the missed damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
+    "SCRAPYARD_EQUIP_MOONSHINE_LORE": "You know you shouldn’t have brought this with you. Hell, you’re surprised it didn’t come up in any scans. It looks different than when you first had it on you, but the thirst has grown too much.",
     "SCRAPYARD_EQUIP_MOONSHINE_POPUP": "MISSED!"
   }
 }

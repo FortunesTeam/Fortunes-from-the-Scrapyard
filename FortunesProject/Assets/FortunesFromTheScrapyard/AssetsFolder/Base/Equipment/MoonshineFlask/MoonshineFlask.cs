@@ -22,11 +22,11 @@ namespace FortunesFromTheScrapyard.Equipments
 
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float baseDamage = 0.6f;
+        public static float basePercentageSaved = 0.6f;
 
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, 2)]
-        public static float baseRadius = 4f;
+        public static float baseRadius = 2.5f;
 
         [ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         [FormatToken(TOKEN, 3)]
@@ -76,7 +76,7 @@ namespace FortunesFromTheScrapyard.Equipments
 
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(missEffectDef);
 
-            explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarSkillReplacements/OmniExplosionCrowstorm.prefab").WaitForCompletion().InstantiateClone("MoonshineExplosionEffect", false);
+            explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarWisp/LunarWispTrackingBombExplosion.prefab").WaitForCompletion().InstantiateClone("MoonshineExplosionEffect", false);
             EffectComponent ex = explosionEffect.EnsureComponent<EffectComponent>();
             ex.soundName = "Play_lunar_wisp_attack2_explode";
             ex.applyScale = true;
@@ -113,6 +113,8 @@ namespace FortunesFromTheScrapyard.Equipments
         {
             [BuffDefAssociation]
             public static BuffDef GetBuffDef() => ScrapyardContent.Buffs.bdMoonshineFlask;
+
+            private float savedDamage;
             public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             { 
                 if(damageInfo.dotIndex == DotController.DotIndex.None && !damageInfo.HasModdedDamageType(MoonshineProc)) 
@@ -124,7 +126,11 @@ namespace FortunesFromTheScrapyard.Equipments
                             origin = damageInfo.position,
                             rotation = Util.QuaternionSafeLookRotation((damageInfo.force != Vector3.zero) ? damageInfo.force : UnityEngine.Random.onUnitSphere)
                         }, effectPrefab: missEffect, transmit: true);
+
                         damageInfo.rejected = true;
+
+                        savedDamage += damageInfo.damage * basePercentageSaved;
+
                         CharacterBody.AddBuff(ScrapyardContent.Buffs.bdMoonshineStack);
                     }
                     else if (CharacterBody.HasBuff(ScrapyardContent.Buffs.bdMoonshineStack))
@@ -133,8 +139,6 @@ namespace FortunesFromTheScrapyard.Equipments
                         if (buffCount > 0 && damageInfo.procCoefficient != 0f)
                         {
                             float radius = (baseRadius + baseRadius * (float)buffCount) * damageInfo.procCoefficient;
-                            float damageCoefficient = baseDamage + (baseDamage * (0.5f * (float)buffCount));
-                            float damage = Util.OnHitProcDamage(damageInfo.damage, damageInfo.damage, damageCoefficient);
 
                             EffectManager.SpawnEffect(explosionEffect, new EffectData
                             {
@@ -142,10 +146,11 @@ namespace FortunesFromTheScrapyard.Equipments
                                 scale = radius,
                                 rotation = Util.QuaternionSafeLookRotation(damageInfo.force)
                             }, transmit: true);
+
                             BlastAttack blastAttack = new BlastAttack
                             {
                                 position = damageInfo.position,
-                                baseDamage = damage,
+                                baseDamage = savedDamage,
                                 baseForce = 0f,
                                 radius = radius,
                                 attacker = damageInfo.attacker,
@@ -162,6 +167,7 @@ namespace FortunesFromTheScrapyard.Equipments
                             blastAttack.Fire();
 
                             CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);
+                            savedDamage = 0f;
                         }
                     }
                 }

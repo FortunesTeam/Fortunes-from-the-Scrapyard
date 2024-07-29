@@ -112,7 +112,7 @@ MonoBehaviour:
   assetBundles:
   - assetBundleName: fortunesmain
     assets:
-    - {fileID: 11400000, guid: 6f84110d73cce4c4985ff8d773a4382d, type: 2}
+    - {fileID: 102900000, guid: da3ee5665e90ba7408b768bec7f60eb0, type: 3}
   - assetBundleName: fortunesequipments
     assets:
     - {fileID: 102900000, guid: 4ea2d9e8acc9c0e43acc7d8506ea324b, type: 3}
