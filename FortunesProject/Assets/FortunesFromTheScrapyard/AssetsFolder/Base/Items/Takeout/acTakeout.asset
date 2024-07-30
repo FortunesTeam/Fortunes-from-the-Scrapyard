@@ -21,10 +21,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b4e3c0db86ffda468aed53714390d9d, type: 2}
   - {fileID: 8349950664178273086, guid: 88e7f5a69b2aff7459a8de6eb8afe848, type: 3}
   - {fileID: 7355088244062692341, guid: cf2cf84bafaea9e4a8ea56483043440e, type: 3}
-  - {fileID: 11400000, guid: 8ccb9f9e0d5717946b18085019cea123, type: 2}
+  - {fileID: 11400000, guid: df090254639399c42b2b4575304b42ef, type: 2}
   - {fileID: 7355088244062692341, guid: 3f04bb92e36fa0943a4a3e2491e4b692, type: 3}
   - {fileID: 11400000, guid: e2db746d0a617084ab6be454580fc2cb, type: 2}
-  - {fileID: 11400000, guid: df090254639399c42b2b4575304b42ef, type: 2}
   itemDisplayPrefabs:
   - {fileID: 3890030943585171948, guid: d093bb396b07d5c4e971b8ee244c0c7d, type: 3}
   itemDef: {fileID: 11400000, guid: d0d9d114e8ed1794ca6082f4624de55c, type: 2}

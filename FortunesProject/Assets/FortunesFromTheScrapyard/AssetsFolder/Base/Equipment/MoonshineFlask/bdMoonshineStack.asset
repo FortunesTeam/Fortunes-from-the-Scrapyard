@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdMoonshineStack
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: 21300000, guid: 97ba5ee796a37b2498cb0fd6e04700b7, type: 3}
   buffColor: {r: 0.92941624, g: 0.9433962, b: 0.7164471, a: 1}
   canStack: 1
   eliteDef: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdPotstickers
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 21300000, guid: 75495ae3733f7e2429339e2f83e09110, type: 3}
+  iconSprite: {fileID: 21300000, guid: 77e0484aac48c544e9dada861b406e7d, type: 3}
   buffColor: {r: 0.63146204, g: 1, b: 0.5990566, a: 1}
   canStack: 0
   eliteDef: {fileID: 0}
