@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: bdChickenCooldown
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 21300000, guid: e7c0db650f198be4b8ad3f2748f8f2d5, type: 3}
-  buffColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+  iconSprite: {fileID: 21300000, guid: 0812a807d1bd8da47b3718c75821da09, type: 3}
+  buffColor: {r: 1, g: 1, b: 1, a: 1}
   canStack: 1
   eliteDef: {fileID: 0}
   isDebuff: 0

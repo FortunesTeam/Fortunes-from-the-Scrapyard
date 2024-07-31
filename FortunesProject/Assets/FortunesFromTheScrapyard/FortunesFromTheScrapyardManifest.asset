@@ -15,7 +15,8 @@ MonoBehaviour:
   StagingPaths:
   - <BuildPath>
   includeMetaFiles: 0
-  files: []
+  files:
+  - {fileID: 2800000, guid: 8190d73437f3e7a41a5e8b8f7799c51b, type: 3}
 --- !u!114 &-3892906877110538616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
   Name: FortunesFromTheScrapyard
   Description: 'Fortunes from the Scrapyard is a community led, cyberpunk-inspired,
     content mod for Risk of Rain 2. '
-  Version: 0.0.1
+  Version: 0.5.0
   Dependencies:
   - {fileID: 11400000, guid: 5ceb1d8ed3af40d4d806e9756b403649, type: 2}
 --- !u!114 &114431642618062350
@@ -125,6 +126,9 @@ MonoBehaviour:
   - assetBundleName: fortunesbase
     assets:
     - {fileID: 102900000, guid: e675b6423b32f5448a7717e6f7423ce5, type: 3}
+  - assetBundleName: fortunessurvivors
+    assets:
+    - {fileID: 102900000, guid: dd3a463821e238341b0c1193736beede, type: 3}
 --- !u!114 &114987763159783732
 MonoBehaviour:
   m_ObjectHideFlags: 0

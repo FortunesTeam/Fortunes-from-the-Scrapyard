@@ -57,12 +57,12 @@ namespace FortunesFromTheScrapyard.Items
                         {
                             ownerBody.AddTimedBuff(buff, 7.5f);
 
+                            ownerBody.healthComponent.Heal(ownerBody.healthComponent.fullCombinedHealth * Takeout.GetStackValue(Takeout.healBase, Takeout.healStack, ownerBody.GetItemCount(ScrapyardContent.Items.Takeout)), default);
+
                             EffectManager.SpawnEffect(Takeout.potstickerImpactEffect, new EffectData
                             {
                                 origin = ownerBody.corePosition,
                             }, transmit: true);
-
-                            characterBody.AddTimedBuff(RoR2.RoR2Content.Buffs.Weak, 4f);
                         }
                         else if(buff == ScrapyardContent.Buffs.bdChickenCooldown)
                         {

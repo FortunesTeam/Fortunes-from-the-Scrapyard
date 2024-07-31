@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconPath: 
   iconSprite: {fileID: 21300000, guid: e7c0db650f198be4b8ad3f2748f8f2d5, type: 3}
-  buffColor: {r: 1, g: 0.3209499, b: 0.3066038, a: 1}
+  buffColor: {r: 1, g: 1, b: 1, a: 1}
   canStack: 0
   eliteDef: {fileID: 0}
   isDebuff: 0

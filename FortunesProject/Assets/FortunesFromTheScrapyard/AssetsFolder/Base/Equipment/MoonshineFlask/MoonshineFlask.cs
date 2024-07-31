@@ -125,7 +125,7 @@ namespace FortunesFromTheScrapyard.Equipments
                         {
                             origin = damageInfo.position,
                             rotation = Util.QuaternionSafeLookRotation((damageInfo.force != Vector3.zero) ? damageInfo.force : UnityEngine.Random.onUnitSphere)
-                        }, effectPrefab: missEffect, transmit: true);
+                        }, effectPrefab: missEffect, transmit: false);
 
                         damageInfo.rejected = true;
 

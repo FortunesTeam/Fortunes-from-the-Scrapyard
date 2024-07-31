@@ -18,14 +18,14 @@ namespace FortunesFromTheScrapyard.Items
         public static float healthThreshold = 0.4f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float healthThresholdPerStack = 0.025f;
+        public static float healthThresholdPerStack = 0.05f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
-        public static float baseHealingIncrease = 0.25f;
+        public static float baseHealingIncrease = 0.15f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
-        public static float healingIncreasePerStack = 0.05f;
+        public static float healingIncreasePerStack = 0.15f;
 
         public override void Initialize()
         {

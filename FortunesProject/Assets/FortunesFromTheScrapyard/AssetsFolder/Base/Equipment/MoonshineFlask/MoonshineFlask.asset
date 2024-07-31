@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupModelPrefab: {fileID: 7220967244448969959, guid: fff3d0dd362f4654cb7b15c13781d7e0,
     type: 3}
-  cooldown: 30
+  cooldown: 45
   nameToken: SCRAPYARD_EQUIP_MOONSHINE_NAME
   pickupToken: SCRAPYARD_EQUIP_MOONSHINE_PICKUP
   descriptionToken: SCRAPYARD_EQUIP_MOONSHINE_DESC

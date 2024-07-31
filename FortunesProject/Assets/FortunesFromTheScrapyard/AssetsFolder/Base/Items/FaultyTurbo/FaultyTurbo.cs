@@ -15,14 +15,14 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float movespeedBonus = 0.75f;
+        public static float movespeedBonus = 0.90f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 1)]
-        public static float baseDuration = 3f;
+        public static float baseDuration = 5f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 2)]
-        public static float baseDurationStack = 1f;
+        public static float baseDurationStack = 0.5f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 3)]
@@ -30,9 +30,9 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 4)]
-        public static float baseChance = 10f;
+        public static float baseChance = 15f;
         [FormatToken(TOKEN, 5)]
-        public static float chancePerStack = 10f;
+        public static float chancePerStack = 15f;
 
         public static BuffDef speedBuff;
         public override void Initialize()

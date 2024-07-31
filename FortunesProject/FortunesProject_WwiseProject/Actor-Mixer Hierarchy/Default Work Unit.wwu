@@ -147,7 +147,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -353,6 +353,11 @@
 												<Value>400</Value>
 											</ValueList>
 										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -408,7 +413,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -435,6 +440,28 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
+						<Sound Name="sfx_scrap_elite_spawn" ID="{FC3FAA02-7B86-4BEF-A786-21B2386A6EC9}" ShortID="773105875">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ScrapElite" ID="{AC3429D4-795E-4A49-A909-E6F569F63BB3}">
+									<Language>SFX</Language>
+									<AudioFile>ScrapElite.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1072221443"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ScrapElite" ID="{AC3429D4-795E-4A49-A909-E6F569F63BB3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

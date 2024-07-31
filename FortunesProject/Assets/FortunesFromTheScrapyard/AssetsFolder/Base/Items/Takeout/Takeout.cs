@@ -16,7 +16,7 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "SCRAPYARD_ITEM_TAKEOUT_DESC";
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float igniteBase = 1.5f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
@@ -38,6 +38,13 @@ namespace FortunesFromTheScrapyard.Items
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 6)]
         public static float regenStack = 1.5f;
+
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 7)]
+        public static float healBase = 0.075f;
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 8)]
+        public static float healStack = 0.075f;
 
         private static WeightedSelection<BuffDef> _weightedBuffSelection = new WeightedSelection<BuffDef>();
 
