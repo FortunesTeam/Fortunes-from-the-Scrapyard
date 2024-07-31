@@ -14,12 +14,12 @@ namespace FortunesFromTheScrapyard.Items
         public const string TOKEN = "SCRAPYARD_ITEM_OLDCD_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float cooldownReduction = 0.075f;
+        [FormatToken(TOKEN, 0)]
+        public static float cooldownReduction = 10f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float cooldownReductionStack = 0.075f;
+        [FormatToken(TOKEN, 1)]
+        public static float cooldownReductionStack = 10f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static bool weezerEnabled = true;
@@ -38,7 +38,7 @@ namespace FortunesFromTheScrapyard.Items
 
             if(skillSlot.characterBody.HasItem(ScrapyardContent.Items.OldCD))
             {
-                float refund = Util.ConvertAmplificationPercentageIntoReductionPercentage(GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD))) / skillSlot.rechargeStock;
+                float refund = Util.ConvertAmplificationPercentageIntoReductionPercentage(GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD)) / skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD)) / skillSlot.rechargeStock;
                 GenericSkill primary = skillSlot.characterBody.skillLocator.primary;
                 GenericSkill secondary = skillSlot.characterBody.skillLocator.secondary;
                 GenericSkill utility = skillSlot.characterBody.skillLocator.utility;
