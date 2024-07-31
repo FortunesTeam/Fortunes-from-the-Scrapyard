@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="1855702">
+		<SoundBank Id="3697235005" Language="SFX" Hash="396808657">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
@@ -29,7 +29,9 @@
 				<Event Id="666364388" Name="sfx_headphones_activate" ObjectPath="\Events\Default Work Unit\sfx_headphones_activate" DurationType="OneShot" DurationMin="0.588086" DurationMax="0.711170"/>
 				<Event Id="3491240262" Name="sfx_lethalinjection_activate" ObjectPath="\Events\Default Work Unit\sfx_lethalinjection_activate" DurationType="OneShot" DurationMin="0.737244" DurationMax="0.891546"/>
 				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start" DurationType="OneShot" DurationMin="1.949381" DurationMax="2.357378"/>
-				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate" DurationType="OneShot" DurationMin="0.943348" DurationMax="1.140786"/>
+				<Event Id="1222943750" Name="sfx_moonshine_miss" ObjectPath="\Events\Default Work Unit\sfx_moonshine_miss" DurationType="OneShot" DurationMin="0.260010" DurationMax="0.314429"/>
+				<Event Id="1755670239" Name="sfx_moonshine_use" ObjectPath="\Events\Default Work Unit\sfx_moonshine_use" DurationType="OneShot" DurationMin="0.859495" DurationMax="1.039383"/>
+				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate" DurationType="OneShot" DurationMin="0.650975" DurationMax="0.787221"/>
 				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start" DurationType="OneShot" DurationMin="0.872126" DurationMax="1.054658"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -57,6 +59,10 @@
 					<ShortName>air-or-steam-pressure-release-29600.wav</ShortName>
 					<Path>SFX\air-or-steam-pressure-release-29600_C0992993.wem</Path>
 				</File>
+				<File Id="522541223" Language="SFX">
+					<ShortName>sfx_moonshine_use.wav</ShortName>
+					<Path>SFX\sfx_moonshine_use_10C4C929.wem</Path>
+				</File>
 				<File Id="575963976" Language="SFX">
 					<ShortName>sfx_ducttape_active.wav</ShortName>
 					<Path>SFX\sfx_ducttape_active_10C4C929.wem</Path>
@@ -67,11 +73,19 @@
 				</File>
 				<File Id="704960360" Language="SFX">
 					<ShortName>sfx_spraycan_activate.wav</ShortName>
-					<Path>SFX\sfx_spraycan_activate_10C4C929.wem</Path>
+					<Path>SFX\sfx_spraycan_activate_CE43B46F.wem</Path>
 				</File>
 				<File Id="710233405" Language="SFX">
 					<ShortName>sfx_lunarmoney_start.wav</ShortName>
 					<Path>SFX\sfx_lunarmoney_start_10C4C929.wem</Path>
+				</File>
+				<File Id="1019549591" Language="SFX">
+					<ShortName>sfx_moonshine_miss.wav</ShortName>
+					<Path>SFX\sfx_moonshine_miss_10C4C929.wem</Path>
+				</File>
+				<File Id="1072221443" Language="SFX">
+					<ShortName>ScrapElite.wav</ShortName>
+					<Path>SFX\ScrapElite_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>

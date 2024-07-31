@@ -69,8 +69,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaBias: 0
-    - _AlphaBoost: 1
-    - _Boost: 1.86
+    - _AlphaBoost: 3
+    - _Boost: 2.5
     - _BumpScale: 1
     - _CalcTextureAlphaOn: 0
     - _CloudOffsetOn: 0
@@ -101,11 +101,11 @@ Material:
     - _OcclusionStrength: 1
     - _OffsetAmount: 0
     - _Parallax: 0.02
-    - _RimPower: 3.17
-    - _RimStrength: 0.23
+    - _RimPower: 3
+    - _RimStrength: 2.3
     - _SkyboxOnly: 0
     - _SmoothnessTextureChannel: 0
-    - _SoftPower: 0.85
+    - _SoftPower: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendFloat: 1

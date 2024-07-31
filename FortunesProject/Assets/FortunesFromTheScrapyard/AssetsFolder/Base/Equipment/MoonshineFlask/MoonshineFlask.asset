@@ -21,7 +21,7 @@ MonoBehaviour:
   loreToken: SCRAPYARD_EQUIP_MOONSHINE_LORE
   pickupIconSprite: {fileID: 21300000, guid: 360b104fcc107744a8b8d375302260f1, type: 3}
   unlockableDef: {fileID: 0}
-  colorIndex: 5
+  colorIndex: 4
   canDrop: 1
   dropOnDeathChance: 0
   canBeRandomlyTriggered: 0

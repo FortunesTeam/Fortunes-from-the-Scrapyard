@@ -38,19 +38,20 @@ namespace FortunesFromTheScrapyard.Items
 
             if(skillSlot.characterBody.HasItem(ScrapyardContent.Items.OldCD))
             {
-                float refund = Util.ConvertAmplificationPercentageIntoReductionPercentage(GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD)) / skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD)) / skillSlot.rechargeStock;
+
                 GenericSkill primary = skillSlot.characterBody.skillLocator.primary;
                 GenericSkill secondary = skillSlot.characterBody.skillLocator.secondary;
                 GenericSkill utility = skillSlot.characterBody.skillLocator.utility;
                 GenericSkill special = skillSlot.characterBody.skillLocator.special;
-                bool primaryIsJartificer = skillSlot.baseRechargeInterval >= 0.5f;
+                bool meetsCDRequirement = skillSlot.baseRechargeInterval >= 0.5f && skillSlot.rechargeStock > 0;
 
-                if(primaryIsJartificer)
+                if(meetsCDRequirement)
                 {
-                    if (skillSlot != primary) primary.rechargeStopwatch += primary.cooldownRemaining * refund;
-                    if (skillSlot != secondary) secondary.rechargeStopwatch += secondary.cooldownRemaining * refund;
-                    if (skillSlot != utility) utility.rechargeStopwatch += utility.cooldownRemaining * refund;
-                    if (skillSlot != special) special.rechargeStopwatch += special.cooldownRemaining * refund;
+                    float refund = Util.ConvertAmplificationPercentageIntoReductionPercentage(GetStackValue(cooldownReduction, cooldownReductionStack, skillSlot.characterBody.GetItemCount(ScrapyardContent.Items.OldCD))) / skillSlot.rechargeStock;
+                    if (skillSlot != primary) primary.rechargeStopwatch += primary.cooldownRemaining * (refund / 100f);
+                    if (skillSlot != secondary) secondary.rechargeStopwatch += secondary.cooldownRemaining * (refund / 100f);
+                    if (skillSlot != utility) utility.rechargeStopwatch += utility.cooldownRemaining * (refund / 100f);
+                    if (skillSlot != special) special.rechargeStopwatch += special.cooldownRemaining * (refund / 100f);
 
                     if(weezerEnabled)
                     {

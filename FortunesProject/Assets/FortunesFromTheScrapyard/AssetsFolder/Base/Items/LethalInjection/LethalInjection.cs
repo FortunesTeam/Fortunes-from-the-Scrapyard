@@ -61,7 +61,7 @@ namespace FortunesFromTheScrapyard.Items
                 CharacterBody attackerBody = body;
                 CharacterBody victimBody = damageReport.victimBody;
                 HealthComponent victimHealth = damageReport.victimBody.healthComponent;
-                if (victimBody && attackerBody && damageInfo.damage / attackerBody.damage >= 4)
+                if (victimBody && attackerBody && damageInfo.damage / attackerBody.damage >= 4 && damageInfo.procCoefficient > 0)
                 {
                     if (NetworkServer.active)
                     {
