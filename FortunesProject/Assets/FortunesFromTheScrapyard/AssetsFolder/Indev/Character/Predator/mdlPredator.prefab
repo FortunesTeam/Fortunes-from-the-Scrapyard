@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 1143142494, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
+  body: {fileID: 4143654847840627507, guid: 365aaa2095fc2e04c950e808574ceae9, type: 3}
   itemDisplayRuleSet: {fileID: 11400000, guid: f96db5122cab630439419cf288f0499e, type: 2}
   autoPopulateLightInfos: 1
   gameObjectActivationTransforms: []

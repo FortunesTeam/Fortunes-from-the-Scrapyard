@@ -109,7 +109,7 @@ namespace FortunesFromTheScrapyard.Items
                         {
                             origin = damageInfo.position,
                             rotation = Quaternion.identity,
-                            scale = 2f
+                            scale = 1f
                         }, true);
 
                     }

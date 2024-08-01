@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using FortunesFromTheScrapyard.Survivors;
 
 namespace FortunesFromTheScrapyard
 {
@@ -126,7 +127,8 @@ namespace FortunesFromTheScrapyard
             {
                 () => ContentUtil.PopulateTypeFields(typeof(Items), scrapyardContentPack.itemDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(Equipments), scrapyardContentPack.equipmentDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(Buffs), scrapyardContentPack.buffDefs)
+                () => ContentUtil.PopulateTypeFields(typeof(Buffs), scrapyardContentPack.buffDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Predator), scrapyardContentPack.survivorDefs)
             };
         }
 
@@ -169,6 +171,11 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdChickenCooldown;
             public static BuffDef bdPotstickers;
             public static BuffDef bdNoodles;
+        }
+
+        public static class Survivors
+        {
+            public static CharacterBody Predator;
         }
     }
 }

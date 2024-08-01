@@ -80,7 +80,7 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval)
                 {
                     timer = 0f;
-                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance) * pity, body.master))
+                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance * pity), body.master))
                     {
                         pity = 0;
 
