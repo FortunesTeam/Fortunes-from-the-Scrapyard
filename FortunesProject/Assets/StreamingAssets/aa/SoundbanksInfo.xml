@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="425622592">
+		<SoundBank Id="3697235005" Language="SFX" Hash="3721292930">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
@@ -73,7 +73,7 @@
 				</File>
 				<File Id="704960360" Language="SFX">
 					<ShortName>sfx_spraycan_activate.wav</ShortName>
-					<Path>SFX\sfx_spraycan_activate_10C4C929.wem</Path>
+					<Path>SFX\sfx_spraycan_activate_71665544.wem</Path>
 				</File>
 				<File Id="710233405" Language="SFX">
 					<ShortName>sfx_lunarmoney_start.wav</ShortName>
@@ -82,6 +82,10 @@
 				<File Id="1019549591" Language="SFX">
 					<ShortName>sfx_moonshine_miss.wav</ShortName>
 					<Path>SFX\sfx_moonshine_miss_10C4C929.wem</Path>
+				</File>
+				<File Id="1072221443" Language="SFX">
+					<ShortName>ScrapElite.wav</ShortName>
+					<Path>SFX\ScrapElite_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>

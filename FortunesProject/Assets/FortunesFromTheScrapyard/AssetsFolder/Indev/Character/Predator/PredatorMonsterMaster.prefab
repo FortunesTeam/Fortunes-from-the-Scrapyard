@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1775770577761131424}
   - component: {fileID: 2212998255202878060}
   - component: {fileID: 1664133950647517082}
+  - component: {fileID: 2474454063739026076}
+  - component: {fileID: 4875749783019518393}
   m_Layer: 0
   m_Name: PredatorMonsterMaster
   m_TagString: Untagged
@@ -105,12 +107,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _masterIndex: 0
-  bodyPrefab: {fileID: 0}
-  spawnOnStart: 0
-  _teamIndex: 0
+  bodyPrefab: {fileID: 4143654847840627405, guid: 365aaa2095fc2e04c950e808574ceae9,
+    type: 3}
+  spawnOnStart: 1
+  _teamIndex: 1
   onBodyDeath:
     m_PersistentCalls:
       m_Calls: []
   destroyOnBodyDeath: 1
   isBoss: 0
   preventGameOver: 1
+--- !u!114 &2474454063739026076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055919546241780182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullVision: 0
+  neverRetaliateFriendlies: 0
+  enemyAttentionDuration: 5
+  desiredSpawnNodeGraphType: 0
+  stateMachine: {fileID: 4875749783019518393}
+  scanState:
+    _typeName: 
+  isHealer: 0
+  enemyAttention: 0
+  aimVectorDampTime: 0.05
+  aimVectorMaxSpeed: 180
+  selectedSkilldriverName: 
+  debugEnemyHurtBox: {fileID: 0}
+--- !u!114 &4875749783019518393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055919546241780182}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customName: 
+  initialStateType:
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  mainStateType:
+    _typeName: 

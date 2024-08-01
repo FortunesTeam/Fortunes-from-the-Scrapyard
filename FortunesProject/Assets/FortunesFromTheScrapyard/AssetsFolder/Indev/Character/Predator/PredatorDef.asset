@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: -1881990681, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: PredatorDef
   m_EditorClassIdentifier: 
-  bodyPrefab: {fileID: 2835978355348344116, guid: b5716399f450e8a4c8dd1208ff36b898,
+  bodyPrefab: {fileID: 4143654847840627405, guid: 365aaa2095fc2e04c950e808574ceae9,
     type: 3}
-  displayPrefab: {fileID: 0}
+  displayPrefab: {fileID: 7821145556990490593, guid: 5386a9b9e1ebba542a99f2f76303a241,
+    type: 3}
   unlockableName: 
   unlockableDef: {fileID: 0}
-  displayNameToken: 
-  descriptionToken: 
-  outroFlavorToken: 
-  mainEndingEscapeFailureFlavorToken: 
-  primaryColor: {r: 0, g: 0, b: 0, a: 0}
-  desiredSortPosition: 0
+  displayNameToken: SCRAPYARD_SURVIVOR_PRED_NAME
+  descriptionToken: SCRAPYARD_SURVIVOR_PRED_DESC
+  outroFlavorToken: SCRAPYARD_SURVIVOR_PRED_OUTRO
+  mainEndingEscapeFailureFlavorToken: SCRAPYARD_SURVIVOR_PRED_FAIL
+  primaryColor: {r: 0.5, g: 0.4268868, b: 0.46503657, a: 0}
+  desiredSortPosition: 7
   hidden: 0

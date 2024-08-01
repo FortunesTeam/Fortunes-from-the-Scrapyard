@@ -62,6 +62,8 @@ namespace FortunesFromTheScrapyard.Items
 
             private float timer = 0f;
 
+            private int pity;
+
             public void ModifyStatArguments(StatHookEventArgs args)
             {
                 if (body.HasBuff(speedBuff))
@@ -78,14 +80,31 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval)
                 {
                     timer = 0f;
-                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack), body.master))
+                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance) * pity, body.master))
                     {
+                        pity = 0;
+
                         if(NetworkServer.active)
                         {
                             if (body.HasBuff(speedBuff)) body.RemoveOldestTimedBuff(speedBuff);
                             body.AddTimedBuff(speedBuff, GetStackValue(baseDuration, baseDurationStack, stack));
                             Util.PlaySound("sfx_turbo_start", body.gameObject);
                         }
+                    }
+                    else
+                    {
+                        pity++;
+                    }
+                }
+            }
+
+            private void OnDisable()
+            {
+                if(NetworkServer.active)
+                {
+                    if(body.HasBuff(speedBuff))
+                    {
+                        body.RemoveBuff(speedBuff);
                     }
                 }
             }

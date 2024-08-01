@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1627637702, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: PrimarySkillFamily
+  m_Name: PredSpecialSkillFamily
   m_EditorClassIdentifier: 
   variants:
-  - skillDef: {fileID: 11400000, guid: 2dd9a914b2575ed46af8be1831ce53c5, type: 2}
+  - skillDef: {fileID: 11400000, guid: ad61f5412788a2e4f848e8349bb126db, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}
-  defaultVariantIndex: 1
+  defaultVariantIndex: 0

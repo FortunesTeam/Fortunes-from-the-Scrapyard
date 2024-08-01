@@ -1,0 +1,1718 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4f59b83057a85408a1cb4718ca9004, type: 3}
+  m_Name: nidrsPredator
+  m_EditorClassIdentifier: 
+  targetItemDisplayRuleSet: {fileID: 11400000, guid: f96db5122cab630439419cf288f0499e,
+    type: 2}
+  rules:
+  - keyAssetName: CommandMissile
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMissileRack
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Cleanse
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWaterPack
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FireBallDash
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEgg
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Meteor
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMeteor
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Molotov
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMolotov
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DroneBackup
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRadio
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: VendingMachine
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayVendingMachine
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: QuestVolatileBattery
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBatteryArray
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Blackhole
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGravCube
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BossHunterConsumed
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTricornUsed
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Lightning
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLightningArmRight,Bandit2
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Gateway
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayVase
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Scanner
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayScanner
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Recycle
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRecycler
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Jetpack
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBugWings
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DeathProjectile
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDeathProjectile
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CrippleWard
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEffigy
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BossHunter
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTricornGhost
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarPortalOnUse
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLunarPortalOnUse
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Saw
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySawmerang
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LifestealOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLifestealOnHit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Tonic
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTonic
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GummyClone
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGummyClone
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: IrradiatingLaser
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayIrradiatingLaser
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GainArmor
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayElephantFigure
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CritOnUse
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayNeuralImplant
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Fruit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFruit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TeamWarCry
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTeamWarCry
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GoldGat
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGoldGat
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MultiShopCard
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayExecutiveCard
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BFG
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBFG
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BurnNearby
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayPotion
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EnergyBar
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEnergyBar
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MoonshineFlask
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMoonshineFlask
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ITEM_ANCIENT_SCEPTER
+    rules:
+    - ruleType: 0
+      displayPrefabName: mdlAncientScepterDisplay
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DroneWeaponsDisplay2
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDroneWeaponLauncher
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DroneWeaponsDisplay1
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDroneWeaponMinigun
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Behemoth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBehemoth
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: PrimarySkillShuriken
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayShuriken
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: AutoCastEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFossil
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Hoof
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHoof
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Bear
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBear
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarDagger
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLunarDagger
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ArmorReductionOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWarhammer
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: OutOfCombatArmor
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayOddlyShapedOpal
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BleedOnHitVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTriTipVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Squid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySquidTurret
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Icicle
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFrostRelic
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MonstersOnShrineUse
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMonstersOnShrineUse
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Seed
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySeed
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: WardOnLevel
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWarbanner
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ExplodeOnDeath
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWilloWisp
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CritGlasses
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGlasses
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Clover
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayClover
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Missile
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMissileLauncher
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HealWhileSafe
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySnail
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FireRing
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFireRing
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TPHealingNova
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGlowFlower
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Feather
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFeather
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ParentEgg
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayParentEgg
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BleedOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTriTip
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EquipmentMagazine
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBattery
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ChainLightning
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayUkulele
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarSun
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySunHead
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FallBoots
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGravBoots
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Dagger
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDagger
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Infusion
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayInfusion
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Pearl
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayPearl
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MinorConstructOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDefenseNucleus
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HealOnCrit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayScythe
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: StickyBomb
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayStickyBomb
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SlowOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBauble
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ExtraLifeVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHippoVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Incubator
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAncestralIncubator
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LightningStrikeOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayChargedPerforator
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Crowbar
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayCrowbar
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FocusConvergence
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFocusedConvergence
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TitanGoldDuringTP
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGoldHeart
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EquipmentMagazineVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFuelCellVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BounceNearby
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHook
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: WarCryOnMultiKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayPauldron
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SiphonOnLowHealth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySiphonOnLowHealth
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: PersonalShield
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayShieldGenerator
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Plant
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayInterstellarDeskPlant
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FireballsOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFireballsOnHit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarUtilityReplacement
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBirdFoot
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarSecondaryReplacement
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBirdClaw
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SlowOnHitVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBaubleVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: IceRing
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayIceRing
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HalfAttackSpeedHalfCooldowns
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLunarShoulderNature
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GhostOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMask
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BossDamageBonus
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAPRound
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HalfSpeedDoubleHealth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLunarShoulderStone
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BarrierOnOverHeal
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAegis
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: AttackSpeedAndMoveSpeed
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayCoffee
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DeathMark
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDeathMark
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CritGlassesVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGlassesVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BarrierOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBrooch
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LaserTurbine
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLaserTurbine
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ShinyPearl
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayShinyPearl
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GoldOnHurt
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRollOfPennies
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FlatHealth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySteakCurved
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ArmorPlate
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRepulsionArmorPlate
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BleedOnHitAndExplode
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBleedOnHitAndExplode
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: AttackSpeedOnCrit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWolfPelt
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FragileDamageBonus
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDelicateWatch
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BearVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBearVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Medkit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMedkit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CloverVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayCloverVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: NovaOnHeal
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDevilHorns
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: NovaOnLowHealth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayJellyGuts
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CooldownOnCrit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySkull
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarSpecialReplacement
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBirdHeart
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: IgniteOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGasoline
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarTrinket
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBeads
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BonusGoldPackOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTome
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SecondarySkillMagazine
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDoubleMag
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Mushroom
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMushroom
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: AlienHead
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAlienHead
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ImmuneToDebuff
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRainCoatBelt
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: KillEliteFrenzy
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBrainstalk
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TreasureCache
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayKey
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Thorns
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRazorwireRight
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ExtraLife
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHippo
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ShieldOnly
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayShieldBug
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: RandomEquipmentTrigger
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBottledChaos
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SprintWisp
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBrokenMask
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EnergizedOnEquipmentUse
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWarHorn
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: StrengthenBurn
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGasTank
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LunarPrimaryReplacement
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBirdEye
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EmpowerAlways
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySunHead
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: VoidMegaCrabItem
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMegaCrabItem
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Bandolier
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBandolier
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Syringe
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySyringeCluster
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: RegeneratingScrap
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRegeneratingScrap
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: PermanentDebuffOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayScorpion
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: IncreaseHealing
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAntler
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ElementalRingVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayVoidRing
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: RepeatHeal
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayCorpseflower
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FreeChest
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayShippingRequestForm
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MushroomVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMushroomVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CritDamage
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLaserSight
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: UtilitySkillMagazine
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAfterburnerShoulderRing
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: GoldOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBoneCrown
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: NearbyDamageBonus
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDiamond
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MoveSpeedOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGrappleHook
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Knurl
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayKnurl
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TreasureCacheVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayKeyVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: BeetleGland
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBeetleGland
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: StunChanceOnHit
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayStunGrenade
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HeadHunter
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySkullcrown
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: RandomlyLunar
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDomino
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: JumpBoost
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWaxBird
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SprintOutOfCombat
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWhip
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Talisman
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTalisman
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ExplodeOnDeathVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWillowWispVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Phasing
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayStealthkit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ChainLightningVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayUkuleleVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: RandomDamageZone
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayRandomDamageZone
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ExecuteLowHealthElite
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayGuillotine
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Firework
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFirework
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MissileVoid
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMissileLauncherVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SprintArmor
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayBuckler
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Tooth
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayToothNecklaceDecal
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: HealingPotion
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHealingPotion
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SprintBonus
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySoda
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: MoreMissile
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayICBM
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ShockNearby
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTeslaCoil
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: TempestOnKill
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayWaxBird
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LemurianHarness
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLemurianHarness
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: WarCryOnCombat
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayPauldron
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CrippleWardOnLevel
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEffigy
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: CounterfeitCurrency
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayCounterFeit
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: DuctTape
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayDuctTape
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: FaultyTurbo
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayFaultyTurbo
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Headphones
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayHeadphones
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: LethalInjection
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayLethalInjection
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Multitool
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayMultitool
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: OldCD
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayOldCD
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: SprayCan
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplaySprayCan
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: Takeout
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayTakeout
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteVoidEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayAffixVoid
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: ElitePoisonEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteUrchinCrown
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteEarthEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteMendingAntlers
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteIceEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteIceCrown
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteHauntedEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteStealthCrown
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteLightningEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteRhinoHorn
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteFireEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteHorn
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - keyAssetName: EliteLunarEquipment
+    rules:
+    - ruleType: 0
+      displayPrefabName: DisplayEliteLunar,Eye
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0

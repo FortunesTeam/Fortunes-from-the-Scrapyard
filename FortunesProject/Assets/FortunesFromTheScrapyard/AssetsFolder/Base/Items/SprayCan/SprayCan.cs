@@ -62,13 +62,22 @@ namespace FortunesFromTheScrapyard.Items
             private int uses;
 
             private bool wasConsumed = false;
+            private void OnEnable()
+            {
+                if (!NetworkServer.active)
+                    return;
+
+                maxUses = body.GetItemCount(GetItemDef()) * baseUses;
+                if (uses == 0) uses = maxUses;
+                body.SetBuffCount(ScrapyardContent.Buffs.bdSprayCanReady.buffIndex, uses);
+            }
             public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
             {
                 if (!NetworkServer.active)
                 {
                     return;
                 }
-                if (body && damageInfo.damage / body.damage >= 3 && !damageInfo.HasModdedDamageType(SprayCanProc))
+                if (body && damageInfo.damage / body.damage >= baseDamageRequirement && !damageInfo.HasModdedDamageType(SprayCanProc))
                 {
                     if(body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
                     {
@@ -113,7 +122,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private void OnDisable()
             {
-                if (NetworkServer.active && body)
+                if (NetworkServer.active && body && stack == 0)
                 {
                     if (body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
                     {
@@ -124,9 +133,6 @@ namespace FortunesFromTheScrapyard.Items
                         body.RemoveBuff(ScrapyardContent.Buffs.bdSprayCanCooldown);
                     }
                 }
-
-                uses = 0;
-                maxUses = 0;
             }
 
             private void FixedUpdate()

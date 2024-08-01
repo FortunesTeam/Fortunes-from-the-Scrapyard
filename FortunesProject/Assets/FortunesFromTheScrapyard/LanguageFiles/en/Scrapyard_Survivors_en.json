@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "SCRAPYARD_EXPANSION_NAME": "Fortunes from the Scrapyard.",
+    "SCRAPYARD_EXPANSION_DESC": "Enables the content from the mod Fortunes from the Scrapyard.",
+    "SCRAPYARD_SURVIVOR_PRED_NAME": "Takeout",
+    "SCRAPYARD_SURVIVOR_PRED_DESC": "At the <style=cIsUtility>beginning of each stage</style>, gain a random buff. When near enemies, your current buff activates its effect. <style=cIsDamage>Spicy Chicken</style> creates a <style=cIsDamage>fiery explosion</style> dealing <style=cIsDamage>{0}%</style> <style=cStack>(+{1}% per stack)</style> damage. <style=cIsUtility>Slimy Noodles</style> increases movement speed by <style=cIsUtility>{3}%</style> <style=cStack>(+{4}% per stack)</style>. <style=cIsHealing>Sticky Gyoza</style> heals for <style=cIsHealing>{7}%</style> <style=cStack>({8}% per stack)</style> of <style=cIsHealing>maximum health</style> and increases <style=cIsHealing>base health regeneration</style> by <style=cIsHealing>{5} hp/s</style> <style=cStack>({6} hp/s per stack)</style>.",
+    "SCRAPYARD_SURVIVOR_PRED_LORE": "This Orange Chicken recipe is made with boneless skinless chicken breast, cut into bite-size pieces, dredged, and then fried until golden and crispy. It is a sweet orange sauce made with orange juice, vinegar, garlic, sugar, soy sauce, ginger, red chili flakes, and orange zest. It is both sweet and spicy and full of flavor.",
+    "SCRAPYARD_SURVIVOR_PRED_OUTRO": "Gain a random buff for the rest of the stage. Activates when near enemies.",
+    "SCRAPYARD_SURVIVOR_PRED_FAIL": "Gain a random buff for the rest of the stage. Activates when near enemies."
+
+  }
+}

@@ -43,7 +43,7 @@
     "SCRAPYARD_ITEM_OLDCD_DESC": "Using a skill with a cooldown <style=cIsUtility>lowers the current cooldown of all other skills by {0}%</style> <style=cStack>(+{1}% per stack)</style>.",
     "SCRAPYARD_ITEM_OLDCD_LORE": "Mmm, Record.",
     "SCRAPYARD_ITEM_TAPE_NAME": "Duct Tape",
-    "SCRAPYARD_ITEM_TAPE_PICKUP": "Heal more at lower health",
+    "SCRAPYARD_ITEM_TAPE_PICKUP": "Heal more at lower health.",
     "SCRAPYARD_ITEM_TAPE_DESC": "When below <style=cIsHealth>{0}% health</style> <style=cStack>(+{1}% per stack)</style> <style=cIsHealing>healing is increased by {2}%</style> <style=cStack>(+{3}% per stack)</style>.",
     "SCRAPYARD_ITEM_TAPE_LORE": "Mmm, Tape."
   }

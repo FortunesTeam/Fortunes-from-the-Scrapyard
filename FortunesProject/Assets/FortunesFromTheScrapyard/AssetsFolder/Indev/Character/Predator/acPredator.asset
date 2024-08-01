@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: acPredator
   m_EditorClassIdentifier: 
   assets:
-  - {fileID: 2835978355348344116, guid: b5716399f450e8a4c8dd1208ff36b898, type: 3}
-  bodyPrefab: {fileID: 2835978355348344116, guid: b5716399f450e8a4c8dd1208ff36b898,
+  - {fileID: 11400000, guid: 0d66001deafe1144a8f83b3e4179e640, type: 2}
+  - {fileID: 2055919546241780182, guid: ecd2b7cf6bde9e248a6663bc32784304, type: 3}
+  - {fileID: 4143654847840627405, guid: 365aaa2095fc2e04c950e808574ceae9, type: 3}
+  bodyPrefab: {fileID: 4143654847840627405, guid: 365aaa2095fc2e04c950e808574ceae9,
     type: 3}
-  masterPrefab: {fileID: 0}
-  survivorDef: {fileID: 0}
+  masterPrefab: {fileID: 2055919546241780182, guid: ecd2b7cf6bde9e248a6663bc32784304,
+    type: 3}
+  survivorDef: {fileID: 11400000, guid: 0d66001deafe1144a8f83b3e4179e640, type: 2}

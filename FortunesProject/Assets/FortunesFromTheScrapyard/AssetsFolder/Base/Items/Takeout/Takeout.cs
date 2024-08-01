@@ -17,20 +17,20 @@ namespace FortunesFromTheScrapyard.Items
         public const string TOKEN = "SCRAPYARD_ITEM_TAKEOUT_DESC";
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float igniteBase = 1.5f;
+        public static float igniteBase = 2.5f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float igniteStack = 1.5f;
+        public static float igniteStack = 2.5f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 2)]
         public static int chickenCooldown = 5;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
-        public static float mspdBase = 0.56f;
+        public static float mspdBase = 0.45f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 4)]
-        public static float mspdStack = 0.56f;
+        public static float mspdStack = 0.45f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 5)]

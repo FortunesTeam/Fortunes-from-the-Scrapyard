@@ -162,8 +162,10 @@
 									<ChildrenList>
 										<AudioFileSource Name="sfx_spraycan_activate" ID="{A5934F22-6B38-4D9C-BAD6-5C6F36B52CA0}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.075146771037182"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.32384679899357"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.576125244618396"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>sfx_spraycan_activate.wav</AudioFile>
