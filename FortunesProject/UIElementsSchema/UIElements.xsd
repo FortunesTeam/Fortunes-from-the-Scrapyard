@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:editor="UnityEditor.UIElements" xmlns:r2ek="RoR2EditorKit.VisualElements" xmlns:engine="UnityEngine.UIElements" xmlns:msu="MSU.Editor.VisualElements" xmlns="ThunderKit.Markdown" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="UnityEngine.UIElements.xsd" namespace="UnityEngine.UIElements" />
+  <xs:import schemaLocation="UnityEditor.PackageManager.UI.xsd" namespace="UnityEditor.PackageManager.UI" />
+  <xs:import schemaLocation="UnityEditor.UIElements.xsd" namespace="UnityEditor.UIElements" />
+  <xs:import schemaLocation="UnityEditor.UIElements.Debugger.xsd" namespace="UnityEditor.UIElements.Debugger" />
+  <xs:import schemaLocation="ThunderKit.Core.UIElements.xsd" namespace="ThunderKit.Core.UIElements" />
+  <xs:import schemaLocation="ThunderKit.Addressable.Tools.xsd" namespace="ThunderKit.Addressable.Tools" />
+  <xs:import schemaLocation="ThunderKit.Markdown.xsd" namespace="ThunderKit.Markdown" />
+  <xs:import schemaLocation="MSU.Editor.VisualElements.xsd" namespace="MSU.Editor.VisualElements" />
+  <xs:import schemaLocation="RoR2EditorKit.VisualElements.xsd" namespace="RoR2EditorKit.VisualElements" />
+</xs:schema>
