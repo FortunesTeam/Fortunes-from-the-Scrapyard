@@ -44,7 +44,9 @@ namespace FortunesFromTheScrapyard
         Equipments,
         Items,
         Indev,
-        Base
+        Base,
+        Vanilla,
+        Predator
     }
     /// <summary>
     /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.

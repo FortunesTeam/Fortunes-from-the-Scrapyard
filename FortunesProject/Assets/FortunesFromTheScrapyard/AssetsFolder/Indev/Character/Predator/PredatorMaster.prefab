@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 1664133950647517082}
   - component: {fileID: 2474454063739026076}
   - component: {fileID: 4875749783019518393}
+  - component: {fileID: 2760457039658310965}
   m_Layer: 0
-  m_Name: PredatorMonsterMaster
+  m_Name: PredatorMaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,8 +110,8 @@ MonoBehaviour:
   _masterIndex: 0
   bodyPrefab: {fileID: 4143654847840627405, guid: 365aaa2095fc2e04c950e808574ceae9,
     type: 3}
-  spawnOnStart: 1
-  _teamIndex: 1
+  spawnOnStart: 0
+  _teamIndex: 0
   onBodyDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -135,11 +136,12 @@ MonoBehaviour:
   desiredSpawnNodeGraphType: 0
   stateMachine: {fileID: 4875749783019518393}
   scanState:
-    _typeName: 
+    _typeName: EntityStates.AI.Walker.Wander, RoR2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   isHealer: 0
   enemyAttention: 0
-  aimVectorDampTime: 0.05
-  aimVectorMaxSpeed: 180
+  aimVectorDampTime: 0.2
+  aimVectorMaxSpeed: 360
   selectedSkilldriverName: 
   debugEnemyHurtBox: {fileID: 0}
 --- !u!114 &4875749783019518393
@@ -154,8 +156,24 @@ MonoBehaviour:
   m_Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customName: 
+  customName: AI
   initialStateType:
-    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.AI.Walker.Wander, RoR2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   mainStateType:
-    _typeName: 
+    _typeName: EntityStates.AI.Walker.Wander, RoR2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &2760457039658310965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055919546241780182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -144590133, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredExpansion: {fileID: 11400000, guid: 6f84110d73cce4c4985ff8d773a4382d, type: 2}
+  requireEntitlementIfPlayerControlled: 0

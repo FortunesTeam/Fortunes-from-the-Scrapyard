@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace FortunesFromTheScrapyard.Survivors
-    {
-    public class Predator : ScrapyardSurvivor
+{
+    public sealed class Predator : ScrapyardSurvivor
     {
         public override void Initialize()
         {

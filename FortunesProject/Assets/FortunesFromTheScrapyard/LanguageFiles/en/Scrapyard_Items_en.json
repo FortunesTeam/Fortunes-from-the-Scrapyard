@@ -36,7 +36,7 @@
     "SCRAPYARD_ITEM_SPRAYCANCONSUMED_LORE": "ow",
     "SCRAPYARD_ITEM_FAULTYTURBO_NAME": "Faulty Turbo",
     "SCRAPYARD_ITEM_FAULTYTURBO_PICKUP": "Chance to gain bonus movement speed while sprinting.",
-    "SCRAPYARD_ITEM_FAULTYTURBO_DESC": "<style=cIsDamage>{4}% chance</style> <style=cStack>(+{5}% per stack)</style> to increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> for <style=cIsUtility>{1}</style> seconds <style=cStack>(+{2} per stack)</style> every <style=cIsUtility>{3}</style> second.",
+    "SCRAPYARD_ITEM_FAULTYTURBO_DESC": "While sprinting gain <style=cIsDamage>{4}% chance</style> <style=cStack>(+{5}% per stack)</style> to increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> for <style=cIsUtility>{1}</style> seconds <style=cStack>(+{2} per stack)</style> every <style=cIsUtility>{3}</style> second.",
     "SCRAPYARD_ITEM_FAULTYTURBO_LORE": "Mmm, turbo boost.",
     "SCRAPYARD_ITEM_OLDCD_NAME": "Lost Record",
     "SCRAPYARD_ITEM_OLDCD_PICKUP": "Using skills with cooldowns lowers other skills with cooldowns.",

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f7cdaca52f089488151d768d140b6b, type: 3}
   m_Name: R2EditorSettings
   m_EditorClassIdentifier: 
-  enableNamingConventions: 1
+  enableNamingConventions: 0
   _settings: []
