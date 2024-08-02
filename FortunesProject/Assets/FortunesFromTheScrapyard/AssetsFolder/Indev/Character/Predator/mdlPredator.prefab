@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 3625510159635966134}
   - component: {fileID: 3625510159635966128}
   - component: {fileID: 3625510159635966129}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MainHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1572,7 @@ GameObject:
   - component: {fileID: 3625510160663769759}
   - component: {fileID: 3625510160663769753}
   - component: {fileID: 3625510160663769758}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HeadCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
