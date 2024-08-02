@@ -179,6 +179,8 @@ namespace FortunesFromTheScrapyard
         public static class Survivors
         {
             public static SurvivorDef Predator;
+            public static SurvivorDef Neuromancer;
+            public static SurvivorDef Badger;
         }
     }
 }
