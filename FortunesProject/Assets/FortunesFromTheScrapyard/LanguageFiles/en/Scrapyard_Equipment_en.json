@@ -8,6 +8,10 @@
     "SCRAPYARD_EQUIP_MOONSHINE_PICKUP": "Attacks have a chance to miss but every miss causes your attacks to explode.",
     "SCRAPYARD_EQUIP_MOONSHINE_DESC": "Drink the Moonshine, gaining <style=cIsDamage>{0}%</style> <style=cStack>(+{0}% per drink)</style> chance to miss. Every miss causes your next hit attack to explode dealing <style=cIsDamage>{1}%</style> of the missed damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
     "SCRAPYARD_EQUIP_MOONSHINE_LORE": "You know you shouldn’t have brought this with you. Hell, you’re surprised it didn’t come up in any scans. It looks different than when you first had it on you, but the thirst has grown too much.",
-    "SCRAPYARD_EQUIP_MOONSHINE_POPUP": "MISSED!"
+    "SCRAPYARD_EQUIP_MOONSHINE_POPUP": "MISSED!",
+    "SCRAPYARD_EQUIP_BOOMBARREL_NAME": "Volatile Barrel",
+    "SCRAPYARD_EQUIP_BOOMBARREL_PICKUP": "Place an exploding barrel on the ground.",
+    "SCRAPYARD_EQUIP_BOOMBARREL_DESC": "On use, place a barrel, that explodes for 1000% damage in a 20 m radius, after being struck. ",
+    "SCRAPYARD_EQUIP_BOOMBARREL_LORE": "Boom",
   }
 }

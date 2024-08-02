@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: BoomBarrel
+  m_EditorClassIdentifier: 
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: a39e5b8e974ae2e40945e3f65bb61277,
+    type: 3}
+  cooldown: 45
+  nameToken: SCRAPYARD_EQUIP_ENERGYBAR_NAME
+  pickupToken: SCRAPYARD_EQUIP_ENERGYBAR_PICKUP
+  descriptionToken: SCRAPYARD_EQUIP_ENERGYBAR_DESC
+  loreToken: SCRAPYARD_EQUIP_ENERGYBAR_LORE
+  pickupIconSprite: {fileID: 21300000, guid: c1cd9e1152ad4a04fa29745d9d0bf931, type: 3}
+  unlockableDef: {fileID: 0}
+  colorIndex: 5
+  canDrop: 1
+  dropOnDeathChance: 0
+  canBeRandomlyTriggered: 1
+  enigmaCompatible: 0
+  isLunar: 0
+  isBoss: 0
+  passiveBuffDef: {fileID: 0}
+  appearsInSinglePlayer: 1
+  appearsInMultiPlayer: 1
+  requiredExpansion: {fileID: 11400000, guid: 6f84110d73cce4c4985ff8d773a4382d, type: 2}
+  mageElement: 0
