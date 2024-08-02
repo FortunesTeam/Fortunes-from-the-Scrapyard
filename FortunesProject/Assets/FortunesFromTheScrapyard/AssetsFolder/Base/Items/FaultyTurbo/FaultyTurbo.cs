@@ -62,7 +62,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private float timer = 0f;
 
-            private int pity;
+            private float pity;
 
             public void ModifyStatArguments(StatHookEventArgs args)
             {
@@ -80,7 +80,7 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval)
                 {
                     timer = 0f;
-                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance * pity), body.master))
+                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance), body.master))
                     {
                         pity = 0;
 
@@ -93,7 +93,7 @@ namespace FortunesFromTheScrapyard.Items
                     }
                     else
                     {
-                        pity++;
+                        pity += 0.5f;
                     }
                 }
             }

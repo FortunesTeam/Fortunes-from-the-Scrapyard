@@ -85,7 +85,7 @@ namespace FortunesFromTheScrapyard
             yield break;
         }
         */
-        private IEnumerator AddExampleExpansionDef()
+        private IEnumerator AddExpansionDef()
         {
             ScrapyardAssetRequest<ExpansionDef> request = ScrapyardAssets.LoadAssetAsync<ExpansionDef>("ScrapyardExpansionDef", ScrapyardBundle.Main);
             while (!request.isComplete)
@@ -94,14 +94,12 @@ namespace FortunesFromTheScrapyard
             scrapyardContentPack.expansionDefs.AddSingle(request.asset);
             yield break;
         }
-
         internal ScrapyardContent()
         {
             ContentManager.collectContentPackProviders += AddSelf;
             ScrapyardAssets.onScrapyardAssetsInitialized += () =>
             {
-                _parallelPreLoadDispatchers.Add(AddExampleExpansionDef);
-                //_parallelPreLoadDispatchers.Add(LoadSoundBank);
+                _parallelPreLoadDispatchers.Add(AddExpansionDef);
             };
         }
 
@@ -109,7 +107,12 @@ namespace FortunesFromTheScrapyard
         {
             ScrapyardMain main = ScrapyardMain.instance;
             _loadDispatchers = new Func<IEnumerator>[]
-            {
+            {   
+                () =>
+                {
+                    CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
+                    return CharacterModule.InitializeCharacters(main);
+                },
                 () =>
                 {
                     ItemModule.AddProvider(main, ContentUtil.CreateContentPieceProvider<ItemDef>(main, scrapyardContentPack));
@@ -128,7 +131,7 @@ namespace FortunesFromTheScrapyard
                 () => ContentUtil.PopulateTypeFields(typeof(Items), scrapyardContentPack.itemDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(Equipments), scrapyardContentPack.equipmentDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(Buffs), scrapyardContentPack.buffDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(Predator), scrapyardContentPack.survivorDefs)
+                () => ContentUtil.PopulateTypeFields(typeof(Survivors), scrapyardContentPack.survivorDefs),
             };
         }
 
@@ -175,7 +178,7 @@ namespace FortunesFromTheScrapyard
 
         public static class Survivors
         {
-            public static CharacterBody Predator;
+            public static SurvivorDef Predator;
         }
     }
 }

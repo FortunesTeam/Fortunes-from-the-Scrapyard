@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1229136950, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: DeferredShaders
+  m_EditorClassIdentifier:
+  assets:
+  - {fileID: 4800000, guid: 9a79fb5f80d888f4c9cdb96589ecde54, type: 2}
+  - {fileID: 4800000, guid: 9b2024ee08a5bfc418ff897991e84323, type: 2}
+  - {fileID: 4800000, guid: 13f33e7cc2faaa645ac64fe35b479ace, type: 2}
+  - {fileID: 4800000, guid: 08c40051472c1974da3692a36a1cbc8d, type: 2}
+  - {fileID: 74, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 74, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 69, guid: 0000000000000000f000000000000000, type: 0}
