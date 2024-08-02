@@ -34,10 +34,8 @@ namespace FortunesFromTheScrapyard.Items
         [FormatToken(TOKEN, 5)]
         public static float chancePerStack = 15f;
 
-        public static BuffDef speedBuff;
         public override void Initialize()
         {
-            speedBuff = AssetCollection.FindAsset<BuffDef>("bdFaultyTurbo");
         }
 
         public override void ModifyContentPack(ContentPack contentPack)
@@ -66,7 +64,7 @@ namespace FortunesFromTheScrapyard.Items
 
             public void ModifyStatArguments(StatHookEventArgs args)
             {
-                if (body.HasBuff(speedBuff))
+                if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
                 {
                     args.moveSpeedMultAdd += movespeedBonus;
                 }
@@ -86,8 +84,8 @@ namespace FortunesFromTheScrapyard.Items
 
                         if(NetworkServer.active)
                         {
-                            if (body.HasBuff(speedBuff)) body.RemoveOldestTimedBuff(speedBuff);
-                            body.AddTimedBuff(speedBuff, GetStackValue(baseDuration, baseDurationStack, stack));
+                            if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) body.RemoveOldestTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
+                            body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
                             Util.PlaySound("sfx_turbo_start", body.gameObject);
                         }
                     }
@@ -102,9 +100,9 @@ namespace FortunesFromTheScrapyard.Items
             {
                 if(NetworkServer.active)
                 {
-                    if(body.HasBuff(speedBuff))
+                    if(body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
                     {
-                        body.RemoveBuff(speedBuff);
+                        body.RemoveBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                     }
                 }
             }

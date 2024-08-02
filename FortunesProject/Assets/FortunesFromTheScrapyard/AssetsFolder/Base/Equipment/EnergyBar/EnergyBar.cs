@@ -40,10 +40,10 @@ namespace FortunesFromTheScrapyard.Equipments
 
         public override void Initialize()
         {
-            R2API.RecalculateStatsAPI.GetStatCoefficients += EnergyBarSpeedBuff;
+            R2API.RecalculateStatsAPI.GetStatCoefficients += EnergyBarScrapyardContent.Buffs.bdFaultyTurbo;
         }
 
-        private void EnergyBarSpeedBuff(CharacterBody sender, StatHookEventArgs args)
+        private void EnergyBarScrapyardContent.Buffs.bdFaultyTurbo(CharacterBody sender, StatHookEventArgs args)
         {
             int buffCount = sender.GetBuffCount(ScrapyardContent.Buffs.bdEnergyBar);
             args.moveSpeedMultAdd += speedBonus * buffCount;
