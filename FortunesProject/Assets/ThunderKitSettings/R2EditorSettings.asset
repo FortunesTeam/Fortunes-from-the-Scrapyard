@@ -49,6 +49,56 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       value: 0
       defaultValue: 0
+  - _typeName: CharacterModelInspector
+    _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.CharacterModelInspector,
+      RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: 824161381
+    _serializedSettings:
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 1
+  - _typeName: ChildLocatorInspector
+    _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.ChildLocatorInspector,
+      RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: -1549623887
+    _serializedSettings:
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 1
+  - _typeName: EntityStateConfigurationInspector
+    _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.EntityStateConfigurationInspector,
+      RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: -979265245
+    _serializedSettings:
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 1
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 0
+  - _typeName: HurtBoxGroupInspector
+    _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.HurtBoxGroupInspector,
+      RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: -1118603568
+    _serializedSettings:
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 1
   - _typeName: KinematicCharacterMotorInspector
     _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.KinematicCharacterMotorInspector,
       RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -75,6 +125,17 @@ MonoBehaviour:
     _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.SkillLocatorInspector,
       RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     _editorTypeQualifiedHash: 1517100584
+    _serializedSettings:
+    - settingName: IsEditorEnabled
+      settingID: -1659601804
+      valueTypeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      value: 0
+      defaultValue: 1
+  - _typeName: SurvivorDefInspector
+    _editorTypeQualifiedName: RoR2EditorKit.RoR2Related.Inspectors.SurvivorDefInspector,
+      RoR2EditorScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: -1652446156
     _serializedSettings:
     - settingName: IsEditorEnabled
       settingID: -1659601804

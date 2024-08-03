@@ -17,28 +17,28 @@ MonoBehaviour:
   nameToken: SCRAPYARD_SKIN_PREDATOR_DEFAULT
   unlockableName: texPredatorSkin
   unlockableDef: {fileID: 0}
-  rootObject: {fileID: 1847137626403755593, guid: 365aaa2095fc2e04c950e808574ceae9,
+  rootObject: {fileID: 3165158523964446255, guid: 365aaa2095fc2e04c950e808574ceae9,
     type: 3}
   rendererInfos:
-  - renderer: {fileID: 1845278353749164157, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 1321727593025495301, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: 59d97b77025901644aa1b9982111988d, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 7108296255691930000, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 179223348755027895, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: 59d97b77025901644aa1b9982111988d, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 7718711981385403686, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 3451857713560944618, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: b65c7795f753a4e4280ad0b2d258bcb6, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 5159074342934910142, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 6338027256653473116, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: b4c189d21fece654c8ab87a557872dc0, type: 2}
     defaultShadowCastingMode: 1
@@ -46,16 +46,16 @@ MonoBehaviour:
     hideOnDeath: 0
   gameObjectActivations: []
   meshReplacements:
-  - renderer: {fileID: 1845278353749164157, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 1321727593025495301, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     mesh: {fileID: 4300000, guid: 144a95adc04638a40b75aa0b80c9b1c8, type: 2}
-  - renderer: {fileID: 7108296255691930000, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 179223348755027895, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     mesh: {fileID: 4300000, guid: 60447083d4abe354ab7d6cb01e52102f, type: 2}
-  - renderer: {fileID: 7718711981385403686, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 3451857713560944618, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     mesh: {fileID: 4300000, guid: fb406af77fb586a4087c571ab25ec687, type: 2}
-  - renderer: {fileID: 5159074342934910142, guid: 365aaa2095fc2e04c950e808574ceae9,
+  - renderer: {fileID: 6338027256653473116, guid: 365aaa2095fc2e04c950e808574ceae9,
       type: 3}
     mesh: {fileID: 4300000, guid: 41ef82d4d2632aa43beceacdbdeddd3e, type: 2}
   projectileGhostReplacements: []
