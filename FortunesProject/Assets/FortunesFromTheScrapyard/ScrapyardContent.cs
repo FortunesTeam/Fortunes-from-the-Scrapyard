@@ -108,6 +108,7 @@ namespace FortunesFromTheScrapyard
             ScrapyardMain main = ScrapyardMain.instance;
             _loadDispatchers = new Func<IEnumerator>[]
             {   
+                DifficultyModule.Init,
                 () =>
                 {
                     CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
@@ -145,7 +146,7 @@ namespace FortunesFromTheScrapyard
             public static ItemDef SprayCan;
             public static ItemDef SprayCanConsumed;
             public static ItemDef Takeout;
-            public static ItemDef CounterfitCurrency;
+            public static ItemDef CounterfeitCurrency;
             public static ItemDef FaultyTurbo;
             public static ItemDef OldCD;
             public static ItemDef DuctTape;

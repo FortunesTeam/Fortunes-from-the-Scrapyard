@@ -13,7 +13,7 @@ namespace FortunesFromTheScrapyard.Survivors
 
         public override bool IsAvailable(ContentPack contentPack)
         {
-            return true;
+            return false;
         }
 
         public override ScrapyardAssetRequest<SurvivorAssetCollection> LoadAssetRequest()

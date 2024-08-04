@@ -16,11 +16,14 @@ using UnityEngine;
 namespace FortunesFromTheScrapyard
 {
     [BepInPlugin(GUID, NAME, VERSION)]
+    [BepInDependency("com.Moffein.AccurateEnemies", BepInDependency.DependencyFlags.SoftDependency)]
     public class ScrapyardMain : BaseUnityPlugin
     {
         public const string GUID = "com.FortunesTeam.FortunesFromTheScrapyard";
         public const string VERSION = "0.0.1";
         public const string NAME = "Fortunes From the Scrapyard";
+
+        public static bool AccurateEnemiesLoaded = false;
 
         //Singleton access pattern to our instance.
         internal static ScrapyardMain instance { get; private set; }
@@ -28,6 +31,8 @@ namespace FortunesFromTheScrapyard
         private void Awake()
         {
             instance = this;
+
+            AccurateEnemiesLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.AccurateEnemies");
 
             new ScrapyardLog(Logger);
             new ScrapyardConfig(this);

@@ -43,7 +43,8 @@
         "ShaderSwapper.dll",
         "UnityEngine.SpatialTracking.dll",
         "LegacyResourcesAPI.dll",
-        "R2API.Prefab.dll"
+        "R2API.Prefab.dll",
+        "R2API.Difficulty.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

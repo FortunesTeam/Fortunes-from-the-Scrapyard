@@ -27,8 +27,8 @@ namespace FortunesFromTheScrapyard
         [SystemInitializer(dependencies: typeof(MusicTrackCatalog))]
         public static void MusicInit()
         {
-            AkSoundEngine.LoadBank("SS2Music", -1, out var bank);
-            GameObject.Instantiate(SS2Assets.LoadAsset<GameObject>("SS2MusicInitializer", SS2Bundle.Base));
+            AkSoundEngine.LoadBank("ScrapyardMusic", -1, out var bank);
+            GameObject.Instantiate(ScrapyardAssets.LoadAsset<GameObject>("ScrapyardMusicInitializer", ScrapyardBundle.Base));
         }
         */
     }
