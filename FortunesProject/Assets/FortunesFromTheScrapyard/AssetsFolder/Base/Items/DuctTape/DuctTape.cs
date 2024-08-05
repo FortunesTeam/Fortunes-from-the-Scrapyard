@@ -15,16 +15,13 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float healthThreshold = 0.4f;
-        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float healthThresholdPerStack = 0.05f;
+        public static float healthThreshold = 0.5f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float baseHealingIncrease = 0.15f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float healingIncreasePerStack = 0.15f;
 
         public override void Initialize()
@@ -62,7 +59,7 @@ namespace FortunesFromTheScrapyard.Items
             {
                 if(NetworkServer.active)
                 {
-                    if (body.healthComponent.health <= body.healthComponent.fullCombinedHealth * GetStackValue(healthThreshold, healthThresholdPerStack, body.GetItemCount(GetItemDef())))
+                    if (body.healthComponent.health <= body.healthComponent.fullCombinedHealth * healthThreshold)
                     {
                         if (!body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))
                         {
