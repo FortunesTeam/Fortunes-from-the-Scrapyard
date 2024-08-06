@@ -17,8 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae1bb5b6b8b30424799a15c91d73f580, type: 2}
   - {fileID: 11400000, guid: 49fb995da26151340bb6959eac4f537e, type: 2}
   - {fileID: 11400000, guid: c58701f21e53b26498b883ac73ebbedc, type: 2}
+  - {fileID: 2507292174066636152, guid: fe64bbf0338ba5240804f83a570ab619, type: 3}
   itemDisplayPrefabs:
   - {fileID: 8077648720655750967, guid: 8baa7fa6ec9391c41a4c5b16a6598ebc, type: 3}
+  - {fileID: 8077648720655750967, guid: 6dbb301c929d6784f99ed4e2ddb702d7, type: 3}
   equipmentDef: {fileID: 11400000, guid: ae1bb5b6b8b30424799a15c91d73f580, type: 2}
   eliteDefs:
   - {fileID: 11400000, guid: 49fb995da26151340bb6959eac4f537e, type: 2}

@@ -1,10 +1,9 @@
 {
   "strings": {
-    "ELITE_MODIFIER_SCRAP": ".",
-    "SCRAPYARD_SCRAP_ASPECT_NAME": ".",
-    "SCRAPYARD_SCRAP_ASPECT_PICKUP": "",
-    "ESC": "",
-    "SCRAPYARD_SCRAP_ASPECT_LORE": ""
-
+    "ELITE_MODIFIER_SCRAP": "Synthetic",
+    "SCRAPYARD_SCRAP_ASPECT_NAME": "Morbid Absolution.",
+    "SCRAPYARD_SCRAP_ASPECT_PICKUP": "Become an aspect of experimentation.",
+    "SCRAPYARD_SCRAP_ASPECT_DESC": "Become an aspect of experimentation.",
+    "SCRAPYARD_SCRAP_ASPECT_LORE": "."
   }
 }

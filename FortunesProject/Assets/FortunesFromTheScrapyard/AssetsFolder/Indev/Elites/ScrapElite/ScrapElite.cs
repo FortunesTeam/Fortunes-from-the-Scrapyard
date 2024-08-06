@@ -12,6 +12,8 @@ using static R2API.RecalculateStatsAPI;
 using System;
 using static RoR2.NetworkSession;
 using System.Linq;
+using R2API;
+using UnityEngine.UIElements;
 
 namespace FortunesFromTheScrapyard.Elite
 {
@@ -25,6 +27,8 @@ namespace FortunesFromTheScrapyard.Elite
         public static List<EquipmentIndex> scrapEliteEquipmentListEnemy = new List<EquipmentIndex>();
         public static List<EquipmentIndex> scrapEliteEquipmentListPlayer = new List<EquipmentIndex>();
         public static GameObject ScrapAffixEffect;
+        public static GameObject ScrapPulseEffect;
+        public static GameObject ScrapExplosionEffect;
         public override bool Execute(EquipmentSlot slot)
         {
             return false;
@@ -33,6 +37,25 @@ namespace FortunesFromTheScrapyard.Elite
         public override void Initialize()
         {
             ScrapAffixEffect = assetCollection.FindAsset<GameObject>("ScrapAffixEffect");
+            ScrapPulseEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMine.prefab").WaitForCompletion().gameObject.transform.Find("PrepEffect").gameObject.InstantiateClone("ScrapPulseEffect");
+            ScrapPulseEffect.EnsureComponent<NetworkIdentity>();
+            ScrapPulseEffect.gameObject.SetActive(true);
+            EffectComponent effectComponent = ScrapPulseEffect.AddComponent<EffectComponent>();
+            effectComponent.applyScale = true;
+            ScrapPulseEffect.AddComponent<DestroyOnParticleEnd>();
+            VFXAttributes vfx = ScrapPulseEffect.AddComponent<VFXAttributes>();
+            vfx.vfxPriority = VFXAttributes.VFXPriority.Medium;
+            vfx.vfxIntensity = VFXAttributes.VFXIntensity.Low;
+
+            EffectDef effectDef = new EffectDef(ScrapPulseEffect);
+
+            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
+
+            ScrapExplosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion().InstantiateClone("ScrapExplosionEffect", false);
+
+            EffectDef effectDef2 = new EffectDef(ScrapExplosionEffect);
+
+            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef2);
 
             On.RoR2.EquipmentCatalog.SetEquipmentDefs += EquipmentCatalog_SetEquipmentDefs;
         }
@@ -46,7 +69,7 @@ namespace FortunesFromTheScrapyard.Elite
                     {
                         scrapEliteEquipmentListPlayer.Add(index);
                     }
-                    if (!new[] { GoldGat.equipmentIndex, Lightning.equipmentIndex, CommandMissile.equipmentIndex, Saw.equipmentIndex, Blackhole.equipmentIndex, DroneBackup.equipmentIndex }.Contains(index))
+                    if (!new[] { GoldGat.equipmentIndex, /*Lightning.equipmentIndex, CommandMissile.equipmentIndex, Saw.equipmentIndex,*/ Blackhole.equipmentIndex, DroneBackup.equipmentIndex }.Contains(index))
                     {
                         scrapEliteEquipmentListEnemy.Add(index);
                     }
@@ -99,18 +122,34 @@ namespace FortunesFromTheScrapyard.Elite
 
             public PickupDisplay pickupDisplay;
 
+            private static float playerTimerCycle = 5f;
 
             private float baseEquipmentCDFaked;
             private float equipmentCDTimer;
             private EquipmentIndex chosenEquipmentIndex;
             private GameObject effectInstance;
-            private TimerHologramContent timerDisplay;
+            private float playerTimer;
+
+            private static float basePulseCooldown = 10f;
+            private float pulseTimer = 0f;
+            private float chargeUpTimer = 0f;
+            private bool charging = false;
             private void Start()
             {
+                if(!NetworkServer.active)
+                {
+                    return;
+                }
+
+                Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
+
+                playerTimer = 0f;
+
                 List<EquipmentIndex> list = CharacterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
                 Util.ShuffleList(list);
                 chosenEquipmentIndex = list[list.Count - 1];
-                baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2;
+                baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2f;
+                equipmentCDTimer = baseEquipmentCDFaked / 2f;
 
                 if(!effectInstance)
                 {
@@ -137,6 +176,9 @@ namespace FortunesFromTheScrapyard.Elite
                         }
                     }
                 }
+
+                NetworkServer.Spawn(effectInstance);
+
                 ScrapyardLog.Debug("Current Equipment:" + EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).name);
             }
 
@@ -159,12 +201,97 @@ namespace FortunesFromTheScrapyard.Elite
                 }
 
                 equipmentCDTimer += Time.fixedDeltaTime;
+                playerTimer += Time.fixedDeltaTime;
+
+                if (!charging)
+                {
+                    if (pulseTimer <= basePulseCooldown) pulseTimer += Time.fixedDeltaTime;
+                    else if (pulseTimer >= basePulseCooldown)
+                    {
+                        HurtBox[] hurtBoxes = new SphereSearch
+                        {
+                            origin = CharacterBody.corePosition,
+                            radius = 10f,
+                            mask = LayerIndex.entityPrecise.mask
+                        }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(CharacterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
+                        .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
+
+                        if (hurtBoxes.Length > 0)
+                        {
+
+                            EffectManager.SpawnEffect(ScrapPulseEffect, new EffectData
+                            {
+                                origin = base.transform.position,
+                            }, transmit: true);
+
+                            charging = true;
+                            pulseTimer = 0f;
+                        }
+                    }
+                }
+                else
+                {
+                    chargeUpTimer += Time.fixedDeltaTime;
+
+                    if (chargeUpTimer >= 1f)
+                    {
+                        charging = false;
+                        chargeUpTimer = 0f;
+
+                        BlastAttack blastAttack = new BlastAttack
+                        {
+                            attacker = base.gameObject,
+                            procChainMask = default(ProcChainMask),
+                            losType = BlastAttack.LoSType.None,
+                            damageColorIndex = DamageColorIndex.Item,
+                            damageType = DamageType.FallDamage | DamageType.BypassBlock | DamageType.WeakOnHit,
+                            procCoefficient = 0f,
+                            bonusForce = new Vector3(0f, 200f, 0f),
+                            baseForce = 8000f,
+                            baseDamage = CharacterBody.damage * 0.5f,
+                            falloffModel = BlastAttack.FalloffModel.None,
+                            radius = 20f,
+                            position = base.transform.position,
+                            attackerFiltering = AttackerFiltering.NeverHitSelf,
+                            teamIndex = CharacterBody.teamComponent.teamIndex,
+                            inflictor = base.gameObject,
+                            crit = CharacterBody.isPlayerControlled ? CharacterBody.RollCrit() : false
+                        };
+
+                        blastAttack.Fire();
+
+                        EffectManager.SpawnEffect(ScrapExplosionEffect, new EffectData
+                        {
+                            origin = base.transform.position,
+                        }, transmit: true);
+                    }
+                }
+
+
+                if (CharacterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
+                {
+                    pickupDisplay.gameObject.SetActive(false);
+                }
 
                 if (equipmentCDTimer >= baseEquipmentCDFaked) 
                 {
-                    equipmentCDTimer = 0;
+                    HurtBox[] hurtBoxes = new SphereSearch
+                    {
+                        origin = CharacterBody.corePosition,
+                        radius = 30f,
+                        mask = LayerIndex.entityPrecise.mask
+                    }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(CharacterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
+                    .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
 
-                    timerDisplay.displayValue = baseEquipmentCDFaked;
+                    if(hurtBoxes.Length <= 0)
+                    {
+                        return;
+                    }
+
+                    equipmentCDTimer = 0f;
+                    playerTimer = 0f;
+
+                    if(CharacterBody.isPlayerControlled) pickupDisplay.gameObject.SetActive(true);
 
                     CharacterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex));
 

@@ -60,8 +60,6 @@ namespace FortunesFromTheScrapyard.Items
 
             private float timer = 0f;
 
-            private float pity;
-
             private float sfxCooldown = baseDuration;
             public void ModifyStatArguments(StatHookEventArgs args)
             {
@@ -82,8 +80,6 @@ namespace FortunesFromTheScrapyard.Items
                     timer = 0f;
                     if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance), body.master))
                     {
-                        pity = 0;
-
                         if(NetworkServer.active)
                         {
                             if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) body.RemoveOldestTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
@@ -95,10 +91,6 @@ namespace FortunesFromTheScrapyard.Items
                                 sfxCooldown = 0f;
                             }
                         }
-                    }
-                    else
-                    {
-                        pity += 0.5f;
                     }
                 }
             }

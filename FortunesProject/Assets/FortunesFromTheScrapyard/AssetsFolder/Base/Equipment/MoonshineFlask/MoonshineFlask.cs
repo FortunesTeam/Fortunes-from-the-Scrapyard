@@ -9,6 +9,7 @@ using R2API;
 using UnityEngine.AddressableAssets;
 using TMPro;
 using static AkMIDIEvent;
+using static R2API.DamageAPI;
 
 namespace FortunesFromTheScrapyard.Equipments
 {
@@ -164,6 +165,8 @@ namespace FortunesFromTheScrapyard.Equipments
                             blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                             blastAttack.damageType = damageInfo.damageType;
                             blastAttack.AddModdedDamageType(MoonshineProc);
+                            var d = DamageAPI.GetModdedDamageTypeHolder(damageInfo);
+                            d.CopyTo(blastAttack);
                             blastAttack.Fire();
 
                             CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);

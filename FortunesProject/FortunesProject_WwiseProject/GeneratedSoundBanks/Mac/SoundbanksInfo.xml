@@ -16,24 +16,24 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="1367115862">
+		<SoundBank Id="3697235005" Language="SFX" Hash="1851357668">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="73920332" Name="sfx_cd_1" ObjectPath="\Events\Default Work Unit\sfx_cd_1" DurationType="OneShot" DurationMin="0.461192" DurationMax="0.557718"/>
-				<Event Id="73920335" Name="sfx_cd_2" ObjectPath="\Events\Default Work Unit\sfx_cd_2" DurationType="OneShot" DurationMin="0.729907" DurationMax="0.882674"/>
-				<Event Id="73920334" Name="sfx_cd_3" ObjectPath="\Events\Default Work Unit\sfx_cd_3" DurationType="OneShot" DurationMin="1.697822" DurationMax="2.053168"/>
-				<Event Id="3730456474" Name="sfx_ducttape_active" ObjectPath="\Events\Default Work Unit\sfx_ducttape_active" DurationType="OneShot" DurationMin="0.607935" DurationMax="0.735174"/>
-				<Event Id="3280223896" Name="sfx_energybar_use" ObjectPath="\Events\Default Work Unit\sfx_energybar_use" DurationType="OneShot" DurationMin="0.395657" DurationMax="0.478467"/>
-				<Event Id="666364388" Name="sfx_headphones_activate" ObjectPath="\Events\Default Work Unit\sfx_headphones_activate" DurationType="OneShot" DurationMin="0.588086" DurationMax="0.711170"/>
-				<Event Id="3491240262" Name="sfx_lethalinjection_activate" ObjectPath="\Events\Default Work Unit\sfx_lethalinjection_activate" DurationType="OneShot" DurationMin="0.737244" DurationMax="0.891546"/>
-				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start" DurationType="OneShot" DurationMin="1.949381" DurationMax="2.357378"/>
-				<Event Id="1222943750" Name="sfx_moonshine_miss" ObjectPath="\Events\Default Work Unit\sfx_moonshine_miss" DurationType="OneShot" DurationMin="0.260010" DurationMax="0.314429"/>
-				<Event Id="1755670239" Name="sfx_moonshine_use" ObjectPath="\Events\Default Work Unit\sfx_moonshine_use" DurationType="OneShot" DurationMin="0.859495" DurationMax="1.039383"/>
-				<Event Id="397976872" Name="sfx_scrap_elite_spawn" ObjectPath="\Events\Default Work Unit\sfx_scrap_elite_spawn" DurationType="OneShot" DurationMin="3.807687" DurationMax="3.807687"/>
-				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate" DurationType="OneShot" DurationMin="0.227760" DurationMax="0.275430"/>
-				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start" DurationType="OneShot" DurationMin="0.872126" DurationMax="1.054658"/>
+				<Event Id="73920332" Name="sfx_cd_1" ObjectPath="\Events\Default Work Unit\sfx_cd_1"/>
+				<Event Id="73920335" Name="sfx_cd_2" ObjectPath="\Events\Default Work Unit\sfx_cd_2"/>
+				<Event Id="73920334" Name="sfx_cd_3" ObjectPath="\Events\Default Work Unit\sfx_cd_3"/>
+				<Event Id="3730456474" Name="sfx_ducttape_active" ObjectPath="\Events\Default Work Unit\sfx_ducttape_active"/>
+				<Event Id="3280223896" Name="sfx_energybar_use" ObjectPath="\Events\Default Work Unit\sfx_energybar_use"/>
+				<Event Id="666364388" Name="sfx_headphones_activate" ObjectPath="\Events\Default Work Unit\sfx_headphones_activate"/>
+				<Event Id="3491240262" Name="sfx_lethalinjection_activate" ObjectPath="\Events\Default Work Unit\sfx_lethalinjection_activate"/>
+				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start"/>
+				<Event Id="1222943750" Name="sfx_moonshine_miss" ObjectPath="\Events\Default Work Unit\sfx_moonshine_miss"/>
+				<Event Id="1755670239" Name="sfx_moonshine_use" ObjectPath="\Events\Default Work Unit\sfx_moonshine_use"/>
+				<Event Id="397976872" Name="sfx_scrap_elite_spawn" ObjectPath="\Events\Default Work Unit\sfx_scrap_elite_spawn"/>
+				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate"/>
+				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="97956577" Language="SFX">

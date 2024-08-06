@@ -29,5 +29,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	704960360	sfx_spraycan_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_spraycan_activate_E8A9E576.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_spraycan_activate		44564
 	710233405	sfx_lunarmoney_start	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_lunarmoney_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lunarmoney_start		380952
 	1019549591	sfx_moonshine_miss	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_miss_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_miss		55360
-	1072221443	sfx_scrap_elite_spawn	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\ScrapElite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_scrap_elite_spawn		671804
+	1072221443	sfx_scrap_elite_spawn	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\ScrapElite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_scrap_elite_spawn		671804
 

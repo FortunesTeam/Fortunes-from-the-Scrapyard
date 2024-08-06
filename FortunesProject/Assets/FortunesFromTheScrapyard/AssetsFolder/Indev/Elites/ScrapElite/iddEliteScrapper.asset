@@ -14,90 +14,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyAsset: {fileID: 11400000, guid: ae1bb5b6b8b30424799a15c91d73f580, type: 2}
   displayPrefabs:
+  - {fileID: 8077648720655750967, guid: 6dbb301c929d6784f99ed4e2ddb702d7, type: 3}
   - {fileID: 8077648720655750967, guid: 8baa7fa6ec9391c41a4c5b16a6598ebc, type: 3}
   displayDictionaryEntries:
   - idrsName: idrsAcidLarva
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
-      limbMask: 0
-  - idrsName: idrsNone
-    rules:
-    - ruleType: 0
-      displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
   - idrsName: idrsAncientWisp
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
   - idrsName: idrsArchWisp
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
-      limbMask: 0
-  - idrsName: idrsBell
-    rules:
-    - ruleType: 0
-      displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
   - idrsName: idrsAssassin2
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
-      limbMask: 0
-  - idrsName: idrsRoboAssassin
-    rules:
-    - ruleType: 0
-      displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
   - idrsName: idrsBackupDrone
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
-  - idrsName: idrsStrikeDrone
+  - idrsName: idrsBandit
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
       limbMask: 0
-  - idrsName: idrsBandit
+  - idrsName: idrsBandit2
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -133,7 +107,7 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
-  - idrsName: idrsBison
+  - idrsName: idrsBell
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -142,7 +116,7 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
-  - idrsName: idrsCommando
+  - idrsName: idrsBison
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -155,21 +129,12 @@ MonoBehaviour:
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: 0.00693, y: 0.26164, z: 0.00178}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 2, y: 2, z: 2}
       limbMask: 0
-  - idrsName: idrsEngiTurret
-    rules:
-    - ruleType: 0
-      displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
-      limbMask: 0
-  - idrsName: idrsClayman
+  - idrsName: idrsCaptain
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -205,6 +170,33 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
+  - idrsName: idrsClayman
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsCommando
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: Head
+      localPos: {x: -0.00116, y: 0.29957, z: -0.02239}
+      localAngles: {x: 333.1423, y: 359.8779, z: 0.08545}
+      localScale: {x: 1.20454, y: 1.20454, z: 1.20454}
+      limbMask: 0
+  - idrsName: idrsCroco
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
   - idrsName: idrsDrone1
     rules:
     - ruleType: 0
@@ -232,7 +224,7 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
-  - idrsName: idrsMagmaWorm
+  - idrsName: idrsEmergencyDrone
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -241,7 +233,16 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
-  - idrsName: idrsEmergencyDrone
+  - idrsName: idrsEngi
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: HeadCenter
+      localPos: {x: -0.00012, y: 0.11214, z: 0.01855}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - idrsName: idrsEngiTurret
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -260,6 +261,15 @@ MonoBehaviour:
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
   - idrsName: idrsEquipmentDrone
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsFishermanBody
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -353,10 +363,10 @@ MonoBehaviour:
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: MainBody2
+      localPos: {x: 0, y: 0.62753, z: 0.151}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 5, y: 5, z: 5}
       limbMask: 0
   - idrsName: idrsHand
     rules:
@@ -367,7 +377,25 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
+  - idrsName: idrsHereticBody
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
   - idrsName: idrsHermitCrab
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsHuntress
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -421,6 +449,15 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
+  - idrsName: idrsLoader
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
   - idrsName: idrsLunarExploder
     rules:
     - ruleType: 0
@@ -440,6 +477,24 @@ MonoBehaviour:
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
   - idrsName: idrsLunarWisp
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsMage
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsMagmaWorm
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -475,6 +530,15 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
+  - idrsName: idrsMerc
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
   - idrsName: idrsMiniMushroom
     rules:
     - ruleType: 0
@@ -502,6 +566,24 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
+  - idrsName: idrsNewt
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsNone
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
   - idrsName: idrsNullifier
     rules:
     - ruleType: 0
@@ -521,6 +603,24 @@ MonoBehaviour:
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
   - idrsName: idrsPotMobile
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsRailGunner
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsRoboAssassin
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -565,7 +665,7 @@ MonoBehaviour:
       localAngles: {x: 0, y: 0, z: 0}
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
-  - idrsName: idrsNewt
+  - idrsName: idrsStrikeDrone
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -575,6 +675,24 @@ MonoBehaviour:
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
   - idrsName: idrsTitan
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsToolbot
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsTreebot
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
@@ -638,6 +756,15 @@ MonoBehaviour:
       localScale: {x: 0, y: 0, z: 0}
       limbMask: 0
   - idrsName: idrsVoidMegaCrab
+    rules:
+    - ruleType: 0
+      displayPrefabIndex: 0
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - idrsName: idrsVoidSurvivor
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
