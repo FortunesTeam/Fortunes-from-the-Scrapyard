@@ -16,11 +16,14 @@ namespace FortunesFromTheScrapyard
         public const string ID_MAIN = PREFIX + "Main";
         public const string ID_EQUIPS = PREFIX + "Equips";
         public const string ID_ITEMS = PREFIX + "Items";
+        public const string ID_ELITES = PREFIX + "Elites";
 
         internal static ConfigFactory configFactory { get; private set; }
         public static ConfigFile configMain { get; private set; }
         public static ConfigFile configEquips { get; private set; }
         public static ConfigFile configItems { get; private set; }
+
+        public static ConfigFile configElites { get; private set; }
 
         internal static IEnumerator RegisterToModSettingsManager()
         {
@@ -33,6 +36,7 @@ namespace FortunesFromTheScrapyard
             configMain = configFactory.CreateConfigFile(ID_MAIN, true);
             configEquips = configFactory.CreateConfigFile(ID_EQUIPS, true);
             configItems = configFactory.CreateConfigFile(ID_ITEMS, true);
+            configElites = configFactory.CreateConfigFile(ID_ELITES, true);
         }
     }
 }

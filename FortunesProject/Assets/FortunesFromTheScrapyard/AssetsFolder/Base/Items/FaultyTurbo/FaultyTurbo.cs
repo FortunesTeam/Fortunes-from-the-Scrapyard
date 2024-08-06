@@ -62,6 +62,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private float pity;
 
+            private float sfxCooldown = baseDuration;
             public void ModifyStatArguments(StatHookEventArgs args)
             {
                 if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
@@ -72,6 +73,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private void FixedUpdate()
             {
+                sfxCooldown += Time.fixedDeltaTime;
                 if (base.body.isSprinting) timer += Time.fixedDeltaTime;
                 else timer = 0f;
 
@@ -86,7 +88,12 @@ namespace FortunesFromTheScrapyard.Items
                         {
                             if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) body.RemoveOldestTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                             body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
-                            Util.PlaySound("sfx_turbo_start", body.gameObject);
+
+                            if (sfxCooldown >= GetStackValue(baseDuration, baseDurationStack, stack))
+                            {
+                                Util.PlaySound("sfx_turbo_start", body.gameObject);
+                                sfxCooldown = 0f;
+                            }
                         }
                     }
                     else

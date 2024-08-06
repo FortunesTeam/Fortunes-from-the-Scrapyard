@@ -64,7 +64,7 @@ namespace FortunesFromTheScrapyard.Equipments
             bool tempAdd(CharacterBody body) => body.HasBuff(ScrapyardContent.Buffs.bdMoonshineFlask);
             TempVisualEffectAPI.AddTemporaryVisualEffect(moonShineEffect, tempAdd);
 
-            missEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bear/BearProc.prefab").WaitForCompletion().InstantiateClone("MissProc");
+            missEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bear/BearProc.prefab").WaitForCompletion().InstantiateClone("MissProc", true);
             missEffect.EnsureComponent<NetworkIdentity>();
             EffectComponent effect = missEffect.EnsureComponent<EffectComponent>();
             effect.soundName = "sfx_moonshine_miss";

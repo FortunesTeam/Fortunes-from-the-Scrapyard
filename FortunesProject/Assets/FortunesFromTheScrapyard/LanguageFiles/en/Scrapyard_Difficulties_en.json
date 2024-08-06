@@ -1,6 +1,6 @@
 {
   "strings": {
     "SCRAPYARD_DIFFICULTY_WHIRLWIND_NAME": "Whirlwind",
-    "SCRAPYARD_DIFFICULTY_WHIRLWIND_DESC": "Pain is the greatest teacher in a world with no mercy.<style=cStack>\n\n>Player Health Regeneration: <style=cIsHealth>-40%</style>\n>Difficulty Scaling: <style=cIsHealth>+100%</style>\n>Monster Spawn Rate: <style=cIsHealth>+50%</style>\n>Predictive Projectiles: <style=cIsHealth>On</style>\n>Teleporter Radius: <style=cIsHealth>-50%</style>\n>Enemy Aggression: <style=cIsHealth>+50%</style>\n>Aspect Variety: <style=cIsHealth>High</style>\n>"
+    "SCRAPYARD_DIFFICULTY_WHIRLWIND_DESC": "Pain is the greatest teacher in a world with no mercy.<style=cStack>\n\n>Player Health Regeneration: <style=cIsHealth>-40%</style>\n>Difficulty Scaling: <style=cIsHealth>+100%</style>\n>Monster Spawn Rate: <style=cIsHealth>+50%</style>\n>Predictive Projectiles: <style=cIsHealth>On</style>\n>Teleporter Radius: <style=cIsHealth>-50%</style>\n>Enemy Aggression: <style=cIsHealth>+50%</style>\n>Aspect Variety: <style=cIsHealth>High</style>"
   }
 }

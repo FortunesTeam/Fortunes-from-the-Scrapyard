@@ -4,6 +4,7 @@
         "idrsCaptain",
         "idrsCroco",
         "idrsEngi",
+        "idrsFishermanBody",
         "idrsHereticBody",
         "idrsHuntress",
         "idrsLoader",
@@ -75,6 +76,7 @@
         "idrsRoboBallBoss",
         "idrsRoboBallMini",
         "idrsScav",
+        "idrsShantyPlatformBody",
         "idrsNewt",
         "idrsTitan",
         "idrsTurret1",
@@ -1328,6 +1330,12 @@
             "keyAsset": "EliteLunarEquipment",
             "displays": [
                 "DisplayEliteLunar,Eye"
+            ]
+        },
+        {
+            "keyAsset": "EliteScrapEquipment",
+            "displays": [
+                "DisplayScrapElite"
             ]
         }
     ]

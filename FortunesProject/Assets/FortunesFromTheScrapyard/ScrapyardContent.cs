@@ -156,8 +156,13 @@ namespace FortunesFromTheScrapyard
         {
             public static EquipmentDef EnergyBar;
             public static EquipmentDef MoonshineFlask;
+            public static EquipmentDef EliteScrapEquipment;
         }
 
+        public static class ExtendedEliteDefs
+        {
+            public static ExtendedEliteDef edScrap; 
+        }
         public static class Buffs
         {
             public static BuffDef bdEnergyBar;
@@ -176,6 +181,7 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdChickenCooldown;
             public static BuffDef bdPotstickers;
             public static BuffDef bdNoodles;
+            public static BuffDef bdEliteScrap;
         }
 
         public static class Survivors

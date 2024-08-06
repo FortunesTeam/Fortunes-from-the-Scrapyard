@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="3721292930">
+		<SoundBank Id="3697235005" Language="SFX" Hash="1367115862">
 			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
@@ -31,6 +31,7 @@
 				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start"/>
 				<Event Id="1222943750" Name="sfx_moonshine_miss" ObjectPath="\Events\Default Work Unit\sfx_moonshine_miss"/>
 				<Event Id="1755670239" Name="sfx_moonshine_use" ObjectPath="\Events\Default Work Unit\sfx_moonshine_use"/>
+				<Event Id="397976872" Name="sfx_scrap_elite_spawn" ObjectPath="\Events\Default Work Unit\sfx_scrap_elite_spawn"/>
 				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate"/>
 				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start"/>
 			</IncludedEvents>
@@ -73,7 +74,7 @@
 				</File>
 				<File Id="704960360" Language="SFX">
 					<ShortName>sfx_spraycan_activate.wav</ShortName>
-					<Path>SFX\sfx_spraycan_activate_71665544.wem</Path>
+					<Path>SFX\sfx_spraycan_activate_E8A9E576.wem</Path>
 				</File>
 				<File Id="710233405" Language="SFX">
 					<ShortName>sfx_lunarmoney_start.wav</ShortName>

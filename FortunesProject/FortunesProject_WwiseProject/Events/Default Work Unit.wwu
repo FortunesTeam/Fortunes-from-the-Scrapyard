@@ -135,6 +135,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="sfx_scrap_elite_spawn" ID="{FA775A29-67BE-4BD0-B930-EC81FE04E8E4}">
+					<ChildrenList>
+						<Action Name="" ID="{BE792A29-9A2A-4CEF-BEBE-750AEC4F225B}" ShortID="734910944">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sfx_scrap_elite_spawn" ID="{FC3FAA02-7B86-4BEF-A786-21B2386A6EC9}" WorkUnitID="{2841649C-710B-4757-8283-B938276F06DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

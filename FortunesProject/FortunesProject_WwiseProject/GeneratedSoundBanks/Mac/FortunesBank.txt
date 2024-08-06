@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	73920334	sfx_cd_3			\Default Work Unit\sfx_cd_3	
 	73920335	sfx_cd_2			\Default Work Unit\sfx_cd_2	
 	193125100	sfx_lunarmoney_start			\Default Work Unit\sfx_lunarmoney_start	
+	397976872	sfx_scrap_elite_spawn			\Default Work Unit\sfx_scrap_elite_spawn	
 	666364388	sfx_headphones_activate			\Default Work Unit\sfx_headphones_activate	
 	1222943750	sfx_moonshine_miss			\Default Work Unit\sfx_moonshine_miss	
 	1755670239	sfx_moonshine_use			\Default Work Unit\sfx_moonshine_use	
@@ -16,17 +17,17 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	97956577	sfx_cd_2	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_2		142680
-	240724819	sfx_headphones_activate	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_headphones_activate_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_headphones_activate		144836
-	253797691	sfx_turbo_start	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_turbo_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_turbo_start		170468
-	427419216	sfx_energybar_use	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\EnergyBar_D56E3E00.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_energybar_use		77436
-	472270602	sfx_cd_3	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_3		331800
-	506165882	sfx_lethalinjection_activate	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\air-or-steam-pressure-release-29600_C0992993.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lethalinjection_activate		132924
-	522541223	sfx_moonshine_use	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_use_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_use		168000
-	575963976	sfx_ducttape_active	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_ducttape_active_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_ducttape_active		118848
-	611923983	sfx_cd_1	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_1		90176
-	704960360	sfx_spraycan_activate	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_spraycan_activate_CE43B46F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_spraycan_activate		127256
-	710233405	sfx_lunarmoney_start	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_lunarmoney_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lunarmoney_start		380952
-	1019549591	sfx_moonshine_miss	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_miss_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_miss		55360
-	1072221443	sfx_scrap_elite_spawn	C:\Users\mario\Documents\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\ScrapElite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_scrap_elite_spawn		671804
+	97956577	sfx_cd_2	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_2		142680
+	240724819	sfx_headphones_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_headphones_activate_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_headphones_activate		144836
+	253797691	sfx_turbo_start	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_turbo_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_turbo_start		170468
+	427419216	sfx_energybar_use	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\EnergyBar_D56E3E00.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_energybar_use		77436
+	472270602	sfx_cd_3	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_3		331800
+	506165882	sfx_lethalinjection_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\air-or-steam-pressure-release-29600_C0992993.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lethalinjection_activate		132924
+	522541223	sfx_moonshine_use	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_use_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_use		168000
+	575963976	sfx_ducttape_active	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_ducttape_active_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_ducttape_active		118848
+	611923983	sfx_cd_1	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_1		90176
+	704960360	sfx_spraycan_activate	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_spraycan_activate_E8A9E576.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_spraycan_activate		44564
+	710233405	sfx_lunarmoney_start	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_lunarmoney_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lunarmoney_start		380952
+	1019549591	sfx_moonshine_miss	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_miss_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_miss		55360
+	1072221443	sfx_scrap_elite_spawn	E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Mac\SFX\ScrapElite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_scrap_elite_spawn		671804
 

@@ -20,4 +20,4 @@ MonoBehaviour:
   preferPositiveIndex: 0
   hideFromDifficultySelection: 0
   difficultyColor: {r: 0.5744675, g: 0.5521538, b: 0.8301887, a: 1}
-  iconSprite: {fileID: 21300000, guid: 081c5affdad426243899222a493ef6cf, type: 3}
+  iconSprite: {fileID: 21300000, guid: 6a49e75e0db22074fa442dd1681c00b7, type: 3}
