@@ -4,8 +4,10 @@
 		<UserProjectSettings Name="" ID="{1A98D6B6-10ED-46D6-8D50-BFC23AB3CD8A}">
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\mario\Downloads\"/>
+				<Property Name="Event Action List\{1858CD18-7CA5-4345-8626-FD597BF5E2A0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{2FE8AB15-8F83-49A6-852C-446B30D81B6A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5473C270-9809-45F0-AC31-34AB6F6FF45E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{57756026-2E74-4E24-AD1D-B539E3E4E71A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5CACF5FC-9B86-4D16-A9A4-BDCCF3A40AB6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{61D8A285-43BD-4351-81A5-7A5568513C18}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{88901154-0DE6-4750-81BA-B10D63D7CD06}\x64_Expand States" Type="string" Value=""/>
@@ -38,7 +40,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="nZz+uoQe0kae+V/2Erru/FkC6G3/XalMvtvuUBTdZGU="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="6WhSSO+pX0OxRu/lhJpQmQ=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="9PXZkTVTUEybNrDR2UMmGwF6Rdv/////FmzbNAI1HES8yhPp4VPs1QF6Rdv/////"/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="FmzbNAI1HES8yhPp4VPs1QF62nv/////9PXZkTVTUEybNrDR2UMmGwF62nv/////"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>

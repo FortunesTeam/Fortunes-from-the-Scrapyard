@@ -22,6 +22,6 @@ MonoBehaviour:
   descriptionToken: SCRAPYARD_NEUROMANCER_DESCRIPTION
   outroFlavorToken: SCRAPYARD_NEUROMANCER_OUTRO_FLAVOR
   mainEndingEscapeFailureFlavorToken: SCRAPYARD_NEUROMANCER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
-  primaryColor: {r: 1, g: 1, b: 1, a: 0}
+  primaryColor: {r: 0.55633676, g: 0.84453577, b: 0.8867924, a: 1}
   desiredSortPosition: 20
   hidden: 0

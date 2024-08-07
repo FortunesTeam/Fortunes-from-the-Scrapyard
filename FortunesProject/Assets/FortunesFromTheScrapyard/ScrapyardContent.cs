@@ -182,6 +182,8 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdPotstickers;
             public static BuffDef bdNoodles;
             public static BuffDef bdEliteScrap;
+            public static BuffDef bdTimeStopped;
+            public static BuffDef bdTimeSlow;
         }
 
         public static class Survivors

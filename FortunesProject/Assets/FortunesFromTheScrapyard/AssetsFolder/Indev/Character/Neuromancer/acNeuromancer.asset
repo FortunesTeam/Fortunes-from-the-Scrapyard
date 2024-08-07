@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cde32e1dc123643b3d03951692e0a9, type: 3}
+  m_Name: acNeuromancer
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: fc95d9443311eb842806618c3a24ff9e, type: 2}
+  - {fileID: 11400000, guid: 5e3bf438edf3f2e41950d0b6999d940f, type: 2}
+  - {fileID: 11400000, guid: dd8dbd64cb40fad4c9da2376016d0323, type: 2}
+  - {fileID: 11400000, guid: 2f4e86a073ce83c42a4fb0842c599eb2, type: 2}
+  - {fileID: 11400000, guid: d3733c0b22e872a4489459e6552eb6b0, type: 2}
+  - {fileID: 11400000, guid: 36c86011dce29a04688a67ae1ead2673, type: 2}
+  - {fileID: 11400000, guid: 53460c75faec6be489edcb724121b5ef, type: 2}
+  - {fileID: 11400000, guid: d52974c6d75569c44a18c0ea5c9987b3, type: 2}
+  - {fileID: 11400000, guid: 6dff16c56851655479466a08b3b25b03, type: 2}
+  - {fileID: 11400000, guid: 27cd6cfbb8872a747a3a98dc29fca814, type: 2}
+  - {fileID: 6205745757962964917, guid: 2323bf918ebbbbf45a0e1cfd3a7aa2b6, type: 3}
+  - {fileID: 2653540188157794039, guid: 31bfc9632c9ca7f4493d74a166857311, type: 3}
+  - {fileID: 11400000, guid: f5e58ac23be1d1a459d01ff06b4b74f3, type: 2}
+  - {fileID: 11400000, guid: f9bd3ec29b29b7349861729f0630cdd0, type: 2}
+  - {fileID: 853351861191170904, guid: 3f530e59ce7d3c744a77ca42c8eaf592, type: 3}
+  - {fileID: 9100000, guid: 0f87aeed71d824b4b8a96f78301add27, type: 2}
+  - {fileID: 3383645392214014425, guid: e6191473d574e5a4da950370e1475206, type: 3}
+  - {fileID: 11400000, guid: 6f082b03d330448419ebf35bfb727bd3, type: 2}
+  - {fileID: 11400000, guid: ad5130668ed57fc45921e8da701c9c0f, type: 2}
+  - {fileID: 11400000, guid: bf57ef62882bcfd40b7ea13cd8d2eacd, type: 2}
+  - {fileID: 9100000, guid: 7765d1621fcfd08488f2dab57293e03f, type: 2}
+  - {fileID: 11400000, guid: 2ee35398427264d4cb1e5bf8d74871dc, type: 2}
+  - {fileID: 11400000, guid: 13076131512395d43b1b81c3835ab6fb, type: 2}
+  - {fileID: 11400000, guid: 84415fba90fb3834a87e3051e49ed7da, type: 2}
+  - {fileID: 4086706741085502565, guid: 14256e59664cda0439524cd5f8af50de, type: 3}
+  - {fileID: 4086706741085502565, guid: 7c7690a2b3961c545b40a85071e2b03b, type: 3}
+  - {fileID: 4086706741085502565, guid: d17d24f1c891fff428bee43410c92936, type: 3}
+  bodyPrefab: {fileID: 2653540188157794039, guid: 31bfc9632c9ca7f4493d74a166857311,
+    type: 3}
+  masterPrefab: {fileID: 6205745757962964917, guid: 2323bf918ebbbbf45a0e1cfd3a7aa2b6,
+    type: 3}
+  survivorDef: {fileID: 11400000, guid: 27cd6cfbb8872a747a3a98dc29fca814, type: 2}

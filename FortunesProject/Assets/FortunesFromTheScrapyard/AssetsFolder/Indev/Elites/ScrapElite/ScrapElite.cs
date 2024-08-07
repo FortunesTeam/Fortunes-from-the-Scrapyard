@@ -13,7 +13,7 @@ using System;
 using static RoR2.NetworkSession;
 using System.Linq;
 using R2API;
-using UnityEngine.UIElements;
+using RoR2.Projectile;
 
 namespace FortunesFromTheScrapyard.Elite
 {
@@ -29,6 +29,8 @@ namespace FortunesFromTheScrapyard.Elite
         public static GameObject ScrapAffixEffect;
         public static GameObject ScrapPulseEffect;
         public static GameObject ScrapExplosionEffect;
+        public static GameObject ScrapDefenseMatrix;
+        public static GameObject ScrapLaser;
         public override bool Execute(EquipmentSlot slot)
         {
             return false;
@@ -56,6 +58,19 @@ namespace FortunesFromTheScrapyard.Elite
             EffectDef effectDef2 = new EffectDef(ScrapExplosionEffect);
 
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef2);
+
+            ScrapDefenseMatrix = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/CaptainDefenseMatrix/CaptainDefenseMatrixItemBodyAttachment.prefab").WaitForCompletion().InstantiateClone("ScrapMatrix");
+            ScrapDefenseMatrix.EnsureComponent<NetworkIdentity>();
+
+            UnityEngine.Object.Destroy(ScrapDefenseMatrix.transform.Find("Spinner").Find("Mesh").gameObject);
+            UnityEngine.Object.Destroy(ScrapDefenseMatrix.transform.Find("Spinner").gameObject);
+
+            ScrapLaser = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/CaptainDefenseMatrix/TracerCaptainDefenseMatrix.prefab").WaitForCompletion().InstantiateClone("ScrapLaser");
+            ScrapLaser.EnsureComponent<EffectComponent>();
+
+            EffectDef effectDef3 = new EffectDef(ScrapLaser);
+
+            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef3);
 
             On.RoR2.EquipmentCatalog.SetEquipmentDefs += EquipmentCatalog_SetEquipmentDefs;
         }
@@ -120,6 +135,8 @@ namespace FortunesFromTheScrapyard.Elite
             [BuffDefAssociation]
             public static BuffDef GetBuffDef() => ScrapyardContent.Buffs.bdEliteScrap;
 
+            public float fixedAge;
+
             public PickupDisplay pickupDisplay;
 
             private static float playerTimerCycle = 5f;
@@ -134,6 +151,58 @@ namespace FortunesFromTheScrapyard.Elite
             private float pulseTimer = 0f;
             private float chargeUpTimer = 0f;
             private bool charging = false;
+
+            private NetworkedBodyAttachment attachment;
+
+            #region captain shenegnangings
+            private GameObject attachmentGameObject;
+
+            private NetworkedBodyAttachment matrixAttachment;
+
+            public static float projectileEraserRadius = 10f;
+
+            public static float minimumFireFrequency = 5f;
+
+            public static float baseRechargeFrequency = 5f;
+
+            public static GameObject tracerEffectPrefab = ScrapLaser;
+
+            private float rechargeTimer;
+
+            private float rechargeFrequency => baseRechargeFrequency * (CharacterBody ? CharacterBody.attackSpeed : 1f);
+
+            private float fireFrequency => Mathf.Max(minimumFireFrequency, rechargeFrequency);
+
+            private float timeBetweenFiring => 1f / fireFrequency;
+
+            private bool isReadyToFire => rechargeTimer <= 0f;
+
+            private bool attachmentActive
+            {
+                get
+                {
+                    return (object)matrixAttachment != null;
+                }
+                set
+                {
+                    if (value != attachmentActive)
+                    {
+                        if (value)
+                        {
+                            attachmentGameObject = UnityEngine.Object.Instantiate(ScrapDefenseMatrix);
+                            matrixAttachment = attachmentGameObject.GetComponent<NetworkedBodyAttachment>();
+                            matrixAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                        }
+                        else
+                        {
+                            UnityEngine.Object.Destroy(attachmentGameObject);
+                            attachmentGameObject = null;
+                            matrixAttachment = null;
+                        }
+                    }
+                }
+            }
+            #endregion
             private void Start()
             {
                 if(!NetworkServer.active)
@@ -167,10 +236,10 @@ namespace FortunesFromTheScrapyard.Elite
                 {
                     pickupDisplay.SetPickupIndex(PickupCatalog.FindPickupIndex(chosenEquipmentIndex));
 
-                    if ((bool)pickupDisplay.modelRenderer)
+                    if (pickupDisplay.modelRenderer)
                     {
                         Highlight component = GetComponent<Highlight>();
-                        if ((bool)component)
+                        if (component)
                         {
                             component.targetRenderer = pickupDisplay.modelRenderer;
                         }
@@ -179,21 +248,47 @@ namespace FortunesFromTheScrapyard.Elite
 
                 NetworkServer.Spawn(effectInstance);
 
-                ScrapyardLog.Debug("Current Equipment:" + EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).name);
+                if (chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
+                {
+                    attachment = UnityEngine.Object.Instantiate(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/QuestVolatileBatteryAttachment")).GetComponent<NetworkedBodyAttachment>();
+                    attachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                }
             }
 
+            protected override void OnDestroy()
+            {
+                base.OnDestroy();
+
+                if ((bool)attachment)
+                {
+                    UnityEngine.Object.Destroy(attachment.gameObject);
+                    attachment = null;
+                }
+            }
             private void OnDisable()
             {
                 if(effectInstance) UnityEngine.Object.Destroy(effectInstance);
                 effectInstance = null;
+
+                if(matrixAttachment)
+                {
+                    UnityEngine.Object.Destroy(matrixAttachment.gameObject);
+                    matrixAttachment = null;
+                }
+
+                attachmentActive = false;
             }
 
             private void FixedUpdate()
             {
+                fixedAge += Time.fixedDeltaTime;
+
                 if (!NetworkServer.active)
                 {
                     return;
                 }
+
+                attachmentActive = CharacterBody.healthComponent.alive;
 
                 if (scrapEliteEquipmentListEnemy.Count <= 0 || scrapEliteEquipmentListPlayer.Count <= 0 && chosenEquipmentIndex > 0)
                 {
@@ -202,7 +297,19 @@ namespace FortunesFromTheScrapyard.Elite
 
                 equipmentCDTimer += Time.fixedDeltaTime;
                 playerTimer += Time.fixedDeltaTime;
+                rechargeTimer -= Time.fixedDeltaTime;
 
+                //Matrix Behaviour
+                if (fixedAge > timeBetweenFiring)
+                {
+                    fixedAge -= timeBetweenFiring;
+                    if (isReadyToFire && DeleteNearbyProjectile())
+                    {
+                        rechargeTimer = 1f / rechargeFrequency;
+                    }
+                }
+
+                //Pushback Behaviour
                 if (!charging)
                 {
                     if (pulseTimer <= basePulseCooldown) pulseTimer += Time.fixedDeltaTime;
@@ -247,7 +354,7 @@ namespace FortunesFromTheScrapyard.Elite
                             damageType = DamageType.FallDamage | DamageType.BypassBlock | DamageType.WeakOnHit,
                             procCoefficient = 0f,
                             bonusForce = new Vector3(0f, 200f, 0f),
-                            baseForce = 8000f,
+                            baseForce = 4000f,
                             baseDamage = CharacterBody.damage * 0.5f,
                             falloffModel = BlastAttack.FalloffModel.None,
                             radius = 20f,
@@ -267,12 +374,13 @@ namespace FortunesFromTheScrapyard.Elite
                     }
                 }
 
-
+                //Player only hide massive prefab
                 if (CharacterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
                 {
                     pickupDisplay.gameObject.SetActive(false);
                 }
 
+                //Fire equipment
                 if (equipmentCDTimer >= baseEquipmentCDFaked) 
                 {
                     HurtBox[] hurtBoxes = new SphereSearch
@@ -298,13 +406,13 @@ namespace FortunesFromTheScrapyard.Elite
                     if (chosenEquipmentIndex == RoR2Content.Equipment.BFG.equipmentIndex)
                     {
                         ModelLocator component = GetComponent<ModelLocator>();
-                        if ((bool)component)
+                        if (component)
                         {
                             Transform modelTransform = component.modelTransform;
-                            if ((bool)modelTransform)
+                            if (modelTransform)
                             {
                                 CharacterModel component2 = modelTransform.GetComponent<CharacterModel>();
-                                if ((bool)component2)
+                                if (component2)
                                 {
                                     List<GameObject> itemDisplayObjects = component2.GetItemDisplayObjects(DLC1Content.Items.RandomEquipmentTrigger.itemIndex);
                                     if (itemDisplayObjects.Count > 0)
@@ -316,6 +424,52 @@ namespace FortunesFromTheScrapyard.Elite
                         }
                     }
                 }
+            }
+            private bool DeleteNearbyProjectile()
+            {
+                Vector3 vector = (CharacterBody ? CharacterBody.corePosition : Vector3.zero);
+                TeamIndex teamIndex = (CharacterBody ? CharacterBody.teamComponent.teamIndex : TeamIndex.None);
+                float num = projectileEraserRadius * projectileEraserRadius;
+                int num2 = 0;
+                bool result = false;
+                List<ProjectileController> instancesList = InstanceTracker.GetInstancesList<ProjectileController>();
+                List<ProjectileController> list = new List<ProjectileController>();
+                int i = 0;
+                for (int count = instancesList.Count; i < count; i++)
+                {
+                    if (num2 >= 1)
+                    {
+                        break;
+                    }
+                    ProjectileController projectileController = instancesList[i];
+                    if (!projectileController.cannotBeDeleted && projectileController.teamFilter.teamIndex != teamIndex && (projectileController.transform.position - vector).sqrMagnitude < num)
+                    {
+                        list.Add(projectileController);
+                        num2++;
+                    }
+                }
+                int j = 0;
+                for (int count2 = list.Count; j < count2; j++)
+                {
+                    ProjectileController projectileController2 = list[j];
+                    if (projectileController2)
+                    {
+                        result = true;
+                        Vector3 position = projectileController2.transform.position;
+                        Vector3 start = vector;
+                        if (tracerEffectPrefab)
+                        {
+                            EffectData effectData = new EffectData
+                            {
+                                origin = position,
+                                start = start
+                            };
+                            EffectManager.SpawnEffect(tracerEffectPrefab, effectData, transmit: true);
+                        }
+                        UnityEngine.Object.Destroy(projectileController2.gameObject);
+                    }
+                }
+                return result;
             }
         }
     }

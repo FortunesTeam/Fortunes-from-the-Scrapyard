@@ -15,11 +15,11 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 0)]
-        public static float cooldownReduction = 10f;
+        public static float cooldownReduction = 7.5f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 1)]
-        public static float cooldownReductionStack = 10f;
+        public static float cooldownReductionStack = 7.5f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static bool weezerEnabled = true;

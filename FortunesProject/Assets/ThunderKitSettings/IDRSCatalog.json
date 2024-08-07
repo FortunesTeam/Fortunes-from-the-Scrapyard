@@ -1,18 +1,30 @@
 {
     "survivorItemDisplayRuleSets": [
         "idrsBandit2",
+        "idrsCadetBody",
         "idrsCaptain",
         "idrsCroco",
+        "idrsDeputy",
         "idrsEngi",
-        "idrsFishermanBody",
         "idrsHereticBody",
         "idrsHuntress",
+        "idrsInterrogatorBody",
         "idrsLoader",
         "idrsMage",
         "idrsMerc",
+        "idrsMorris",
+        "idrsNeuromancer",
         "idrsRailGunner",
+        "idrsRobDriverBody",
+        "idrsRobRavagerBody",
+        "idrsRocket",
+        "idrsScoutBody",
+        "idrsSeamstressBody",
+        "idrsSpyBody",
+        "idrsSubmarinerBody",
         "idrsToolbot",
         "idrsTreebot",
+        "idrsUnforgivenBody",
         "idrsVoidSurvivor"
     ],
     "enemyItemDisplayRuleSets": [
@@ -48,6 +60,7 @@
         "idrsFlyingVermin",
         "idrsFusionCellDestructibleBody",
         "idrsGeep",
+        "idrsGhoul",
         "idrsGip",
         "idrsGolem",
         "idrsGrandparent",
@@ -76,9 +89,10 @@
         "idrsRoboBallBoss",
         "idrsRoboBallMini",
         "idrsScav",
-        "idrsShantyPlatformBody",
         "idrsNewt",
+        "idrsSpyDecoyBody",
         "idrsTitan",
+        "idrsTombstone",
         "idrsTurret1",
         "idrsUrchinTurret",
         "idrsVagrant",
@@ -1335,7 +1349,9 @@
         {
             "keyAsset": "EliteScrapEquipment",
             "displays": [
-                "DisplayScrapElite"
+                "DisplayScrapElite",
+                "DisplayScrapEliteL",
+                "DisplayScrapEliteR"
             ]
         }
     ]

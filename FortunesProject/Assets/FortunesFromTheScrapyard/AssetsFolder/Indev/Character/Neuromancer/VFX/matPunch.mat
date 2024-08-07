@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: matBody
+  m_Name: matPunch
   m_Shader: {fileID: 4800000, guid: 99d7375c08a1e8f4b939426b5a699e36, type: 3}
-  m_ShaderKeywords: FORCE_SPEC
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmTex:
-        m_Texture: {fileID: 2800000, guid: 61f8c3bce2bbd2c438212e02859282c1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3f01dd8ba7d033049992783a92393241, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4c0387c4b82431c4790e77c70bc09fe7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 08f8c4cd8ca3b7e4986524b4056649c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -139,11 +139,11 @@ Material:
     - _FlowSpeed: 1
     - _FlowTextureScaleFactor: 1
     - _FlowmapOn: 0
-    - _ForceSpecOn: 1
+    - _ForceSpecOn: 0
     - _FresnelBoost: 1
     - _FresnelPower: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GreenChannelBias: 0
     - _GreenChannelSmoothness: 0
@@ -165,9 +165,9 @@ Material:
     - _SliceHeight: 5
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SpecularExponent: 8
+    - _SpecularExponent: 1
     - _SpecularHighlights: 1
-    - _SpecularStrength: 0.2
+    - _SpecularStrength: 0
     - _SplatmapOn: 0
     - _SplatmapTileScale: 1
     - _SrcBlend: 1

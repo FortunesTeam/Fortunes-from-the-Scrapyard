@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1716414731747549640
+--- !u!1 &1583594664481912997
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5295463311551267792}
-  - component: {fileID: 7336110197024633796}
-  - component: {fileID: 790863823699393359}
+  - component: {fileID: 2644775522286317446}
+  - component: {fileID: 7624032618312739849}
+  - component: {fileID: 5169767005164232413}
   m_Layer: 0
-  m_Name: mdlEliteScrapCrown
+  m_Name: mdlEliteScrapL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5295463311551267792
+--- !u!4 &2644775522286317446
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716414731747549640}
+  m_GameObject: {fileID: 1583594664481912997}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,21 +32,21 @@ Transform:
   m_Father: {fileID: 7906305174393304809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &7336110197024633796
+--- !u!33 &7624032618312739849
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716414731747549640}
-  m_Mesh: {fileID: 4300000, guid: 0e52bbbdb87abc94b9afcd5a110203df, type: 2}
---- !u!23 &790863823699393359
+  m_GameObject: {fileID: 1583594664481912997}
+  m_Mesh: {fileID: 4300000, guid: 693b0315246a14548843b759b12482d3, type: 2}
+--- !u!23 &5169767005164232413
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716414731747549640}
+  m_GameObject: {fileID: 1583594664481912997}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -107,7 +107,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5295463311551267792}
+  - {fileID: 2644775522286317446}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererInfos:
-  - renderer: {fileID: 790863823699393359}
+  - renderer: {fileID: 5169767005164232413}
     defaultMaterial: {fileID: 2100000, guid: 9dcc465044c16ee4282246b80e6c2e6a, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0

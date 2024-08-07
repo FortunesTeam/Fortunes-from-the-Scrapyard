@@ -444,6 +444,50 @@
 										<ActiveSource Name="sfx_moonshine_miss" ID="{23ADF3EF-08F8-4CBA-929F-C241C08CCA28}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="sfx_neuromancer_steam" ID="{34809B92-A93C-4463-905E-8ABE916DF68D}" ShortID="756414474">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_ravager_steam" ID="{E9B3E82C-CF1B-4218-9575-B0C608962E80}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_ravager_steam.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="885078543"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_ravager_steam" ID="{E9B3E82C-CF1B-4218-9575-B0C608962E80}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_neuromancer_punch" ID="{CE94BDC2-BBD8-4C34-8A6A-92B989CE7D8C}" ShortID="804382728">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{80DA16C9-0456-49AE-A997-5B47C6B4403A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87924B16-3EB0-415F-9B8A-C7F84120EFA5}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_ravager_punch" ID="{4DFD3526-30F0-4CF6-9874-17BD57C66EB2}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_ravager_punch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="264565919"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_ravager_punch" ID="{4DFD3526-30F0-4CF6-9874-17BD57C66EB2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<Sound Name="sfx_scrap_elite_spawn" ID="{FC3FAA02-7B86-4BEF-A786-21B2386A6EC9}" ShortID="773105875">

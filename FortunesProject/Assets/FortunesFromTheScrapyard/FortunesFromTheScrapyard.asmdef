@@ -44,7 +44,8 @@
         "UnityEngine.SpatialTracking.dll",
         "LegacyResourcesAPI.dll",
         "R2API.Prefab.dll",
-        "R2API.Difficulty.dll"
+        "R2API.Difficulty.dll",
+        "R2API.Networking.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
