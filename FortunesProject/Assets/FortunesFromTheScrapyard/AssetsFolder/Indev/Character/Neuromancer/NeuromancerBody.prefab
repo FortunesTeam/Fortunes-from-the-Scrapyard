@@ -1352,9 +1352,9 @@ MonoBehaviour:
   bodyFlags: 0
   rootMotionInMainState: 0
   mainRootSpeed: 0
-  baseMaxHealth: 90
-  baseRegen: 1.2
-  baseMaxShield: 20
+  baseMaxHealth: 100
+  baseRegen: 2
+  baseMaxShield: 30
   baseMoveSpeed: 7
   baseAcceleration: 80
   baseJumpPower: 15
@@ -1366,9 +1366,9 @@ MonoBehaviour:
   baseJumpCount: 1
   sprintingSpeedMultiplier: 1.45
   autoCalculateLevelStats: 1
-  levelMaxHealth: 27
-  levelRegen: 0.24000001
-  levelMaxShield: 6
+  levelMaxHealth: 30
+  levelRegen: 0.4
+  levelMaxShield: 9
   levelMoveSpeed: 0
   levelJumpPower: 0
   levelDamage: 2.4

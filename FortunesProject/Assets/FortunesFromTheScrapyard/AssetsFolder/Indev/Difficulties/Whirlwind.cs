@@ -105,81 +105,50 @@ namespace FortunesFromTheScrapyard
         }
         private static void AllowPostLoopElites(bool enable)
         {
-            HashSet<EliteDef> hashSet = new HashSet<EliteDef>();
             CombatDirector.EliteTierDef[] eliteTiers = CombatDirector.eliteTiers;
             foreach (CombatDirector.EliteTierDef eliteTierDef in eliteTiers)
             {
-                if (!eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar))
+                if (enable && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
                 {
-                    continue;
-                }
+                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Poison;
 
-                if(enable)
-                {
-                    eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rule)
-                    {
-                        if (rule != 0)
-                        {
-                            return false;
-                        }
-                        Run instance = Run.instance;
-                        return instance != null || TeleporterInteraction.instance?.currentState is TeleporterInteraction.ChargingState;
-                    };
-                }
-                else
-                {
-                    if(eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar))
-                    {
-                        eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rules)
-                        {
-                            if (rules != 0)
-                            {
-                                return false;
-                            }
-                            Run instance = Run.instance;
-                            return rules == SpawnCard.EliteRules.Lunar;
-                        };
-                    }
-                    else if(eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted))
-                    {
-                        eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rules)
-                        {
-                            if (rules != 0)
-                            {
-                                return false;
-                            }
-                            Run instance = Run.instance;
-                            return instance.loopClearCount > 0 && rules == SpawnCard.EliteRules.Default;
-                        };
-                    }
-                }
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].damageBoostCoefficient /= 2f;
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].healthBoostCoefficient /= 8f;
 
-                if(!eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar))
+                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Haunted;
+
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].damageBoostCoefficient /= 2f;
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].healthBoostCoefficient /= 8f;
+
+                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
+                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Lunar;
+
+                    break;
+                }
+                else if(!enable && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
                 {
-                    if(enable)
+                    List<EliteDef> list = new List<EliteDef>(eliteTierDef.eliteTypes);
+                    for (int i = eliteTierDef.eliteTypes.Length - 1; i >= 0; i--)
                     {
-                        EliteDef[] eliteTypes = eliteTierDef.eliteTypes;
-                        foreach (EliteDef eliteDef in eliteTypes)
+                        if (eliteTierDef.eliteTypes[i])
                         {
-                            if (eliteDef && hashSet.Add(eliteDef))
+                            if (eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Poison.eliteIndex || eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Haunted.eliteIndex)
                             {
-                                eliteDef.damageBoostCoefficient /= 2f;
-                                eliteDef.healthBoostCoefficient /= 8f;
+                                eliteTierDef.eliteTypes[i].damageBoostCoefficient = 6f;
+                                eliteTierDef.eliteTypes[i].healthBoostCoefficient = 18f;
+                                list.RemoveAt(i);
+                            }
+                            else if (eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Lunar.eliteIndex)
+                            {
+                                list.RemoveAt(i);
                             }
                         }
                     }
-                    else
-                    {
-                        EliteDef[] eliteTypes = eliteTierDef.eliteTypes;
-                        foreach (EliteDef eliteDef in eliteTypes)
-                        {
-                            if (eliteDef && hashSet.Add(eliteDef))
-                            {
-                                eliteDef.damageBoostCoefficient = 6f;
-                                eliteDef.healthBoostCoefficient = 18f;
-                            }
-                        }
-                    }
+                    eliteTierDef.eliteTypes = list.ToArray();
+
+                    break;
                 }
             }
         }
