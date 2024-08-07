@@ -39,33 +39,38 @@ namespace FortunesFromTheScrapyard
 
         public override void OnRunEnd(Run run)
         {
-            On.RoR2.CombatDirector.Awake -= CombatDirector_Awake;
+            if (DifficultyCatalog.GetDifficultyDef(run.selectedDifficulty) == whirlwindDifficulty.DifficultyDef)
+            {
+                On.RoR2.CombatDirector.Awake -= CombatDirector_Awake;
 
-            On.RoR2.CharacterBody.RecalculateStats -= CharacterBody_RecalculateStats;
+                On.RoR2.CharacterBody.RecalculateStats -= CharacterBody_RecalculateStats;
 
-            On.RoR2.HoldoutZoneController.Awake -= HoldoutZoneController_Awake;
+                On.RoR2.HoldoutZoneController.Awake -= HoldoutZoneController_Awake;
 
-            Lemurian.UnInit();
-            Vulture.UnInit();
-            Bronzong.UnInit();
-            GreaterWisp.UnInit();
-            BeetleGuard.UnInit();
-            ClayGrenadier.UnInit();
-            LemurianBruiser.UnInit();
-            Scavenger.UnInit();
-            Vagrant.UnInit();
-            VoidJailer.UnInit();
-            ClayBoss.UnInit();
-            Grovetender.UnInit();
-            RoboBallBoss.UnInit();
-            FlyingVermin.UnInit();
-            MinorConstruct.UnInit();
-            LunarExploder.UnInit();
+                Lemurian.UnInit();
+                Vulture.UnInit();
+                Bronzong.UnInit();
+                GreaterWisp.UnInit();
+                BeetleGuard.UnInit();
+                ClayGrenadier.UnInit();
+                LemurianBruiser.UnInit();
+                Scavenger.UnInit();
+                Vagrant.UnInit();
+                VoidJailer.UnInit();
+                ClayBoss.UnInit();
+                Grovetender.UnInit();
+                RoboBallBoss.UnInit();
+                FlyingVermin.UnInit();
+                MinorConstruct.UnInit();
+                LunarExploder.UnInit();
+
+                AllowPostLoopElites(false);
+            }
         }
 
         public override void OnRunStart(Run run)
         {
-            if(run.selectedDifficulty == whirlwindDifficulty.DifficultyIndex)
+            if(DifficultyCatalog.GetDifficultyDef(run.selectedDifficulty) == whirlwindDifficulty.DifficultyDef)
             {
                 On.RoR2.CombatDirector.Awake += CombatDirector_Awake;
 
@@ -94,11 +99,11 @@ namespace FortunesFromTheScrapyard
                 MinorConstruct.Init();
                 LunarExploder.Init();
 
-                AllowPostLoopElites();
+                AllowPostLoopElites(true);
             }
 
         }
-        private static void AllowPostLoopElites()
+        private static void AllowPostLoopElites(bool enable)
         {
             HashSet<EliteDef> hashSet = new HashSet<EliteDef>();
             CombatDirector.EliteTierDef[] eliteTiers = CombatDirector.eliteTiers;
@@ -108,26 +113,71 @@ namespace FortunesFromTheScrapyard
                 {
                     continue;
                 }
-                eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rule)
+
+                if(enable)
                 {
-                    if (rule != 0)
+                    eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rule)
                     {
-                        return false;
+                        if (rule != 0)
+                        {
+                            return false;
+                        }
+                        Run instance = Run.instance;
+                        return instance != null || TeleporterInteraction.instance?.currentState is TeleporterInteraction.ChargingState;
+                    };
+                }
+                else
+                {
+                    if(eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar))
+                    {
+                        eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rules)
+                        {
+                            if (rules != 0)
+                            {
+                                return false;
+                            }
+                            Run instance = Run.instance;
+                            return rules == SpawnCard.EliteRules.Lunar;
+                        };
                     }
-                    Run instance = Run.instance;
-                    return instance != null || TeleporterInteraction.instance?.currentState is TeleporterInteraction.ChargingState;
-                };
+                    else if(eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted))
+                    {
+                        eliteTierDef.isAvailable = delegate (SpawnCard.EliteRules rules)
+                        {
+                            if (rules != 0)
+                            {
+                                return false;
+                            }
+                            Run instance = Run.instance;
+                            return instance.loopClearCount > 0 && rules == SpawnCard.EliteRules.Default;
+                        };
+                    }
+                }
 
                 if(!eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar))
                 {
-                    eliteTierDef.costMultiplier /= 2f;
-                    EliteDef[] eliteTypes = eliteTierDef.eliteTypes;
-                    foreach (EliteDef eliteDef in eliteTypes)
+                    if(enable)
                     {
-                        if (eliteDef && hashSet.Add(eliteDef))
+                        EliteDef[] eliteTypes = eliteTierDef.eliteTypes;
+                        foreach (EliteDef eliteDef in eliteTypes)
                         {
-                            eliteDef.healthBoostCoefficient /= 8f;
-                            eliteDef.damageBoostCoefficient /= 2f;
+                            if (eliteDef && hashSet.Add(eliteDef))
+                            {
+                                eliteDef.damageBoostCoefficient /= 2f;
+                                eliteDef.healthBoostCoefficient /= 8f;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        EliteDef[] eliteTypes = eliteTierDef.eliteTypes;
+                        foreach (EliteDef eliteDef in eliteTypes)
+                        {
+                            if (eliteDef && hashSet.Add(eliteDef))
+                            {
+                                eliteDef.damageBoostCoefficient = 6f;
+                                eliteDef.healthBoostCoefficient = 18f;
+                            }
                         }
                     }
                 }
