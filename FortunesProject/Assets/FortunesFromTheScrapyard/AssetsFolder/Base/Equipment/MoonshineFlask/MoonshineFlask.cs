@@ -169,7 +169,7 @@ namespace FortunesFromTheScrapyard.Equipments
                             d.CopyTo(blastAttack);
                             blastAttack.Fire();
 
-                            CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);
+                            if(NetworkServer.active) CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);
                             savedDamage = 0f;
                         }
                     }

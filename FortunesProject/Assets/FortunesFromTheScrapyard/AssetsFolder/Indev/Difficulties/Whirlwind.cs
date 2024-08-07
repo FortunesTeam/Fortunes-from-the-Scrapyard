@@ -110,6 +110,8 @@ namespace FortunesFromTheScrapyard
             {
                 if (enable && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
                 {
+                    eliteTierDef.costMultiplier = 9f;
+
                     Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
                     eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Poison;
 
@@ -130,6 +132,9 @@ namespace FortunesFromTheScrapyard
                 else if(!enable && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
                 {
                     List<EliteDef> list = new List<EliteDef>(eliteTierDef.eliteTypes);
+
+                    eliteTierDef.costMultiplier = 6f;
+
                     for (int i = eliteTierDef.eliteTypes.Length - 1; i >= 0; i--)
                     {
                         if (eliteTierDef.eliteTypes[i])

@@ -169,7 +169,7 @@ namespace FortunesFromTheScrapyard.Elite
 
             private float rechargeTimer;
 
-            private float rechargeFrequency => baseRechargeFrequency * (CharacterBody ? CharacterBody.attackSpeed : 1f);
+            private float rechargeFrequency => baseRechargeFrequency;
 
             private float fireFrequency => Mathf.Max(minimumFireFrequency, rechargeFrequency);
 
