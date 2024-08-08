@@ -122,7 +122,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private void OnDisable()
             {
-                if (NetworkServer.active && body && stack == 0)
+                if (NetworkServer.active && body)
                 {
                     if (body.HasBuff(ScrapyardContent.Buffs.bdSprayCanReady))
                     {

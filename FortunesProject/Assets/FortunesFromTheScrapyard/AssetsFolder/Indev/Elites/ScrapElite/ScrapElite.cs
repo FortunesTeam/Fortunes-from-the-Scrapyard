@@ -151,7 +151,7 @@ namespace FortunesFromTheScrapyard.Elite
             private float chargeUpTimer = 0f;
             private bool charging = false;
 
-            private NetworkedBodyAttachment displayAttachment;
+            //private NetworkedBodyAttachment displayAttachment;
 
             private NetworkedBodyAttachment batteryAttachment;
 
@@ -194,13 +194,8 @@ namespace FortunesFromTheScrapyard.Elite
                 }
             }
             #endregion
-            private void Start()
+            private void OnEnable()
             {
-                if(!NetworkServer.active)
-                {
-                    return;
-                }
-
                 Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
 
                 playerTimer = 0f;
@@ -213,9 +208,9 @@ namespace FortunesFromTheScrapyard.Elite
 
                 if(!affixEffectGameObject)
                 {
-                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect);
+                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect, CharacterBody.coreTransform);
 
-                    pickupDisplay = affixEffectGameObject.transform.Find("EquipmentPrefab").gameObject.GetComponent<PickupDisplay>();
+                    pickupDisplay = affixEffectGameObject.GetComponent<PickupDisplay>();
 
                     if (pickupDisplay)
                     {
@@ -230,8 +225,8 @@ namespace FortunesFromTheScrapyard.Elite
                             }
                         }
                     }
-                    displayAttachment = affixEffectGameObject.GetComponent<NetworkedBodyAttachment>();
-                    displayAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                    //displayAttachment = affixEffectGameObject.GetComponent<NetworkedBodyAttachment>();
+                    //displayAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
                 }
 
                 if (chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
@@ -257,24 +252,21 @@ namespace FortunesFromTheScrapyard.Elite
                 {
                     UnityEngine.Object.Destroy(affixEffectGameObject);
                     affixEffectGameObject = null;
-                }
-
-                if(matrixAttachment)
-                {
-                    UnityEngine.Object.Destroy(matrixAttachment.gameObject);
-                    matrixAttachment = null;
+                    //displayAttachment = null;
                 }
 
                 matrixAttachmentActive = false;
+
+                if (matrixAttachment)
+                {
+                    UnityEngine.Object.Destroy(matrixAttachmentGameObject);
+                    matrixAttachmentGameObject = null;
+                    matrixAttachment = null;
+                }
             }
 
             private void FixedUpdate()
             {
-                if (!NetworkServer.active)
-                {
-                    return;
-                }
-
                 matrixAttachmentActive = CharacterBody.healthComponent.alive;
 
                 if (scrapEliteEquipmentListEnemy.Count <= 0 || scrapEliteEquipmentListPlayer.Count <= 0 && chosenEquipmentIndex > 0)
@@ -363,7 +355,7 @@ namespace FortunesFromTheScrapyard.Elite
                 //Player only hide massive prefab
                 if (CharacterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
                 {
-                    pickupDisplay.gameObject.SetActive(false);
+                    pickupDisplay.enabled = false;
                 }
 
                 //Fire equipment
@@ -385,7 +377,7 @@ namespace FortunesFromTheScrapyard.Elite
                     equipmentCDTimer = 0f;
                     playerTimer = 0f;
 
-                    if(CharacterBody.isPlayerControlled) pickupDisplay.gameObject.SetActive(true);
+                    if (CharacterBody.isPlayerControlled) pickupDisplay.enabled = true;
 
                     if (!CharacterBody.equipmentSlot)
                     {
