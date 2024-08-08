@@ -32,7 +32,6 @@ namespace FortunesFromTheScrapyard.Equipments
                     body.AddTimedBuff(RoR2Content.Buffs.CrocoRegen, buffDuration);
                 }
                 body.healthComponent.ForceShieldRegen();
-                Util.PlaySound("sfx_energybar_use", body.gameObject);
                 return true;
             }
             return false;

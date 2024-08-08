@@ -15,7 +15,7 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float movespeedBonus = 0.8f;
+        public static float movespeedBonus = 0.75f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 1)]
@@ -59,8 +59,7 @@ namespace FortunesFromTheScrapyard.Items
             public static ItemDef GetItemDef() => ScrapyardContent.Items.FaultyTurbo;
 
             private float timer = 0f;
-
-            private float sfxCooldown = baseDuration;
+            private bool delayBuffRefresh = false;
             public void ModifyStatArguments(StatHookEventArgs args)
             {
                 if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
@@ -71,26 +70,34 @@ namespace FortunesFromTheScrapyard.Items
 
             private void FixedUpdate()
             {
-                sfxCooldown += Time.fixedDeltaTime;
                 if (base.body.isSprinting) timer += Time.fixedDeltaTime;
                 else timer = 0f;
 
-                if (timer >= checkInterval)
+                if (timer >= checkInterval && !delayBuffRefresh)
                 {
                     timer = 0f;
                     if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance), body.master))
                     {
                         if(NetworkServer.active)
                         {
-                            if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) body.RemoveOldestTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
-                            body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
-
-                            if (sfxCooldown >= GetStackValue(baseDuration, baseDurationStack, stack))
+                            if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
                             {
-                                Util.PlaySound("sfx_turbo_start", body.gameObject);
-                                sfxCooldown = 0f;
+                                delayBuffRefresh = true;
+                            }
+                            else
+                            {
+                                body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
                             }
                         }
+                    }
+                }
+
+                if(delayBuffRefresh && !body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
+                {
+                    delayBuffRefresh = false;
+                    if(NetworkServer.active)
+                    {
+                        body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
                     }
                 }
             }

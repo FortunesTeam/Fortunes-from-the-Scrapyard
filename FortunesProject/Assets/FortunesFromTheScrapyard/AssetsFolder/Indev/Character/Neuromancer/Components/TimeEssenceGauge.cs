@@ -38,7 +38,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
         {
             if (neuromancerController.gameObject.GetComponent<CharacterBody>())
             {
-                if(!neuromancerController.gameObject.GetComponent<CharacterBody>().healthComponent.alive)
+                if(!neuromancerController.gameObject.GetComponent<CharacterBody>().healthComponent.alive || neuromancerController.gameObject.GetComponent<CharacterBody>().bodyIndex != BodyCatalog.FindBodyIndex("NeuromancerBody"))
                 {
                     Object.Destroy(this);
                 }

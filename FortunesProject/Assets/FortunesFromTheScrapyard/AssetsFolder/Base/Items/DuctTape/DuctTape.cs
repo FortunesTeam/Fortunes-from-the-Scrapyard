@@ -63,13 +63,13 @@ namespace FortunesFromTheScrapyard.Items
                     {
                         if (!body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))
                         {
-                            Util.PlaySound("sfx_ducttape_active", body.gameObject);
-                            body.SetBuffCount(ScrapyardContent.Buffs.bdDuctTape.buffIndex, stack);
+                            body.AddBuff(ScrapyardContent.Buffs.bdDuctTape);
+                            Util.PlaySound("sfx_ducttape_active", base.gameObject);
                         }
                     }
                     else if (body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))
                     {
-                        body.SetBuffCount(ScrapyardContent.Buffs.bdDuctTape.buffIndex, 0);
+                        body.RemoveBuff(ScrapyardContent.Buffs.bdDuctTape);
                     }
                 }
             }

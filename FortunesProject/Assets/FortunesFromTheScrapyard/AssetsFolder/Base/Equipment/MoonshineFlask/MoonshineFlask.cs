@@ -50,7 +50,6 @@ namespace FortunesFromTheScrapyard.Equipments
                 {
                     body.AddTimedBuff(ScrapyardContent.Buffs.bdMoonshineFlask, buffDuration);
                 }
-                Util.PlaySound("sfx_moonshine_use", body.gameObject);
                 return true;
             }
             return false;

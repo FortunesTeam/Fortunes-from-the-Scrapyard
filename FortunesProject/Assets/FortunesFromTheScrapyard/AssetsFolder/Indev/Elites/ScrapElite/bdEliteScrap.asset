@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bdEliteScrap
   m_EditorClassIdentifier: 
   iconPath: 
-  iconSprite: {fileID: 21300000, guid: 81e3fe4a85b8f2a4394f0d0f81f49c80, type: 3}
+  iconSprite: {fileID: 21300000, guid: b642776deb84b174698480f2d7017ad6, type: 3}
   buffColor: {r: 0.6392157, g: 0.5960784, b: 0.78823537, a: 1}
   canStack: 0
   eliteDef: {fileID: 11400000, guid: 49fb995da26151340bb6959eac4f537e, type: 2}

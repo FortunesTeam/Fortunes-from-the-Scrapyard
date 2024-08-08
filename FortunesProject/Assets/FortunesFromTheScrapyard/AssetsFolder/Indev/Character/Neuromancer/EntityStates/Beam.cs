@@ -114,7 +114,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                 }
                 blinkVfxInstance.transform.forward = point - blinkVfxInstance.transform.position;
             }
-            if (((base.fixedAge >= minimumDuration && !IsKeyDownAuthority()) || base.characterBody.isSprinting) && base.isAuthority)
+            if (base.fixedAge >= minimumDuration && !IsKeyDownAuthority() && base.isAuthority)
             {
                 outer.SetNextStateToMain();
             }

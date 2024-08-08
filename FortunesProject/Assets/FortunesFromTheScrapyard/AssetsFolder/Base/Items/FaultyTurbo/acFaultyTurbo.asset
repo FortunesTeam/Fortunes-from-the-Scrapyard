@@ -15,6 +15,7 @@ MonoBehaviour:
   assets:
   - {fileID: 11400000, guid: 7cf09244ede405649b7be57e095b1db9, type: 2}
   - {fileID: 11400000, guid: 609f5219df785a348b36005cfc35fe9b, type: 2}
+  - {fileID: 11400000, guid: 58b42d4d9f7c90441a63da0337c23a57, type: 2}
   itemDisplayPrefabs:
   - {fileID: 3890030943585171948, guid: 9d1d9ea759a0ca54dad2f9583dc9c86e, type: 3}
   itemDef: {fileID: 11400000, guid: 7cf09244ede405649b7be57e095b1db9, type: 2}

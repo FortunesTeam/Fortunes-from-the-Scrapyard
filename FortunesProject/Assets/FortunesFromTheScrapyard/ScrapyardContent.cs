@@ -122,7 +122,7 @@ namespace FortunesFromTheScrapyard
                 () =>
                 {
                     EquipmentModule.AddProvider(main, ContentUtil.CreateContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
-                    return EquipmentModule.InitialzeEquipments(main);
+                    return EquipmentModule.InitializeEquipments(main);
                 },
                 LoadFromAssetBundles
             };
@@ -133,10 +133,22 @@ namespace FortunesFromTheScrapyard
                 () => ContentUtil.PopulateTypeFields(typeof(Equipments), scrapyardContentPack.equipmentDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(Buffs), scrapyardContentPack.buffDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(Survivors), scrapyardContentPack.survivorDefs),
-
+                () => ContentUtil.PopulateTypeFields(typeof(NetworkedBodyAttachments), scrapyardContentPack.networkedObjectPrefabs),
+                () => ContentUtil.PopulateTypeFields(typeof(NetworkSoundEventDefs), scrapyardContentPack.networkSoundEventDefs),
             };
         }
-
+        public static class NetworkSoundEventDefs
+        {
+            public static NetworkSoundEventDef nsedScrapEliteSpawn;
+            public static NetworkSoundEventDef nsedEnergyBar;
+            public static NetworkSoundEventDef nsedMoonshineUse;
+            public static NetworkSoundEventDef nsedDuctTapeActive;
+            public static NetworkSoundEventDef nsedFaultyTurbo;
+        }
+        public static class NetworkedBodyAttachments
+        {
+            public static NetworkedBodyAttachment ScrapAffixElite;
+        }
         public static class Items
         {
             public static ItemDef Headphones;

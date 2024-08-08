@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: acMoonshineFlask
   m_EditorClassIdentifier: 
   assets:
+  - {fileID: 11400000, guid: 0106b4026026be440bbaa34943913643, type: 2}
   - {fileID: 11400000, guid: dffd1394ca56cd540868a198b819dd60, type: 2}
   - {fileID: 11400000, guid: 7de9aaae41190b041973ed55285b9149, type: 2}
   - {fileID: 11400000, guid: 436e3babad00eb64ba6654408ca71792, type: 2}

@@ -110,8 +110,6 @@ namespace FortunesFromTheScrapyard
             {
                 if (enable && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
                 {
-                    eliteTierDef.costMultiplier = 9f;
-
                     Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
                     eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Poison;
 

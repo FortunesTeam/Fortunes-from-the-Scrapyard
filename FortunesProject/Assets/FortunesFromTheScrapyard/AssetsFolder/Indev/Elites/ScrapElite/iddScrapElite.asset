@@ -606,70 +606,70 @@ MonoBehaviour:
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: Chest
+      localPos: {x: -0.00185, y: 0.64323, z: 0.28283}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 1
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: HeadCenter
+      localPos: {x: 0.02979, y: 0.1212, z: 0.00158}
+      localAngles: {x: 0.17988, y: 357.6284, z: 12.66891}
+      localScale: {x: 1.5, y: 1.5, z: 1.5}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 2
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: HeadCenter
+      localPos: {x: -0.02991, y: 0.1212, z: 0.00158}
+      localAngles: {x: 0.17988, y: 3, z: 348}
+      localScale: {x: 1.5, y: 1.5, z: 1.5}
       limbMask: 0
   - idrsName: idrsEngiTurret
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: Base
+      localPos: {x: -0.06075, y: 3.7584, z: 0}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 1
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.1451, y: 0.41859, z: -0.54153}
+      localAngles: {x: 270, y: 4.26621, z: 0}
+      localScale: {x: 6, y: 6, z: 6}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 2
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: 0.1451, y: 0.41859, z: -0.54153}
+      localAngles: {x: 270, y: 356, z: 0}
+      localScale: {x: 6, y: 6, z: 6}
       limbMask: 0
   - idrsName: idrsEngiWalkerTurret
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: Base
+      localPos: {x: 0, y: 3.38809, z: 0.2343}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 1
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.06804, y: 1.33798, z: -0.49525}
+      localAngles: {x: 0, y: 0, z: 20.08438}
+      localScale: {x: 6, y: 6, z: 6}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 2
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: 0.06804, y: 1.33798, z: -0.49525}
+      localAngles: {x: 358.5113, y: 351.5931, z: 339.9156}
+      localScale: {x: 6, y: 6, z: 6}
       limbMask: 0
   - idrsName: idrsEquipmentDrone
     rules:
@@ -1834,24 +1834,24 @@ MonoBehaviour:
     rules:
     - ruleType: 0
       displayPrefabIndex: 0
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
+      childName: Chest
+      localPos: {x: -0.02592, y: 0.52817, z: -0.02343}
       localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      localScale: {x: 0.8, y: 0.8, z: 0.8}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 1
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: 0.02322, y: 0.30312, z: 0.02683}
+      localAngles: {x: 359.3558, y: 0.88212, z: 18.09789}
+      localScale: {x: 1, y: 1, z: 1}
       limbMask: 0
     - ruleType: 0
       displayPrefabIndex: 2
-      childName: 
-      localPos: {x: 0, y: 0, z: 0}
-      localAngles: {x: 0, y: 0, z: 0}
-      localScale: {x: 0, y: 0, z: 0}
+      childName: Head
+      localPos: {x: -0.02322, y: 0.28825, z: 0.02565}
+      localAngles: {x: 359.9236, y: 0.88212, z: 342}
+      localScale: {x: 1, y: 1, z: 1}
       limbMask: 0
   - idrsName: idrsSpyBody
     rules:
