@@ -39,7 +39,6 @@ namespace FortunesFromTheScrapyard.Elite
         public override void Initialize()
         {
             ScrapAffixEffect = assetCollection.FindAsset<GameObject>("ScrapAffixEffect");
-            ClientScene.RegisterPrefab(ScrapAffixEffect);
 
             ScrapPulseEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMine.prefab").WaitForCompletion().gameObject.transform.Find("PrepEffect").gameObject.InstantiateClone("ScrapPulseEffect");
             ScrapPulseEffect.EnsureComponent<NetworkIdentity>();
@@ -57,7 +56,7 @@ namespace FortunesFromTheScrapyard.Elite
 
             ScrapExplosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion().InstantiateClone("ScrapExplosionEffect", false);
 
-            EffectDef effectDef2 = new EffectDef(ScrapExplosionEffect); 
+            EffectDef effectDef2 = new EffectDef(ScrapExplosionEffect);
 
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef2);
 
@@ -78,15 +77,15 @@ namespace FortunesFromTheScrapyard.Elite
         }
         private static void FillWhiteList(List<EquipmentIndex> filter)
         {
-            foreach(EquipmentIndex index in filter) 
-            { 
-                if(!new[] { Recycle.equipmentIndex, MultiShopCard.equipmentIndex, BossHunter.equipmentIndex, BurnNearby.equipmentIndex }.Contains(index)) 
+            foreach (EquipmentIndex index in filter)
+            {
+                if (!new[] { Recycle.equipmentIndex, MultiShopCard.equipmentIndex, BossHunter.equipmentIndex, BurnNearby.equipmentIndex }.Contains(index))
                 {
                     if (!new[] { FireBallDash.equipmentIndex, Tonic.equipmentIndex }.Contains(index) && (!EquipmentCatalog.GetEquipmentDef(index).isLunar || enablePlayerLunars))
                     {
                         scrapEliteEquipmentListPlayer.Add(index);
                     }
-                    if (!new[] { GoldGat.equipmentIndex, Lightning.equipmentIndex, CommandMissile.equipmentIndex, Saw.equipmentIndex, Blackhole.equipmentIndex, DroneBackup.equipmentIndex, BFG.equipmentIndex }.Contains(index))
+                    if (!new[] { GoldGat.equipmentIndex, Lightning.equipmentIndex, CommandMissile.equipmentIndex, Saw.equipmentIndex, Blackhole.equipmentIndex, DroneBackup.equipmentIndex }.Contains(index))
                     {
                         scrapEliteEquipmentListEnemy.Add(index);
                     }
@@ -137,9 +136,13 @@ namespace FortunesFromTheScrapyard.Elite
             [BuffDefAssociation]
             public static BuffDef GetBuffDef() => ScrapyardContent.Buffs.bdEliteScrap;
 
+            public PickupDisplay pickupDisplay;
+
             private static float playerTimerCycle = 5f;
 
+            private float baseEquipmentCDFaked;
             private float equipmentCDTimer;
+            private EquipmentIndex chosenEquipmentIndex;
             private GameObject affixEffectGameObject;
             private float playerTimer;
 
@@ -148,6 +151,9 @@ namespace FortunesFromTheScrapyard.Elite
             private float chargeUpTimer = 0f;
             private bool charging = false;
 
+            //private NetworkedBodyAttachment displayAttachment;
+
+            private NetworkedBodyAttachment batteryAttachment;
 
             #region captain shenegnangings
             private GameObject matrixAttachmentGameObject;
@@ -188,33 +194,57 @@ namespace FortunesFromTheScrapyard.Elite
                 }
             }
             #endregion
-
-            private void Start()
-            {
-                Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
-            }
             private void OnEnable()
             {
+                Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
+
                 playerTimer = 0f;
 
-                if(!affixEffectGameObject)
+                List<EquipmentIndex> list = CharacterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
+                Util.ShuffleList(list);
+                chosenEquipmentIndex = list[list.Count - 1];
+                baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2f;
+                equipmentCDTimer = baseEquipmentCDFaked / 2f;
+
+                if (!affixEffectGameObject)
                 {
-                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect, CharacterBody.gameObject.transform);
+                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect, CharacterBody.transform);
 
-                    affixEffectGameObject.GetComponent<NetworkEquipmentSelection>().RollEquipment(CharacterBody);
+                    pickupDisplay = affixEffectGameObject.transform.Find("ScrapAffixEquipment").gameObject.GetComponent<PickupDisplay>();
 
-                    if (NetworkServer.active) NetworkServer.Spawn(affixEffectGameObject);
+                    if (pickupDisplay)
+                    {
+                        pickupDisplay.SetPickupIndex(PickupCatalog.FindPickupIndex(chosenEquipmentIndex));
 
+                        if (pickupDisplay.modelRenderer)
+                        {
+                            Highlight component = affixEffectGameObject.transform.Find("ScrapAffixEquipment").gameObject.GetComponent<Highlight>();
+                            if (component)
+                            {
+                                component.targetRenderer = pickupDisplay.modelRenderer;
+                            }
+                        }
+                    }
                     //displayAttachment = affixEffectGameObject.GetComponent<NetworkedBodyAttachment>();
                     //displayAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
                 }
 
-
+                if (chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
+                {
+                    batteryAttachment = UnityEngine.Object.Instantiate(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/QuestVolatileBatteryAttachment")).GetComponent<NetworkedBodyAttachment>();
+                    batteryAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                }
             }
 
             protected override void OnDestroy()
             {
                 base.OnDestroy();
+
+                if ((bool)batteryAttachment)
+                {
+                    UnityEngine.Object.Destroy(batteryAttachment.gameObject);
+                    batteryAttachment = null;
+                }
             }
             private void OnDisable()
             {
@@ -222,6 +252,7 @@ namespace FortunesFromTheScrapyard.Elite
                 {
                     UnityEngine.Object.Destroy(affixEffectGameObject);
                     affixEffectGameObject = null;
+                    //displayAttachment = null;
                 }
 
                 matrixAttachmentActive = false;
@@ -238,7 +269,7 @@ namespace FortunesFromTheScrapyard.Elite
             {
                 matrixAttachmentActive = CharacterBody.healthComponent.alive;
 
-                if (scrapEliteEquipmentListEnemy.Count <= 0 || scrapEliteEquipmentListPlayer.Count <= 0)
+                if (scrapEliteEquipmentListEnemy.Count <= 0 || scrapEliteEquipmentListPlayer.Count <= 0 && chosenEquipmentIndex > 0)
                 {
                     return;
                 }
@@ -324,11 +355,11 @@ namespace FortunesFromTheScrapyard.Elite
                 //Player only hide massive prefab
                 if (CharacterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
                 {
-                    affixEffectGameObject.transform.Find("ScrapAffixEquipment").gameObject.SetActive(false);
+                    pickupDisplay.gameObject.SetActive(false);
                 }
 
                 //Fire equipment
-                if (equipmentCDTimer >= affixEffectGameObject.GetComponent<NetworkEquipmentSelection>().baseCooldown) 
+                if (equipmentCDTimer >= baseEquipmentCDFaked)
                 {
                     HurtBox[] hurtBoxes = new SphereSearch
                     {
@@ -338,7 +369,7 @@ namespace FortunesFromTheScrapyard.Elite
                     }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(CharacterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
                     .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
 
-                    if(hurtBoxes.Length <= 0)
+                    if (hurtBoxes.Length <= 0)
                     {
                         return;
                     }
@@ -346,7 +377,7 @@ namespace FortunesFromTheScrapyard.Elite
                     equipmentCDTimer = 0f;
                     playerTimer = 0f;
 
-                    if (CharacterBody.isPlayerControlled) affixEffectGameObject.transform.Find("ScrapAffixEquipment").gameObject.SetActive(true);
+                    if (CharacterBody.isPlayerControlled) pickupDisplay.gameObject.SetActive(true);
 
                     if (!CharacterBody.equipmentSlot)
                     {
@@ -358,9 +389,9 @@ namespace FortunesFromTheScrapyard.Elite
                         CharacterBody.equipmentSlot.rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
                     }
 
-                    if(NetworkServer.active) CharacterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(affixEffectGameObject.GetComponent<NetworkEquipmentSelection>().chosenEquipmentIndex));
+                    CharacterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex));
 
-                    if (affixEffectGameObject.GetComponent<NetworkEquipmentSelection>().chosenEquipmentIndex == RoR2Content.Equipment.BFG.equipmentIndex)
+                    if (chosenEquipmentIndex == RoR2Content.Equipment.BFG.equipmentIndex)
                     {
                         ModelLocator component = GetComponent<ModelLocator>();
                         if (component)

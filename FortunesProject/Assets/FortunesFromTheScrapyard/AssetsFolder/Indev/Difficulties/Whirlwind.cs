@@ -189,6 +189,7 @@ namespace FortunesFromTheScrapyard
         private void CombatDirector_Awake(On.RoR2.CombatDirector.orig_Awake orig, CombatDirector self)
         {
             self.creditMultiplier *= 1.5f;
+            self.goldRewardCoefficient *= 0.85f;
             orig(self);
         }
 

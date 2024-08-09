@@ -2262,7 +2262,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2512277259002658007}
   - component: {fileID: 5012303034974811251}
-  - component: {fileID: 7422543025071991715}
   m_Layer: 0
   m_Name: ScrapAffixEffect
   m_TagString: Untagged
@@ -2319,22 +2318,6 @@ MonoBehaviour:
     i15: 0
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &7422543025071991715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2507292174066636152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7ad48c415711447a3a84d59689fd73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  body: {fileID: 0}
-  chosenEquipmentIndex: 0
-  baseCooldown: 0
 --- !u!1 &8234845175227276853
 GameObject:
   m_ObjectHideFlags: 0
