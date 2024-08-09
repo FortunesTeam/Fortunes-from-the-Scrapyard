@@ -1,6 +1,4 @@
 ﻿using EntityStates;
-
-
 using RoR2;
 using UnityEngine;
 

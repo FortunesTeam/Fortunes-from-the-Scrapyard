@@ -84,6 +84,75 @@ namespace FortunesFromTheScrapyard.Equipments
             EffectDef explosionEffectDef = new EffectDef(explosionEffect);
 
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(explosionEffectDef);
+
+            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+        }
+
+        private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        {
+            CharacterBody attackerBody = null;
+            if (damageInfo.attacker) damageInfo.attacker.GetComponent<CharacterBody>();
+            MoonshineBehaviour moonshineComponent = null;
+            if (attackerBody) moonshineComponent = attackerBody.GetComponent<MoonshineBehaviour>();
+
+            if (attackerBody && moonshineComponent && damageInfo.dotIndex == DotController.DotIndex.None && !damageInfo.HasModdedDamageType(MoonshineProc))
+            {
+                if (attackerBody.HasBuff(ScrapyardContent.Buffs.bdMoonshineFlask) && !Util.CheckRoll(Util.ConvertAmplificationPercentageIntoReductionPercentage(chanceToHit / attackerBody.GetBuffCount(ScrapyardContent.Buffs.bdMoonshineFlask)), attackerBody.master.luck))
+                {
+                    EffectManager.SpawnEffect(effectData: new EffectData
+                    {
+                        origin = damageInfo.position,
+                        rotation = Util.QuaternionSafeLookRotation((damageInfo.force != Vector3.zero) ? damageInfo.force : UnityEngine.Random.onUnitSphere)
+                    }, effectPrefab: missEffect, transmit: false);
+
+                    damageInfo.rejected = true;
+
+                    moonshineComponent.savedDamage += damageInfo.damage * basePercentageSaved;
+
+                    attackerBody.AddBuff(ScrapyardContent.Buffs.bdMoonshineStack);
+                }
+                else if (attackerBody.HasBuff(ScrapyardContent.Buffs.bdMoonshineStack))
+                {
+                    int buffCount = attackerBody.GetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack);
+                    if (buffCount > 0 && damageInfo.procCoefficient != 0f)
+                    {
+                        float radius = (baseRadius + baseRadius * (float)buffCount) * damageInfo.procCoefficient;
+
+                        EffectManager.SpawnEffect(explosionEffect, new EffectData
+                        {
+                            origin = damageInfo.position,
+                            scale = radius,
+                            rotation = Util.QuaternionSafeLookRotation(damageInfo.force)
+                        }, transmit: true);
+
+                        BlastAttack blastAttack = new BlastAttack
+                        {
+                            position = damageInfo.position,
+                            baseDamage = moonshineComponent.savedDamage,
+                            baseForce = 0f,
+                            radius = radius,
+                            attacker = damageInfo.attacker,
+                            inflictor = null
+                        };
+                        blastAttack.teamIndex = TeamComponent.GetObjectTeam(blastAttack.attacker);
+                        blastAttack.crit = damageInfo.crit;
+                        blastAttack.procChainMask = damageInfo.procChainMask;
+                        blastAttack.procCoefficient = 0f;
+                        blastAttack.damageColorIndex = DamageColorIndex.Item;
+                        blastAttack.falloffModel = BlastAttack.FalloffModel.None;
+                        blastAttack.damageType = damageInfo.damageType;
+                        blastAttack.AddModdedDamageType(MoonshineProc);
+                        var d = DamageAPI.GetModdedDamageTypeHolder(damageInfo);
+                        d.CopyTo(blastAttack);
+                        blastAttack.Fire();
+
+                        if (NetworkServer.active) attackerBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);
+                        moonshineComponent.savedDamage = 0f;
+                    }
+                }
+            }
+
+            orig.Invoke(self, damageInfo);
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -103,77 +172,17 @@ namespace FortunesFromTheScrapyard.Equipments
 
         public override void OnEquipmentLost(CharacterBody body)
         {
+            Component.Destroy(body.gameObject.GetComponent<MoonshineBehaviour>());
         }
 
         public override void OnEquipmentObtained(CharacterBody body)
         {
+            body.gameObject.AddComponent<MoonshineBehaviour>();
         }
 
-        public class MoonshineBuffBehaviour : BaseBuffBehaviour, IOnIncomingDamageOtherServerReciever
+        public class MoonshineBehaviour : MonoBehaviour
         {
-            [BuffDefAssociation]
-            public static BuffDef GetBuffDef() => ScrapyardContent.Buffs.bdMoonshineFlask;
-
-            private float savedDamage;
-            public void OnIncomingDamageOther(HealthComponent victimHealthComponent, DamageInfo damageInfo)
-            { 
-                if(damageInfo.dotIndex == DotController.DotIndex.None && !damageInfo.HasModdedDamageType(MoonshineProc)) 
-                {
-                    if (CharacterBody.HasBuff(GetBuffDef()) && !Util.CheckRoll(Util.ConvertAmplificationPercentageIntoReductionPercentage(chanceToHit / CharacterBody.GetBuffCount(GetBuffDef())), CharacterBody.master.luck))
-                    {
-                        EffectManager.SpawnEffect(effectData: new EffectData
-                        {
-                            origin = damageInfo.position,
-                            rotation = Util.QuaternionSafeLookRotation((damageInfo.force != Vector3.zero) ? damageInfo.force : UnityEngine.Random.onUnitSphere)
-                        }, effectPrefab: missEffect, transmit: false);
-
-                        damageInfo.rejected = true;
-
-                        savedDamage += damageInfo.damage * basePercentageSaved;
-
-                        CharacterBody.AddBuff(ScrapyardContent.Buffs.bdMoonshineStack);
-                    }
-                    else if (CharacterBody.HasBuff(ScrapyardContent.Buffs.bdMoonshineStack))
-                    {
-                        int buffCount = CharacterBody.GetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack);
-                        if (buffCount > 0 && damageInfo.procCoefficient != 0f)
-                        {
-                            float radius = (baseRadius + baseRadius * (float)buffCount) * damageInfo.procCoefficient;
-
-                            EffectManager.SpawnEffect(explosionEffect, new EffectData
-                            {
-                                origin = damageInfo.position,
-                                scale = radius,
-                                rotation = Util.QuaternionSafeLookRotation(damageInfo.force)
-                            }, transmit: true);
-
-                            BlastAttack blastAttack = new BlastAttack
-                            {
-                                position = damageInfo.position,
-                                baseDamage = savedDamage,
-                                baseForce = 0f,
-                                radius = radius,
-                                attacker = damageInfo.attacker,
-                                inflictor = null
-                            };
-                            blastAttack.teamIndex = TeamComponent.GetObjectTeam(blastAttack.attacker);
-                            blastAttack.crit = damageInfo.crit;
-                            blastAttack.procChainMask = damageInfo.procChainMask;
-                            blastAttack.procCoefficient = 0f;
-                            blastAttack.damageColorIndex = DamageColorIndex.Item;
-                            blastAttack.falloffModel = BlastAttack.FalloffModel.None;
-                            blastAttack.damageType = damageInfo.damageType;
-                            blastAttack.AddModdedDamageType(MoonshineProc);
-                            var d = DamageAPI.GetModdedDamageTypeHolder(damageInfo);
-                            d.CopyTo(blastAttack);
-                            blastAttack.Fire();
-
-                            if(NetworkServer.active) CharacterBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);
-                            savedDamage = 0f;
-                        }
-                    }
-                }
-            }
+            public float savedDamage = 0f;
         }
     }
 }

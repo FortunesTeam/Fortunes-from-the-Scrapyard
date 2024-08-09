@@ -6,6 +6,9 @@ using System.Runtime.CompilerServices;
 using System.Security.Permissions;
 using System.Security;
 using UnityEngine;
+using FortunesFromTheScrapyard.Survivors.Neuromancer.Components;
+using R2API.Networking;
+using FortunesFromTheScrapyard.Elite;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 #pragma warning disable CS0618
@@ -30,6 +33,9 @@ namespace FortunesFromTheScrapyard
             instance = this;
             new ScrapyardLog(Logger);
             new ScrapyardConfig(this);
+
+            NetworkingAPI.RegisterMessageType<SyncTime>();
+            NetworkingAPI.RegisterMessageType<NetworkEquipmentSelection.SyncDisplay>();
 
             //We do not load our assetbundles or content at awake, instead, we create a new instance of this class,
             //which implements the game's IContentPackProvider interface.

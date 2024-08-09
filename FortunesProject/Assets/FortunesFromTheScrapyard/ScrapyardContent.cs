@@ -4,12 +4,6 @@ using RoR2;
 using RoR2.ContentManagement;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using FortunesFromTheScrapyard.Survivors;
 
 namespace FortunesFromTheScrapyard
 {
@@ -122,7 +116,7 @@ namespace FortunesFromTheScrapyard
                 () =>
                 {
                     EquipmentModule.AddProvider(main, ContentUtil.CreateContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
-                    return EquipmentModule.InitializeEquipments(main);
+                    return EquipmentModule.InitialzeEquipments(main);
                 },
                 LoadFromAssetBundles
             };
@@ -147,7 +141,6 @@ namespace FortunesFromTheScrapyard
         }
         public static class NetworkedBodyAttachments
         {
-            public static NetworkedBodyAttachment ScrapAffixElite;
         }
         public static class Items
         {
