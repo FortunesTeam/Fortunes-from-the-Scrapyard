@@ -57,7 +57,6 @@ namespace FortunesFromTheScrapyard.Items
 
             private void FixedUpdate()
             {
-
                 if (body.healthComponent.health <= body.healthComponent.fullCombinedHealth * healthThreshold)
                 {
                     if (!body.HasBuff(ScrapyardContent.Buffs.bdDuctTape))

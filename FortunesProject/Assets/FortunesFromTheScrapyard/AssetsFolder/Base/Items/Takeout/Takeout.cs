@@ -110,8 +110,17 @@ namespace FortunesFromTheScrapyard.Items
         {
             return ScrapyardAssets.LoadAssetAsync<ItemAssetCollection>("acTakeout", ScrapyardBundle.Items);
         }
-
-
+        public void fart()
+        {
+            CharacterBody attackerBody = new CharacterBody();
+            CharacterBody victimBody = new CharacterBody();
+            FartComponent victimFart = victimBody.gameObject.EnsureComponent<FartComponent>();
+            victimFart.fartCount = attackerBody.GetItemCount(ScrapyardContent.Items.Takeout);
+        }
+        public class FartComponent : MonoBehaviour
+        {
+            public int fartCount = 0;
+        }
         public class TakeoutBehaviour : BaseItemBodyBehavior, IBodyStatArgModifier
         {
             [ItemDefAssociation(useOnServer = true, useOnClient = false)]
