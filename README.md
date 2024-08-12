@@ -14,7 +14,11 @@
 
 * **Skater** - Fast, agile, and bubbly. Skater puts the combo mechanic into play with her quick shooting and quick gliding around the battlefield.
 
-* **???** - 
+![New Difficulty...]
+* Pain is the greatest teacher in a world with no mercy. Face the new **Whirlwind** difficulty, upgrading your enemies with predictive AI, higher spawn rate and stronger enemies appearing earlier in your run.
+
+![New Elites...]
+* Fight your way through new hoards of Synthetic enemies. Something is taking over the many creatures of Petrichor V, allowing them to be able to use equipment and keep you at a distance.
 
 ![New Interactables...](TheCommissionProject/Assets/ReadmeAssets/3.gif)
 
@@ -30,18 +34,20 @@ Code contributions by...
 * BlueJay, Pheonix, Score
 
 Art/Modelling/Animation contributions by...
-*  Arya, Atrxs, Gemo, JestAnAnimator, Lawful, ProGamerNerd, Redacted, Synodii, ThingW, TryAgain211, TupperwareConsumer, VoidStudios, Xion
+*  Arya, Atrxs, dotflare, Gemo, JestAnAnimator, Lawful, Geahgeah, ProGamerNerd, Redacted, Synodii, ThingW, TryAgain211, TupperwareConsumer, VoidStudios, Yori, Xion
 
 Special Thanks to... 
 * Writing/Editing - Plantmaster (Ruby R.)
 * Voice Acting - Kking
 * Translations - 
-* Sound - Gajrio, StinkyPhroge
+* Sound Design - Gajrio
+* Music - StinkyPhroge
 * Feedback and Support - Shitter, raven_akuji, all of you!
 
 ## Bugs and/or Feedback
 
 Bugs can be reported directly to our discord!
+discord.gg/discord.gg/n3SnnJkBmb
 
 * Like the mod? Consider donating!
   * (https://ko-fi.com/thecommission)
