@@ -116,8 +116,7 @@ namespace FortunesFromTheScrapyard.Items
                     else if (!victimHealthComponent.body.HasBuff(ScrapyardContent.Buffs.bdDisorient))
                     {
                         float procChance = chanceBase * damageInfo.procCoefficient;
-                        float adjustedProcChance = Util.ConvertAmplificationPercentageIntoReductionPercentage(procChance);
-                        if (Util.CheckRoll(adjustedProcChance, attackerBody.master))
+                        if (Util.CheckRoll(procChance, attackerBody.master))
                         {
                             victimHealthComponent.body.AddBuff(ScrapyardContent.Buffs.bdDisorient);
                         }
