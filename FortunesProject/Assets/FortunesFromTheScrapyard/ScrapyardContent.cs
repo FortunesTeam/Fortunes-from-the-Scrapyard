@@ -155,6 +155,7 @@ namespace FortunesFromTheScrapyard
             public static ItemDef FaultyTurbo;
             public static ItemDef OldCD;
             public static ItemDef DuctTape;
+            public static ItemDef Polypore;
         }
 
         public static class Equipments
@@ -189,6 +190,7 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdEliteScrap;
             public static BuffDef bdTimeStopped;
             public static BuffDef bdTimeSlow;
+            public static BuffDef bdPolypore;
         }
 
         public static class Survivors
