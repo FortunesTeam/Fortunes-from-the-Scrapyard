@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67221b67e9124924195e426df223aa9d, type: 3}
+  m_Name: MarkSkillDef
+  m_EditorClassIdentifier: 
+  skillName: CloakerMark
+  skillNameToken: SCRAPYARD_CLOAKER_MARK_NAME
+  skillDescriptionToken: SCRAPYARD_CLOAKER_MARK_DESC
+  keywordTokens: []
+  icon: {fileID: 21300000, guid: 44439eef29b1fd248ab7eb1a8c2f8509, type: 3}
+  activationStateMachineName: Mark
+  activationState:
+    _typeName: EntityStates.Cloaker.CloakerMark, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  interruptPriority: 0
+  baseRechargeInterval: 1
+  baseMaxStock: 1
+  rechargeStock: 1
+  requiredStock: 1
+  stockToConsume: 0
+  resetCooldownTimerOnUse: 0
+  fullRestockOnAssign: 1
+  dontAllowPastMaxStocks: 0
+  beginSkillCooldownOnSkillEnd: 0
+  cancelSprintingOnActivation: 0
+  forceSprintDuringState: 0
+  canceledFromSprinting: 0
+  isCombatSkill: 0
+  mustKeyPress: 0

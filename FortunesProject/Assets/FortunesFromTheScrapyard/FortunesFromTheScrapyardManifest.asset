@@ -41,6 +41,8 @@ MonoBehaviour:
     - {fileID: 4900000, guid: fc9d595fb9b78434ebb796fbb6ca270d, type: 3}
     - {fileID: 4900000, guid: e33f38168df00554bac63854484530a6, type: 3}
     - {fileID: 4900000, guid: 14dace940b3246149a119e21f8b0875c, type: 3}
+    - {fileID: 4900000, guid: babe30743e2f31b4ea88d608398f6a59, type: 3}
+    - {fileID: 4900000, guid: b2cc2e018f2ba114280ae0c9d17e57cb, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +134,7 @@ MonoBehaviour:
     - {fileID: 102900000, guid: e675b6423b32f5448a7717e6f7423ce5, type: 3}
   - assetBundleName: fortunessurvivors
     assets:
-    - {fileID: 102900000, guid: dd3a463821e238341b0c1193736beede, type: 3}
+    - {fileID: 102900000, guid: 7954410729e1a024d8569d109dd00c9d, type: 3}
 --- !u!114 &114987763159783732
 MonoBehaviour:
   m_ObjectHideFlags: 0

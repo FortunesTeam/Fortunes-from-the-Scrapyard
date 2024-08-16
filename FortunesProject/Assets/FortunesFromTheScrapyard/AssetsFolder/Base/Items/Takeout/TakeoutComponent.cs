@@ -34,6 +34,7 @@ namespace FortunesFromTheScrapyard.Items
                 {
                     ownerBody.SetBuffCount(ScrapyardContent.Buffs.bdChicken.buffIndex, 1);
                 }
+                on = true;
             }
         }
 

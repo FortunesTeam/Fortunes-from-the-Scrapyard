@@ -37,7 +37,7 @@ namespace FortunesFromTheScrapyard.Elite
 
         private void OnDestroy()
         {
-            if ((bool)batteryAttachment)
+            if (batteryAttachment)
             {
                 UnityEngine.Object.Destroy(batteryAttachment.gameObject);
                 batteryAttachment = null;
