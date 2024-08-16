@@ -8,14 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matHeroLightning
-  m_Shader: {fileID: 210, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: EFFECT_BUMP _ALPHABLEND_ON _EMISSION _FADING_ON _NORMALMAP
+  m_Shader: {fileID: 4800000, guid: 0d4838f326dd67140acbf335e7b3bffa, type: 3}
+  m_ShaderKeywords: EFFECT_BUMP USE_CLOUDS _ALPHABLEND_ON _EMISSION _FADING_ON _NORMALMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -34,6 +33,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 13deb0443783524449cd43cde185813a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cloud1Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cloud2Tex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -169,15 +176,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaBias: 0
     - _AlphaBoost: 1
     - _AtmosphereStrength: 1
     - _BlendOp: 0
     - _BlueChannelBias: 0
     - _BlueChannelSmoothness: 0
+    - _Boost: 1
     - _BumpScale: 1
+    - _CalcTextureAlphaOn: 0
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+    - _CloudOffsetOn: 0
+    - _CloudsOn: 1
     - _ColorMask: 15
     - _ColorMode: 0
     - _ColorsOn: 0
@@ -185,8 +197,10 @@ Material:
     - _Cutoff: 0.5
     - _DecalLayer: 0
     - _Depth: 0.2
+    - _DepthOffset: 0
     - _DetailNormalMapScale: 1
     - _DetailStrength: 0.5
+    - _DisableRemapOn: 0
     - _DistanceModulationMagnitude: 0.5
     - _DistanceModulationOn: 0
     - _DistortionBlend: 0.793
@@ -209,6 +223,8 @@ Material:
     - _FEON: 0
     - _Fade: 1
     - _FadeBias: 0
+    - _FadeCloseDistance: 0.5
+    - _FadeCloseOn: 0
     - _FarFadeOneDistance: 200000
     - _FarFadeZeroDistance: 250000
     - _FlipbookMode: 0
@@ -222,6 +238,7 @@ Material:
     - _FlowmapOn: 0
     - _ForceSpecOn: 0
     - _FresnelBoost: 1
+    - _FresnelOn: 0
     - _FresnelPower: 1
     - _GlossMapScale: 1
     - _Glossiness: 1
@@ -229,6 +246,7 @@ Material:
     - _GradientScale: 1.06
     - _GreenChannelBias: 0
     - _GreenChannelSmoothness: 0
+    - _InternalSimpleBlendMode: 0
     - _InvFade: 0.1
     - _LightenFactor: 0
     - _LightingEnabled: 1
@@ -241,6 +259,7 @@ Material:
     - _NearFadeZeroDistance: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _OffsetAmount: 0
     - _Parallax: 0.02
     - _PatternPanningSpeed: 0
     - _PatternPixelSize: 32
@@ -253,6 +272,7 @@ Material:
     - _PrintOn: 0
     - _RampInfo: 0
     - _RotationSpeed: 0
+    - _SkyboxOnly: 0
     - _SliceAlphaDepth: 0.1
     - _SliceBandHeight: 1
     - _SliceHeight: 5
@@ -277,12 +297,18 @@ Material:
     - _TrueAlpha: 1
     - _UVSec: 0
     - _UseUIAlphaClip: 0
+    - _UseUV1On: 0
+    - _VertexAlphaOn: 0
+    - _VertexColorOn: 0
+    - _VertexOffsetOn: 0
     - _VertexOffsetStrength: 0
+    - _ZTest: 4
     - _ZWrite: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _CutoffScroll: {r: 0, g: 0, b: 0, a: 0}
     - _EmColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

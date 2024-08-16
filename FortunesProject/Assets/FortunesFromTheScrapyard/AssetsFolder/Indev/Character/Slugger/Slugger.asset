@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1881990681, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: Slugger
+  m_EditorClassIdentifier: 
+  bodyPrefab: {fileID: 1805075459599227740, guid: 6afce90707344b84ea85984e78b017c4,
+    type: 3}
+  displayPrefab: {fileID: 8812680734290125464, guid: 37baa842cb85c1542bfc03f85d7ba162,
+    type: 3}
+  unlockableName: 
+  unlockableDef: {fileID: 0}
+  displayNameToken: SCRAPYARD_SLUGGER_BODY_NAME
+  descriptionToken: SCRAPYARD_SLUGGER_DESCRIPTION
+  outroFlavorToken: SCRAPYARD_SLUGGER_OUTRO_FLAVOR
+  mainEndingEscapeFailureFlavorToken: SCRAPYARD_SLUGGER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
+  primaryColor: {r: 1, g: 1, b: 1, a: 0}
+  desiredSortPosition: 0
+  hidden: 0
