@@ -190,12 +190,9 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdEliteScrap;
             public static BuffDef bdTimeStopped;
             public static BuffDef bdTimeSlow;
-<<<<<<< Updated upstream
             public static BuffDef bdPolypore;
-=======
             public static BuffDef bdCloakerMarked;
             public static BuffDef bdCloakerMarkCd;
->>>>>>> Stashed changes
         }
 
         public static class Survivors
