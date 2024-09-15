@@ -1,9 +1,19 @@
 {
     "name": "FortunesFromTheScrapyard",
+    "rootNamespace": "",
     "references": [
-        "GUID:08e20a9dcb84ac748840227dcac08af2",
-        "GUID:a44f47cf3ada4435dbc516bad0bc86fe",
-        "GUID:c17544094b9341941b07459969ff8258"
+        "MSU.Runtime",
+        "com.unity.multiplayer-hlapi.Runtime",
+        "Ak.Wwise.Api.WAAPI",
+        "AK.Wwise.Unity.API",
+        "AK.Wwise.Unity.API.Editor",
+        "AK.Wwise.Unity.API.WwiseTypes",
+        "AK.Wwise.Unity.MonoBehaviour",
+        "AK.Wwise.Unity.Timeline",
+        "AK.Wwise.Unity.Timeline.Editor",
+        "Unity.Postprocessing.Runtime",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -25,8 +35,6 @@
         "RoR2.dll",
         "RoR2BepInExPack.dll",
         "Unity.Addressables.dll",
-        "Unity.TextMeshPro.dll",
-        "UnityEngine.UI.dll",
         "R2API.Addressables.dll",
         "R2API.ArtifactCode.dll",
         "R2API.Colors.dll",
@@ -47,7 +55,7 @@
         "R2API.Difficulty.dll",
         "R2API.Networking.dll"
     ],
-    "autoReferenced": true,
+    "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

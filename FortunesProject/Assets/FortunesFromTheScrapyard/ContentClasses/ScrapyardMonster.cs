@@ -18,11 +18,11 @@ namespace FortunesFromTheScrapyard
     public abstract class ScrapyardMonster : IMonsterContentPiece, IContentPackModifier
     {
         public NullableRef<MonsterCardProvider> CardProvider { get; protected set; }
-        public NullableRef<DirectorAPI.DirectorCardHolder> DissonanceCard { get; protected set; }
+        public NullableRef<DirectorCardHolderExtended> DissonanceCard { get; protected set; }
         public MonsterAssetCollection AssetCollection { get; private set; }
         public NullableRef<GameObject> MasterPrefab { get; protected set; }
 
-        NullableRef<DirectorAPI.DirectorCardHolder> IMonsterContentPiece.DissonanceCard => DissonanceCard;
+        NullableRef<DirectorCardHolderExtended> IMonsterContentPiece.DissonanceCard => DissonanceCard;
         CharacterBody IGameObjectContentPiece<CharacterBody>.Component => CharacterPrefab.GetComponent<CharacterBody>();
         NullableRef<MonsterCardProvider> IMonsterContentPiece.CardProvider => CardProvider;
         GameObject IContentPiece<GameObject>.Asset => CharacterPrefab;

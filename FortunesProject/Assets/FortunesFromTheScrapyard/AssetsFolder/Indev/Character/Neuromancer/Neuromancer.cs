@@ -92,8 +92,8 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
         public void ModifyPrefab()
         {
             var cb = CharacterPrefab.GetComponent<CharacterBody>();
-            cb.preferredPodPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
-            cb._defaultCrosshairPrefab = Resources.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
+            cb.preferredPodPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
+            cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
         }
         public override bool IsAvailable(ContentPack contentPack)
         {

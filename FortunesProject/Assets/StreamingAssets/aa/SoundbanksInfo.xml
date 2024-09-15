@@ -1,107 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
-		<ProjectRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\Assets\StreamingAssets\aa\</SoundBanksRoot>
+		<ProjectRoot>../../../FortunesProject_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../FortunesProject_WwiseProject/.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesProject\Assets\StreamingAssets\aa</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>../../../FortunesProject_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
-	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="263542888">
-			<ObjectPath>Init</ObjectPath>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7F3A15DD-340D-EF22-59CE-AC32EA50B08A}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3697235005" Language="SFX" Hash="3178207410">
-			<ObjectPath>\SoundBanks\Default Work Unit\FortunesBank</ObjectPath>
+		<SoundBank Id="3697235005" Type="User" Language="SFX" Hash="{37D3C8A6-9468-6766-2BCD-6933997DDDA5}">
 			<ShortName>FortunesBank</ShortName>
 			<Path>FortunesBank.bnk</Path>
-			<IncludedEvents>
-				<Event Id="73920332" Name="sfx_cd_1" ObjectPath="\Events\Default Work Unit\sfx_cd_1"/>
-				<Event Id="73920335" Name="sfx_cd_2" ObjectPath="\Events\Default Work Unit\sfx_cd_2"/>
-				<Event Id="73920334" Name="sfx_cd_3" ObjectPath="\Events\Default Work Unit\sfx_cd_3"/>
-				<Event Id="3730456474" Name="sfx_ducttape_active" ObjectPath="\Events\Default Work Unit\sfx_ducttape_active"/>
-				<Event Id="3280223896" Name="sfx_energybar_use" ObjectPath="\Events\Default Work Unit\sfx_energybar_use"/>
-				<Event Id="666364388" Name="sfx_headphones_activate" ObjectPath="\Events\Default Work Unit\sfx_headphones_activate"/>
-				<Event Id="3491240262" Name="sfx_lethalinjection_activate" ObjectPath="\Events\Default Work Unit\sfx_lethalinjection_activate"/>
-				<Event Id="193125100" Name="sfx_lunarmoney_start" ObjectPath="\Events\Default Work Unit\sfx_lunarmoney_start"/>
-				<Event Id="1222943750" Name="sfx_moonshine_miss" ObjectPath="\Events\Default Work Unit\sfx_moonshine_miss"/>
-				<Event Id="1755670239" Name="sfx_moonshine_use" ObjectPath="\Events\Default Work Unit\sfx_moonshine_use"/>
-				<Event Id="1784735353" Name="sfx_neuromancer_punch" ObjectPath="\Events\Default Work Unit\sfx_neuromancer_punch"/>
-				<Event Id="2199365305" Name="sfx_neuromancer_steam" ObjectPath="\Events\Default Work Unit\sfx_neuromancer_steam"/>
-				<Event Id="397976872" Name="sfx_scrap_elite_spawn" ObjectPath="\Events\Default Work Unit\sfx_scrap_elite_spawn"/>
-				<Event Id="1927010350" Name="sfx_spraycan_activate" ObjectPath="\Events\Default Work Unit\sfx_spraycan_activate"/>
-				<Event Id="2377754410" Name="sfx_turbo_start" ObjectPath="\Events\Default Work Unit\sfx_turbo_start"/>
-			</IncludedEvents>
-			<IncludedMemoryFiles>
-				<File Id="97956577" Language="SFX">
-					<ShortName>sfx_cd_2.wav</ShortName>
-					<Path>SFX\sfx_cd_2_10C4C929.wem</Path>
-				</File>
-				<File Id="240724819" Language="SFX">
-					<ShortName>sfx_headphones_activate.wav</ShortName>
-					<Path>SFX\sfx_headphones_activate_10C4C929.wem</Path>
-				</File>
-				<File Id="253797691" Language="SFX">
-					<ShortName>sfx_turbo_start.wav</ShortName>
-					<Path>SFX\sfx_turbo_start_10C4C929.wem</Path>
-				</File>
-				<File Id="264565919" Language="SFX">
-					<ShortName>sfx_ravager_punch.wav</ShortName>
-					<Path>SFX\sfx_ravager_punch_10C4C929.wem</Path>
-				</File>
-				<File Id="427419216" Language="SFX">
-					<ShortName>EnergyBar.wav</ShortName>
-					<Path>SFX\EnergyBar_D56E3E00.wem</Path>
-				</File>
-				<File Id="472270602" Language="SFX">
-					<ShortName>sfx_cd_3.wav</ShortName>
-					<Path>SFX\sfx_cd_3_10C4C929.wem</Path>
-				</File>
-				<File Id="506165882" Language="SFX">
-					<ShortName>air-or-steam-pressure-release-29600.wav</ShortName>
-					<Path>SFX\air-or-steam-pressure-release-29600_C0992993.wem</Path>
-				</File>
-				<File Id="522541223" Language="SFX">
-					<ShortName>sfx_moonshine_use.wav</ShortName>
-					<Path>SFX\sfx_moonshine_use_10C4C929.wem</Path>
-				</File>
-				<File Id="575963976" Language="SFX">
+			<Media>
+				<File Id="21081703" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_ducttape_active.wav</ShortName>
-					<Path>SFX\sfx_ducttape_active_10C4C929.wem</Path>
+					<CachePath>SFX/sfx_ducttape_active_818F3B66.wem</CachePath>
 				</File>
-				<File Id="611923983" Language="SFX">
-					<ShortName>sfx_cd_1.wav</ShortName>
-					<Path>SFX\sfx_cd_1_10C4C929.wem</Path>
-				</File>
-				<File Id="704960360" Language="SFX">
-					<ShortName>sfx_spraycan_activate.wav</ShortName>
-					<Path>SFX\sfx_spraycan_activate_E8A9E576.wem</Path>
-				</File>
-				<File Id="710233405" Language="SFX">
-					<ShortName>sfx_lunarmoney_start.wav</ShortName>
-					<Path>SFX\sfx_lunarmoney_start_10C4C929.wem</Path>
-				</File>
-				<File Id="885078543" Language="SFX">
-					<ShortName>sfx_ravager_steam.wav</ShortName>
-					<Path>SFX\sfx_ravager_steam_10C4C929.wem</Path>
-				</File>
-				<File Id="1019549591" Language="SFX">
-					<ShortName>sfx_moonshine_miss.wav</ShortName>
-					<Path>SFX\sfx_moonshine_miss_10C4C929.wem</Path>
-				</File>
-				<File Id="1072221443" Language="SFX">
+				<File Id="60745145" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ScrapElite.wav</ShortName>
-					<Path>SFX\ScrapElite_10C4C929.wem</Path>
+					<CachePath>SFX/ScrapElite_818F3B66.wem</CachePath>
 				</File>
-			</IncludedMemoryFiles>
+				<File Id="67452717" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_1.wav</ShortName>
+					<CachePath>SFX/sfx_cd_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="167226196" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_lunarmoney_start.wav</ShortName>
+					<CachePath>SFX/sfx_lunarmoney_start_818F3B66.wem</CachePath>
+				</File>
+				<File Id="169739889" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnergyBar.wav</ShortName>
+					<CachePath>SFX/EnergyBar_818F3B66.wem</CachePath>
+				</File>
+				<File Id="220556881" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>air-or-steam-pressure-release-29600.wav</ShortName>
+					<CachePath>SFX/air-or-steam-pressure-release-29600_818F3B66.wem</CachePath>
+				</File>
+				<File Id="233537585" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_3.wav</ShortName>
+					<CachePath>SFX/sfx_cd_3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="266986934" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_moonshine_use.wav</ShortName>
+					<CachePath>SFX/sfx_moonshine_use_818F3B66.wem</CachePath>
+				</File>
+				<File Id="267147218" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_ravager_punch.wav</ShortName>
+					<CachePath>SFX/sfx_ravager_punch_818F3B66.wem</CachePath>
+				</File>
+				<File Id="513167487" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_ravager_steam.wav</ShortName>
+					<CachePath>SFX/sfx_ravager_steam_818F3B66.wem</CachePath>
+				</File>
+				<File Id="546808975" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_moonshine_miss.wav</ShortName>
+					<CachePath>SFX/sfx_moonshine_miss_818F3B66.wem</CachePath>
+				</File>
+				<File Id="611223833" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_turbo_start.wav</ShortName>
+					<CachePath>SFX/sfx_turbo_start_818F3B66.wem</CachePath>
+				</File>
+				<File Id="624580478" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_2.wav</ShortName>
+					<CachePath>SFX/sfx_cd_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="680662820" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_headphones_activate.wav</ShortName>
+					<CachePath>SFX/sfx_headphones_activate_818F3B66.wem</CachePath>
+				</File>
+				<File Id="831421282" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_spraycan_activate.wav</ShortName>
+					<CachePath>SFX/sfx_spraycan_activate_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="73920332" Name="sfx_cd_1">
+					<MediaRefs>
+						<MediaRef Id="67452717"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="73920335" Name="sfx_cd_2">
+					<MediaRefs>
+						<MediaRef Id="624580478"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="73920334" Name="sfx_cd_3">
+					<MediaRefs>
+						<MediaRef Id="233537585"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3730456474" Name="sfx_ducttape_active">
+					<MediaRefs>
+						<MediaRef Id="21081703"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3280223896" Name="sfx_energybar_use">
+					<MediaRefs>
+						<MediaRef Id="169739889"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="666364388" Name="sfx_headphones_activate">
+					<MediaRefs>
+						<MediaRef Id="680662820"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3491240262" Name="sfx_lethalinjection_activate">
+					<MediaRefs>
+						<MediaRef Id="220556881"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="193125100" Name="sfx_lunarmoney_start">
+					<MediaRefs>
+						<MediaRef Id="167226196"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1222943750" Name="sfx_moonshine_miss">
+					<MediaRefs>
+						<MediaRef Id="546808975"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1755670239" Name="sfx_moonshine_use">
+					<MediaRefs>
+						<MediaRef Id="266986934"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1784735353" Name="sfx_neuromancer_punch">
+					<MediaRefs>
+						<MediaRef Id="267147218"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2199365305" Name="sfx_neuromancer_steam">
+					<MediaRefs>
+						<MediaRef Id="513167487"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="397976872" Name="sfx_scrap_elite_spawn">
+					<MediaRefs>
+						<MediaRef Id="60745145"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1927010350" Name="sfx_spraycan_activate">
+					<MediaRefs>
+						<MediaRef Id="831421282"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2377754410" Name="sfx_turbo_start">
+					<MediaRefs>
+						<MediaRef Id="611223833"/>
+					</MediaRefs>
+				</Event>
+			</Events>
 			<GameParameters>
-				<GameParameter Id="3673881719" Name="Volume_SFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_SFX"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
+	<FileHash>{89F06C16-B12D-7FF9-5618-49B1FF73A36E}</FileHash>
 </SoundBanksInfo>

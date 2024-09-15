@@ -1,5 +1,4 @@
 ﻿using EntityStates;
-
 using FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates;
 using System;
 using System.Collections.Generic;
@@ -145,7 +144,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
         {
             base.FixedUpdate();
             charge = Mathf.Clamp01(base.fixedAge / chargeDuration);
-            AkSoundEngine.SetRTPCValueByPlayingID("loaderShift_chargeAmount", charge * 100f, soundID);
+            //AkSoundEngine.SetRTPCValueByPlayingID("loaderShift_chargeAmount", charge * 100f, soundID);
             base.characterBody.SetSpreadBloom(charge);
             base.characterBody.SetAimTimer(3f);
             if (charge >= minChargeForChargedAttack && !chargeVfxInstanceTransform && chargeVfxPrefab)

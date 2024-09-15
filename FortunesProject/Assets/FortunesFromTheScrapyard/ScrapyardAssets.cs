@@ -9,7 +9,6 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using TMPro;
 using UnityEngine;
 using UObject = UnityEngine.Object;
 
@@ -44,9 +43,7 @@ namespace FortunesFromTheScrapyard
         Equipments,
         Items,
         Indev,
-        Base,
-        Vanilla,
-        Predator
+        Base
     }
     /// <summary>
     /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.

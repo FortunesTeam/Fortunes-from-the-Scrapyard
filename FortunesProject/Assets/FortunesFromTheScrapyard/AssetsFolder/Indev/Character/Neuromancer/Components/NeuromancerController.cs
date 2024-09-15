@@ -176,10 +176,5 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
         {
             drainTimeEssence = false;
         }        
-        private void OnDestroy()
-        {
-            AkSoundEngine.StopPlayingID(this.timePlayId);
-            AkSoundEngine.StopPlayingID(this.playID2);
-        }
     }
 }

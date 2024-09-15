@@ -7,8 +7,6 @@ using UnityEngine.Networking;
 using static R2API.RecalculateStatsAPI;
 using R2API;
 using UnityEngine.AddressableAssets;
-using TMPro;
-using static AkMIDIEvent;
 using static R2API.DamageAPI;
 
 namespace FortunesFromTheScrapyard.Equipments
