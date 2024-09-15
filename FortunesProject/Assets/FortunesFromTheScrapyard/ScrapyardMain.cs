@@ -46,6 +46,7 @@ namespace FortunesFromTheScrapyard
 
         private void Start()
         {
+            //Loading sound banks currently crashes the game?
             //ScrapyardSoundbank.Init();
         }
     }
