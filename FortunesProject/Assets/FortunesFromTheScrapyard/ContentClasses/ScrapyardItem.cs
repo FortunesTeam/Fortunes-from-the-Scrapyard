@@ -16,12 +16,12 @@ namespace FortunesFromTheScrapyard
     /// </summary>
     public abstract class ScrapyardItem : IItemContentPiece, IContentPackModifier
     {
-        public ItemAssetCollection AssetCollection { get; private set; }
-        public NullableRef<List<GameObject>> ItemDisplayPrefabs { get; protected set; } = new List<GameObject>();
-        public ItemDef ItemDef { get; protected set; }
+        public ItemAssetCollection assetCollection { get; private set; }
+        public NullableRef<List<GameObject>> itemDisplayPrefabs { get; protected set; } = new List<GameObject>();
+        public ItemDef itemDef { get; protected set; }
 
-        ItemDef IContentPiece<ItemDef>.Asset => ItemDef;
-        NullableRef<List<GameObject>> IItemContentPiece.ItemDisplayPrefabs => ItemDisplayPrefabs;
+        ItemDef IContentPiece<ItemDef>.asset => itemDef;
+        NullableRef<List<GameObject>> IItemContentPiece.itemDisplayPrefabs => itemDisplayPrefabs;
 
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
@@ -40,14 +40,14 @@ namespace FortunesFromTheScrapyard
 
             if(request.boxedAsset is ItemAssetCollection collection)
             {
-                AssetCollection = collection;
+                assetCollection = collection;
 
-                ItemDef = AssetCollection.itemDef;
-                ItemDisplayPrefabs = AssetCollection.itemDisplayPrefabs;
+                itemDef = assetCollection.itemDef;
+                itemDisplayPrefabs = assetCollection.itemDisplayPrefabs;
             }
             else if(request.boxedAsset is ItemDef def)
             {
-                ItemDef = def;
+                itemDef = def;
             }
             else
             {
@@ -57,8 +57,8 @@ namespace FortunesFromTheScrapyard
 
         public virtual void ModifyContentPack(ContentPack contentPack)
         {
-            if(AssetCollection)
-                contentPack.AddContentFromAssetCollection(AssetCollection);
+            if(assetCollection)
+                contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public static float GetStackValue(float baseValue, float stackValue, int itemCount)

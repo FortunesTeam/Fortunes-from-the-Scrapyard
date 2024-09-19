@@ -18,16 +18,16 @@ namespace FortunesFromTheScrapyard
         /// </summary>
         public NullableRef<ArtifactAssetCollection> assetCollection { get; private set; }
         
-        /// <inheritdoc cref="IArtifactContentPiece.ArtifactCode"/>
+        /// <inheritdoc cref="IArtifactContentPiece.artifactCode"/>
         public NullableRef<ArtifactCode> artifactCode { get; protected set; }
 
         /// <summary>
-        /// <inheritdoc cref="IContentPiece{T}.Asset"/>
+        /// <inheritdoc cref="IContentPiece{T}.asset"/>
         /// </summary>
         public ArtifactDef artifactDef { get; protected set; }
 
-        NullableRef<ArtifactCode> IArtifactContentPiece.ArtifactCode => artifactCode;
-        ArtifactDef IContentPiece<ArtifactDef>.Asset => artifactDef;
+        NullableRef<ArtifactCode> IArtifactContentPiece.artifactCode => artifactCode;
+        ArtifactDef IContentPiece<ArtifactDef>.asset => artifactDef;
 
         /// <summary>
         /// Method for loading an AssetRequest for this class. This will later get loaded Asynchronously.

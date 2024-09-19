@@ -19,7 +19,7 @@ namespace FortunesFromTheScrapyard
 {
     public class Whirlwind : ScrapyardDifficulty
     {
-        public override ScrapyardAssetRequest<SerializableDifficultyDef> AssetRequest => ScrapyardAssets.LoadAssetAsync<SerializableDifficultyDef>("Whirlwind", ScrapyardBundle.Indev);
+        public override ScrapyardAssetRequest<SerializableDifficultyDef> assetRequest => ScrapyardAssets.LoadAssetAsync<SerializableDifficultyDef>("Whirlwind", ScrapyardBundle.Indev);
 
         public static SerializableDifficultyDef whirlwindDifficulty;
 
@@ -30,7 +30,7 @@ namespace FortunesFromTheScrapyard
         internal static float teleporterRadius = -30f;
         public override void Initialize()
         {
-            whirlwindDifficulty = DifficultyDef;
+            whirlwindDifficulty = difficultyDef;
         }
         public override bool IsAvailable(ContentPack contentPack)
         {

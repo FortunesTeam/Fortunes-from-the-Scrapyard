@@ -19,9 +19,9 @@ namespace FortunesFromTheScrapyard.Items
         public static bool shrineChance = true;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static bool shrineCombat = false;
-        [ConfigureField(ScrapyardConfig.ID_ITEMS, ConfigDescOverride = "Includes printers and shops.")]
+        [ConfigureField(ScrapyardConfig.ID_ITEMS, configDescOverride = "Includes printers and shops.")]
         public static bool terminals = true;
-        [ConfigureField(ScrapyardConfig.ID_ITEMS, ConfigDescOverride = "Includes chests and scavenger bags.")]
+        [ConfigureField(ScrapyardConfig.ID_ITEMS, configDescOverride = "Includes chests and scavenger bags.")]
         public static bool chests = true;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         public static bool roulette = true;

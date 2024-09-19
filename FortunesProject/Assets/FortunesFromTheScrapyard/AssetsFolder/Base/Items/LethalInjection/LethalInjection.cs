@@ -25,7 +25,7 @@ namespace FortunesFromTheScrapyard.Items
         public static GameObject lethalInjectionPrefab;
         public override void Initialize()
         {
-            lethalInjectionPrefab = AssetCollection.FindAsset<GameObject>("LethalInjectionPrefab");
+            lethalInjectionPrefab = assetCollection.FindAsset<GameObject>("LethalInjectionPrefab");
 
             On.RoR2.HealthComponent.GetHealthBarValues += HealthComponent_GetHealthBarValues;
         }

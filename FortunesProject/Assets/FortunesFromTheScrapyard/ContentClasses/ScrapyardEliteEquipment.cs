@@ -17,7 +17,7 @@ namespace FortunesFromTheScrapyard
     public abstract class ScrapyardEliteEquipment : IEliteContentPiece, IContentPackModifier
     {
         /// <summary>
-        /// <inheritdoc cref="IEliteContentPiece.EliteDefs"/>
+        /// <inheritdoc cref="IEliteContentPiece.eliteDefs"/>
         /// </summary>
         public List<EliteDef> eliteDefs { get; protected set; }
         /// <summary>
@@ -33,9 +33,9 @@ namespace FortunesFromTheScrapyard
         /// </summary>
         public EquipmentDef equipmentDef { get; protected set; }
 
-        List<EliteDef> IEliteContentPiece.EliteDefs => eliteDefs;
-        NullableRef<List<GameObject>> IEquipmentContentPiece.ItemDisplayPrefabs => itemDisplayPrefabs;
-        EquipmentDef IContentPiece<EquipmentDef>.Asset => equipmentDef;
+        List<EliteDef> IEliteContentPiece.eliteDefs => eliteDefs;
+        NullableRef<List<GameObject>> IEquipmentContentPiece.itemDisplayPrefabs => itemDisplayPrefabs;
+        EquipmentDef IContentPiece<EquipmentDef>.asset => equipmentDef;
 
 
         /// <summary>

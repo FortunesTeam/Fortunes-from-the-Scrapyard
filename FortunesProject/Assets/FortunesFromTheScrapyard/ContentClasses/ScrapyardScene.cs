@@ -9,41 +9,54 @@ namespace FortunesFromTheScrapyard
 {
     public abstract class ScrapyardScene : ISceneContentPiece, IContentPackModifier
     {
-        public SceneAssetCollection AssetCollection { get; private set; }
+        public SceneAssetCollection assetCollection { get; private set; }
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
 
-        public NullableRef<MusicTrackDef> MainTrack => Asset.mainTrack;
-        public NullableRef<MusicTrackDef> BossTrack => Asset.bossTrack;
+        public abstract ScrapyardAssetRequest<SceneAssetCollection> assetRequest { get; }
 
-        public Texture2D BazaarTextureBase { get; protected set; } // ???
+        NullableRef<MusicTrackDef> ISceneContentPiece.mainTrack => mainTrack;
+        NullableRef<MusicTrackDef> ISceneContentPiece.bossTrack => bossTrack;
 
-        public SceneDef Asset { get; protected set; }
+        public MusicTrackDef mainTrack { get; protected set; }
 
-        /// <summary>
-        /// Method for loading an AssetRequest for this class. This will later get loaded Asynchronously.
-        /// </summary>
-        /// <returns>An ExampleAssetRequest</returns>
-        public abstract ScrapyardAssetRequest<SceneAssetCollection> LoadAssetRequest();
+        public MusicTrackDef bossTrack { get; protected set; }
+
+        public NullableRef<Texture2D> bazaarTextureBase { get; protected set; } // ???
+
+        SceneDef IContentPiece<SceneDef>.asset => sceneDef;
+
+        public SceneDef sceneDef { get; protected set; }
+
+        public virtual float? weightRelativeToSiblings { get; protected set; } = 1;
+
+        public virtual bool? preLoop { get; protected set; } = true;
+
+        public virtual bool? postLoop { get; protected set; } = true;
 
         public virtual IEnumerator LoadContentAsync()
         {
-            ScrapyardAssetRequest<SceneAssetCollection> request = LoadAssetRequest();
+            ScrapyardAssetRequest<SceneAssetCollection> request = assetRequest;
 
             request.StartLoad();
             while (!request.isComplete)
                 yield return null;
 
-            AssetCollection = request.asset;
+            assetCollection = request.asset;
 
-            Asset = AssetCollection.sceneDef;
+            sceneDef = assetCollection.sceneDef;
+            mainTrack = assetCollection.mainTrack;
+            bossTrack = assetCollection.bossTrack;
 
+            weightRelativeToSiblings = assetCollection.stageWeightRelativeToSiblings;
+            preLoop = assetCollection.appearsPreLoop;
+            postLoop = assetCollection.appearsPostLoop;
         }
 
 
         public virtual void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public virtual void OnServerStageComplete(Stage stage)
@@ -51,7 +64,7 @@ namespace FortunesFromTheScrapyard
         }
 
         public virtual void OnServerStageBegin(Stage stage)
-        {           
+        {
         }
     }
 }

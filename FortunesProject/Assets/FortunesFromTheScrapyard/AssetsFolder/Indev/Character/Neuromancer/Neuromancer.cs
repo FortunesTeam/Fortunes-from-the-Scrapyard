@@ -84,14 +84,14 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
 
             frozenMat = Addressables.LoadAssetAsync<Material>("RoR2/Base/EliteHaunted/matEliteHauntedOverlay.mat").WaitForCompletion();
 
-            NeuroChargeBar = AssetCollection.FindAsset<GameObject>("NeuroChargeBar");
+            NeuroChargeBar = assetCollection.FindAsset<GameObject>("NeuroChargeBar");
 
             ModifyPrefab();
         }
 
         public void ModifyPrefab()
         {
-            var cb = CharacterPrefab.GetComponent<CharacterBody>();
+            var cb = characterPrefab.GetComponent<CharacterBody>();
             cb.preferredPodPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
             cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
         }
@@ -186,7 +186,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
 
             punchImpactEffect.transform.Find("Impact Shockwave").GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/DLC1/Common/Void/matOmniRing1Void.mat").WaitForCompletion();
 
-            GameObject fistEffect = GameObject.Instantiate(AssetCollection.FindAsset<GameObject>("PunchEffect"));
+            GameObject fistEffect = GameObject.Instantiate(assetCollection.FindAsset<GameObject>("PunchEffect"));
             fistEffect.transform.parent = punchImpactEffect.transform;
             fistEffect.transform.localPosition = Vector3.zero;
             fistEffect.transform.localRotation = Quaternion.identity;
@@ -207,7 +207,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             BuffWard buffWard = timeFreezeZone.GetComponent<BuffWard>();
             buffWard.radius = 45f;
             buffWard.interval = 0.01f;
-            buffWard.buffDef = AssetCollection.FindAsset<BuffDef>("bdTimeStopped");
+            buffWard.buffDef = assetCollection.FindAsset<BuffDef>("bdTimeStopped");
             buffWard.expires = false;
             buffWard.expireDuration = 0f;
             buffWard.invertTeamFilter = true;
@@ -225,7 +225,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             BuffWard buffWardStatic = timeFreezeZoneStatic.GetComponent<BuffWard>();
             buffWardStatic.radius = 45f;
             buffWardStatic.interval = 0.01f;
-            buffWardStatic.buffDef = AssetCollection.FindAsset<BuffDef>("bdTimeStopped");
+            buffWardStatic.buffDef = assetCollection.FindAsset<BuffDef>("bdTimeStopped");
             buffWardStatic.expires = false;
             buffWardStatic.expireDuration = 0f;
             buffWardStatic.invertTeamFilter = true;

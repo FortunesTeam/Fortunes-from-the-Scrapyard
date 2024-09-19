@@ -198,7 +198,7 @@ namespace FortunesFromTheScrapyard
             multiStartCoroutine.Add(SwapShaders);
             multiStartCoroutine.Add(SwapAddressableShaders);
 
-            while (!multiStartCoroutine.IsDone) yield return null;
+            while (!multiStartCoroutine.IsDone()) yield return null;
 
             _onExampleAssetsInitialized?.Invoke();
             yield break;

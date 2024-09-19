@@ -26,7 +26,7 @@ namespace FortunesFromTheScrapyard
             if (moduleAvailability.available)
                 yield break;
 
-            _contentPieceProvider = ContentUtil.CreateContentPieceProvider<SerializableDifficultyDef>(ScrapyardMain.instance, ScrapyardContent.scrapyardContentPack);
+            _contentPieceProvider = ContentUtil.CreateGenericContentPieceProvider<SerializableDifficultyDef>(ScrapyardMain.instance, ScrapyardContent.scrapyardContentPack);
 
             var enumerator = InitializeDifficultiesFromScrapyard();
             while (!enumerator.IsDone())
@@ -50,7 +50,7 @@ namespace FortunesFromTheScrapyard
             var helper = new ParallelMultiStartCoroutine();
             foreach (var difficulty in content)
             {
-                if (!difficulty.IsAvailable(_contentPieceProvider.ContentPack))
+                if (!difficulty.IsAvailable(_contentPieceProvider.contentPack))
                     continue;
 
                 difficulties.Add(difficulty);
@@ -58,7 +58,7 @@ namespace FortunesFromTheScrapyard
             }
 
             helper.Start();
-            while (!helper.IsDone)
+            while (!helper.IsDone())
                 yield return null;
 
             InitializeDifficulties(difficulties);
@@ -70,16 +70,16 @@ namespace FortunesFromTheScrapyard
             {
                 difficulty.Initialize();
 
-                var asset = difficulty.Asset;
+                var asset = difficulty.asset;
                 DifficultyAPI.AddDifficulty(asset);
 
                 if (difficulty is IContentPackModifier packModifier)
                 {
-                    packModifier.ModifyContentPack(_contentPieceProvider.ContentPack);
+                    packModifier.ModifyContentPack(_contentPieceProvider.contentPack);
                 }
                 if (difficulty is IDifficultyContentPiece diffContentPiece)
                 {
-                    _scrapyardDifficulties.Add(diffContentPiece.Asset.DifficultyDef, diffContentPiece);
+                    _scrapyardDifficulties.Add(diffContentPiece.asset.DifficultyDef, diffContentPiece);
                 }
             }
         }

@@ -30,8 +30,8 @@ namespace FortunesFromTheScrapyard
         /// </summary>
         public EquipmentDef equipmentDef { get; protected set; }
         
-        NullableRef<List<GameObject>> IEquipmentContentPiece.ItemDisplayPrefabs => itemDisplayPrefabs;
-        EquipmentDef IContentPiece<EquipmentDef>.Asset => equipmentDef;
+        NullableRef<List<GameObject>> IEquipmentContentPiece.itemDisplayPrefabs => itemDisplayPrefabs;
+        EquipmentDef IContentPiece<EquipmentDef>.asset => equipmentDef;
 
 
         /// <summary>

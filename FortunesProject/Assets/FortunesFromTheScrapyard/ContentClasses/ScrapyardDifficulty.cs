@@ -13,23 +13,23 @@ namespace FortunesFromTheScrapyard
 {
     public abstract class ScrapyardDifficulty : IDifficultyContentPiece
     {
-        public SerializableDifficultyDef DifficultyDef { get; protected set; }
+        public SerializableDifficultyDef difficultyDef { get; protected set; }
 
-        SerializableDifficultyDef IContentPiece<SerializableDifficultyDef>.Asset => DifficultyDef;
+        SerializableDifficultyDef IContentPiece<SerializableDifficultyDef>.asset => difficultyDef;
 
-        public abstract ScrapyardAssetRequest<SerializableDifficultyDef> AssetRequest { get; }
+        public abstract ScrapyardAssetRequest<SerializableDifficultyDef> assetRequest { get; }
 
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
         public virtual IEnumerator LoadContentAsync()
         {
-            var assetRequest = AssetRequest;
+            var assetRequest = this.assetRequest;
 
             assetRequest.StartLoad();
             while (!assetRequest.isComplete)
                 yield return null;
 
-            DifficultyDef = assetRequest.asset;
+            difficultyDef = assetRequest.asset;
             yield break;
         }
         public abstract void OnRunEnd(Run run);

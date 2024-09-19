@@ -39,7 +39,7 @@ namespace FortunesFromTheScrapyard.Items
         public override void Initialize()
         {
             SprayCanProc = DamageAPI.ReserveDamageType();
-            sprayCanEffect = AssetCollection.FindAsset<GameObject>("SprayCanEffect");
+            sprayCanEffect = assetCollection.FindAsset<GameObject>("SprayCanEffect");
         }
 
         public override bool IsAvailable(ContentPack contentPack)

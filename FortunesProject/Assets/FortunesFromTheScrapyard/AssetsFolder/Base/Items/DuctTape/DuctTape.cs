@@ -38,7 +38,7 @@ namespace FortunesFromTheScrapyard.Items
         }
         public override void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public override bool IsAvailable(ContentPack contentPack)

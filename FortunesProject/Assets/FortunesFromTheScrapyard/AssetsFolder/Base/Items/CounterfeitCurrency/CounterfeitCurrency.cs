@@ -33,7 +33,7 @@ namespace FortunesFromTheScrapyard.Items
 
         private void CounterfeitStartReward(On.RoR2.CharacterMaster.orig_OnBodyStart orig, CharacterMaster self, CharacterBody body)
         {
-            int itemCount = body.inventory.GetItemCount(ItemDef);
+            int itemCount = body.inventory.GetItemCount(itemDef);
             if (itemCount > 0)
             {
                 float freeMoney = GetStackValue(freeMoneyBase, freeMoneyStack, itemCount);
@@ -46,13 +46,13 @@ namespace FortunesFromTheScrapyard.Items
 
         private void CounterfeitPickupReward(Inventory inv, ItemIndex itemIndex, int count)
         {
-            if (itemIndex == ItemDef.itemIndex)
+            if (itemIndex == itemDef.itemIndex)
             {
                 CharacterMaster master = inv.gameObject.GetComponent<CharacterMaster>();
                 if (master)
                 {
                     float freeMoney = GetStackValue(freeMoneyBase, freeMoneyStack, count);
-                    float freeMoneyCompensated = freeMoney / CalculateIncomeModifier(inv.GetItemCount(ItemDef));
+                    float freeMoneyCompensated = freeMoney / CalculateIncomeModifier(inv.GetItemCount(itemDef));
                     master.GiveMoney((uint)Run.instance.GetDifficultyScaledCost((int)freeMoneyCompensated, Stage.instance.entryDifficultyCoefficient));
                 }
             }
@@ -60,7 +60,7 @@ namespace FortunesFromTheScrapyard.Items
 
         private void CounterfeitPenalty(On.RoR2.CharacterMaster.orig_GiveMoney orig, RoR2.CharacterMaster self, uint amount)
         {
-            int itemCount = self.inventory.GetItemCount(ItemDef);
+            int itemCount = self.inventory.GetItemCount(itemDef);
             amount = (uint)Mathf.Min(amount * CalculateIncomeModifier(itemCount), amount);
 
             orig(self, amount);
