@@ -1,4 +1,5 @@
-﻿using RoR2;
+﻿using MSU;
+using RoR2;
 using UnityEngine;
 namespace FortunesFromTheScrapyard
 {
@@ -6,5 +7,12 @@ namespace FortunesFromTheScrapyard
     public class SceneAssetCollection : ExtendedAssetCollection
     {
         public SceneDef sceneDef;
+
+        public NullableRef<MusicTrackDef> mainTrack;
+        public NullableRef<MusicTrackDef> bossTrack;
+
+        public float weightRelativeToSiblings;
+        public bool appearsPreLoop;
+        public bool appearsPostLoop;
     }
 }

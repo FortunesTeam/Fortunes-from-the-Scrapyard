@@ -51,7 +51,7 @@ MonoBehaviour:
   Recursive: 1
   SourceRequired: 0
   EstablishDestination: 1
-  Source: <BuildPath>
+  Source: <MSUBuildPath>
   Destination: <NebbyPath>
 --- !u!114 &11400000
 MonoBehaviour:

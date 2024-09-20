@@ -1,9 +1,15 @@
 {
     "name": "FortunesFromTheScrapyard",
+    "rootNamespace": "",
     "references": [
-        "GUID:08e20a9dcb84ac748840227dcac08af2",
-        "GUID:a44f47cf3ada4435dbc516bad0bc86fe",
-        "GUID:c17544094b9341941b07459969ff8258"
+        "MSU.Runtime",
+        "com.unity.multiplayer-hlapi.Runtime",
+        "Wwise",
+        "Ak.Wwise.Api.WAAPI",
+        "AK.Wwise.Unity.API",
+        "AK.Wwise.Unity.API.WwiseTypes",
+        "AK.Wwise.Unity.MonoBehaviour",
+        "AK.Wwise.Unity.Timeline"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

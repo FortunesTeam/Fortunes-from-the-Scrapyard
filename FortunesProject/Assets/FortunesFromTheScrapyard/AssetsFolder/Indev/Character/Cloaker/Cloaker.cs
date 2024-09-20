@@ -34,14 +34,14 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 
             Hooks();
 
-            TempVisualEffectAPI.AddTemporaryVisualEffect(AssetCollection.FindAsset<GameObject>("CloakerMarkEffect"), tempAdd, true);
+            TempVisualEffectAPI.AddTemporaryVisualEffect(assetCollection.FindAsset<GameObject>("CloakerMarkEffect"), tempAdd, true);
 
             ModifyPrefab();
         }
 
         public void ModifyPrefab()
         {
-            var cb = CharacterPrefab.GetComponent<CharacterBody>();
+            var cb = characterPrefab.GetComponent<CharacterBody>();
             cb.preferredPodPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
         }
         public override bool IsAvailable(ContentPack contentPack)
@@ -55,7 +55,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         }
         private void CreateEffects()
         {
-            cloakerConsumeEffect = AssetCollection.FindAsset<GameObject>("CloakerMarkedConsumeEffect");
+            cloakerConsumeEffect = assetCollection.FindAsset<GameObject>("CloakerMarkedConsumeEffect");
 
             CreateAndAddEffectDef(cloakerConsumeEffect);
         }

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ValidationCache Version="1" SchemaVersion="97">
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\States\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Queries\Factory Queries.wwu" DateLow="1721495061" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Presets\Factory Spatial Audio.wwu" DateLow="1721495061" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\FortunesProject_WwiseProject.wproj" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Events\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Effects\Factory Effects.wwu" DateLow="1721495061" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1721495061" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
-	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1721496471" DateHigh="0"/>
+<ValidationCache Version="1" SchemaVersion="119">
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Virtual Acoustics\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Triggers\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Switches\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\States\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Queries\Factory Queries.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Queries\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Presets\Factory Spatial Audio.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Presets\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\FortunesProject_WwiseProject.wproj" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Events\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Effects\Factory Effects.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Effects\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Conversion Settings\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
+	<ValidationCacheItem File="D:\RoR2Related\Projects\Fortunes-from-the-Scrapyard\FortunesProject\FortunesProject_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1726790830" DateHigh="0"/>
 </ValidationCache>

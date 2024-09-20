@@ -55,9 +55,9 @@ namespace FortunesFromTheScrapyard.Items
         public static GameObject chickenExplosionEffect;
         public override void Initialize()
         {
-            _weightedBuffSelection.AddChoice(AssetCollection.FindAsset<BuffDef>("bdTakeoutDmg"), 10);
-            _weightedBuffSelection.AddChoice(AssetCollection.FindAsset<BuffDef>("bdTakeoutSpeed"), 10);
-            _weightedBuffSelection.AddChoice(AssetCollection.FindAsset<BuffDef>("bdTakeoutRegen"), 10);
+            _weightedBuffSelection.AddChoice(assetCollection.FindAsset<BuffDef>("bdTakeoutDmg"), 10);
+            _weightedBuffSelection.AddChoice(assetCollection.FindAsset<BuffDef>("bdTakeoutSpeed"), 10);
+            _weightedBuffSelection.AddChoice(assetCollection.FindAsset<BuffDef>("bdTakeoutRegen"), 10);
 
             noodlesRadiusEffect = CreateTakeoutEffect("NoodlesRangeIndicator", new Color(0.07450981f, 0.6431373f, 0.5238169f, 0.5019608f));
 
@@ -84,7 +84,7 @@ namespace FortunesFromTheScrapyard.Items
         {
             GameObject foodf = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/NearbyDamageBonus/NearbyDamageBonusIndicator.prefab").WaitForCompletion();
 
-            GameObject food = AssetCollection.FindAsset<GameObject>(prefabName);
+            GameObject food = assetCollection.FindAsset<GameObject>(prefabName);
             food.EnsureComponent<NetworkIdentity>();
 
             food.transform.Find("Donut").gameObject.GetComponent<MeshRenderer>().material = foodf.transform.Find("Donut").gameObject.GetComponent<MeshRenderer>().material;
@@ -98,7 +98,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public override bool IsAvailable(ContentPack contentPack)

@@ -32,12 +32,12 @@ MonoBehaviour:
   ListType: 1
   Manifests:
   - {fileID: 11400000, guid: 5ceb1d8ed3af40d4d806e9756b403649, type: 2}
-  - {fileID: 11400000, guid: a355b8e517a86b54eb2263a777dd6a94, type: 2}
+  - {fileID: -3892906877110538616, guid: a355b8e517a86b54eb2263a777dd6a94, type: 2}
   ReplaceDirectory: 1
   Recursive: 1
   SourceRequired: 0
   EstablishDestination: 1
-  Source: <BuildPath>
+  Source: <MSUBuildPath>
   Destination: <SynodiiPath>
 --- !u!114 &-2425931447556219936
 MonoBehaviour:
@@ -66,8 +66,9 @@ MonoBehaviour:
   m_Name: SynodiiQuickBuild
   m_EditorClassIdentifier: 
   Data:
+  - {fileID: -2425931447556219936}
   - {fileID: -9173935272059007710}
   - {fileID: -3560350482831712343}
-  - {fileID: -2425931447556219936}
   QuickAccess: 0
-  manifest: {fileID: 11400000, guid: a355b8e517a86b54eb2263a777dd6a94, type: 2}
+  manifest: {fileID: -3892906877110538616, guid: a355b8e517a86b54eb2263a777dd6a94,
+    type: 2}

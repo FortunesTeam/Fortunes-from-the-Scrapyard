@@ -17,14 +17,14 @@ namespace FortunesFromTheScrapyard
     /// </summary>
     public abstract class ScrapyardItemTier : IItemTierContentPiece, IContentPackModifier
     {
-        public ItemTierAssetCollection AssetCollection { get; private set; }
-        public NullableRef<SerializableColorCatalogEntry> ColorIndex { get; protected set; }
-        public NullableRef<SerializableColorCatalogEntry> DarkColorIndex { get; protected set; }
-        public GameObject PickupDisplayVFX { get; protected set; }
-        public List<ItemIndex> ItemsWithThisTier { get; set; } = new List<ItemIndex>();
-        public List<PickupIndex> AvailableTierDropList { get; set; } = new List<PickupIndex>();
-        ItemTierDef IContentPiece<ItemTierDef>.Asset => ItemTierDef;
-        public ItemTierDef ItemTierDef { get; protected set;  }
+        public ItemTierAssetCollection assetCollection { get; private set; }
+        public NullableRef<SerializableColorCatalogEntry> colorIndex { get; protected set; }
+        public NullableRef<SerializableColorCatalogEntry> darkColorIndex { get; protected set; }
+        public GameObject pickupDisplayVFX { get; protected set; }
+        public List<ItemIndex> itemsWithThisTier { get; set; } = new List<ItemIndex>();
+        public List<PickupIndex> availableTierDropList { get; set; } = new List<PickupIndex>();
+        ItemTierDef IContentPiece<ItemTierDef>.asset => itemTierDef;
+        public ItemTierDef itemTierDef { get; protected set;  }
 
         /// <summary>
         /// Method for loading an AssetRequest for this class. This will later get loaded Asynchronously.
@@ -42,20 +42,20 @@ namespace FortunesFromTheScrapyard
             while (!request.isComplete)
                 yield return null;
 
-            AssetCollection = request.asset;
-            ItemTierDef = AssetCollection.itemTierDef;
+            assetCollection = request.asset;
+            itemTierDef = assetCollection.itemTierDef;
             
-            if (AssetCollection.colorIndex)
-                ColorIndex = AssetCollection.colorIndex;
-            if (AssetCollection.darkColorIndex)
-                DarkColorIndex = AssetCollection.darkColorIndex;
+            if (assetCollection.colorIndex)
+                colorIndex = assetCollection.colorIndex;
+            if (assetCollection.darkColorIndex)
+                darkColorIndex = assetCollection.darkColorIndex;
 
-            PickupDisplayVFX = AssetCollection.pickupDisplayVFX;
+            pickupDisplayVFX = assetCollection.pickupDisplayVFX;
         }
 
         public void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
     }
 }

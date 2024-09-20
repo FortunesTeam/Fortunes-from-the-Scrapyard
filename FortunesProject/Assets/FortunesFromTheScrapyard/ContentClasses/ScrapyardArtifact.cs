@@ -26,8 +26,8 @@ namespace FortunesFromTheScrapyard
         /// </summary>
         public ArtifactDef artifactDef { get; protected set; }
 
-        NullableRef<ArtifactCode> IArtifactContentPiece.ArtifactCode => artifactCode;
-        ArtifactDef IContentPiece<ArtifactDef>.Asset => artifactDef;
+        NullableRef<ArtifactCode> IArtifactContentPiece.artifactCode => artifactCode;
+        ArtifactDef IContentPiece<ArtifactDef>.asset => artifactDef;
 
         /// <summary>
         /// Method for loading an AssetRequest for this class. This will later get loaded Asynchronously.

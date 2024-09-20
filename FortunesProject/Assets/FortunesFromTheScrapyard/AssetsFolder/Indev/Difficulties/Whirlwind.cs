@@ -30,7 +30,7 @@ namespace FortunesFromTheScrapyard
         internal static float teleporterRadius = -30f;
         public override void Initialize()
         {
-            whirlwindDifficulty = DifficultyDef;
+            whirlwindDifficulty = difficultyDef;
         }
         public override bool IsAvailable(ContentPack contentPack)
         {

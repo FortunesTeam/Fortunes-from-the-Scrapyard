@@ -17,16 +17,16 @@ namespace FortunesFromTheScrapyard
     /// </summary>
     public abstract class ScrapyardMonster : IMonsterContentPiece, IContentPackModifier
     {
-        public NullableRef<MonsterCardProvider> CardProvider { get; protected set; }
-        public NullableRef<DirectorAPI.DirectorCardHolder> DissonanceCard { get; protected set; }
-        public MonsterAssetCollection AssetCollection { get; private set; }
-        public NullableRef<GameObject> MasterPrefab { get; protected set; }
+        public NullableRef<MonsterCardProvider> cardProvider { get; protected set; }
+        public NullableRef<DirectorCardHolderExtended> dissonanceCard { get; protected set; }
+        public MonsterAssetCollection assetCollection { get; private set; }
+        public NullableRef<GameObject> masterPrefab { get; protected set; }
 
-        NullableRef<DirectorAPI.DirectorCardHolder> IMonsterContentPiece.DissonanceCard => DissonanceCard;
-        CharacterBody IGameObjectContentPiece<CharacterBody>.Component => CharacterPrefab.GetComponent<CharacterBody>();
-        NullableRef<MonsterCardProvider> IMonsterContentPiece.CardProvider => CardProvider;
-        GameObject IContentPiece<GameObject>.Asset => CharacterPrefab;
-        public GameObject CharacterPrefab { get; private set; }
+        NullableRef<DirectorCardHolderExtended> IMonsterContentPiece.dissonanceCard => dissonanceCard;
+        CharacterBody IGameObjectContentPiece<CharacterBody>.component => characterPrefab.GetComponent<CharacterBody>();
+        NullableRef<MonsterCardProvider> IMonsterContentPiece.cardProvider => cardProvider;
+        GameObject IContentPiece<GameObject>.asset => characterPrefab;
+        public GameObject characterPrefab { get; private set; }
 
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
@@ -43,18 +43,17 @@ namespace FortunesFromTheScrapyard
             while (!request.isComplete)
                 yield return null;
 
-            AssetCollection = request.asset;
+            assetCollection = request.asset;
 
-            CharacterPrefab = AssetCollection.bodyPrefab;
-            MasterPrefab = AssetCollection.masterPrefab;
-            CardProvider = AssetCollection.monsterCardProvider;
-            DissonanceCard = AssetCollection.dissonanceCardHolder;
+            characterPrefab = assetCollection.bodyPrefab;
+            masterPrefab = assetCollection.masterPrefab;
+            cardProvider = assetCollection.monsterCardProvider;
         }
 
 
         public virtual void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
     }
 }

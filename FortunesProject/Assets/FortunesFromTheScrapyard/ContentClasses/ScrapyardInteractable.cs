@@ -16,14 +16,14 @@ namespace FortunesFromTheScrapyard
     /// </summary>
     public abstract class ScrapyardInteractable : IInteractableContentPiece, IContentPackModifier
     {
-        public InteractableAssetCollection AssetCollection { get; private set; }
-        public InteractableCardProvider CardProvider { get; protected set; }
-        IInteractable IGameObjectContentPiece<IInteractable>.Component => InteractablePrefab.GetComponent<IInteractable>();
-        GameObject IContentPiece<GameObject>.Asset => InteractablePrefab;
-        public GameObject InteractablePrefab { get; protected set; }
+        public InteractableAssetCollection assetCollection { get; private set; }
+        public InteractableCardProvider cardProvider { get; protected set; }
+        IInteractable IGameObjectContentPiece<IInteractable>.component => interactablePrefab.GetComponent<IInteractable>();
+        GameObject IContentPiece<GameObject>.asset => interactablePrefab;
+        public GameObject interactablePrefab { get; protected set; }
 
 
-        NullableRef<InteractableCardProvider> IInteractableContentPiece.CardProvider => CardProvider;
+        NullableRef<InteractableCardProvider> IInteractableContentPiece.cardProvider => cardProvider;
 
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
@@ -40,16 +40,16 @@ namespace FortunesFromTheScrapyard
             while (!request.isComplete)
                 yield return null;
 
-            AssetCollection = request.asset;
+            assetCollection = request.asset;
 
-            CardProvider = AssetCollection.interactableCardProvider;
-            InteractablePrefab = AssetCollection.interactablePrefab;
+            cardProvider = assetCollection.interactableCardProvider;
+            interactablePrefab = assetCollection.interactablePrefab;
 
         }
 
         public void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
     }
 }

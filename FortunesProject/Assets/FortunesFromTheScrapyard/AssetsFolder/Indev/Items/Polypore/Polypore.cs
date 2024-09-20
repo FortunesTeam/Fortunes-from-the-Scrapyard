@@ -97,7 +97,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -144,7 +144,7 @@ namespace FortunesFromTheScrapyard.Items
                 BuffIndex[] debuffBuffIndices = BuffCatalog.debuffBuffIndices;
                 foreach (BuffIndex buffType in debuffBuffIndices)
                 {
-                    if (CharacterBody.HasBuff(buffType))
+                    if (characterBody.HasBuff(buffType))
                     {
                         activeDebuffs.Add(buffType);
                     }
@@ -152,7 +152,7 @@ namespace FortunesFromTheScrapyard.Items
 
                 float dotTotalDamage = 0f;
 
-                DotController dotController = DotController.FindDotController(CharacterBody.gameObject);
+                DotController dotController = DotController.FindDotController(characterBody.gameObject);
                 if ((bool)dotController)
                 {
                     for (DotController.DotIndex dotIndex = DotController.DotIndex.Bleed; dotIndex < DotController.DotIndex.Count; dotIndex++)
@@ -180,25 +180,25 @@ namespace FortunesFromTheScrapyard.Items
                 blastAttack.teamIndex = fartObject.GetComponent<CharacterBody>().teamComponent.teamIndex;
                 blastAttack.baseDamage = (fartObject.GetComponent<CharacterBody>().damage * dotTotalDamage * basePolyporeDamage) - ((fartObject.GetComponent<CharacterBody>().damage * dotTotalDamage * basePolyporeDamage) * (basePolyporeDamageStack * farts- 1));
                 blastAttack.baseForce = 100f;
-                blastAttack.position = CharacterBody.corePosition;
+                blastAttack.position = characterBody.corePosition;
                 blastAttack.radius = GetStackValue(basePolyporePopRadius, basePolyporePopRadiusStack, farts);
                 blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                 blastAttack.damageType = DamageType.Generic;
                 blastAttack.damageColorIndex = DamageColorIndex.DeathMark;
                 blastAttack.AddModdedDamageType(PeeDamage);
 
-                Util.CleanseBody(CharacterBody,true,false,false,true,true,false);
+                Util.CleanseBody(characterBody, true,false,false,true,true,false);
 
                 blastAttack.Fire();
 
                 EffectManager.SpawnEffect(Headphones.headphonesShockwavePrefab, new EffectData
                 {
-                    origin = CharacterBody.corePosition,
+                    origin = characterBody.corePosition,
                     rotation = Quaternion.identity,
                     scale = 1f
                 }, true);
 
-                Component.Destroy(CharacterBody.gameObject.GetComponent<FartComponent>());
+                Component.Destroy(characterBody.gameObject.GetComponent<FartComponent>());
             }
 
             private void FixedUpdate()

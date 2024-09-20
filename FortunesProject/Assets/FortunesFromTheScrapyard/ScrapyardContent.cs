@@ -37,7 +37,7 @@ namespace FortunesFromTheScrapyard
             }
 
             _parallelPostLoadDispatchers.Start();
-            while (!_parallelPostLoadDispatchers.IsDone) yield return null;
+            while (!_parallelPostLoadDispatchers.isDone) yield return null;
 
             for (int i = 0; i < _fieldAssignDispatchers.Length; i++)
             {
@@ -105,18 +105,18 @@ namespace FortunesFromTheScrapyard
                 DifficultyModule.Init,
                 () =>
                 {
-                    CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
+                    CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectGenericContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
                     return CharacterModule.InitializeCharacters(main);
                 },
                 () =>
                 {
-                    ItemModule.AddProvider(main, ContentUtil.CreateContentPieceProvider<ItemDef>(main, scrapyardContentPack));
+                    ItemModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<ItemDef>(main, scrapyardContentPack));
                     return ItemModule.InitializeItems(main);
                 },
                 () =>
                 {
-                    EquipmentModule.AddProvider(main, ContentUtil.CreateContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
-                    return EquipmentModule.InitialzeEquipments(main);
+                    EquipmentModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
+                    return EquipmentModule.InitializeEquipments(main);
                 },
                 LoadFromAssetBundles
             };

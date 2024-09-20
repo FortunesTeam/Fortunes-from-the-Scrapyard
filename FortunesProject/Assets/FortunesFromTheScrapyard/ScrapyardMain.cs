@@ -41,7 +41,7 @@ namespace FortunesFromTheScrapyard
             //which implements the game's IContentPackProvider interface.
             new ScrapyardContent();
 
-            LanguageFileLoader.AddLanguageFilesFromMod(this, "ScrapyardLanguage");
+            LanguageFileLoader.AddLanguageFilesFromMod(this, "languages");
         }
 
         private void Start()

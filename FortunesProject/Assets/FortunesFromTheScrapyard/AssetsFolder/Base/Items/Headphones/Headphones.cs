@@ -44,12 +44,12 @@ namespace FortunesFromTheScrapyard.Items
         {
             HeadphonesProc = DamageAPI.ReserveDamageType();
 
-            headphonesShockwavePrefab = AssetCollection.FindAsset<GameObject>("HeadphoneShockwaveEffect");
+            headphonesShockwavePrefab = assetCollection.FindAsset<GameObject>("HeadphoneShockwaveEffect");
 
             headphonesVisualEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercExposeEffect.prefab").WaitForCompletion().InstantiateClone("HeadphonesVisualEffect", false);
 
             //Needs better texture
-            headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetTexture("_MainTex", AssetCollection.FindAsset<Texture>("texSwirl"));
+            headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetTexture("_MainTex", assetCollection.FindAsset<Texture>("texSwirl"));
             headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetTexture("_RemapTex", Addressables.LoadAssetAsync<Texture>("RoR2/Base/Common/ColorRamps/texRampHook.png").WaitForCompletion());
             headphonesVisualEffect.transform.Find("Visual, On").Find("PulseEffect, Ring").gameObject.GetComponent<ParticleSystemRenderer>().material.SetFloat("_AlphaBoost", 20);
 
@@ -69,7 +69,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public class HeadphonesBehaviour : BaseItemBodyBehavior, IOnIncomingDamageOtherServerReciever

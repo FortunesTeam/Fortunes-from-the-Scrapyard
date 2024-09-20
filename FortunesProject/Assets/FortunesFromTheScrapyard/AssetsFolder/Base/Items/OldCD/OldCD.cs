@@ -27,7 +27,7 @@ namespace FortunesFromTheScrapyard.Items
         public static GameObject WeezerEffect;
         public override void Initialize()
         {
-            WeezerEffect = AssetCollection.FindAsset<GameObject>("WeezerEffect");
+            WeezerEffect = assetCollection.FindAsset<GameObject>("WeezerEffect");
 
             On.RoR2.GenericSkill.OnExecute += GenericSkill_OnExecute;
         }
@@ -89,7 +89,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public override bool IsAvailable(ContentPack contentPack)

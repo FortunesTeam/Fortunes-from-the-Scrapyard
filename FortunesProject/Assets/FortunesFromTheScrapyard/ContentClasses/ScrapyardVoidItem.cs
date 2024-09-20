@@ -16,12 +16,12 @@ namespace FortunesFromTheScrapyard
     /// </summary>
     public abstract class ScrapyardVoidItem : IVoidItemContentPiece, IContentPackModifier
     {
-        public ItemAssetCollection AssetCollection { get; private set; }
-        public NullableRef<List<GameObject>> ItemDisplayPrefabs { get; protected set; } = new List<GameObject>();
+        public ItemAssetCollection assetCollection { get; private set; }
+        public NullableRef<List<GameObject>> itemDisplayPrefabs { get; protected set; } = new List<GameObject>();
         public ItemDef ItemDef { get; protected set; }
 
-        ItemDef IContentPiece<ItemDef>.Asset => ItemDef;
-        NullableRef<List<GameObject>> IItemContentPiece.ItemDisplayPrefabs => ItemDisplayPrefabs;
+        ItemDef IContentPiece<ItemDef>.asset => ItemDef;
+        NullableRef<List<GameObject>> IItemContentPiece.itemDisplayPrefabs => itemDisplayPrefabs;
 
         public abstract ScrapyardAssetRequest LoadAssetRequest();
 
@@ -38,10 +38,10 @@ namespace FortunesFromTheScrapyard
 
             if (request.boxedAsset is ItemAssetCollection collection)
             {
-                AssetCollection = collection;
+                assetCollection = collection;
 
-                ItemDef = AssetCollection.itemDef;
-                ItemDisplayPrefabs = AssetCollection.itemDisplayPrefabs;
+                ItemDef = assetCollection.itemDef;
+                itemDisplayPrefabs = assetCollection.itemDisplayPrefabs;
             }
             else if (request.boxedAsset is ItemDef def)
             {
@@ -55,7 +55,7 @@ namespace FortunesFromTheScrapyard
 
         public virtual void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public abstract List<ItemDef> GetInfectableItems();

@@ -182,7 +182,7 @@ namespace FortunesFromTheScrapyard.Elite
                         {
                             matrixAttachmentGameObject = UnityEngine.Object.Instantiate(ScrapDefenseMatrix);
                             matrixAttachment = matrixAttachmentGameObject.GetComponent<NetworkedBodyAttachment>();
-                            matrixAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                            matrixAttachment.AttachToGameObjectAndSpawn(characterBody.gameObject);
                         }
                         else
                         {
@@ -200,7 +200,7 @@ namespace FortunesFromTheScrapyard.Elite
 
                 playerTimer = 0f;
 
-                List<EquipmentIndex> list = CharacterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
+                List<EquipmentIndex> list = characterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
                 Util.ShuffleList(list);
                 chosenEquipmentIndex = list[list.Count - 1];
                 baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2f;
@@ -208,7 +208,7 @@ namespace FortunesFromTheScrapyard.Elite
 
                 if (!affixEffectGameObject)
                 {
-                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect, CharacterBody.transform);
+                    affixEffectGameObject = UnityEngine.Object.Instantiate(ScrapAffixEffect, characterBody.transform);
 
                     pickupDisplay = affixEffectGameObject.transform.Find("ScrapAffixEquipment").gameObject.GetComponent<PickupDisplay>();
 
@@ -232,7 +232,7 @@ namespace FortunesFromTheScrapyard.Elite
                 if (chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
                 {
                     batteryAttachment = UnityEngine.Object.Instantiate(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/QuestVolatileBatteryAttachment")).GetComponent<NetworkedBodyAttachment>();
-                    batteryAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
+                    batteryAttachment.AttachToGameObjectAndSpawn(characterBody.gameObject);
                 }
             }
 
@@ -267,7 +267,7 @@ namespace FortunesFromTheScrapyard.Elite
 
             private void FixedUpdate()
             {
-                matrixAttachmentActive = CharacterBody.healthComponent.alive;
+                matrixAttachmentActive = characterBody.healthComponent.alive;
 
                 if (scrapEliteEquipmentListEnemy.Count <= 0 || scrapEliteEquipmentListPlayer.Count <= 0 && chosenEquipmentIndex > 0)
                 {
@@ -295,10 +295,10 @@ namespace FortunesFromTheScrapyard.Elite
                     {
                         HurtBox[] hurtBoxes = new SphereSearch
                         {
-                            origin = CharacterBody.corePosition,
+                            origin = characterBody.corePosition,
                             radius = 10f,
                             mask = LayerIndex.entityPrecise.mask
-                        }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(CharacterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
+                        }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(characterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
                         .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
 
                         if (hurtBoxes.Length > 0)
@@ -333,14 +333,14 @@ namespace FortunesFromTheScrapyard.Elite
                             procCoefficient = 0f,
                             bonusForce = new Vector3(0f, 200f, 0f),
                             baseForce = 4000f,
-                            baseDamage = CharacterBody.damage * 0.5f,
+                            baseDamage = characterBody.damage * 0.5f,
                             falloffModel = BlastAttack.FalloffModel.None,
                             radius = 20f,
                             position = base.transform.position,
                             attackerFiltering = AttackerFiltering.NeverHitSelf,
-                            teamIndex = CharacterBody.teamComponent.teamIndex,
+                            teamIndex = characterBody.teamComponent.teamIndex,
                             inflictor = base.gameObject,
-                            crit = CharacterBody.isPlayerControlled ? CharacterBody.RollCrit() : false
+                            crit = characterBody.isPlayerControlled ? characterBody.RollCrit() : false
                         };
 
                         blastAttack.Fire();
@@ -353,7 +353,7 @@ namespace FortunesFromTheScrapyard.Elite
                 }
 
                 //Player only hide massive prefab
-                if (CharacterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
+                if (characterBody.isPlayerControlled && playerTimer >= playerTimerCycle)
                 {
                     pickupDisplay.gameObject.SetActive(false);
                 }
@@ -363,10 +363,10 @@ namespace FortunesFromTheScrapyard.Elite
                 {
                     HurtBox[] hurtBoxes = new SphereSearch
                     {
-                        origin = CharacterBody.corePosition,
+                        origin = characterBody.corePosition,
                         radius = 30f,
                         mask = LayerIndex.entityPrecise.mask
-                    }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(CharacterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
+                    }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(characterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
                     .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
 
                     if (hurtBoxes.Length <= 0)
@@ -377,19 +377,19 @@ namespace FortunesFromTheScrapyard.Elite
                     equipmentCDTimer = 0f;
                     playerTimer = 0f;
 
-                    if (CharacterBody.isPlayerControlled) pickupDisplay.gameObject.SetActive(true);
+                    if (characterBody.isPlayerControlled) pickupDisplay.gameObject.SetActive(true);
 
-                    if (!CharacterBody.equipmentSlot)
+                    if (!characterBody.equipmentSlot)
                     {
-                        CharacterBody.equipmentSlot = CharacterBody.gameObject.EnsureComponent<EquipmentSlot>();
-                        CharacterBody.equipmentSlot.characterBody = CharacterBody;
-                        CharacterBody.equipmentSlot.healthComponent = CharacterBody.healthComponent;
-                        CharacterBody.equipmentSlot.teamComponent = CharacterBody.teamComponent;
-                        CharacterBody.equipmentSlot.targetIndicator = new Indicator(base.gameObject, null);
-                        CharacterBody.equipmentSlot.rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
+                        characterBody.equipmentSlot = characterBody.gameObject.EnsureComponent<EquipmentSlot>();
+                        characterBody.equipmentSlot.characterBody = characterBody;
+                        characterBody.equipmentSlot.healthComponent = characterBody.healthComponent;
+                        characterBody.equipmentSlot.teamComponent = characterBody.teamComponent;
+                        characterBody.equipmentSlot.targetIndicator = new Indicator(base.gameObject, null);
+                        characterBody.equipmentSlot.rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
                     }
 
-                    CharacterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex));
+                    characterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex));
 
                     if (chosenEquipmentIndex == RoR2Content.Equipment.BFG.equipmentIndex)
                     {
@@ -415,8 +415,8 @@ namespace FortunesFromTheScrapyard.Elite
             }
             private bool DeleteNearbyProjectile()
             {
-                Vector3 vector = (CharacterBody ? CharacterBody.corePosition : Vector3.zero);
-                TeamIndex teamIndex = (CharacterBody ? CharacterBody.teamComponent.teamIndex : TeamIndex.None);
+                Vector3 vector = (characterBody ? characterBody.corePosition : Vector3.zero);
+                TeamIndex teamIndex = (characterBody ? characterBody.teamComponent.teamIndex : TeamIndex.None);
                 float num = projectileEraserRadius * projectileEraserRadius;
                 int num2 = 0;
                 bool result = false;

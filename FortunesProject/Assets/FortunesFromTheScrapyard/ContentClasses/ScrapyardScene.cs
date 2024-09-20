@@ -9,16 +9,22 @@ namespace FortunesFromTheScrapyard
 {
     public abstract class ScrapyardScene : ISceneContentPiece, IContentPackModifier
     {
-        public SceneAssetCollection AssetCollection { get; private set; }
+        public SceneAssetCollection assetCollection { get; private set; }
         public abstract void Initialize();
         public abstract bool IsAvailable(ContentPack contentPack);
 
-        public NullableRef<MusicTrackDef> MainTrack => Asset.mainTrack;
-        public NullableRef<MusicTrackDef> BossTrack => Asset.bossTrack;
+        public NullableRef<MusicTrackDef> mainTrack { get; protected set; }
+        public NullableRef<MusicTrackDef> bossTrack { get; protected set; }
 
-        public Texture2D BazaarTextureBase { get; protected set; } // ???
+        public NullableRef<Texture2D> bazaarTextureBase { get; protected set; } // ???
 
-        public SceneDef Asset { get; protected set; }
+        public SceneDef asset { get; protected set; }
+
+        float? ISceneContentPiece.weightRelativeToSiblings => assetCollection.weightRelativeToSiblings;
+
+        bool? ISceneContentPiece.preLoop => assetCollection.appearsPreLoop;
+
+        bool? ISceneContentPiece.postLoop => assetCollection.appearsPostLoop;
 
         /// <summary>
         /// Method for loading an AssetRequest for this class. This will later get loaded Asynchronously.
@@ -34,16 +40,16 @@ namespace FortunesFromTheScrapyard
             while (!request.isComplete)
                 yield return null;
 
-            AssetCollection = request.asset;
+            assetCollection = request.asset;
 
-            Asset = AssetCollection.sceneDef;
+            asset = assetCollection.sceneDef;
 
         }
 
 
         public virtual void ModifyContentPack(ContentPack contentPack)
         {
-            contentPack.AddContentFromAssetCollection(AssetCollection);
+            contentPack.AddContentFromAssetCollection(assetCollection);
         }
 
         public virtual void OnServerStageComplete(Stage stage)
