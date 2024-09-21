@@ -11,10 +11,10 @@
         "RiskofThunder-R2API_Dot",
         "RiskofThunder-R2API_Elites",
         "RiskofThunder-R2API_Networking",
+        "RiskofThunder-R2API_Prefab",
         "RiskofThunder-R2API_RecalculateStats",
         "RiskofThunder-R2API_Stages",
         "RiskofThunder-R2API_StringSerializerExtensions",
-        "RiskofThunder-R2API_TempVisualEffect",
-        "RiskofThunder-R2API_Prefab"
+        "RiskofThunder-R2API_TempVisualEffect"
     ]
 }

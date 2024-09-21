@@ -46,7 +46,7 @@ namespace FortunesFromTheScrapyard
 
         private void Start()
         {
-            ScrapyardSoundbank.Init();
+            ScrapyardSoundBank.Init();
         }
     }
 }
