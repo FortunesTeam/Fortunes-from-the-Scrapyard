@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
+  m_Name: WhirlwindEliteTierDef
+  m_EditorClassIdentifier: 
+  costMultiplier: 4
+  elites:
+  - _asset: {fileID: 11400000, guid: 49fb995da26151340bb6959eac4f537e, type: 2}
+    _address: 
+    _useDirectReference: 1
+  - _asset: {fileID: 0}
+    _address: RoR2/Base/EliteFire/edFire.asset
+    _useDirectReference: 0
+  - _asset: {fileID: 0}
+    _address: RoR2/Base/EliteIce/edIce.asset
+    _useDirectReference: 0
+  - _asset: {fileID: 0}
+    _address: RoR2/Base/EliteLightning/edLightning.asset
+    _useDirectReference: 0
+  - _asset: {fileID: 0}
+    _address: RoR2/Base/EliteLunar/edLunar.asset
+    _useDirectReference: 0
+  - _asset: {fileID: 0}
+    _address: RoR2/DLC1/EliteEarth/edEarth.asset
+    _useDirectReference: 0
+  - _asset: {fileID: 0}
+    _address: RoR2/DLC2/Elites/EliteAurelionite/bdEliteAurelionite.asset
+    _useDirectReference: 0
+  canBeSelectedWithoutAvailableEliteDef: 0

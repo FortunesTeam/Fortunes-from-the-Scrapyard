@@ -15,24 +15,22 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float movespeedBonus = 0.75f;
+        public static float maxMovespeedBonus = 0.3f;
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        public static float maxMovespeedBonusPerStack = 0.3f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 1)]
-        public static float baseDuration = 5f;
-        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 2)]
-        public static float baseDurationStack = 0.5f;
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        public static float movespeedBonusPerInterval = 0.01f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, 3)]
-        public static float checkInterval = 1f;
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
+        public static float movespeedBonusPerIntervalStack = 0.1f;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 4)]
-        public static float baseChance = 15f;
-        [FormatToken(TOKEN, 5)]
-        public static float chancePerStack = 15f;
+        public static float checkInterval = 1f;
 
         public override void Initialize()
         {
@@ -59,49 +57,40 @@ namespace FortunesFromTheScrapyard.Items
             public static ItemDef GetItemDef() => ScrapyardContent.Items.FaultyTurbo;
 
             private float timer = 0f;
-            private bool delayBuffRefresh = false;
             public void ModifyStatArguments(StatHookEventArgs args)
             {
                 if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
                 {
-                    args.moveSpeedMultAdd += movespeedBonus;
+                    args.moveSpeedMultAdd += GetStackValue(movespeedBonusPerInterval, movespeedBonusPerIntervalStack, stack) * body.GetBuffCount(ScrapyardContent.Buffs.bdFaultyTurbo);
                 }
             }
 
             private void FixedUpdate()
             {
-                if (base.body.isSprinting) timer += Time.fixedDeltaTime;
-                else timer = 0f;
+                bool atMaxStacks = GetStackValue(movespeedBonusPerInterval, movespeedBonusPerIntervalStack, stack) * body.GetBuffCount(ScrapyardContent.Buffs.bdFaultyTurbo) >= GetStackValue(maxMovespeedBonus, maxMovespeedBonusPerStack, stack);
+                
+                if (base.body.isSprinting && !atMaxStacks)
+                {
+                    timer += Time.fixedDeltaTime;
+                }
+                else if(body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) timer -= Time.fixedDeltaTime;
 
-                if (timer >= checkInterval && !delayBuffRefresh)
+                if (timer >= checkInterval && !atMaxStacks)
                 {
                     timer = 0f;
-                    if (Util.CheckRoll(GetStackValue(baseChance, chancePerStack, stack) + Util.ConvertAmplificationPercentageIntoReductionPercentage(baseChance), body.master))
-                    {
-                        if(NetworkServer.active)
-                        {
-                            if (body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
-                            {
-                                delayBuffRefresh = true;
-                            }
-                            else
-                            {
-                                body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
-                            }
-                        }
-                    }
-                }
-
-                if(delayBuffRefresh && !body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
-                {
-                    delayBuffRefresh = false;
                     if(NetworkServer.active)
                     {
-                        body.AddTimedBuff(ScrapyardContent.Buffs.bdFaultyTurbo, GetStackValue(baseDuration, baseDurationStack, stack));
+                        body.AddBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                     }
+
+                    Util.PlaySound("sfx_turbo_start", base.gameObject);
+                }
+                else if(timer < 0f && body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
+                {
+                    timer = checkInterval / 2f;
+                    body.RemoveBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                 }
             }
-
             private void OnDisable()
             {
                 if(NetworkServer.active)

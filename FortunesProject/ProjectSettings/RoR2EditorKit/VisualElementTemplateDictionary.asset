@@ -17,3 +17,5 @@ MonoBehaviour:
     _hexRepresentation: 44d42a3e58832be42bb60f31f05e064a
   - k_templateName: ExtendedHelpBox
     _hexRepresentation: f201f9522b7898947bae7ddbde4b0c1d
+  - k_templateName: ComponentInspectorEnableToggle
+    _hexRepresentation: d8821e738f95f48498530303e90d440d

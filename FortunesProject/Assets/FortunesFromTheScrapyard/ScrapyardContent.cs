@@ -103,6 +103,7 @@ namespace FortunesFromTheScrapyard
             _loadDispatchers = new Func<IEnumerator>[]
             {   
                 DifficultyModule.Init,
+                EliteTierModule.Init,
                 () =>
                 {
                     CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectGenericContentPieceProvider<CharacterBody>(main, scrapyardContentPack));

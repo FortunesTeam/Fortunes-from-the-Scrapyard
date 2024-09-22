@@ -63,8 +63,6 @@ namespace FortunesFromTheScrapyard
                 FlyingVermin.UnInit();
                 MinorConstruct.UnInit();
                 LunarExploder.UnInit();
-
-                AllowPostLoopElites(false);
             }
         }
 
@@ -98,64 +96,8 @@ namespace FortunesFromTheScrapyard
                 FlyingVermin.Init();
                 MinorConstruct.Init();
                 LunarExploder.Init();
-
-                AllowPostLoopElites(true);
-            }
-
-        }
-        private static void AllowPostLoopElites(bool enable)
-        {
-            CombatDirector.EliteTierDef[] eliteTiers = CombatDirector.eliteTiers;
-            foreach (CombatDirector.EliteTierDef eliteTierDef in eliteTiers)
-            {
-                if (enable && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && !eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
-                {
-                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Poison;
-
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].damageBoostCoefficient /= 2f;
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].healthBoostCoefficient /= 8f;
-
-                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Haunted;
-
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].damageBoostCoefficient /= 2f;
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)].healthBoostCoefficient /= 8f;
-
-                    Array.Resize(ref eliteTierDef.eliteTypes, eliteTierDef.eliteTypes.Length + 1);
-                    eliteTierDef.eliteTypes[eliteTierDef.eliteTypes.GetUpperBound(0)] = RoR2Content.Elites.Lunar;
-
-                    break;
-                }
-                else if(!enable && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Poison) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Haunted) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Lunar) && eliteTierDef.eliteTypes.Contains(RoR2Content.Elites.Fire))
-                {
-                    List<EliteDef> list = new List<EliteDef>(eliteTierDef.eliteTypes);
-
-                    eliteTierDef.costMultiplier = 6f;
-
-                    for (int i = eliteTierDef.eliteTypes.Length - 1; i >= 0; i--)
-                    {
-                        if (eliteTierDef.eliteTypes[i])
-                        {
-                            if (eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Poison.eliteIndex || eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Haunted.eliteIndex)
-                            {
-                                eliteTierDef.eliteTypes[i].damageBoostCoefficient = 6f;
-                                eliteTierDef.eliteTypes[i].healthBoostCoefficient = 18f;
-                                list.RemoveAt(i);
-                            }
-                            else if (eliteTierDef.eliteTypes[i].eliteIndex == RoR2Content.Elites.Lunar.eliteIndex)
-                            {
-                                list.RemoveAt(i);
-                            }
-                        }
-                    }
-                    eliteTierDef.eliteTypes = list.ToArray();
-
-                    break;
-                }
             }
         }
-
         private void HoldoutZoneController_Awake(On.RoR2.HoldoutZoneController.orig_Awake orig, HoldoutZoneController self)
         {
             orig.Invoke(self);
