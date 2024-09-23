@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace EntityStates.Cloaker.Weapon
+namespace EntityStates.Cloaker.Weapon   
 {
     public class CloakerChargeShot : BaseSidearmState
     {

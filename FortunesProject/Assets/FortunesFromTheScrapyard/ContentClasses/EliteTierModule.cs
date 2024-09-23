@@ -64,19 +64,22 @@ namespace FortunesFromTheScrapyard
             InitializeEliteTiers(eliteTiers);
         }
 
-        private static void InitializeEliteTiers(List<IContentPiece<SerializableEliteTierDef>> eliteTiers)
+        private static void InitializeEliteTiers(List<IContentPiece<SerializableEliteTierDef>> serEliteTiers)
         {
-            EliteTierModule.eliteTiers = eliteTiers;
+            EliteTierModule.eliteTiers = serEliteTiers;
+
+            foreach (var eliteTier in EliteTierModule.eliteTiers)
+            {
+                eliteTier.Initialize();
+            }
 
             AddressReferencedAsset.OnAddressReferencedAssetsLoaded += AddressReferencedAsset_OnAddressReferencedAssetsLoaded;
         }
 
         private static void AddressReferencedAsset_OnAddressReferencedAssetsLoaded()
         {
-            foreach (var eliteTier in eliteTiers)
+            foreach (var eliteTier in EliteTierModule.eliteTiers)
             {
-                eliteTier.Initialize();
-
                 eliteTier.asset.Init();
 
                 if (eliteTier is IContentPackModifier packModifier)

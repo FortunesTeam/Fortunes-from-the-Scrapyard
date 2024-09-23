@@ -23,5 +23,5 @@ MonoBehaviour:
   outroFlavorToken: SCRAPYARD_DUKE_OUTRO_FLAVOR
   mainEndingEscapeFailureFlavorToken: SCRAPYARD_DUKE_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
   primaryColor: {r: 0.8301887, g: 0.4758644, b: 0.3485226, a: 1}
-  desiredSortPosition: 20
+  desiredSortPosition: 10
   hidden: 0
