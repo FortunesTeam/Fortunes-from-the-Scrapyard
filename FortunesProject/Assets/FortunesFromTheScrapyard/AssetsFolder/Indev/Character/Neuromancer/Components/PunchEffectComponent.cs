@@ -54,7 +54,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                 GlobalEventManager.instance.OnHitEnemy(damageInfos[punchCount - 1], base.gameObject);
                 GlobalEventManager.instance.OnHitAll(damageInfos[punchCount - 1], base.gameObject);
 
-                EffectManager.SpawnEffect(Neuromancer.punchImpactEffect, new EffectData
+                EffectManager.SpawnEffect(NeuromancerSurvivor.punchImpactEffect, new EffectData
                 {
                     origin = this.gameObject.transform.position,
                     scale = 1.5f

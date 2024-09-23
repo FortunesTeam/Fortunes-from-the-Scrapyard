@@ -4,6 +4,7 @@ using RoR2;
 using RoR2.ContentManagement;
 using System;
 using System.Collections;
+using UnityEngine;
 
 namespace FortunesFromTheScrapyard
 {
@@ -165,11 +166,6 @@ namespace FortunesFromTheScrapyard
             public static EquipmentDef MoonshineFlask;
             public static EquipmentDef EliteScrapEquipment;
         }
-
-        public static class ExtendedEliteDefs
-        {
-            public static ExtendedEliteDef edScrap; 
-        }
         public static class Buffs
         {
             public static BuffDef bdEnergyBar;
@@ -194,14 +190,41 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdPolypore;
             public static BuffDef bdCloakerMarked;
             public static BuffDef bdCloakerMarkCd;
+            public static BuffDef bdDukeDamageShare;
+            public static BuffDef bdDukeSpeedBuff;
+            public static BuffDef bdDukeFreeShot;
         }
 
         public static class Survivors
         {
             public static SurvivorDef Predator;
             public static SurvivorDef Neuromancer;
-            public static SurvivorDef Badger;
+            public static SurvivorDef Pacer;
             public static SurvivorDef Cloaker;
+            public static SurvivorDef Duke;
+            public static SurvivorDef Skater;
+        }
+
+        public static void CreateAndAddEffectDef(GameObject effect)
+        {
+            EffectDef effectDef = new EffectDef(effect);
+
+            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
+        }
+
+        public static void AddNetworkSoundEventDef(NetworkSoundEventDef networkSoundEventDef)
+        {
+            ScrapyardContent.scrapyardContentPack.networkSoundEventDefs.AddSingle(networkSoundEventDef);
+        }
+        public static NetworkSoundEventDef CreateAndAddNetworkSoundEventDef(string eventName)
+        {
+            NetworkSoundEventDef networkSoundEventDef = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
+            networkSoundEventDef.akId = AkSoundEngine.GetIDFromString(eventName);
+            networkSoundEventDef.eventName = eventName;
+
+            AddNetworkSoundEventDef(networkSoundEventDef);
+
+            return networkSoundEventDef;
         }
     }
 }

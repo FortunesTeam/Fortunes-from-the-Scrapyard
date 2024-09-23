@@ -72,7 +72,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                 this.durationDisplay.SetActive(true);
                 this.targetText.token = string.Empty;
 
-                if (this.neuromancerController.currentTimeEssence <=  99f) this.durationBar.color = Neuromancer.lightCyan;
+                if (this.neuromancerController.currentTimeEssence <=  99f) this.durationBar.color = NeuromancerSurvivor.lightCyan;
                 else this.durationBar.color = Color.red;
             }
             else

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using EntityStates;
-
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using RoR2;
 using RoR2.Skills;
 using UnityEngine.AddressableAssets;
@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 using FortunesFromTheScrapyard.Survivors.Neuromancer.Components;
 using R2API;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class Sap : BaseNeuromancerSkillState
     {
@@ -20,7 +20,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
 
         public string muzzleString = "Muzzle";
 
-        public GameObject pullTracerPrefab = Neuromancer.captureTracerEffect;
+        public GameObject pullTracerPrefab = NeuromancerSurvivor.captureTracerEffect;
 
         public string attackSoundString = "Play_huntress_m1_ready";
 
@@ -85,7 +85,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                     procChainMask = default(ProcChainMask),
                     procCoefficient = 1f
                 };
-                damageInfo.AddModdedDamageType(Neuromancer.DelayedSecondary);
+                damageInfo.AddModdedDamageType(NeuromancerSurvivor.DelayedSecondary);
 
                 this.target.healthComponent.TakeDamage(damageInfo);
                 GlobalEventManager.instance.OnHitEnemy(damageInfo, this.target.gameObject);

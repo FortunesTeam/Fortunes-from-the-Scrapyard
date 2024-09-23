@@ -1,5 +1,6 @@
 using MSU;
 using R2API;
+using R2API.AddressReferencedAssets;
 using R2API.ScriptableObjects;
 using RoR2;
 using System;
@@ -22,6 +23,7 @@ namespace FortunesFromTheScrapyard
 
         private static IContentPieceProvider<SerializableEliteTierDef> _contentPieceProvider;
 
+        private static List<IContentPiece<SerializableEliteTierDef>> eliteTiers;
         internal static IEnumerator Init()
         {
             if (moduleAvailability.available)
@@ -64,13 +66,29 @@ namespace FortunesFromTheScrapyard
 
         private static void InitializeEliteTiers(List<IContentPiece<SerializableEliteTierDef>> eliteTiers)
         {
+            EliteTierModule.eliteTiers = eliteTiers;
+
+            AddressReferencedAsset.OnAddressReferencedAssetsLoaded += AddressReferencedAsset_OnAddressReferencedAssetsLoaded;
+        }
+
+        private static void AddressReferencedAsset_OnAddressReferencedAssetsLoaded()
+        {
             foreach (var eliteTier in eliteTiers)
             {
                 eliteTier.Initialize();
 
                 eliteTier.asset.Init();
+
+                if (eliteTier is IContentPackModifier packModifier)
+                {
+                    packModifier.ModifyContentPack(_contentPieceProvider.contentPack);
+                }
+                if (eliteTier is IEliteTierContentPiece eliteTierContentPiece)
+                {
+                    scrapyardEliteTierDefs.Add(eliteTierContentPiece.asset.eliteTierDef, eliteTierContentPiece);
+                }
             }
-        }       
+        }
     }
 
     public interface IEliteTierContentPiece : IContentPiece<SerializableEliteTierDef>

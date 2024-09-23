@@ -15,7 +15,6 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
 {
     public class NeuromancerController : MonoBehaviour
     {
-
         private CharacterBody characterBody;
 
         private ModelSkinController skinController;

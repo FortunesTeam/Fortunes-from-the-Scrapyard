@@ -5,8 +5,9 @@ using RoR2.Projectile;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class SwingShatterPunch : BaseNeuromancerMeleeState
     {
@@ -44,16 +45,16 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
             attackRecoil = 2f / attackSpeedStat;
             damageType = DamageType.Stun1s;
             hitboxGroupName = "TimePunch";
-            hitEffectPrefab = Neuromancer.timePunchHitEffect;
+            hitEffectPrefab = NeuromancerSurvivor.timePunchHitEffect;
             procCoefficient = 1f;
             pushForce = 0f;
             bonusForce = Vector3.zero;
             hitStopDuration = 0.25f;
-            swingEffectPrefab = Neuromancer.timePunchSwingEffect;
+            swingEffectPrefab = NeuromancerSurvivor.timePunchSwingEffect;
             muzzleString = "HandL";
             hitHopVelocity = 4f;
             swingSoundString = "Play_loader_shift_release";
-            impactSound = Neuromancer.timePunchHitSoundDef.index;
+            impactSound = NeuromancerSurvivor.timePunchHitSoundDef.index;
             recoilAmplitudeY = 6f;
             recoilAmplitudeX = 1f;
 
@@ -107,8 +108,8 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                     bulletAttack.force = 4000f;
                     bulletAttack.isCrit = RollCrit();
                     bulletAttack.hitEffectPrefab = hitEffectPrefab;
-                    bulletAttack.tracerEffectPrefab = Neuromancer.punchTracer;
-                    bulletAttack.AddModdedDamageType(Neuromancer.AltUtilityFreeze);
+                    bulletAttack.tracerEffectPrefab = NeuromancerSurvivor.punchTracer;
+                    bulletAttack.AddModdedDamageType(NeuromancerSurvivor.AltUtilityFreeze);
                     bulletAttack.Fire();
                 }
             }

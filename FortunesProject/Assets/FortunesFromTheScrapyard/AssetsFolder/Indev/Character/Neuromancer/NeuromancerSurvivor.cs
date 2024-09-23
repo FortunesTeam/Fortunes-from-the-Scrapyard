@@ -11,13 +11,13 @@ using UnityEngine.Networking;
 using RoR2.UI;
 using FortunesFromTheScrapyard.Survivors.Neuromancer.Components;
 using EntityStates;
-using FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates;
+using EntityStates.Neuromancer;
 using RoR2.Projectile;
 using RoR2.EntityLogic;
 
 namespace FortunesFromTheScrapyard.Survivors.Neuromancer
 {
-    public class Neuromancer : ScrapyardSurvivor
+    public class NeuromancerSurvivor : ScrapyardSurvivor
     {
         public static DamageAPI.ModdedDamageType DelayedPrimary;
         public static DamageAPI.ModdedDamageType DelayedSecondary;
@@ -115,15 +115,15 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             kaboomEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/IceCullExplosion.prefab").WaitForCompletion().InstantiateClone("NeuroExplosionEffect");
             if (!kaboomEffect.GetComponent<NetworkIdentity>()) kaboomEffect.AddComponent<NetworkIdentity>();
 
-            CreateAndAddEffectDef(kaboomEffect);
+            ScrapyardContent.CreateAndAddEffectDef(kaboomEffect);
 
             captureTracerEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidJailer/VoidJailerCaptureTracer.prefab").WaitForCompletion().InstantiateClone("NeuromancerCaptureTracer", false);
 
-            CreateAndAddEffectDef(captureTracerEffect);
+            ScrapyardContent.CreateAndAddEffectDef(captureTracerEffect);
 
             neuroMuzzleFlash = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidSurvivor/VoidSurvivorBeamMuzzleflash.prefab").WaitForCompletion().InstantiateClone("NeuromancerMuzzleFlash", false);
 
-            CreateAndAddEffectDef(neuroMuzzleFlash);
+            ScrapyardContent.CreateAndAddEffectDef(neuroMuzzleFlash);
 
             timeBeamImpact = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/MissileVoid/VoidImpactEffect.prefab").WaitForCompletion().InstantiateClone("TimeBeamImpactEffect", false);
             timeBeamImpact.GetComponent<EffectComponent>().soundName = "";
@@ -141,7 +141,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             timeBeamImpact.transform.Find("Impact Shockwave").gameObject.GetComponent<ParticleSystemRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Common/VFX/matOmniHitspark1Generic.mat").WaitForCompletion();
             timeBeamImpact.transform.Find("Impact Shockwave").gameObject.GetComponent<ParticleSystemRenderer>().material.SetColor("_TintColor", lightCyan);
 
-            CreateAndAddEffectDef(timeBeamImpact);
+            ScrapyardContent.CreateAndAddEffectDef(timeBeamImpact);
 
 
             timeSiphonOrbEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/HealthOrbEffect.prefab").WaitForCompletion().InstantiateClone("TimeSiphonOrbEffect", false);
@@ -158,11 +158,11 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             var col = timeSiphonOrbEffect.transform.Find("VFX").Find("Core").GetComponent<ParticleSystem>().colorOverLifetime;
             col.color = new ParticleSystem.MinMaxGradient(darkCyan, lightCyan);
 
-            CreateAndAddEffectDef(timeSiphonOrbEffect);
+            ScrapyardContent.CreateAndAddEffectDef(timeSiphonOrbEffect);
 
             timePunchHitEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion().InstantiateClone("TimePunchHitEffect", false);
 
-            CreateAndAddEffectDef(timePunchHitEffect);
+            ScrapyardContent.CreateAndAddEffectDef(timePunchHitEffect);
 
             timePunchSwingEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/LoaderFistLoop.prefab").WaitForCompletion().InstantiateClone("TimePunchLoopEffect", false);
 
@@ -170,7 +170,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
 
             timeBeamChargeEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidSurvivor/VoidSurvivorBeamChargeCorrupt.prefab").WaitForCompletion().InstantiateClone("TimeBeamChargeEffect", false);
 
-            CreateAndAddEffectDef(timeBeamChargeEffect);
+            ScrapyardContent.CreateAndAddEffectDef(timeBeamChargeEffect);
 
             timeBeamEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidSurvivor/VoidSurvivorBeamCorrupt.prefab").WaitForCompletion().InstantiateClone("TimeBeamEffect", false);
             timeBeamEffect.transform.localScale *= 0.25f;
@@ -192,12 +192,12 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
             fistEffect.transform.localRotation = Quaternion.identity;
             fistEffect.transform.localScale *= 0.15f;
 
-            CreateAndAddEffectDef(punchImpactEffect);
+            ScrapyardContent.CreateAndAddEffectDef(punchImpactEffect);
 
             punchTracer = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/TracerRailgunCryo.prefab").WaitForCompletion().InstantiateClone("NeuromancerPunchTracer", false);
             punchTracer.transform.localScale *= 3f;
 
-            CreateAndAddEffectDef(punchTracer);
+            ScrapyardContent.CreateAndAddEffectDef(punchTracer);
         }
         #region projectiles
         private void CreateProjectiles()
@@ -268,7 +268,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
         #region sounds
         private static void CreateSounds()
         {
-            timePunchHitSoundDef = CreateAndAddNetworkSoundEventDef("Play_loader_m2_impact");
+            timePunchHitSoundDef = ScrapyardContent.CreateAndAddNetworkSoundEventDef("Play_loader_m2_impact");
         }
         #endregion
 
@@ -281,7 +281,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
         private static void Hooks()
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
-            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+            On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamageProcess;
             R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
             HUD.onHudTargetChangedGlobal += HUDSetup;
         }
@@ -309,7 +309,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
                 }
             }
         }
-        private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             if (NetworkServer.active && self && self.alive || !self.godMode || self.ospTimer <= 0f)
             {
@@ -498,27 +498,6 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer
                 atomicTrackerComponent.durationBarRed = chargeBarAmmo.transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Image>();
                 atomicTrackerComponent.durationBarOver = chargeBarAmmo.transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Image>();
             }
-        }
-        private static void CreateAndAddEffectDef(GameObject effect)
-        {
-            EffectDef effectDef = new EffectDef(effect);
-
-            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
-        }
-
-        internal static void AddNetworkSoundEventDef(NetworkSoundEventDef networkSoundEventDef)
-        {
-            ScrapyardContent.scrapyardContentPack.networkSoundEventDefs.AddSingle(networkSoundEventDef);
-        }
-        internal static NetworkSoundEventDef CreateAndAddNetworkSoundEventDef(string eventName)
-        {
-            NetworkSoundEventDef networkSoundEventDef = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
-            networkSoundEventDef.akId = AkSoundEngine.GetIDFromString(eventName);
-            networkSoundEventDef.eventName = eventName;
-
-            AddNetworkSoundEventDef(networkSoundEventDef);
-
-            return networkSoundEventDef;
         }
     }
 }

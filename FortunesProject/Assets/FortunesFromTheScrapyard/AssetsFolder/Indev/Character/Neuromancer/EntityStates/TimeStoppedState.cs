@@ -1,10 +1,11 @@
 ﻿using EntityStates;
-
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using FortunesFromTheScrapyard;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class TimeStoppedState : BaseState
     {
@@ -26,7 +27,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                 {
                     this.temporaryOverlay = base.gameObject.AddComponent<TemporaryOverlay>();
                     this.temporaryOverlay.duration = 9999f;
-                    this.temporaryOverlay.originalMaterial = Neuromancer.frozenMat;
+                    this.temporaryOverlay.originalMaterial = NeuromancerSurvivor.frozenMat;
                     this.temporaryOverlay.AddToCharacerModel(component);
                 }
             }

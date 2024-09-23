@@ -27,6 +27,8 @@ namespace FortunesFromTheScrapyard
                 }
             }
 
+            ScrapyardLog.Debug("Running");
+
             eliteTierDef.elites.ToArray();
         }
 

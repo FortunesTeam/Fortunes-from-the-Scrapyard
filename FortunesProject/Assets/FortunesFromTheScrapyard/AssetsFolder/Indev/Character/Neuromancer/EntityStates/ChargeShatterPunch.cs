@@ -1,6 +1,6 @@
 ﻿using EntityStates;
-
-using FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates;
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
+using EntityStates.Neuromancer;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +9,7 @@ using RoR2.UI;
 using UnityEngine;
 
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class ChargeShatterPunch : BaseNeuromancerSkillState
     {
@@ -86,11 +86,11 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
 
         public static float minChargeForChargedAttack = 0f;
 
-        public static GameObject chargeVfxPrefab = Neuromancer.timePunchChargeEffect;
+        public static GameObject chargeVfxPrefab = NeuromancerSurvivor.timePunchChargeEffect;
 
         public static string chargeVfxChildLocatorName = "HandL";
 
-        public static GameObject crosshairOverridePrefab = Neuromancer.chargeCrosshair;
+        public static GameObject crosshairOverridePrefab = NeuromancerSurvivor.chargeCrosshair;
 
         public static float walkSpeedCoefficient = 0.75f;
 

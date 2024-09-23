@@ -6,20 +6,21 @@ using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
 using UnityEngine.Networking;
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using static UnityEngine.ParticleSystem.PlaybackState;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class RapidPunch : BaseNeuromancerSkillState
     {
         [SerializeField]
-        public GameObject muzzleflashEffectPrefab = Neuromancer.neuroMuzzleFlash;
+        public GameObject muzzleflashEffectPrefab = NeuromancerSurvivor.neuroMuzzleFlash;
 
         [SerializeField]
         public GameObject hitEffectPrefab = null;
 
         [SerializeField]
-        public GameObject beamVfxPrefab = Neuromancer.timeBeamEffect;
+        public GameObject beamVfxPrefab = NeuromancerSurvivor.timeBeamEffect;
 
         [SerializeField]
         public string enterSoundString = "Play_voidman_m1_corrupted_start";
@@ -154,7 +155,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                 bulletAttack.force = forcePerSecond / tickRate;
                 bulletAttack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
                 bulletAttack.hitEffectPrefab = hitEffectPrefab;
-                bulletAttack.AddModdedDamageType(Neuromancer.DelayedPunch);
+                bulletAttack.AddModdedDamageType(NeuromancerSurvivor.DelayedPunch);
                 bulletAttack.Fire();
             }
             base.characterBody.AddSpreadBloom(spreadBloomValue);

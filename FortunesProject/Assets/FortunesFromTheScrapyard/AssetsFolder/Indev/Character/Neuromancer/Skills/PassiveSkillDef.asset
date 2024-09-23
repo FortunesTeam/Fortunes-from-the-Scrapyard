@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Passive
   skillNameToken: SCRAPYARD_NEURO_PASSIVE_NAME
-  skillDescriptionToken: SCRAPYARD_NEURO_PASSIVE_DESCRIPTION
+  skillDescriptionToken: SCRAPYARD_NEURO_PASSIVE_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: 
@@ -27,6 +27,8 @@ MonoBehaviour:
   rechargeStock: 0
   requiredStock: 2
   stockToConsume: 0
+  attackSpeedBuffsRestockSpeed: 0
+  attackSpeedBuffsRestockSpeed_Multiplier: 1
   resetCooldownTimerOnUse: 0
   fullRestockOnAssign: 0
   dontAllowPastMaxStocks: 0
@@ -36,3 +38,5 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 0
   mustKeyPress: 0
+  autoHandleLuminousShot: 1
+  hideStockCount: 0

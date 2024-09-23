@@ -9,7 +9,12 @@
         "GUID:432b2a95eca85c148af64a0dbf46326c",
         "GUID:5edd4d758f0c2984688c1052b8166d4f",
         "GUID:f995cd7342f99c342b0f04027ffd7e0e",
-        "GUID:acd656afcbd89204aa40c5080923931b"
+        "GUID:acd656afcbd89204aa40c5080923931b",
+        "GUID:b04f7ec21bb6ebe43a85599e36f30cff",
+        "GUID:280569ac301428d4d950fdf647900922",
+        "GUID:fb8ce2e2486231249a0954d5da518927",
+        "GUID:6b32b56b1902bf24eaf5fab6ebfd6e1f",
+        "GUID:fb1d83a89d7108b4f86d74c4ed9d2013"
     ],
     "includePlatforms": [
         "Editor"
@@ -20,7 +25,10 @@
     "precompiledReferences": [
         "HGCSharpUtils.dll",
         "HGUnityUtils.dll",
-        "RoR2.dll"
+        "RoR2.dll",
+        "BepInEx.dll",
+        "BepInEx.MonoMod.HookGenPatcher.dll",
+        "RoR2BepInExPack.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

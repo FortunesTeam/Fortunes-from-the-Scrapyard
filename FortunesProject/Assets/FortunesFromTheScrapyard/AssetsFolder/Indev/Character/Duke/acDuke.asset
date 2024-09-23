@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cde32e1dc123643b3d03951692e0a9, type: 3}
+  m_Name: acDuke
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 6205745757962964917, guid: a24920bd80170be48b42dd47bdf696f0, type: 3}
+  - {fileID: 1620632698579816146, guid: db5d009943c40e44fb7bdecae1b87f9c, type: 3}
+  - {fileID: 11400000, guid: 4eae7b0ebcfb2364d9d072ac2be325ce, type: 2}
+  - {fileID: 853351861191170904, guid: d784c81ce721d58468908185ae2513e8, type: 3}
+  - {fileID: 2100000, guid: fe02a0a9d16aeb8459b563709c362ecf, type: 2}
+  - {fileID: 2100000, guid: 5fc73fda44c9f4f40bb9009c4fb35837, type: 2}
+  - {fileID: 2100000, guid: ad157a943635f5044b598e1fca3ebdd6, type: 2}
+  - {fileID: 4924057798505467993, guid: b671403e475b12d44acd12738a259aa0, type: 3}
+  - {fileID: 102900000, guid: fc2449c246887a942b798d20c506a505, type: 3}
+  bodyPrefab: {fileID: 1620632698579816146, guid: db5d009943c40e44fb7bdecae1b87f9c,
+    type: 3}
+  masterPrefab: {fileID: 6205745757962964917, guid: a24920bd80170be48b42dd47bdf696f0,
+    type: 3}
+  survivorDef: {fileID: 11400000, guid: 4eae7b0ebcfb2364d9d072ac2be325ce, type: 2}

@@ -97,14 +97,14 @@ namespace FortunesFromTheScrapyard.Items
         private void ShrineColossusAccessBehavior_OnInteraction(On.RoR2.ShrineColossusAccessBehavior.orig_OnInteraction orig, ShrineColossusAccessBehavior self, Interactor interactor)
         {
             Dictionary<CharacterBody, int> trueSoulCostValues = new Dictionary<CharacterBody, int>();
-            CharacterBody body = interactor.GetComponent<CharacterBody>();
+            CharacterBody interactorBody = interactor.GetComponent<CharacterBody>();
 
-            if (body && body.master.playerCharacterMasterController)
+            if (interactorBody && interactorBody.master.playerCharacterMasterController)
             {
                 foreach (PlayerCharacterMasterController instance in PlayerCharacterMasterController.instances)
                 {
                     CharacterBody characterBody = instance.master.GetBody();
-                    if (characterBody && characterBody != body)
+                    if (characterBody && characterBody != interactorBody)
                     {
                         trueSoulCostValues.Add(characterBody, characterBody.GetBuffCount(DLC2Content.Buffs.SoulCost) + self.purchaseInteraction.cost / 10);
                     }

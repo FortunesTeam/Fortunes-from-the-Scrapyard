@@ -19,7 +19,7 @@ MonoBehaviour:
   unlockableName: 
   unlockableDef: {fileID: 0}
   displayNameToken: SCRAPYARD_NEUROMANCER_BODY_NAME
-  descriptionToken: SCRAPYARD_NEUROMANCER_DESCRIPTION
+  descriptionToken: SCRAPYARD_NEUROMANCER_DESC
   outroFlavorToken: SCRAPYARD_NEUROMANCER_OUTRO_FLAVOR
   mainEndingEscapeFailureFlavorToken: SCRAPYARD_NEUROMANCER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
   primaryColor: {r: 0.55633676, g: 0.84453577, b: 0.8867924, a: 1}

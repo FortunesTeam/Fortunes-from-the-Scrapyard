@@ -47,9 +47,9 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                 var value = dinfo.value;
                 var index = dinfo.i;
 
-                if(value.HasModdedDamageType(Neuromancer.DelayedSecondary))
+                if(value.HasModdedDamageType(NeuromancerSurvivor.DelayedSecondary))
                 {
-                    value.RemoveModdedDamageType(Neuromancer.DelayedSecondary);
+                    value.RemoveModdedDamageType(NeuromancerSurvivor.DelayedSecondary);
                     value.rejected = false;
 
                     victimBody.healthComponent.TakeDamage(value);
@@ -67,9 +67,9 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                         OrbManager.instance.AddOrb(timeOrb);
                     }
                 }
-                else if(value.HasModdedDamageType(Neuromancer.DelayedUtility))
+                else if(value.HasModdedDamageType(NeuromancerSurvivor.DelayedUtility))
                 {
-                    value.RemoveModdedDamageType(Neuromancer.DelayedUtility);
+                    value.RemoveModdedDamageType(NeuromancerSurvivor.DelayedUtility);
                     value.rejected = false;
 
                     victimBody.healthComponent.TakeDamage(value);
@@ -82,21 +82,21 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                     fireProjectileInfo.crit = value.crit;
                     fireProjectileInfo.damage = 0.5f * value.attacker.GetComponent<CharacterBody>().damage;
                     fireProjectileInfo.owner = value.attacker;
-                    fireProjectileInfo.projectilePrefab = Neuromancer.timeZapCone;
+                    fireProjectileInfo.projectilePrefab = NeuromancerSurvivor.timeZapCone;
                     ProjectileManager.instance.FireProjectile(fireProjectileInfo);
                 }
-                else if(value.HasModdedDamageType(Neuromancer.DelayedPrimary)) 
+                else if(value.HasModdedDamageType(NeuromancerSurvivor.DelayedPrimary)) 
                 {
-                    value.RemoveModdedDamageType(Neuromancer.DelayedPrimary);
+                    value.RemoveModdedDamageType(NeuromancerSurvivor.DelayedPrimary);
                     value.rejected = false;
 
                     victimBody.healthComponent.TakeDamage(value);
                     GlobalEventManager.instance.OnHitEnemy(value, victimBody.gameObject);
                     GlobalEventManager.instance.OnHitAll(value, victimBody.gameObject);
                 }
-                else if(value.HasModdedDamageType(Neuromancer.DelayedPunch))
+                else if(value.HasModdedDamageType(NeuromancerSurvivor.DelayedPunch))
                 {
-                    value.RemoveModdedDamageType(Neuromancer.DelayedPunch);
+                    value.RemoveModdedDamageType(NeuromancerSurvivor.DelayedPunch);
                     value.rejected = false;
                     value.damageType |= DamageType.Stun1s;
 
