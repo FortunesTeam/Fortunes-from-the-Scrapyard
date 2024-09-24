@@ -71,6 +71,7 @@ namespace FortunesFromTheScrapyard
         private static IEnumerator LoadFromAssetBundles()
         {
             ScrapyardLog.Info($"Populating EntityStateTypes array...");
+            scrapyardContentPack.entityStateTypes.Clear();
             scrapyardContentPack.entityStateTypes.Add(typeof(ScrapyardContent).Assembly.GetTypes().Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type)).ToArray());
 
             /*
@@ -87,7 +88,11 @@ namespace FortunesFromTheScrapyard
             scrapyardContentPack.effectDefs.Add(gameObjectRequest.assets.Where(go => go.GetComponent<EffectComponent>()).Select(go => new EffectDef(go)).ToArray());
             */
 
-            yield break;
+            ScrapyardLog.Info($"Calling AsyncAssetLoad Attribute Methods...");
+            ParallelMultiStartCoroutine asyncAssetLoadCoroutines = AsyncAssetLoadAttribute.CreateCoroutineForMod(ScrapyardMain.instance);
+            asyncAssetLoadCoroutines.Start();
+            while (!asyncAssetLoadCoroutines.isDone)
+                yield return null;
         }
         private static IEnumerator LoadVanillaSurvivorBundles()
         {

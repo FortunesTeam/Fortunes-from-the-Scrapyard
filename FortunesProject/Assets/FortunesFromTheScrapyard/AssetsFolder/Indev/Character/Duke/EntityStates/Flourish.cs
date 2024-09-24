@@ -11,6 +11,8 @@ namespace EntityStates.Duke
 {
     public class Flourish : BaseSkillState
     {
+        private float baseDuration = 0.15f;
+
         private static int QuickStepExitStateHash = Animator.StringToHash("QuickstepLoopExit");
 
         private static int QuickStepLoopStateHash = Animator.StringToHash("QuickstepLoop");
@@ -105,6 +107,11 @@ namespace EntityStates.Duke
             base.characterDirection.forward = this.dashVelocity;
             base.characterDirection.moveVector = this.dashVelocity;
             base.characterBody.isSprinting = true;
+
+            if(base.isAuthority && base.fixedAge >= this.baseDuration)
+            {
+                outer.SetNextStateToMain();
+            }
         }
         public override void OnExit()
         {

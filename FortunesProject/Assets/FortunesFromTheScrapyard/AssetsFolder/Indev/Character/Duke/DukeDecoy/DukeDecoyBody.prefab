@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: -1067940895, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraParams: {fileID: 0}
+  cameraParams: {fileID: 11400000, guid: 6bef7fb2ee5fc3546b5f26a455d62ae9, type: 2}
   cameraPivotTransform: {fileID: 1500906325784695424}
   fovOverride: 0
   recoil: {x: 0, y: 0}
@@ -640,11 +640,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Body
   initialStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Duke.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   mainStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Duke.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   debug: 0
 --- !u!114 &467366753770792642
 MonoBehaviour:
@@ -677,9 +677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 334706e9ae13cae4686cd1d54736196d, type: 2}
-  skillName: Primary
+  skillName: Salvo
   hideInCharacterSelect: 0
-  baseStock: 1
+  baseStock: 4
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &4617678326562280654

@@ -192,14 +192,14 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             {
                 if (mapper.transform.name == "duke_emoteskeleton")
                 {
-                    mapper.transform.parent.Find("meshGun").gameObject.SetActive(value: false);
+                    mapper.transform.parent.Find("meshDukeGun").gameObject.SetActive(value: false);
                 }
             }
             else
             {
                 if (mapper.transform.name == "duke_emoteskeleton")
                 {
-                    mapper.transform.parent.Find("meshGun").gameObject.SetActive(value: true);
+                    mapper.transform.parent.Find("meshDukeGun").gameObject.SetActive(value: true);
                 }
             }
         }

@@ -723,9 +723,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Weapon2
   initialStateType:
-    _typeName: EntityStates.TestState1, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainStateType:
-    _typeName: 
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   debug: 0
 --- !u!114 &7037682913683084371
 MonoBehaviour:
@@ -741,9 +741,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Dash
   initialStateType:
-    _typeName: EntityStates.TestState1, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainStateType:
-    _typeName: 
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   debug: 0
 --- !u!114 &693104841345367645
 MonoBehaviour:
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 334706e9ae13cae4686cd1d54736196d, type: 2}
-  skillName: Primary
+  skillName: Salvo
   hideInCharacterSelect: 0
   baseStock: 1
   baseRechargeStopwatch: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 98e05317ab4a10e4aab52d84bd2b1338, type: 2}
-  skillName: Secondary
+  skillName: KineticReplicator
   hideInCharacterSelect: 0
   baseStock: 1
   baseRechargeStopwatch: 0
@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: b760d586bbd98d641afd5faca68e7b3a, type: 2}
-  skillName: Utility
+  skillName: Flourish
   hideInCharacterSelect: 0
   baseStock: 1
   baseRechargeStopwatch: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 5c60b369735a99540ae96b31d5ce614d, type: 2}
-  skillName: Special
+  skillName: PrententiousMimicry
   hideInCharacterSelect: 0
   baseStock: 1
   baseRechargeStopwatch: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillFamily: {fileID: 11400000, guid: 2cda3937e76ab3543b79e2c9ed832d43, type: 2}
-  skillName: Passive
+  skillName: SteadHand
   hideInCharacterSelect: 0
   baseStock: 1
   baseRechargeStopwatch: 0

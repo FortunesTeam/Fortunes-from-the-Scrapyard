@@ -94,7 +94,7 @@ namespace EntityStates.Duke
                 damageType |= DamageType.BonusToLowHealth;
             }
 
-            if (freeBullet)
+            if (freeBullet && skillLocator.primary.stock != 0)
             {
                 skillLocator.primary.stock++;
             }
