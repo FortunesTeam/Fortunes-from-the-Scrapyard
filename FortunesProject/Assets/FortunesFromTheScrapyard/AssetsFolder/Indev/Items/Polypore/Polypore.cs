@@ -55,10 +55,8 @@ namespace FortunesFromTheScrapyard.Items
 
             CharacterBody victimBody = victim.GetComponent<CharacterBody>();
             CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
-            if (victimBody && attackerBody)
+            if (victimBody && attackerBody && attackerBody.HasItem(ScrapyardContent.Items.Polypore))
             {
-
-
                 if (!victimBody.HasBuff(ScrapyardContent.Buffs.bdPolypore))
                 {
                     bool hasDebuff = false;
@@ -102,7 +100,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override bool IsAvailable(ContentPack contentPack)
         {
-            return true;
+            return false;
         }
 
         public override ScrapyardAssetRequest LoadAssetRequest()

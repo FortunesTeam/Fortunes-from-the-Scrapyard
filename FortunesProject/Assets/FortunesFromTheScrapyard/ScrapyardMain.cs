@@ -9,6 +9,7 @@ using UnityEngine;
 using FortunesFromTheScrapyard.Survivors.Neuromancer.Components;
 using R2API.Networking;
 using FortunesFromTheScrapyard.Elite;
+using BepInEx.Bootstrap;
 
 [assembly: HG.Reflection.SearchableAttribute.OptIn]
 #pragma warning disable CS0618
@@ -20,6 +21,10 @@ namespace FortunesFromTheScrapyard
 {
     [BepInPlugin(GUID, NAME, VERSION)]
     [BepInDependency("com.Moffein.AccurateEnemies", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.Moffein.RiskyArtifacts", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
     public class ScrapyardMain : BaseUnityPlugin
     {
         public const string GUID = "com.FortunesTeam.FortunesFromTheScrapyard";
@@ -27,7 +32,10 @@ namespace FortunesFromTheScrapyard
         public const string NAME = "Fortunes From the Scrapyard";
         //Singleton access pattern to our instance.
         internal static ScrapyardMain instance { get; private set; }
-
+        public static bool emotesInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
+        public static bool scepterInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
+        public static bool InfernoInstalled => Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
+        public static bool RiskyArtifactsInstalled => Chainloader.PluginInfos.ContainsKey("com.Moffein.RiskyArtifacts");
         private void Awake()
         {
             instance = this;

@@ -33,7 +33,7 @@ namespace FortunesFromTheScrapyard.Items
         private HealthComponent.HealthBarValues HealthComponent_GetHealthBarValues(On.RoR2.HealthComponent.orig_GetHealthBarValues orig, HealthComponent self)
         {
             var bar = orig(self);
-            if (!self.body.bodyFlags.HasFlag(CharacterBody.BodyFlags.ImmuneToExecutes) && self.body.HasBuff(ScrapyardContent.Buffs.bdLethalInjection) && self.TryGetComponent<InjectionBehavior>(out var component))
+            if (!self.body.bodyFlags.HasFlag(CharacterBody.BodyFlags.ImmuneToExecutes) && self.body.HasBuff(ScrapyardContent.Buffs.bdLethalInjection) && self.TryGetComponent<InjectionComponent>(out var component))
             {
                 bar.cullFraction += component.injectionExecuteThreshold;
             }
@@ -67,7 +67,7 @@ namespace FortunesFromTheScrapyard.Items
                     {
                         if (NetworkServer.active) victimBody.AddBuff(ScrapyardContent.Buffs.bdLethalInjection);
                         float injectionExecuteDamagePercentage = (damageInfo.damage / victimHealth.fullCombinedHealth) * (GetStackValue(toxinPercentBase, toxinPercentStack, stack) * damageInfo.procCoefficient);
-                        InjectionBehavior injection = victimBody.gameObject.EnsureComponent<InjectionBehavior>();
+                        InjectionComponent injection = victimBody.gameObject.EnsureComponent<InjectionComponent>();
                         if(injection.hostBody != victimBody) injection.hostBody = victimBody;
                         injection.AddStacks(injectionExecuteDamagePercentage);
                         Vector3 position = damageInfo.position;
@@ -84,7 +84,7 @@ namespace FortunesFromTheScrapyard.Items
                     float executionHealthLost = 0f;
                     GameObject executeEffect = null;
                     float executeThreshold = Mathf.NegativeInfinity;
-                    float executeHealthThreshold = victimBody.gameObject.EnsureComponent<InjectionBehavior>().injectionExecuteThreshold;
+                    float executeHealthThreshold = victimBody.gameObject.EnsureComponent<InjectionComponent>().injectionExecuteThreshold;
                     if (executeThreshold < executeHealthThreshold)
                     {
                         executeThreshold = executeHealthThreshold;
@@ -124,7 +124,7 @@ namespace FortunesFromTheScrapyard.Items
             }
         }
 
-        public class InjectionBehavior : MonoBehaviour
+        public class InjectionComponent : MonoBehaviour
         {
             internal CharacterBody hostBody;
             public float injectionExecuteThreshold;

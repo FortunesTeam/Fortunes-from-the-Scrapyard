@@ -33,7 +33,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
 
         public float damageTickFrequency = 0.3f;
 
-        public GameObject areaIndicator = Neuromancer.nearbySiphonIndicator;
+        public GameObject areaIndicator = NeuromancerSurvivor.nearbySiphonIndicator;
 
         public string enterSoundString;
 
@@ -101,7 +101,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                                     procChainMask = default(ProcChainMask),
                                     procCoefficient = 0.3f
                                 };
-                                damageInfo.AddModdedDamageType(Neuromancer.AltSpecialSiphon);
+                                damageInfo.AddModdedDamageType(NeuromancerSurvivor.AltSpecialSiphon);
                                 hurtBox.healthComponent.TakeDamage(damageInfo);
                             }
                         }

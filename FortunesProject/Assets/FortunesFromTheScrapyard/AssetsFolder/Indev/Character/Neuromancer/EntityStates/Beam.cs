@@ -5,8 +5,9 @@ using RoR2.Projectile;
 using UnityEngine;
 using UnityEngine.Networking;
 using static UnityEngine.ParticleSystem.PlaybackState;
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class Beam : BaseNeuromancerSkillState
     {
@@ -14,10 +15,10 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
         public GameObject muzzleflashEffectPrefab;
 
         [SerializeField]
-        public GameObject hitEffectPrefab = Neuromancer.timeBeamImpact;
+        public GameObject hitEffectPrefab = NeuromancerSurvivor.timeBeamImpact;
 
         [SerializeField]
-        public GameObject beamVfxPrefab = Neuromancer.timeBeamEffect;
+        public GameObject beamVfxPrefab = NeuromancerSurvivor.timeBeamEffect;
 
         [SerializeField]
         public string enterSoundString = "Play_voidman_m1_corrupted_start";
@@ -131,7 +132,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                 Ray aimRay = GetAimRay();
                 aimRay.direction = Util.ApplySpread(aimRay.direction, 0f, 0f, 1f, 1f);
                 FireProjectileInfo fireProjectileInfo = default(FireProjectileInfo);
-                fireProjectileInfo.projectilePrefab = Neuromancer.overheatBallBlast;
+                fireProjectileInfo.projectilePrefab = NeuromancerSurvivor.overheatBallBlast;
                 fireProjectileInfo.position = aimRay.origin;
                 fireProjectileInfo.rotation = Util.QuaternionSafeLookRotation(aimRay.direction);
                 fireProjectileInfo.owner = base.gameObject;
@@ -189,7 +190,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                 bulletAttack.force = forcePerSecond / tickRate;
                 bulletAttack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
                 bulletAttack.hitEffectPrefab = hitEffectPrefab;
-                bulletAttack.AddModdedDamageType(Neuromancer.DelayedPrimary);
+                bulletAttack.AddModdedDamageType(NeuromancerSurvivor.DelayedPrimary);
                 bulletAttack.Fire();
             }
             base.characterBody.AddSpreadBloom(spreadBloomValue);

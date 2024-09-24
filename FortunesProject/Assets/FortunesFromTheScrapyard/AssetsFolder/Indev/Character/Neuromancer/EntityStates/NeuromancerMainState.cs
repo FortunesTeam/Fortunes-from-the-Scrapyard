@@ -3,7 +3,7 @@ using RoR2;
 using EntityStates;
 using BepInEx.Configuration;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class MainState : GenericCharacterMain
     {

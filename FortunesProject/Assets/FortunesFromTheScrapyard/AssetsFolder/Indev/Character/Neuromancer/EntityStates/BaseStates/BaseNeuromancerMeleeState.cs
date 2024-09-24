@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 using static R2API.DamageAPI;
 using static EntityStates.BaseState;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public abstract class BaseNeuromancerMeleeState : BaseNeuromancerSkillState, SteppedSkillDef.IStepSetter
     {

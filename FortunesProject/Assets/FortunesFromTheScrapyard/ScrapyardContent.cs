@@ -4,6 +4,10 @@ using RoR2;
 using RoR2.ContentManagement;
 using System;
 using System.Collections;
+using UnityEngine;
+using System.Linq;
+using EntityStates.FalseSonBoss;
+using System.Collections.Generic;
 
 namespace FortunesFromTheScrapyard
 {
@@ -66,19 +70,52 @@ namespace FortunesFromTheScrapyard
 
         private static IEnumerator LoadFromAssetBundles()
         {
-            yield break;
-        }
-        /*
-        private IEnumerator LoadSoundBank()
-        {
-            ScrapyardAssetRequest<GameObject> request = ScrapyardAssets.LoadAssetAsync<GameObject>("ScrapyardSoundInitializer", ScrapyardBundle.Main);
-            while (!request.isComplete)
-                yield return null;
+            ScrapyardLog.Info($"Populating EntityStateTypes array...");
+            scrapyardContentPack.entityStateTypes.Add(typeof(ScrapyardContent).Assembly.GetTypes().Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type)).ToArray());
 
-            UnityEngine.Object.Instantiate(request.asset);
+            /*
+            ScrapyardLog.Info("Populating EntityStateConfiguration array...");
+            ScrapyardAssetRequest<EntityStateConfiguration> escRequest = new ScrapyardAssetRequest<EntityStateConfiguration>(ScrapyardBundle.All);
+            escRequest.StartLoad();
+            while (!escRequest.isComplete) yield return null;
+            scrapyardContentPack.entityStateConfigurations.Add(escRequest.assets.ToArray());
+            
+            ScrapyardLog.Info($"Populating EffectDefs array...");
+            ScrapyardAssetRequest<GameObject> gameObjectRequest = new ScrapyardAssetRequest<GameObject>(ScrapyardBundle.All);
+            gameObjectRequest.StartLoad();
+            while (!gameObjectRequest.isComplete) yield return null;
+            scrapyardContentPack.effectDefs.Add(gameObjectRequest.assets.Where(go => go.GetComponent<EffectComponent>()).Select(go => new EffectDef(go)).ToArray());
+            */
+
             yield break;
         }
-        */
+        private static IEnumerator LoadVanillaSurvivorBundles()
+        {
+            ParallelMultiStartCoroutine helper = new ParallelMultiStartCoroutine();
+
+            var list = new List<ScrapyardVanillaSurvivor>()
+              {
+                //Add the rest
+              };
+
+            foreach (var survivor in list)
+            {
+                helper.Add(survivor.LoadContentAsync);
+            }
+
+            helper.Start();
+            while (!helper.IsDone())
+            {
+                yield return null;
+            }
+
+            foreach (var survivor in list)
+            {
+                survivor.Initialize();
+                survivor.ModifyContentPack(scrapyardContentPack);
+            }
+        }
+
         private IEnumerator AddExpansionDef()
         {
             ScrapyardAssetRequest<ExpansionDef> request = ScrapyardAssets.LoadAssetAsync<ExpansionDef>("ScrapyardExpansionDef", ScrapyardBundle.Main);
@@ -103,6 +140,7 @@ namespace FortunesFromTheScrapyard
             _loadDispatchers = new Func<IEnumerator>[]
             {   
                 DifficultyModule.Init,
+                //EliteTierModule.Init,
                 () =>
                 {
                     CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectGenericContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
@@ -156,6 +194,7 @@ namespace FortunesFromTheScrapyard
             public static ItemDef OldCD;
             public static ItemDef DuctTape;
             public static ItemDef Polypore;
+            public static ItemDef RoughReception;
         }
 
         public static class Equipments
@@ -163,11 +202,6 @@ namespace FortunesFromTheScrapyard
             public static EquipmentDef EnergyBar;
             public static EquipmentDef MoonshineFlask;
             public static EquipmentDef EliteScrapEquipment;
-        }
-
-        public static class ExtendedEliteDefs
-        {
-            public static ExtendedEliteDef edScrap; 
         }
         public static class Buffs
         {
@@ -193,14 +227,41 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdPolypore;
             public static BuffDef bdCloakerMarked;
             public static BuffDef bdCloakerMarkCd;
+            public static BuffDef bdDukeDamageShare;
+            public static BuffDef bdDukeSpeedBuff;
+            public static BuffDef bdDukeFreeShot;
         }
 
         public static class Survivors
         {
             public static SurvivorDef Predator;
             public static SurvivorDef Neuromancer;
-            public static SurvivorDef Badger;
+            public static SurvivorDef Pacer;
             public static SurvivorDef Cloaker;
+            public static SurvivorDef Duke;
+            public static SurvivorDef Skater;
+        }
+
+        public static void CreateAndAddEffectDef(GameObject effect)
+        {
+            EffectDef effectDef = new EffectDef(effect);
+
+            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
+        }
+
+        public static void AddNetworkSoundEventDef(NetworkSoundEventDef networkSoundEventDef)
+        {
+            ScrapyardContent.scrapyardContentPack.networkSoundEventDefs.AddSingle(networkSoundEventDef);
+        }
+        public static NetworkSoundEventDef CreateAndAddNetworkSoundEventDef(string eventName)
+        {
+            NetworkSoundEventDef networkSoundEventDef = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
+            networkSoundEventDef.akId = AkSoundEngine.GetIDFromString(eventName);
+            networkSoundEventDef.eventName = eventName;
+
+            AddNetworkSoundEventDef(networkSoundEventDef);
+
+            return networkSoundEventDef;
         }
     }
 }

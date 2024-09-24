@@ -1,8 +1,9 @@
 ﻿using EntityStates;
 using RoR2;
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using UnityEngine;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class ChargeTimeBeam : BaseNeuromancerSkillState
     {
@@ -25,7 +26,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
         public string enterSoundString = "Play_item_void_bleedOnHit_start";
 
         [SerializeField]
-        public GameObject muzzleflashEffectPrefab = Neuromancer.timeBeamChargeEffect;
+        public GameObject muzzleflashEffectPrefab = NeuromancerSurvivor.timeBeamChargeEffect;
 
         private float duration;
 

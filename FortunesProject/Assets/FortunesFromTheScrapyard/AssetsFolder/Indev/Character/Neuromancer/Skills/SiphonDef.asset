@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: SiphonTime
   skillNameToken: SCRAPYARD_NEURO_SPECIAL_SIPHON_NAME
-  skillDescriptionToken: SCRAPYARD_NEURO_SPECIAL_SIPHON_DESCRIPTION
+  skillDescriptionToken: SCRAPYARD_NEURO_SPECIAL_SIPHON_DESC
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Time
@@ -27,6 +27,8 @@ MonoBehaviour:
   rechargeStock: 1
   requiredStock: 0
   stockToConsume: 0
+  attackSpeedBuffsRestockSpeed: 0
+  attackSpeedBuffsRestockSpeed_Multiplier: 1
   resetCooldownTimerOnUse: 0
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 1
@@ -36,3 +38,5 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 1
   mustKeyPress: 1
+  autoHandleLuminousShot: 1
+  hideStockCount: 0

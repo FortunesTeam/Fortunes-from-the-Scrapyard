@@ -4,21 +4,20 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
-
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using RoR2.Projectile;
 using static UnityEngine.ParticleSystem.PlaybackState;
 using FortunesFromTheScrapyard.Survivors.Neuromancer.Components;
 using UnityEngine.UIElements;
 using System.Linq;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class Drain : BaseNeuromancerSkillState
     {
         public static float duration = 0.25f;
 
-        private GameObject neuromancerTimeStopField = Neuromancer.timeFreezeZoneStatic;
+        private GameObject neuromancerTimeStopField = NeuromancerSurvivor.timeFreezeZoneStatic;
 
         public override void OnEnter()
         {
@@ -63,7 +62,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
                         crit = base.RollCrit()
                     }.Fire();
 
-                    EffectManager.SpawnEffect(Neuromancer.kaboomEffect, new EffectData
+                    EffectManager.SpawnEffect(NeuromancerSurvivor.kaboomEffect, new EffectData
                     {
                         origin = this.characterBody.corePosition,
                         rotation = Quaternion.identity,

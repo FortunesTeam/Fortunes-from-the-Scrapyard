@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
-
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using RoR2.Projectile;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class TimeStop : BaseNeuromancerSkillState
     {
-        private GameObject neuromancerTimeStopField = Neuromancer.timeFreezeZone;
+        private GameObject neuromancerTimeStopField = NeuromancerSurvivor.timeFreezeZone;
         public override void OnEnter()
         {
             RefreshState();

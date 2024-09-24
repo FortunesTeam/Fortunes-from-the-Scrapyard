@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8843acdfd70f5409b0936411e8646b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tokenPrefix: FFTS
+  _tokenPrefix: SCRAPYARD
   _enableNamingConventions: 0
   _isFirstTimeBoot: 0
   _purgeProjectSettings: 0

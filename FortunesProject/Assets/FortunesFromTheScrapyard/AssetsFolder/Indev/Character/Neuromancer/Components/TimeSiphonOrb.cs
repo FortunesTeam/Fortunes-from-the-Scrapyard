@@ -33,7 +33,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
                     genericFloat = base.duration
                 };
                 effectData.SetHurtBoxReference(target);
-                EffectManager.SpawnEffect(Neuromancer.timeSiphonOrbEffect, effectData, transmit: true);
+                EffectManager.SpawnEffect(NeuromancerSurvivor.timeSiphonOrbEffect, effectData, transmit: true);
             }
         }
 

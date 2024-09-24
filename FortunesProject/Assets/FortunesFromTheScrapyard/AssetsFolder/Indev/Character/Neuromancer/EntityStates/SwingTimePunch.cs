@@ -1,13 +1,12 @@
 ﻿using EntityStates;
-
-
+using FortunesFromTheScrapyard.Survivors.Neuromancer;
 using RoR2;
 using RoR2.Projectile;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
+namespace EntityStates.Neuromancer
 {
     public class SwingTimePunch : BaseNeuromancerMeleeState
     {
@@ -55,18 +54,18 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates
             attackRecoil = 2f / attackSpeedStat;
             damageType = DamageType.Stun1s;
             hitboxGroupName = "TimePunch";
-            hitEffectPrefab = Neuromancer.timePunchHitEffect;
+            hitEffectPrefab = NeuromancerSurvivor.timePunchHitEffect;
             procCoefficient = 1f;
             pushForce = 1200f;
             bonusForce = new Vector3(0f, 0f, 2400);
             hitStopDuration = 1.5f;
-            swingEffectPrefab = Neuromancer.timePunchSwingEffect;
+            swingEffectPrefab = NeuromancerSurvivor.timePunchSwingEffect;
             muzzleString = "HandL";
             hitHopVelocity = 4f;
             swingSoundString = "Play_loader_shift_release";
-            impactSound = Neuromancer.timePunchHitSoundDef.index;
+            impactSound = NeuromancerSurvivor.timePunchHitSoundDef.index;
             selfKnockback = 2000f;
-            moddedDamageTypeHolder.Add(Neuromancer.DelayedUtility);
+            moddedDamageTypeHolder.Add(NeuromancerSurvivor.DelayedUtility);
 
             base.OnEnter();
 

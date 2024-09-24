@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "amogus_lovers-standaloneancientscepter": {
+      "version": "file:StandaloneAncientScepter",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "bbepis-bepinexpack": {
       "version": "file:BepInExPack",
       "depth": 0,
@@ -45,6 +51,13 @@
       "dependencies": {},
       "hash": "faf93100110c30bfeec46d5367928c18f73a6ce1"
     },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.postprocessing": {
       "version": "2.3.0",
       "depth": 0,
@@ -69,6 +82,12 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "metrosexualfruitcake-customemotesapi": {
+      "version": "file:CustomEmotesAPI",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
     },
     "mmhook-assemblies": {
       "version": "file:mmhook-assemblies",
@@ -160,8 +179,26 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-r2api_items": {
+      "version": "file:R2API_Items",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_language": {
+      "version": "file:R2API_Language",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-r2api_networking": {
       "version": "file:R2API_Networking",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_orb": {
+      "version": "file:R2API_Orb",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -231,11 +268,11 @@
       "dependencies": {}
     },
     "teammoonstorm-moonstormsharedutils": {
-      "version": "https://github.com/TeamMoonstorm/MoonstormSharedUtils.git#2.0.0",
+      "version": "https://github.com/TeamMoonstorm/MoonstormSharedUtils.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "91437e6cf1f09f1bae5338dd844ac5071724f4a5"
+      "hash": "e73ea26962a27b42383f87f78e3d0ef00866193c"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",

@@ -201,7 +201,7 @@ namespace FortunesFromTheScrapyard.Elite
                 playerTimer = 0f;
 
                 List<EquipmentIndex> list = characterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
-                Util.ShuffleList(list);
+                Util.ShuffleList(list, new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount));
                 chosenEquipmentIndex = list[list.Count - 1];
                 baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2f;
                 equipmentCDTimer = baseEquipmentCDFaked / 2f;
@@ -359,21 +359,8 @@ namespace FortunesFromTheScrapyard.Elite
                 }
 
                 //Fire equipment
-                if (equipmentCDTimer >= baseEquipmentCDFaked)
+                if (equipmentCDTimer >= baseEquipmentCDFaked && !characterBody.outOfCombat)
                 {
-                    HurtBox[] hurtBoxes = new SphereSearch
-                    {
-                        origin = characterBody.corePosition,
-                        radius = 30f,
-                        mask = LayerIndex.entityPrecise.mask
-                    }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(characterBody.teamComponent.teamIndex)).OrderCandidatesByDistance()
-                    .FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
-
-                    if (hurtBoxes.Length <= 0)
-                    {
-                        return;
-                    }
-
                     equipmentCDTimer = 0f;
                     playerTimer = 0f;
 
