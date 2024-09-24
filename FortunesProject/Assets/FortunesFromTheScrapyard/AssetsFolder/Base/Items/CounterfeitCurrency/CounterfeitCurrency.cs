@@ -6,6 +6,7 @@ using MSU.Config;
 using MSU;
 using System.Collections.Generic;
 using RoR2.Items;
+using UnityEngine.Networking;
 
 namespace FortunesFromTheScrapyard.Items
 {
@@ -15,10 +16,10 @@ namespace FortunesFromTheScrapyard.Items
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float commonChestLifePercent = 0.1f;
+        public static float commonChestLifePercent = 0.25f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float uncommonChestLifePercent = 0.3f;
+        public static float uncommonChestLifePercent = 0.5f;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float rareChestLifePercent = 0.8f;
@@ -32,6 +33,13 @@ namespace FortunesFromTheScrapyard.Items
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 5)]
         public static int minRareCost = 250;
+
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, 6)]
+        public static int maxChests = 3;
+        [ConfigureField(ScrapyardConfig.ID_ITEMS)]
+        [FormatToken(TOKEN, 7)]
+        public static int maxChestsStack = 3;
 
         public override void Initialize()
         {
@@ -53,7 +61,7 @@ namespace FortunesFromTheScrapyard.Items
             {
                 Inventory inv = activatorBody.inventory;
                 int counterfeitCount = inv.GetItemCount(ScrapyardContent.Items.CounterfeitCurrency);
-                if (counterfeitCount > 0)
+                if (counterfeitCount > 0 && activatorBody.HasBuff(ScrapyardContent.Buffs.bdCounterfeitLimit))
                 {
                     if ((self.costType & CostTypeIndex.Money) != 0)
                     {
@@ -129,7 +137,7 @@ namespace FortunesFromTheScrapyard.Items
             {
                 Inventory inv = activatorBody.inventory;
                 int counterfeitCount = inv.GetItemCount(ScrapyardContent.Items.CounterfeitCurrency);
-                if (counterfeitCount > 0)
+                if (counterfeitCount > 0 && activatorBody.HasBuff(ScrapyardContent.Buffs.bdCounterfeitLimit))
                 {
                     if ((self.costType & CostTypeIndex.Money) != 0)
                     {
@@ -181,6 +189,11 @@ namespace FortunesFromTheScrapyard.Items
 
                 Util.PlaySound("sfx_lunarmoney_start", activatorHealthComponent.gameObject);
             }
+
+            if(NetworkServer.active)
+            {
+                activatorHealthComponent.body.RemoveBuff(ScrapyardContent.Buffs.bdCounterfeitLimit);
+            }
         }
 
         public bool CounterfeitCanPurchase(PurchaseInteraction self, HealthComponent activatorHealthComponent, float value)
@@ -196,5 +209,26 @@ namespace FortunesFromTheScrapyard.Items
 
         }
 
+        public class CounterfeitCurrencyBehaviour : BaseItemBodyBehavior
+        {
+            [ItemDefAssociation]
+            public static ItemDef GetItemDef() => ScrapyardContent.Items.CounterfeitCurrency;
+
+            private void OnEnable()
+            {
+                if(NetworkServer.active)
+                {
+                    body.SetBuffCount(ScrapyardContent.Buffs.bdCounterfeitLimit.buffIndex, (int)GetStackValue(maxChests, maxChestsStack, body.GetItemCount(GetItemDef())));
+                }
+            }
+
+            private void OnDisable()
+            {
+                if(NetworkServer.active)
+                {
+                    body.SetBuffCount(ScrapyardContent.Buffs.bdCounterfeitLimit.buffIndex, 0);
+                }
+            }
+        }
     }
 }

@@ -235,6 +235,7 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdDukeDamageShare;
             public static BuffDef bdDukeSpeedBuff;
             public static BuffDef bdDukeFreeShot;
+            public static BuffDef bdCounterfeitLimit;
         }
 
         public static class Survivors

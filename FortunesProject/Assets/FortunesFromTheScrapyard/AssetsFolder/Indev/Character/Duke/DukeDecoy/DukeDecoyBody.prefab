@@ -183,8 +183,8 @@ MonoBehaviour:
   baseMaxHealth: 65
   baseRegen: 1
   baseMaxShield: 0
-  baseMoveSpeed: 0
-  baseAcceleration: 0
+  baseMoveSpeed: 7
+  baseAcceleration: 80
   baseJumpPower: 0
   baseDamage: 6
   baseAttackSpeed: 1
@@ -252,8 +252,8 @@ MonoBehaviour:
   currentVehicle: {fileID: 0}
   preferredPodPrefab: {fileID: 0}
   preferredInitialStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Duke.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   skinIndex: 0
   customKillTotalStatName: 
   overrideCoreTransform: {fileID: 0}

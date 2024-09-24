@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-  itemDisplayRuleSet: {fileID: 0}
+  itemDisplayRuleSet: {fileID: 11400000, guid: a10c415661a4de342847c1a6e527dc4b, type: 2}
   autoPopulateLightInfos: 1
   gameObjectActivationTransforms: []
   baseRendererInfos:

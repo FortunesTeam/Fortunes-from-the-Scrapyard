@@ -108,7 +108,7 @@ namespace FortunesFromTheScrapyard
 
             if (c.TryGotoNext(x => x.MatchCall<BaseState>(nameof(BaseState.GetAimRay))) &&
                 c.TryGotoNext(x => x.MatchStloc(out loc)) &&
-                c.TryGotoNext(x => x.MatchCall<ProjectileManager>("get_instance")))
+                c.TryGotoNext(x => x.MatchCall<ProjectileManager>(nameof(ProjectileManager.instance))))
             {
                 c.Emit(OpCodes.Ldloc, loc);
                 c.EmitPredictAimray<FireSunder>();
@@ -125,7 +125,7 @@ namespace FortunesFromTheScrapyard
                 c.TryGotoNext(x => x.MatchStloc(out rayLoc)) &&
                 c.TryGotoNext(x => x.MatchCall<ChargeTrioBomb>(nameof(ChargeTrioBomb.FindTargetChildTransformFromBombIndex))) &&
                 c.TryGotoNext(x => x.MatchStloc(out transformLoc)) &&
-                c.TryGotoNext(x => x.MatchCall<ProjectileManager>("get_instance")))
+                c.TryGotoNext(x => x.MatchCall<ProjectileManager>(nameof(ProjectileManager.instance))))
             {
                 c.Emit(OpCodes.Ldloc, rayLoc);
                 c.Emit(OpCodes.Ldloc, transformLoc);

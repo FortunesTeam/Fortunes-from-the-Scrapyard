@@ -7,18 +7,18 @@ using UnityEngine;
 using UnityEngine.Networking;
 using static R2API.RecalculateStatsAPI;
 
-namespace FortunesFromTheScrapyard.Items
+namespace FortunesFromTheScrapyard.Items    
 {
     public class FaultyTurbo : ScrapyardItem
     {
         public const string TOKEN = "SCRAPYARD_ITEM_FAULTYTURBO_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float maxMovespeedBonus = 0.3f;
+        [FormatToken(TOKEN, 0)]
+        public static int maxStacks = 3;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float maxMovespeedBonusPerStack = 0.3f;
+        [FormatToken(TOKEN, 1)]
+        public static int maxStacksPerStack = 3;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
@@ -67,7 +67,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private void FixedUpdate()
             {
-                bool atMaxStacks = GetStackValue(movespeedBonusPerInterval, movespeedBonusPerIntervalStack, stack) * body.GetBuffCount(ScrapyardContent.Buffs.bdFaultyTurbo) >= GetStackValue(maxMovespeedBonus, maxMovespeedBonusPerStack, stack);
+                bool atMaxStacks = GetStackValue(maxStacksPerStack, maxStacksPerStack, stack) >= GetStackValue(maxStacks, maxStacksPerStack, stack);
                 
                 if (base.body.isSprinting && !atMaxStacks)
                 {
