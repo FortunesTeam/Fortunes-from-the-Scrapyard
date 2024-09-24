@@ -45,8 +45,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         //UI
         internal static GameObject chargeCrosshair;
-
-        internal static GameObject dukeDecoyMasterPrefab;
         public override void Initialize()
         {
             DukeFourthShot = DamageAPI.ReserveDamageType();
@@ -68,8 +66,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             var cb = characterPrefab.GetComponent<CharacterBody>();
             cb.preferredPodPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
             cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2/Crosshair");
-
-            dukeDecoyMasterPrefab = assetCollection.FindAsset<GameObject>("DukeDecoyMaster");
         }
         public override bool IsAvailable(ContentPack contentPack)
         {
@@ -185,7 +181,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             On.RoR2.SurvivorCatalog.Init += (orig) =>
             {
                 orig();
-                var skele = ScrapyardAssets.GetAssetBundle(ScrapyardBundle.Indev).LoadAsset<GameObject>("cadet_emoteskeleton");
+                var skele = ScrapyardAssets.GetAssetBundle(ScrapyardBundle.Indev).LoadAsset<GameObject>("duke_emoteskeleton");
                 CustomEmotesAPI.ImportArmature(this.characterPrefab, skele);
             };
             CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;

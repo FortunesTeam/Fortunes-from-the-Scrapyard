@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "SCRAPYARD_DUKE_NAME": "Duke",
+    "SCRAPYARD_DUKE_SUBTITLE": "Meow",
+    "SCRAPYARD_DUKE_DESC": "",
+    "SCRAPYARD_DUKE_LORE": "",
+    "SCRAPYARD_DUKE_OUTRO_FLAVOR": "Explode.",
+    "SCRAPYARD_DUKE_OUTRO_FAILURE": ".",
+    "SCRAPYARD_DUKE_STEADYHAND_NAME": "Steady Hand",
+    "SCRAPYARD_DUKE_STEADYHAND_DESC": "4 bullets crit give movespeed.",
+    "SCRAPYARD_DUKE_SALVO_NAME": "Salvo",
+    "SCRAPYARD_DUKE_SALVO_DESC": "pew.",
+    "SCRAPYARD_DUKE_KINETIC_NAME": "Kinetic Replicator",
+    "SCRAPYARD_DUKE_KINETIC_DESC": "Take damage dammit.",
+    "SCRAPYARD_DUKE_FLOURISH_NAME": "Flourish",
+    "SCRAPYARD_DUKE_FLOURISH_DESC": "Yay free bullets.",
+    "SCRAPYARD_DUKE_QUICKSTEP_NAME": "Quickstep",
+    "SCRAPYARD_DUKE_QUICKSTEP_DESC": "Yay free bullets and a reset.",
+    "SCRAPYARD_DUKE_CLONE_NAME": "Pretentious Mimicry",
+    "SCRAPYARD_DUKE_CLONE_DESC": "I made another me."
+
+  }
+}

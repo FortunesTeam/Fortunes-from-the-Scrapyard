@@ -21,7 +21,7 @@ namespace EntityStates.Duke
             dukeController = base.gameObject.GetComponent<DukeController>();    
             base.OnEnter();
             this.duration = baseDuration / attackSpeedStat;
-            this.dukeController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
+            //this.dukeController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             base.PlayCrossfade("Gesture, Override", "Reload", "Reload.playbackRate", this.duration, 0.05f);
             soundID = Util.PlayAttackSpeedSound("sfx_driver_pistol_spin", base.gameObject, attackSpeedStat);
             if (this.spinInstance) GameObject.Destroy(this.spinInstance);
@@ -43,8 +43,8 @@ namespace EntityStates.Duke
             }
             if (base.isAuthority && base.fixedAge >= this.duration)
             {
-                this.dukeController.Mag();
-                Util.PlaySound("sfx_driver_gun_catch", base.gameObject);
+                //this.dukeController.Mag();
+                Util.PlaySound("sfx_duke_gun_catch", base.gameObject);
                 GiveStock();
                 dukeController.Reload();
                 this.outer.SetNextStateToMain();

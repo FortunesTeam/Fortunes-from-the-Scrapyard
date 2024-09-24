@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1105 &110500000
+HumanTemplate:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DukeHumanTemplate
+  m_BoneTemplate:
+    Chest: DEF-spine.003
+    Head: DEF-spine.006
+    Hips: DEF-spine.001
+    Left Index Distal: DEF-f_index.03.L
+    Left Index Intermediate: DEF-f_index.02.L
+    Left Index Proximal: DEF-f_index.01.L
+    Left Little Distal: DEF-f_pinky.03.L
+    Left Little Intermediate: DEF-f_pinky.02.L
+    Left Little Proximal: DEF-f_pinky.01.L
+    Left Middle Distal: DEF-f_middle.03.L
+    Left Middle Intermediate: DEF-f_middle.02.L
+    Left Middle Proximal: DEF-f_middle.01.L
+    Left Ring Distal: DEF-f_ring.03.L
+    Left Ring Intermediate: DEF-f_ring.02.L
+    Left Ring Proximal: DEF-f_ring.01.L
+    Left Thumb Distal: DEF-thumb.03.L
+    Left Thumb Intermediate: DEF-thumb.02.L
+    Left Thumb Proximal: DEF-thumb.01.L
+    LeftFoot: DEF-foot.L
+    LeftHand: DEF-hand.L
+    LeftLowerArm: DEF-forearm.L
+    LeftLowerLeg: DEF-shin.L
+    LeftShoulder: DEF-shoulder.L
+    LeftToes: DEF-toe.L
+    LeftUpperArm: DEF-upper_arm.L
+    LeftUpperLeg: DEF-thigh.L
+    Neck: DEF-spine.005
+    Right Index Distal: DEF-f_index.03.R
+    Right Index Intermediate: DEF-f_index.02.R
+    Right Index Proximal: DEF-f_index.01.R
+    Right Little Distal: DEF-f_pinky.03.R
+    Right Little Intermediate: DEF-f_pinky.02.R
+    Right Little Proximal: DEF-f_pinky.01.R
+    Right Middle Distal: DEF-f_middle.03.R
+    Right Middle Intermediate: DEF-f_middle.02.R
+    Right Middle Proximal: DEF-f_middle.01.R
+    Right Ring Distal: DEF-f_ring.03.R
+    Right Ring Intermediate: DEF-f_ring.02.R
+    Right Ring Proximal: DEF-f_ring.01.R
+    Right Thumb Distal: DEF-thumb.03.R
+    Right Thumb Intermediate: DEF-thumb.02.R
+    Right Thumb Proximal: DEF-thumb.01.R
+    RightFoot: DEF-foot.R
+    RightHand: DEF-hand.R
+    RightLowerArm: DEF-forearm.R
+    RightLowerLeg: DEF-shin.R
+    RightShoulder: DEF-shoulder.R
+    RightToes: DEF-toe.R
+    RightUpperArm: DEF-upper_arm.R
+    RightUpperLeg: DEF-thigh.R
+    Spine: DEF-spine.002

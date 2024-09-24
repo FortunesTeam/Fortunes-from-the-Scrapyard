@@ -20,12 +20,14 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
         private CharacterModel characterModel;
         private Animator animator;
         private SkillLocator skillLocator;
+        /*
         private readonly int maxCasingCount = 10;
         private readonly int maxBulletCount = 20;
         private GameObject[] casingObjects;
         private GameObject[] bulletObjects;
         private int currentCasing;
         private int currentBullet;
+        */
         private bool mustReload = false;
         public DamageAPI.ModdedDamageType ModdedDamageType => DukeSurvivor.DukeFourthShot;
         public int ammo = 4;
@@ -65,6 +67,28 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
 
             this.onAmmoChange?.Invoke();
         }
+        private void FixedUpdate()
+        {
+            if(skillLocator.primary.skillDef.skillIndex != SkillCatalog.FindSkillIndexByName("DukePrimary"))
+            {
+                if(skillLocator.primary.stock < ammo)
+                {
+                    ammo--;
+                }
+
+                if(skillLocator.primary.stock <= 0 && !mustReload)
+                {
+                    mustReload = true;
+                }
+                else if(skillLocator.primary.stock == maxAmmo && mustReload)
+                {
+                    mustReload = false;
+                    Reload();
+                }
+            }
+        }
+        #region scrap
+        /*
         private void InitModelsAndSkillDefs()
         {
             GameObject desiredBullet;
@@ -151,25 +175,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
             this.currentBullet++;
             if (this.currentBullet >= this.maxBulletCount) this.currentBullet = 0;
         }
-        private void FixedUpdate()
-        {
-            if(skillLocator.primary.skillDef.skillIndex != SkillCatalog.FindSkillIndexByName("DukePrimary"))
-            {
-                if(skillLocator.primary.stock < ammo)
-                {
-                    ammo--;
-                }
+        */
+        #endregion
 
-                if(skillLocator.primary.stock <= 0 && !mustReload)
-                {
-                    mustReload = true;
-                }
-                else if(skillLocator.primary.stock == maxAmmo && mustReload)
-                {
-                    mustReload = false;
-                    Reload();
-                }
-            }
-        }
     }
 }

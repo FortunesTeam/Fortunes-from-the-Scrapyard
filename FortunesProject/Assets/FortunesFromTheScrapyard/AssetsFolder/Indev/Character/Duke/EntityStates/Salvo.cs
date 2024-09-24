@@ -115,7 +115,7 @@ namespace EntityStates.Duke
         {
             if (this.dukeController)
             {
-                this.dukeController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
+                //this.dukeController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             }
 
             Util.PlaySound(this.shootSoundString, this.gameObject);

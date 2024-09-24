@@ -3,7 +3,7 @@ using System;
 using EntityStates;
 using UnityEngine.Networking;
 using FortunesFromTheScrapyard.Survivors.Duke.Components;
-using FortunesFromTheScrapyard.Survivors.Duke;
+using FortunesFromTheScrapyard.Characters.DukeDecoy;
 
 namespace EntityStates.Duke
 {
@@ -36,7 +36,7 @@ namespace EntityStates.Duke
             if(NetworkServer.active)
             {
                 MasterSummon masterSummon = new MasterSummon();
-                masterSummon.masterPrefab = DukeSurvivor.dukeDecoyMasterPrefab;
+                masterSummon.masterPrefab = DukeDecoy.DukeDecoyMaster;
                 //masterSummon.masterPrefab.GetComponent<CharacterMaster>().bodyPrefab.GetComponent<SkillLocator>().primary.skillDef = base.skillLocator.primary.skillDef;
                 masterSummon.ignoreTeamMemberLimit = true;  
                 masterSummon.teamIndexOverride = base.teamComponent.teamIndex;

@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5fc73fda44c9f4f40bb9009c4fb35837, type: 2}
   - {fileID: 2100000, guid: ad157a943635f5044b598e1fca3ebdd6, type: 2}
   - {fileID: 4924057798505467993, guid: b671403e475b12d44acd12738a259aa0, type: 3}
-  - {fileID: 102900000, guid: fc2449c246887a942b798d20c506a505, type: 3}
+  - {fileID: 3129259606049880971, guid: 852b3c38354d8734ba216260d9b346aa, type: 3}
   bodyPrefab: {fileID: 1620632698579816146, guid: db5d009943c40e44fb7bdecae1b87f9c,
     type: 3}
   masterPrefab: {fileID: 6205745757962964917, guid: a24920bd80170be48b42dd47bdf696f0,
