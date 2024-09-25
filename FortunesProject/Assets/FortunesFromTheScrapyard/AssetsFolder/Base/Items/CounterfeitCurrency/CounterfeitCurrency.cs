@@ -15,14 +15,14 @@ namespace FortunesFromTheScrapyard.Items
         public const string TOKEN = "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float commonChestLifePercent = 0.25f;
+        [FormatToken(TOKEN, 0)]
+        public static int commonChestLifePercent = 30;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        public static float uncommonChestLifePercent = 0.5f;
+        [FormatToken(TOKEN, 1)]
+        public static int uncommonChestLifePercent = 60;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
-        public static float rareChestLifePercent = 0.8f;
+        [FormatToken(TOKEN, 2)]
+        public static int rareChestLifePercent = 90;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 3)]
@@ -135,9 +135,7 @@ namespace FortunesFromTheScrapyard.Items
 
             if (!canPurchase && activator.gameObject.TryGetComponent(out activatorBody))
             {
-                Inventory inv = activatorBody.inventory;
-                int counterfeitCount = inv.GetItemCount(ScrapyardContent.Items.CounterfeitCurrency);
-                if (counterfeitCount > 0 && activatorBody.HasBuff(ScrapyardContent.Buffs.bdCounterfeitLimit))
+                if (activatorBody.HasBuff(ScrapyardContent.Buffs.bdCounterfeitLimit))
                 {
                     if ((self.costType & CostTypeIndex.Money) != 0)
                     {
@@ -180,8 +178,8 @@ namespace FortunesFromTheScrapyard.Items
         public void CounterfeitCalculations(PurchaseInteraction self, HealthComponent activatorHealthComponent, float value)
         {
             float combinedHealth = activatorHealthComponent.combinedHealth;
-            float num2 = activatorHealthComponent.fullCombinedHealth * value;
-            int newCount = activatorHealthComponent.body.GetBuffCount(DLC2Content.Buffs.SoulCost) + (int)(value * 10);
+            float num2 = activatorHealthComponent.fullCombinedHealth * (float)(value / 100);
+            int newCount = activatorHealthComponent.body.GetBuffCount(DLC2Content.Buffs.SoulCost) + (int)(value / 10);
             if (combinedHealth > num2)
             {
                 activatorHealthComponent.body.SetBuffCount(DLC2Content.Buffs.SoulCost.buffIndex, newCount);
@@ -199,8 +197,8 @@ namespace FortunesFromTheScrapyard.Items
         public bool CounterfeitCanPurchase(PurchaseInteraction self, HealthComponent activatorHealthComponent, float value)
         {
             float combinedHealth = activatorHealthComponent.combinedHealth;
-            float num2 = activatorHealthComponent.fullCombinedHealth * value;
-            int newCount = activatorHealthComponent.body.GetBuffCount(DLC2Content.Buffs.SoulCost) + (int)(value * 10);
+            float num2 = activatorHealthComponent.fullCombinedHealth * (float)(value / 100);
+            int newCount = activatorHealthComponent.body.GetBuffCount(DLC2Content.Buffs.SoulCost) + (int)(value / 10);
             if (combinedHealth > num2)
             {
                 return true;

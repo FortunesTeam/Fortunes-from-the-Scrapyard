@@ -1,9 +1,8 @@
 ﻿using RoR2;
-using System;
-using EntityStates;
 using UnityEngine.Networking;
 using FortunesFromTheScrapyard.Survivors.Duke.Components;
 using FortunesFromTheScrapyard.Characters.DukeDecoy;
+using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
 
 namespace EntityStates.Duke
 {
@@ -37,7 +36,7 @@ namespace EntityStates.Duke
             {
                 MasterSummon masterSummon = new MasterSummon();
                 masterSummon.masterPrefab = DukeDecoy.DukeDecoyMaster;
-                //masterSummon.masterPrefab.GetComponent<CharacterMaster>().bodyPrefab.GetComponent<SkillLocator>().primary.skillDef = base.skillLocator.primary.skillDef;
+                masterSummon.masterPrefab.GetComponent<CharacterMaster>().bodyPrefab.GetComponent<DukeDecoyExplosion>().ownerBody = base.characterBody;
                 masterSummon.ignoreTeamMemberLimit = true;  
                 masterSummon.teamIndexOverride = base.teamComponent.teamIndex;
                 masterSummon.summonerBodyObject = base.gameObject;

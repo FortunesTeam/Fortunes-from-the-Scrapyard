@@ -18,11 +18,29 @@ using System.Runtime.CompilerServices;
 using ThreeEyedGames;
 using EmotesAPI;
 using RoR2.Skills;
+using MSU.Config;
 
 namespace FortunesFromTheScrapyard.Survivors.Duke
 {
     public class DukeSurvivor : ScrapyardSurvivor
     {
+        //Values
+        public const string SALVOTOKEN = "SCRAPYARD_SURVIVOR_DUKE_SALVO_DESC";
+        public const string MINETOKEN = "SCRAPYARD_SURVIVOR_DUKE_KINETIC_DESC";
+        public const string CLONETOKEN = "SCRAPYARD_SURVIVOR_DUKE_CLONE_DESC";
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float baseSalvoDamageCoefficient = 4f;
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        internal static float damageShareCoefficient = 0.35f;
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        public static float baseCloneDamageCoefficient = 5f;
+
         public static DamageAPI.ModdedDamageType DukeFourthShot;
         public static DamageAPI.ModdedDamageType DukeSharedDamageType;
 
@@ -36,6 +54,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         internal static GameObject gun;
         internal static GameObject casing;
 
+        internal static GameObject dukePistolSpinEffect;
+
         //Projectile
         internal static GameObject damageShareMine;
         internal static GameObject dukeField;
@@ -44,7 +64,9 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         internal static Color orange = new Color(255f / 255f, 127f / 255f, 80f / 255f);
 
         //UI
-        internal static GameObject chargeCrosshair;
+        internal static Sprite primaryIcon;
+        internal static Sprite primaryEmpoweredIcon;
+
         public override void Initialize()
         {
             DukeFourthShot = DamageAPI.ReserveDamageType();
@@ -96,21 +118,37 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             EffectDef dukeBoomEffectDef = new EffectDef(dukeBoomEffect);
 
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(dukeBoomEffectDef);
+
+            dukePistolSpinEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoReloadFX.prefab").WaitForCompletion().InstantiateClone("DukePistolSpinEffect");
         }
 
         #endregion
         #region projectiles
-        private static void CreateProjectiles()
+        private void CreateProjectiles()
         {
-
             damageShareMine = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAlt.prefab").WaitForCompletion().InstantiateClone("DukeDamageShareMine");
+
+            damageShareMine.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineGhostReskinColossus.prefab").WaitForCompletion().InstantiateClone("DukeMineGhost");
 
             ProjectileStickOnImpact sticky = damageShareMine.GetComponent<ProjectileStickOnImpact>();
             sticky.ignoreCharacters = false;
 
             ProjectileExplosion pe = damageShareMine.GetComponent<ProjectileExplosion>();
 
+            ProjectileSimple ps = damageShareMine.GetComponent<ProjectileSimple>();
+            ps.desiredForwardSpeed = 70f;
+
+            ProjectileFuse projectileFuse = damageShareMine.GetComponent<ProjectileFuse>();
+            projectileFuse.fuse = 0.25f;
+
             dukeField = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("DukeDamageField");
+
+            dukeField.transform.Find("Sphere").gameObject.GetComponent<MeshRenderer>().material = assetCollection.FindAsset<Material>("matDukeDome");
+            dukeField.transform.Find("ChargeIn").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeChargeIn");
+            dukeField.transform.Find("Core").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeFieldSphere");
+            dukeField.transform.Find("Point Light").gameObject.GetComponent<Light>().color = orange;
+            var fieldMain = dukeField.transform.Find("SoftGlow").gameObject.GetComponent<ParticleSystem>().main;
+            fieldMain.startColor = orange;
 
             BuffWard buffWard = dukeField.GetComponent<BuffWard>();
             buffWard.invertTeamFilter = true;
@@ -135,9 +173,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         #endregion
 
         #region UI
-        private static void CreateUI()
+        private void CreateUI()
         {
-            chargeCrosshair = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/UI/StraightBracketCrosshair.prefab").WaitForCompletion();
+            primaryIcon = assetCollection.FindAsset<Sprite>("iconDukePrimary");
+            primaryEmpoweredIcon = assetCollection.FindAsset<Sprite>("iconDukePrimaryEmpower");
         }
         #endregion
         private void Hooks()
@@ -223,12 +262,12 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                 {
                     if (damageInfo.HasModdedDamageType(DukeFourthShot))
                     {
-                        int num6 = 5;
+                        int amount = 5;
                         float harpoon = 2.5f;
                         attackerBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeSpeedBuff);
-                        for (int l = 0; l < num6; l++)
+                        for (int l = 0; l < amount; l++)
                         {
-                            attackerBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff, harpoon * (float)(l + 1) / (float)num6);
+                            attackerBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff, harpoon * (float)(l + 1) / (float)amount);
                         }
                         EffectData effectData = new EffectData();
                         effectData.origin = attackerBody.corePosition;
@@ -259,7 +298,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                                 DamageInfo dukeSharedDamage = new DamageInfo();
                                 dukeSharedDamage.attacker = damageInfo.attacker;
                                 dukeSharedDamage.inflictor = damageInfo.inflictor;
-                                dukeSharedDamage.damage = damageInfo.damage * 0.35f;
+                                dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
                                 dukeSharedDamage.procCoefficient = 0.7f;
                                 dukeSharedDamage.crit = false;
                                 dukeSharedDamage.damageType = damageInfo.damageType;

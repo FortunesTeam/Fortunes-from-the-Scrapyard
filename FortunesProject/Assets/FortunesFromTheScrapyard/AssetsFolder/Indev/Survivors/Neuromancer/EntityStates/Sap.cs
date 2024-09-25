@@ -14,7 +14,7 @@ namespace EntityStates.Neuromancer
 {
     public class Sap : BaseNeuromancerSkillState
     {
-        public float damageCoefficient = 2.5f;
+        public float damageCoefficient = 3.5f;
 
         public float procCoefficient = 1f;
 

@@ -23,8 +23,8 @@
     "SCRAPYARD_ITEM_LETHALINJECTION_DESC": "Hits that deal <style=cIsDamage>more than 400% damage</style> inflict a toxin that <style=cIsHealth>permanently</style> increases execute threshold by <style=cIsDamage>{0}%</style> <style=cStack>(+{1}% per stack)</style> of the damage dealt.",
     "SCRAPYARD_ITEM_LETHALINJECTION_LORE": "Soldiers are given three simple things when they hit the battlefield: a uniform, a weapon, and a metal case. One to remind you of your duty, another to remind you of your strength, and the last to remind you of what happens when you fail.\n\nThe case is for the weak with no more sense of duty. Beats dying from the local wildlife, or worse.",
     "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_NAME": "Counterfeit Currency",
-    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_PICKUP": "Begin each stage with extra gold... <style=cIsHealth>BUT gain less gold.</style>",
-    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_DESC": "Begin each stage with <style=cIsDamage>${0} gold</style> <style=cStack>(+${1} per stack)</style>. <style=cIsUtility>Scales over time.</style> <style=cIsHealth>ALL other sources of income</style> are reduced by <style=cIsHealth>-{2}%</style> <style=cStack>(-{3}% per stack)</style>.",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_PICKUP": "Begin each stage with free purchases... <style=cIsHealth>BUT get cursed for those purchases.</style>",
+    "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_DESC": "Begin each stage with <style=cIsDamage>{6}</style> <style=cStack>(+{7} per stack)</style> <style=cIsUtility>counterfeit</style> purchases. Purchases that you cannot afford use a <style=cIsUtility>counterfeit</style> purchase and lowers your <style=cIsHealth>health</style> by {0}/<style=cIsHealing>{1}</style>/<style=cIsHealth>{2}</style>% for the stage.",
     "SCRAPYARD_ITEM_COUNTERFEITCURRENCY_LORE": "The sound of slot machines around, the constant thrill of wasting your life savings yet again. It’s a problem, you know that. However, as you sit across from the chairman, those problems seem trivial...\n\n\"400 on red!\" you exclaim just before the alarm begins to screech. It’s time to run. As the doors begin locking around you, doubt settles in. Where is the goddamn exit? Your mind is in disarray, yet you remain collected, standing in front of the judge, jury, and executioner of Triton's Reach.\n\n\"The exit is the least of your worries. 400, was it?\"",
     "SCRAPYARD_ITEM_SPRAYCAN_NAME": "Spray Can",
     "SCRAPYARD_ITEM_SPRAYCAN_PICKUP": "High damage causes a <style=cIsDamage>graffiti explosion</style>. <style=cIsDamage>20</style> uses per stack.",
@@ -35,7 +35,7 @@
     "SCRAPYARD_ITEM_SPRAYCANCONSUMED_DESC": "It is no longer useful.",
     "SCRAPYARD_ITEM_SPRAYCANCONSUMED_LORE": "ow",
     "SCRAPYARD_ITEM_FAULTYTURBO_NAME": "Faulty Turbo",
-    "SCRAPYARD_ITEM_FAULTYTURBO_PICKUP": "Chance to gain bonus movement speed while sprinting.",
+    "SCRAPYARD_ITEM_FAULTYTURBO_PICKUP": "Build up bonus movement speed while sprinting.",
     "SCRAPYARD_ITEM_FAULTYTURBO_DESC": "While sprinting, gain <style=cIsUtility>{2}%</style> <style=cStack>(+{3}% per stack)</style> <style=cIsUtility>movement speed</style> every second up to <style=cIsUtility>{0}%</style> <style=cStack>(+{1}% per stack)</style> <style=cIsUtility>movement speed</style>.",
     "SCRAPYARD_ITEM_FAULTYTURBO_LORE": "Mmm, turbo boost.",
     "SCRAPYARD_ITEM_OLDCD_NAME": "Lost Record",
@@ -49,6 +49,11 @@
     "SCRAPYARD_ITEM_POLYPORE_NAME" : "Insatiable Polypore",
     "SCRAPYARD_ITEM_POLYPORE_PICKUP" : "Debuffs periodically spread to nearby enemies, <style=cIsHealth>BUT the enemies they spread from are cleansed of all debuffs</style>.",
     "SCRAPYARD_ITEM_POLYPORE_DESC": "After {2} <style=cStack>(-{3}% per stack)</style> seconds,",
-    "SCRAPYARD_ITEM_POLYPORE_LORE": "Mmm, mushroong."
+    "SCRAPYARD_ITEM_POLYPORE_LORE": "Mmm, mushroong.",
+    "SCRAPYARD_ITEM_ROUGHRECEPTION_NAME": "Rough Reception",
+    "SCRAPYARD_ITEM_ROUGHRECEPTION_PICKUP": "Primary skills are followed up with a swing.",
+    "SCRAPYARD_ITEM_ROUGHRECEPTION_DESC": "Using your primary causes your <style=cIsDamage>feline friend</style> to swing for <style=cIsDamage>{0}%</style> + <style=cStack>(+{1}% per stack)</style> damage.",
+    "SCRAPYARD_ITEM_ROUGHRECEPTION_LORE": "Meow.",
+
   }
 }

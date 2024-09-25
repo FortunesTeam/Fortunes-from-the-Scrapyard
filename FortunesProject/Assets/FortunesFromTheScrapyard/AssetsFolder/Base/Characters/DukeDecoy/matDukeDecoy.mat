@@ -8,10 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matDukeDecoy
-  m_Shader: {fileID: 4800000, guid: 99d7375c08a1e8f4b939426b5a699e36, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8f3f3d0bf2267f74ca405c5ec04db15a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
-  - FORCE_SPEC
+  - CLOUDOFFSET
+  - FRESNEL
+  - USE_CLOUDS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -31,6 +33,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cloud1Tex:
+        m_Texture: {fileID: 2800000, guid: bd6556606d6942d4ca1d181ae0f7a20c, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _Cloud2Tex:
+        m_Texture: {fileID: 2800000, guid: 7d141824ada450747b17a50e01bef09a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -82,8 +92,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ec193400369e2b54fa616f3fb63ce0ee, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: bd6556606d6942d4ca1d181ae0f7a20c, type: 3}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -105,6 +115,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RemapTex:
+        m_Texture: {fileID: 2800000, guid: a5c54522facda214aa1e38b4da5a9333, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SliceAlphaTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -115,25 +129,37 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaBias: 0
+    - _AlphaBoost: 2.4
     - _BlueChannelBias: 0
     - _BlueChannelSmoothness: 0
+    - _Boost: 3
     - _BumpScale: 1
+    - _CalcTextureAlphaOn: 0
+    - _CloudOffsetOn: 1
+    - _CloudsOn: 1
     - _ColorsOn: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalLayer: 0
     - _Depth: 0.2
+    - _DepthOffset: 0
     - _DetailNormalMapScale: 1
+    - _DisableRemapOn: 0
+    - _DistortionStrength: 1.04
     - _DitherOn: 0
-    - _DstBlend: 0
+    - _DstBlend: 6
     - _EliteBrightnessMax: 1
     - _EliteBrightnessMin: 0
     - _EliteIndex: 0
     - _EmPower: 3.98
     - _EnableCutout: 0
+    - _ExternalAlpha: 1
     - _FEON: 0
     - _Fade: 1
     - _FadeBias: 0
+    - _FadeCloseDistance: 0.5
+    - _FadeCloseOn: 0
     - _FlowEmissionStrength: 1
     - _FlowHeightBias: 0
     - _FlowHeightPower: 1
@@ -144,18 +170,22 @@ Material:
     - _FlowmapOn: 0
     - _ForceSpecOn: 1
     - _FresnelBoost: 1
-    - _FresnelPower: 1
+    - _FresnelOn: 1
+    - _FresnelPower: -4
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GreenChannelBias: 0
     - _GreenChannelSmoothness: 0
+    - _InternalSimpleBlendMode: 0
+    - _InvFade: 0
     - _LimbPrimeMask: 1
     - _LimbRemovalOn: 0
     - _Metallic: 0
     - _Mode: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _OffsetAmount: 0
     - _Parallax: 0.02
     - _PrintBias: 0
     - _PrintBoost: 1
@@ -163,6 +193,7 @@ Material:
     - _PrintEmissionToAlbedoLerp: 0
     - _PrintOn: 0
     - _RampInfo: 0
+    - _SkyboxOnly: 0
     - _SliceAlphaDepth: 0.1
     - _SliceBandHeight: 1
     - _SliceHeight: 5
@@ -175,10 +206,17 @@ Material:
     - _SplatmapTileScale: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UseUV1On: 0
+    - _VertexAlphaOn: 0
+    - _VertexColorOn: 0
+    - _VertexOffsetOn: 0
+    - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.5803922, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CutoffScroll: {r: 6, g: 6, b: 0, a: 0}
     - _EmColor: {r: 1, g: 0.5803922, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 0.7490196, g: 0.59721386, b: 0.5686275, a: 1}
   m_BuildTextureStacks: []
