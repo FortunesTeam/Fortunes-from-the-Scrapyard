@@ -268,11 +268,10 @@
       "dependencies": {}
     },
     "teammoonstorm-moonstormsharedutils": {
-      "version": "https://github.com/TeamMoonstorm/MoonstormSharedUtils.git",
+      "version": "file:teammoonstorm-moonstormsharedutils",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e73ea26962a27b42383f87f78e3d0ef00866193c"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",

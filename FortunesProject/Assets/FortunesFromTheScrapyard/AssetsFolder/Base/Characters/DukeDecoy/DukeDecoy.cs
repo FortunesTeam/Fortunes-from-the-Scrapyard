@@ -21,7 +21,7 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
 
         public override ScrapyardAssetRequest<BodyAssetCollection> LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<BodyAssetCollection>("acDukeDecoy", ScrapyardBundle.Indev);
+            return ScrapyardAssets.LoadAssetAsync<BodyAssetCollection>("acDukeDecoy", ScrapyardBundle.Characters);
         }
     }
 }

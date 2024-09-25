@@ -74,7 +74,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         public override ScrapyardAssetRequest<SurvivorAssetCollection> LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<SurvivorAssetCollection>("acDuke", ScrapyardBundle.Indev);
+            return ScrapyardAssets.LoadAssetAsync<SurvivorAssetCollection>("acDuke", ScrapyardBundle.Survivors);
         }
         #region effects
         private static void CreateEffects()

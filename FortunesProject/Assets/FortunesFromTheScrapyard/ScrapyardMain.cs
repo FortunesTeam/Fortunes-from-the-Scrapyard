@@ -43,7 +43,6 @@ namespace FortunesFromTheScrapyard
             new ScrapyardConfig(this);
 
             NetworkingAPI.RegisterMessageType<SyncTime>();
-            NetworkingAPI.RegisterMessageType<NetworkEquipmentSelection.SyncDisplay>();
 
             //We do not load our assetbundles or content at awake, instead, we create a new instance of this class,
             //which implements the game's IContentPackProvider interface.

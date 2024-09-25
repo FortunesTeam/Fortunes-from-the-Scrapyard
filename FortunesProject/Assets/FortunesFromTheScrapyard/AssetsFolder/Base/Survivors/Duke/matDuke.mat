@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: matDukeGun
+  m_Name: matDuke
   m_Shader: {fileID: 4800000, guid: 99d7375c08a1e8f4b939426b5a699e36, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmTex:
-        m_Texture: {fileID: 2800000, guid: 5bdb4aa69a1df7d47aea77ab511b9a97, type: 3}
+        m_Texture: {fileID: 2800000, guid: bfed64192817e5941aea5a5861df6f36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -82,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a94ec6b8178ac8a4881b45ab7e2349b3, type: 3}
+        m_Texture: {fileID: 2800000, guid: ec193400369e2b54fa616f3fb63ce0ee, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -90,7 +90,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4864b6a8da7064d46b3cfc2c065651a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -129,7 +129,7 @@ Material:
     - _EliteBrightnessMax: 1
     - _EliteBrightnessMin: 0
     - _EliteIndex: 0
-    - _EmPower: 2
+    - _EmPower: 1.5
     - _EnableCutout: 0
     - _FEON: 0
     - _Fade: 1

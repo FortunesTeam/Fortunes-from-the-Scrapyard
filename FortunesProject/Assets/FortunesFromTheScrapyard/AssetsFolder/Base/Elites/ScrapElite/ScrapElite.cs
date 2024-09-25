@@ -112,7 +112,7 @@ namespace FortunesFromTheScrapyard.Elite
 
         public override ScrapyardAssetRequest<EliteAssetCollection> LoadAssetRequest()
         {
-            return ScrapyardAssets.LoadAssetAsync<EliteAssetCollection>("acScrapElite", ScrapyardBundle.Indev);
+            return ScrapyardAssets.LoadAssetAsync<EliteAssetCollection>("acScrapElite", ScrapyardBundle.Elites);
         }
 
         public override void ModifyContentPack(ContentPack contentPack)

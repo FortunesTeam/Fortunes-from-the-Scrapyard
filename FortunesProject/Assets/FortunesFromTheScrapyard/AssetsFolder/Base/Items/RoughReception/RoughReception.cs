@@ -39,57 +39,12 @@ namespace FortunesFromTheScrapyard
 
             if(self.HasItem(ScrapyardContent.Items.RoughReception) && skill == self.skillLocator.primary)
             {
-                RoughReceptionSwing swingComponent = self.gameObject.GetComponent<RoughReceptionSwing>();
+                RoughReceptionComponent swingComponent = self.gameObject.GetComponent<RoughReceptionComponent>();
                 List<GameObject> itemDisplayObjects = self.modelLocator.modelTransform.GetComponent<CharacterModel>().GetItemDisplayObjects(ScrapyardContent.Items.RoughReception.itemIndex);
 
                 if(itemDisplayObjects.Count > 0)
                 {
-                    GameObject roughObject = itemDisplayObjects[0];
-
-                    Animator roughAnimator = roughObject.gameObject.GetComponent<Animator>();
-
-
-
-                    ChildLocator roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
-
-                    Ray aimRay;
-                    if (self.inputBank) aimRay = new Ray(self.inputBank.aimOrigin, self.inputBank.aimDirection);
-                    else aimRay = new Ray(self.transform.position, self.transform.forward);
-
-                    BulletAttack catAttack = new BulletAttack
-                    {
-                        aimVector = aimRay.direction,
-                        origin = aimRay.origin,
-                        owner = self.gameObject,
-                        weapon = null,
-                        bulletCount = 1,
-                        damage = self.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, self.GetItemCount(ScrapyardContent.Items.RoughReception)),
-                        damageColorIndex = DamageColorIndex.Item,
-                        damageType = DamageType.Generic,
-                        falloffModel = BulletAttack.FalloffModel.None,
-                        force = 400f,
-                        HitEffectNormal = false,
-                        procChainMask = default(ProcChainMask),
-                        procCoefficient = 0.7f,
-                        maxDistance = 7,
-                        radius = 10,
-                        isCrit = self.RollCrit(),
-                        muzzleName = "",
-                        tracerEffectPrefab = null
-                    };
-
-                    catAttack.Fire();
-
-                    int layerIndex = roughAnimator.GetLayerIndex("Body");
-                    if (layerIndex >= 0)
-                    {
-                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + swingComponent.step, "Swing.playbackRate", 1f);
-                    }
-
-                    swingComponent.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, roughLocator.FindChild("Swing" + swingComponent.step));
-                    swingComponent.swingDuration = RoughReceptionSwing.baseSwingDuration / self.attackSpeed;
-
-                    swingComponent.step = swingComponent.step == 1 ? 2 : 1;
+                    swingComponent.RoughReceptionSwing(itemDisplayObjects[0], self);
                 }
             }
         }
@@ -110,14 +65,14 @@ namespace FortunesFromTheScrapyard
             public static ItemDef GetItemDef() => ScrapyardContent.Items.RoughReception;
             private void OnEnable()
             {
-                body.gameObject.EnsureComponent<RoughReceptionSwing>();
+                body.gameObject.EnsureComponent<RoughReceptionComponent>();
             }
             private void OnDisable()
             {
-                body.gameObject.GetComponent<RoughReceptionSwing>().enabled = false;
+                body.gameObject.GetComponent<RoughReceptionComponent>().enabled = false;
             }
         }
-        public class RoughReceptionSwing : NetworkBehaviour
+        public class RoughReceptionComponent : NetworkBehaviour
         {
             public static float baseSwingDuration = 2f;
             public float swingDuration;
@@ -127,6 +82,54 @@ namespace FortunesFromTheScrapyard
 
             private float timer;
 
+            public void RoughReceptionSwing(GameObject roughObject, CharacterBody body)
+            {
+                Animator roughAnimator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<Animator>();
+
+                ChildLocator roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
+
+                Ray aimRay;
+                if (body.inputBank) aimRay = new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection);
+                else aimRay = new Ray(body.transform.position, body.transform.forward);
+
+                BulletAttack catAttack = new BulletAttack
+                {
+                    aimVector = aimRay.direction,
+                    origin = aimRay.origin,
+                    owner = body.gameObject,
+                    weapon = null,
+                    bulletCount = 1,
+                    damage = body.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, body.GetItemCount(ScrapyardContent.Items.RoughReception)),
+                    damageColorIndex = DamageColorIndex.Item,
+                    damageType = DamageType.Generic,
+                    falloffModel = BulletAttack.FalloffModel.None,
+                    force = 400f,
+                    HitEffectNormal = false,
+                    procChainMask = default(ProcChainMask),
+                    procCoefficient = 0.7f,
+                    maxDistance = 7,
+                    radius = 10,
+                    isCrit = body.RollCrit(),
+                    muzzleName = "",
+                    tracerEffectPrefab = null
+                };
+
+                catAttack.Fire();
+
+                if (roughAnimator)
+                {
+                    int layerIndex = roughAnimator.GetLayerIndex("Body");
+                    if (layerIndex >= 0)
+                    {
+                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + this.step, "Swing.playbackRate", 1f);
+                    }
+                }
+
+                this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, roughLocator.FindChild("Swing" + this.step));
+                this.swingDuration = RoughReceptionComponent.baseSwingDuration / body.attackSpeed;
+
+                this.step = this.step == 1 ? 2 : 1;
+            }
             public void FixedUpdate()
             {
                 if(swingInstance)

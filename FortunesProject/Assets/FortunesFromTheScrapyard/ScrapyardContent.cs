@@ -248,6 +248,11 @@ namespace FortunesFromTheScrapyard
             public static SurvivorDef Skater;
         }
 
+        public static class Characters
+        {
+            public static CharacterBody DukeDecoy;
+        }
+
         public static void CreateAndAddEffectDef(GameObject effect)
         {
             EffectDef effectDef = new EffectDef(effect);

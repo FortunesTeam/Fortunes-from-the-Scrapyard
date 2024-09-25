@@ -15,6 +15,7 @@ MonoBehaviour:
   assets:
   - {fileID: 6205745757962964917, guid: 69fbfdf64c6635d4aad500b726a4e04b, type: 3}
   - {fileID: 6415622932436946676, guid: 1665605abb4e1f044917db49321ac400, type: 3}
+  - {fileID: 11500000, guid: ec6e223646d7fc945a373d1d1dbd3da8, type: 3}
   bodyPrefab: {fileID: 6415622932436946676, guid: 1665605abb4e1f044917db49321ac400,
     type: 3}
   masterPrefab: {fileID: 6205745757962964917, guid: 69fbfdf64c6635d4aad500b726a4e04b,
