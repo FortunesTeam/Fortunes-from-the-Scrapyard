@@ -117,6 +117,9 @@ MonoBehaviour:
   - assetBundleName: fortunesitems
     assets:
     - {fileID: 102900000, guid: bd4df83f8ef095c46abfc03f4c054d1c, type: 3}
+  - assetBundleName: fortunesdifficulties
+    assets:
+    - {fileID: 102900000, guid: 594f01bce18166d42a537406d62d95ad, type: 3}
   - assetBundleName: fortunesindev
     assets:
     - {fileID: 102900000, guid: 04daa874dedc0ba4fb03b4de151fa8cb, type: 3}

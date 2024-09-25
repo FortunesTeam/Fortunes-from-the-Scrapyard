@@ -50,8 +50,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             DukeFourthShot = DamageAPI.ReserveDamageType();
             DukeSharedDamageType = DamageAPI.ReserveDamageType();
 
-            Hooks();
-
             CreateEffects();
 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
@@ -59,6 +57,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             CreateUI();
 
             ModifyPrefab();
+
+            Hooks();
         }
 
         public void ModifyPrefab()
@@ -117,7 +117,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             buffWard.buffDef = ScrapyardContent.Buffs.bdDukeDamageShare;
             buffWard.interval = 0.01f;
             buffWard.expireDuration = 5f;
-            buffWard.radius = 25f;
+            buffWard.radius = 12f;
 
             dukeField.GetComponent<SphereCollider>().radius = 25f;
 
@@ -181,7 +181,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             On.RoR2.SurvivorCatalog.Init += (orig) =>
             {
                 orig();
-                var skele = ScrapyardAssets.GetAssetBundle(ScrapyardBundle.Indev).LoadAsset<GameObject>("duke_emoteskeleton");
+                var skele = ScrapyardAssets.GetAssetBundle(ScrapyardBundle.Survivors).LoadAsset<GameObject>("duke_emoteskeleton");
                 CustomEmotesAPI.ImportArmature(this.characterPrefab, skele);
             };
             CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;

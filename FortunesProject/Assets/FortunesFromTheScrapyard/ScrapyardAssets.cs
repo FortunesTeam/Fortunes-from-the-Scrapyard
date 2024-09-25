@@ -48,6 +48,7 @@ namespace FortunesFromTheScrapyard
         Elites,
         Survivors,
         Characters,
+        Difficulties
     }
     /// <summary>
     /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.
@@ -68,6 +69,7 @@ namespace FortunesFromTheScrapyard
         private const string ELITES = "fortuneselites";
         private const string SURVIVORS = "fortunessurvivors";
         private const string CHARACTERS = "fortunescharacters";
+        private const string DIFFICULTIES = "fortunesdifficulties";
         private static string AssetBundleFolderPath => Path.Combine(Path.GetDirectoryName(ScrapyardMain.instance.Info.Location), ASSET_BUNDLE_FOLDER_NAME);
 
         private static Dictionary<ScrapyardBundle, AssetBundle> _assetBundles = new Dictionary<ScrapyardBundle, AssetBundle>();
@@ -253,6 +255,7 @@ namespace FortunesFromTheScrapyard
                 case MAIN: exampleBundle = ScrapyardBundle.Main; break;
                 case EQUIPMENTS: exampleBundle = ScrapyardBundle.Equipments; break;
                 case ITEMS: exampleBundle = ScrapyardBundle.Items; break;
+                case DIFFICULTIES: exampleBundle = ScrapyardBundle.Difficulties; break;
                 case INDEV: exampleBundle = ScrapyardBundle.Indev; break;
                 case BASE: exampleBundle = ScrapyardBundle.Base; break;
                 case ELITES: exampleBundle = ScrapyardBundle.Elites; break;

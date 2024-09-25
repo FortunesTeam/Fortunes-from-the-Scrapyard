@@ -16,7 +16,7 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_DUKE_STEADYHAND_NAME
   skillDescriptionToken: SCRAPYARD_DUKE_STEADYHAND_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 548b806cf587a2d458b6951a7cf860d7, type: 3}
   activationStateMachineName: 
   activationState:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

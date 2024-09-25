@@ -19,7 +19,7 @@ namespace FortunesFromTheScrapyard
 {
     public class Whirlwind : ScrapyardDifficulty
     {
-        public override ScrapyardAssetRequest<SerializableDifficultyDef> AssetRequest => ScrapyardAssets.LoadAssetAsync<SerializableDifficultyDef>("Whirlwind", ScrapyardBundle.Base);
+        public override ScrapyardAssetRequest<SerializableDifficultyDef> AssetRequest => ScrapyardAssets.LoadAssetAsync<SerializableDifficultyDef>("Whirlwind", ScrapyardBundle.Difficulties);
 
         public static SerializableDifficultyDef whirlwindDifficulty;
 

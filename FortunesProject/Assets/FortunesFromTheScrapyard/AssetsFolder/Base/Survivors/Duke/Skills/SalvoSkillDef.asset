@@ -16,7 +16,7 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_DUKE_SALVO_NAME
   skillDescriptionToken: SCRAPYARD_DUKE_SALVO_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3730fec68325386458f2205dbeacc4e5, type: 3}
   activationStateMachineName: Weapon
   activationState:
     _typeName: EntityStates.Duke.Salvo, FortunesFromTheScrapyard, Version=0.0.0.0,

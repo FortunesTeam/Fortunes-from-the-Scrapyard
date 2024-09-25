@@ -41,11 +41,12 @@ namespace FortunesFromTheScrapyard
             {
                 RoughReceptionComponent swingComponent = self.gameObject.GetComponent<RoughReceptionComponent>();
                 List<GameObject> itemDisplayObjects = self.modelLocator.modelTransform.GetComponent<CharacterModel>().GetItemDisplayObjects(ScrapyardContent.Items.RoughReception.itemIndex);
-
+                
                 if(itemDisplayObjects.Count > 0)
                 {
-                    swingComponent.RoughReceptionSwing(itemDisplayObjects[0], self);
+                    swingComponent.RoughReceptionSwing(self, itemDisplayObjects[0]);
                 }
+                else swingComponent.RoughReceptionSwing(self);
             }
         }
 
@@ -72,21 +73,33 @@ namespace FortunesFromTheScrapyard
                 body.gameObject.GetComponent<RoughReceptionComponent>().enabled = false;
             }
         }
-        public class RoughReceptionComponent : NetworkBehaviour
+        public class RoughReceptionComponent : MonoBehaviour
         {
+            private Animator roughAnimator;
+
+            private ChildLocator roughLocator;
+
             public static float baseSwingDuration = 2f;
             public float swingDuration;
             public GameObject swingInstance;
-            [SyncVar]   
-            public int step = 1;
+            
+            public int step = 0;
 
             private float timer;
 
-            public void RoughReceptionSwing(GameObject roughObject, CharacterBody body)
+            public void Start()
             {
-                Animator roughAnimator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<Animator>();
+            }
+            public void RoughReceptionSwing(CharacterBody body) => RoughReceptionSwing(body, null);
 
-                ChildLocator roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
+            public void RoughReceptionSwing(CharacterBody body, GameObject roughObject)
+            {
+                if(roughObject && !roughAnimator && !roughLocator)
+                {
+                    roughAnimator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<Animator>();
+
+                    roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
+                }
 
                 Ray aimRay;
                 if (body.inputBank) aimRay = new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection);
@@ -121,27 +134,32 @@ namespace FortunesFromTheScrapyard
                     int layerIndex = roughAnimator.GetLayerIndex("Body");
                     if (layerIndex >= 0)
                     {
-                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + this.step, "Swing.playbackRate", 1f);
+                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + (this.step + 1), "Swing.playbackRate", 1f);
                     }
                 }
 
-                this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, roughLocator.FindChild("Swing" + this.step));
+                this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), Util.QuaternionSafeLookRotation(body.inputBank.aimDirection));
                 this.swingDuration = RoughReceptionComponent.baseSwingDuration / body.attackSpeed;
 
-                this.step = this.step == 1 ? 2 : 1;
+                this.step = this.step == 0 ? 0 : 1;
             }
             public void FixedUpdate()
             {
-                if(swingInstance)
+                if (swingInstance)
                 {
                     timer += Time.fixedDeltaTime;
 
-                    if(timer >= swingDuration)
+                    if (timer >= swingDuration)
                     {
                         UnityEngine.Object.Destroy(swingInstance);
                         timer = 0f;
                     }
                 }
+            }
+            public void OnDisable()
+            {
+                roughLocator = null;
+                roughAnimator = null;
             }
         }
     }

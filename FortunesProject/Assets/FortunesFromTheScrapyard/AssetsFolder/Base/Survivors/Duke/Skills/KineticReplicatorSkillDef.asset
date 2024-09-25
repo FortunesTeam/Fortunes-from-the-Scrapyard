@@ -16,14 +16,14 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_DUKE_KINETIC_NAME
   skillDescriptionToken: SCRAPYARD_DUKE_KINETIC_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a3906d0670ed0984ba0a77a0d52e8e46, type: 3}
   activationStateMachineName: Weapon2
   activationState:
     _typeName: EntityStates.Duke.KineticReplicator, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
   baseRechargeInterval: 7
-  baseMaxStock: 1
+  baseMaxStock: 2
   rechargeStock: 1
   requiredStock: 1
   stockToConsume: 1

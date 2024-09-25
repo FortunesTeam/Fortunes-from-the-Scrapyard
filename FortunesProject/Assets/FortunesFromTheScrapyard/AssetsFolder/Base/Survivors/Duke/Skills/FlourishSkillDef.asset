@@ -16,7 +16,7 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_DUKE_FLOURISH_NAME
   skillDescriptionToken: SCRAPYARD_DUKE_FLOURISH_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 85f7afaa003735549befc392f0acc089, type: 3}
   activationStateMachineName: Dash
   activationState:
     _typeName: EntityStates.Duke.Flourish, FortunesFromTheScrapyard, Version=0.0.0.0,
