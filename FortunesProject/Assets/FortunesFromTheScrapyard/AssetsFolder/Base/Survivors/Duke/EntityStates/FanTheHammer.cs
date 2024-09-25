@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using RoR2;
 using EntityStates;
 using EntityStates.Commando;
@@ -12,11 +12,11 @@ using FortunesFromTheScrapyard;
 
 namespace EntityStates.Duke
 {
-    public class Salvo : BaseSkillState
+    public class FanTheHammer : BaseSkillState
     {
         public static float baseProcCoefficient = 1f;
-        public static float baseShootDuration = 0.25f;
-        public static float baseDuration = 1.25f;
+        public static float baseWindupDuration = 0.5f;
+        public static float baseDurationPerShot = 0.25f;
         public static float baseForce = 600f;
         public static int bulletCount = 1;
         public static float baseBulletSpread = 0f;
@@ -27,14 +27,16 @@ namespace EntityStates.Duke
 
         public static GameObject tracerEffectPrefab = DukeSurvivor.dukeTracer;
         public static GameObject empoweredTracerEffectPrefab = DukeSurvivor.dukeTracerCrit;
+        private uint soundID;
+        private GameObject spinInstance;
 
         private bool fourthShot;
         private bool freeBullet;
-        private float shootDuration;
         private float duration;
+        private float windupDuration;
+        private float perShotDuration;
         private string muzzleString;
         private bool isCrit;
-        private float recoil;
 
         private float damageCoefficient;
         private float procCoefficient;
@@ -44,9 +46,13 @@ namespace EntityStates.Duke
         private float bulletRecoil;
         private float bulletRange;
         private float selfForce;
-        private bool hasFired;
+        private bool hasFiredAllShots;
         private DamageType damageType = DamageType.Generic;
         private DukeController dukeController;
+        private int maxShotCount;
+        private float shotTimer;
+        private bool disabledSound;
+
         protected GameObject tracerPrefab = tracerEffectPrefab;
         public virtual string shootSoundString => fourthShot ? "Play_railgunner_R_fire" : "Play_railgunner_m2_alt_fire";
         public BulletAttack.FalloffModel falloff = BulletAttack.FalloffModel.DefaultBullet;
@@ -54,61 +60,30 @@ namespace EntityStates.Duke
         public override void OnEnter()
         {
             this.dukeController = base.gameObject.GetComponent<DukeController>();
-            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
-            this.procCoefficient = baseProcCoefficient;
-            this.force = baseForce;
-            this.bulletSpread = baseBulletSpread;
-            this.bulletRadius = baseBulletRadius;
-            this.bulletRecoil = baseBulletRecoil;
-            this.bulletRange = baseBulletRange;
-            this.selfForce = baseSelfForce;
 
             base.OnEnter();
 
-            base.characterBody.SetAimTimer(2f);
-            this.muzzleString = "GunMuzzle";
+            soundID = Util.PlayAttackSpeedSound("sfx_duke_pistol_spin", base.gameObject, attackSpeedStat);
+            if (this.spinInstance) GameObject.Destroy(this.spinInstance);
+            this.spinInstance = GameObject.Instantiate(DukeSurvivor.dukePistolSpinEffect);
+            this.spinInstance.transform.parent = base.GetModelChildLocator().FindChild("Weapon");
+            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            this.spinInstance.transform.localPosition = Vector3.zero;
 
-            if (NetworkServer.active && characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
-            {
-                freeBullet = true;
-                characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
-            }
-
-            this.shootDuration = baseDuration / this.attackSpeedStat;
-            this.duration = baseDuration / this.attackSpeedStat;
-
-            this.isCrit = base.RollCrit();
-
-            this.recoil = bulletRecoil / this.attackSpeedStat;
-
-            if (skillLocator.primary.stock == 0f || freeBullet)
-            {
-                fourthShot = true;
-                isCrit = true;
-                force *= 2f;
-                bulletRadius *= 2f;
-                bulletRecoil *= 2f;
-                selfForce *= 2f;
-                falloff = BulletAttack.FalloffModel.None;
-                damageType |= DamageType.BonusToLowHealth;
-            }
-
-            if (freeBullet && skillLocator.primary.stock != 0)
-            {
-                skillLocator.primary.stock++;
-            }
-
-            tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
-
-            this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
+            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
+            this.windupDuration = baseWindupDuration / this.attackSpeedStat;
+            this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
+            this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
         }
 
         public override void OnExit()
         {
-            if (!hasFired)
+            if (!disabledSound)
             {
-                this.Fire();
+                AkSoundEngine.StopPlayingID(this.soundID);
+                GameObject.Destroy(this.spinInstance);
             }
+
             base.OnExit();
         }
 
@@ -123,7 +98,7 @@ namespace EntityStates.Duke
             if (base.isAuthority)
             {
                 Ray aimRay = base.GetAimRay();
-                base.AddRecoil(-0.4f * recoil, -0.8f * recoil, -0.3f * recoil, 0.3f * recoil);
+                base.AddRecoil(-0.4f * bulletRecoil, -0.8f * bulletRecoil, -0.3f * bulletRecoil, 0.3f * bulletRecoil);
 
                 BulletAttack bulletAttack = new BulletAttack
                 {
@@ -171,21 +146,87 @@ namespace EntityStates.Duke
 
             base.characterBody.AddSpreadBloom(2.5f);
 
-            hasFired = true;
+            ResetShot();
+        }
+
+        public void ResetShot()
+        {
+            if (!freeBullet)
+            {
+                skillLocator.primary.stock--;
+            }
+            else
+            {
+                this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+                this.procCoefficient = baseProcCoefficient;
+                this.force = baseForce;
+                this.bulletSpread = baseBulletSpread;
+                this.bulletRadius = baseBulletRadius;
+                this.bulletRecoil = (baseBulletRecoil / 4f) / this.attackSpeedStat;
+                this.bulletRange = baseBulletRange;
+                this.selfForce = baseSelfForce;
+                this.freeBullet = false;
+                this.fourthShot = false;
+                this.isCrit = RollCrit();
+                this.falloff = BulletAttack.FalloffModel.DefaultBullet;
+                this.damageType = DamageType.Generic;
+            }
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
 
-            if (base.fixedAge >= this.shootDuration && !hasFired)
+            if(base.fixedAge >= this.windupDuration && skillLocator.primary.stock > 0)
             {
-                this.Fire();
+                if (!disabledSound)
+                {
+                    AkSoundEngine.StopPlayingID(this.soundID);
+                    GameObject.Destroy(this.spinInstance);
+                }
+
+                shotTimer += Time.fixedDeltaTime;
+
+                if(shotTimer >= perShotDuration)
+                {
+                    shotTimer = 0;
+                    base.characterBody.SetAimTimer(2f);
+                    this.muzzleString = "GunMuzzle";
+
+                    if (NetworkServer.active && characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
+                    {
+                        freeBullet = true;
+                        characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
+                    }
+
+                    if (skillLocator.primary.stock == 1f || freeBullet)
+                    {
+                        fourthShot = true;
+                        isCrit = true;
+                        force *= 2f;
+                        bulletRadius *= 2f;
+                        bulletRecoil *= 2f;
+                        selfForce *= 2f;
+                        falloff = BulletAttack.FalloffModel.None;
+                        damageType |= DamageType.BonusToLowHealth;
+                    }
+
+                    if (freeBullet && skillLocator.primary.stock != 0)
+                    {
+                        skillLocator.primary.stock++;
+                    }
+
+                    tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
+
+                    this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
+
+                    this.Fire();
+                }
             }
 
-            if (base.fixedAge >= this.duration)
+            if (base.isAuthority && (base.fixedAge >= this.duration || skillLocator.primary.stock == 0))
             {
-                if (base.isAuthority) this.outer.SetNextStateToMain();
+                this.outer.SetNextStateToMain();
             }
         }
 

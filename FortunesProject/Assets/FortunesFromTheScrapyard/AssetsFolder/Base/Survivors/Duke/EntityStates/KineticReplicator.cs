@@ -18,7 +18,7 @@ namespace EntityStates.Duke
         public override void OnEnter()
         {
             dukeController = base.gameObject.GetComponent<DukeController>();
-            base.attackSoundString = "sfx_driver_grenade_launcher_shoot";
+            base.attackSoundString = "sfx_duke_fire_mine";
 
             base.baseDuration = baseDuration;
             base.baseDelayBeforeFiringProjectile = baseDelayDuration;

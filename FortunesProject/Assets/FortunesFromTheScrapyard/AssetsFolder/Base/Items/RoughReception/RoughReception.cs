@@ -44,6 +44,7 @@ namespace FortunesFromTheScrapyard
                 
                 if(itemDisplayObjects.Count > 0)
                 {
+                    swingComponent.Reset();
                     swingComponent.RoughReceptionSwing(self, itemDisplayObjects[0]);
                 }
                 else swingComponent.RoughReceptionSwing(self);
@@ -73,27 +74,39 @@ namespace FortunesFromTheScrapyard
                 body.gameObject.GetComponent<RoughReceptionComponent>().enabled = false;
             }
         }
-        public class RoughReceptionComponent : MonoBehaviour
+        public class RoughReceptionComponent : NetworkBehaviour
         {
+            private CharacterBody body;
             private Animator roughAnimator;
-
             private ChildLocator roughLocator;
 
-            public static float baseSwingDuration = 2f;
+            public static float baseSwingDuration = 0.5f;
             public float swingDuration;
             public GameObject swingInstance;
-            
+  
             public int step = 0;
 
             private float timer;
+            private bool startSwing;
 
-            public void Start()
+            public void Reset()
             {
+                this.timer = 0;
+                this.swingInstance = null;
+                this.startSwing = false;
+                this.roughLocator = null;
+                this.roughAnimator = null;
+                this.body = null;
             }
-            public void RoughReceptionSwing(CharacterBody body) => RoughReceptionSwing(body, null);
+            public void RoughReceptionSwing(CharacterBody characterBody) => RoughReceptionSwing(characterBody, null);
 
-            public void RoughReceptionSwing(CharacterBody body, GameObject roughObject)
+            public void RoughReceptionSwing(CharacterBody characterBody, GameObject roughObject)
             {
+                if (characterBody == null)
+                {
+                    body = characterBody;
+                }
+
                 if(roughObject && !roughAnimator && !roughLocator)
                 {
                     roughAnimator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<Animator>();
@@ -101,65 +114,42 @@ namespace FortunesFromTheScrapyard
                     roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
                 }
 
-                Ray aimRay;
-                if (body.inputBank) aimRay = new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection);
-                else aimRay = new Ray(body.transform.position, body.transform.forward);
-
-                BulletAttack catAttack = new BulletAttack
-                {
-                    aimVector = aimRay.direction,
-                    origin = aimRay.origin,
-                    owner = body.gameObject,
-                    weapon = null,
-                    bulletCount = 1,
-                    damage = body.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, body.GetItemCount(ScrapyardContent.Items.RoughReception)),
-                    damageColorIndex = DamageColorIndex.Item,
-                    damageType = DamageType.Generic,
-                    falloffModel = BulletAttack.FalloffModel.None,
-                    force = 400f,
-                    HitEffectNormal = false,
-                    procChainMask = default(ProcChainMask),
-                    procCoefficient = 0.7f,
-                    maxDistance = 7,
-                    radius = 10,
-                    isCrit = body.RollCrit(),
-                    muzzleName = "",
-                    tracerEffectPrefab = null
-                };
-
-                catAttack.Fire();
+                this.swingDuration = RoughReceptionComponent.baseSwingDuration / characterBody.attackSpeed;
 
                 if (roughAnimator)
                 {
                     int layerIndex = roughAnimator.GetLayerIndex("Body");
                     if (layerIndex >= 0)
                     {
-                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + (this.step + 1), "Swing.playbackRate", 1f);
+                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + (this.step + 1), "Swing.playbackRate", swingDuration);
                     }
                 }
 
-                this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), Util.QuaternionSafeLookRotation(body.inputBank.aimDirection));
-                this.swingDuration = RoughReceptionComponent.baseSwingDuration / body.attackSpeed;
-
                 this.step = this.step == 0 ? 0 : 1;
+
+                this.startSwing = true;
             }
             public void FixedUpdate()
             {
-                if (swingInstance)
+                if (this.startSwing)
                 {
-                    timer += Time.fixedDeltaTime;
+                    this.timer += Time.fixedDeltaTime;
 
-                    if (timer >= swingDuration)
+                    if(this.timer >= swingDuration / 2f)
                     {
-                        UnityEngine.Object.Destroy(swingInstance);
-                        timer = 0f;
+                        this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), Util.QuaternionSafeLookRotation(body.inputBank.aimDirection));
+                    }
+
+                    if (this.timer >= swingDuration)
+                    {
+                        this.startSwing = false;
                     }
                 }
             }
             public void OnDisable()
             {
-                roughLocator = null;
-                roughAnimator = null;
+                Reset();
+                step = 0;
             }
         }
     }

@@ -30,7 +30,7 @@ namespace EntityStates.Neuromancer
         public float tickRate = 8f;
 
         [SerializeField]
-        public float damageCoefficientPerSecond = 6f;
+        public float damageCoefficientPerSecond = 10f;
 
         [SerializeField]
         public float procCoefficientPerSecond = 5f;
