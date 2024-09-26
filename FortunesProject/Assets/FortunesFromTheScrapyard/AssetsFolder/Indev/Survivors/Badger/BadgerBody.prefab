@@ -28,7 +28,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< Updated upstream
   - {fileID: 378704885653738516}
+=======
+  - {fileID: 2110607766574185133}
+>>>>>>> Stashed changes
   m_Father: {fileID: 5172031756528096886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -329,7 +333,12 @@ MonoBehaviour:
   m_Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   _modelTransform: {fileID: 378704885653738516}
+=======
+  _modelTransform: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
+    type: 3}
+>>>>>>> Stashed changes
   modelVisibility: {fileID: 0}
   modelBaseTransform: {fileID: 1836052422998996663}
   modelScaleCompensation: 1
@@ -358,7 +367,11 @@ MonoBehaviour:
   targetTransform: {fileID: 1836052422998996663}
   overrideAnimatorForwardTransform: {fileID: 0}
   rootMotionAccumulator: {fileID: 0}
+<<<<<<< Updated upstream
   modelAnimator: {fileID: 8033802955459169483}
+=======
+  modelAnimator: {fileID: 0}
+>>>>>>> Stashed changes
   driveFromRootRotation: 0
   turnSpeed: 720
   turnSoundName: 
@@ -788,7 +801,11 @@ Transform:
   m_Father: {fileID: 5172031756528096886}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+<<<<<<< Updated upstream
 --- !u!1001 &201491463826437119
+=======
+--- !u!1001 &1927782437315206470
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -808,7 +825,11 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: 0.898
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
@@ -823,17 +844,29 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
       propertyPath: m_LocalRotation.y
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
       propertyPath: m_LocalRotation.z
+<<<<<<< Updated upstream
       value: 0
+=======
+      value: -0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
         type: 3}
@@ -855,6 +888,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: mdlBadger
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: 1d09c52ccbcf4274ea8310143e15fa2d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d09c52ccbcf4274ea8310143e15fa2d, type: 3}
@@ -1068,4 +1102,13 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7641174079492379002, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
     type: 3}
   m_PrefabInstance: {fileID: 201491463826437119}
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d09c52ccbcf4274ea8310143e15fa2d, type: 3}
+--- !u!4 &2110607766574185133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d09c52ccbcf4274ea8310143e15fa2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927782437315206470}
+>>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}

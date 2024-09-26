@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cde32e1dc123643b3d03951692e0a9, type: 3}
+  m_Name: acBadger
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 1211016568250789496, guid: b3e2127573f080648acdd26b7fc3ecbb, type: 3}
+  - {fileID: 11400000, guid: a848d01557aeefb4fa77b70274b8d03b, type: 2}
+  - {fileID: 5199061917333345251, guid: 87fcae53eae291a4a9a6cd80abd8499e, type: 3}
+  - {fileID: 2100000, guid: 32cb148037555b24f84190ec7169f069, type: 2}
+  - {fileID: 2100000, guid: 9f08fe24bc549a34a9bf56bbec37663e, type: 2}
+  - {fileID: 11400000, guid: 106e733f3b12f2e4ebacf8c99ee27498, type: 2}
+  - {fileID: 11400000, guid: 956cfda1fbce4ea43a145720a10dc5ea, type: 2}
+  bodyPrefab: {fileID: 5199061917333345251, guid: 87fcae53eae291a4a9a6cd80abd8499e,
+    type: 3}
+  masterPrefab: {fileID: 1211016568250789496, guid: b3e2127573f080648acdd26b7fc3ecbb,
+    type: 3}
+  survivorDef: {fileID: 11400000, guid: a848d01557aeefb4fa77b70274b8d03b, type: 2}

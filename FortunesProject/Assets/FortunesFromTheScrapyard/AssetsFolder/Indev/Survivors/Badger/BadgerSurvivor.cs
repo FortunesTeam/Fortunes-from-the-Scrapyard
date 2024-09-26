@@ -41,6 +41,13 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
 
+<<<<<<< Updated upstream
+=======
+            On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+
+            BadgerExplode = DamageAPI.ReserveDamageType();
+
+>>>>>>> Stashed changes
             ModifyPrefab();
         }
 
@@ -64,7 +71,11 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
 
+<<<<<<< Updated upstream
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
+=======
+            On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamageProcess);
+>>>>>>> Stashed changes
         }
         #region projectiles
         private static void CreateProjectiles()
@@ -126,7 +137,30 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
         #endregion
 
+<<<<<<< Updated upstream
         private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+=======
+        private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
+        {
+            orig(self);
+
+            if (self)
+            {
+                if (self.HasBuff(ScrapyardContent.Buffs.bdBadgerSoundBuff))
+                {
+                    self.moveSpeed *= 1.25f;
+                    self.attackSpeed *= 1.35f;
+                }
+
+                if (self.HasBuff(ScrapyardContent.Buffs.bdBadgerSoundBuff))
+                {
+                    self.moveSpeed *= 0.5f;
+                }
+            }
+        }
+
+        private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+>>>>>>> Stashed changes
         {
             if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
             {
@@ -146,7 +180,11 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
                 if (damageInfo.damage > 0 && !damageInfo.rejected && victimBody && attackerBody)
                 {
+<<<<<<< Updated upstream
                     if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.baseNameToken == "SCRAPYARD_BADGER_NAME")
+=======
+                    if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
+>>>>>>> Stashed changes
                     {
                         if (!victimBody.isBoss && !victimBody.isChampion && victimBody.baseNameToken != "GOLEM_BODY_NAME" && victimMotor.velocity.magnitude <= 0)
                         {
@@ -185,7 +223,11 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             BadgerController iController = attackerBody.GetComponent<BadgerController>();
             if (NetworkServer.active)
             {
+<<<<<<< Updated upstream
                 if (iController && attackerBody.baseNameToken == "FORTUNES_BADGER_NAME")
+=======
+                if (iController && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
+>>>>>>> Stashed changes
                 {
                     if (damageInfo.HasModdedDamageType(BadgerExplode))
                     {

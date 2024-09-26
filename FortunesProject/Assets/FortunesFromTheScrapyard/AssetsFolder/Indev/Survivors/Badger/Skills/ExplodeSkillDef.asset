@@ -17,7 +17,11 @@ MonoBehaviour:
   skillDescriptionToken: SCRAPYARD_BADGER_SECONDARY_DESC
   keywordTokens: []
   icon: {fileID: 0}
+<<<<<<< Updated upstream
   activationStateMachineName: Body
+=======
+  activationStateMachineName: Weapon
+>>>>>>> Stashed changes
   activationState:
     _typeName: EntityStates.Badger.Explode, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
