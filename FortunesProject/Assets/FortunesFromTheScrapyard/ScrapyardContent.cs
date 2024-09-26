@@ -242,7 +242,7 @@ namespace FortunesFromTheScrapyard
         {
             public static SurvivorDef Predator;
             public static SurvivorDef Neuromancer;
-            public static SurvivorDef Pacer;
+            public static SurvivorDef Badger;
             public static SurvivorDef Cloaker;
             public static SurvivorDef Duke;
             public static SurvivorDef Skater;

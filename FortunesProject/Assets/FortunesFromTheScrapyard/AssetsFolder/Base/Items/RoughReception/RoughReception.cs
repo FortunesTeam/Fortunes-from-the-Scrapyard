@@ -131,7 +131,7 @@ namespace FortunesFromTheScrapyard
             }
             public void FixedUpdate()
             {
-                if (this.startSwing)
+                if (this.startSwing && this.body)
                 {
                     this.timer += Time.fixedDeltaTime;
 

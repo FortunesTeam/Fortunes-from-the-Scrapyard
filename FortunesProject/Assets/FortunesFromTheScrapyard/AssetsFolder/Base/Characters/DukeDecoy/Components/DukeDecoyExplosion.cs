@@ -19,15 +19,13 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy.Components
     public class DukeDecoyExplosion : MonoBehaviour
     {
         [HideInInspector]
-        public float damageCoefficient;
+        public float damageCoefficient = 5f;
         [HideInInspector]
         public CharacterBody ownerBody;
         public CharacterBody decoyBody;
         private void Start()
         {
             decoyBody = base.gameObject.GetComponent<CharacterBody>();
-
-            damageCoefficient = DukeSurvivor.baseCloneDamageCoefficient;
         }
         private void FixedUpdate()
         {

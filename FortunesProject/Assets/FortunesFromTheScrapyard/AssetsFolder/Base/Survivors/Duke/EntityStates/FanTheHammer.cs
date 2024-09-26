@@ -59,6 +59,20 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
+            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+            this.procCoefficient = baseProcCoefficient;
+            this.force = baseForce;
+            this.bulletSpread = baseBulletSpread;
+            this.bulletRadius = baseBulletRadius;
+            this.bulletRecoil = (baseBulletRecoil / 4f) / this.attackSpeedStat;
+            this.bulletRange = baseBulletRange;
+            this.selfForce = baseSelfForce;
+            this.freeBullet = false;
+            this.fourthShot = false;
+            this.isCrit = RollCrit();
+            this.falloff = BulletAttack.FalloffModel.DefaultBullet;
+            this.damageType = DamageType.Generic;
+
             this.dukeController = base.gameObject.GetComponent<DukeController>();
 
             base.OnEnter();
@@ -224,7 +238,7 @@ namespace EntityStates.Duke
                 }
             }
 
-            if (base.isAuthority && (base.fixedAge >= this.duration || skillLocator.primary.stock == 0))
+            if (base.isAuthority && skillLocator.primary.stock == 0)
             {
                 this.outer.SetNextStateToMain();
             }

@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
 using FortunesFromTheScrapyard;
+using FortunesFromTheScrapyard.Survivors.Duke.Components;
 
 namespace EntityStates.Duke
 {
@@ -62,11 +63,6 @@ namespace EntityStates.Duke
 
             base.PlayCrossfade("FullBody, Override", "QuickStep", 0.1f);
 
-            if(skillLocator.primary.stock == 0)
-            {
-                skillLocator.primary.stock++;
-            }
-
             if (BrotherMonster.BaseSlideState.slideEffectPrefab && base.characterBody)
             {
                 Vector3 position = base.characterBody.corePosition;
@@ -115,7 +111,11 @@ namespace EntityStates.Duke
         }
         public override void OnExit()
         {
-            if (NetworkServer.active)
+            if (skillLocator.primary.stock == 0)
+            {
+                skillLocator.primary.stock++;
+            }
+            else if (NetworkServer.active)
             {
                 base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
 
@@ -125,6 +125,7 @@ namespace EntityStates.Duke
                 }
                 base.characterBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeFreeShot, 5f);
             }
+
             PlayAnimation("FullBody, Override", QuickStepExitStateHash);
 
             base.gameObject.layer = LayerIndex.defaultLayer.intVal;

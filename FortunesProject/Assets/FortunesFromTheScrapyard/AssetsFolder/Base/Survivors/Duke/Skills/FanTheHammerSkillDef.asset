@@ -16,10 +16,10 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_DUKE_FANHAMMER_NAME
   skillDescriptionToken: SCRAPYARD_DUKE_FANHAMMER_DESC
   keywordTokens: []
-  icon: {fileID: 21300000, guid: 3730fec68325386458f2205dbeacc4e5, type: 3}
+  icon: {fileID: 21300000, guid: 99806e1bdb5eb61458094026c1dfb55b, type: 3}
   activationStateMachineName: Weapon
   activationState:
-    _typeName: EntityStates.Duke.PretentiousMimicry, FortunesFromTheScrapyard, Version=0.0.0.0,
+    _typeName: EntityStates.Duke.FanTheHammer, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 2
   baseRechargeInterval: 12

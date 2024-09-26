@@ -67,7 +67,7 @@ namespace FortunesFromTheScrapyard.Items
 
             private void FixedUpdate()
             {
-                bool atMaxStacks = GetStackValue(maxStacksPerStack, maxStacksPerStack, stack) >= GetStackValue(maxStacks, maxStacksPerStack, stack);
+                bool atMaxStacks = body.GetBuffCount(ScrapyardContent.Buffs.bdFaultyTurbo) >= GetStackValue(maxStacks, maxStacksPerStack, stack);
                 
                 if (base.body.isSprinting && !atMaxStacks)
                 {
