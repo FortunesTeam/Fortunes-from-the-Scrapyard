@@ -41,14 +41,13 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
 
-<<<<<<< Updated upstream
-=======
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
 
             BadgerExplode = DamageAPI.ReserveDamageType();
 
->>>>>>> Stashed changes
-            ModifyPrefab();
+            // ModifyPrefab();
+
+
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -65,17 +64,15 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         {
             var cb = characterPrefab.GetComponent<CharacterBody>();
             cb.preferredPodPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
+            cb._defaultCrosshairPrefab = Resources.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
         }
 
         private static void Hooks()
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
 
-<<<<<<< Updated upstream
-            On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamage);
-=======
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamageProcess);
->>>>>>> Stashed changes
+
         }
         #region projectiles
         private static void CreateProjectiles()
@@ -137,9 +134,50 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
         #endregion
 
-<<<<<<< Updated upstream
+
         private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
-=======
+        {
+            if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
+            {
+                CharacterBody victimBody = self.body;
+                CharacterMotor victimMotor = null;
+                CharacterBody attackerBody = null;
+
+                if (self.body.characterMotor)
+                {
+                    victimMotor = self.body.characterMotor;
+                }
+
+                if (damageInfo.attacker)
+                {
+                    attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
+                }
+
+                if (damageInfo.damage > 0 && !damageInfo.rejected && victimBody && attackerBody)
+                {
+                    if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.baseNameToken == "FORTUNES_BADGER_NAME")
+                    {
+                        if (!victimBody.isBoss && !victimBody.isChampion && victimBody.baseNameToken != "GOLEM_BODY_NAME" && victimMotor.velocity.magnitude <= 0)
+                        {
+                            damageInfo.damage *= 2f;
+                        }
+                        else if (victimBody.moveSpeed <= victimBody.baseMoveSpeed)
+                        {
+                            float failSafeMoveSpeed = victimBody.moveSpeed;
+
+                            if (failSafeMoveSpeed < 0) failSafeMoveSpeed = 0;
+
+                            float calc = 1 - (failSafeMoveSpeed / (victimBody.baseMoveSpeed + victimBody.levelMoveSpeed * victimBody.level));
+
+                            damageInfo.damage *= Util.Remap(calc, 0, 1, 1, 2);
+                        }
+                    }
+                }
+            }
+
+            orig.Invoke(self, damageInfo);
+        }
+
         private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
         {
             orig(self);
@@ -160,7 +198,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
 
         private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
->>>>>>> Stashed changes
+
         {
             if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
             {
@@ -180,11 +218,8 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
                 if (damageInfo.damage > 0 && !damageInfo.rejected && victimBody && attackerBody)
                 {
-<<<<<<< Updated upstream
-                    if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.baseNameToken == "SCRAPYARD_BADGER_NAME")
-=======
                     if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
->>>>>>> Stashed changes
+
                     {
                         if (!victimBody.isBoss && !victimBody.isChampion && victimBody.baseNameToken != "GOLEM_BODY_NAME" && victimMotor.velocity.magnitude <= 0)
                         {
@@ -223,11 +258,8 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             BadgerController iController = attackerBody.GetComponent<BadgerController>();
             if (NetworkServer.active)
             {
-<<<<<<< Updated upstream
-                if (iController && attackerBody.baseNameToken == "FORTUNES_BADGER_NAME")
-=======
                 if (iController && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
->>>>>>> Stashed changes
+
                 {
                     if (damageInfo.HasModdedDamageType(BadgerExplode))
                     {
