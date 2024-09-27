@@ -78,11 +78,6 @@ namespace EntityStates.Duke
 
             base.PlayCrossfade("FullBody, Override", "QuickStep", 0.1f);
 
-            if(skillLocator.primary.stock == 0)
-            {
-                skillLocator.primary.stock++;
-            }
-
             if (EntityStates.BrotherMonster.BaseSlideState.slideEffectPrefab && base.characterBody)
             {
                 Vector3 position = base.characterBody.corePosition;
@@ -134,7 +129,6 @@ namespace EntityStates.Duke
             if(!base.authorityInHitPause)
             {
                 base.characterMotor.rootMotion += dashVelocity * Time.fixedDeltaTime;
-                base.characterDirection.forward = this.dashVelocity;
                 base.characterDirection.moveVector = this.dashVelocity;
                 base.characterBody.isSprinting = true;
             }
@@ -162,7 +156,11 @@ namespace EntityStates.Duke
 
         public override void OnExit()
         {
-            if (NetworkServer.active)
+            if (skillLocator.primary.stock == 0)
+            {
+                skillLocator.primary.stock++;
+            }
+            else if (NetworkServer.active)
             {
                 base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
 

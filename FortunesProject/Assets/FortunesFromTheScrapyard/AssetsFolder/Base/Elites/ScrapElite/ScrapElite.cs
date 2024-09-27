@@ -85,7 +85,7 @@ namespace FortunesFromTheScrapyard.Elite
                     {
                         scrapEliteEquipmentListPlayer.Add(index);
                     }
-                    if (!new[] { GoldGat.equipmentIndex, Lightning.equipmentIndex, CommandMissile.equipmentIndex, Saw.equipmentIndex, Blackhole.equipmentIndex, DroneBackup.equipmentIndex }.Contains(index))
+                    if (!new[] { GoldGat.equipmentIndex, Lightning.equipmentIndex, CommandMissile.equipmentIndex, BFG.equipmentIndex, Saw.equipmentIndex, Blackhole.equipmentIndex, DroneBackup.equipmentIndex }.Contains(index))
                     {
                         scrapEliteEquipmentListEnemy.Add(index);
                     }
@@ -168,6 +168,7 @@ namespace FortunesFromTheScrapyard.Elite
 
             private float rechargeTimer;
 
+            private Xoroshiro128Plus rng;
             private bool matrixAttachmentActive
             {
                 get
@@ -194,14 +195,20 @@ namespace FortunesFromTheScrapyard.Elite
                 }
             }
             #endregion
+
+            private void Start()
+            {
+            }
             private void OnEnable()
             {
+                rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
+
                 Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
 
                 playerTimer = 0f;
 
                 List<EquipmentIndex> list = characterBody.isPlayerControlled ? new List<EquipmentIndex>(scrapEliteEquipmentListPlayer) : new List<EquipmentIndex>(scrapEliteEquipmentListEnemy);
-                Util.ShuffleList(list, new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount));
+                Util.ShuffleList(list, rng);
                 chosenEquipmentIndex = list[list.Count - 1];
                 baseEquipmentCDFaked = EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex).cooldown / 2f;
                 equipmentCDTimer = baseEquipmentCDFaked / 2f;
@@ -373,7 +380,6 @@ namespace FortunesFromTheScrapyard.Elite
                         characterBody.equipmentSlot.healthComponent = characterBody.healthComponent;
                         characterBody.equipmentSlot.teamComponent = characterBody.teamComponent;
                         characterBody.equipmentSlot.targetIndicator = new Indicator(base.gameObject, null);
-                        characterBody.equipmentSlot.rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
                     }
 
                     characterBody.equipmentSlot.PerformEquipmentAction(EquipmentCatalog.GetEquipmentDef(chosenEquipmentIndex));

@@ -100,7 +100,6 @@ namespace EntityStates.Duke
             base.FixedUpdate();
 
             base.characterMotor.rootMotion += dashVelocity * Time.fixedDeltaTime;
-            base.characterDirection.forward = this.dashVelocity;
             base.characterDirection.moveVector = this.dashVelocity;
             base.characterBody.isSprinting = true;
 

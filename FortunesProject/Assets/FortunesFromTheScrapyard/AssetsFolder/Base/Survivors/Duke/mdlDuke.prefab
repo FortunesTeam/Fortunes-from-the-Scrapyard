@@ -267,6 +267,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6247945034147084998, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9563665
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0256841
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28645644
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.05144142
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 4.508
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 33.159
+      objectReference: {fileID: 0}
+    - target: {fileID: -4813759998440812722, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -4.815
+      objectReference: {fileID: 0}
     - target: {fileID: -3770527402530329013, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -393,6 +433,12 @@ MonoBehaviour:
 --- !u!4 &3578311344656917913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5562905965208868843, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8979015154908508786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3587660648800453562 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3651802540639669816, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
     type: 3}
   m_PrefabInstance: {fileID: 8979015154908508786}
   m_PrefabAsset: {fileID: 0}
@@ -575,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - {fileID: 11400000, guid: 61846ea2e3f35c84eb789db2b5dc887f, type: 2}
+  - {fileID: 11400000, guid: a42a683c9c4b5b44c8ee27fe0f5fc19f, type: 2}
 --- !u!114 &1800945566169749132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +665,11 @@ MonoBehaviour:
     hideOnDeath: 0
   - renderer: {fileID: 3175239971721428984}
     defaultMaterial: {fileID: 2100000, guid: 5fc73fda44c9f4f40bb9009c4fb35837, type: 2}
+    defaultShadowCastingMode: 1
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3587660648800453562}
+    defaultMaterial: {fileID: 2100000, guid: 5cb177ee38317f84aa7b96e57d84a3e1, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0
     hideOnDeath: 0

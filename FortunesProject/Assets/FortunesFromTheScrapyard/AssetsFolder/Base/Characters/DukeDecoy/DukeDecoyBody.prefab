@@ -24,10 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209603848822934658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.898, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3827862889211940503}
+  - {fileID: 8996121582704228999}
   m_Father: {fileID: 6951959157676841120}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -60,8 +62,40 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6951959157676841120}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!1 &6213205054993207355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8996121582704228999}
+  m_Layer: 0
+  m_Name: LogbookTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8996121582704228999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213205054993207355}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.99574995, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 329176878546727415}
+  m_Father: {fileID: 6537408009553265615}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6415622932436946676
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +151,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6537408009553265615}
-  - {fileID: 3827862889211940503}
   - {fileID: 1500906325784695424}
   - {fileID: 6516505876001641166}
   m_Father: {fileID: 0}
@@ -358,7 +391,7 @@ MonoBehaviour:
   rootMotionAccumulator: {fileID: 0}
   modelAnimator: {fileID: 1330649838975266183}
   driveFromRootRotation: 0
-  turnSpeed: 720
+  turnSpeed: 2000
   turnSoundName: 
 --- !u!114 &4900044962981301947
 MonoBehaviour:
@@ -464,8 +497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathStateMachine: {fileID: 432163817283108833}
   deathState:
-    _typeName: EntityStates.Commando.DeathState, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.DukeDecoy.DeathState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   idleStateMachine:
   - {fileID: 467366753770792642}
   bypassDeathLayerChange: 0
@@ -708,8 +741,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageCoefficient: 5
+  isCrit: 0
   ownerBody: {fileID: 0}
   decoyBody: {fileID: 4584433041002638788}
+--- !u!1 &7351485547083686932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329176878546727415}
+  m_Layer: 0
+  m_Name: LogbookCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329176878546727415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7351485547083686932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3760019, y: 0.1619987, z: 0.6320041}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8996121582704228999}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7884446908248734448
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,14 +804,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6951959157676841120}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!1001 &5624480043715926798
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6951959157676841120}
+    m_TransformParent: {fileID: 6537408009553265615}
     m_Modifications:
     - target: {fileID: 276571182952340424, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
@@ -757,12 +822,12 @@ PrefabInstance:
         type: 3}
       propertyPath: focusPointTransform
       value: 
-      objectReference: {fileID: 1500906325784695424}
+      objectReference: {fileID: 8996121582704228999}
     - target: {fileID: 717679452991463133, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: cameraPositionTransform
       value: 
-      objectReference: {fileID: 6516505876001641166}
+      objectReference: {fileID: 329176878546727415}
     - target: {fileID: 1968664864494280982, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: body
@@ -791,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
@@ -816,17 +881,17 @@ PrefabInstance:
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8867983252570690969, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
         type: 3}

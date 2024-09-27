@@ -74,6 +74,7 @@ namespace EntityStates.Duke
             this.damageType = DamageType.Generic;
 
             this.dukeController = base.gameObject.GetComponent<DukeController>();
+            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
 
             base.OnEnter();
 
@@ -81,10 +82,9 @@ namespace EntityStates.Duke
             if (this.spinInstance) GameObject.Destroy(this.spinInstance);
             this.spinInstance = GameObject.Instantiate(DukeSurvivor.dukePistolSpinEffect);
             this.spinInstance.transform.parent = base.GetModelChildLocator().FindChild("Weapon");
-            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
             this.spinInstance.transform.localPosition = Vector3.zero;
 
-            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
             this.windupDuration = baseWindupDuration / this.attackSpeedStat;
             this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
@@ -223,11 +223,6 @@ namespace EntityStates.Duke
                         selfForce *= 2f;
                         falloff = BulletAttack.FalloffModel.None;
                         damageType |= DamageType.BonusToLowHealth;
-                    }
-
-                    if (freeBullet && skillLocator.primary.stock != 0)
-                    {
-                        skillLocator.primary.stock++;
                     }
 
                     tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;

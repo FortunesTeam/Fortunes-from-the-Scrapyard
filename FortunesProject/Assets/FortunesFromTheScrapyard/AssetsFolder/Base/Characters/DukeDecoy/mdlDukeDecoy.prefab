@@ -240,17 +240,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
@@ -266,6 +266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6247945034147084998, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -3770527402530329013, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
@@ -287,6 +292,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.30617732
       objectReference: {fileID: 0}
+    - target: {fileID: -3651802540639669816, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db2e0a9866db8a147882da09d32e6445, type: 2}
     - target: {fileID: 919132149155446097, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
         type: 3}
       propertyPath: m_Name
@@ -393,6 +403,12 @@ MonoBehaviour:
 --- !u!4 &3578311344656917913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5562905965208868843, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8979015154908508786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3587660648800453562 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3651802540639669816, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
     type: 3}
   m_PrefabInstance: {fileID: 8979015154908508786}
   m_PrefabAsset: {fileID: 0}
@@ -575,6 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - {fileID: 11400000, guid: f18da360a4fc9304baae23590aff640f, type: 2}
+  - {fileID: 11400000, guid: 9dc6c22362d075342b106d6bee0334a4, type: 2}
 --- !u!114 &1800945566169749132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +635,11 @@ MonoBehaviour:
     hideOnDeath: 0
   - renderer: {fileID: 3175239971721428984}
     defaultMaterial: {fileID: 2100000, guid: 1143369b1046a924b9bc9c84d67c7cf6, type: 2}
+    defaultShadowCastingMode: 1
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3587660648800453562}
+    defaultMaterial: {fileID: 2100000, guid: db2e0a9866db8a147882da09d32e6445, type: 2}
     defaultShadowCastingMode: 1
     ignoreOverlays: 0
     hideOnDeath: 0

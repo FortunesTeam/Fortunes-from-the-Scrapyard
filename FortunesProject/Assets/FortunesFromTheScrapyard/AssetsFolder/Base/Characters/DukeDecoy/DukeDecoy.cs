@@ -17,6 +17,10 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
         {
             DecoyHit = DamageAPI.ReserveDamageType();
             DukeDecoyMaster = assetCollection.FindAsset<GameObject>("DukeDecoyMaster");
+
+            var cb = characterPrefab.GetComponent<CharacterBody>();
+            cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2Crosshair");
+
             Hooks();
         }
 
@@ -36,21 +40,7 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
                 {
                     if(boom.ownerBody == attackerBody)
                     {
-                        boom.damageCoefficient = damageInfo.damage / attackerBody.damage;
-
-                        DamageInfo killDecoy = new DamageInfo();
-                        killDecoy.attacker = null;
-                        killDecoy.inflictor = null;
-                        killDecoy.damage = boom.decoyBody.healthComponent.fullCombinedHealth;
-                        killDecoy.procCoefficient = 0f;
-                        killDecoy.crit = damageInfo.crit;
-                        killDecoy.damageType = DamageType.Silent;
-                        killDecoy.damageColorIndex = DamageColorIndex.Default;
-                        killDecoy.force = Vector3.zero;
-                        killDecoy.position = boom.decoyBody.corePosition;
-                        killDecoy.AddModdedDamageType(DecoyHit);
-
-                        boom.decoyBody.healthComponent.TakeDamage(killDecoy);
+                        boom.SetValuesAndKillDecoy(damageInfo.damage / attackerBody.damage, damageInfo.crit);
                     }
                 }
             }

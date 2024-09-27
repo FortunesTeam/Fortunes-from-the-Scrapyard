@@ -14,13 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSkins: []
   icon: {fileID: 0}
-  nameToken: DEFAULT_SKIN
+  nameToken: SCRAPYARD_SKIN_DUKEDECOY_DEFAULT
   unlockableName: 
   unlockableDef: {fileID: 0}
   rootObject: {fileID: 8095984920295804707, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
     type: 3}
-  rendererInfos: []
+  rendererInfos:
+  - renderer: {fileID: 1371459169455701191, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: ea3b1900636fa9b49b766b9eaf7ab506, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3175239971721428984, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: 1143369b1046a924b9bc9c84d67c7cf6, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 9207544115356506292, guid: 1665605abb4e1f044917db49321ac400,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: db2e0a9866db8a147882da09d32e6445, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
   gameObjectActivations: []
-  meshReplacements: []
+  meshReplacements:
+  - renderer: {fileID: 1371459169455701191, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    mesh: {fileID: -7979665732254460593, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
+  - renderer: {fileID: 3175239971721428984, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    mesh: {fileID: 4156337485732117756, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
+  - renderer: {fileID: 9207544115356506292, guid: 1665605abb4e1f044917db49321ac400,
+      type: 3}
+    mesh: {fileID: 5474398538139690464, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
   projectileGhostReplacements: []
   minionSkinReplacements: []

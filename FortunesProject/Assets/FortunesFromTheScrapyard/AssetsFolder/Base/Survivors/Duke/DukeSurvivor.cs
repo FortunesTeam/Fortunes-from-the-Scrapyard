@@ -143,7 +143,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
             dukeField = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("DukeDamageField");
 
-            dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().materials[1] = assetCollection.FindAsset<Material>("matDukeDome");
+            Material[] iHateMaterialSetup = new Material[2];
+            iHateMaterialSetup[0] = dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().sharedMaterials[1];
+            iHateMaterialSetup[1] = assetCollection.FindAsset<Material>("matDukeDome");
+            dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().materials = iHateMaterialSetup;
             dukeField.transform.Find("AreaIndicator").Find("ChargeIn").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeChargeIn");
             dukeField.transform.Find("AreaIndicator").Find("Core").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeFieldSphere");
             dukeField.transform.Find("AreaIndicator").Find("Point Light").gameObject.GetComponent<Light>().color = orange;
