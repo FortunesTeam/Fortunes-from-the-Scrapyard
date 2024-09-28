@@ -105,5 +105,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CutoffScroll: {r: 12, g: 24, b: 8, a: 8}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 2.389881, g: 1.101097, b: 1.1260811, a: 1}
+    - _TintColor: {r: 2.389881, g: 1.5485958, b: 1.1136094, a: 1}
   m_BuildTextureStacks: []

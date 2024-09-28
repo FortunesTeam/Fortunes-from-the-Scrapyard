@@ -14,7 +14,6 @@ namespace EntityStates.Duke
         private bool hasGivenStock;
         private bool disabledSound;
         private uint soundID;
-        private GameObject spinInstance;
         private DukeController dukeController;
 
         public override void OnEnter()
@@ -24,12 +23,6 @@ namespace EntityStates.Duke
             this.duration = baseDuration / attackSpeedStat;
             //this.dukeController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             base.PlayCrossfade("Gesture, Override", "Reload", "Reload.playbackRate", this.duration, 0.05f);
-            soundID = Util.PlayAttackSpeedSound("sfx_duke_pistol_spin", base.gameObject, attackSpeedStat);
-            if (this.spinInstance) GameObject.Destroy(this.spinInstance);
-            this.spinInstance = GameObject.Instantiate(DukeSurvivor.dukePistolSpinEffect);
-            this.spinInstance.transform.parent = base.GetModelChildLocator().FindChild("Weapon");
-            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-            this.spinInstance.transform.localPosition = Vector3.zero;
         }
 
         public override void FixedUpdate()
@@ -40,7 +33,6 @@ namespace EntityStates.Duke
             {
                 disabledSound = true;
                 AkSoundEngine.StopPlayingID(this.soundID);
-                GameObject.Destroy(this.spinInstance);
             }
             if (base.isAuthority && base.fixedAge >= this.duration)
             {
@@ -58,7 +50,6 @@ namespace EntityStates.Duke
             if (!disabledSound)
             {
                 AkSoundEngine.StopPlayingID(this.soundID);
-                GameObject.Destroy(this.spinInstance);
             }
         }
         private void GiveStock()

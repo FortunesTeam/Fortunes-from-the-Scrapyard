@@ -284,7 +284,7 @@ MonoBehaviour:
   runicLensMeteorReady: 0
   aimOriginTransform: {fileID: 5081544904318086561}
   hullClassification: 0
-  portraitIcon: {fileID: 0}
+  portraitIcon: {fileID: 2800000, guid: 71ef62bc1070ebf41a2801e5ed5c4c57, type: 3}
   bodyColor: {r: 1, g: 0.35794666, b: 0, a: 1}
   doNotReassignToTeamBasedCollisionLayer: 0
   isChampion: 0

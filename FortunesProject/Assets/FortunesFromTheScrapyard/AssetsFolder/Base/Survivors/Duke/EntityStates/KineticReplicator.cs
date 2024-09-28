@@ -57,7 +57,7 @@ namespace EntityStates.Duke
         {
             if (base.GetModelAnimator())
             {
-                this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
+                this.PlayCrossfade("LeftArm, Override", "ThrowKinetic", "Secondary.playbackRate", this.duration, this.duration * 0.05f);
             }
         }
     }

@@ -76,7 +76,7 @@ namespace EntityStates.Duke
             anim.SetFloat("dashR", num2);
             this.slideRotation = Quaternion.LookRotation(this.dashVector, this.characterDirection.forward);
 
-            base.PlayCrossfade("FullBody, Override", "QuickStep", 0.1f);
+            base.PlayCrossfade("FullBody, Override", "Dash", 0.1f);
 
             if (EntityStates.BrotherMonster.BaseSlideState.slideEffectPrefab && base.characterBody)
             {
@@ -115,12 +115,6 @@ namespace EntityStates.Duke
             base.AuthorityModifyOverlapAttack(overlapAttack);
             overlapAttack.damageType = DamageType.Stun1s;
             overlapAttack.damage = damageCoefficient * damageStat;
-        }
-
-        public override void PlayAnimation()
-        {
-            base.PlayAnimation();
-            base.PlayCrossfade("FullBody, Override", QuickStepLoopStateHash, 0.1f);
         }
         public override void AuthorityFixedUpdate()
         {
@@ -169,7 +163,8 @@ namespace EntityStates.Duke
                 }
                 base.characterBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeFreeShot, 5f);
             }
-            PlayAnimation("FullBody, Override", QuickStepExitStateHash);
+
+            PlayAnimation("FullBody, Override", "BufferEmpty");
 
             base.gameObject.layer = LayerIndex.defaultLayer.intVal;
             base.characterMotor.Motor.RebuildCollidableLayers();

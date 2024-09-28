@@ -30,7 +30,7 @@ namespace EntityStates.Duke
 
         private bool fourthShot;
         private bool freeBullet;
-        private float shootDuration;
+        private float windupDuration;
         private float duration;
         private string muzzleString;
         private bool isCrit;
@@ -65,7 +65,7 @@ namespace EntityStates.Duke
 
             base.OnEnter();
 
-            this.shootDuration = baseShootDuration / this.attackSpeedStat;
+            this.windupDuration = baseShootDuration / this.attackSpeedStat;
             this.duration = baseDuration / this.attackSpeedStat;
 
             base.characterBody.SetAimTimer(2f);
@@ -74,7 +74,7 @@ namespace EntityStates.Duke
             if (NetworkServer.active && characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
             {
                 freeBullet = true;
-                shootDuration = 0f;
+                windupDuration = 0f;
                 characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
             }
 
@@ -101,7 +101,16 @@ namespace EntityStates.Duke
 
             tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
 
-            this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
+            if (characterBody.GetNotMoving())
+            {
+                if (this.isCrit) this.PlayCrossfade("Fullbody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                else this.PlayCrossfade("Fullbody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+            }
+            else
+            { 
+                if (this.isCrit) this.PlayCrossfade("Gesture, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                else this.PlayCrossfade("Gesture, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+            }
         }
 
         public override void OnExit()
@@ -181,12 +190,12 @@ namespace EntityStates.Duke
 
             if(characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot) && !gaveQuickReset)
             {
-                gaveQuickReset = true;
+                this.gaveQuickReset = true;
 
                 this.duration /= 2f;
             }
 
-            if (base.fixedAge >= this.shootDuration && !hasFired)
+            if (base.fixedAge >= this.windupDuration && !hasFired)
             {
                 this.Fire();
             }

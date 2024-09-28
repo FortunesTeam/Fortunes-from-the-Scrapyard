@@ -88,6 +88,12 @@ namespace EntityStates.Duke
             this.windupDuration = baseWindupDuration / this.attackSpeedStat;
             this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
+
+            if(characterBody.GetNotMoving())
+            {
+                base.PlayCrossfade("FullBody, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            }
+            else base.PlayCrossfade("Gesture, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
         }
 
         public override void OnExit()
@@ -108,7 +114,14 @@ namespace EntityStates.Duke
                 //this.dukeController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             }
 
+            if (characterBody.GetNotMoving())
+            {
+                base.PlayCrossfade("FullBody, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            }
+            else base.PlayCrossfade("Gesture, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
+
             Util.PlaySound(this.shootSoundString, this.gameObject);
+
             if (base.isAuthority)
             {
                 Ray aimRay = base.GetAimRay();
@@ -226,8 +239,6 @@ namespace EntityStates.Duke
                     }
 
                     tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
-
-                    this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
 
                     this.Fire();
                 }
