@@ -74,7 +74,7 @@ namespace FortunesFromTheScrapyard
                 body.gameObject.GetComponent<RoughReceptionComponent>().enabled = false;
             }
         }
-        public class RoughReceptionComponent : NetworkBehaviour
+        public class RoughReceptionComponent : MonoBehaviour
         {
             private CharacterBody body;
             private Animator roughAnimator;
@@ -84,25 +84,28 @@ namespace FortunesFromTheScrapyard
             public float swingDuration;
             public GameObject swingInstance;
   
-            public int step = 0;
+            private int step;
 
             private float timer;
             private bool startSwing;
+            private bool hasFired;
 
             public void Reset()
             {
                 this.timer = 0;
+                if(this.swingInstance) Destroy(this.swingInstance);
                 this.swingInstance = null;
                 this.startSwing = false;
                 this.roughLocator = null;
                 this.roughAnimator = null;
                 this.body = null;
+                this.hasFired = false;
             }
             public void RoughReceptionSwing(CharacterBody characterBody) => RoughReceptionSwing(characterBody, null);
 
             public void RoughReceptionSwing(CharacterBody characterBody, GameObject roughObject)
             {
-                if (characterBody == null)
+                if (body == null)
                 {
                     body = characterBody;
                 }
@@ -125,25 +128,66 @@ namespace FortunesFromTheScrapyard
                     }
                 }
 
-                this.step = this.step == 0 ? 0 : 1;
-
+                ScrapyardLog.Debug("Step" + step);
+                this.step = this.step == 0 ? 1 : 0;
+                ScrapyardLog.Debug("Step" + step);
                 this.startSwing = true;
             }
             public void FixedUpdate()
             {
-                if (this.startSwing)
+                if (this.startSwing && this.body)
                 {
                     this.timer += Time.fixedDeltaTime;
 
-                    if(this.timer >= swingDuration / 2f)
+                    if(this.timer >= swingDuration / 2f && !hasFired)
                     {
-                        this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), Util.QuaternionSafeLookRotation(body.inputBank.aimDirection));
+                        Fire();
+
+                        this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), step == 0 ? 
+                            new Quaternion(0.344397992f, -0.607040346f, 0.36263001f, 0.617569029f) : new Quaternion(-0.362630069f, -0.61756891f, -0.344397932f, 0.607040465f));
                     }
 
                     if (this.timer >= swingDuration)
                     {
-                        this.startSwing = false;
+                        Reset();
                     }
+                }
+            }
+
+            private void Fire()
+            {
+                ScrapyardLog.Debug("Running Catattack?");
+                if(Util.HasEffectiveAuthority(body.networkIdentity))
+                {
+                    Ray aimRay;
+                    if (body.inputBank) aimRay = new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection);
+                    else aimRay = new Ray(body.transform.position, body.transform.forward);
+
+                    BulletAttack catAttack = new BulletAttack
+                    {
+                        aimVector = aimRay.direction,
+                        origin = aimRay.origin,
+                        owner = body.gameObject,
+                        weapon = null,
+                        bulletCount = 1,
+                        damage = body.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, body.GetItemCount(ScrapyardContent.Items.RoughReception)),
+                        damageColorIndex = DamageColorIndex.Item,
+                        damageType = DamageType.Generic,
+                        falloffModel = BulletAttack.FalloffModel.None,
+                        force = 400f,
+                        HitEffectNormal = false,
+                        procChainMask = default(ProcChainMask),
+                        procCoefficient = 0.7f,
+                        maxDistance = 12,
+                        radius = 5,
+                        isCrit = body.RollCrit(),
+                        muzzleName = "",
+                        tracerEffectPrefab = null
+                    };
+
+                    catAttack.Fire();
+                    ScrapyardLog.Debug("Fired Catattack?");
+
                 }
             }
             public void OnDisable()

@@ -87,7 +87,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         {
             var cb = characterPrefab.GetComponent<CharacterBody>();
             cb.preferredPodPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod");
-            cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2/Crosshair");
+            cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2Crosshair");
         }
         public override bool IsAvailable(ContentPack contentPack)
         {
@@ -143,11 +143,14 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
             dukeField = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("DukeDamageField");
 
-            dukeField.transform.Find("Sphere").gameObject.GetComponent<MeshRenderer>().material = assetCollection.FindAsset<Material>("matDukeDome");
-            dukeField.transform.Find("ChargeIn").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeChargeIn");
-            dukeField.transform.Find("Core").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeFieldSphere");
-            dukeField.transform.Find("Point Light").gameObject.GetComponent<Light>().color = orange;
-            var fieldMain = dukeField.transform.Find("SoftGlow").gameObject.GetComponent<ParticleSystem>().main;
+            Material[] iHateMaterialSetup = new Material[2];
+            iHateMaterialSetup[0] = dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().sharedMaterials[1];
+            iHateMaterialSetup[1] = assetCollection.FindAsset<Material>("matDukeDome");
+            dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().materials = iHateMaterialSetup;
+            dukeField.transform.Find("AreaIndicator").Find("ChargeIn").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeChargeIn");
+            dukeField.transform.Find("AreaIndicator").Find("Core").gameObject.GetComponent<ParticleSystemRenderer>().material = assetCollection.FindAsset<Material>("matDukeFieldSphere");
+            dukeField.transform.Find("AreaIndicator").Find("Point Light").gameObject.GetComponent<Light>().color = orange;
+            var fieldMain = dukeField.transform.Find("AreaIndicator").Find("SoftGlow").gameObject.GetComponent<ParticleSystem>().main;
             fieldMain.startColor = orange;
 
             BuffWard buffWard = dukeField.GetComponent<BuffWard>();
@@ -157,7 +160,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             buffWard.expireDuration = 5f;
             buffWard.radius = 12f;
 
-            dukeField.GetComponent<SphereCollider>().radius = 25f;
+            dukeField.GetComponent<SphereCollider>().radius = 12f;
 
             UnityEngine.Object.Destroy(dukeField.GetComponent<SlowDownProjectiles>());
 
@@ -287,6 +290,13 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                             effectData.rotation = attackerBody.transform.rotation;
                         }
                         EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/MoveSpeedOnKillActivate"), effectData, transmit: true);
+                        if(attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") && attackerBody.skillLocator.utility)
+                        {
+                            if (attackerBody.skillLocator.utility.skillDef.skillIndex == SkillCatalog.FindSkillIndexByName("Flourish"))
+                            {
+                                attackerBody.skillLocator.utility.RunRecharge(1.5f);
+                            }
+                        }
                     }
 
                     if (!damageInfo.HasModdedDamageType(DukeSharedDamageType) && victimBody.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
@@ -310,12 +320,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                                 body.healthComponent.TakeDamage(dukeSharedDamage);
                             }
                         }
-                    }
-                    
-                    if(attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") && damageInfo.crit && (damageInfo.damageType & DamageType.BonusToLowHealth) != 0 && 
-                        attackerBody.skillLocator.utility.skillDef.skillIndex == SkillCatalog.FindSkillIndexByName("Flourish"))
-                    {
-                        attackerBody.skillLocator.utility.RunRecharge(1.5f);
                     }
                 }
             }

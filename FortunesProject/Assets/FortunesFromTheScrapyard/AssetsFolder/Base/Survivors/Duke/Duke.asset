@@ -18,8 +18,8 @@ MonoBehaviour:
     type: 3}
   unlockableName: 
   unlockableDef: {fileID: 0}
-  displayNameToken: SCRAPYARD_DUKE_BODY_NAME
-  descriptionToken: SCRAPYARD_DUKE_BODY_DESC
+  displayNameToken: SCRAPYARD_DUKE_NAME
+  descriptionToken: SCRAPYARD_DUKE_DESC
   outroFlavorToken: SCRAPYARD_DUKE_OUTRO_FLAVOR
   mainEndingEscapeFailureFlavorToken: SCRAPYARD_DUKE_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
   primaryColor: {r: 0.8301887, g: 0.4758644, b: 0.3485226, a: 1}

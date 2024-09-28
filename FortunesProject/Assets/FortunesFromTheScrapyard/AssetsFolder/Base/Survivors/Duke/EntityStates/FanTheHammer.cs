@@ -59,7 +59,22 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
+            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+            this.procCoefficient = baseProcCoefficient;
+            this.force = baseForce;
+            this.bulletSpread = baseBulletSpread;
+            this.bulletRadius = baseBulletRadius;
+            this.bulletRecoil = (baseBulletRecoil / 4f) / this.attackSpeedStat;
+            this.bulletRange = baseBulletRange;
+            this.selfForce = baseSelfForce;
+            this.freeBullet = false;
+            this.fourthShot = false;
+            this.isCrit = RollCrit();
+            this.falloff = BulletAttack.FalloffModel.DefaultBullet;
+            this.damageType = DamageType.Generic;
+
             this.dukeController = base.gameObject.GetComponent<DukeController>();
+            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
 
             base.OnEnter();
 
@@ -67,10 +82,9 @@ namespace EntityStates.Duke
             if (this.spinInstance) GameObject.Destroy(this.spinInstance);
             this.spinInstance = GameObject.Instantiate(DukeSurvivor.dukePistolSpinEffect);
             this.spinInstance.transform.parent = base.GetModelChildLocator().FindChild("Weapon");
-            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            this.spinInstance.transform.localRotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
             this.spinInstance.transform.localPosition = Vector3.zero;
 
-            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
             this.windupDuration = baseWindupDuration / this.attackSpeedStat;
             this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
@@ -211,11 +225,6 @@ namespace EntityStates.Duke
                         damageType |= DamageType.BonusToLowHealth;
                     }
 
-                    if (freeBullet && skillLocator.primary.stock != 0)
-                    {
-                        skillLocator.primary.stock++;
-                    }
-
                     tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
 
                     this.PlayCrossfade("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f, this.duration * 0.05f);
@@ -224,7 +233,7 @@ namespace EntityStates.Duke
                 }
             }
 
-            if (base.isAuthority && (base.fixedAge >= this.duration || skillLocator.primary.stock == 0))
+            if (base.isAuthority && skillLocator.primary.stock == 0)
             {
                 this.outer.SetNextStateToMain();
             }

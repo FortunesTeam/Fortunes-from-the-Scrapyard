@@ -16,4 +16,7 @@ MonoBehaviour:
   - skillDef: {fileID: 11400000, guid: 73eea3f8e237145448c26d46edcc967a, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}
+  - skillDef: {fileID: 11400000, guid: 0c2bac7cf3f79f44aa1da9e58f7d2ca3, type: 2}
+    unlockableName: 
+    unlockableDef: {fileID: 0}
   defaultVariantIndex: 0

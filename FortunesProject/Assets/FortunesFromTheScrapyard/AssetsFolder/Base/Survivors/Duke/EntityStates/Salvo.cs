@@ -35,7 +35,7 @@ namespace EntityStates.Duke
         private string muzzleString;
         private bool isCrit;
         private float recoil;
-
+        private bool gaveQuickReset;
         private float damageCoefficient;
         private float procCoefficient;
         private float force;
@@ -65,17 +65,18 @@ namespace EntityStates.Duke
 
             base.OnEnter();
 
+            this.shootDuration = baseShootDuration / this.attackSpeedStat;
+            this.duration = baseDuration / this.attackSpeedStat;
+
             base.characterBody.SetAimTimer(2f);
             this.muzzleString = "GunMuzzle";
 
             if (NetworkServer.active && characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
             {
                 freeBullet = true;
+                shootDuration = 0f;
                 characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
             }
-
-            this.shootDuration = baseDuration / this.attackSpeedStat;
-            this.duration = baseDuration / this.attackSpeedStat;
 
             this.isCrit = base.RollCrit();
 
@@ -93,7 +94,7 @@ namespace EntityStates.Duke
                 damageType |= DamageType.BonusToLowHealth;
             }
 
-            if (freeBullet && skillLocator.primary.stock != 0)
+            if (freeBullet)
             {
                 skillLocator.primary.stock++;
             }
@@ -177,6 +178,13 @@ namespace EntityStates.Duke
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+
+            if(characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot) && !gaveQuickReset)
+            {
+                gaveQuickReset = true;
+
+                this.duration /= 2f;
+            }
 
             if (base.fixedAge >= this.shootDuration && !hasFired)
             {

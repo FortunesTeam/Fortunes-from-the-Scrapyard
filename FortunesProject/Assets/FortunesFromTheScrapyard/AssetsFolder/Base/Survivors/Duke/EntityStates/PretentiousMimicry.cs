@@ -35,7 +35,7 @@ namespace EntityStates.Duke
             if(NetworkServer.active)
             {
                 MasterSummon masterSummon = new MasterSummon();
-                masterSummon.masterPrefab = DukeDecoy.DukeDecoyMaster;
+                masterSummon.masterPrefab = FortunesFromTheScrapyard.Characters.DukeDecoy.DukeDecoy.DukeDecoyMaster;
                 masterSummon.masterPrefab.GetComponent<CharacterMaster>().bodyPrefab.GetComponent<DukeDecoyExplosion>().ownerBody = base.characterBody;
                 masterSummon.ignoreTeamMemberLimit = true;  
                 masterSummon.teamIndexOverride = base.teamComponent.teamIndex;

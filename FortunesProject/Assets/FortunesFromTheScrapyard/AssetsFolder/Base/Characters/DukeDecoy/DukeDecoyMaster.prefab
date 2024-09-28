@@ -155,7 +155,7 @@ MonoBehaviour:
   isHealer: 0
   enemyAttention: 0
   aimVectorDampTime: 0.1
-  aimVectorMaxSpeed: 720
+  aimVectorMaxSpeed: 2000
   selectedSkilldriverName: 
   shouldMissFirstOffScreenShot: 0
   forceUpdateEveryFrame: 0

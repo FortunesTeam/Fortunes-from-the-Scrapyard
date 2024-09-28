@@ -13,7 +13,7 @@ namespace EntityStates.Duke
     {
         public float baseDuration = 0.15f;
         public float baseDelayDuration = 0.05f;
-        public GameObject mine = DukeSurvivor.damageShareMine;
+        public static GameObject mine = DukeSurvivor.damageShareMine;
         public DukeController dukeController;
         public override void OnEnter()
         {
