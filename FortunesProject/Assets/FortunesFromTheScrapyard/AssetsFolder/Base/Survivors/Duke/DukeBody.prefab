@@ -521,7 +521,8 @@ MonoBehaviour:
   idleStateMachine:
   - {fileID: 5552001105035297117}
   - {fileID: 2771422973634186725}
-  - {fileID: 7037682913683084371}
+  - {fileID: 2771422973634186725}
+  - {fileID: 2771422973634186725}
   bypassDeathLayerChange: 0
 --- !u!114 &8207897912071779222
 MonoBehaviour:
@@ -555,8 +556,8 @@ MonoBehaviour:
   stateMachines:
   - {fileID: 2795414510184700025}
   - {fileID: 5552001105035297117}
-  - {fileID: 2771422973634186725}
-  - {fileID: 7037682913683084371}
+  - {fileID: 5552001105035297117}
+  - {fileID: 5552001105035297117}
 --- !u!114 &888333844547634483
 MonoBehaviour:
   m_ObjectHideFlags: 0
