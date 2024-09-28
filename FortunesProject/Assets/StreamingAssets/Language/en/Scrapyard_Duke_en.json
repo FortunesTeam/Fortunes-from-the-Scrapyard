@@ -1,23 +1,27 @@
 {
   "strings": {
     "SCRAPYARD_DUKE_NAME": "Duke",
-    "SCRAPYARD_DUKE_SUBTITLE": "Meow",
-    "SCRAPYARD_DUKE_DESC": "",
-    "SCRAPYARD_DUKE_LORE": "",
-    "SCRAPYARD_DUKE_OUTRO_FLAVOR": "Explode.",
-    "SCRAPYARD_DUKE_OUTRO_FAILURE": ".",
+    "SCRAPYARD_DUKE_SUBTITLE": "Pompous Visionary",
+    "SCRAPYARD_DUKE_DESC": "The Duke is a pompous, self-righteous individual of unmatched class and status, who's pride does not allow him to be sullied by the touch of alien vermin.\n\n<!> Be certain to take extra care to line up your empowered shots to maximize the potential of your utility.\n<!> Kinetic Replicator's radii are short- be sure to space out your charges to best utilize it's bonus damage!\n<!> Flourish will prime an empowered shot every time, try to string it with itself for repeated high-damage bursts!\n<!> Use Pretentious Mimicry to create distractions for your enemies. If your hologram is swarmed by monsters, fire at it to give them a surprise!",
+
+    "SCRAPYARD_DUKE_LORE": "The Duke comes from the far reaches of our solar system- a band, or group, or perhaps a race of persons who fall within the order of earthly knights and lords, queens and princesses and princes. Organized and powerful, they rule the outer edge of our star system with extreme prejudice, being sure to fell those who do not bend their knee.",
+
+    "SCRAPYARD_DUKE_OUTRO_FLAVOR": "..And so he left, his worldview anew.",
+    "SCRAPYARD_DUKE_OUTRO_FAILURE": "..And so he vanished, his chivalry left in shambles.",
     "SCRAPYARD_DUKE_STEADYHAND_NAME": "Steady Hand",
-    "SCRAPYARD_DUKE_STEADYHAND_DESC": "4 bullets crit give movespeed.",
+    "SCRAPYARD_DUKE_STEADYHAND_DESC": "Your <style=cIsDamage>bonus attack speed</style> is reduced and partially converted to <style=cIsDamage>bonus damage</style>. Additionally, your <style=cIsHealth>empowered primary skill</style> gives you bonus <style=cIsUtility>movement speed</style> on hit.",
     "SCRAPYARD_DUKE_SALVO_NAME": "Salvo",
-    "SCRAPYARD_DUKE_SALVO_DESC": "pew.",
+    "SCRAPYARD_DUKE_SALVO_DESC": "Slayer. Fire your hand-cannon at enemies for <style=cIsDamage>{0}%</style> damage. Every <style=cIsHealth>fourth shot</style> is a <style=cIsDamage>guaranteed critical strike</style>.",
     "SCRAPYARD_DUKE_KINETIC_NAME": "Kinetic Replicator",
-    "SCRAPYARD_DUKE_KINETIC_DESC": "Take damage dammit.",
+    "SCRAPYARD_DUKE_KINETIC_DESC": "Throw a device that projects a hologram field, making any enemies within it's radius <style=cIsDamage>share {1}% of damage dealt with one-another</style>.",
     "SCRAPYARD_DUKE_FLOURISH_NAME": "Flourish",
-    "SCRAPYARD_DUKE_FLOURISH_DESC": "Yay free bullets.",
-    "SCRAPYARD_DUKE_QUICKSTEP_NAME": "Quickstep",
-    "SCRAPYARD_DUKE_QUICKSTEP_DESC": "Yay free bullets and a reset.",
+    "SCRAPYARD_DUKE_FLOURISH_DESC": "Dash in the direction you are currently moving, <style=cIsDamage>priming the fourth round of your primary</style>. The <style=cIsHealth>fourth shot</style> of your primary additionally reduces the cooldown of Flourish by 2 seconds.",
+    "SCRAPYARD_DUKE_QUICKSTEP_NAME": "Ambush",
+    "SCRAPYARD_DUKE_QUICKSTEP_DESC": "Dash in the direction you are currently moving, <style=cIsDamage>priming the fourth round of your primary</style>. Coming in contact with a monster <style=cIsUtility>stuns them</style> and primes the <style=cIsHealth>fourth shot</style> of your primary.",
     "SCRAPYARD_DUKE_CLONE_NAME": "Pretentious Mimicry",
-    "SCRAPYARD_DUKE_CLONE_DESC": "I made another me."
+    "SCRAPYARD_DUKE_CLONE_DESC": "Create a hologram clone of yourself that automatically <style=cIsDamage>fires your primary skill</style> at nearby enemies. Firing at it with your <style=cIsDamage>primary skill</style> causes it to explode, dealing <style=cIsDamage>500%</style> damage to nearby enemies.",
+    "SCRAPYARD_DUKE_FANHAMMER_NAME": "Liquidate",
+    "SCRAPYARD_DUKE_FANHAMMER_DESC": "Rapidly fan the hammer of your revolver, <style=cIsDamage>shooting until your ammo is empty</style>."
 
   }
 }
