@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: -1881990681, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: Badger
   m_EditorClassIdentifier: 
-  bodyPrefab: {fileID: 4198954566225967297, guid: bb6b72ad057dbf849bbc94019ceb8c0f,
+  bodyPrefab: {fileID: 5199061917333345251, guid: 87fcae53eae291a4a9a6cd80abd8499e,
     type: 3}
-  displayPrefab: {fileID: 1473068748375146248, guid: 500093d431e02f94383a68a5d8c3356b,
+  displayPrefab: {fileID: 3539342407566024497, guid: 28fff445081443b479c636a427fadb84,
     type: 3}
   unlockableName: 
   unlockableDef: {fileID: 0}
-  displayNameToken: SCRAPYARD__TRAPPER_BODY_NAME
-  descriptionToken: SCRAPYARD__TRAPPER_DESCRIPTION
-  outroFlavorToken: SCRAPYARD__TRAPPER_OUTRO_FLAVOR
-  mainEndingEscapeFailureFlavorToken: SCRAPYARD__TRAPPER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
+  displayNameToken: SCRAPYARD__BADGER_BODY_NAME
+  descriptionToken: SCRAPYARD__BADGER_DESCRIPTION
+  outroFlavorToken: SCRAPYARD__BADGER_OUTRO_FLAVOR
+  mainEndingEscapeFailureFlavorToken: SCRAPYARD__BADGER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
   primaryColor: {r: 1, g: 1, b: 1, a: 0}
   desiredSortPosition: 0
   hidden: 0
