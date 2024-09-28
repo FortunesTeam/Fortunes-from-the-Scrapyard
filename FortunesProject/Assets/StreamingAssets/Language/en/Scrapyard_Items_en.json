@@ -52,7 +52,7 @@
     "SCRAPYARD_ITEM_POLYPORE_LORE": "Mmm, mushroong.",
     "SCRAPYARD_ITEM_ROUGHRECEPTION_NAME": "Rough Reception",
     "SCRAPYARD_ITEM_ROUGHRECEPTION_PICKUP": "Primary skills are followed up with a swing.",
-    "SCRAPYARD_ITEM_ROUGHRECEPTION_DESC": "Using your primary causes your <style=cIsDamage>feline friend</style> to swing for <style=cIsDamage>{0}%</style> + <style=cStack>(+{1}% per stack)</style> damage.",
+    "SCRAPYARD_ITEM_ROUGHRECEPTION_DESC": "Using your primary causes your <style=cIsDamage>feline friend</style> to swing for <style=cIsDamage>{0}%</style> <style=cStack>(+{1}% per stack)</style> damage.",
     "SCRAPYARD_ITEM_ROUGHRECEPTION_LORE": "Meow.",
 
   }

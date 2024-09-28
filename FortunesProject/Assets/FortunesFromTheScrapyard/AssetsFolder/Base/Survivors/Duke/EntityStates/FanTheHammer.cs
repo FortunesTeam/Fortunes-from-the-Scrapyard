@@ -59,7 +59,7 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
-            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient * (1f + dukeController.attackSpeedConversion);
             this.procCoefficient = baseProcCoefficient;
             this.force = baseForce;
             this.bulletSpread = baseBulletSpread;
@@ -89,7 +89,10 @@ namespace EntityStates.Duke
             this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
 
-            if(characterBody.GetNotMoving())
+            Animator animator = GetModelAnimator();
+            bool @bool = animator.GetBool("isMoving");
+            bool bool2 = animator.GetBool("isGrounded");
+            if (!@bool && bool2)
             {
                 base.PlayCrossfade("FullBody, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
             }
@@ -113,12 +116,15 @@ namespace EntityStates.Duke
             {
                 //this.dukeController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             }
-
-            if (characterBody.GetNotMoving())
+            /*
+            Animator animator = GetModelAnimator();
+            bool @bool = animator.GetBool("isMoving");
+            bool bool2 = animator.GetBool("isGrounded");
+            if (!@bool && bool2)
             {
                 base.PlayCrossfade("FullBody, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
             }
-            else base.PlayCrossfade("Gesture, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            else */base.PlayCrossfade("Gesture, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
 
             Util.PlaySound(this.shootSoundString, this.gameObject);
 

@@ -43,10 +43,10 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy.Components
                 DamageInfo killDecoy = new DamageInfo();
                 killDecoy.attacker = ownerBody.gameObject;
                 killDecoy.inflictor = null;
-                killDecoy.damage = decoyBody.healthComponent.fullCombinedHealth;
+                killDecoy.damage = decoyBody.healthComponent.fullCombinedHealth * 2f;
                 killDecoy.procCoefficient = 0f;
                 killDecoy.crit = false;
-                killDecoy.damageType = DamageType.Silent;
+                killDecoy.damageType = DamageType.Silent | DamageType.BypassArmor | DamageType.BypassBlock | DamageType.BypassOneShotProtection;
                 killDecoy.damageColorIndex = DamageColorIndex.Default;
                 killDecoy.force = Vector3.zero;
                 killDecoy.position = decoyBody.corePosition;

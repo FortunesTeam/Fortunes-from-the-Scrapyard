@@ -31,6 +31,8 @@ namespace FortunesFromTheScrapyard.Elite
         public static GameObject ScrapExplosionEffect;
         public static GameObject ScrapDefenseMatrix;
         public static GameObject ScrapLaser;
+
+        public static Xoroshiro128Plus syntheticRng = new Xoroshiro128Plus(0uL);
         public override bool Execute(EquipmentSlot slot)
         {
             return false;
@@ -201,7 +203,7 @@ namespace FortunesFromTheScrapyard.Elite
             }
             private void OnEnable()
             {
-                rng = new Xoroshiro128Plus(Run.instance.seed ^ (ulong)Run.instance.stageClearCount);
+                rng = new Xoroshiro128Plus(syntheticRng.nextUlong);
 
                 Util.PlaySound("sfx_scrap_elite_spawn", base.gameObject);
 
@@ -236,7 +238,7 @@ namespace FortunesFromTheScrapyard.Elite
                     //displayAttachment.AttachToGameObjectAndSpawn(CharacterBody.gameObject);
                 }
 
-                if (chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
+                if (NetworkServer.active && chosenEquipmentIndex == RoR2Content.Equipment.QuestVolatileBattery.equipmentIndex)
                 {
                     batteryAttachment = UnityEngine.Object.Instantiate(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/QuestVolatileBatteryAttachment")).GetComponent<NetworkedBodyAttachment>();
                     batteryAttachment.AttachToGameObjectAndSpawn(characterBody.gameObject);

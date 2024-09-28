@@ -47,7 +47,10 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             ModifyPrefab();
 
-
+            if(ScrapyardMain.emotesInstalled)
+            {
+                Emotes();
+            }
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -74,6 +77,35 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamageProcess);
 
         }
+
+        private void Emotes()
+        {
+            On.RoR2.SurvivorCatalog.Init += (orig) =>
+            {
+                orig();
+                var skele = ScrapyardAssets.GetAssetBundle(ScrapyardBundle.Indev).LoadAsset<GameObject>("badger_emoteskeleton");
+                CustomEmotesAPI.ImportArmature(this.characterPrefab, skele);
+            };
+            CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;
+        }
+        private void CustomEmotesAPI_animChanged(string newAnimation, BoneMapper mapper)
+        {
+            if (newAnimation != "none")
+            {
+                if (mapper.transform.name == "badger_emoteskeleton")
+                {
+                    mapper.transform.parent.Find("meshGun").gameObject.SetActive(value: false);
+                }
+            }
+            else
+            {
+                if (mapper.transform.name == "badger_emoteskeleton")
+                {
+                    mapper.transform.parent.Find("meshGun").gameObject.SetActive(value: true);
+                }
+            }
+        }
+
         #region projectiles
         private static void CreateProjectiles()
         {
@@ -97,7 +129,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(diskPrefab);
 
             soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone", false);
-
+            if (!soundScape.GetComponent<NetworkIdentity>()) soundScape.AddComponent<NetworkIdentity>();
             BuffWard buffWard = soundScape.GetComponent<BuffWard>();
             buffWard.radius = 2.5f;
             buffWard.interval = 0.01f;
@@ -111,6 +143,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
 
             soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("soundBuffProjectile", false);
+            if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
 
             ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();
             overlapAttack.damageCoefficient = 0f;

@@ -31,7 +31,7 @@ namespace EntityStates.Badger
 
         public override void OnEnter()
         {
-            this.PlayAnimation("Gesture, Override", "Explode", "Shoot.playbackRate", 2.5f);
+            this.PlayCrossfade("Gesture, Override", "Explode", 0.05f);
 
             BlastAttack blastAttack = new BlastAttack();
             {

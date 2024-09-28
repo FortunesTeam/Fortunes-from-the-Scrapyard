@@ -16,13 +16,13 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_BADGER_SPECIAL_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_SPECIAL_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cf35172e42afc214d9da51ff960d79ee, type: 3}
   activationStateMachineName: Weapon
   activationState:
     _typeName: EntityStates.Badger.SoundScape, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  interruptPriority: 1
-  baseRechargeInterval: 17
+  interruptPriority: 2
+  baseRechargeInterval: 12
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

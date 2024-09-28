@@ -21,7 +21,7 @@ namespace EntityStates.Badger
         public override void OnEnter()
         {
 
-            this.PlayAnimation("Gesture, Override", "BeatDrop", "Shoot.playbackRate", 2.5f);
+            this.PlayCrossfade("Gesture, Override", "BeatDrop", 0.05f);
 
             if (base.isAuthority)
             {

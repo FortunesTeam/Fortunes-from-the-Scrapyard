@@ -18,10 +18,10 @@ MonoBehaviour:
     type: 3}
   unlockableName: 
   unlockableDef: {fileID: 0}
-  displayNameToken: SCRAPYARD__BADGER_BODY_NAME
-  descriptionToken: SCRAPYARD__BADGER_DESCRIPTION
-  outroFlavorToken: SCRAPYARD__BADGER_OUTRO_FLAVOR
-  mainEndingEscapeFailureFlavorToken: SCRAPYARD__BADGER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
-  primaryColor: {r: 1, g: 1, b: 1, a: 0}
-  desiredSortPosition: 0
+  displayNameToken: SCRAPYARD_BADGER_BODY_NAME
+  descriptionToken: SCRAPYARD_BADGER_DESCRIPTION
+  outroFlavorToken: SCRAPYARD_BADGER_OUTRO_FLAVOR
+  mainEndingEscapeFailureFlavorToken: SCRAPYARD_BADGER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR
+  primaryColor: {r: 0.631604, g: 0.8113208, b: 0.5855287, a: 0}
+  desiredSortPosition: 20
   hidden: 0

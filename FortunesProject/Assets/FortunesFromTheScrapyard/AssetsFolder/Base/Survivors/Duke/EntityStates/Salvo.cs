@@ -54,7 +54,7 @@ namespace EntityStates.Duke
         public override void OnEnter()
         {
             this.dukeController = base.gameObject.GetComponent<DukeController>();
-            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient * (1f + dukeController.attackSpeedConversion);
             this.procCoefficient = baseProcCoefficient;
             this.force = baseForce;
             this.bulletSpread = baseBulletSpread;
@@ -74,7 +74,7 @@ namespace EntityStates.Duke
             if (NetworkServer.active && characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
             {
                 freeBullet = true;
-                windupDuration = 0f;
+                windupDuration /= 4f;
                 characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
             }
 
@@ -100,17 +100,21 @@ namespace EntityStates.Duke
             }
 
             tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
-
-            if (characterBody.GetNotMoving())
+            /*
+            Animator animator = GetModelAnimator();
+            bool @bool = animator.GetBool("isMoving");
+            bool bool2 = animator.GetBool("isGrounded");
+            if (!@bool && bool2)
             {
                 if (this.isCrit) this.PlayCrossfade("Fullbody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
                 else this.PlayCrossfade("Fullbody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
             }
             else
             { 
+                */
                 if (this.isCrit) this.PlayCrossfade("Gesture, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
                 else this.PlayCrossfade("Gesture, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-            }
+            //}
         }
 
         public override void OnExit()
@@ -192,7 +196,7 @@ namespace EntityStates.Duke
             {
                 this.gaveQuickReset = true;
 
-                this.duration /= 2f;
+                this.duration -= this.duration / 1.5f;
             }
 
             if (base.fixedAge >= this.windupDuration && !hasFired)

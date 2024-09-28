@@ -36,7 +36,7 @@ namespace EntityStates.Badger
 
             base.projectilePitchBonus = -3.5f;
 
-            this.PlayAnimation("Gesture, Override", "DiskThrow", "Shoot.playbackRate", 2.5f);
+            this.PlayCrossfade("Gesture, Override", "DiskThrow", "Utility.playbackRate", duration * 5f, 0.05f);
 
             base.OnEnter();
         }

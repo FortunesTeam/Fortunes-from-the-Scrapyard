@@ -25,20 +25,20 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
     public class DukeSurvivor : ScrapyardSurvivor
     {
         //Values
-        public const string SALVOTOKEN = "SCRAPYARD_SURVIVOR_DUKE_SALVO_DESC";
-        public const string MINETOKEN = "SCRAPYARD_SURVIVOR_DUKE_KINETIC_DESC";
-        public const string CLONETOKEN = "SCRAPYARD_SURVIVOR_DUKE_CLONE_DESC";
+        public const string SALVOTOKEN = "SCRAPYARD_DUKE_SALVO_DESC";
+        public const string MINETOKEN = "SCRAPYARD_DUKE_KINETIC_DESC";
+        public const string CLONETOKEN = "SCRAPYARD_DUKE_CLONE_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float baseSalvoDamageCoefficient = 4f;
+        public static float baseSalvoDamageCoefficient = 3.5f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
-        [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        [FormatToken(MINETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         internal static float damageShareCoefficient = 0.35f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
-        [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float baseCloneDamageCoefficient = 5f;
 
         public static DamageAPI.ModdedDamageType DukeFourthShot;
@@ -127,6 +127,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         private void CreateProjectiles()
         {
             damageShareMine = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAlt.prefab").WaitForCompletion().InstantiateClone("DukeDamageShareMine");
+            if(!damageShareMine.GetComponent<NetworkIdentity>()) damageShareMine.AddComponent<NetworkIdentity>();
 
             damageShareMine.GetComponent<ProjectileController>().ghostPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineGhostReskinColossus.prefab").WaitForCompletion().InstantiateClone("DukeMineGhost");
 
@@ -158,9 +159,9 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             buffWard.buffDef = ScrapyardContent.Buffs.bdDukeDamageShare;
             buffWard.interval = 0.01f;
             buffWard.expireDuration = 5f;
-            buffWard.radius = 12f;
+            buffWard.radius = 15f;
 
-            dukeField.GetComponent<SphereCollider>().radius = 12f;
+            dukeField.GetComponent<SphereCollider>().radius = 15f;
 
             UnityEngine.Object.Destroy(dukeField.GetComponent<SlowDownProjectiles>());
 
@@ -202,17 +203,24 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                     self.moveSpeed += 0.25f * self.GetBuffCount(ScrapyardContent.Buffs.bdDukeSpeedBuff);
                 }
 
-                if (self.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") || self.bodyIndex == BodyCatalog.FindBodyIndex("DukeDecoyBody"))
+                if (self.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody"))
                 {
                     DukeController dukeController = self.GetComponent<DukeController>();
                     if (dukeController != null)
                     {
                         float baseAttackSpeed = self.baseAttackSpeed + (self.levelAttackSpeed * self.level);
-                        float baseDamage = self.baseDamage + (self.baseDamage * self.level);
-                        float newDamage = self.damage * ((self.attackSpeed - baseAttackSpeed) * 0.7f);
-                        self.damage += newDamage;
+                        //float baseDamage = self.baseDamage + (self.baseDamage * self.level);
+                        //float newDamage = self.damage * ((self.attackSpeed - baseAttackSpeed) * 0.7f);
+                        //self.damage += newDamage;
+                        dukeController.attackSpeedConversion = (self.attackSpeed - baseAttackSpeed) * 0.7f;
                         self.attackSpeed = (self.attackSpeed - baseAttackSpeed) * 0.3f + baseAttackSpeed;
                     }
+                }
+
+                if(self.bodyIndex == BodyCatalog.FindBodyIndex("DukeDecoyBody"))
+                {
+                    float baseAttackSpeed = self.baseAttackSpeed + (self.levelAttackSpeed * self.level);
+                    self.attackSpeed = (self.attackSpeed - baseAttackSpeed) * 0.3f + baseAttackSpeed;
                 }
             }
         }

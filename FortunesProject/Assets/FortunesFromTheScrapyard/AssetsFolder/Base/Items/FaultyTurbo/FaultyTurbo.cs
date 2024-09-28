@@ -75,7 +75,7 @@ namespace FortunesFromTheScrapyard.Items
                 }
                 else if(body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo)) timer -= Time.fixedDeltaTime;
 
-                if (timer >= checkInterval && !atMaxStacks)
+                if (timer >= checkInterval && !atMaxStacks && base.body.isSprinting)
                 {
                     timer = 0f;
                     if(NetworkServer.active)
@@ -85,7 +85,7 @@ namespace FortunesFromTheScrapyard.Items
 
                     Util.PlaySound("sfx_turbo_start", base.gameObject);
                 }
-                else if(timer < 0f && body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo))
+                else if(timer < 0f && body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo) && !base.body.isSprinting)
                 {
                     timer = checkInterval / 2f;
                     body.RemoveBuff(ScrapyardContent.Buffs.bdFaultyTurbo);

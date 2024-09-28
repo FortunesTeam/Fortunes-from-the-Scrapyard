@@ -11,7 +11,7 @@ namespace EntityStates.Duke
 {
     public class KineticReplicator : GenericProjectileBaseState
     {
-        public float baseDuration = 0.15f;
+        public float baseDuration = 0.5f;
         public float baseDelayDuration = 0.05f;
         public static GameObject mine = DukeSurvivor.damageShareMine;
         public DukeController dukeController;
@@ -57,7 +57,7 @@ namespace EntityStates.Duke
         {
             if (base.GetModelAnimator())
             {
-                this.PlayCrossfade("LeftArm, Override", "ThrowKinetic", "Secondary.playbackRate", this.duration, this.duration * 0.05f);
+                this.PlayCrossfade("LeftArm, Override", "ThrowKinetic", "Secondary.playbackRate", this.duration * 2f, this.duration * 0.05f);
             }
         }
     }

@@ -112,9 +112,9 @@ namespace EntityStates.Duke
         }
         public override void AuthorityModifyOverlapAttack(OverlapAttack overlapAttack)
         {
-            base.AuthorityModifyOverlapAttack(overlapAttack);
             overlapAttack.damageType = DamageType.Stun1s;
             overlapAttack.damage = damageCoefficient * damageStat;
+            base.AuthorityModifyOverlapAttack(overlapAttack);
         }
         public override void AuthorityFixedUpdate()
         {

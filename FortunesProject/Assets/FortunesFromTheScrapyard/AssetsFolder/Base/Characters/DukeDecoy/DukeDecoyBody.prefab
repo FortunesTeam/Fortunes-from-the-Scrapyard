@@ -187,8 +187,8 @@ MonoBehaviour:
     i13: 0
     i14: 0
     i15: 0
-  m_ServerOnly: 1
-  m_LocalPlayerAuthority: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &4584433041002638788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,22 +214,22 @@ MonoBehaviour:
   lavaCooldown: 0.2
   rootMotionInMainState: 0
   mainRootSpeed: 0
-  baseMaxHealth: 65
-  baseRegen: 1
+  baseMaxHealth: 110
+  baseRegen: -6
   baseMaxShield: 0
-  baseMoveSpeed: 7
-  baseAcceleration: 80
+  baseMoveSpeed: 0
+  baseAcceleration: 0
   baseJumpPower: 0
   baseDamage: 6
   baseAttackSpeed: 1
   baseCrit: 1
   baseArmor: 0
   baseVisionDistance: Infinity
-  baseJumpCount: 1
+  baseJumpCount: 0
   sprintingSpeedMultiplier: 0
   autoCalculateLevelStats: 1
-  levelMaxHealth: 20
-  levelRegen: 0.2
+  levelMaxHealth: 33
+  levelRegen: -1.2
   levelMaxShield: 0
   levelMoveSpeed: 0
   levelJumpPower: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_BADGER_PRIMARY_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_PRIMARY_DESC
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6fcca991a38cf744ebd0d81adaa17a42, type: 3}
   activationStateMachineName: Weapon
   activationState:
     _typeName: EntityStates.Badger.BadgerFireAR, FortunesFromTheScrapyard, Version=0.0.0.0,

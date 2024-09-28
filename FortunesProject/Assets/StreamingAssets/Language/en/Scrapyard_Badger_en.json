@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "SCRAPYARD_BADGER_NAME": "Pacer",
+    "SCRAPYARD_BADGER_SUBTITLE": "Crowd Controller",
+    "SCRAPYARD_BADGER_DESC": "Badger.<color=#CCD3E0>\n\n< ! > Badger.\n\n< ! > Badger.\n\n< ! > Badger.\n\n< ! > Badger.</color>",
+
+    "SCRAPYARD_BADGER_LORE": "The Solaris Voyager isn’t the nicest of ships, but it's the one assigned to us. Come to think of it, it’s been ours for some time, a few missions at least. V.E.G.A. always does well with long    travel, but the radars seem to be failing this time around… must be its age (but don’t let her hear that). It’s a slow trek to the green planet, nothing but debris around it. V.E.G.A. seems uneasy the closer we approach, asking her about it gets us nowhere… her pep is gone.\n\n
+
+The alarms begin to blare, red color sparking from monitors and random lights I’ve never seen. Is the Solaris struggling with the atmosphere? We try to keep calm, but the drop pods begin to activate. Why? V.E.G.A. fails to respond, it’s now or never. We’re sorry, we did not want to leave you like this.\n\n
+
+I'm afraid to look outside, but I catch a glance of two more pods. Everyone made it out. A barrage of smaller pods follow: they’re thin, long, they don’t house life, but they may be our way out. One strikes one of our pods, I see it picking up speed as we fall down. I look up at the Solaris staying behind, why won’t it fall too? The window becomes blurred by the streaks of entry. Time to brace for impact.\n\n
+
+I miss my dogs.
+",
+
+    "SCRAPYARD_BADGER_OUTRO_FLAVOR": "..And so he left, moving forward one step at a time.",
+    "SCRAPYARD_BADGER_OUTRO_FAILURE": "..And so he vanished, his beats falling on deaf ears.",
+  }
+}

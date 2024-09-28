@@ -344,6 +344,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ad157a943635f5044b598e1fca3ebdd6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
+--- !u!4 &788700136771219195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -690783377428095863, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8979015154908508786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &1371459169455701191 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8039972537245912757, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
@@ -353,6 +359,12 @@ SkinnedMeshRenderer:
 --- !u!4 &1654220577952205613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1553981100889458337, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8979015154908508786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2770424512646325781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6550864850413294695, guid: 530b969b3dd7ddd4d8cd40252cd048cc,
     type: 3}
   m_PrefabInstance: {fileID: 8979015154908508786}
   m_PrefabAsset: {fileID: 0}
@@ -654,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-  itemDisplayRuleSet: {fileID: 11400000, guid: a10c415661a4de342847c1a6e527dc4b, type: 2}
+  itemDisplayRuleSet: {fileID: 0}
   autoPopulateLightInfos: 1
   gameObjectActivationTransforms: []
   baseRendererInfos:
@@ -712,6 +724,10 @@ MonoBehaviour:
     transform: {fileID: 3775177841845163916}
   - name: Weapon
     transform: {fileID: 4731533321918020924}
+  - name: FootR
+    transform: {fileID: 788700136771219195}
+  - name: FootL
+    transform: {fileID: 2770424512646325781}
 --- !u!114 &4374098992613101900
 MonoBehaviour:
   m_ObjectHideFlags: 0

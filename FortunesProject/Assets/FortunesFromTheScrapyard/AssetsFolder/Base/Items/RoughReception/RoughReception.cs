@@ -128,9 +128,9 @@ namespace FortunesFromTheScrapyard
                     }
                 }
 
-                ScrapyardLog.Debug("Step" + step);
+                //ScrapyardLog.Debug("Step" + step);
                 this.step = this.step == 0 ? 1 : 0;
-                ScrapyardLog.Debug("Step" + step);
+                //ScrapyardLog.Debug("Step" + step);
                 this.startSwing = true;
             }
             public void FixedUpdate()
@@ -144,7 +144,7 @@ namespace FortunesFromTheScrapyard
                         Fire();
 
                         this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), step == 0 ? 
-                            new Quaternion(0.344397992f, -0.607040346f, 0.36263001f, 0.617569029f) : new Quaternion(-0.362630069f, -0.61756891f, -0.344397932f, 0.607040465f));
+                            new Quaternion(0f,0f, 0f, 0f) : new Quaternion(0f, 0f, 0f, 0f));
                     }
 
                     if (this.timer >= swingDuration)
@@ -156,7 +156,7 @@ namespace FortunesFromTheScrapyard
 
             private void Fire()
             {
-                ScrapyardLog.Debug("Running Catattack?");
+                //ScrapyardLog.Debug("Running Catattack?");
                 if(Util.HasEffectiveAuthority(body.networkIdentity))
                 {
                     Ray aimRay;
@@ -186,7 +186,9 @@ namespace FortunesFromTheScrapyard
                     };
 
                     catAttack.Fire();
-                    ScrapyardLog.Debug("Fired Catattack?");
+
+                    hasFired = true;
+                    //ScrapyardLog.Debug("Fired Catattack?");
 
                 }
             }

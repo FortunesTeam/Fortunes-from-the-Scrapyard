@@ -16,13 +16,13 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_BADGER_SECONDARY_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_SECONDARY_DESC
   keywordTokens: []
-  icon: {fileID: 0}
-  activationStateMachineName: Weapon
+  icon: {fileID: 21300000, guid: 4f1f9f506ab4c464fb26696d21a8e63d, type: 3}
+  activationStateMachineName: Weapon2
   activationState:
     _typeName: EntityStates.Badger.Explode, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
-  baseRechargeInterval: 5
+  baseRechargeInterval: 4
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

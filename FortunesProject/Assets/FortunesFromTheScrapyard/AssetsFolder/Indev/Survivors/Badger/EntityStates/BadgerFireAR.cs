@@ -17,9 +17,9 @@ namespace EntityStates.Badger
     {
         public static float damageCoefficient = 0.8f;
         public static float procCoefficient = 0.7f;
-        public static float baseDuration = 0.5f; // was 0.1
+        public static float baseDuration = 0.2f; // was 0.1
         public static float force = 200f;
-        public static float recoil = 2.4f; // was 0.5f
+        public static float recoil = 1.2f; // was 0.5f
         public static float range = 2000f;
         public static GameObject tracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");
         public static GameObject critTracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCaptainShotgun");
@@ -49,12 +49,14 @@ namespace EntityStates.Badger
             this.hasFired = true;
             this.Fire();
 
-            this.PlayAnimation("Gesture, Override", "FireAR", "Shoot.playbackRate", this.duration * 2.5f);
+            this.PlayCrossfade("Gesture, Override", "FireAR", "Primary.playbackRate", this.duration * 5f, this.duration * 0.05f);
         }
 
         public override void OnExit()
         {
             base.OnExit();
+
+            this.PlayCrossfade("Gesture, Override", "PrimaryIdle", "Primary.playbackRate", this.duration, this.duration * 0.05f);
         }
 
         private void Fire()

@@ -23,7 +23,7 @@ MonoBehaviour:
   rendererInfos:
   - renderer: {fileID: 1371459169455701191, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
-    defaultMaterial: {fileID: 2100000, guid: cdad64a16c4217345992352ca4666f1b, type: 2}
+    defaultMaterial: {fileID: 2100000, guid: ad157a943635f5044b598e1fca3ebdd6, type: 2}
     defaultShadowCastingMode: 0
     ignoreOverlays: 0
     hideOnDeath: 0
