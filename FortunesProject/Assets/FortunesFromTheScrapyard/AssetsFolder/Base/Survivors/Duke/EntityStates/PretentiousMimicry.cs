@@ -15,7 +15,7 @@ namespace EntityStates.Duke
             dukeController = base.gameObject.GetComponent<DukeController>();
             base.OnEnter();
 
-            base.PlayCrossfade("Gesture, Override", "Special", 0.05f);
+            base.PlayCrossfade("Gesture, Override", "DeployDecoy", 0.05f);
 
             Fire();
         }

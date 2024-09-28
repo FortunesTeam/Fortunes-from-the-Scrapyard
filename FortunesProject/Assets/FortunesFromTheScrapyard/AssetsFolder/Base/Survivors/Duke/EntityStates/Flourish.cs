@@ -13,10 +13,6 @@ namespace EntityStates.Duke
     public class Flourish : BaseSkillState
     {
         private float baseDuration = 0.15f;
-
-        private static int QuickStepExitStateHash = Animator.StringToHash("QuickstepLoopExit");
-
-        private static int QuickStepLoopStateHash = Animator.StringToHash("QuickstepLoop");
         GameObject selfOnHitOverlayEffectPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercDashHitOverlay.prefab").WaitForCompletion();
         public float speedCoefficient = 10f;
 
@@ -61,7 +57,7 @@ namespace EntityStates.Duke
             anim.SetFloat("dashR", num2);
             this.slideRotation = Quaternion.LookRotation(this.dashVector, this.characterDirection.forward);
 
-            base.PlayCrossfade("FullBody, Override", "QuickStep", 0.1f);
+            base.PlayCrossfade("FullBody, Override", "Dash", 0.1f);
 
             if (BrotherMonster.BaseSlideState.slideEffectPrefab && base.characterBody)
             {
@@ -124,7 +120,7 @@ namespace EntityStates.Duke
                 base.characterBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeFreeShot, 5f);
             }
 
-            PlayAnimation("FullBody, Override", QuickStepExitStateHash);
+            PlayAnimation("FullBody, Override", "BufferEmpty");
 
             base.gameObject.layer = LayerIndex.defaultLayer.intVal;
             base.characterMotor.Motor.RebuildCollidableLayers();
