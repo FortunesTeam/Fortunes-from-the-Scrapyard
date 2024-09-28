@@ -16,7 +16,7 @@ namespace EntityStates.Badger
     public class BadgerFireAR : BaseSkillState
     {
         public static float damageCoefficient = 0.8f;
-        public static float procCoefficient = 0.7f;
+        public static float procCoefficient = 1f;
         public static float baseDuration = 0.2f; // was 0.1
         public static float force = 200f;
         public static float recoil = 1.2f; // was 0.5f

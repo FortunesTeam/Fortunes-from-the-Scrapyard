@@ -146,7 +146,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
 
             ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();
-            overlapAttack.damageCoefficient = 0f;
+            overlapAttack.damageCoefficient = 1f;
             overlapAttack.impactEffect = null;
 
             ProjectileSingleTargetImpact singleTargetImpact = soundWave.GetComponent<ProjectileSingleTargetImpact>();

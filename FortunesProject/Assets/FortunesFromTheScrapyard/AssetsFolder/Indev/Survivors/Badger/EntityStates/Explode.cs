@@ -19,7 +19,7 @@ namespace EntityStates.Badger
 
         public static float blastProcCoefficient = 1f;
 
-        public static float blastDamageCoefficient = 1.7f;
+        public static float blastDamageCoefficient = 3.5f;
 
         public static float blastForce = 2000f;
 

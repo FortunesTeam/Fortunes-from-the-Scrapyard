@@ -18,6 +18,7 @@ namespace EntityStates.Badger
         private float timer = 0f;
 
         private GameObject soundWave = BadgerSurvivor.soundWave;
+        private static float baseSoundWaveDamageCoefficient = 6f;
         public override void OnEnter()
         {
 
@@ -33,7 +34,7 @@ namespace EntityStates.Badger
                     position = aimRay.origin,
                     rotation = Util.QuaternionSafeLookRotation(aimRay.direction),
                     owner = base.gameObject,
-                    damage = this.damageStat,
+                    damage = this.damageStat * baseSoundWaveDamageCoefficient,
                     force = 0f,
                     crit = base.RollCrit(),
                     

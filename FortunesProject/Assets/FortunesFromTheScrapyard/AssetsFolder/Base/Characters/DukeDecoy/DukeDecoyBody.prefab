@@ -188,7 +188,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_LocalPlayerAuthority: 0
 --- !u!114 &4584433041002638788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   inLava: 0
   baseNameToken: SCRAPYARD_DUKEDECOY_BODY_NAME
   subtitleNameToken: SCRAPYARD_DUKEDECOY_BODY_SUBTITLE
-  bodyFlags: 16
+  bodyFlags: 0
   lavaCooldown: 0.2
   rootMotionInMainState: 0
   mainRootSpeed: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   _defaultCrosshairPrefab: {fileID: 0}
   hideCrosshair: 0
   increasePrimaryDamageEffectUpdater: {fileID: 0}
-  protectFromOneShot: 1
+  protectFromOneShot: 0
   hasTeleported: 0
   runicLensMeteorReady: 0
   aimOriginTransform: {fileID: 6516505876001641166}
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6415622932436946676}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499961fad3ca41743ae041f46dc5d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeedConversion: 0
 --- !u!114 &6906708275865328082
 MonoBehaviour:
   m_ObjectHideFlags: 0
