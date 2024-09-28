@@ -12,16 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: ThrowDiskSkillDef
   m_EditorClassIdentifier: 
-  skillName: sdBadgerUtility
+  skillName: StunDisk
   skillNameToken: SCRAPYARD_BADGER_UTILITY_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_UTILITY_DESC
   keywordTokens: []
   icon: {fileID: 0}
-<<<<<<< Updated upstream
-  activationStateMachineName: Body
-=======
   activationStateMachineName: Weapon
->>>>>>> Stashed changes
   activationState:
     _typeName: EntityStates.Badger.ThrowDisk, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

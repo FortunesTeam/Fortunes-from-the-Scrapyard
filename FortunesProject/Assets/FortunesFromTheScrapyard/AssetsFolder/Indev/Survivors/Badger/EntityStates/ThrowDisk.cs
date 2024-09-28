@@ -18,7 +18,7 @@ namespace EntityStates.Badger
     {
         public static float baseDuration = 0.2f;
         public static float baseDelayDuration = 0.3f * baseDuration;
-        public static float diskDamageCoefficent = 3f;
+        public static float diskDamageCoefficent = 2f;
         public GameObject disk = BadgerSurvivor.diskPrefab;
         public BadgerController interrogatorController;
         private ChildLocator childLocator;
@@ -35,6 +35,8 @@ namespace EntityStates.Badger
             base.force = 0f;
 
             base.projectilePitchBonus = -3.5f;
+
+            this.PlayAnimation("Gesture, Override", "DiskThrow", "Shoot.playbackRate", 2.5f);
 
             base.OnEnter();
         }

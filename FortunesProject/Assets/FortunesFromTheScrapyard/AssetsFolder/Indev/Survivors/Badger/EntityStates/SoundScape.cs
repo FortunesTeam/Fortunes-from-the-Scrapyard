@@ -21,6 +21,8 @@ namespace EntityStates.Badger
         public override void OnEnter()
         {
 
+            this.PlayAnimation("Gesture, Override", "BeatDrop", "Shoot.playbackRate", 2.5f);
+
             if (base.isAuthority)
             {
                 Ray aimRay = base.GetAimRay();

@@ -45,7 +45,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             BadgerExplode = DamageAPI.ReserveDamageType();
 
-            // ModifyPrefab();
+            ModifyPrefab();
 
 
         }
@@ -134,50 +134,6 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
         #endregion
 
-
-        private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
-        {
-            if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
-            {
-                CharacterBody victimBody = self.body;
-                CharacterMotor victimMotor = null;
-                CharacterBody attackerBody = null;
-
-                if (self.body.characterMotor)
-                {
-                    victimMotor = self.body.characterMotor;
-                }
-
-                if (damageInfo.attacker)
-                {
-                    attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
-                }
-
-                if (damageInfo.damage > 0 && !damageInfo.rejected && victimBody && attackerBody)
-                {
-                    if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.baseNameToken == "FORTUNES_BADGER_NAME")
-                    {
-                        if (!victimBody.isBoss && !victimBody.isChampion && victimBody.baseNameToken != "GOLEM_BODY_NAME" && victimMotor.velocity.magnitude <= 0)
-                        {
-                            damageInfo.damage *= 2f;
-                        }
-                        else if (victimBody.moveSpeed <= victimBody.baseMoveSpeed)
-                        {
-                            float failSafeMoveSpeed = victimBody.moveSpeed;
-
-                            if (failSafeMoveSpeed < 0) failSafeMoveSpeed = 0;
-
-                            float calc = 1 - (failSafeMoveSpeed / (victimBody.baseMoveSpeed + victimBody.levelMoveSpeed * victimBody.level));
-
-                            damageInfo.damage *= Util.Remap(calc, 0, 1, 1, 2);
-                        }
-                    }
-                }
-            }
-
-            orig.Invoke(self, damageInfo);
-        }
-
         private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
         {
             orig(self);
@@ -190,7 +146,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
                     self.attackSpeed *= 1.35f;
                 }
 
-                if (self.HasBuff(ScrapyardContent.Buffs.bdBadgerSoundBuff))
+                if (self.HasBuff(ScrapyardContent.Buffs.bdBadgerSlowBuff))
                 {
                     self.moveSpeed *= 0.5f;
                 }

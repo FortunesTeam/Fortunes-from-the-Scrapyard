@@ -12,32 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: FireARSkillDef
   m_EditorClassIdentifier: 
-  skillName: sdBadgerPrimary
+  skillName: SteadyFire
   skillNameToken: SCRAPYARD_BADGER_PRIMARY_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_PRIMARY_DESC
   keywordTokens: []
   icon: {fileID: 0}
-<<<<<<< Updated upstream
-  activationStateMachineName: Body
-  activationState:
-    _typeName: EntityStates.Uninitialized, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-=======
   activationStateMachineName: Weapon
   activationState:
     _typeName: EntityStates.Badger.BadgerFireAR, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
->>>>>>> Stashed changes
   interruptPriority: 1
   baseRechargeInterval: 1
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1
-<<<<<<< Updated upstream
-  stockToConsume: 1
-=======
   stockToConsume: 0
->>>>>>> Stashed changes
   attackSpeedBuffsRestockSpeed: 0
   attackSpeedBuffsRestockSpeed_Multiplier: 1
   resetCooldownTimerOnUse: 0

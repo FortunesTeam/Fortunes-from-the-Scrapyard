@@ -12,25 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: SoundWaveSkillDef
   m_EditorClassIdentifier: 
-  skillName: sdBadgerSpecial
+  skillName: SoundScape
   skillNameToken: SCRAPYARD_BADGER_SPECIAL_NAME
   skillDescriptionToken: SCRAPYARD_BADGER_SPECIAL_DESC
   keywordTokens: []
   icon: {fileID: 0}
-<<<<<<< Updated upstream
-  activationStateMachineName: Body
-=======
   activationStateMachineName: Weapon
->>>>>>> Stashed changes
   activationState:
     _typeName: EntityStates.Badger.SoundScape, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
-<<<<<<< Updated upstream
-  baseRechargeInterval: 20
-=======
   baseRechargeInterval: 17
->>>>>>> Stashed changes
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

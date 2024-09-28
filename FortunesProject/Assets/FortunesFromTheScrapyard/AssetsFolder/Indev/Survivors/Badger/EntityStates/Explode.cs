@@ -19,7 +19,7 @@ namespace EntityStates.Badger
 
         public static float blastProcCoefficient = 1f;
 
-        public static float blastDamageCoefficient = 3f;
+        public static float blastDamageCoefficient = 1.7f;
 
         public static float blastForce = 2000f;
 
@@ -31,6 +31,8 @@ namespace EntityStates.Badger
 
         public override void OnEnter()
         {
+            this.PlayAnimation("Gesture, Override", "Explode", "Shoot.playbackRate", 2.5f);
+
             BlastAttack blastAttack = new BlastAttack();
             {
                 blastAttack.attacker = base.gameObject;

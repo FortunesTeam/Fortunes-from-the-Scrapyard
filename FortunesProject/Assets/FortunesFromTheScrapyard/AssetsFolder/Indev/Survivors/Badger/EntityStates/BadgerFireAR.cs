@@ -15,9 +15,9 @@ namespace EntityStates.Badger
 {
     public class BadgerFireAR : BaseSkillState
     {
-        public static float damageCoefficient = 0.45f;
+        public static float damageCoefficient = 0.8f;
         public static float procCoefficient = 0.7f;
-        public static float baseDuration = 0.1f;
+        public static float baseDuration = 0.5f; // was 0.1
         public static float force = 200f;
         public static float recoil = 2.4f; // was 0.5f
         public static float range = 2000f;
@@ -49,7 +49,7 @@ namespace EntityStates.Badger
             this.hasFired = true;
             this.Fire();
 
-            this.PlayAnimation("Gesture, Override", "ShootAR", "Shoot.playbackRate", this.duration * 2.5f);
+            this.PlayAnimation("Gesture, Override", "FireAR", "Shoot.playbackRate", this.duration * 2.5f);
         }
 
         public override void OnExit()
