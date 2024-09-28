@@ -129,7 +129,6 @@ namespace EntityStates.Duke
             if(!base.authorityInHitPause)
             {
                 base.characterMotor.rootMotion += dashVelocity * Time.fixedDeltaTime;
-                base.characterDirection.moveVector = this.dashVelocity;
                 base.characterBody.isSprinting = true;
             }
         }

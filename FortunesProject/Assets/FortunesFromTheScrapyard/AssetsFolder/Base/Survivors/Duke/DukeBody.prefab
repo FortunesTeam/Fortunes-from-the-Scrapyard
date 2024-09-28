@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 7757712983514385065}
   - component: {fileID: 7244261724118055179}
   - component: {fileID: 3058244480855202819}
+  - component: {fileID: 3014357304033576887}
   - component: {fileID: 5749704292904300228}
   - component: {fileID: 8413776340766997471}
   - component: {fileID: 7831960539323599489}
@@ -129,13 +130,12 @@ GameObject:
   - component: {fileID: 5552001105035297117}
   - component: {fileID: 2771422973634186725}
   - component: {fileID: 7037682913683084371}
+  - component: {fileID: 5359514846384608027}
   - component: {fileID: 693104841345367645}
   - component: {fileID: 7176886018666804195}
   - component: {fileID: 5928855702992619098}
   - component: {fileID: 6738330809997982035}
-  - component: {fileID: 5359514846384608027}
   - component: {fileID: 2020636639128512994}
-  - component: {fileID: 3014357304033576887}
   m_Layer: 0
   m_Name: DukeBody
   m_TagString: Player
@@ -398,6 +398,20 @@ MonoBehaviour:
   driveFromRootRotation: 0
   turnSpeed: 720
   turnSoundName: 
+--- !u!114 &3014357304033576887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620632698579816146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cc792091955ce40b6d1d14ac491220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fourthShotPassive: {fileID: 11400000, guid: c037f3f5b6bc0de418fbe9896aa8b51e, type: 2}
+  passiveSkillSlot: {fileID: 5359514846384608027}
 --- !u!114 &5749704292904300228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,8 +678,6 @@ MonoBehaviour:
   targetStateMachine: {fileID: 2795414510184700025}
   idleStateMachine:
   - {fileID: 5552001105035297117}
-  - {fileID: 2771422973634186725}
-  - {fileID: 7037682913683084371}
   hurtState:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   canBeHitStunned: 0
@@ -745,6 +757,24 @@ MonoBehaviour:
   mainStateType:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   debug: 0
+--- !u!114 &5359514846384608027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620632698579816146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillFamily: {fileID: 11400000, guid: 2cda3937e76ab3543b79e2c9ed832d43, type: 2}
+  skillName: SteadyHand
+  hideInCharacterSelect: 0
+  baseStock: 1
+  baseRechargeStopwatch: 0
+  hasExecutedSuccessfully: 0
 --- !u!114 &693104841345367645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,24 +847,6 @@ MonoBehaviour:
   baseStock: 1
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
---- !u!114 &5359514846384608027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620632698579816146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skillFamily: {fileID: 11400000, guid: 2cda3937e76ab3543b79e2c9ed832d43, type: 2}
-  skillName: SteadHand
-  hideInCharacterSelect: 0
-  baseStock: 1
-  baseRechargeStopwatch: 0
-  hasExecutedSuccessfully: 0
 --- !u!114 &2020636639128512994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,20 +859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499961fad3ca41743ae041f46dc5d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3014357304033576887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620632698579816146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72cc792091955ce40b6d1d14ac491220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fourthShotPassive: {fileID: 11400000, guid: c037f3f5b6bc0de418fbe9896aa8b51e, type: 2}
-  passiveSkillSlot: {fileID: 5359514846384608027}
 --- !u!1 &8998513344450920593
 GameObject:
   m_ObjectHideFlags: 0
