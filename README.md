@@ -47,7 +47,7 @@ Special Thanks to...
 ## Bugs and/or Feedback
 
 Bugs can be reported directly to our discord!
-discord.gg/discord.gg/n3SnnJkBmb
+discord.gg/n3SnnJkBmb
 
 * Like the mod? Consider donating!
   * (https://ko-fi.com/thecommission)
