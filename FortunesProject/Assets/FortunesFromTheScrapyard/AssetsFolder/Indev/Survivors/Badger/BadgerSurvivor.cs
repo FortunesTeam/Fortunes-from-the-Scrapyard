@@ -242,12 +242,13 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
                     {
                         float finalMultiplier = 1f;
 
+                        //Get Debuff Indexes
+                        BuffIndex[] debuffBuffIndices = BuffCatalog.debuffBuffIndices;
                         //Go through buffs on enemy
-                        foreach (BuffIndex buff in victimBody.activeBuffsList)
+                        foreach (BuffIndex buff in debuffBuffIndices)
                         {
-                            BuffDef buffDef = BuffCatalog.GetBuffDef(buff);
                             //Check if its a debuff
-                            if (buffDef.isDebuff && !buffDef.isCooldown)
+                            if (victimBody.HasBuff(buff))
                             {
                                 finalMultiplier += 0.2f;
                             }
