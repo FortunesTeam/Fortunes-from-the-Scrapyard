@@ -212,13 +212,13 @@ MonoBehaviour:
   subtitleNameToken: SCRAPYARD_DUKEDECOY_BODY_SUBTITLE
   bodyFlags: 0
   lavaCooldown: 0.2
-  rootMotionInMainState: 0
+  rootMotionInMainState: 1
   mainRootSpeed: 0
   baseMaxHealth: 110
   baseRegen: -6
   baseMaxShield: 0
   baseMoveSpeed: 0
-  baseAcceleration: 0
+  baseAcceleration: 4444
   baseJumpPower: 0
   baseDamage: 6
   baseAttackSpeed: 1

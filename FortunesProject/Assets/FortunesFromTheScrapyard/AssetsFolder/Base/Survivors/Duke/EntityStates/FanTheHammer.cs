@@ -19,9 +19,9 @@ namespace EntityStates.Duke
         public static float baseDurationPerShot = 0.25f;
         public static float baseForce = 600f;
         public static int bulletCount = 1;
-        public static float baseBulletSpread = 0f;
+        public static float baseBulletSpread = 10f;
         public static float baseBulletRadius = 0.2f;
-        public static float baseBulletRecoil = 2f;
+        public static float baseBulletRecoil = 4f;
         public static float baseBulletRange = 999f;
         public static float baseSelfForce = 750f;
 
@@ -59,6 +59,8 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
+            this.dukeController = base.gameObject.GetComponent<DukeController>();
+
             this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient * (1f + dukeController.attackSpeedConversion);
             this.procCoefficient = baseProcCoefficient;
             this.force = baseForce;
@@ -73,7 +75,6 @@ namespace EntityStates.Duke
             this.falloff = BulletAttack.FalloffModel.DefaultBullet;
             this.damageType = DamageType.Generic;
 
-            this.dukeController = base.gameObject.GetComponent<DukeController>();
             this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
 
             base.OnEnter();

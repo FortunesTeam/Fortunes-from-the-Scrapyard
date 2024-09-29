@@ -15,6 +15,8 @@ namespace EntityStates.Badger
 {
     public class Explode : BaseSkillState
     {
+        public static float baseDuration;
+
         public static float blastRadius = 16f;
 
         public static float blastProcCoefficient = 1f;

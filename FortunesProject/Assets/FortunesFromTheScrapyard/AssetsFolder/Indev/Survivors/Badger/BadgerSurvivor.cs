@@ -18,6 +18,8 @@ using EmotesAPI;
 using RoR2.Skills;
 using EntityStates.Badger.Components;
 using FortunesFromTheScrapyard;
+using MSU.Config;
+using EntityStates;
 
 namespace FortunesFromTheScrapyard.Survivors.Badger
 {
@@ -25,6 +27,27 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
     {
         // lol I have no CLUE what I'm doing, If ANY of this looks right it by the grace of God or Kenko - EZ
 
+
+        public const string PRIMARYTOKEN = "SCRAPYARD_BADGER_PRIMARY_DESC";
+        public const string SECONDARYTOKEN = "SCRAPYARD_BADGER_SECONDARY_DESC";
+        public const string UTILITYTOKEN = "SCRAPYARD_BADGER_UTILITY_DESC";
+        public const string SPECIALTOKEN = "SCRAPYARD_BADGER_SPECIAL_DESC";
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float basePrimaryDamage = 0.6f;
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        internal static float baseSecondaryDamage = 0.2f;
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(UTILITYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
+        public static float baseUtilityDamage = 4f;
+
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(SPECIALTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
+        public static float baseSpecialDamage = 6f;
 
         // DamageTypes
         public static DamageAPI.ModdedDamageType BadgerExplode;
@@ -187,17 +210,15 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
 
         private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
-
         {
             if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
             {
                 CharacterBody victimBody = self.body;
-                CharacterMotor victimMotor = null;
                 CharacterBody attackerBody = null;
-
-                if (self.body.characterMotor)
+                EntityStateMachine victimMachine = null;
+                if (victimBody)
                 {
-                    victimMotor = self.body.characterMotor;
+                    victimMachine = victimBody.GetComponent<EntityStateMachine>();
                 }
 
                 if (damageInfo.attacker)
@@ -207,22 +228,21 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
                 if (damageInfo.damage > 0 && !damageInfo.rejected && victimBody && attackerBody)
                 {
-                    if (victimBody.baseMoveSpeed != 0 && victimMotor && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
-
+                    if (attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
                     {
-                        if (!victimBody.isBoss && !victimBody.isChampion && victimBody.baseNameToken != "GOLEM_BODY_NAME" && victimMotor.velocity.magnitude <= 0)
+                        foreach(BuffIndex buff in victimBody.activeBuffsList)
                         {
-                            damageInfo.damage *= 2f;
+                            if (BuffCatalog.GetBuffDef(buff).isDebuff)
+                            {
+                                damageInfo.damage *= 1.2f;
+                            }
                         }
-                        else if (victimBody.moveSpeed <= victimBody.baseMoveSpeed)
+
+                        if(victimMachine && (victimMachine.state is EntityStates.StunState || victimMachine.state is EntityStates.FrozenState ||
+                            victimMachine.state is EntityStates.ShockState || victimMachine.state is EntityStates.SleepState || 
+                            victimMachine.state is EntityStates.Neuromancer.TimeStoppedState))
                         {
-                            float failSafeMoveSpeed = victimBody.moveSpeed;
-
-                            if (failSafeMoveSpeed < 0) failSafeMoveSpeed = 0;
-
-                            float calc = 1 - (failSafeMoveSpeed / (victimBody.baseMoveSpeed + victimBody.levelMoveSpeed * victimBody.level));
-
-                            damageInfo.damage *= Util.Remap(calc, 0, 1, 1, 2);
+                            damageInfo.damage *= 0.2f;
                         }
                     }
                 }
