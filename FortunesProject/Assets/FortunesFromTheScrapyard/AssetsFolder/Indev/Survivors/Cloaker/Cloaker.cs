@@ -79,7 +79,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         #endregion
         private static void Hooks()
         {
-            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+            On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamageProcess;
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
         }
 
@@ -97,11 +97,11 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             }
         }
 
-        private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+        private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             CharacterBody victimBody = self.body;
             CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
-            if (victimBody.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked) && attackerBody)
+            if (victimBody && victimBody.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked) && attackerBody)
             {
                 if (!damageInfo.HasModdedDamageType(CloakerChargedDamageType) && NetworkServer.active)
                 {
@@ -114,6 +114,8 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 
                 EffectManager.SimpleImpactEffect(cloakerConsumeEffect, damageInfo.position, Vector3.up, transmit: true);
             }
+
+            orig.Invoke(self, damageInfo);
         }
 
         private static void CreateAndAddEffectDef(GameObject effect)

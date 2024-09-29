@@ -5,13 +5,17 @@ using RoR2.ContentManagement;
 using RoR2;
 using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
 using R2API;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Networking;
 
 
 namespace FortunesFromTheScrapyard.Characters.DukeDecoy
 {
     public class DukeDecoy : ScrapyardCharacter
     {
+        public static GameObject dukeDecoyDeathExplosion;
         public static GameObject DukeDecoyMaster;
+        
         public static DamageAPI.ModdedDamageType DecoyHit;
         public override void Initialize()
         {
@@ -20,6 +24,11 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
 
             var cb = characterPrefab.GetComponent<CharacterBody>();
             cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2Crosshair");
+
+            dukeDecoyDeathExplosion = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC2/Child/ChildTrackingSparkBallExplosion.prefab").WaitForCompletion().InstantiateClone("DukeDecoyExplosion");
+            if (!dukeDecoyDeathExplosion.GetComponent<NetworkIdentity>()) dukeDecoyDeathExplosion.AddComponent<NetworkIdentity>();
+
+            ScrapyardContent.CreateAndAddEffectDef(dukeDecoyDeathExplosion);
 
             Hooks();
         }

@@ -91,13 +91,16 @@ namespace EntityStates.Duke
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
 
             Animator animator = GetModelAnimator();
+
+            //animator.SetLayerWeight(animator.GetLayerIndex("Gesture, ShootBody"), 1f);
+
             bool @bool = animator.GetBool("isMoving");
             bool bool2 = animator.GetBool("isGrounded");
             if (!@bool && bool2)
             {
                 base.PlayCrossfade("FullBody, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
             }
-            else base.PlayCrossfade("Gesture, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            else base.PlayCrossfade("Gesture, Additive", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
         }
 
         public override void OnExit()
@@ -107,7 +110,11 @@ namespace EntityStates.Duke
                 AkSoundEngine.StopPlayingID(this.soundID);
                 GameObject.Destroy(this.spinInstance);
             }
-
+            Animator animator = GetModelAnimator();
+            if (animator)
+            {
+                //animator.SetLayerWeight(animator.GetLayerIndex("Gesture, ShootBody"), 0f);
+            }
             base.OnExit();
         }
 
@@ -117,7 +124,6 @@ namespace EntityStates.Duke
             {
                 //this.dukeController.DropBullet(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             }
-            /*
             Animator animator = GetModelAnimator();
             bool @bool = animator.GetBool("isMoving");
             bool bool2 = animator.GetBool("isGrounded");
@@ -125,7 +131,7 @@ namespace EntityStates.Duke
             {
                 base.PlayCrossfade("FullBody, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
             }
-            else */base.PlayCrossfade("Gesture, Override", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            else base.PlayCrossfade("Gesture, Additive", "ShootFan", "Special.playbackRate", this.windupDuration, 0.05f);
 
             Util.PlaySound(this.shootSoundString, this.gameObject);
 
@@ -165,7 +171,7 @@ namespace EntityStates.Duke
                     HitEffectNormal = false,
                 };
 
-                if (fourthShot)
+                if (isCrit)
                 {
                     bulletAttack.AddModdedDamageType(DukeSurvivor.DukeFourthShot);
                 }

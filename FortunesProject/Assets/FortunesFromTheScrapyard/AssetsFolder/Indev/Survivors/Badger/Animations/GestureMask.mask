@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GestureMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: meshBadger
+    m_Weight: 0
+  - m_Path: meshDisk
+    m_Weight: 0
+  - m_Path: meshGun
+    m_Weight: 0
+  - m_Path: rig
+    m_Weight: 0
+  - m_Path: rig/Can2.001
+    m_Weight: 0
+  - m_Path: rig/root
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-Can1
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-Can2
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-Can2.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-Can3
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-pelvis.L
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-pelvis.R
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-toe.L
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-toe.R
+    m_Weight: 0
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L/DEF-f_index.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-f_index.01.L/DEF-f_index.02.L/DEF-f_index.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L/DEF-thumb.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L/DEF-thumb.01.L/DEF-thumb.02.L/DEF-thumb.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L/DEF-f_middle.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L/DEF-f_middle.01.L/DEF-f_middle.02.L/DEF-f_middle.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L/DEF-f_ring.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L/DEF-f_ring.01.L/DEF-f_ring.02.L/DEF-f_ring.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L/DEF-f_pinky.03.L
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-gun.r
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-gun.r/DEF-holdgun
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R/DEF-f_index.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-f_index.01.R/DEF-f_index.02.R/DEF-f_index.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R/DEF-thumb.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R/DEF-thumb.01.R/DEF-thumb.02.R/DEF-thumb.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R/DEF-f_middle.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R/DEF-f_middle.01.R/DEF-f_middle.02.R/DEF-f_middle.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R/DEF-f_ring.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R/DEF-f_ring.01.R/DEF-f_ring.02.R/DEF-f_ring.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R/DEF-f_pinky.03.R
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005
+    m_Weight: 1
+  - m_Path: rig/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006
+    m_Weight: 1

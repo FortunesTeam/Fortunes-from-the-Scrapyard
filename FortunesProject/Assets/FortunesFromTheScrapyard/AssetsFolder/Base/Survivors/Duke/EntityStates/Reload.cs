@@ -22,7 +22,7 @@ namespace EntityStates.Duke
             base.OnEnter();
             this.duration = baseDuration / attackSpeedStat;
             //this.dukeController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
-            base.PlayCrossfade("Gesture, Override", "Reload", "Reload.playbackRate", this.duration, 0.05f);
+            base.PlayCrossfade("Gesture, Additive", "Reload", "Reload.playbackRate", this.duration, 0.05f);
         }
 
         public override void FixedUpdate()

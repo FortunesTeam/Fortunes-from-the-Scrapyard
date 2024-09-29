@@ -95,7 +95,7 @@ namespace FortunesFromTheScrapyard.Equipments
             MoonshineBehaviour moonshineComponent = null;
             if (attackerBody) moonshineComponent = attackerBody.GetComponent<MoonshineBehaviour>();
 
-            if (attackerBody && moonshineComponent && (damageInfo.dotIndex & DotController.DotIndex.None) != 0 && !damageInfo.HasModdedDamageType(MoonshineProc))
+            if (attackerBody && damageInfo.attacker && moonshineComponent && (damageInfo.dotIndex & DotController.DotIndex.None) != 0 && !damageInfo.HasModdedDamageType(MoonshineProc))
             {
                 if (attackerBody.HasBuff(ScrapyardContent.Buffs.bdMoonshineFlask) && !Util.CheckRoll(Util.ConvertAmplificationPercentageIntoReductionPercentage(chanceToHit / attackerBody.GetBuffCount(ScrapyardContent.Buffs.bdMoonshineFlask)), attackerBody.master.luck))
                 {

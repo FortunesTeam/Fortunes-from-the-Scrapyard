@@ -57,7 +57,7 @@ namespace EntityStates.Duke
         {
             if (base.GetModelAnimator())
             {
-                this.PlayCrossfade("LeftArm, Override", "ThrowKinetic", "Secondary.playbackRate", this.duration * 2f, this.duration * 0.05f);
+                this.PlayCrossfade("LeftArm, Additive", "ThrowKinetic", "Secondary.playbackRate", this.duration * 2f, this.duration * 0.05f);
             }
         }
     }

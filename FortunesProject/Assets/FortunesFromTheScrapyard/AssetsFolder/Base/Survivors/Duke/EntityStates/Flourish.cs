@@ -13,7 +13,7 @@ namespace EntityStates.Duke
     public class Flourish : BaseSkillState
     {
         private float baseDuration = 0.15f;
-        GameObject selfOnHitOverlayEffectPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercDashHitOverlay.prefab").WaitForCompletion();
+        public GameObject selfOnHitOverlayEffectPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercDashHitOverlay.prefab").WaitForCompletion();
         public float speedCoefficient = 10f;
 
         private bool hasHit;
@@ -111,13 +111,16 @@ namespace EntityStates.Duke
             }
             else if (NetworkServer.active)
             {
-                base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
-
                 if (base.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
                 {
                     base.characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
                 }
                 base.characterBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeFreeShot, 5f);
+            }
+
+            if (NetworkServer.active)
+            {
+                base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
             }
 
             PlayAnimation("FullBody, Override", "BufferEmpty");

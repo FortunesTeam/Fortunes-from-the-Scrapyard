@@ -119,13 +119,13 @@ GameObject:
   - component: {fileID: 1102760203234725733}
   - component: {fileID: 8265917878592661142}
   - component: {fileID: 8207897912071779222}
-  - component: {fileID: 2938049500326226860}
   - component: {fileID: 888333844547634483}
   - component: {fileID: 6198383744135019595}
   - component: {fileID: 5840639228283816161}
   - component: {fileID: 2432869976979497293}
   - component: {fileID: 851152976415961095}
   - component: {fileID: 7196805938106907878}
+  - component: {fileID: 2938049500326226860}
   - component: {fileID: 2795414510184700025}
   - component: {fileID: 5552001105035297117}
   - component: {fileID: 2771422973634186725}
@@ -541,23 +541,6 @@ MonoBehaviour:
   interpolationFactor: 3
   debugDuplicatePositions: 0
   debugSnapshotReceived: 0
---- !u!114 &2938049500326226860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620632698579816146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachines:
-  - {fileID: 2795414510184700025}
-  - {fileID: 5552001105035297117}
-  - {fileID: 5552001105035297117}
-  - {fileID: 5552001105035297117}
 --- !u!114 &888333844547634483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,12 +661,29 @@ MonoBehaviour:
   hitThreshold: 5
   targetStateMachine: {fileID: 2795414510184700025}
   idleStateMachine:
-  - {fileID: 5552001105035297117}
+  - {fileID: 2795414510184700025}
   hurtState:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   canBeHitStunned: 0
   canBeStunned: 0
   canBeFrozen: 1
+--- !u!114 &2938049500326226860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620632698579816146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachines:
+  - {fileID: 2795414510184700025}
+  - {fileID: 5552001105035297117}
+  - {fileID: 2771422973634186725}
+  - {fileID: 7037682913683084371}
 --- !u!114 &2795414510184700025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,8 +701,8 @@ MonoBehaviour:
     _typeName: EntityStates.GenericCharacterSpawnState, RoR2, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   mainStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Duke.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   debug: 0
 --- !u!114 &5552001105035297117
 MonoBehaviour:
@@ -860,6 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499961fad3ca41743ae041f46dc5d3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeedConversion: 0
 --- !u!1 &8998513344450920593
 GameObject:
   m_ObjectHideFlags: 0

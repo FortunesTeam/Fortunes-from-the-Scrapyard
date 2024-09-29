@@ -35,7 +35,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(MINETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        internal static float damageShareCoefficient = 0.35f;
+        internal static float damageShareCoefficient = 0.5f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
@@ -143,6 +143,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             projectileFuse.fuse = 0.25f;
 
             dukeField = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("DukeDamageField");
+            if (!dukeField.GetComponent<NetworkIdentity>()) dukeField.AddComponent<NetworkIdentity>();
 
             Material[] iHateMaterialSetup = new Material[2];
             iHateMaterialSetup[0] = dukeField.transform.Find("AreaIndicator").Find("Sphere").gameObject.GetComponent<MeshRenderer>().sharedMaterials[1];
@@ -187,6 +188,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+
             if (ScrapyardMain.emotesInstalled)
             {
                 Emotes();
@@ -293,14 +295,17 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                                 flag = true;
                             }
                         }
+
                         if (!flag)
                         {
                             effectData.rotation = attackerBody.transform.rotation;
                         }
+
                         EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/MoveSpeedOnKillActivate"), effectData, transmit: true);
+
                         if(attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") && attackerBody.skillLocator.utility)
                         {
-                            if (attackerBody.skillLocator.utility.skillDef.skillIndex == SkillCatalog.FindSkillIndexByName("Flourish"))
+                            if (attackerBody.skillLocator.utility.skillDef == SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("Flourish")))
                             {
                                 attackerBody.skillLocator.utility.RunRecharge(1.5f);
                             }

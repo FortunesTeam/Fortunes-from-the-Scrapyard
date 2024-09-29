@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DukePrimarySkillFamily
   m_EditorClassIdentifier: 
   variants:
-  - skillDef: {fileID: 11400000, guid: c9b0a2f00396559449f365cca4e0d1c6, type: 2}
+  - skillDef: {fileID: 11400000, guid: 4ab204ba98da60a4c945e248655ff92f, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}
   defaultVariantIndex: 0

@@ -30,19 +30,5 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
             this.skillLocator = characterBody.skillLocator;
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
         }
-        private void Update()
-        {
-            if(skillLocator.primary.skillDef == SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("Salvo")))
-                {
-                if (skillLocator.primary.stock == 1 || characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
-                {
-                    skillLocator.primary.skillDef.icon = DukeSurvivor.primaryEmpoweredIcon;
-                }
-                else
-                {
-                    skillLocator.primary.skillDef.icon = DukeSurvivor.primaryIcon;
-                }
-            }
-        }
     }
 }

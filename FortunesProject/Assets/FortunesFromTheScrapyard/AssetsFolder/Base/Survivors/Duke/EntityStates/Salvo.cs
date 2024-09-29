@@ -100,25 +100,35 @@ namespace EntityStates.Duke
             }
 
             tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
-            /*
+
             Animator animator = GetModelAnimator();
-            bool @bool = animator.GetBool("isMoving");
-            bool bool2 = animator.GetBool("isGrounded");
-            if (!@bool && bool2)
+
+            if(animator)
             {
-                if (this.isCrit) this.PlayCrossfade("Fullbody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-                else this.PlayCrossfade("Fullbody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                //animator.SetLayerWeight(animator.GetLayerIndex("Gesture, ShootBody"), 1f);
+
+                bool @bool = animator.GetBool("isMoving");
+                bool bool2 = animator.GetBool("isGrounded");
+                if (!@bool && bool2)
+                {
+                    if (this.isCrit) this.PlayCrossfade("FullBody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                    else this.PlayCrossfade("FullBody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                }
+                else
+                {
+                    if (this.isCrit) this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                    else this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                }
             }
-            else
-            { 
-                */
-                if (this.isCrit) this.PlayCrossfade("Gesture, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-                else this.PlayCrossfade("Gesture, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-            //}
         }
 
         public override void OnExit()
         {
+            Animator animator = GetModelAnimator();
+            if(animator)
+            {
+                //animator.SetLayerWeight(animator.GetLayerIndex("Gesture, ShootBody"), 0f);
+            }
             if (!hasFired)
             {
                 this.Fire();
@@ -170,7 +180,7 @@ namespace EntityStates.Duke
                     HitEffectNormal = false,
                 };
 
-                if (fourthShot)
+                if (isCrit)
                 {
                     bulletAttack.AddModdedDamageType(DukeSurvivor.DukeFourthShot);
                 }
@@ -204,9 +214,9 @@ namespace EntityStates.Duke
                 this.Fire();
             }
 
-            if (base.fixedAge >= this.duration)
+            if (base.isAuthority && base.fixedAge >= this.duration)
             {
-                if (base.isAuthority) this.outer.SetNextStateToMain();
+                this.outer.SetNextStateToMain();
             }
         }
 

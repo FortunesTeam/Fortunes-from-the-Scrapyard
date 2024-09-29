@@ -13,10 +13,8 @@ namespace EntityStates.Duke
 {
     public class QuickStep : BasicMeleeAttack
     {
-        private static int QuickStepExitStateHash = Animator.StringToHash("QuickstepLoopExit");
-
-        private static int QuickStepLoopStateHash = Animator.StringToHash("QuickstepLoop");
-        GameObject selfOnHitOverlayEffectPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercDashHitOverlay.prefab").WaitForCompletion();
+        public static GameObject swingPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercAssaulterEffect.prefab").WaitForCompletion();
+        public static GameObject selfOnHitOverlayEffectPrefab => Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercDashHitOverlay.prefab").WaitForCompletion();
         public float speedCoefficient = 10f;
         public float refundPerHit = 2.5f;
 
@@ -40,17 +38,19 @@ namespace EntityStates.Duke
             forceForwardVelocity = false;
             shorthopVelocityFromHit = 0f;
             swingEffectMuzzleString = "Quickstep";
-            swingEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Merc/MercAssaulterEffect.prefab").WaitForCompletion();
+            swingEffectPrefab = swingPrefab;
             forceVector = Vector3.zero;
             hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FireBarrage.hitEffectPrefab;
             procCoefficient = 1f;
             pushAwayForce = 200f;
             hitBoxGroupName = "Quickstep";
             baseDuration = 0.15f;
+            damageCoefficient = 0f;
+
 
             base.OnEnter();
 
-            if(NetworkServer.active)
+            if (NetworkServer.active)
             {
                 base.characterBody.AddBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
             }
@@ -112,9 +112,9 @@ namespace EntityStates.Duke
         }
         public override void AuthorityModifyOverlapAttack(OverlapAttack overlapAttack)
         {
+            base.AuthorityModifyOverlapAttack(overlapAttack);
             overlapAttack.damageType = DamageType.Stun1s;
             overlapAttack.damage = damageCoefficient * damageStat;
-            base.AuthorityModifyOverlapAttack(overlapAttack);
         }
         public override void AuthorityFixedUpdate()
         {
@@ -155,13 +155,16 @@ namespace EntityStates.Duke
             }
             else if (NetworkServer.active)
             {
-                base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
-
                 if (base.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
                 {
                     base.characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
                 }
                 base.characterBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeFreeShot, 5f);
+            }
+
+            if (NetworkServer.active)
+            {
+                base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
             }
 
             PlayAnimation("FullBody, Override", "BufferEmpty");

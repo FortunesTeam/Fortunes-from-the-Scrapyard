@@ -137,7 +137,7 @@ namespace FortunesFromTheScrapyard.Items
             {
                 if (activatorBody.HasBuff(ScrapyardContent.Buffs.bdCounterfeitLimit))
                 {
-                    if ((self.costType & CostTypeIndex.Money) != 0)
+                    if (self.costType == CostTypeIndex.Money)
                     {
                         int common = Run.instance.GetDifficultyScaledCost(minCommonCost, Stage.instance.entryDifficultyCoefficient);
                         int uncommon = Run.instance.GetDifficultyScaledCost(minUncommonCost, Stage.instance.entryDifficultyCoefficient);
@@ -185,7 +185,7 @@ namespace FortunesFromTheScrapyard.Items
                 activatorHealthComponent.body.SetBuffCount(DLC2Content.Buffs.SoulCost.buffIndex, newCount);
                 activatorHealthComponent.body.AddBuff(DLC2Content.Buffs.FreeUnlocks);
 
-                Util.PlaySound("sfx_lunarmoney_start", activatorHealthComponent.gameObject);
+                Util.PlaySound("sfx_lunarmoney_start", activatorHealthComponent.body.gameObject);
             }
 
             if(NetworkServer.active)

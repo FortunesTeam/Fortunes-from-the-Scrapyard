@@ -20,13 +20,13 @@ namespace EntityStates.Badger
         public static float baseDelayDuration = 0.3f * baseDuration;
         public static float diskDamageCoefficent = 4f;
         public GameObject disk = BadgerSurvivor.diskPrefab;
-        public BadgerController interrogatorController;
+        public BadgerController badgerController;
         private ChildLocator childLocator;
 
         public override void OnEnter()
         {
-            interrogatorController = base.gameObject.GetComponent<BadgerController>();
-            base.attackSoundString = "sfx_scout_baseball_hit";
+            badgerController = base.gameObject.GetComponent<BadgerController>();
+            base.attackSoundString = "sfx_badger_diskthrow";
 
             base.baseDuration = baseDuration;
             base.baseDelayBeforeFiringProjectile = baseDelayDuration;
@@ -55,6 +55,11 @@ namespace EntityStates.Badger
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+
+            if(base.isAuthority && base.fixedAge >= duration)
+            {
+                outer.SetNextStateToMain();
+            }
         }
 
         public override void OnExit()

@@ -78,12 +78,12 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval && !atMaxStacks && base.body.isSprinting)
                 {
                     timer = 0f;
-                    if(NetworkServer.active)
+                    if (Util.HasEffectiveAuthority(base.gameObject.GetComponent<NetworkIdentity>())) Util.PlaySound("sfx_turbo_start", body.gameObject);
+
+                    if (NetworkServer.active)
                     {
                         body.AddBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                     }
-
-                    Util.PlaySound("sfx_turbo_start", base.gameObject);
                 }
                 else if(timer < 0f && body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo) && !base.body.isSprinting)
                 {

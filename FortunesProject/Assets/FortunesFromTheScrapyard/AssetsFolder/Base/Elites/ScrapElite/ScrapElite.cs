@@ -32,7 +32,7 @@ namespace FortunesFromTheScrapyard.Elite
         public static GameObject ScrapDefenseMatrix;
         public static GameObject ScrapLaser;
 
-        public static Xoroshiro128Plus syntheticRng = new Xoroshiro128Plus(0uL);
+        public static Xoroshiro128Plus syntheticRng;
         public override bool Execute(EquipmentSlot slot)
         {
             return false;
@@ -76,7 +76,19 @@ namespace FortunesFromTheScrapyard.Elite
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(effectDef3);
 
             On.RoR2.EquipmentCatalog.SetEquipmentDefs += EquipmentCatalog_SetEquipmentDefs;
+
+            On.RoR2.Run.GenerateSeedForNewRun += Run_GenerateSeedForNewRun;
         }
+
+        private ulong Run_GenerateSeedForNewRun(On.RoR2.Run.orig_GenerateSeedForNewRun orig, Run self)
+        {
+            var seed = orig.Invoke(self);
+
+            syntheticRng = new Xoroshiro128Plus(seed);
+
+            return seed;
+        }
+
         private static void FillWhiteList(List<EquipmentIndex> filter)
         {
             foreach (EquipmentIndex index in filter)

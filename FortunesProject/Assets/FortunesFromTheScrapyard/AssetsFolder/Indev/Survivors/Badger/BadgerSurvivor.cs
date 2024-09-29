@@ -19,7 +19,6 @@ using RoR2.Skills;
 using EntityStates.Badger.Components;
 using FortunesFromTheScrapyard;
 using MSU.Config;
-using EntityStates;
 
 namespace FortunesFromTheScrapyard.Survivors.Badger
 {
@@ -39,7 +38,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        internal static float baseSecondaryDamage = 0.2f;
+        internal static float baseSecondaryDamage = 1.2f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(UTILITYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
@@ -55,13 +54,14 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
         //Projectiles
         internal static GameObject diskPrefab;
+        internal static GameObject diskGhost;
+        internal static GameObject diskExplosion;
+
         internal static GameObject soundScape;
         internal static GameObject soundWave;
 
         public override void Initialize()
-        {
-            Hooks();
-
+        { 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
 
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
@@ -70,10 +70,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             ModifyPrefab();
 
-            if(ScrapyardMain.emotesInstalled)
-            {
-                Emotes();
-            }
+            Hooks();
         }
 
         public override bool IsAvailable(ContentPack contentPack)
@@ -93,14 +90,19 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             cb._defaultCrosshairPrefab = Resources.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
         }
 
-        private static void Hooks()
+        private void Hooks()
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
 
-            On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamageProcess);
+            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamageProcess;
 
+            if (ScrapyardMain.emotesInstalled)
+            {
+                Emotes();
+            }
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void Emotes()
         {
             On.RoR2.SurvivorCatalog.Init += (orig) =>
@@ -130,7 +132,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         }
 
         #region projectiles
-        private static void CreateProjectiles()
+        private void CreateProjectiles()
         {
             diskPrefab = UnityEngine.AddressableAssets.Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("BadgerDisk");
             if (!diskPrefab.GetComponent<NetworkIdentity>()) diskPrefab.AddComponent<NetworkIdentity>();
@@ -149,9 +151,19 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             diskEX.impactOnWorld = false;
             diskEX.lifetime = 5f;
 
+            diskGhost = assetCollection.FindAsset<GameObject>("BadgerDiskGhost");
+
+            diskPrefab.GetComponent<ProjectileController>().ghostPrefab = diskGhost;
+
+            diskExplosion = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LaserTurbine/LaserTurbineBomb.prefab").WaitForCompletion().InstantiateClone("BadgerDiskExplosion");
+
+            ScrapyardContent.CreateAndAddEffectDef(diskExplosion);
+
+            diskPrefab.GetComponent<ProjectileImpactExplosion>().explosionEffect = diskExplosion;
+
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(diskPrefab);
 
-            soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone", false);
+            soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone");
             if (!soundScape.GetComponent<NetworkIdentity>()) soundScape.AddComponent<NetworkIdentity>();
             BuffWard buffWard = soundScape.GetComponent<BuffWard>();
             buffWard.radius = 2.5f;
@@ -165,7 +177,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
 
-            soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("soundBuffProjectile", false);
+            soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("SoundBuffProjectile");
             if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
 
             ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();

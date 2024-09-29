@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using FortunesFromTheScrapyard;
 using FortunesFromTheScrapyard.Survivors;
 using RoR2;
 using System.Collections.Generic;
@@ -9,8 +10,8 @@ namespace EntityStates.Duke
 {
     public class EnterReload : BaseSkillState
     {
-        public static float baseDuration = 0.1f;
-
+        public static float baseDuration = 4f;
+        private float timer = 0f;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -19,9 +20,15 @@ namespace EntityStates.Duke
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (base.isAuthority && base.fixedAge >= baseDuration && this.skillLocator.primary.stock == 0)
+
+            timer += Time.fixedDeltaTime;
+            
+            if (timer >= baseDuration || this.skillLocator.primary.stock == 0)
             {
-                if (base.isAuthority) outer.SetNextState(new Reload());
+                if (base.isAuthority)
+                {
+                    outer.SetNextState(new Reload());
+                }
             }
         }
 

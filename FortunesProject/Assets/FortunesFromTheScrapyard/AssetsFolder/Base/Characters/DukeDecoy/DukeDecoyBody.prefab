@@ -210,9 +210,9 @@ MonoBehaviour:
   inLava: 0
   baseNameToken: SCRAPYARD_DUKEDECOY_BODY_NAME
   subtitleNameToken: SCRAPYARD_DUKEDECOY_BODY_SUBTITLE
-  bodyFlags: 0
+  bodyFlags: 16384
   lavaCooldown: 0.2
-  rootMotionInMainState: 1
+  rootMotionInMainState: 0
   mainRootSpeed: 0
   baseMaxHealth: 110
   baseRegen: -6
@@ -320,7 +320,7 @@ MonoBehaviour:
   walkSpeedPenaltyCoefficient: 1
   characterDirection: {fileID: 1953305243280886493}
   muteWalkMotion: 0
-  mass: 100
+  mass: 2000
   airControl: 0.25
   disableAirControlUntilCollision: 0
   generateParametersOnAwake: 1

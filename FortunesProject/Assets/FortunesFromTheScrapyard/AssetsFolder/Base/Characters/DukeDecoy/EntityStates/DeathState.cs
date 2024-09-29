@@ -7,13 +7,14 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.AddressableAssets;
 using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
+using FortunesFromTheScrapyard.Characters.DukeDecoy;
 
 namespace EntityStates.DukeDecoy
 {
     public class DeathState : GenericCharacterDeath
     {
         [SerializeField]
-        public static GameObject deathEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC2/Child/ChildTrackingSparkBallExplosion.prefab").WaitForCompletion();
+        public static GameObject deathEffectPrefab = FortunesFromTheScrapyard.Characters.DukeDecoy.DukeDecoy.dukeDecoyDeathExplosion;
 
         public float smallHopVelocity = 0.35f;
 
@@ -48,7 +49,7 @@ namespace EntityStates.DukeDecoy
                 blastAttack.baseForce = 500f;
                 blastAttack.crit = decoyExplosion.isCrit;
                 blastAttack.position = decoyExplosion.decoyBody.corePosition;
-                blastAttack.radius = 12;
+                blastAttack.radius = 20;
                 blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                 // blastAttack.bonusForce = Vector3.zero;
                 blastAttack.damageType = DamageType.Stun1s;
@@ -58,7 +59,8 @@ namespace EntityStates.DukeDecoy
 
                 EffectManager.SpawnEffect(deathEffectPrefab, new EffectData
                 {
-                    origin = base.characterBody.corePosition
+                    origin = base.characterBody.corePosition,
+                    scale = 3f
                 }, transmit: true);
                 Util.PlaySound(deathSoundString, base.gameObject);
                 blewUp = true;
