@@ -19,6 +19,7 @@ namespace EntityStates.Badger
         public static float damageCoefficient = BadgerSurvivor.basePrimaryDamage;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.15f; // per shot
+        public static float baseFullDuration = 1.75f; // FULL SKILL DURATION. This is to add delay between bursts
         public static float force = 200f;
         public static float recoil = 1.2f; // was 0.5f
         public static float range = 2000f;
@@ -28,6 +29,7 @@ namespace EntityStates.Badger
 
         private int shotsFired;
         private float duration;
+        private float fullDuration;
         private string muzzleString;
         private bool isCrit;
         private float timer;
@@ -42,6 +44,8 @@ namespace EntityStates.Badger
             base.OnEnter();
 
             this.duration = BadgerFireAR.baseDuration / this.attackSpeedStat;
+
+            this.fullDuration = baseFullDuration / this.attackSpeedStat;
 
             this.muzzleString = "GunMuzzle";
 
@@ -127,7 +131,8 @@ namespace EntityStates.Badger
                 this.PlayCrossfade("Gesture, Override", "FireAR", "Primary.playbackRate", this.duration * 5f, this.duration * 0.05f);
             }
 
-            if (base.fixedAge >= 2f / this.attackSpeedStat && shotsFired == maxShotsPerBurst && base.isAuthority)
+            //Only exits after delay and all shots fired.
+            if (base.fixedAge >= this.fullDuration && shotsFired == maxShotsPerBurst && base.isAuthority)
             {
                 this.outer.SetNextStateToMain();
             }

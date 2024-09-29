@@ -242,15 +242,18 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
                     {
                         float finalMultiplier = 1f;
 
+                        //Go through buffs on enemy
                         foreach (BuffIndex buff in victimBody.activeBuffsList)
                         {
                             BuffDef buffDef = BuffCatalog.GetBuffDef(buff);
+                            //Check if its a debuff
                             if (buffDef.isDebuff && !buffDef.isCooldown)
                             {
                                 finalMultiplier += 0.2f;
                             }
                         }
 
+                        //Go through victim state machine and check if they are stunned, frozen, or shocked. This is hardcoded
                         if(victimMachine && (victimMachine.state is EntityStates.StunState || victimMachine.state is EntityStates.FrozenState ||
                             victimMachine.state is EntityStates.ShockState || 
                             victimMachine.state is EntityStates.Neuromancer.TimeStoppedState))
@@ -283,7 +286,6 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             if (NetworkServer.active)
             {
                 if (iController && attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
-
                 {
                     if (damageInfo.HasModdedDamageType(BadgerExplode))
                     {
