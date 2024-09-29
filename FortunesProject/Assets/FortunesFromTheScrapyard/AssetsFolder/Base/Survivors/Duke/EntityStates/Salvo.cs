@@ -101,27 +101,97 @@ namespace EntityStates.Duke
 
             tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
 
+            PlayAnimations();
+        }
+
+        public virtual void PlayAnimations()
+        {
             Animator animator = GetModelAnimator();
 
-            if(animator)
+            if (animator)
             {
                 //animator.SetLayerWeight(animator.GetLayerIndex("Gesture, ShootBody"), 1f);
 
-                bool @bool = animator.GetBool("isMoving");
-                bool bool2 = animator.GetBool("isGrounded");
-                if (!@bool && bool2)
+                bool isMoving = animator.GetBool("isMoving");
+                bool isGrounded = animator.GetBool("isGrounded");
+                if (!isMoving && isGrounded)
                 {
-                    if (this.isCrit) this.PlayCrossfade("FullBody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-                    else this.PlayCrossfade("FullBody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                    if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("FullBody, Override")).IsName("ShootCrit")) //Play if last shot was ShootCrit
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("FullBody, Override", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            //Play ShootCrit to Shoot Transition when its done
+                            this.PlayCrossfade("FullBody, Override", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
+                    else if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("FullBody, Override")).IsName("Shoot")) //Play if last shot was Shoot
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("FullBody, Override", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            //Play Shoot To ShootCrit Transition when its done
+                            this.PlayCrossfade("FullBody, Override", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
+                    else // Play default empty to enter
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("FullBody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            this.PlayCrossfade("FullBody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
                 }
-                else
+                else //If moving
                 {
-                    if (this.isCrit) this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
-                    else this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.05f);
+                    if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Gesture, Additive")).IsName("ShootCrit")) //Play if last shot was ShootCrit
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            //Play ShootCrit to Shoot Transition when its done
+                            this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
+                    else if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Gesture, Additive")).IsName("Shoot")) //Play if last shot was Shoot
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            //Play Shoot To ShootCrit Transition when its done
+                            this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
+                    else // Play default empty to enter
+                    {
+                        if (this.isCrit)
+                        {
+                            this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                        else
+                        {
+                            this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        }
+                    }
                 }
             }
         }
-
         public override void OnExit()
         {
             Animator animator = GetModelAnimator();
