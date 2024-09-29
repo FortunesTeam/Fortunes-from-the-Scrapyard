@@ -140,7 +140,7 @@ namespace EntityStates.Badger
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            if (base.fixedAge >= 2f / this.attackSpeedStat) return InterruptPriority.Any;
+            if (base.fixedAge >= this.fullDuration) return InterruptPriority.Any;
             return InterruptPriority.PrioritySkill;
         }
     }
