@@ -24,11 +24,11 @@ namespace FortunesFromTheScrapyard
         public static SerializableDifficultyDef whirlwindDifficulty;
 
         [ConfigureField(ScrapyardConfig.ID_DIFFICULTY)]
-        internal static float attackSpeed = 1.5f;
+        internal static float attackSpeed = 1.25f;
         [ConfigureField(ScrapyardConfig.ID_DIFFICULTY)]
         internal static float moveSpeed = 1.3f;
         [ConfigureField(ScrapyardConfig.ID_DIFFICULTY)]
-        internal static float cdr = 0.5f;
+        internal static float cdr = 0.25f;
         [ConfigureField(ScrapyardConfig.ID_DIFFICULTY)]
         internal static float teleporterRadius = -30f;
         public override void Initialize()

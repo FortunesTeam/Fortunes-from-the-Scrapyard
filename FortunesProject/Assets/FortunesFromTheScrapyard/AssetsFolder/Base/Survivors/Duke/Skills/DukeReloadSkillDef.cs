@@ -34,6 +34,17 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
         [Tooltip("The icon when empowered")]
         public Sprite secondaryIcon;
 
+        public override bool CanExecute([NotNull] GenericSkill skillSlot)
+        {
+            InstanceData instanceData = (InstanceData)skillSlot.skillInstanceData;
+            instanceData.currentStock = skillSlot.stock;
+            if ((instanceData.body.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot) || HasRequiredStockAndDelay(skillSlot)) && IsReady(skillSlot) && (bool)skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState())
+            {
+                return skillSlot.stateMachine.CanInterruptState(interruptPriority);
+            }
+
+            return false;
+        }
         public override BaseSkillInstanceData OnAssigned([NotNull] GenericSkill skillSlot)
         {
             return new InstanceData

@@ -30,7 +30,7 @@ namespace EntityStates.Badger.Components
 
         private BuffWard buffWard;
 
-        public GameObject soundScape = BadgerSurvivor.soundScape;
+        public GameObject soundScape => BadgerSurvivor.soundScape;
 
         private void Start()
         {

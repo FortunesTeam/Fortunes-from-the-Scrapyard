@@ -18,7 +18,7 @@ namespace EntityStates.Badger
     {
         public static float damageCoefficient = BadgerSurvivor.basePrimaryDamage;
         public static float procCoefficient = 1f;
-        public static float baseDuration = 0.1f; // per shot
+        public static float baseDuration = 0.15f; // per shot
         public static float force = 200f;
         public static float recoil = 1.2f; // was 0.5f
         public static float range = 2000f;

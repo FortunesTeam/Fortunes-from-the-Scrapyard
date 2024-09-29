@@ -134,6 +134,43 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
         #region projectiles
         private void CreateProjectiles()
         {
+            soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone");
+            if (!soundScape.GetComponent<NetworkIdentity>()) soundScape.AddComponent<NetworkIdentity>();
+            BuffWard buffWard = soundScape.GetComponent<BuffWard>();
+            buffWard.radius = 2.5f;
+            buffWard.interval = 0.01f;
+            buffWard.buffDef = ScrapyardContent.Buffs.bdBadgerSoundBuff;
+            buffWard.expires = true;
+            buffWard.expireDuration = 5f;
+            buffWard.invertTeamFilter = false;
+
+            soundScape.GetComponent<SphereCollider>().radius = 2.5f;
+
+            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
+
+            soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("soundBuffProjectile");
+            if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
+
+            ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();
+            overlapAttack.damageCoefficient = 1f;
+            overlapAttack.impactEffect = null;
+
+            ProjectileSingleTargetImpact singleTargetImpact = soundWave.GetComponent<ProjectileSingleTargetImpact>();
+            singleTargetImpact.impactEffect = null;
+
+            ProjectileDamage damage = soundWave.GetComponent<ProjectileDamage>();
+            damage.damageType = DamageType.Generic;
+
+            ProjectileSimple simple = soundWave.GetComponent<ProjectileSimple>();
+            simple.lifetime = 5f;
+
+            ProjectileController controller = soundWave.GetComponent<ProjectileController>();
+            controller.ghostPrefab = null;
+
+            soundWave.AddComponent<SoundWaveController>();
+
+            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundWave);
+
             diskPrefab = UnityEngine.AddressableAssets.Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("BadgerDisk");
             if (!diskPrefab.GetComponent<NetworkIdentity>()) diskPrefab.AddComponent<NetworkIdentity>();
             diskPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
@@ -157,48 +194,9 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             diskExplosion = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LaserTurbine/LaserTurbineBomb.prefab").WaitForCompletion().InstantiateClone("BadgerDiskExplosion");
 
-            ScrapyardContent.CreateAndAddEffectDef(diskExplosion);
-
             diskPrefab.GetComponent<ProjectileImpactExplosion>().explosionEffect = diskExplosion;
 
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(diskPrefab);
-
-            soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone");
-            if (!soundScape.GetComponent<NetworkIdentity>()) soundScape.AddComponent<NetworkIdentity>();
-            BuffWard buffWard = soundScape.GetComponent<BuffWard>();
-            buffWard.radius = 2.5f;
-            buffWard.interval = 0.01f;
-            buffWard.buffDef = ScrapyardContent.Buffs.bdBadgerSoundBuff;
-            buffWard.expires = true;
-            buffWard.expireDuration = 5f;
-            buffWard.invertTeamFilter = false;
-
-            soundScape.GetComponent<SphereCollider>().radius = 2.5f;
-
-            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
-
-            soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("SoundBuffProjectile");
-            if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
-
-            ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();
-            overlapAttack.damageCoefficient = 1f;
-            overlapAttack.impactEffect = null;
-
-            ProjectileSingleTargetImpact singleTargetImpact = soundWave.GetComponent<ProjectileSingleTargetImpact>();
-            singleTargetImpact.impactEffect = null;
-
-            ProjectileDamage damage = soundWave.GetComponent<ProjectileDamage>();
-            damage.damageType = DamageType.Generic;
-
-            ProjectileSimple simple = soundWave.GetComponent<ProjectileSimple>();
-            simple.lifetime = 5f;
-
-            ProjectileController controller = soundWave.GetComponent<ProjectileController>();
-            controller.ghostPrefab = null;
-
-            soundWave.AddComponent<SoundWaveController>();
-
-            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundWave);
         }
         #endregion
 
@@ -210,7 +208,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             {
                 if (self.HasBuff(ScrapyardContent.Buffs.bdBadgerSoundBuff))
                 {
-                    self.moveSpeed *= 1.25f;
+                    self.armor += 20f;
                     self.attackSpeed *= 1.35f;
                 }
 
@@ -242,20 +240,25 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
                 {
                     if (attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("BadgerBody"))
                     {
-                        foreach(BuffIndex buff in victimBody.activeBuffsList)
+                        float finalMultiplier = 1f;
+
+                        foreach (BuffIndex buff in victimBody.activeBuffsList)
                         {
-                            if (BuffCatalog.GetBuffDef(buff).isDebuff)
+                            BuffDef buffDef = BuffCatalog.GetBuffDef(buff);
+                            if (buffDef.isDebuff && !buffDef.isCooldown)
                             {
-                                damageInfo.damage *= 1.2f;
+                                finalMultiplier += 0.2f;
                             }
                         }
 
                         if(victimMachine && (victimMachine.state is EntityStates.StunState || victimMachine.state is EntityStates.FrozenState ||
-                            victimMachine.state is EntityStates.ShockState || victimMachine.state is EntityStates.SleepState || 
+                            victimMachine.state is EntityStates.ShockState || 
                             victimMachine.state is EntityStates.Neuromancer.TimeStoppedState))
                         {
-                            damageInfo.damage *= 0.2f;
+                            finalMultiplier += 0.2f;
                         }
+
+                        damageInfo.damage *= finalMultiplier;
                     }
                 }
             }

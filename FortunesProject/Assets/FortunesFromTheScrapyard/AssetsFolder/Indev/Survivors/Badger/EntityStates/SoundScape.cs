@@ -15,14 +15,13 @@ namespace EntityStates.Badger
 {
     public class SoundScape : BaseSkillState
     {
-        private float timer = 0f;
-
-        private GameObject soundWave = BadgerSurvivor.soundWave;
+        private float baseDuration = 0.5f;
+        public GameObject soundWave => BadgerSurvivor.soundWave;
         private static float baseSoundWaveDamageCoefficient = 6f;
         public override void OnEnter()
         {
 
-            this.PlayCrossfade("Gesture, Override", "BeatDrop", 0.05f);
+            this.PlayCrossfade("Gesture, Override", "BeatDrop", "Special.playbackRate", baseDuration * 2f, baseDuration * 0.05f);
 
             if (base.isAuthority)
             {
@@ -37,12 +36,10 @@ namespace EntityStates.Badger
                     damage = this.damageStat * baseSoundWaveDamageCoefficient,
                     force = 0f,
                     crit = base.RollCrit(),
-                    
+
                 };
 
                 ProjectileManager.instance.FireProjectile(fireProjectileInfo);
-
-
             }
         }
 
@@ -50,7 +47,7 @@ namespace EntityStates.Badger
         {
             base.FixedUpdate();
 
-            if (base.isAuthority)
+            if (base.isAuthority && fixedAge >= baseDuration)
             {
                 outer.SetNextStateToMain();
             }

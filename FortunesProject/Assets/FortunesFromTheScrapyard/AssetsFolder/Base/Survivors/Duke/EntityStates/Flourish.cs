@@ -105,11 +105,7 @@ namespace EntityStates.Duke
         }
         public override void OnExit()
         {
-            if (skillLocator.primary.stock == 0)
-            {
-                skillLocator.primary.stock++;
-            }
-            else if (NetworkServer.active)
+            if (NetworkServer.active)
             {
                 if (base.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
                 {
@@ -122,8 +118,6 @@ namespace EntityStates.Duke
             {
                 base.characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility.buffIndex);
             }
-
-            PlayAnimation("FullBody, Override", "BufferEmpty");
 
             base.gameObject.layer = LayerIndex.defaultLayer.intVal;
             base.characterMotor.Motor.RebuildCollidableLayers();

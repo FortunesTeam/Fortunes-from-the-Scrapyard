@@ -56,8 +56,7 @@ namespace EntityStates.Duke
         {
             if (!hasGivenStock)
             {
-                for (int i = base.skillLocator.primary.stock; i < base.skillLocator.primary.maxStock; i++) base.skillLocator.primary.AddOneStock();
-                hasGivenStock = true;
+                base.skillLocator.primary.stock = base.skillLocator.primary.GetBaseMaxStock();
             }
         }
 
