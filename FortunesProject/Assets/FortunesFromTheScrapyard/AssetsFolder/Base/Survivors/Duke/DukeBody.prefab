@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &813024196628734019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7290678640094074994}
-  m_Layer: 0
-  m_Name: LogbookCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7290678640094074994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813024196628734019}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3760019, y: 0.1619987, z: 0.6320041}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6198732797129859653}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &854022975929230388
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +29,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8601430755475120696}
-  - {fileID: 6198732797129859653}
   m_Father: {fileID: 13339794869116082}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -213,8 +181,8 @@ MonoBehaviour:
   BaseImportance: 0
   Importance: -1
   inLava: 0
-  baseNameToken: SCRAPYARD_DUKE_BODY_NAME
-  subtitleNameToken: SCRAPYARD_DUKE_BODY_SUBTITLE
+  baseNameToken: SCRAPYARD_DUKE_NAME
+  subtitleNameToken: SCRAPYARD_DUKE_SUBTITLE
   bodyFlags: 16
   lavaCooldown: 0.2
   rootMotionInMainState: 0
@@ -861,38 +829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeedConversion: 0
---- !u!1 &8998513344450920593
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6198732797129859653}
-  m_Layer: 0
-  m_Name: LogbookTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6198732797129859653
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8998513344450920593}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.89375, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7290678640094074994}
-  m_Father: {fileID: 7492142162452328830}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9171435935333683948
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,16 +872,6 @@ PrefabInstance:
       propertyPath: healthComponent
       value: 
       objectReference: {fileID: 7831960539323599489}
-    - target: {fileID: 717679452991463133, guid: 2a6380588938a3e4798d64341cc43601,
-        type: 3}
-      propertyPath: focusPointTransform
-      value: 
-      objectReference: {fileID: 6198732797129859653}
-    - target: {fileID: 717679452991463133, guid: 2a6380588938a3e4798d64341cc43601,
-        type: 3}
-      propertyPath: cameraPositionTransform
-      value: 
-      objectReference: {fileID: 7290678640094074994}
     - target: {fileID: 1968664864494280982, guid: 2a6380588938a3e4798d64341cc43601,
         type: 3}
       propertyPath: body
@@ -1028,6 +954,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6380588938a3e4798d64341cc43601, type: 3}
+--- !u!54 &3419986973573789999 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2538113139370888846, guid: 2a6380588938a3e4798d64341cc43601,
+    type: 3}
+  m_PrefabInstance: {fileID: 886941377250736033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3453942934627633397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2567564946591416148, guid: 2a6380588938a3e4798d64341cc43601,
+    type: 3}
+  m_PrefabInstance: {fileID: 886941377250736033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!144 &1135745456703129748
+CharacterJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453942934627633397}
+  m_ConnectedBody: {fileID: 3419986973573789999}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_SwingAxis: {x: 0, y: 1, z: 0}
+  m_TwistLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowTwistLimit:
+    limit: -20
+    bounciness: 0
+    contactDistance: 0
+  m_HighTwistLimit:
+    limit: 70
+    bounciness: 0
+    contactDistance: 0
+  m_SwingLimitSpring:
+    spring: 0
+    damper: 0
+  m_Swing1Limit:
+    limit: 40
+    bounciness: 0
+    contactDistance: 0
+  m_Swing2Limit:
+    limit: 40
+    bounciness: 0
+    contactDistance: 0
+  m_EnableProjection: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!95 &5779891065521373480 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6663427727422076553, guid: 2a6380588938a3e4798d64341cc43601,

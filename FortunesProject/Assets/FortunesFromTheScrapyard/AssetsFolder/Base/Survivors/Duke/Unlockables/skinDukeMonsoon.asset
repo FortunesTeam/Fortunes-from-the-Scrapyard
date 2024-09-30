@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1255927399, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: skinDukeMonsoon
+  m_EditorClassIdentifier: 
+  baseSkins:
+  - {fileID: 11400000, guid: 61846ea2e3f35c84eb789db2b5dc887f, type: 2}
+  icon: {fileID: 21300000, guid: 8cbee8eee460b4945bcbe4fdc4544555, type: 3}
+  nameToken: SCRAPYARD_DUKE_SKIN_ALT1_NAME
+  unlockableName: 
+  unlockableDef: {fileID: 11400000, guid: 9c890bd4a773bff4aa443bef1651632c, type: 2}
+  rootObject: {fileID: 8095984920295804707, guid: 2a6380588938a3e4798d64341cc43601,
+    type: 3}
+  rendererInfos:
+  - renderer: {fileID: 1371459169455701191, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: ada00485422462843aeebc82f4d52676, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3175239971721428984, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: 0638464b88791e84292224539e6764ae, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: c67a0bff2084bca44883497ba220fd76, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  gameObjectActivations: []
+  meshReplacements:
+  - renderer: {fileID: 1371459169455701191, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    mesh: {fileID: 5688531374881576155, guid: 817cd1d7b34c19b46938c16ebccf4b6b, type: 3}
+  - renderer: {fileID: 3175239971721428984, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    mesh: {fileID: -9023413642965637146, guid: 817cd1d7b34c19b46938c16ebccf4b6b, type: 3}
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
+      type: 3}
+    mesh: {fileID: 4950905526453025354, guid: 817cd1d7b34c19b46938c16ebccf4b6b, type: 3}
+  projectileGhostReplacements: []
+  minionSkinReplacements:
+  - minionBodyPrefab: {fileID: 6415622932436946676, guid: 1665605abb4e1f044917db49321ac400,
+      type: 3}
+    minionSkin: {fileID: 11400000, guid: b1d4b069567c97b4dabe7674bc0c9d18, type: 2}
