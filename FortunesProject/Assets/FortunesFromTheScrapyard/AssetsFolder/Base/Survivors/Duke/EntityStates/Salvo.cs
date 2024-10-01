@@ -9,6 +9,7 @@ using FortunesFromTheScrapyard.Survivors.Duke.Components;
 using MSU;
 using MSU.Config;
 using FortunesFromTheScrapyard;
+using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
 
 namespace EntityStates.Duke
 {
@@ -20,7 +21,7 @@ namespace EntityStates.Duke
         public static float baseForce = 600f;
         public static int bulletCount = 1;
         public static float baseBulletSpread = 0f;
-        public static float baseBulletRadius = 0.2f;
+        public static float baseBulletRadius = 0.4f;
         public static float baseBulletRecoil = 2f;
         public static float baseBulletRange = 999f;
         public static float baseSelfForce = 750f;
@@ -64,7 +65,7 @@ namespace EntityStates.Duke
             this.selfForce = baseSelfForce;
 
             base.OnEnter();
-
+            this.dukeController.speedUpReloadTime = false;
             this.windupDuration = baseShootDuration / this.attackSpeedStat;
             this.duration = baseDuration / this.attackSpeedStat;
 
@@ -75,7 +76,9 @@ namespace EntityStates.Duke
             {
                 freeBullet = true;
                 windupDuration /= 4f;
+                duration /= 4f;
                 characterBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeFreeShot);
+                this.dukeController.speedUpReloadTime = true;
             }
 
             this.isCrit = base.RollCrit();
@@ -240,7 +243,7 @@ namespace EntityStates.Duke
                     procCoefficient = procCoefficient,
                     radius = bulletRadius,
                     sniper = false,
-                    stopperMask = fourthShot ? LayerIndex.world.mask : LayerIndex.CommonMasks.bullet,
+                    stopperMask = fourthShot ? LayerIndex.world.mask : default(LayerMask),
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,
@@ -248,6 +251,7 @@ namespace EntityStates.Duke
                     queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
                     hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FireBarrage.hitEffectPrefab,
                     HitEffectNormal = false,
+                    trajectoryAimAssistMultiplier = 0.3f
                 };
 
                 if (isCrit)
@@ -258,6 +262,50 @@ namespace EntityStates.Duke
                 bulletAttack.minSpread = 0;
                 bulletAttack.maxSpread = 0;
                 bulletAttack.bulletCount = 1;
+                bulletAttack.modifyOutgoingDamageCallback = delegate (BulletAttack _bulletAttack, ref BulletAttack.BulletHit hitInfo, DamageInfo damageInfo)
+                {
+                    CharacterBody victimBody = hitInfo.hitHurtBox.hurtBoxGroup.mainHurtBox.healthComponent.body;
+                    if (victimBody && damageInfo.attacker)
+                    {
+                        CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
+                        if (victimBody.gameObject.TryGetComponent<DukeDecoyExplosion>(out var boom))
+                        {
+                            if (boom.ownerBody == attackerBody)
+                            {
+                                boom.SetValuesAndKillDecoy(damageInfo.damage / attackerBody.damage, damageInfo.crit);
+                            }
+                        }
+                    }
+
+                    if(hitInfo.collider.gameObject.TryGetComponent<BuffWard>(out var buffWard))
+                    {
+                        if(buffWard.buffDef.buffIndex == ScrapyardContent.Buffs.bdDukeDamageShare.buffIndex)
+                        {
+                            DamageInfo dukeSharedDamage = new DamageInfo();
+                            dukeSharedDamage.attacker = damageInfo.attacker;
+                            dukeSharedDamage.inflictor = damageInfo.inflictor;
+                            dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
+                            dukeSharedDamage.procCoefficient = damageInfo.procCoefficient;
+                            dukeSharedDamage.crit = damageInfo.crit;
+                            dukeSharedDamage.damageType = damageInfo.damageType;
+                            dukeSharedDamage.damageColorIndex = DamageColorIndex.WeakPoint;
+                            dukeSharedDamage.force = Vector3.zero;
+
+                            foreach (CharacterBody body in CharacterBody.readOnlyInstancesList)
+                            {
+                                if (body.teamComponent.teamIndex != base.teamComponent.teamIndex && body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
+                                {
+                                    dukeSharedDamage.position = body.corePosition;
+
+                                    if(victimBody && victimBody != body)
+                                    {
+                                        body.healthComponent.TakeDamage(damageInfo);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
                 bulletAttack.Fire();
 
                 this.characterMotor.ApplyForce(aimRay.direction * -this.selfForce);

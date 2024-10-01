@@ -41,7 +41,7 @@ namespace FortunesFromTheScrapyard.Survivors.Neuromancer.Components
         {
             if (target)
             {
-                NetworkIdentity identity = target.healthComponent.body.gameObject.GetComponent<NetworkIdentity>();
+                NetworkIdentity identity = target.healthComponent.body.networkIdentity;
                 if (!identity) return;
 
                 ulong time = (ulong)(siphonValue * 100f);

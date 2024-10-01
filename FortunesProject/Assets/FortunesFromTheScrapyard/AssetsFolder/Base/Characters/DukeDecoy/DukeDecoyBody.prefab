@@ -122,7 +122,6 @@ GameObject:
   - component: {fileID: 6936882174609108512}
   - component: {fileID: 4355017352641958904}
   - component: {fileID: 1183594411899118939}
-  - component: {fileID: 154954224203725988}
   - component: {fileID: 3838885507394340169}
   - component: {fileID: 3396411948995271984}
   - component: {fileID: 3761036897811734563}
@@ -131,6 +130,7 @@ GameObject:
   - component: {fileID: 7277832363710653967}
   - component: {fileID: 4617678326562280654}
   - component: {fileID: 6906708275865328082}
+  - component: {fileID: 4903568888605986555}
   m_Layer: 0
   m_Name: DukeDecoyBody
   m_TagString: Player
@@ -214,13 +214,13 @@ MonoBehaviour:
   lavaCooldown: 0.2
   rootMotionInMainState: 0
   mainRootSpeed: 0
-  baseMaxHealth: 110
+  baseMaxHealth: 130
   baseRegen: -6
   baseMaxShield: 0
   baseMoveSpeed: 0
-  baseAcceleration: 4444
+  baseAcceleration: 0
   baseJumpPower: 0
-  baseDamage: 6
+  baseDamage: 2
   baseAttackSpeed: 1
   baseCrit: 1
   baseArmor: 0
@@ -228,12 +228,12 @@ MonoBehaviour:
   baseJumpCount: 0
   sprintingSpeedMultiplier: 0
   autoCalculateLevelStats: 1
-  levelMaxHealth: 33
+  levelMaxHealth: 39
   levelRegen: -1.2
   levelMaxShield: 0
   levelMoveSpeed: 0
   levelJumpPower: 0
-  levelDamage: 1.2
+  levelDamage: 0.4
   levelAttackSpeed: 0
   levelCrit: 0
   levelArmor: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   characterDirection: {fileID: 1953305243280886493}
   muteWalkMotion: 0
   mass: 2000
-  airControl: 0.25
+  airControl: 0
   disableAirControlUntilCollision: 0
   generateParametersOnAwake: 1
   doNotTriggerJumpVolumes: 0
@@ -567,22 +567,6 @@ MonoBehaviour:
   aliveLoopStop: 
   sprintLoopStart: 
   sprintLoopStop: 
---- !u!54 &154954224203725988
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6415622932436946676}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &3838885507394340169
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -729,6 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeedConversion: 0
+  speedUpReloadTime: 0
 --- !u!114 &6906708275865328082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +730,28 @@ MonoBehaviour:
   isCrit: 0
   ownerBody: {fileID: 0}
   decoyBody: {fileID: 4584433041002638788}
+--- !u!114 &4903568888605986555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415622932436946676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8abcbe3764a23a4b8ec083c1d7e832c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &7351485547083686932
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,6 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy.Components
                 killDecoy.position = decoyBody.corePosition;
                 killDecoy.canRejectForce = false;
                 killDecoy.rejected = false;
-                killDecoy.AddModdedDamageType(DukeDecoy.DecoyHit);
 
                 decoyBody.healthComponent.TakeDamage(killDecoy);
             }

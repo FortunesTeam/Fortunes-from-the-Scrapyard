@@ -20,6 +20,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
         private Animator animator;
         private SkillLocator skillLocator;
         public float attackSpeedConversion;
+        public bool speedUpReloadTime;
+
         private void Awake()
         {
             this.characterBody = this.GetComponent<CharacterBody>();

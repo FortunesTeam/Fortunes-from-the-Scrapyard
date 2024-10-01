@@ -16,10 +16,8 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
         public static GameObject dukeDecoyDeathExplosion;
         public static GameObject DukeDecoyMaster;
         
-        public static DamageAPI.ModdedDamageType DecoyHit;
         public override void Initialize()
         {
-            DecoyHit = DamageAPI.ReserveDamageType();
             DukeDecoyMaster = assetCollection.FindAsset<GameObject>("DukeDecoyMaster");
 
             var cb = characterPrefab.GetComponent<CharacterBody>();
@@ -42,7 +40,7 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
         {
             orig.Invoke(self, damageInfo, hitObject);
 
-            if(hitObject && damageInfo.attacker && !damageInfo.HasModdedDamageType(DecoyHit))
+            if(hitObject && damageInfo.attacker)
             {
                 CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
                 if (hitObject.TryGetComponent<DukeDecoyExplosion>(out var boom))

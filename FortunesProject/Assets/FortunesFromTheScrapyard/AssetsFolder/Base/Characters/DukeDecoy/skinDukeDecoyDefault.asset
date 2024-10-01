@@ -48,6 +48,6 @@ MonoBehaviour:
     mesh: {fileID: 4156337485732117756, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
   - renderer: {fileID: 3587660648800453562, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
       type: 3}
-    mesh: {fileID: 5474398538139690464, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
+    mesh: {fileID: 3695255174479036931, guid: 7aadefb71d53eb54b9e07daba6953869, type: 3}
   projectileGhostReplacements: []
   minionSkinReplacements: []

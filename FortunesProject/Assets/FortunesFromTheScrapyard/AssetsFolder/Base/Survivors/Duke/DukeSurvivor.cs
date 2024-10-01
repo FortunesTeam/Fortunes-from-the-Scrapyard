@@ -19,6 +19,7 @@ using ThreeEyedGames;
 using EmotesAPI;
 using RoR2.Skills;
 using MSU.Config;
+using R2API.Networking.Interfaces;
 
 namespace FortunesFromTheScrapyard.Survivors.Duke
 {
@@ -42,7 +43,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         public static float baseCloneDamageCoefficient = 5f;
 
         public static DamageAPI.ModdedDamageType DukeFourthShot;
-        public static DamageAPI.ModdedDamageType DukeSharedDamageType;
 
         //ALL TEMP
         internal static GameObject dukeTracer;
@@ -70,7 +70,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         public override void Initialize()
         {
             DukeFourthShot = DamageAPI.ReserveDamageType();
-            DukeSharedDamageType = DamageAPI.ReserveDamageType();
 
             CreateEffects();
 
@@ -137,10 +136,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             ProjectileExplosion pe = damageShareMine.GetComponent<ProjectileExplosion>();
 
             ProjectileSimple ps = damageShareMine.GetComponent<ProjectileSimple>();
-            ps.desiredForwardSpeed = 70f;
+            ps.desiredForwardSpeed = 200f;
 
             ProjectileFuse projectileFuse = damageShareMine.GetComponent<ProjectileFuse>();
-            projectileFuse.fuse = 0.25f;
+            projectileFuse.fuse = 0f;
 
             dukeField = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("DukeDamageField");
             if (!dukeField.GetComponent<NetworkIdentity>()) dukeField.AddComponent<NetworkIdentity>();
@@ -158,8 +157,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             BuffWard buffWard = dukeField.GetComponent<BuffWard>();
             buffWard.invertTeamFilter = true;
             buffWard.buffDef = ScrapyardContent.Buffs.bdDukeDamageShare;
-            buffWard.interval = 0.01f;
-            buffWard.expireDuration = 5f;
+            buffWard.interval = 1f;
+            buffWard.expireDuration = 6f;
             buffWard.radius = 15f;
 
             dukeField.GetComponent<SphereCollider>().radius = 15f;
@@ -187,43 +186,43 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         private void Hooks()
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
-            On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+            RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
             if (ScrapyardMain.emotesInstalled)
             {
                 Emotes();
             }
         }
-        private static void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
+
+        private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
         {
-            orig.Invoke(self);
-
-            if (self)
+            if (sender.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
             {
-                if (self.HasBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff))
-                {
-                    self.moveSpeed += 0.25f * self.GetBuffCount(ScrapyardContent.Buffs.bdDukeSpeedBuff);
-                }
+                args.moveSpeedReductionMultAdd += 0.25f;
+            }
+            if (sender.HasBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff))
+            {
+                args.moveSpeedMultAdd += 0.25f * sender.GetBuffCount(ScrapyardContent.Buffs.bdDukeSpeedBuff);
+            }
 
-                if (self.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody"))
+            if (sender.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody"))
+            {
+                DukeController dukeController = sender.GetComponent<DukeController>();
+                if (dukeController != null)
                 {
-                    DukeController dukeController = self.GetComponent<DukeController>();
-                    if (dukeController != null)
-                    {
-                        float baseAttackSpeed = self.baseAttackSpeed + (self.levelAttackSpeed * self.level);
-                        //float baseDamage = self.baseDamage + (self.baseDamage * self.level);
-                        //float newDamage = self.damage * ((self.attackSpeed - baseAttackSpeed) * 0.7f);
-                        //self.damage += newDamage;
-                        dukeController.attackSpeedConversion = (self.attackSpeed - baseAttackSpeed) * 0.7f;
-                        self.attackSpeed = (self.attackSpeed - baseAttackSpeed) * 0.3f + baseAttackSpeed;
-                    }
+                    float baseAttackSpeed = sender.baseAttackSpeed + (sender.levelAttackSpeed * sender.level);
+                    //float baseDamage = sender.baseDamage + (sender.baseDamage * sender.level);
+                    //float newDamage = sender.damage * ((sender.attackSpeed - baseAttackSpeed) * 0.7f);
+                    //sender.damage += newDamage;
+                    dukeController.attackSpeedConversion = (sender.attackSpeed - baseAttackSpeed) * 0.7f;
+                    args.attackSpeedReductionMultAdd += (sender.attackSpeed - baseAttackSpeed) * 0.7f;
                 }
+            }
 
-                if(self.bodyIndex == BodyCatalog.FindBodyIndex("DukeDecoyBody"))
-                {
-                    float baseAttackSpeed = self.baseAttackSpeed + (self.levelAttackSpeed * self.level);
-                    self.attackSpeed = (self.attackSpeed - baseAttackSpeed) * 0.3f + baseAttackSpeed;
-                }
+            if (sender.bodyIndex == BodyCatalog.FindBodyIndex("DukeDecoyBody"))
+            {
+                float baseAttackSpeed = sender.baseAttackSpeed + (sender.levelAttackSpeed * sender.level);
+                args.attackSpeedReductionMultAdd += (sender.attackSpeed - baseAttackSpeed) * 0.7f;
             }
         }
 
@@ -307,30 +306,9 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                         {
                             if (attackerBody.skillLocator.utility.skillDef == SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("Flourish")))
                             {
-                                attackerBody.skillLocator.utility.RunRecharge(1.5f);
-                            }
-                        }
-                    }
+                                NetworkIdentity networkIdentity = attackerBody.networkIdentity;
 
-                    if (!damageInfo.HasModdedDamageType(DukeSharedDamageType) && victimBody.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
-                    {
-                        foreach (CharacterBody body in CharacterBody.readOnlyInstancesList)
-                        {
-                            if (body.teamComponent.teamIndex != attackerBody.teamComponent.teamIndex && body != victimBody && body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
-                            {
-                                DamageInfo dukeSharedDamage = new DamageInfo();
-                                dukeSharedDamage.attacker = damageInfo.attacker;
-                                dukeSharedDamage.inflictor = damageInfo.inflictor;
-                                dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
-                                dukeSharedDamage.procCoefficient = 0.7f;
-                                dukeSharedDamage.crit = false;
-                                dukeSharedDamage.damageType = damageInfo.damageType;
-                                dukeSharedDamage.damageColorIndex = DamageColorIndex.WeakPoint;
-                                dukeSharedDamage.force = Vector3.zero;
-                                dukeSharedDamage.position = body.corePosition;
-                                dukeSharedDamage.AddModdedDamageType(DukeSharedDamageType);
-
-                                body.healthComponent.TakeDamage(dukeSharedDamage);
+                                new SyncDukeRecharge(networkIdentity.netId).Send(R2API.Networking.NetworkDestination.Clients);
                             }
                         }
                     }

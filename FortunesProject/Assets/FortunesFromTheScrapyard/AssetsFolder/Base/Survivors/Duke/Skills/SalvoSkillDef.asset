@@ -44,6 +44,6 @@ MonoBehaviour:
     _typeName: EntityStates.Duke.EnterReload, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   reloadInterruptPriority: 0
-  graceDuration: 1.5
+  graceDuration: 0
   primaryIcon: {fileID: 21300000, guid: a6a8cce79b8ef4446907ac72515df954, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 3730fec68325386458f2205dbeacc4e5, type: 3}

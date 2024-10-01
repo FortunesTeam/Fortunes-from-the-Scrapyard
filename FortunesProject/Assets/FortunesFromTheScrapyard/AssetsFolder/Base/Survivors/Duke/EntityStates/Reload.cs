@@ -18,9 +18,10 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
-            dukeController = base.gameObject.GetComponent<DukeController>();    
+            this.dukeController = base.gameObject.GetComponent<DukeController>();    
             base.OnEnter();
-            this.duration = baseDuration / attackSpeedStat;
+            
+            this.duration = this.dukeController.speedUpReloadTime ? ((baseDuration / 2f) / attackSpeedStat) : baseDuration / attackSpeedStat;
             //this.dukeController.DropMag(-this.GetModelBaseTransform().transform.right * -Random.Range(4, 12));
             base.PlayCrossfade("Gesture, Additive", "Reload", "Reload.playbackRate", this.duration, 0.05f);
         }
