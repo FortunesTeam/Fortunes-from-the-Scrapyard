@@ -11,6 +11,9 @@ using MSU.Config;
 using FortunesFromTheScrapyard;
 using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
 using RoR2.Networking;
+using System.Collections.Generic;
+using System.Linq;
+using FortunesFromTheScrapyard.Ricochet;
 
 namespace EntityStates.Duke
 {
@@ -30,6 +33,7 @@ namespace EntityStates.Duke
         public static GameObject tracerEffectPrefab = DukeSurvivor.dukeTracer;
         public static GameObject empoweredTracerEffectPrefab = DukeSurvivor.dukeTracerCrit;
 
+        private Vector3 ricochetPoint;
         private bool fourthShot;
         private bool freeBullet;
         private float windupDuration;
@@ -181,7 +185,7 @@ namespace EntityStates.Duke
                     falloffModel = this.falloff,
                     maxDistance = bulletRange,
                     force = force,
-                    hitMask = LayerIndex.CommonMasks.bullet,
+                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.fakeActor.mask,
                     minSpread = 0f,
                     maxSpread = 0f,
                     isCrit = this.isCrit,
@@ -192,7 +196,7 @@ namespace EntityStates.Duke
                     procCoefficient = procCoefficient,
                     radius = bulletRadius,
                     sniper = false,
-                    stopperMask = fourthShot ? LayerIndex.world.mask : default(LayerMask),
+                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)) | LayerIndex.fakeActor.mask,
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,
@@ -229,115 +233,7 @@ namespace EntityStates.Duke
                             }
                         }
                     }
-
-                    if (hitInfo.collider && hitInfo.collider.gameObject.layer == LayerIndex.triggerZone.intVal)
-                    {
-                        ScrapyardLog.Debug("Hit Collider of" + hitInfo.collider.gameObject.name);
-                        if (hitInfo.collider.gameObject.TryGetComponent<BuffWard>(out var buffWard))
-                        {
-                            if (buffWard.buffDef.buffIndex == ScrapyardContent.Buffs.bdDukeDamageShare.buffIndex)
-                            {
-                                DamageInfo dukeSharedDamage = new DamageInfo();
-                                dukeSharedDamage.attacker = damageInfo.attacker;
-                                dukeSharedDamage.inflictor = damageInfo.inflictor;
-                                dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
-                                dukeSharedDamage.procCoefficient = damageInfo.procCoefficient;
-                                dukeSharedDamage.crit = damageInfo.crit;
-                                dukeSharedDamage.damageType = damageInfo.damageType;
-                                dukeSharedDamage.damageColorIndex = DamageColorIndex.WeakPoint;
-                                dukeSharedDamage.force = Vector3.zero;
-
-                                foreach (CharacterBody body in CharacterBody.readOnlyInstancesList)
-                                {
-                                    if (body.teamComponent.teamIndex != base.teamComponent.teamIndex && body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
-                                    {
-                                        dukeSharedDamage.position = body.corePosition;
-
-                                        if (victimBody && victimBody != body)
-                                        {
-                                            body.healthComponent.TakeDamage(damageInfo);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 };
-                /*
-                salvoAttack.hitCallback = delegate (BulletAttack bulletAttack, ref BulletAttack.BulletHit hitInfo)
-                {
-                    bool result = false;
-                    if (hitInfo.collider)
-                    {
-                        result = ((1 << hitInfo.collider.gameObject.layer) & (int)bulletAttack.stopperMask) == 0;
-                        if(hitInfo.collider.gameObject.layer == LayerIndex.triggerZone.intVal && hitInfo.collider.gameObject.transform.root.name == "DukeDamageField")
-                        {
-
-                        }
-                    }
-                    BulletAttack.PlayHitEffect(bulletAttack, ref hitInfo);
-                    GameObject entityObject = hitInfo.entityObject;
-                    if ((bool)entityObject)
-                    {
-                        float num = BulletAttack.CalcFalloffFactor(bulletAttack.falloffModel, hitInfo.distance);
-                        DamageInfo damageInfo = new DamageInfo();
-                        damageInfo.damage = bulletAttack.damage * num;
-                        damageInfo.crit = bulletAttack.isCrit;
-                        damageInfo.attacker = bulletAttack.owner;
-                        damageInfo.inflictor = bulletAttack.weapon;
-                        damageInfo.position = hitInfo.point;
-                        damageInfo.force = hitInfo.direction * (bulletAttack.force * num);
-                        damageInfo.procChainMask = bulletAttack.procChainMask;
-                        damageInfo.procCoefficient = bulletAttack.procCoefficient;
-                        damageInfo.damageType = bulletAttack.damageType;
-                        damageInfo.damageColorIndex = bulletAttack.damageColorIndex;
-                        damageInfo.ModifyDamageInfo(hitInfo.damageModifier);
-                        if (hitInfo.isSniperHit)
-                        {
-                            damageInfo.crit = true;
-                            damageInfo.damageColorIndex = DamageColorIndex.Sniper;
-                        }
-                        bulletAttack.modifyOutgoingDamageCallback?.Invoke(bulletAttack, ref hitInfo, damageInfo);
-                        TeamIndex attackerTeamIndex = TeamIndex.None;
-                        if ((bool)bulletAttack.owner)
-                        {
-                            TeamComponent component = bulletAttack.owner.GetComponent<TeamComponent>();
-                            if ((bool)component)
-                            {
-                                attackerTeamIndex = component.teamIndex;
-                            }
-                        }
-                        HealthComponent healthComponent = null;
-                        if ((bool)hitInfo.hitHurtBox)
-                        {
-                            healthComponent = hitInfo.hitHurtBox.healthComponent;
-                        }
-                        bool flag = (bool)healthComponent && FriendlyFireManager.ShouldDirectHitProceed(healthComponent, attackerTeamIndex);
-                        if (NetworkServer.active)
-                        {
-                            if (flag)
-                            {
-                                healthComponent.TakeDamage(damageInfo);
-                                GlobalEventManager.instance.OnHitEnemy(damageInfo, hitInfo.entityObject);
-                            }
-                            GlobalEventManager.instance.OnHitAll(damageInfo, hitInfo.entityObject);
-                        }
-                        else if (ClientScene.ready)
-                        {
-                            BulletAttack.messageWriter.StartMessage(53);
-                            int currentLogLevel = LogFilter.currentLogLevel;
-                            LogFilter.currentLogLevel = 4;
-                            BulletAttack.messageWriter.Write(entityObject);
-                            LogFilter.currentLogLevel = currentLogLevel;
-                            BulletAttack.messageWriter.Write(damageInfo);
-                            BulletAttack.messageWriter.Write(flag);
-                            BulletAttack.messageWriter.FinishMessage();
-                            ClientScene.readyConnection.SendWriter(BulletAttack.messageWriter, QosChannelIndex.defaultReliable.intVal);
-                        }
-                    }
-                    return result;
-                };
-                */
                 
                 salvoAttack.Fire();
 

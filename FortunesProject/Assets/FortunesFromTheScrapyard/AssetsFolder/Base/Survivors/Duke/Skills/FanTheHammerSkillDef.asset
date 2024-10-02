@@ -22,7 +22,7 @@ MonoBehaviour:
     _typeName: EntityStates.Duke.FanTheHammer, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   interruptPriority: 2
-  baseRechargeInterval: 8
+  baseRechargeInterval: 9
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1

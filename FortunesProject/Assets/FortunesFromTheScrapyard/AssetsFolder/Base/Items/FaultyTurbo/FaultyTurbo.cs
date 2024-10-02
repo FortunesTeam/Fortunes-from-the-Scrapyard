@@ -32,8 +32,10 @@ namespace FortunesFromTheScrapyard.Items
         [FormatToken(TOKEN, 4)]
         public static float checkInterval = 1f;
 
+        internal static NetworkSoundEventDef turboSfx;
         public override void Initialize()
         {
+             turboSfx = ScrapyardContent.CreateAndAddNetworkSoundEventDef("sfx_turbo_start");
         }
 
         public override void ModifyContentPack(ContentPack contentPack)
@@ -78,12 +80,13 @@ namespace FortunesFromTheScrapyard.Items
                 if (timer >= checkInterval && !atMaxStacks && base.body.isSprinting)
                 {
                     timer = 0f;
-                    if (Util.HasEffectiveAuthority(base.gameObject.GetComponent<NetworkIdentity>())) Util.PlaySound("sfx_turbo_start", body.gameObject);
 
                     if (NetworkServer.active)
                     {
                         body.AddBuff(ScrapyardContent.Buffs.bdFaultyTurbo);
                     }
+
+                    EffectManager.SimpleSoundEffect(turboSfx.index, body.corePosition, false);
                 }
                 else if(timer < 0f && body.HasBuff(ScrapyardContent.Buffs.bdFaultyTurbo) && !base.body.isSprinting)
                 {

@@ -23,7 +23,7 @@ namespace EntityStates.Duke
         public static float baseBulletRadius = 0.2f;
         public static float baseBulletRecoil = 4f;
         public static float baseBulletRange = 999f;
-        public static float baseSelfForce = 750f;
+        public static float baseSelfForce = 200f;
 
         public static GameObject tracerEffectPrefab = DukeSurvivor.dukeTracer;
         public static GameObject empoweredTracerEffectPrefab = DukeSurvivor.dukeTracerCrit;
@@ -59,9 +59,10 @@ namespace EntityStates.Duke
 
         public override void OnEnter()
         {
+            this.skillLocator.primary.stock = this.skillLocator.primary.maxStock;
             this.dukeController = base.gameObject.GetComponent<DukeController>();
 
-            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient * (1f + dukeController.attackSpeedConversion);
+            this.damageCoefficient = DukeSurvivor.baseFanDamageCoefficient * (1f + dukeController.attackSpeedConversion);
             this.procCoefficient = baseProcCoefficient;
             this.force = baseForce;
             this.bulletSpread = baseBulletSpread;
@@ -150,7 +151,7 @@ namespace EntityStates.Duke
                     falloffModel = this.falloff,
                     maxDistance = bulletRange,
                     force = force,
-                    hitMask = LayerIndex.CommonMasks.bullet,
+                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.fakeActor.mask,
                     minSpread = 0f,
                     maxSpread = 0f,
                     isCrit = this.isCrit,
@@ -161,7 +162,7 @@ namespace EntityStates.Duke
                     procCoefficient = procCoefficient,
                     radius = bulletRadius,
                     sniper = false,
-                    stopperMask = fourthShot ? LayerIndex.world.mask : LayerIndex.CommonMasks.bullet,
+                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)) | LayerIndex.fakeActor.mask,
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,

@@ -2,9 +2,7 @@ using MSU;
 using R2API;
 using RoR2;
 using RoR2.ContentManagement;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
+using RoR2.Orbs;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
@@ -20,6 +18,7 @@ using EmotesAPI;
 using RoR2.Skills;
 using MSU.Config;
 using R2API.Networking.Interfaces;
+using FortunesFromTheScrapyard.Ricochet;
 
 namespace FortunesFromTheScrapyard.Survivors.Duke
 {
@@ -32,17 +31,22 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float baseSalvoDamageCoefficient = 3.5f;
+        public static float baseSalvoDamageCoefficient = 3.75f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(MINETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        internal static float damageShareCoefficient = 0.5f;
+        internal static float damageShareCoefficient = 1.05f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float baseCloneDamageCoefficient = 5f;
 
+        [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
+        [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float baseFanDamageCoefficient = 3f;
+
         public static DamageAPI.ModdedDamageType DukeFourthShot;
+        public static DamageAPI.ModdedDamageType DukeRicochet;
 
         //ALL TEMP
         internal static GameObject dukeTracer;
@@ -55,6 +59,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         internal static GameObject casing;
 
         internal static GameObject dukePistolSpinEffect;
+
+        internal static GameObject ricochetTracer;
+        internal static GameObject ricochetImpact;
+        internal static GameObject ricochetOrbEffect;
 
         //Projectile
         internal static GameObject damageShareMine;
@@ -70,6 +78,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         public override void Initialize()
         {
             DukeFourthShot = DamageAPI.ReserveDamageType();
+            DukeRicochet = DamageAPI.ReserveDamageType();
 
             CreateEffects();
 
@@ -98,7 +107,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             return ScrapyardAssets.LoadAssetAsync<SurvivorAssetCollection>("acDuke", ScrapyardBundle.Survivors);
         }
         #region effects
-        private static void CreateEffects()
+        private void CreateEffects()
         {
             dukeTracer = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/TracerRailgunLight.prefab").WaitForCompletion();
 
@@ -119,6 +128,119 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(dukeBoomEffectDef);
 
             dukePistolSpinEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoReloadFX.prefab").WaitForCompletion().InstantiateClone("DukePistolSpinEffect");
+
+            #region ricochet
+            ricochetTracer = assetCollection.FindAsset<GameObject>("RicochetTracer");
+            ricochetTracer.AddComponent<NetworkIdentity>();
+
+            var effect1 = ricochetTracer.AddComponent<EffectComponent>();
+            effect1.parentToReferencedTransform = false;
+            effect1.positionAtReferencedTransform = false;
+            effect1.applyScale = false;
+            effect1.disregardZScale = false;
+
+            ricochetTracer.AddComponent<EventFunctions>();
+            var tracer = ricochetTracer.AddComponent<RicochetTracer>();
+            tracer.startTransform = ricochetTracer.transform.Find("Trail").Find("TrailTail");
+            tracer.beamObject = ricochetTracer.transform.Find("Trail").Find("TrailTail").gameObject;
+            tracer.beamDensity = 0.2f;
+            tracer.speed = 1000f;
+            tracer.headTransform = ricochetTracer.transform.Find("Tail");
+            tracer.tailTransform = ricochetTracer.transform.Find("Trail").Find("TrailTail");
+            tracer.length = 20f;
+
+            var destroyOnTimer = ricochetTracer.AddComponent<DestroyOnTimer>();
+            destroyOnTimer.duration = 2;
+            var trailChildObject = ricochetTracer.transform.Find("Trail").gameObject;
+
+            var beamPoints = trailChildObject.AddComponent<BeamPointsFromTransforms>();
+            beamPoints.target = trailChildObject.GetComponent<LineRenderer>();
+            Transform[] bleh = new Transform[2];
+            bleh[0] = ricochetTracer.transform.Find("Tail");
+            bleh[1] = trailChildObject.transform.Find("Head");
+            beamPoints.pointTransforms = bleh;
+            trailChildObject.GetComponent<LineRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Captain/matCaptainTracerTrail.mat").WaitForCompletion();
+            trailChildObject.GetComponent<LineRenderer>().material.SetColor("_TintColor", Color.yellow);
+            var animateShader = trailChildObject.AddComponent<AnimateShaderAlpha>();
+            var curve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(0.675f, 0.8f), new Keyframe(1, 0.3f));
+            curve.preWrapMode = WrapMode.Clamp;
+            curve.postWrapMode = WrapMode.Clamp;
+            animateShader.alphaCurve = curve;
+            animateShader.timeMax = 0.5f;
+            animateShader.pauseTime = false;
+            animateShader.destroyOnEnd = true;
+            animateShader.disableOnEnd = false;
+
+            ScrapyardContent.CreateAndAddEffectDef(ricochetTracer);
+
+            ricochetImpact = assetCollection.FindAsset<GameObject>("RicochetImpactHit");
+            var attr = ricochetImpact.AddComponent<VFXAttributes>();
+            attr.vfxPriority = VFXAttributes.VFXPriority.Low;
+            attr.vfxIntensity = VFXAttributes.VFXIntensity.Low;
+
+            ricochetImpact.AddComponent<EffectComponent>();
+            ricochetImpact.AddComponent<DestroyOnParticleEnd>();
+
+            var eff = ricochetImpact.transform.Find("Streaks_Ps").GetComponent<ParticleSystemRenderer>();
+            eff.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Firework/matFireworkSparkle.mat").WaitForCompletion();
+            eff.material.SetColor("_TintColor", Color.yellow);
+            eff = ricochetImpact.transform.Find("Flash_Ps").GetComponent<ParticleSystemRenderer>();
+            eff.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/LunarSkillReplacements/matBirdHeartRuin.mat").WaitForCompletion();
+            eff.material.SetColor("_TintColor", Color.yellow);
+
+            ScrapyardContent.CreateAndAddEffectDef(ricochetImpact);
+
+            ricochetOrbEffect = assetCollection.FindAsset<GameObject>("RicochetOrbEffect");
+            ricochetOrbEffect.AddComponent<EventFunctions>();
+            var effectComp = ricochetOrbEffect.AddComponent<EffectComponent>();
+            effectComp.applyScale = true;
+            var orbEffect = ricochetOrbEffect.AddComponent<RicochetOrbEffect>();
+
+            curve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 1));
+            curve.preWrapMode = WrapMode.Clamp;
+            curve.postWrapMode = WrapMode.Clamp;
+
+            orbEffect.movementCurve = curve;
+            orbEffect.faceMovement = true;
+            orbEffect.callArrivalIfTargetIsGone = true;
+            orbEffect.endEffect = ricochetOrbEffect;
+            orbEffect.endEffectCopiesRotation = false;
+
+            attr = ricochetOrbEffect.AddComponent<VFXAttributes>();
+            attr.vfxPriority = VFXAttributes.VFXPriority.Always;
+            attr.vfxIntensity = VFXAttributes.VFXIntensity.Low;
+
+            ricochetOrbEffect.transform.GetChild(0).gameObject.GetComponent<TrailRenderer>().material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Captain/matCaptainTracerTrail.mat").WaitForCompletion();
+            ricochetOrbEffect.transform.GetChild(0).gameObject.GetComponent<TrailRenderer>().material.SetColor("_TintColor", Color.yellow);
+
+            var pscfed = ricochetOrbEffect.AddComponent<ParticleSystemColorFromEffectData>();
+            pscfed.particleSystems = new ParticleSystem[1];
+            pscfed.particleSystems[0] = ricochetOrbEffect.transform.Find("Head").GetComponent<ParticleSystem>();
+            pscfed.effectComponent = effectComp;
+
+            var trcfed = ricochetOrbEffect.AddComponent<TrailRendererColorFromEffectData>();
+            trcfed.renderers = new TrailRenderer[1];
+            trcfed.renderers[0] = ricochetOrbEffect.transform.Find("Trail").GetComponent<TrailRenderer>();
+            trcfed.effectComponent = effectComp;
+
+            var shaderAlpha = ricochetOrbEffect.transform.Find("Trail").gameObject.AddComponent<AnimateShaderAlpha>();
+
+            curve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1, 0));
+            curve.preWrapMode = WrapMode.Clamp;
+            curve.postWrapMode = WrapMode.Clamp;
+
+            shaderAlpha.alphaCurve = curve;
+            shaderAlpha.timeMax = 0.75f;
+            shaderAlpha.pauseTime = false;
+            shaderAlpha.destroyOnEnd = true;
+            shaderAlpha.disableOnEnd = false;
+
+            var effect = ricochetOrbEffect.transform.Find("Head").GetComponent<ParticleSystemRenderer>();
+            effect.material = Addressables.LoadAssetAsync<Material>("RoR2/Base/Firework/matFireworkSparkle.mat").WaitForCompletion();
+            effect.material.SetColor("_TintColor", Color.yellow);
+
+            ScrapyardContent.CreateAndAddEffectDef(ricochetOrbEffect);
+            #endregion
         }
 
         #endregion
@@ -193,12 +315,126 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         private void Hooks()
         {
             GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
+            On.RoR2.GlobalEventManager.OnHitAllProcess += GlobalEventManager_OnHitAllProcess;
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
             if (ScrapyardMain.emotesInstalled)
             {
                 Emotes();
             }
+        }
+        private static void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)
+        {
+            DamageInfo damageInfo = damageReport.damageInfo;
+            if (!damageReport.attackerBody || !damageReport.victimBody)
+            {
+                return;
+            }
+            HealthComponent victim = damageReport.victim;
+            GameObject inflictorObject = damageInfo.inflictor;
+            CharacterBody victimBody = damageReport.victimBody;
+            EntityStateMachine victimMachine = victimBody.GetComponent<EntityStateMachine>();
+            CharacterBody attackerBody = damageReport.attackerBody;
+            GameObject attackerObject = damageReport.attacker.gameObject;
+            DukeController dukeController = attackerBody.GetComponent<DukeController>();
+            if (NetworkServer.active)
+            {
+                if (attackerBody && victimBody)
+                {
+                    #region FourthShot
+                    if (damageInfo.HasModdedDamageType(DukeFourthShot))
+                    {
+                        int amount = 5;
+                        float harpoon = 2.5f;
+                        attackerBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeSpeedBuff);
+                        for (int l = 0; l < amount; l++)
+                        {
+                            attackerBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff, harpoon * (float)(l + 1) / (float)amount);
+                        }
+                        EffectData effectData = new EffectData();
+                        effectData.origin = attackerBody.corePosition;
+                        CharacterMotor characterMotor = attackerBody.characterMotor;
+                        bool flag = false;
+                        if ((bool)characterMotor)
+                        {
+                            Vector3 moveDirection = characterMotor.moveDirection;
+                            if (moveDirection != Vector3.zero)
+                            {
+                                effectData.rotation = Util.QuaternionSafeLookRotation(moveDirection);
+                                flag = true;
+                            }
+                        }
+
+                        if (!flag)
+                        {
+                            effectData.rotation = attackerBody.transform.rotation;
+                        }
+
+                        EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/MoveSpeedOnKillActivate"), effectData, transmit: true);
+
+                        if (attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") && attackerBody.skillLocator.utility)
+                        {
+                            if (attackerBody.skillLocator.utility.skillDef == SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("Flourish")))
+                            {
+                                NetworkIdentity networkIdentity = attackerBody.networkIdentity;
+
+                                new SyncDukeRecharge(networkIdentity.netId).Send(R2API.Networking.NetworkDestination.Clients);
+                            }
+                        }
+                    }
+                    #endregion
+
+                    #region Ricochet
+                    if(victimBody.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare) && !damageInfo.HasModdedDamageType(DukeRicochet))
+                    {
+                        var victimTrc = victimBody.gameObject.EnsureComponent<TemporaryRicochetControllerVictim>();
+
+                        RicochetOrb orb = new RicochetOrb
+                        {
+                        originalPosition = damageInfo.position,
+                        origin = damageInfo.position,
+                        speed = 500f,
+                        attacker = damageInfo.attacker,
+                        damageValue = damageInfo.damage * victimTrc.bounceCountStored,
+                        teamIndex = attackerBody.teamComponent.teamIndex,
+                        procCoefficient = damageInfo.procCoefficient,
+                        isCrit = damageInfo.crit,
+                        bounceCount = victimTrc.bounceCountStored
+                        };
+
+                        if(victimTrc) Component.Destroy(victimTrc);
+
+                        OrbManager.instance.AddOrb(orb);
+                    }
+                    #endregion
+                }
+            }
+        }
+
+        private void GlobalEventManager_OnHitAllProcess(On.RoR2.GlobalEventManager.orig_OnHitAllProcess orig, GlobalEventManager self, DamageInfo damageInfo, GameObject hitObject)
+        {
+            damageInfo.attacker.TryGetComponent<CharacterBody>(out var attackerBody);
+
+            if(attackerBody && !damageInfo.HasModdedDamageType(DukeRicochet) && 
+                hitObject.transform.root.gameObject.TryGetComponent<BuffWard>(out var buffWard) && 
+                buffWard && buffWard.buffDef == ScrapyardContent.Buffs.bdDukeDamageShare)
+            {
+                RicochetOrb orb = new RicochetOrb
+                {
+                    originalPosition = hitObject.transform.position,
+                    origin = hitObject.transform.position,
+                    speed = 500f,
+                    attacker = damageInfo.attacker,
+                    damageValue = damageInfo.damage /= damageShareCoefficient,
+                    teamIndex = attackerBody.teamComponent.teamIndex,
+                    procCoefficient = damageInfo.procCoefficient,
+                    isCrit = damageInfo.crit,
+                    bounceCount = 1,
+                };
+
+                OrbManager.instance.AddOrb(orb);
+            }
+            orig.Invoke(self, damageInfo, hitObject);
         }
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
@@ -256,67 +492,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                 if (mapper.transform.name == "duke_emoteskeleton")
                 {
                     mapper.transform.parent.Find("meshDukeGun").gameObject.SetActive(value: true);
-                }
-            }
-        }
-        private static void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)
-        {
-            DamageInfo damageInfo = damageReport.damageInfo;
-            if (!damageReport.attackerBody || !damageReport.victimBody)
-            {
-                return;
-            }
-            HealthComponent victim = damageReport.victim;
-            GameObject inflictorObject = damageInfo.inflictor;
-            CharacterBody victimBody = damageReport.victimBody;
-            EntityStateMachine victimMachine = victimBody.GetComponent<EntityStateMachine>();
-            CharacterBody attackerBody = damageReport.attackerBody;
-            GameObject attackerObject = damageReport.attacker.gameObject;
-            DukeController dukeController = attackerBody.GetComponent<DukeController>();
-            if (NetworkServer.active)
-            {
-                if (attackerBody && victimBody)
-                {
-                    if (damageInfo.HasModdedDamageType(DukeFourthShot))
-                    {
-                        int amount = 5;
-                        float harpoon = 2.5f;
-                        attackerBody.ClearTimedBuffs(ScrapyardContent.Buffs.bdDukeSpeedBuff);
-                        for (int l = 0; l < amount; l++)
-                        {
-                            attackerBody.AddTimedBuff(ScrapyardContent.Buffs.bdDukeSpeedBuff, harpoon * (float)(l + 1) / (float)amount);
-                        }
-                        EffectData effectData = new EffectData();
-                        effectData.origin = attackerBody.corePosition;
-                        CharacterMotor characterMotor = attackerBody.characterMotor;
-                        bool flag = false;
-                        if ((bool)characterMotor)
-                        {
-                            Vector3 moveDirection = characterMotor.moveDirection;
-                            if (moveDirection != Vector3.zero)
-                            {
-                                effectData.rotation = Util.QuaternionSafeLookRotation(moveDirection);
-                                flag = true;
-                            }
-                        }
-
-                        if (!flag)
-                        {
-                            effectData.rotation = attackerBody.transform.rotation;
-                        }
-
-                        EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/MoveSpeedOnKillActivate"), effectData, transmit: true);
-
-                        if(attackerBody.bodyIndex == BodyCatalog.FindBodyIndex("DukeBody") && attackerBody.skillLocator.utility)
-                        {
-                            if (attackerBody.skillLocator.utility.skillDef == SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("Flourish")))
-                            {
-                                NetworkIdentity networkIdentity = attackerBody.networkIdentity;
-
-                                new SyncDukeRecharge(networkIdentity.netId).Send(R2API.Networking.NetworkDestination.Clients);
-                            }
-                        }
-                    }
                 }
             }
         }
