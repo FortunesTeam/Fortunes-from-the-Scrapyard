@@ -163,6 +163,13 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
             dukeField.GetComponent<SphereCollider>().radius = 15f;
 
+            GameObject dukeSpecialObject = new GameObject();
+            dukeSpecialObject.layer = LayerIndex.triggerZone.intVal;
+            SphereCollider dukeSpecialCollider = dukeSpecialObject.AddComponent<SphereCollider>();
+            dukeSpecialCollider.radius = 15f;
+            dukeSpecialCollider.isTrigger = false;
+            dukeSpecialObject.transform.SetParent(dukeField.transform, false);
+
             UnityEngine.Object.Destroy(dukeField.GetComponent<SlowDownProjectiles>());
 
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(dukeField);
@@ -225,8 +232,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                 args.attackSpeedReductionMultAdd += (sender.attackSpeed - baseAttackSpeed) * 0.7f;
             }
         }
-
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void Emotes()
         {
             On.RoR2.SurvivorCatalog.Init += (orig) =>

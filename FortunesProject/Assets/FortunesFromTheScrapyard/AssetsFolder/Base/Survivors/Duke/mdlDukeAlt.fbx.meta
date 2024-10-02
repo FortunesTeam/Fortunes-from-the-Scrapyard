@@ -12,12 +12,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: matDuke.004
+    second: {fileID: 2100000, guid: ad157a943635f5044b598e1fca3ebdd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: matDukeGun
     second: {fileID: 2100000, guid: 5fc73fda44c9f4f40bb9009c4fb35837, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: matDukeGun.001
+    second: {fileID: 2100000, guid: 5fc73fda44c9f4f40bb9009c4fb35837, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: matDukeVisor
+    second: {fileID: 2100000, guid: cdad64a16c4217345992352ca4666f1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: matDukeVisor.001
     second: {fileID: 2100000, guid: cdad64a16c4217345992352ca4666f1b, type: 2}
   materials:
     materialImportMode: 2

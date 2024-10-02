@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1255927399, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: skinGrifterDecoy
+  m_EditorClassIdentifier: 
+  baseSkins: []
+  icon: {fileID: 0}
+  nameToken: SCRAPYARD_SKIN_DUKEDECOY_WHIRLWIND
+  unlockableName: 
+  unlockableDef: {fileID: 0}
+  rootObject: {fileID: 8095984920295804707, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+    type: 3}
+  rendererInfos:
+  - renderer: {fileID: 1371459169455701191, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: ea3b1900636fa9b49b766b9eaf7ab506, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3175239971721428984, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: 1143369b1046a924b9bc9c84d67c7cf6, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 5305824496051664016, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    defaultMaterial: {fileID: 2100000, guid: db2e0a9866db8a147882da09d32e6445, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  gameObjectActivations: []
+  meshReplacements:
+  - renderer: {fileID: 1371459169455701191, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    mesh: {fileID: 2267399599076801053, guid: 47ba0e42fb6de8f4db9099f106dbc978, type: 3}
+  - renderer: {fileID: 3175239971721428984, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    mesh: {fileID: 8547303874814035832, guid: 47ba0e42fb6de8f4db9099f106dbc978, type: 3}
+  - renderer: {fileID: 5305824496051664016, guid: 6f5dce8a33a919346a5f7b764cd1eb4f,
+      type: 3}
+    mesh: {fileID: 742773110656673334, guid: 47ba0e42fb6de8f4db9099f106dbc978, type: 3}
+  projectileGhostReplacements: []
+  minionSkinReplacements: []

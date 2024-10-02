@@ -44,8 +44,8 @@ namespace FortunesFromTheScrapyard.Items
 
         public override void Initialize()
         {
-            On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
-            PeeDamage = DamageAPI.ReserveDamageType();
+            //On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
+            //PeeDamage = DamageAPI.ReserveDamageType();
         }
 
         private void GlobalEventManager_OnHitEnemy(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim)

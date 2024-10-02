@@ -102,7 +102,6 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             }
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void Emotes()
         {
             On.RoR2.SurvivorCatalog.Init += (orig) =>

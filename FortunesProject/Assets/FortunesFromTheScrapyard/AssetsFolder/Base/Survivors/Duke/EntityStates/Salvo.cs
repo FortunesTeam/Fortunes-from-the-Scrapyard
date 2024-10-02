@@ -10,6 +10,7 @@ using MSU;
 using MSU.Config;
 using FortunesFromTheScrapyard;
 using FortunesFromTheScrapyard.Characters.DukeDecoy.Components;
+using RoR2.Networking;
 
 namespace EntityStates.Duke
 {
@@ -119,79 +120,27 @@ namespace EntityStates.Duke
                 bool isGrounded = animator.GetBool("isGrounded");
                 if (!isMoving && isGrounded)
                 {
-                    if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("FullBody, Override")).IsName("ShootCrit")) //Play if last shot was ShootCrit
+                    if (this.isCrit)
                     {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("FullBody, Override", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            //Play ShootCrit to Shoot Transition when its done
-                            this.PlayCrossfade("FullBody, Override", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
+                        this.PlayCrossfade("FullBody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
                     }
-                    else if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("FullBody, Override")).IsName("Shoot")) //Play if last shot was Shoot
+                    else
                     {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("FullBody, Override", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            //Play Shoot To ShootCrit Transition when its done
-                            this.PlayCrossfade("FullBody, Override", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                    }
-                    else // Play default empty to enter
-                    {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("FullBody, Override", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            this.PlayCrossfade("FullBody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                    }
+                        //Play ShootCrit to Shoot Transition when its done
+                        this.PlayCrossfade("FullBody, Override", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                    }                   
                 }
                 else //If moving
                 {
-                    if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Gesture, Additive")).IsName("ShootCrit")) //Play if last shot was ShootCrit
+                    if (this.isCrit)
                     {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            //Play ShootCrit to Shoot Transition when its done
-                            this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
+                        this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
                     }
-                    else if (animator.GetCurrentAnimatorStateInfo(animator.GetLayerIndex("Gesture, Additive")).IsName("Shoot")) //Play if last shot was Shoot
+                    else
                     {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            //Play Shoot To ShootCrit Transition when its done
-                            this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                    }
-                    else // Play default empty to enter
-                    {
-                        if (this.isCrit)
-                        {
-                            this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                        else
-                        {
-                            this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
-                        }
-                    }
+                        //Play ShootCrit to Shoot Transition when its done
+                        this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                    }  
                 }
             }
         }
@@ -222,7 +171,7 @@ namespace EntityStates.Duke
                 Ray aimRay = base.GetAimRay();
                 base.AddRecoil(-0.4f * recoil, -0.8f * recoil, -0.3f * recoil, 0.3f * recoil);
 
-                BulletAttack bulletAttack = new BulletAttack
+                BulletAttack salvoAttack = new BulletAttack
                 {
                     aimVector = aimRay.direction,
                     origin = aimRay.origin,
@@ -256,15 +205,19 @@ namespace EntityStates.Duke
 
                 if (isCrit)
                 {
-                    bulletAttack.AddModdedDamageType(DukeSurvivor.DukeFourthShot);
+                    salvoAttack.AddModdedDamageType(DukeSurvivor.DukeFourthShot);
                 }
 
-                bulletAttack.minSpread = 0;
-                bulletAttack.maxSpread = 0;
-                bulletAttack.bulletCount = 1;
-                bulletAttack.modifyOutgoingDamageCallback = delegate (BulletAttack _bulletAttack, ref BulletAttack.BulletHit hitInfo, DamageInfo damageInfo)
+                salvoAttack.minSpread = 0;
+                salvoAttack.maxSpread = 0;
+                salvoAttack.bulletCount = 1;
+                salvoAttack.modifyOutgoingDamageCallback = delegate (BulletAttack _bulletAttack, ref BulletAttack.BulletHit hitInfo, DamageInfo damageInfo)
                 {
-                    CharacterBody victimBody = hitInfo.hitHurtBox.hurtBoxGroup.mainHurtBox.healthComponent.body;
+                    CharacterBody victimBody = null;
+                    if (hitInfo.hurtBox && hitInfo.hitHurtBox)
+                    {
+                        victimBody = hitInfo.hitHurtBox.hurtBoxGroup.mainHurtBox.healthComponent.body;
+                    }
                     if (victimBody && damageInfo.attacker)
                     {
                         CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
@@ -277,36 +230,116 @@ namespace EntityStates.Duke
                         }
                     }
 
-                    if(hitInfo.collider.gameObject.TryGetComponent<BuffWard>(out var buffWard))
+                    if (hitInfo.collider && hitInfo.collider.gameObject.layer == LayerIndex.triggerZone.intVal)
                     {
-                        if(buffWard.buffDef.buffIndex == ScrapyardContent.Buffs.bdDukeDamageShare.buffIndex)
+                        ScrapyardLog.Debug("Hit Collider of" + hitInfo.collider.gameObject.name);
+                        if (hitInfo.collider.gameObject.TryGetComponent<BuffWard>(out var buffWard))
                         {
-                            DamageInfo dukeSharedDamage = new DamageInfo();
-                            dukeSharedDamage.attacker = damageInfo.attacker;
-                            dukeSharedDamage.inflictor = damageInfo.inflictor;
-                            dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
-                            dukeSharedDamage.procCoefficient = damageInfo.procCoefficient;
-                            dukeSharedDamage.crit = damageInfo.crit;
-                            dukeSharedDamage.damageType = damageInfo.damageType;
-                            dukeSharedDamage.damageColorIndex = DamageColorIndex.WeakPoint;
-                            dukeSharedDamage.force = Vector3.zero;
-
-                            foreach (CharacterBody body in CharacterBody.readOnlyInstancesList)
+                            if (buffWard.buffDef.buffIndex == ScrapyardContent.Buffs.bdDukeDamageShare.buffIndex)
                             {
-                                if (body.teamComponent.teamIndex != base.teamComponent.teamIndex && body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
-                                {
-                                    dukeSharedDamage.position = body.corePosition;
+                                DamageInfo dukeSharedDamage = new DamageInfo();
+                                dukeSharedDamage.attacker = damageInfo.attacker;
+                                dukeSharedDamage.inflictor = damageInfo.inflictor;
+                                dukeSharedDamage.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
+                                dukeSharedDamage.procCoefficient = damageInfo.procCoefficient;
+                                dukeSharedDamage.crit = damageInfo.crit;
+                                dukeSharedDamage.damageType = damageInfo.damageType;
+                                dukeSharedDamage.damageColorIndex = DamageColorIndex.WeakPoint;
+                                dukeSharedDamage.force = Vector3.zero;
 
-                                    if(victimBody && victimBody != body)
+                                foreach (CharacterBody body in CharacterBody.readOnlyInstancesList)
+                                {
+                                    if (body.teamComponent.teamIndex != base.teamComponent.teamIndex && body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
                                     {
-                                        body.healthComponent.TakeDamage(damageInfo);
+                                        dukeSharedDamage.position = body.corePosition;
+
+                                        if (victimBody && victimBody != body)
+                                        {
+                                            body.healthComponent.TakeDamage(damageInfo);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 };
-                bulletAttack.Fire();
+                /*
+                salvoAttack.hitCallback = delegate (BulletAttack bulletAttack, ref BulletAttack.BulletHit hitInfo)
+                {
+                    bool result = false;
+                    if (hitInfo.collider)
+                    {
+                        result = ((1 << hitInfo.collider.gameObject.layer) & (int)bulletAttack.stopperMask) == 0;
+                        if(hitInfo.collider.gameObject.layer == LayerIndex.triggerZone.intVal && hitInfo.collider.gameObject.transform.root.name == "DukeDamageField")
+                        {
+
+                        }
+                    }
+                    BulletAttack.PlayHitEffect(bulletAttack, ref hitInfo);
+                    GameObject entityObject = hitInfo.entityObject;
+                    if ((bool)entityObject)
+                    {
+                        float num = BulletAttack.CalcFalloffFactor(bulletAttack.falloffModel, hitInfo.distance);
+                        DamageInfo damageInfo = new DamageInfo();
+                        damageInfo.damage = bulletAttack.damage * num;
+                        damageInfo.crit = bulletAttack.isCrit;
+                        damageInfo.attacker = bulletAttack.owner;
+                        damageInfo.inflictor = bulletAttack.weapon;
+                        damageInfo.position = hitInfo.point;
+                        damageInfo.force = hitInfo.direction * (bulletAttack.force * num);
+                        damageInfo.procChainMask = bulletAttack.procChainMask;
+                        damageInfo.procCoefficient = bulletAttack.procCoefficient;
+                        damageInfo.damageType = bulletAttack.damageType;
+                        damageInfo.damageColorIndex = bulletAttack.damageColorIndex;
+                        damageInfo.ModifyDamageInfo(hitInfo.damageModifier);
+                        if (hitInfo.isSniperHit)
+                        {
+                            damageInfo.crit = true;
+                            damageInfo.damageColorIndex = DamageColorIndex.Sniper;
+                        }
+                        bulletAttack.modifyOutgoingDamageCallback?.Invoke(bulletAttack, ref hitInfo, damageInfo);
+                        TeamIndex attackerTeamIndex = TeamIndex.None;
+                        if ((bool)bulletAttack.owner)
+                        {
+                            TeamComponent component = bulletAttack.owner.GetComponent<TeamComponent>();
+                            if ((bool)component)
+                            {
+                                attackerTeamIndex = component.teamIndex;
+                            }
+                        }
+                        HealthComponent healthComponent = null;
+                        if ((bool)hitInfo.hitHurtBox)
+                        {
+                            healthComponent = hitInfo.hitHurtBox.healthComponent;
+                        }
+                        bool flag = (bool)healthComponent && FriendlyFireManager.ShouldDirectHitProceed(healthComponent, attackerTeamIndex);
+                        if (NetworkServer.active)
+                        {
+                            if (flag)
+                            {
+                                healthComponent.TakeDamage(damageInfo);
+                                GlobalEventManager.instance.OnHitEnemy(damageInfo, hitInfo.entityObject);
+                            }
+                            GlobalEventManager.instance.OnHitAll(damageInfo, hitInfo.entityObject);
+                        }
+                        else if (ClientScene.ready)
+                        {
+                            BulletAttack.messageWriter.StartMessage(53);
+                            int currentLogLevel = LogFilter.currentLogLevel;
+                            LogFilter.currentLogLevel = 4;
+                            BulletAttack.messageWriter.Write(entityObject);
+                            LogFilter.currentLogLevel = currentLogLevel;
+                            BulletAttack.messageWriter.Write(damageInfo);
+                            BulletAttack.messageWriter.Write(flag);
+                            BulletAttack.messageWriter.FinishMessage();
+                            ClientScene.readyConnection.SendWriter(BulletAttack.messageWriter, QosChannelIndex.defaultReliable.intVal);
+                        }
+                    }
+                    return result;
+                };
+                */
+                
+                salvoAttack.Fire();
 
                 this.characterMotor.ApplyForce(aimRay.direction * -this.selfForce);
             }
