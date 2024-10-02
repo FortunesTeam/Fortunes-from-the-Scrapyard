@@ -134,12 +134,12 @@ namespace EntityStates.Duke
                 {
                     if (this.isCrit)
                     {
-                        this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
                     }
                     else
                     {
                         //Play ShootCrit to Shoot Transition when its done
-                        this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
                     }  
                 }
             }
