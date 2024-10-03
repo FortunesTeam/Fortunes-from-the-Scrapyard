@@ -76,9 +76,9 @@ namespace EntityStates.Duke
             this.falloff = BulletAttack.FalloffModel.DefaultBullet;
             this.damageType = DamageType.Generic;
 
-            this.maxShotCount = skillLocator.primary.stock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
-
             base.OnEnter();
+
+            this.maxShotCount = this.skillLocator.primary.maxStock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
 
             soundID = Util.PlayAttackSpeedSound("sfx_duke_pistol_spin", base.gameObject, attackSpeedStat);
             if (this.spinInstance) GameObject.Destroy(this.spinInstance);
@@ -258,7 +258,7 @@ namespace EntityStates.Duke
                 }
             }
 
-            if (base.isAuthority && skillLocator.primary.stock == 0)
+            if (base.isAuthority && skillLocator.primary.stock <= 0)
             {
                 this.outer.SetNextStateToMain();
             }

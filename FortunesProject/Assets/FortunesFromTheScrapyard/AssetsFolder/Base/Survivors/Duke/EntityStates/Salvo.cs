@@ -138,12 +138,12 @@ namespace EntityStates.Duke
                 {
                     if (this.isCrit)
                     {
-                        this.PlayCrossfade("Gesture, Additive", "ShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        this.PlayCrossfade("Gesture, Additive", "EnterShootCrit", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.25f);
                     }
                     else
                     {
                         //Play ShootCrit to Shoot Transition when its done
-                        this.PlayCrossfade("Gesture, Additive", "Shoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.15f);
+                        this.PlayCrossfade("Gesture, Additive", "EnterShoot", "Primary.playbackRate", this.windupDuration, this.windupDuration * 0.25f);
                     }  
                 }
             }
@@ -185,7 +185,7 @@ namespace EntityStates.Duke
                     falloffModel = this.falloff,
                     maxDistance = bulletRange,
                     force = force,
-                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.fakeActor.mask,
+                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.transparentFX.mask,
                     minSpread = 0f,
                     maxSpread = 0f,
                     isCrit = this.isCrit,
@@ -196,7 +196,7 @@ namespace EntityStates.Duke
                     procCoefficient = procCoefficient,
                     radius = bulletRadius,
                     sniper = false,
-                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)) | LayerIndex.fakeActor.mask,
+                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)) | LayerIndex.transparentFX.mask,
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,

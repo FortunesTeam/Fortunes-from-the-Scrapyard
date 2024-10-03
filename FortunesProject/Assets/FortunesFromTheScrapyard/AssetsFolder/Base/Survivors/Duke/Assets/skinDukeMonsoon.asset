@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 8cbee8eee460b4945bcbe4fdc4544555, type: 3}
   nameToken: SCRAPYARD_DUKE_SKIN_ALT1_NAME
   unlockableName: 
-  unlockableDef: {fileID: 11400000, guid: 9c890bd4a773bff4aa443bef1651632c, type: 2}
+  unlockableDef: {fileID: 0}
   rootObject: {fileID: 8095984920295804707, guid: 2a6380588938a3e4798d64341cc43601,
     type: 3}
   rendererInfos:
@@ -33,7 +33,7 @@ MonoBehaviour:
     defaultShadowCastingMode: 0
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: c67a0bff2084bca44883497ba220fd76, type: 2}
     defaultShadowCastingMode: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   - renderer: {fileID: 3175239971721428984, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     mesh: {fileID: -9023413642965637146, guid: 817cd1d7b34c19b46938c16ebccf4b6b, type: 3}
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     mesh: {fileID: 4950905526453025354, guid: 817cd1d7b34c19b46938c16ebccf4b6b, type: 3}
   projectileGhostReplacements: []

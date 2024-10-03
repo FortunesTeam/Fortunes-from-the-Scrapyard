@@ -487,10 +487,10 @@ MonoBehaviour:
     _typeName: EntityStates.Commando.DeathState, RoR2, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   idleStateMachine:
+  - {fileID: 2795414510184700025}
   - {fileID: 5552001105035297117}
   - {fileID: 2771422973634186725}
-  - {fileID: 2771422973634186725}
-  - {fileID: 2771422973634186725}
+  - {fileID: 7037682913683084371}
   bypassDeathLayerChange: 0
 --- !u!114 &8207897912071779222
 MonoBehaviour:
@@ -829,6 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeedConversion: 0
+  speedUpReloadTime: 0
 --- !u!1 &9171435935333683948
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,64 +955,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6380588938a3e4798d64341cc43601, type: 3}
---- !u!54 &3419986973573789999 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 2538113139370888846, guid: 2a6380588938a3e4798d64341cc43601,
-    type: 3}
-  m_PrefabInstance: {fileID: 886941377250736033}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3453942934627633397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2567564946591416148, guid: 2a6380588938a3e4798d64341cc43601,
-    type: 3}
-  m_PrefabInstance: {fileID: 886941377250736033}
-  m_PrefabAsset: {fileID: 0}
---- !u!144 &1135745456703129748
-CharacterJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3453942934627633397}
-  m_ConnectedBody: {fileID: 3419986973573789999}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_SwingAxis: {x: 0, y: 1, z: 0}
-  m_TwistLimitSpring:
-    spring: 0
-    damper: 0
-  m_LowTwistLimit:
-    limit: -20
-    bounciness: 0
-    contactDistance: 0
-  m_HighTwistLimit:
-    limit: 70
-    bounciness: 0
-    contactDistance: 0
-  m_SwingLimitSpring:
-    spring: 0
-    damper: 0
-  m_Swing1Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_Swing2Limit:
-    limit: 40
-    bounciness: 0
-    contactDistance: 0
-  m_EnableProjection: 0
-  m_ProjectionDistance: 0.1
-  m_ProjectionAngle: 180
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!95 &5779891065521373480 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6663427727422076553, guid: 2a6380588938a3e4798d64341cc43601,

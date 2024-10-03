@@ -32,7 +32,7 @@ MonoBehaviour:
     defaultShadowCastingMode: 0
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: cdad64a16c4217345992352ca4666f1b, type: 2}
     defaultShadowCastingMode: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
   - renderer: {fileID: 3175239971721428984, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     mesh: {fileID: 4156337485732117756, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
-    mesh: {fileID: 5474398538139690464, guid: 7aadefb71d53eb54b9e07daba6953869, type: 3}
+    mesh: {fileID: 5474398538139690464, guid: 530b969b3dd7ddd4d8cd40252cd048cc, type: 3}
   projectileGhostReplacements: []
   minionSkinReplacements:
   - minionBodyPrefab: {fileID: 6415622932436946676, guid: 1665605abb4e1f044917db49321ac400,

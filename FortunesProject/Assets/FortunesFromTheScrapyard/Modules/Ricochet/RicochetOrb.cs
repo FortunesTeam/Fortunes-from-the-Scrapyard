@@ -12,7 +12,7 @@ namespace FortunesFromTheScrapyard.Ricochet
 {
     public class RicochetOrb : GenericDamageOrb
     {
-        public float searchRadius = 9999f;
+        public float searchRadius = 999f;
         public SphereSearch search;
         public Vector3 originalPosition;
         public int bounceCount = 1;
@@ -28,13 +28,13 @@ namespace FortunesFromTheScrapyard.Ricochet
             float scale = Mathf.Lerp(1, 2f, bounceCount / 4f);
             EffectData effectData = new EffectData
             {
-                scale = this.scale * 2f,
+                scale = scale * 2f,
                 origin = this.originalPosition,
                 genericFloat = this.duration,
                 color = color
             };
             effectData.SetHurtBoxReference(this.target);
-            EffectManager.SpawnEffect(DukeSurvivor.ricochetOrbEffect, effectData, true);
+            EffectManager.SpawnEffect(DukeSurvivor.dukeTracer, effectData, true);
         }
 
 
@@ -45,7 +45,7 @@ namespace FortunesFromTheScrapyard.Ricochet
                 HealthComponent healthComponent = target.healthComponent;
                 if (healthComponent)
                 {
-                    var victimTrc = this.target.gameObject.EnsureComponent<TemporaryRicochetControllerVictim>();
+                    var victimTrc = this.target.healthComponent.gameObject.EnsureComponent<TemporaryRicochetControllerVictim>();
 
                     DamageInfo damageInfo = new DamageInfo
                     {
@@ -82,13 +82,14 @@ namespace FortunesFromTheScrapyard.Ricochet
             };
 
             TeamMask teamMask = TeamMask.GetUnprotectedTeams(teamIndex);
-            HurtBox[] hurtBoxes = search.RefreshCandidates().OrderCandidatesByDistance().FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
+            HurtBox[] hurtBoxes = search.RefreshCandidates().FilterCandidatesByHurtBoxTeam(teamMask).OrderCandidatesByDistance().FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
 
             foreach (HurtBox hurtBox in hurtBoxes)
             {
-                if (hurtBox.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare) && !hitObjects.Contains(hurtBox.healthComponent.body.gameObject))
+                if (hurtBox.healthComponent && hurtBox.healthComponent.body && hurtBox.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare) && !hitObjects.Contains(hurtBox.healthComponent.body.gameObject))
                 {
                     target = hurtBox;
+                    target.healthComponent.gameObject.EnsureComponent<TemporaryRicochetControllerVictim>();
                     break;
                 }
             }

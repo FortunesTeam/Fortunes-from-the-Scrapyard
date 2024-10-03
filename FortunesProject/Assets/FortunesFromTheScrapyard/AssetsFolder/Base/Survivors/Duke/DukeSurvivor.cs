@@ -258,7 +258,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             ProjectileExplosion pe = damageShareMine.GetComponent<ProjectileExplosion>();
 
             ProjectileSimple ps = damageShareMine.GetComponent<ProjectileSimple>();
-            ps.desiredForwardSpeed = 200f;
+            ps.desiredForwardSpeed = 150f;
 
             ProjectileFuse projectileFuse = damageShareMine.GetComponent<ProjectileFuse>();
             projectileFuse.fuse = 0f;
@@ -285,12 +285,24 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
             dukeField.GetComponent<SphereCollider>().radius = 15f;
 
-            GameObject dukeSpecialObject = new GameObject();
-            dukeSpecialObject.layer = LayerIndex.triggerZone.intVal;
-            SphereCollider dukeSpecialCollider = dukeSpecialObject.AddComponent<SphereCollider>();
-            dukeSpecialCollider.radius = 15f;
-            dukeSpecialCollider.isTrigger = false;
-            dukeSpecialObject.transform.SetParent(dukeField.transform, false);
+            GameObject dukeColliderObject = new GameObject();
+            dukeColliderObject.layer = LayerIndex.transparentFX.intVal;
+            SphereCollider dukeFieldCollider = dukeColliderObject.AddComponent<SphereCollider>();
+            dukeFieldCollider.radius = 15f;
+            dukeFieldCollider.isTrigger = false;
+
+            GameObject dukeTriggerObject = new GameObject();
+            dukeTriggerObject.layer = LayerIndex.entityPrecise.intVal;
+            SphereCollider dukeTriggerCollider = dukeColliderObject.AddComponent<SphereCollider>();
+            dukeTriggerCollider.radius = 15f;
+            dukeTriggerCollider.isTrigger = true;
+
+            dukeTriggerObject.transform.SetParent(dukeColliderObject.transform, false);
+
+            DisableCollisionsIfInTrigger eCWEE = dukeTriggerObject.AddComponent<DisableCollisionsIfInTrigger>();
+            eCWEE.colliderToIgnore = dukeFieldCollider;
+
+            dukeColliderObject.transform.SetParent(dukeField.transform, false);
 
             UnityEngine.Object.Destroy(dukeField.GetComponent<SlowDownProjectiles>());
 
@@ -385,26 +397,37 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                     #endregion
 
                     #region Ricochet
-                    if(victimBody.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare) && !damageInfo.HasModdedDamageType(DukeRicochet))
+                    if(victimBody.HasBuff(ScrapyardContent.Buffs.bdDukeDamageShare))
                     {
                         var victimTrc = victimBody.gameObject.EnsureComponent<TemporaryRicochetControllerVictim>();
 
-                        RicochetOrb orb = new RicochetOrb
+                        if (!damageInfo.HasModdedDamageType(DukeRicochet))
                         {
-                        originalPosition = damageInfo.position,
-                        origin = damageInfo.position,
-                        speed = 500f,
-                        attacker = damageInfo.attacker,
-                        damageValue = damageInfo.damage * victimTrc.bounceCountStored,
-                        teamIndex = attackerBody.teamComponent.teamIndex,
-                        procCoefficient = damageInfo.procCoefficient,
-                        isCrit = damageInfo.crit,
-                        bounceCount = victimTrc.bounceCountStored
-                        };
+                            RicochetOrb orb = new RicochetOrb
+                            {
+                                originalPosition = damageInfo.position,
+                                origin = damageInfo.position,
+                                speed = 250f,
+                                attacker = damageInfo.attacker,
+                                damageValue = damageInfo.damage * victimTrc.bounceCountStored,
+                                teamIndex = attackerBody.teamComponent.teamIndex,
+                                procCoefficient = damageInfo.procCoefficient,
+                                isCrit = damageInfo.crit,
+                                bounceCount = victimTrc.bounceCountStored,
+                                hitObjects = new System.Collections.Generic.List<GameObject>(),
+                                damageColorIndex = DamageColorIndex.WeakPoint
+                            };
+                            orb.hitObjects.Add(victim.gameObject);
 
-                        if(victimTrc) Component.Destroy(victimTrc);
+                            if (victimTrc) Component.Destroy(victimTrc);
 
-                        OrbManager.instance.AddOrb(orb);
+                            OrbManager.instance.AddOrb(orb);
+                        }
+                        else
+                        {
+                            victimTrc.RicochetBullet(damageInfo);
+                        }
+                        
                     }
                     #endregion
                 }
@@ -425,13 +448,16 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                     origin = hitObject.transform.position,
                     speed = 500f,
                     attacker = damageInfo.attacker,
-                    damageValue = damageInfo.damage /= damageShareCoefficient,
+                    damageValue = damageInfo.damage *= damageShareCoefficient,
                     teamIndex = attackerBody.teamComponent.teamIndex,
                     procCoefficient = damageInfo.procCoefficient,
                     isCrit = damageInfo.crit,
-                    bounceCount = 1,
+                    bounceCount = 0,
+                    hitObjects = new System.Collections.Generic.List<GameObject>(),
+                    damageColorIndex = DamageColorIndex.WeakPoint
                 };
-
+                orb.hitObjects.Add(hitObject);
+                
                 OrbManager.instance.AddOrb(orb);
             }
             orig.Invoke(self, damageInfo, hitObject);

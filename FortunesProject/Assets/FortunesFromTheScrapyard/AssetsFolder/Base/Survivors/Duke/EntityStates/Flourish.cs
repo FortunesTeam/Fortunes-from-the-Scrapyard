@@ -88,8 +88,6 @@ namespace EntityStates.Duke
                 temporaryOverlayInstance.originalMaterial = LegacyResourcesAPI.Load<Material>("Materials/matMercEnergized");
                 temporaryOverlayInstance.AddToCharacterModel(modelTransform.GetComponent<CharacterModel>());
             }
-
-            base.characterDirection.forward = base.characterMotor.velocity.normalized;
         }
         public override void FixedUpdate()
         {

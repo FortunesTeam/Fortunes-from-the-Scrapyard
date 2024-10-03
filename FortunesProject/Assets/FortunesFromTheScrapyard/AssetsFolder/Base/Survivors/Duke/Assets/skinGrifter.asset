@@ -33,7 +33,7 @@ MonoBehaviour:
     defaultShadowCastingMode: 0
     ignoreOverlays: 0
     hideOnDeath: 0
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     defaultMaterial: {fileID: 2100000, guid: 0682222cdce69e241ac68942fbf7f2d5, type: 2}
     defaultShadowCastingMode: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   - renderer: {fileID: 3175239971721428984, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     mesh: {fileID: 8547303874814035832, guid: 47ba0e42fb6de8f4db9099f106dbc978, type: 3}
-  - renderer: {fileID: 5305824496051664016, guid: 2a6380588938a3e4798d64341cc43601,
+  - renderer: {fileID: 3587660648800453562, guid: 2a6380588938a3e4798d64341cc43601,
       type: 3}
     mesh: {fileID: 742773110656673334, guid: 47ba0e42fb6de8f4db9099f106dbc978, type: 3}
   projectileGhostReplacements: []

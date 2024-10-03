@@ -35,3 +35,5 @@ MonoBehaviour:
     _hexRepresentation: ca7c7b3395fd2514b9ce70ae31afd247
   - k_templateName: EntityStateMachineInspector
     _hexRepresentation: 80f85cf135da6ea41834b0e48a22acfa
+  - k_templateName: ShaderDictionary
+    _hexRepresentation: eb748256c0573e64aa147f2339196579

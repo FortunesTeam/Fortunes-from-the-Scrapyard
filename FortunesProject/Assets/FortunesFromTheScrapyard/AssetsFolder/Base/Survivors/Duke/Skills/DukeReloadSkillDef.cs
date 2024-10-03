@@ -14,8 +14,6 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
             public int currentStock;
 
             public float graceStopwatch;
-
-            public CharacterBody body;
         }
 
         [Tooltip("The reload state to go into, when stock is less than max.")]
@@ -38,7 +36,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
         {
             InstanceData instanceData = (InstanceData)skillSlot.skillInstanceData;
             instanceData.currentStock = skillSlot.stock;
-            if ((instanceData.body.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot) || HasRequiredStockAndDelay(skillSlot)) && IsReady(skillSlot) && (bool)skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState())
+            if (skillSlot.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot) || (IsReady(skillSlot) && (bool)skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState()))
             {
                 return skillSlot.stateMachine.CanInterruptState(interruptPriority);
             }
@@ -47,12 +45,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
         }
         public override BaseSkillInstanceData OnAssigned([NotNull] GenericSkill skillSlot)
         {
-            return new InstanceData
-            {
-                body = skillSlot.GetComponent<CharacterBody>()
-            };
+            return new InstanceData();
         }
-
         public override void OnUnassigned([NotNull] GenericSkill skillSlot)
         {
             base.OnUnassigned(skillSlot);
@@ -62,7 +56,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
         {
             InstanceData instanceData = (InstanceData)skillSlot.skillInstanceData;
             instanceData.currentStock = skillSlot.stock;
-            if (instanceData.currentStock == 1 || instanceData.body.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
+            if (instanceData.currentStock == 1 || skillSlot.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
             {
                 return secondaryIcon;
             }
@@ -84,7 +78,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Skills
                 return;
             }
 
-            if (skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState() && skillSlot.stateMachine.CanInterruptState(reloadInterruptPriority))
+            if (skillSlot.stateMachine && !skillSlot.stateMachine.HasPendingState() && skillSlot.stateMachine.CanInterruptState(reloadInterruptPriority) && !skillSlot.characterBody.HasBuff(ScrapyardContent.Buffs.bdDukeFreeShot))
             {
                 instanceData.graceStopwatch += Time.fixedDeltaTime;
                 if (instanceData.graceStopwatch >= graceDuration || instanceData.currentStock == 0)

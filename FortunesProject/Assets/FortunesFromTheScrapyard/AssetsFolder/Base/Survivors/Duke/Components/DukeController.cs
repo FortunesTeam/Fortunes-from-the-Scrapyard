@@ -31,5 +31,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke.Components
             this.skillLocator = characterBody.skillLocator;
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
         }
+
+        private void Start()
+        {
+            characterBody.RecalculateStats();
+        }
     }
 }

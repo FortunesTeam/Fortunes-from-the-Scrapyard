@@ -42,7 +42,7 @@ namespace EntityStates.DukeDecoy
                 BlastAttack blastAttack = new BlastAttack();
 
                 blastAttack.procCoefficient = 1f;
-                blastAttack.attacker = decoyExplosion.ownerBody.gameObject;
+                blastAttack.attacker = decoyExplosion.ownerBody != null ? decoyExplosion.ownerBody.gameObject : base.gameObject;
                 blastAttack.inflictor = null;
                 blastAttack.teamIndex = decoyExplosion.ownerBody.teamComponent.teamIndex;
                 blastAttack.baseDamage = decoyExplosion.ownerBody.damage * decoyExplosion.damageCoefficient;
