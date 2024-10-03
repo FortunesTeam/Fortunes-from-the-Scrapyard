@@ -299,8 +299,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
             dukeTriggerObject.transform.SetParent(dukeColliderObject.transform, false);
 
-            DisableCollisionsIfInTrigger eCWEE = dukeTriggerObject.AddComponent<DisableCollisionsIfInTrigger>();
-            eCWEE.colliderToIgnore = dukeFieldCollider;
+            DisableCollisionsIfInTrigger dCIIN = dukeTriggerObject.AddComponent<DisableCollisionsIfInTrigger>();
+            dCIIN.colliderToIgnore = dukeFieldCollider;
 
             dukeColliderObject.transform.SetParent(dukeField.transform, false);
 
