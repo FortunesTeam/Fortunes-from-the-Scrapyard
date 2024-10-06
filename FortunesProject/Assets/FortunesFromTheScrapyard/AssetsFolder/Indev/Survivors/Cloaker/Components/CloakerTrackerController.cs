@@ -81,7 +81,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             {
                 if (hurt && hurt.healthComponent && hurt.healthComponent.body)
                 {
-                    if (!hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarkCd) && !hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
+                    if (hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarkCd) && hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
                     {
                         this.search.FilterOutGameObject(hurt.healthComponent.gameObject);
                     }
