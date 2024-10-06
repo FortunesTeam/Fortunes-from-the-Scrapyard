@@ -286,7 +286,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             dukeField.GetComponent<SphereCollider>().radius = 15f;
 
             GameObject dukeColliderObject = new GameObject();
-            dukeColliderObject.layer = LayerIndex.transparentFX.intVal;
+            dukeColliderObject.layer = LayerIndex.noCollision.intVal;
             SphereCollider dukeFieldCollider = dukeColliderObject.AddComponent<SphereCollider>();
             dukeFieldCollider.radius = 15f;
             dukeFieldCollider.isTrigger = false;

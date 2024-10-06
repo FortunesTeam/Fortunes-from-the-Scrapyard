@@ -78,7 +78,7 @@ namespace EntityStates.Duke
 
             base.OnEnter();
 
-            this.maxShotCount = this.skillLocator.primary.maxStock + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
+            this.maxShotCount = this.skillLocator.primary.GetBaseMaxStock() + characterBody.GetBuffCount(ScrapyardContent.Buffs.bdDukeFreeShot);
 
             soundID = Util.PlayAttackSpeedSound("sfx_duke_pistol_spin", base.gameObject, attackSpeedStat);
             if (this.spinInstance) GameObject.Destroy(this.spinInstance);
@@ -88,8 +88,8 @@ namespace EntityStates.Duke
             this.spinInstance.transform.localPosition = Vector3.zero;
 
             this.windupDuration = baseWindupDuration / this.attackSpeedStat;
-            this.duration = maxShotCount * baseDurationPerShot / this.attackSpeedStat;
             this.perShotDuration = baseDurationPerShot / this.attackSpeedStat;
+            this.duration = maxShotCount * perShotDuration + windupDuration;
 
             Animator animator = GetModelAnimator();
 
@@ -151,7 +151,7 @@ namespace EntityStates.Duke
                     falloffModel = this.falloff,
                     maxDistance = bulletRange,
                     force = force,
-                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.fakeActor.mask,
+                    hitMask = LayerIndex.world.mask | LayerIndex.entityPrecise.mask | LayerIndex.noCollision.mask,
                     minSpread = 0f,
                     maxSpread = 0f,
                     isCrit = this.isCrit,
@@ -162,7 +162,7 @@ namespace EntityStates.Duke
                     procCoefficient = procCoefficient,
                     radius = bulletRadius,
                     sniper = false,
-                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)) | LayerIndex.fakeActor.mask,
+                    stopperMask = (fourthShot ? LayerIndex.world.mask : default(LayerMask)),
                     weapon = null,
                     tracerEffectPrefab = this.tracerPrefab,
                     spreadPitchScale = 1f,
@@ -183,35 +183,28 @@ namespace EntityStates.Duke
                 bulletAttack.Fire();
 
                 this.characterMotor.ApplyForce(aimRay.direction * -this.selfForce);
+
+                ResetShot();
             }
 
             base.characterBody.AddSpreadBloom(2.5f);
-
-            ResetShot();
         }
 
         public void ResetShot()
         {
-            if (!freeBullet)
-            {
-                skillLocator.primary.stock--;
-            }
-            else
-            {
-                this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
-                this.procCoefficient = baseProcCoefficient;
-                this.force = baseForce;
-                this.bulletSpread = baseBulletSpread;
-                this.bulletRadius = baseBulletRadius;
-                this.bulletRecoil = (baseBulletRecoil / 4f) / this.attackSpeedStat;
-                this.bulletRange = baseBulletRange;
-                this.selfForce = baseSelfForce;
-                this.freeBullet = false;
-                this.fourthShot = false;
-                this.isCrit = RollCrit();
-                this.falloff = BulletAttack.FalloffModel.DefaultBullet;
-                this.damageType = DamageType.Generic;
-            }
+            this.damageCoefficient = DukeSurvivor.baseSalvoDamageCoefficient;
+            this.procCoefficient = baseProcCoefficient;
+            this.force = baseForce;
+            this.bulletSpread = baseBulletSpread;
+            this.bulletRadius = baseBulletRadius;
+            this.bulletRecoil = (baseBulletRecoil / 4f) / this.attackSpeedStat;
+            this.bulletRange = baseBulletRange;
+            this.selfForce = baseSelfForce;
+            this.freeBullet = false;
+            this.fourthShot = false;
+            this.isCrit = RollCrit();
+            this.falloff = BulletAttack.FalloffModel.DefaultBullet;
+            this.damageType = DamageType.Generic;
         }
 
         public override void FixedUpdate()
@@ -255,6 +248,8 @@ namespace EntityStates.Duke
                     tracerPrefab = this.isCrit ? empoweredTracerEffectPrefab : tracerEffectPrefab;
 
                     this.Fire();
+
+                    skillLocator.primary.stock--;
                 }
             }
 
