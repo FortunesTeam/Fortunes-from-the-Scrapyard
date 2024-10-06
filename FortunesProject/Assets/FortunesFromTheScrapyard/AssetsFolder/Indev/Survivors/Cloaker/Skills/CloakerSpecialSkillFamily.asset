@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: CloakerSpecialSkillFamily
   m_EditorClassIdentifier: 
   variants:
+  - skillDef: {fileID: 11400000, guid: 1a8d53425d3fb344794814b20b698d76, type: 2}
+    unlockableName: 
+    unlockableDef: {fileID: 0}
   - skillDef: {fileID: 11400000, guid: 6ea73977e259b0243a7a12fd490ebfc6, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}

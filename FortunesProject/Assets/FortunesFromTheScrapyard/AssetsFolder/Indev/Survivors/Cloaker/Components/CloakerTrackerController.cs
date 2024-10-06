@@ -6,7 +6,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerTrackerController : MonoBehaviour
     {
-        public float maxTrackingDistance = 40f;
+        public float maxTrackingDistance = 60f;
 
         public float maxTrackingAngle = 10f;
 
@@ -62,10 +62,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                 _ = trackingTarget;
                 Ray aimRay = new Ray(inputBank.aimOrigin, inputBank.aimDirection);
                 SearchForTarget(aimRay);
-                indicator.targetTransform = (trackingTarget && 
-                        !trackingTarget.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarkCd) && 
-                        !trackingTarget.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked) &&
-                        base.gameObject.GetComponent<CharacterBody>().hasCloakBuff ? trackingTarget.transform : null);
+                indicator.targetTransform = trackingTarget ? trackingTarget.transform : null;
             }
         }
 
@@ -80,6 +77,16 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             search.maxAngleFilter = maxTrackingAngle;
             search.RefreshCandidates();
             search.FilterOutGameObject(base.gameObject);
+            foreach (HurtBox hurt in this.search.GetResults())
+            {
+                if (hurt && hurt.healthComponent && hurt.healthComponent.body)
+                {
+                    if (!hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarkCd) && !hurt.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
+                    {
+                        this.search.FilterOutGameObject(hurt.healthComponent.gameObject);
+                    }
+                }
+            }
             trackingTarget = search.GetResults().FirstOrDefault();
         }
     }

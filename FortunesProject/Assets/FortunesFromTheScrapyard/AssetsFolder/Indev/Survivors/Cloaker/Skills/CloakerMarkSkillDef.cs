@@ -24,7 +24,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker.Components
 
         private static bool HasTarget([NotNull] GenericSkill skillSlot)
         {
-            if (!(((InstanceData)skillSlot.skillInstanceData).tracker?.GetTrackingTarget()) && !skillSlot.characterBody.hasCloakBuff) 
+            if (!(((InstanceData)skillSlot.skillInstanceData).tracker?.GetTrackingTarget())) 
             {
                 return false;
             }

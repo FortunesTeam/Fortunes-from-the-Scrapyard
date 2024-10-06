@@ -7,46 +7,79 @@ using FortunesFromTheScrapyard;
 using UnityEngine.Networking;
 using UnityEngine.UIElements;
 using RoR2.Orbs;
+using FortunesFromTheScrapyard.Survivors.Badger;
+using R2API;
 
 namespace EntityStates.Cloaker
 {
     public class CloakerScreech : BaseSkillState
     {
-        private CloakerTrackerController tracker;
+        public static float baseDuration = 0.5f; 
 
-        private HurtBox victim;
+        public static float blastRadius = 14f;
+
+        public static float blastProcCoefficient = 1f;
+
+        public static float blastDamageCoefficient = 600f;
+
+        public static float blastForce = 700f;
+
+        public static Vector3 blastBonusForce = new Vector3(0f, 0f, 0f);
+
+        private float duration;
+
         public override void OnEnter()
         {
             base.OnEnter();
 
-            HurtBox[] hurtBoxes = new SphereSearch
+            duration = baseDuration / attackSpeedStat;
+
+            Fire();
+        }
+
+        public void Fire()
+        {
+            this.PlayCrossfade("Gesture, Additive", Animator.StringToHash("Special"), this.duration * 0.05f);
+
+            BlastAttack blastAttack = new BlastAttack();
+            {
+                blastAttack.attacker = base.gameObject;
+                blastAttack.baseDamage = characterBody.damage * blastDamageCoefficient;
+                blastAttack.baseForce = blastForce;
+                blastAttack.bonusForce = blastBonusForce;
+                blastAttack.crit = RollCrit();
+                blastAttack.damageType = DamageType.Generic;
+                blastAttack.AddModdedDamageType(BadgerSurvivor.BadgerExplode);
+                blastAttack.falloffModel = BlastAttack.FalloffModel.None;
+                blastAttack.procCoefficient = blastProcCoefficient;
+                blastAttack.radius = blastRadius;
+                blastAttack.position = base.gameObject.transform.position;
+                blastAttack.attackerFiltering = AttackerFiltering.NeverHitSelf;
+                blastAttack.teamIndex = base.teamComponent.teamIndex;
+
+            }
+            blastAttack.Fire();
+
+            EffectManager.SpawnEffect(FortunesFromTheScrapyard.Items.Headphones.headphonesShockwavePrefab, new EffectData
             {
                 origin = characterBody.corePosition,
-                radius = 9999f,
-                mask = LayerIndex.entityPrecise.mask
-            }.RefreshCandidates().FilterCandidatesByHurtBoxTeam(TeamMask.GetEnemyTeams(this.teamComponent.teamIndex)).FilterCandidatesByDistinctHurtBoxEntities().GetHurtBoxes();
+                rotation = Quaternion.identity,
+            }, true);
 
-            foreach(HurtBox hurtBox in hurtBoxes)
+        }
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+
+            if (base.isAuthority && fixedAge >= duration)
             {
-                if(hurtBox.healthComponent.body)
-                {
-                    if(hurtBox.healthComponent.body.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
-                    {
-                        OrbManager.instance.AddOrb(new LightningStrikeOrb
-                        {
-                            attacker = base.gameObject,
-                            damageColorIndex = DamageColorIndex.Default,
-                            damageValue = characterBody.damage * 4f,
-                            isCrit = Util.CheckRoll(characterBody.crit, characterBody.master),
-                            procChainMask = default(ProcChainMask),
-                            procCoefficient = 0.7f,
-                            target = hurtBox
-                        });
-                    }
-                }
+                outer.SetNextStateToMain();
             }
+        }
 
-            if (base.isAuthority) outer.SetNextStateToMain();
+        public override void OnExit()
+        {
+            base.OnExit();
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

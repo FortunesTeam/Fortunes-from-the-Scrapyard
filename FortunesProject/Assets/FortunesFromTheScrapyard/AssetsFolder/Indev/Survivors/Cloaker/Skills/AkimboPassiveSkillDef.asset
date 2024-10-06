@@ -16,7 +16,7 @@ MonoBehaviour:
   skillNameToken: SCRAPYARD_CLOAKER_AKIMBO_NAME
   skillDescriptionToken: SCRAPYARD_CLOAKER_AKIMBO_DESCRIPTION
   keywordTokens: []
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d314bba12c4049848a8abdf133208d3e, type: 3}
   activationStateMachineName: 
   activationState:
     _typeName: RoR2.RouletteChestController+Idle, RoR2, Version=0.0.0.0, Culture=neutral,
@@ -27,6 +27,8 @@ MonoBehaviour:
   rechargeStock: 0
   requiredStock: 2
   stockToConsume: 0
+  attackSpeedBuffsRestockSpeed: 0
+  attackSpeedBuffsRestockSpeed_Multiplier: 1
   resetCooldownTimerOnUse: 0
   fullRestockOnAssign: 0
   dontAllowPastMaxStocks: 0
@@ -36,3 +38,5 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 0
   mustKeyPress: 0
+  autoHandleLuminousShot: 1
+  hideStockCount: 0

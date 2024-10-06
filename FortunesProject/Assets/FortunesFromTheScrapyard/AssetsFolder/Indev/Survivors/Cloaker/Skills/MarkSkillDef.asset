@@ -17,7 +17,7 @@ MonoBehaviour:
   skillDescriptionToken: SCRAPYARD_CLOAKER_MARK_DESC
   keywordTokens: []
   icon: {fileID: 21300000, guid: 44439eef29b1fd248ab7eb1a8c2f8509, type: 3}
-  activationStateMachineName: Mark
+  activationStateMachineName: Weapon2
   activationState:
     _typeName: EntityStates.Cloaker.CloakerMark, FortunesFromTheScrapyard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -27,6 +27,8 @@ MonoBehaviour:
   rechargeStock: 1
   requiredStock: 1
   stockToConsume: 0
+  attackSpeedBuffsRestockSpeed: 0
+  attackSpeedBuffsRestockSpeed_Multiplier: 1
   resetCooldownTimerOnUse: 0
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
@@ -36,3 +38,5 @@ MonoBehaviour:
   canceledFromSprinting: 0
   isCombatSkill: 0
   mustKeyPress: 0
+  autoHandleLuminousShot: 1
+  hideStockCount: 0

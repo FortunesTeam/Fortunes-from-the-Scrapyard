@@ -36,7 +36,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         public static float baseGracePeriod = 3f;
 
         public bool isAkimbo => base.gameObject.GetComponent<CloakerPassive>().isAkimbo;
-        private float restealthCooldown => Mathf.Min(baseRestealthCooldown, Mathf.Max(0.5f, baseRestealthCooldown * this.skillLocator.primary.cooldownScale - this.skillLocator.primary.flatCooldownReduction));
+        private float restealthCooldown;
 
         private float restealthTimer;
 
@@ -59,14 +59,15 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                     if (value)
                     {
                         GameObject original = null;
-                        if (characterBody.hasCloakBuff && passiveCloakOn) original = nearbyIndicator;
 
-                        original.GetComponentInChildren<CloakerRangeIndicatorComponent>().ownerBody = characterBody;
-                        original.GetComponentInChildren<CloakerRangeIndicatorComponent>().cloakerController = this;
-                        original.GetComponentInChildren<CloakerRangeIndicatorComponent>()._teamIndex = characterBody.teamComponent.teamIndex;
+                        original = Cloaker.CloakerRangeIndicatorPrefab;
 
                         if (original != null)
                         {
+                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>().ownerBody = characterBody;
+                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>().cloakerController = this;
+                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>()._teamIndex = characterBody.teamComponent.teamIndex;
+
                             nearbyIndicator = UnityEngine.Object.Instantiate(original, characterBody.corePosition, Quaternion.identity);
                             nearbyIndicator.GetComponent<NetworkedBodyAttachment>().AttachToGameObjectAndSpawn(base.gameObject);
                         }
@@ -89,10 +90,6 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             this.skillLocator = this.GetComponent<SkillLocator>();
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
 
-            indicatorEnabled = true;
-
-            RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
-
             Invoke("PassiveSetup", 0.5f);
         }
 
@@ -109,24 +106,16 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                 skillLocator.primary.skillDef.mustKeyPress = true;
             }
         }
-        private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
-        {
-            if(sender.hasCloakBuff && sender.TryGetComponent<CloakerController>(out var cloak) && cloak.passiveCloakOn)
-            {
-                args.moveSpeedMultAdd += 0.14f;
-                args.damageMultAdd += 1.5f;
-            }
-
-            if(sender.TryGetComponent<CloakerController>(out var cloak2) && cloak2.isAkimbo)
-            {
-                args.attackSpeedMultAdd += 1f;
-            }
-        }
 
         private void Start()
         {
+            SetStealthCooldown();
         }
 
+        public void SetStealthCooldown()
+        {
+            restealthCooldown = Mathf.Min(baseRestealthCooldown, Mathf.Max(0.5f, baseRestealthCooldown * this.skillLocator.primary.cooldownScale - this.skillLocator.primary.flatCooldownReduction));
+        }
         public void StartGracePeriod()
         {
             graceTimer = baseGracePeriod;
@@ -140,10 +129,11 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                 return;
             }
 
-            if(graceTimer >= 0)
+            if (graceTimer > 0f)
             {
                 graceTimer -= Time.fixedDeltaTime;
             }
+            else graceTimer = 0f;
 
             if (characterBody.outOfCombat && !passiveCloakOn)
             {
@@ -151,19 +141,20 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 
                 if (restealthTimer >= restealthCooldown && !characterBody.hasCloakBuff)
                 {
+                    indicatorEnabled = true;
                     restealthTimer = 0f;
                     passiveCloakOn = true;
-                    characterBody.AddBuff(RoR2Content.Buffs.Cloak);
+                    if(NetworkServer.active)
+                    {
+                        characterBody.AddBuff(RoR2Content.Buffs.Cloak);
+                        characterBody.AddBuff(RoR2Content.Buffs.CloakSpeed);
+                    }
                 }
             }
-
-            if (skillLocator.special.CanExecute() && skillLocator.special.skillDef.skillIndex == SkillCatalog.FindSkillIndexByName("Screech") && characterBody.hasCloakBuff && passiveCloakOn)
+            else
             {
-                skillLocator.special.SetSkillOverride(this, SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("CloakerMark")), GenericSkill.SkillOverridePriority.Contextual);
-            }
-            else if (skillLocator.special.currentSkillOverride == SkillCatalog.FindSkillIndexByName("CloakerMark") && !characterBody.hasCloakBuff)
-            {
-                skillLocator.special.UnsetSkillOverride(this, SkillCatalog.GetSkillDef(SkillCatalog.FindSkillIndexByName("CloakerMark")), GenericSkill.SkillOverridePriority.Contextual);
+                indicatorEnabled = false;
+                passiveCloakOn = false;
             }
         }
         private void OnDestroy()

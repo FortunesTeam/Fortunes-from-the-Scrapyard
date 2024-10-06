@@ -47,8 +47,7 @@ namespace EntityStates.Cloaker
 
             characterDirection.moveVector = hopVector;
 
-            base.PlayCrossfade("FullBody, Override", "Roll", "Dash.playbackRate", this.duration * 1.5f, 0.05f);
-            base.PlayAnimation("Gesture, Override", "BufferEmpty");
+            base.PlayCrossfade("FullBody, Override", Animator.StringToHash("Dash"), this.duration * 0.05f);
 
             speedCoefficient = 0.3f * characterBody.jumpPower * Mathf.Clamp((characterBody.moveSpeed) / 4f, 5f, 20f);
 
@@ -62,10 +61,7 @@ namespace EntityStates.Cloaker
             {
                 cloakerController.passiveCloakOn = true;
                 cloakerController.StartGracePeriod();
-            }
-
-            Util.PlaySound("sfx_driver_air_dodge", this.gameObject);
-            
+            }            
         }
         protected virtual Vector3 GetHopVector()
         {

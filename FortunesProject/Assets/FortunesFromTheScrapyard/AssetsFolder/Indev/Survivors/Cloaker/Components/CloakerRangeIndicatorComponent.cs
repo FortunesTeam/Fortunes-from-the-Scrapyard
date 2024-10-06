@@ -35,7 +35,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 
         public void OnTriggerStay(Collider collider)
         {
-            if (!collider)
+            if (!collider || !ownerBody.hasCloakBuff)
             {
                 return;
             }
@@ -50,6 +50,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                     if (NetworkServer.active)
                     {
                         ownerBody.RemoveBuff(RoR2Content.Buffs.Cloak);
+                        ownerBody.RemoveBuff(RoR2Content.Buffs.CloakSpeed);
                         cloakerController.passiveCloakOn = false;
                     }
 

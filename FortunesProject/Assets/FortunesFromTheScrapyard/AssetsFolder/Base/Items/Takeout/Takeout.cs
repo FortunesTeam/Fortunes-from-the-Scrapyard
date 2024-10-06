@@ -68,16 +68,12 @@ namespace FortunesFromTheScrapyard.Items
             potstickerImpactEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleAcidImpact.prefab").WaitForCompletion().InstantiateClone("PotstickersImpactEffect", false);
             potstickerImpactEffect.EnsureComponent<EffectComponent>();
 
-            EffectDef potStickerImpactDef = new EffectDef(potstickerImpactEffect);
-
-            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(potStickerImpactDef);
+            ScrapyardContent.CreateAndAddEffectDef(potstickerImpactEffect);
 
             chickenExplosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ExplodeOnDeath/WilloWispExplosion.prefab").WaitForCompletion().InstantiateClone("ChickenExplosionEffect", false);
             chickenExplosionEffect.EnsureComponent<EffectComponent>();
 
-            EffectDef chickenDef = new EffectDef(chickenExplosionEffect);
-
-            ScrapyardContent.scrapyardContentPack.effectDefs.AddSingle(chickenDef);
+            ScrapyardContent.CreateAndAddEffectDef(chickenExplosionEffect);
         }
 
         private GameObject CreateTakeoutEffect(string prefabName, Color color)

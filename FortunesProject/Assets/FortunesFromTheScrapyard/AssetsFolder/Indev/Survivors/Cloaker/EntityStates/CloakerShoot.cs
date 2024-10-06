@@ -13,6 +13,8 @@ namespace EntityStates.Cloaker.Weapon
 {
     public class CloakerShoot : BaseSkillState, SteppedSkillDef.IStepSetter
     {
+        public static int ShootStateHash = Animator.StringToHash("Shoot");
+        public static int ShootSecondaryStateHash = Animator.StringToHash("ShootSecondary");
         public float baseDamageCoefficient = 2.6f;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.4f;
@@ -30,19 +32,21 @@ namespace EntityStates.Cloaker.Weapon
         public string shootSoundString = "";
         public virtual BulletAttack.FalloffModel falloff => BulletAttack.FalloffModel.DefaultBullet;
         private CloakerController cloakerController;
-        private float damageStatSnapshot;
         private int step;
+
         public override void OnEnter()
         {
             this.cloakerController = base.gameObject.GetComponent<CloakerController>();
 
             base.OnEnter();
 
-            this.damageStatSnapshot = base.characterBody.damage;
-
             if (this.characterBody.hasCloakBuff)
             {
-                if (NetworkServer.active) this.characterBody.RemoveBuff(RoR2Content.Buffs.Cloak);
+                if (NetworkServer.active)
+                {
+                    this.characterBody.RemoveBuff(RoR2Content.Buffs.Cloak);
+                    this.characterBody.RemoveBuff(RoR2Content.Buffs.CloakSpeed);
+                }
                 this.cloakerController.passiveCloakOn = false;
             }
             this.duration = CloakerShoot.baseDuration / this.attackSpeedStat;
@@ -72,8 +76,6 @@ namespace EntityStates.Cloaker.Weapon
 
         public void Fire()
         {
-            this.PlayAnimation("Gesture, Override", "Shoot", "Shoot.playbackRate", this.duration * 1.5f);
-
             EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FirePistol2.muzzleEffectPrefab, this.gameObject, this.muzzleString, false);
 
             Util.PlaySound(this.shootSoundString, this.gameObject);
@@ -88,7 +90,7 @@ namespace EntityStates.Cloaker.Weapon
                     bulletCount = 1,
                     aimVector = aimRay.direction,
                     origin = aimRay.origin,
-                    damage = this.baseDamageCoefficient * this.damageStatSnapshot,
+                    damage = this.baseDamageCoefficient * damageStat,
                     damageColorIndex = DamageColorIndex.Default,
                     falloffModel = this.falloff,
                     maxDistance = CloakerShoot.range,
@@ -112,7 +114,14 @@ namespace EntityStates.Cloaker.Weapon
                     queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
                     hitEffectPrefab = hitEffectPrefab,
                 };
-                if (charged) bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerChargedDamageType);
+
+                PlayAnimation();
+
+                if (charged)
+                {
+                    bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerChargedDamageType);
+                }
+
                 if (muzzleString == "MuzzleLeft") bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerAkimboDamageType);
                 bulletAttack.Fire();
             }
@@ -138,6 +147,12 @@ namespace EntityStates.Cloaker.Weapon
         public void SetStep(int i)
         {
             step = i;
+        }
+
+        public void PlayAnimation()
+        {
+            if (charged) this.PlayCrossfade("Gesture, Additive", ShootSecondaryStateHash, this.duration * 0.05f);
+            else this.PlayCrossfade("Gesture, Additive", ShootStateHash, this.duration * 0.05f);
         }
     }
 }
