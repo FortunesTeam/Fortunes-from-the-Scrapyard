@@ -135,11 +135,11 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             }
             else graceTimer = 0f;
 
-            if (characterBody.outOfCombat && !passiveCloakOn)
+            if (characterBody.outOfCombat)
             {
                 restealthTimer += Time.fixedDeltaTime;
 
-                if (restealthTimer >= restealthCooldown && !characterBody.hasCloakBuff)
+                if (restealthTimer >= restealthCooldown && !characterBody.hasCloakBuff && !passiveCloakOn)
                 {
                     indicatorEnabled = true;
                     restealthTimer = 0f;

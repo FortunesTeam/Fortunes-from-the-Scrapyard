@@ -130,22 +130,26 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         private void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamageProcess orig, HealthComponent self, DamageInfo damageInfo)
         {
             CharacterBody victimBody = self.body;
-            damageInfo.attacker.TryGetComponent<CharacterBody>(out var attackerBody);
 
-            if (attackerBody && victimBody)
+            if(damageInfo.attacker)
             {
-                if (victimBody.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
+                damageInfo.attacker.TryGetComponent<CharacterBody>(out var attackerBody);
+
+                if (attackerBody && victimBody)
                 {
-                    if (NetworkServer.active)
+                    if (victimBody.HasBuff(ScrapyardContent.Buffs.bdCloakerMarked))
                     {
-                        victimBody.RemoveBuff(ScrapyardContent.Buffs.bdCloakerMarked);
-                        victimBody.AddTimedBuff(ScrapyardContent.Buffs.bdCloakerMarkCd, 5f);
+                        if (NetworkServer.active)
+                        {
+                            victimBody.RemoveBuff(ScrapyardContent.Buffs.bdCloakerMarked);
+                            victimBody.AddTimedBuff(ScrapyardContent.Buffs.bdCloakerMarkCd, 5f);
+                        }
+
+                        if (!damageInfo.crit) damageInfo.crit = true;
+                        else damageInfo.damage *= 1.5f;
+
+                        EffectManager.SimpleImpactEffect(cloakerConsumeEffect, damageInfo.position, Vector3.up, transmit: true);
                     }
-
-                    if (!damageInfo.crit) damageInfo.crit = true;
-                    else damageInfo.damage *= 1.5f;
-
-                    EffectManager.SimpleImpactEffect(cloakerConsumeEffect, damageInfo.position, Vector3.up, transmit: true);
                 }
             }
 
