@@ -436,30 +436,34 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         private void GlobalEventManager_OnHitAllProcess(On.RoR2.GlobalEventManager.orig_OnHitAllProcess orig, GlobalEventManager self, DamageInfo damageInfo, GameObject hitObject)
         {
-            damageInfo.attacker.TryGetComponent<CharacterBody>(out var attackerBody);
-
-            if(attackerBody && !damageInfo.HasModdedDamageType(DukeRicochet) && 
-                hitObject.transform.root.gameObject.TryGetComponent<BuffWard>(out var buffWard) && 
-                buffWard && buffWard.buffDef == ScrapyardContent.Buffs.bdDukeDamageShare)
+            if(damageInfo.attacker)
             {
-                RicochetOrb orb = new RicochetOrb
+                damageInfo.attacker.TryGetComponent<CharacterBody>(out var attackerBody);
+
+                if (attackerBody && !damageInfo.HasModdedDamageType(DukeRicochet) &&
+                    hitObject.transform.root.gameObject.TryGetComponent<BuffWard>(out var buffWard) &&
+                    buffWard && buffWard.buffDef == ScrapyardContent.Buffs.bdDukeDamageShare)
                 {
-                    originalPosition = hitObject.transform.position,
-                    origin = hitObject.transform.position,
-                    speed = 500f,
-                    attacker = damageInfo.attacker,
-                    damageValue = damageInfo.damage *= damageShareCoefficient,
-                    teamIndex = attackerBody.teamComponent.teamIndex,
-                    procCoefficient = damageInfo.procCoefficient,
-                    isCrit = damageInfo.crit,
-                    bounceCount = 0,
-                    hitObjects = new System.Collections.Generic.List<GameObject>(),
-                    damageColorIndex = DamageColorIndex.WeakPoint
-                };
-                orb.hitObjects.Add(hitObject);
-                
-                OrbManager.instance.AddOrb(orb);
+                    RicochetOrb orb = new RicochetOrb
+                    {
+                        originalPosition = hitObject.transform.position,
+                        origin = hitObject.transform.position,
+                        speed = 500f,
+                        attacker = damageInfo.attacker,
+                        damageValue = damageInfo.damage *= damageShareCoefficient,
+                        teamIndex = attackerBody.teamComponent.teamIndex,
+                        procCoefficient = damageInfo.procCoefficient,
+                        isCrit = damageInfo.crit,
+                        bounceCount = 0,
+                        hitObjects = new System.Collections.Generic.List<GameObject>(),
+                        damageColorIndex = DamageColorIndex.WeakPoint
+                    };
+                    orb.hitObjects.Add(hitObject);
+
+                    OrbManager.instance.AddOrb(orb);
+                }
             }
+            
             orig.Invoke(self, damageInfo, hitObject);
         }
 
