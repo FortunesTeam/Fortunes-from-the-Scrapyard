@@ -2,14 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matPuff
-  m_Shader: {fileID: 4800000, guid: 0d4838f326dd67140acbf335e7b3bffa, type: 3}
-  m_ShaderKeywords: USE_CLOUDS _ALPHABLEND_ON
+  m_Shader: {fileID: 4800000, guid: 8f3f3d0bf2267f74ca405c5ec04db15a, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - USE_CLOUDS
+  - _ALPHABLEND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -71,6 +74,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: cd0d001791e270c41839e446e808a4a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaBias: 0.008
     - _AlphaBoost: 1.55
@@ -125,3 +129,4 @@ Material:
     - _CutoffScroll: {r: 3, g: 8, b: 4, a: 6}
     - _EmissionColor: {r: 0.15419188, g: 0.3301887, b: 0.16211855, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

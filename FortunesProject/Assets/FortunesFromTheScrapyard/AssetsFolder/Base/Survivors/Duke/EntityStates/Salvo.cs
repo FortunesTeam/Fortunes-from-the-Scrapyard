@@ -237,7 +237,7 @@ namespace EntityStates.Duke
                 
                 salvoAttack.Fire();
 
-                this.characterMotor.ApplyForce(aimRay.direction * -this.selfForce);
+                if(!this.characterMotor.isGrounded) this.characterMotor.ApplyForce(aimRay.direction * -this.selfForce);
             }
 
             base.characterBody.AddSpreadBloom(2.5f);

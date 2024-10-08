@@ -2,14 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matLethalGas
-  m_Shader: {fileID: 4800000, guid: 0d4838f326dd67140acbf335e7b3bffa, type: 3}
-  m_ShaderKeywords: USE_CLOUDS _ALPHABLEND_ON
+  m_Shader: {fileID: 4800000, guid: dc2c161f49c4dca47807911a7b8f9843, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - USE_CLOUDS
+  - _ALPHABLEND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -71,6 +74,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 8cee51e680b6cb04eb49de689f9e7f6a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaBias: 0.008
     - _AlphaBoost: 1.55
@@ -87,18 +91,21 @@ Material:
     - _DisableRemapOn: 0
     - _DistortionStrength: 0.1
     - _DstBlend: 10
+    - _DstBlendFloat: 1
     - _EmissionFromAlbedo: 0
     - _ExternalAlpha: 1
     - _ExtrusionStrength: 0
     - _Fade: 1
     - _FadeCloseDistance: 0.5
     - _FadeCloseOn: 0
+    - _FadeFromVertexColorsOn: 0
     - _FresnelOn: 0
     - _FresnelPower: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _InternalSimpleBlendMode: 0
+    - _IntersectionStrength: 0
     - _InvFade: 1.4
     - _Metallic: 0
     - _Mode: 2
@@ -107,12 +114,17 @@ Material:
     - _OffsetAmount: 0
     - _Parallax: 0.02
     - _RampInfo: 3
+    - _RimPower: 1
+    - _RimStrength: 1
     - _SkyboxOnly: 0
     - _SmoothnessTextureChannel: 0
+    - _SoftPower: 1
     - _SpecularExponent: 1
     - _SpecularHighlights: 1
     - _SpecularStrength: 0
     - _SrcBlend: 5
+    - _SrcBlendFloat: 1
+    - _TriplanarOn: 0
     - _UVSec: 0
     - _UseUV1On: 0
     - _VertexAlphaOn: 0
@@ -125,3 +137,4 @@ Material:
     - _CutoffScroll: {r: 3, g: 8, b: 4, a: 6}
     - _EmissionColor: {r: 0.15419188, g: 0.3301887, b: 0.16211855, a: 1}
     - _TintColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_BuildTextureStacks: []

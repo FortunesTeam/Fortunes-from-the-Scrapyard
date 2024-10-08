@@ -630,6 +630,9 @@ MonoBehaviour:
   targetStateMachine: {fileID: 2795414510184700025}
   idleStateMachine:
   - {fileID: 2795414510184700025}
+  - {fileID: 5552001105035297117}
+  - {fileID: 2771422973634186725}
+  - {fileID: 7037682913683084371}
   hurtState:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   canBeHitStunned: 0

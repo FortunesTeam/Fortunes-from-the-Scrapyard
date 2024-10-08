@@ -484,14 +484,14 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
                     //float newDamage = sender.damage * ((sender.attackSpeed - baseAttackSpeed) * 0.7f);
                     //sender.damage += newDamage;
                     dukeController.attackSpeedConversion = (sender.attackSpeed - baseAttackSpeed) * 0.7f;
-                    args.attackSpeedReductionMultAdd += (sender.attackSpeed - baseAttackSpeed) * 0.7f;
+                    sender.attackSpeed = baseAttackSpeed + ((sender.attackSpeed - baseAttackSpeed) * 0.3f);
                 }
             }
 
             if (sender.bodyIndex == BodyCatalog.FindBodyIndex("DukeDecoyBody"))
             {
                 float baseAttackSpeed = sender.baseAttackSpeed + (sender.levelAttackSpeed * sender.level);
-                args.attackSpeedReductionMultAdd += (sender.attackSpeed - baseAttackSpeed) * 0.7f;
+                sender.attackSpeed = baseAttackSpeed + ((sender.attackSpeed - baseAttackSpeed) * 0.3f);
             }
         }
         private void Emotes()
