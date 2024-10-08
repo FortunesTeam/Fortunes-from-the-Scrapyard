@@ -272,7 +272,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ab841de992fe4fdb281f2bb03bed463e3054e70a"
+      "hash": "e99a3b160615f5c9d79e4412bb9087124f2ec637"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",
