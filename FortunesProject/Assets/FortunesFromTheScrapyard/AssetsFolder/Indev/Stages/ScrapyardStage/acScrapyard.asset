@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ae8cca44309a641b79b61182db0a2f, type: 3}
+  m_Name: acScrapyard
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 8fbeb9fcf2b2e1f458e96cb5acdc9929, type: 2}
+  sceneDef: {fileID: 11400000, guid: 8fbeb9fcf2b2e1f458e96cb5acdc9929, type: 2}
+  mainTrack:
+    _value: {fileID: 0}
+  bossTrack:
+    _value: {fileID: 0}
+  weightRelativeToSiblings: 0
+  appearsPreLoop: 0
+  appearsPostLoop: 0

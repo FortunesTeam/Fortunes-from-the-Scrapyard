@@ -135,6 +135,12 @@ MonoBehaviour:
   - assetBundleName: fortunescharacters
     assets:
     - {fileID: 102900000, guid: 69230d457610fce4593b36b3ede79eeb, type: 3}
+  - assetBundleName: fortunesscrapyardstageassets
+    assets:
+    - {fileID: 102900000, guid: 664de7f2a34e1fe48b59cf1a1029b964, type: 3}
+  - assetBundleName: fortunesscrapyardscenes
+    assets:
+    - {fileID: 102900000, guid: 5c960cd8041be9d4a95a1db64d491015, type: 3}
 --- !u!114 &114987763159783732
 MonoBehaviour:
   m_ObjectHideFlags: 0

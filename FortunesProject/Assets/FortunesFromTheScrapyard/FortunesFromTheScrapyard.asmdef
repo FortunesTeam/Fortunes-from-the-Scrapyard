@@ -56,7 +56,8 @@
         "R2API.Core.dll",
         "CustomEmotesAPI.dll",
         "AncientScepter.dll",
-        "Newtonsoft.Json.dll"
+        "Newtonsoft.Json.dll",
+        "R2API.Stages.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
