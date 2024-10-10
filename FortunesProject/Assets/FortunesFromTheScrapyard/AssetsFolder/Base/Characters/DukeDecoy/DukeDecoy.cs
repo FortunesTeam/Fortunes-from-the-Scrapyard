@@ -15,10 +15,12 @@ namespace FortunesFromTheScrapyard.Characters.DukeDecoy
     {
         public static GameObject dukeDecoyDeathExplosion;
         public static GameObject DukeDecoyMaster;
+        public static CharacterSpawnCard cscDukeDecoy;
         
         public override void Initialize()
         {
             DukeDecoyMaster = assetCollection.FindAsset<GameObject>("DukeDecoyMaster");
+            cscDukeDecoy = assetCollection.FindAsset<CharacterSpawnCard>("cscDukeDecoy");
 
             var cb = characterPrefab.GetComponent<CharacterBody>();
             cb._defaultCrosshairPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Crosshair/Bandit2Crosshair");

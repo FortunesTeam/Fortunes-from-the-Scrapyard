@@ -47,6 +47,7 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
 
         public static DamageAPI.ModdedDamageType DukeFourthShot;
         public static DamageAPI.ModdedDamageType DukeRicochet;
+        public static DeployableSlot CloneSlot;
 
         //ALL TEMP
         internal static GameObject dukeTracer;
@@ -80,6 +81,8 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             DukeFourthShot = DamageAPI.ReserveDamageType();
             DukeRicochet = DamageAPI.ReserveDamageType();
 
+            CloneSlot = DeployableAPI.RegisterDeployableSlot(DeployableSlotLimitDelegate);
+
             CreateEffects();
 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
@@ -91,6 +94,10 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
             Hooks();
         }
 
+        public static int DeployableSlotLimitDelegate(CharacterMaster master, int multiplier)
+        {
+            return 4;
+        }
         public void ModifyPrefab()
         {
             var cb = characterPrefab.GetComponent<CharacterBody>();

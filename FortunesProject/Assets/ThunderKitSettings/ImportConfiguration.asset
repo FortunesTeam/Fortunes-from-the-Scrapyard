@@ -387,7 +387,7 @@ MonoBehaviour:
   - submoduleName: R2API_Deployable
     description: R2API_Deployable
     dependedncyID: RiskofThunder-R2API_Deployable
-    shouldInstall: 0
+    shouldInstall: 1
     isHardDependency: 0
     dependencies:
     - BepInExPack

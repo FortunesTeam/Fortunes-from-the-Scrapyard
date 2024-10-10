@@ -155,6 +155,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-r2api_deployable": {
+      "version": "file:R2API_Deployable",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-r2api_difficulty": {
       "version": "file:R2API_Difficulty",
       "depth": 0,
@@ -272,7 +278,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e99a3b160615f5c9d79e4412bb9087124f2ec637"
+      "hash": "28db6028cad69d8dac37e7bc25de533512529341"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",

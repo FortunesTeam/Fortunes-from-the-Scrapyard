@@ -18,7 +18,7 @@ namespace FortunesFromTheScrapyard.Items
         public static int maxStacks = 3;
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, 1)]
-        public static int maxStacksPerStack = 3;
+        public static int maxStacksPerStack = 0;
 
         [ConfigureField(ScrapyardConfig.ID_ITEMS)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
