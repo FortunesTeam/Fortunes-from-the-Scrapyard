@@ -105,7 +105,7 @@ namespace EntityStates.Duke
                         {
                             if (this.characterBody.isSprinting)
                             {
-                                this.modelAnimator.CrossFadeInFixedTime("SprintJump", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
+                                this.modelAnimator.CrossFadeInFixedTime("JumpSprint", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
                             }
                             else
                             {

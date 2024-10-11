@@ -37,3 +37,5 @@ MonoBehaviour:
     _hexRepresentation: 80f85cf135da6ea41834b0e48a22acfa
   - k_templateName: ShaderDictionary
     _hexRepresentation: eb748256c0573e64aa147f2339196579
+  - k_templateName: HurtBoxGroupInspector
+    _hexRepresentation: e2fa64d4b6ce24c4997e7ccf0b821403

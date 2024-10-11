@@ -238,6 +238,7 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdCounterfeitLimit;
             public static BuffDef bdBadgerSoundBuff;
             public static BuffDef bdBadgerSlowBuff;
+            public static BuffDef bdSkaterBubbleBuff;
         }
 
         public static class Survivors

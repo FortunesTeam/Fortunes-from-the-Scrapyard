@@ -1,0 +1,191 @@
+﻿using UnityEngine;
+using RoR2;
+using EntityStates;
+using BepInEx.Configuration;
+using UnityEngine.Networking;
+
+namespace EntityStates.Skater
+{ 
+    public class MainState : GenericCharacterMain
+    {
+        private Animator animator;
+        public LocalUser localUser;
+
+        public static float skaterMovementSpeedInterval = 1.25f;
+
+        private float speedTimer;
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            this.animator = this.modelAnimator;
+            this.FindLocalUser();
+        }
+        private void FindLocalUser()
+        {
+            if (this.localUser == null)
+            {
+                if (base.characterBody)
+                {
+                    foreach (LocalUser lu in LocalUserManager.readOnlyLocalUsersList)
+                    {
+                        if (lu.cachedBody == base.characterBody)
+                        {
+                            this.localUser = lu;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        public override void FixedUpdate()
+        {
+            if (!characterBody.GetNotMoving() && isGrounded)
+            {
+                speedTimer += Time.fixedDeltaTime;
+            }
+            else speedTimer = 0f;
+
+            if(speedTimer >= skaterMovementSpeedInterval)
+            {
+                speedTimer = 0f;
+                if (NetworkServer.active)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                       characterBody.AddTimedBuff(DLC1Content.Buffs.KillMoveSpeed, 1f * (i + 1f) / 5f);
+                    }
+                }
+            }
+
+            base.FixedUpdate();
+
+            if (this.animator)
+            {
+                bool cock = false;
+                if (!this.characterBody.outOfDanger || !this.characterBody.outOfCombat) cock = true;
+
+                this.animator.SetBool("inCombat", cock);
+
+                if (this.isGrounded) this.animator.SetFloat("airBlend", 0f);
+                else this.animator.SetFloat("airBlend", 1f);
+            }
+
+            if (base.isAuthority && base.characterMotor.isGrounded)
+            {
+                //this.CheckEmote<Rest>(DukeConfig.restKey);
+            }
+        }
+        private void CheckEmote(KeyCode keybind, EntityState state)
+        {
+            if (Input.GetKeyDown(keybind))
+            {
+                if (!localUser.isUIFocused)
+                {
+                    outer.SetInterruptState(state, InterruptPriority.Any);
+                }
+            }
+        }
+        public override void ProcessJump()
+        {
+            if (this.hasCharacterMotor)
+            {
+                bool hopooFeather = false;
+                bool waxQuail = false;
+
+                if (this.jumpInputReceived && base.characterBody && base.characterMotor.jumpCount < base.characterBody.maxJumpCount)
+                {
+                    int waxQuailCount = base.characterBody.inventory.GetItemCount(RoR2Content.Items.JumpBoost);
+                    float horizontalBonus = 1f;
+                    float verticalBonus = 1f;
+
+                    if (base.characterMotor.jumpCount >= base.characterBody.baseJumpCount)
+                    {
+                        hopooFeather = true;
+                        horizontalBonus = 1.5f;
+                        verticalBonus = 1.5f;
+                    }
+                    else if (waxQuailCount > 0 && base.characterBody.isSprinting)
+                    {
+                        float v = base.characterBody.acceleration * base.characterMotor.airControl;
+
+                        if (base.characterBody.moveSpeed > 0f && v > 0f)
+                        {
+                            waxQuail = true;
+                            float num2 = Mathf.Sqrt(10f * (float)waxQuailCount / v);
+                            float num3 = base.characterBody.moveSpeed / v;
+                            horizontalBonus = (num2 + num3) / num3;
+                        }
+                    }
+
+                    ApplySkaterJumpVelocity(base.characterMotor, base.characterBody, horizontalBonus, verticalBonus, false);
+
+                    if (this.hasModelAnimator)
+                    {
+                        int layerIndex = base.modelAnimator.GetLayerIndex("Body");
+                        if (layerIndex >= 0)
+                        {
+                            if (this.characterBody.isSprinting)
+                            {
+                                this.modelAnimator.CrossFadeInFixedTime("JumpSprint", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
+                            }
+                            else
+                            {
+                                if (hopooFeather)
+                                {
+                                    this.modelAnimator.CrossFadeInFixedTime("BonusJump", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
+                                }
+                                else
+                                {
+                                    this.modelAnimator.CrossFadeInFixedTime("Jump", this.smoothingParameters.intoJumpTransitionTime, layerIndex);
+                                }
+                            }
+                        }
+                    }
+
+                    if (hopooFeather)
+                    {
+                        EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/FeatherEffect"), new EffectData
+                        {
+                            origin = base.characterBody.footPosition
+                        }, true);
+                    }
+                    else if (base.characterMotor.jumpCount > 0)
+                    {
+                        EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/ImpactEffects/CharacterLandImpact"), new EffectData
+                        {
+                            origin = base.characterBody.footPosition,
+                            scale = base.characterBody.radius
+                        }, true);
+                    }
+
+                    if (waxQuail)
+                    {
+                        EffectManager.SpawnEffect(LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/BoostJumpEffect"), new EffectData
+                        {
+                            origin = base.characterBody.footPosition,
+                            rotation = Util.QuaternionSafeLookRotation(base.characterMotor.velocity)
+                        }, true);
+                    }
+
+                    base.characterMotor.jumpCount++;
+
+                }
+            }
+        }
+        public static void ApplySkaterJumpVelocity(CharacterMotor characterMotor, CharacterBody characterBody, float horizontalBonus, float verticalBonus, bool vault = false)
+        {
+            Vector3 moveDirection = characterMotor.moveDirection;
+            if (vault)
+            {
+                characterMotor.velocity = moveDirection;
+            }
+            else
+            {
+                Vector3 velocity = characterMotor.velocity;
+                velocity.y = characterBody.jumpPower * verticalBonus;
+                characterMotor.velocity = velocity;
+            }
+            characterMotor.Motor.ForceUnground();
+        }
+    }
+}

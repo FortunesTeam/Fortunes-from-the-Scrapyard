@@ -1,0 +1,411 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: skaterTailMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/root
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-SMGBase.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-SMGBase.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-SniperBase
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-SniperHold
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003/DEF-BottomTube.L.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003/DEF-BottomTube.L.004/DEF-BottomTube.L.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003/DEF-BottomTube.L.004/DEF-BottomTube.L.005/DEF-BottomTube.L.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003/DEF-BottomTube.L.004/DEF-BottomTube.L.005/DEF-BottomTube.L.006/DEF-BottomTube.L.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.L/DEF-BottomTube.L.001/DEF-BottomTube.L.002/DEF-BottomTube.L.003/DEF-BottomTube.L.004/DEF-BottomTube.L.005/DEF-BottomTube.L.006/DEF-BottomTube.L.007/DEF-BottomTube.L.008
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003/DEF-BottomTube.R.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003/DEF-BottomTube.R.004/DEF-BottomTube.R.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003/DEF-BottomTube.R.004/DEF-BottomTube.R.005/DEF-BottomTube.R.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003/DEF-BottomTube.R.004/DEF-BottomTube.R.005/DEF-BottomTube.R.006/DEF-BottomTube.R.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-BottomTube.R/DEF-BottomTube.R.001/DEF-BottomTube.R.002/DEF-BottomTube.R.003/DEF-BottomTube.R.004/DEF-BottomTube.R.005/DEF-BottomTube.R.006/DEF-BottomTube.R.007/DEF-BottomTube.R.008
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-pelvis.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-pelvis.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.L/DEF-Skirt.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.L/DEF-Skirt.L.001/DEF-Skirt.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.R/DEF-Skirt.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Skirt.R/DEF-Skirt.R.001/DEF-Skirt.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.L/DEF-SkirtBack.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.L/DEF-SkirtBack.L.001/DEF-SkirtBack.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.L/DEF-SkirtBack.L.001/DEF-SkirtBack.L.002/DEF-SkirtBack.L.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.L/DEF-SkirtBack.L.001/DEF-SkirtBack.L.002/DEF-SkirtBack.L.003/DEF-SkirtBack.L.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.R/DEF-SkirtBack.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.R/DEF-SkirtBack.R.001/DEF-SkirtBack.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.R/DEF-SkirtBack.R.001/DEF-SkirtBack.R.002/DEF-SkirtBack.R.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBack.R/DEF-SkirtBack.R.001/DEF-SkirtBack.R.002/DEF-SkirtBack.R.003/DEF-SkirtBack.R.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBackSmall.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBackSmall.R/DEF-SkirtBackSmall.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtBackSmall.R/DEF-SkirtBackSmall.R.001/DEF-SkirtBackSmall.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.L/DEF-SkirtMid.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.L/DEF-SkirtMid.L.001/DEF-SkirtMid.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.L/DEF-SkirtMid.L.001/DEF-SkirtMid.L.002/DEF-SkirtMid.L.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.R/DEF-SkirtMid.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.R/DEF-SkirtMid.R.001/DEF-SkirtMid.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtMid.R/DEF-SkirtMid.R.001/DEF-SkirtMid.R.002/DEF-SkirtMid.R.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.L/DEF-SkirtSmallUp.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.L/DEF-SkirtSmallUp.L.001/DEF-SkirtSmallUp.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.R/DEF-SkirtSmallUp.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-SkirtSmallUp.R/DEF-SkirtSmallUp.R.001/DEF-SkirtSmallUp.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail/DEF-smalltail.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail/DEF-smalltail.001/DEF-smalltail.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail/DEF-smalltail.001/DEF-smalltail.002/DEF-smalltail.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail/DEF-smalltail.001/DEF-smalltail.002/DEF-smalltail.003/DEF-smalltail.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-smalltail/DEF-smalltail.001/DEF-smalltail.002/DEF-smalltail.003/DEF-smalltail.004/DEF-smalltail.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.004/DEF-tail.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.004/DEF-tail.005/DEF-tail.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.004/DEF-tail.005/DEF-tail.006/DEF-tail.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-tail/DEF-tail.001/DEF-tail.002/DEF-tail.003/DEF-tail.004/DEF-tail.005/DEF-tail.006/DEF-tail.007/DEF-tail.008
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Tank.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-Tank.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-toe.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-toe.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-breast.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-DynamicJuke.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-DynamicJuke.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003/DEF-TopTube.L.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003/DEF-TopTube.L.004/DEF-TopTube.L.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003/DEF-TopTube.L.004/DEF-TopTube.L.005/DEF-TopTube.L.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003/DEF-TopTube.L.004/DEF-TopTube.L.005/DEF-TopTube.L.006/DEF-TopTube.L.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.L/DEF-TopTube.L/DEF-TopTube.L.001/DEF-TopTube.L.002/DEF-TopTube.L.003/DEF-TopTube.L.004/DEF-TopTube.L.005/DEF-TopTube.L.006/DEF-TopTube.L.007/DEF-ConnectHeadTube.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003/DEF-TopTube.R.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003/DEF-TopTube.R.004/DEF-TopTube.R.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003/DEF-TopTube.R.004/DEF-TopTube.R.005/DEF-TopTube.R.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003/DEF-TopTube.R.004/DEF-TopTube.R.005/DEF-TopTube.R.006/DEF-TopTube.R.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-JukeBone/DEF-TopTubeStart.R/DEF-TopTube.R/DEF-TopTube.R.001/DEF-TopTube.R.002/DEF-TopTube.R.003/DEF-TopTube.R.004/DEF-TopTube.R.005/DEF-TopTube.R.006/DEF-TopTube.R.007/DEF-ConnectHeadTube.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_index.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_index.01.L/DEF-f_index.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_index.01.L/DEF-f_index.02.L/DEF-f_index.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_middle.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_middle.01.L/DEF-f_middle.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_middle.01.L/DEF-f_middle.02.L/DEF-f_middle.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_pinky.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L/DEF-f_pinky.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_ring.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_ring.01.L/DEF-f_ring.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-f_ring.01.L/DEF-f_ring.02.L/DEF-f_ring.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-palm.04.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-thumb.01.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-thumb.01.L/DEF-thumb.02.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.L/DEF-upper_arm.L/DEF-upper_arm.L.001/DEF-forearm.L/DEF-forearm.L.001/DEF-hand.L/DEF-thumb.01.L/DEF-thumb.02.L/DEF-thumb.03.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_index.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_index.01.R/DEF-f_index.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_index.01.R/DEF-f_index.02.R/DEF-f_index.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_middle.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_middle.01.R/DEF-f_middle.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_middle.01.R/DEF-f_middle.02.R/DEF-f_middle.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_pinky.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R/DEF-f_pinky.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_ring.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_ring.01.R/DEF-f_ring.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-f_ring.01.R/DEF-f_ring.02.R/DEF-f_ring.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-palm.04.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-thumb.01.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-thumb.01.R/DEF-thumb.02.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/DEF-thumb.01.R/DEF-thumb.02.R/DEF-thumb.03.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-HeadphonesHolder
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004/Hair.L.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004/Hair.L.005/Hair.L.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004/Hair.L.005/Hair.L.006/Hair.L.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004/Hair.L.005/Hair.L.006/Hair.L.007/Hair.L.008
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.L/Hair.L.001/Hair.L.002/Hair.L.003/Hair.L.004/Hair.L.005/Hair.L.006/Hair.L.007/Hair.L.008/Hair.L.009
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004/Hair.R.005
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004/Hair.R.005/Hair.R.006
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004/Hair.R.005/Hair.R.006/Hair.R.007
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004/Hair.R.005/Hair.R.006/Hair.R.007/Hair.R.008
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-spine.004/DEF-spine.005/DEF-spine.006/Hair.R/Hair.R.001/Hair.R.002/Hair.R.003/Hair.R.004/Hair.R.005/Hair.R.006/Hair.R.007/Hair.R.008/Hair.R.009
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-SprayCanBone
+    m_Weight: 0
+  - m_Path: Armature/root/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-SprayCanBone.001
+    m_Weight: 0
+  - m_Path: meshBody
+    m_Weight: 0
+  - m_Path: meshSmg.L
+    m_Weight: 0
+  - m_Path: meshSmg.R
+    m_Weight: 0
+  - m_Path: meshSniper
+    m_Weight: 0
+  - m_Path: meshSprayCans
+    m_Weight: 0
+  - m_Path: meshTape
+    m_Weight: 0
