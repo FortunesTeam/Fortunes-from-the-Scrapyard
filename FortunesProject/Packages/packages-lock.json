@@ -83,6 +83,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jacedadorito-locationsofprecipitation": {
+      "version": "file:LocationsOfPrecipitation",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "metrosexualfruitcake-customemotesapi": {
       "version": "file:CustomEmotesAPI",
       "depth": 0,

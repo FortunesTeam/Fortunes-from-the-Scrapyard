@@ -48,7 +48,8 @@ namespace FortunesFromTheScrapyard
         Elites,
         Survivors,
         Characters,
-        Difficulties
+        Difficulties,
+        SharedStages
     }
     /// <summary>
     /// The mod's "Assets" class, which contains all the necesary assetbundle data for loading assets.
@@ -70,6 +71,7 @@ namespace FortunesFromTheScrapyard
         private const string SURVIVORS = "fortunessurvivors";
         private const string CHARACTERS = "fortunescharacters";
         private const string DIFFICULTIES = "fortunesdifficulties";
+        private const string SHARED_STAGES = "fortunesstages";
         private static string AssetBundleFolderPath => Path.Combine(Path.GetDirectoryName(ScrapyardMain.instance.Info.Location), ASSET_BUNDLE_FOLDER_NAME);
 
         private static Dictionary<ScrapyardBundle, AssetBundle> _assetBundles = new Dictionary<ScrapyardBundle, AssetBundle>();
@@ -261,6 +263,7 @@ namespace FortunesFromTheScrapyard
                 case ELITES: exampleBundle = ScrapyardBundle.Elites; break;
                 case SURVIVORS: exampleBundle = ScrapyardBundle.Survivors; break;
                 case CHARACTERS: exampleBundle = ScrapyardBundle.Characters; break;
+                case SHARED_STAGES: exampleBundle = ScrapyardBundle.SharedStages; break;
 
                 //This path does not match any of the non scene bundles, could be a scene, we will mark these on only this ocassion as "StreamedScene".
                 default: exampleBundle = ScrapyardBundle.StreamedScene; break;

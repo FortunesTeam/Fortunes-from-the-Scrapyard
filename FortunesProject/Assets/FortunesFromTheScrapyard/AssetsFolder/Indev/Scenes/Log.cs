@@ -1,6 +1,6 @@
 ﻿using BepInEx.Logging;
 
-namespace FortunesFromTheScrapyard.Content
+namespace FortunesFromTheScrapyard
 {
     internal static class Log
     {

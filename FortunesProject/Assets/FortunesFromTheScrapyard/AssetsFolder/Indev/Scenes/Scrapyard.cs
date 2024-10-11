@@ -1,4 +1,42 @@
-using System;
+using RoR2;
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using R2API;
+using UnityEngine.AddressableAssets;
+using MSU;
+using System.Collections;
+using RoR2.ContentManagement;
+
+namespace FortunesFromTheScrapyard.Scenes
+{
+    public class ScrapyardStage : ScrapyardScene
+    {
+        public ScrapyardAssetRequest<SceneAssetCollection> assetRequest => ScrapyardAssets.LoadAssetAsync<SceneAssetCollection>("acScrapyard", ScrapyardBundle.SharedStages);
+
+        public void Initialize()
+        {
+            sceneDef.mainTrack = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/MusicTrackDefs/muSong08.asset").WaitForCompletion();
+        }
+
+        public void OnServerStageBegin(Stage stage)
+        {
+            //summon trader
+            /*var traderSummon = new MasterSummon();
+            traderSummon.position = new Vector3(-0.88f, 0.47f, 60.15f);
+            traderSummon.rotation = new Quaternion(0f, 90f, 0f, 0f);
+            traderSummon.masterPrefab = SS2Assets.LoadAsset<GameObject>("TraderMaster", SS2Bundle.Indev);
+            traderSummon.teamIndexOverride = TeamIndex.Neutral;
+            traderSummon.Perform();*/
+        }
+
+        public bool IsAvailable(ContentPack contentPack)
+        {
+            return false;
+        }
+    }
+}
+/*using System;
 using System.Collections;
 using System.Linq;
 using RoR2;
@@ -12,12 +50,15 @@ using System.Collections.Generic;
 using RoR2.Networking;
 using R2API;
 
-namespace FortunesFromTheScrapyard.Content
+namespace FortunesFromTheScrapyard
 {
-    public static class FortunesContent
+    public static class ScrapyardStages
     {
-        internal const string ScenesAssetBundleFileName = "fortunesscrapyardscenes";
-        internal const string AssetsAssetBundleFileName = "fortunesscrapyardstageassets";
+        //once assetbundles are good swap to this
+        //internal const string ScenesAssetBundleFileName = "fortunesscrapyardscenes";
+        //internal const string AssetsAssetBundleFileName = "fortunesscrapyardstageassets";
+        internal const string ScenesAssetBundleFileName = "fortunesindev";
+        internal const string AssetsAssetBundleFileName = "fortunesindev";
 
         //internal const string MusicSoundBankFileName = "SnowtimeStagesMusic.bnk";
         //internal const string SndSoundBankFileName = "SnowtimeStagesSounds.bnk";
@@ -268,6 +309,6 @@ namespace FortunesFromTheScrapyard.Content
                     $"Error loading bank : {SndSoundBankFileName} " +
                     $"Error code : {akResult}");
             }
-        }*/
+        }
     }
-}
+}*/

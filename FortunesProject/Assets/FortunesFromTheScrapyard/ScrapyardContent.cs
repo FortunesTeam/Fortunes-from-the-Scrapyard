@@ -161,6 +161,11 @@ namespace FortunesFromTheScrapyard
                     EquipmentModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
                     return EquipmentModule.InitializeEquipments(main);
                 },
+                () =>
+                {
+                    SceneModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<SceneDef>(main, scrapyardContentPack));
+                    return SceneModule.InitializeScenes(main);
+                },
                 LoadFromAssetBundles
             };
 
@@ -172,6 +177,7 @@ namespace FortunesFromTheScrapyard
                 () => ContentUtil.PopulateTypeFields(typeof(Survivors), scrapyardContentPack.survivorDefs),
                 () => ContentUtil.PopulateTypeFields(typeof(NetworkedBodyAttachments), scrapyardContentPack.networkedObjectPrefabs),
                 () => ContentUtil.PopulateTypeFields(typeof(NetworkSoundEventDefs), scrapyardContentPack.networkSoundEventDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Scenes), scrapyardContentPack.networkSoundEventDefs),
             };
         }
         public static class NetworkSoundEventDefs
@@ -254,6 +260,12 @@ namespace FortunesFromTheScrapyard
         {
             public static CharacterBody DukeDecoy;
         }
+
+        public static class Scenes
+        {
+            public static SceneDef scrapyard_ScrapyardStage;
+        }
+        
 
         public static void CreateAndAddEffectDef(GameObject effect)
         {
