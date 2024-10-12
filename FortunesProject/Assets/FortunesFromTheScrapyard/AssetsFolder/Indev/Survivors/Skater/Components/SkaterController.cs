@@ -35,7 +35,6 @@ namespace FortunesFromTheScrapyard.Survivors.Skater.Components
         }
         private void Hooks()
         {
-            On.RoR2.CharacterMotor.PreMove += CharacterMotor_PreMove;
             On.RoR2.CharacterMotor.Start += CharacterMotor_Start;
         }
 
@@ -45,53 +44,6 @@ namespace FortunesFromTheScrapyard.Survivors.Skater.Components
             if (self.body.bodyIndex == BodyCatalog.FindBodyIndex("SkaterBody"))
             {
                 self.Motor.MaxStableSlopeAngle = 45f;
-            }
-        }
-
-        private void CharacterMotor_PreMove(On.RoR2.CharacterMotor.orig_PreMove orig, CharacterMotor self, float deltaTime)
-        {
-            if (self.body.bodyIndex != BodyCatalog.FindBodyIndex("SkaterBody"))
-            {
-                orig.Invoke(self, deltaTime);
-                return;
-            }
-            if (!self.hasEffectiveAuthority)
-            {
-                return;
-            }
-            float num = self.acceleration;
-            if (self.isAirControlForced || !self.isGrounded)
-            {
-                num *= (self.disableAirControlUntilCollision ? 0f : self.airControl);
-            }
-            Vector3 vector = self.moveDirection;
-            if (!self.isFlying)
-            {
-                vector.y = 0f;
-            }
-            if (self.body.isSprinting)
-            {
-                float magnitude = vector.magnitude;
-                if (magnitude < 1f && magnitude > 0f)
-                {
-                    float num2 = 1f / vector.magnitude;
-                    vector *= num2;
-                }
-            }
-            Vector3 target = vector * self.walkSpeed;
-            if (!self.isFlying)
-            {
-                target.y = self.velocity.y;
-            }
-            self.velocity = Vector3.MoveTowards(self.velocity, target, num * deltaTime);
-            if (self.useGravity)
-            {
-                ref float y = ref self.velocity.y;
-                y += Physics.gravity.y * deltaTime;
-                if (self.isGrounded)
-                {
-                    y = Mathf.Max(y, 0f);
-                }
             }
         }
     }
