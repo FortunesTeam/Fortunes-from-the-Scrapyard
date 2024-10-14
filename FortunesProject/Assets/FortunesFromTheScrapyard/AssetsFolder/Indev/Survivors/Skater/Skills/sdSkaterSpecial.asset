@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: sdSkaterSpecial
   m_EditorClassIdentifier: 
   skillName: sdSkaterSpecial
-  skillNameToken: SCRAPYARD_SKATER_SPECIAL_NAME
-  skillDescriptionToken: SCRAPYARD_SKATER_SPECIAL_DESC
+  skillNameToken: SCRAPYARD_SKATER_RAILGUN_NAME
+  skillDescriptionToken: SCRAPYARD_SKATER_RAILGUN_DESC
   keywordTokens: []
   icon: {fileID: 0}
-  activationStateMachineName: Body
+  activationStateMachineName: Weapon2
   activationState:
-    _typeName: EntityStates.Uninitialized, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Skater.RailGunShot, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
-  baseRechargeInterval: 1
+  baseRechargeInterval: 8
   baseMaxStock: 1
   rechargeStock: 1
   requiredStock: 1
@@ -33,10 +33,10 @@ MonoBehaviour:
   fullRestockOnAssign: 1
   dontAllowPastMaxStocks: 0
   beginSkillCooldownOnSkillEnd: 0
-  cancelSprintingOnActivation: 1
+  cancelSprintingOnActivation: 0
   forceSprintDuringState: 0
   canceledFromSprinting: 0
   isCombatSkill: 1
-  mustKeyPress: 0
+  mustKeyPress: 1
   autoHandleLuminousShot: 1
   hideStockCount: 0

@@ -24,9 +24,9 @@ namespace FortunesFromTheScrapyard.Survivors.Skater
     public class SkaterSurvivor : ScrapyardSurvivor
     {
         //Values
-        public const string PRIMARYTOKEN = "SCRAPYARD_Skater_SALVO_DESC";
-        public const string SECONDARY = "SCRAPYARD_Skater_KINETIC_DESC";
-        public const string SPECIALTOKEN = "SCRAPYARD_Skater_CLONE_DESC";
+        public const string PRIMARYTOKEN = "SCRAPYARD_SKATER_PEWPEW_DESC";
+        public const string SECONDARY = "SCRAPYARD_SKATER_BUBBLE_DESC";
+        public const string SPECIALTOKEN = "SCRAPYARD_SKATER_RAILGUN_DESC";
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
@@ -34,11 +34,11 @@ namespace FortunesFromTheScrapyard.Survivors.Skater
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(SECONDARY, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        internal static float bubbleDamageCoefficient = 1.05f;
+        internal static float bubbleDamageCoefficient = 1f;
 
         [ConfigureField(ScrapyardConfig.ID_SURVIVORS)]
         [FormatToken(SPECIALTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float baseCloneDamageCoefficient = 5f;
+        public static float baseRailgunDamageCoefficient = 6f;
 
         public static DamageAPI.ModdedDamageType Default;
         public static DamageAPI.ModdedDamageType SkaterBubble;
