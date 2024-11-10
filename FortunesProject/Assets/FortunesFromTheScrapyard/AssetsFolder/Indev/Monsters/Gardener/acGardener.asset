@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edd97ac611ec6c459654d33d4aa8429, type: 3}
+  m_Name: acGardener
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 90d366247e0f77843b39bd64aeaa4558, type: 2}
+  - {fileID: 279795787227960827, guid: 5ff26c920d5c67340b3a04bb7583765e, type: 3}
+  - {fileID: 7504561699312847063, guid: af1e72308e3c232409d99a02585a4581, type: 3}
+  - {fileID: 11400000, guid: 3f504e70962e2364eaeea5e21ce99d85, type: 2}
+  - {fileID: 11400000, guid: cc479a4e63e316b44bdcc89006be9854, type: 2}
+  - {fileID: 2100000, guid: 95e4d1e5cd9eafe4f84691e60053ec1f, type: 2}
+  - {fileID: 2100000, guid: e60caca71cfb65a458be0754d9fe079b, type: 2}
+  - {fileID: 2100000, guid: f6268ce6da8c8cb438d2da06083ccf0c, type: 2}
+  - {fileID: 0}
+  bodyPrefab: {fileID: 279795787227960827, guid: 5ff26c920d5c67340b3a04bb7583765e,
+    type: 3}
+  masterPrefab: {fileID: 7504561699312847063, guid: af1e72308e3c232409d99a02585a4581,
+    type: 3}
+  monsterCardProvider: {fileID: 11400000, guid: 90d366247e0f77843b39bd64aeaa4558,
+    type: 2}

@@ -313,7 +313,7 @@ MonoBehaviour:
     description: R2API_Animations
     dependedncyID: RiskofThunder-R2API_Animations
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -339,7 +339,7 @@ MonoBehaviour:
     description: R2API_CommandHelper
     dependedncyID: RiskofThunder-R2API_CommandHelper
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -357,7 +357,7 @@ MonoBehaviour:
     description: R2API_Deployable
     dependedncyID: RiskofThunder-R2API_Deployable
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -404,7 +404,7 @@ MonoBehaviour:
     description: R2API_Items
     dependedncyID: RiskofThunder-R2API_Items
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -414,7 +414,7 @@ MonoBehaviour:
     description: R2API_Language
     dependedncyID: RiskofThunder-R2API_Language
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -423,7 +423,7 @@ MonoBehaviour:
     description: R2API_Loadout
     dependedncyID: RiskofThunder-R2API_Loadout
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -434,7 +434,7 @@ MonoBehaviour:
     description: R2API_LobbyConfig
     dependedncyID: RiskofThunder-R2API_LobbyConfig
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -452,7 +452,7 @@ MonoBehaviour:
     description: R2API_Orb
     dependedncyID: RiskofThunder-R2API_Orb
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -480,7 +480,7 @@ MonoBehaviour:
     description: R2API_Rulebook
     dependedncyID: RiskofThunder-R2API_Rulebook
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -489,7 +489,7 @@ MonoBehaviour:
     description: R2API_SceneAsset
     dependedncyID: RiskofThunder-R2API_SceneAsset
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -498,7 +498,7 @@ MonoBehaviour:
     description: R2API_Skins
     dependedncyID: RiskofThunder-R2API_Skins
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher
@@ -507,7 +507,7 @@ MonoBehaviour:
     description: R2API_Sound
     dependedncyID: RiskofThunder-R2API_Sound
     shouldInstall: 1
-    isHardDependency: 0
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - HookGenPatcher

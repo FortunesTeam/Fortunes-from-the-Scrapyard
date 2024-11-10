@@ -95,6 +95,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "nebby-loadingscreenspritefix": {
+      "version": "file:LoadingScreenSpriteFix",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofrain2": {
       "version": "file:Risk of Rain 2",
       "depth": 0,
@@ -121,12 +127,6 @@
     },
     "riskofthunder-r2api_addressables": {
       "version": "file:R2API_Addressables",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "riskofthunder-r2api_animations": {
-      "version": "file:R2API_Animations",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -332,7 +332,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e99a3b160615f5c9d79e4412bb9087124f2ec637"
+      "hash": "fee4ccb97b9630486ce67061f7be30f910b040ff"
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",
