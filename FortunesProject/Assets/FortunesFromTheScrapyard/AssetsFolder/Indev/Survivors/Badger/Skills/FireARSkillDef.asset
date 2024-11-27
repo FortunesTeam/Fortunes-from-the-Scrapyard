@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireARSkillDef
   m_EditorClassIdentifier: 
   skillName: SteadyFire
-  skillNameToken: SCRAPYARD_BADGER_PRIMARY_NAME
-  skillDescriptionToken: SCRAPYARD_BADGER_PRIMARY_DESC
+  skillNameToken: Burst
+  skillDescriptionToken: Fire a burst of 6 bullets
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon

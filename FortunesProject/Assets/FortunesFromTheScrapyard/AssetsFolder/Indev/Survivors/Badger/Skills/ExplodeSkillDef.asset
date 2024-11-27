@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: ExplodeSkillDef
   m_EditorClassIdentifier: 
-  skillName: RythmicBlast
-  skillNameToken: SCRAPYARD_BADGER_SECONDARY_NAME
-  skillDescriptionToken: SCRAPYARD_BADGER_SECONDARY_DESC
+  skillName: RhythmicBlast
+  skillNameToken: To The Rhythm
+  skillDescriptionToken: Beat your chest 3 times, dealing damage and slowing enemies.
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon

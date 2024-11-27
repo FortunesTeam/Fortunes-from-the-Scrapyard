@@ -52,7 +52,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         public override ScrapyardAssetRequest<SurvivorAssetCollection> LoadAssetRequest()
         {
             return ScrapyardAssets.LoadAssetAsync<SurvivorAssetCollection>("acCloaker", ScrapyardBundle.Indev);
-        }
+        } 
         private void CreateEffects()
         {
             cloakerConsumeEffect = assetCollection.FindAsset<GameObject>("CloakerMarkedConsumeEffect");

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: ThrowDiskSkillDef
   m_EditorClassIdentifier: 
   skillName: StunDisk
-  skillNameToken: SCRAPYARD_BADGER_UTILITY_NAME
-  skillDescriptionToken: SCRAPYARD_BADGER_UTILITY_DESC
+  skillNameToken: Trapped Disk
+  skillDescriptionToken: Throw a disk, dealing damage and crippling those in the
+    blast radius
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon

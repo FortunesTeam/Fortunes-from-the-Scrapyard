@@ -16,7 +16,7 @@ namespace EntityStates.Badger
 {
     public class ThrowDisk : GenericProjectileBaseState
     {
-        public static float baseDuration = 0.2f;
+        public static float baseDuration = 1f;
         public static float baseDelayDuration = 0.3f * baseDuration;
         public static float diskDamageCoefficent = 2f;
         public GameObject disk = BadgerSurvivor.diskPrefab;

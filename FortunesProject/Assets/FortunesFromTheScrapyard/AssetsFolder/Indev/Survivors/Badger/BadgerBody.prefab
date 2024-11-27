@@ -625,7 +625,11 @@ MonoBehaviour:
   targetStateMachine: {fileID: 4941226877681567346}
   idleStateMachine:
   - {fileID: 4906007548714580531}
+<<<<<<< Updated upstream
   - {fileID: 4906007548714580531}
+=======
+  - {fileID: 8086708592130009829}
+>>>>>>> Stashed changes
   hurtState:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   canBeHitStunned: 0

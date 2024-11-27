@@ -19,8 +19,8 @@ MonoBehaviour:
   icon: {fileID: 0}
   activationStateMachineName: Weapon
   activationState:
-    _typeName: FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates.RapidPunch,
-      FortunesFromTheScrapyard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.Neuromancer.RapidPunch, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
   baseRechargeInterval: 0
   baseMaxStock: 1

@@ -1395,7 +1395,7 @@ MonoBehaviour:
   inLava: 0
   baseNameToken: SCRAPYARD_NEUROMANCER_BODY_NAME
   subtitleNameToken: SCRAPYARD_NEUROMANCER_BODY_SUBTITLE
-  bodyFlags: 0
+  bodyFlags: 16
   lavaCooldown: 0.2
   rootMotionInMainState: 0
   mainRootSpeed: 0
@@ -1465,14 +1465,15 @@ MonoBehaviour:
   runicLensMeteorReady: 0
   aimOriginTransform: {fileID: 5654414630469508863}
   hullClassification: 0
-  portraitIcon: {fileID: 2800000, guid: 81e3fe4a85b8f2a4394f0d0f81f49c80, type: 3}
+  portraitIcon: {fileID: 0}
   bodyColor: {r: 0.55633676, g: 0.84453577, b: 0.8867924, a: 1}
   doNotReassignToTeamBasedCollisionLayer: 0
   isChampion: 0
   currentVehicle: {fileID: 0}
   preferredPodPrefab: {fileID: 0}
   preferredInitialStateType:
-    _typeName: 
+    _typeName: EntityStates.Neuromancer.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   skinIndex: 0
   customKillTotalStatName: 
   overrideCoreTransform: {fileID: 1580561058644816173}
@@ -1536,8 +1537,8 @@ MonoBehaviour:
     _typeName: EntityStates.SpawnTeleporterState, RoR2, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   mainStateType:
-    _typeName: EntityStates.GenericCharacterMain, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: EntityStates.Neuromancer.MainState, FortunesFromTheScrapyard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   debug: 0
 --- !u!114 &2533772409605667444
 MonoBehaviour:
@@ -1553,7 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Weapon
   initialStateType:
-    _typeName: 
+    _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainStateType:
     _typeName: EntityStates.Idle, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   debug: 0
@@ -1598,7 +1599,7 @@ MonoBehaviour:
   _skillFamily: {fileID: 11400000, guid: 2ee35398427264d4cb1e5bf8d74871dc, type: 2}
   skillName: Beam
   hideInCharacterSelect: 0
-  baseStock: 0
+  baseStock: 1
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &8350162178598128550
@@ -1616,7 +1617,7 @@ MonoBehaviour:
   _skillFamily: {fileID: 11400000, guid: 13076131512395d43b1b81c3835ab6fb, type: 2}
   skillName: Sap
   hideInCharacterSelect: 0
-  baseStock: 0
+  baseStock: 2
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &2154370391745905709
@@ -1634,7 +1635,7 @@ MonoBehaviour:
   _skillFamily: {fileID: 11400000, guid: d52974c6d75569c44a18c0ea5c9987b3, type: 2}
   skillName: TimePunch
   hideInCharacterSelect: 0
-  baseStock: 0
+  baseStock: 1
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &315239429900266689
@@ -1652,7 +1653,7 @@ MonoBehaviour:
   _skillFamily: {fileID: 11400000, guid: 0d5545f1a2619b641b28d94df381014b, type: 2}
   skillName: TimeStop
   hideInCharacterSelect: 0
-  baseStock: 0
+  baseStock: 1
   baseRechargeStopwatch: 0
   hasExecutedSuccessfully: 0
 --- !u!114 &7913841615116447678
@@ -1703,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeedPenaltyCoefficient: 1
-  characterDirection: {fileID: 0}
+  characterDirection: {fileID: 2637447239795828155}
   muteWalkMotion: 0
   mass: 100
   airControl: 0.25

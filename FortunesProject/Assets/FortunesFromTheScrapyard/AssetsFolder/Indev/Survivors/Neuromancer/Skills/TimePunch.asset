@@ -19,8 +19,8 @@ MonoBehaviour:
   icon: {fileID: 0}
   activationStateMachineName: Dash
   activationState:
-    _typeName: FortunesFromTheScrapyard.Survivors.Neuromancer.EntityStates.ChargeTimePunch,
-      FortunesFromTheScrapyard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.Neuromancer.ChargeTimePunch, FortunesFromTheScrapyard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
   baseRechargeInterval: 5
   baseMaxStock: 1

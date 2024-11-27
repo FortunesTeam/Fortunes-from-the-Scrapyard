@@ -18,6 +18,11 @@ using EmotesAPI;
 using RoR2.Skills;
 using EntityStates.Badger.Components;
 using FortunesFromTheScrapyard;
+<<<<<<< Updated upstream
+=======
+using MSU.Config;
+using EntityStates.AffixVoid;
+>>>>>>> Stashed changes
 
 namespace FortunesFromTheScrapyard.Survivors.Badger
 {
@@ -41,7 +46,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             BodyCatalog.availability.CallWhenAvailable(CreateProjectiles);
 
-            On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+            
 
             BadgerExplode = DamageAPI.ReserveDamageType();
 
@@ -73,14 +78,68 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
 
             On.RoR2.HealthComponent.TakeDamage += new On.RoR2.HealthComponent.hook_TakeDamage(HealthComponent_TakeDamageProcess);
 
+<<<<<<< Updated upstream
+=======
+            On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+
+            Emotes();
+
+            /* if (ScrapyardMain.emotesInstalled)
+            {
+                Emotes();
+            } */
+>>>>>>> Stashed changes
         }
         #region projectiles
         private static void CreateProjectiles()
         {
+<<<<<<< Updated upstream
+=======
+            soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone");
+            if (!soundScape.GetComponent<NetworkIdentity>()) soundScape.AddComponent<NetworkIdentity>();
+            BuffWard buffWard = soundScape.GetComponent<BuffWard>();
+            buffWard.radius = 2.5f;
+            buffWard.interval = 0.01f;
+            buffWard.buffDef = ScrapyardContent.Buffs.bdBadgerSoundBuff;
+            buffWard.expires = true;
+            buffWard.expireDuration = 5f;
+            buffWard.invertTeamFilter = false;
+
+            soundScape.GetComponent<SphereCollider>().radius = 2.5f;
+
+            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
+
+            soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("soundBuffProjectile");
+            if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
+
+            ProjectileOverlapAttack overlapAttack = soundWave.GetComponent<ProjectileOverlapAttack>();
+            overlapAttack.damageCoefficient = 1f;
+            overlapAttack.impactEffect = null;
+
+            ProjectileSingleTargetImpact singleTargetImpact = soundWave.GetComponent<ProjectileSingleTargetImpact>();
+            singleTargetImpact.impactEffect = null;
+            singleTargetImpact.destroyOnWorld = false;
+
+            ProjectileDamage damage = soundWave.GetComponent<ProjectileDamage>();
+            damage.damageType = DamageType.Generic;
+
+            ProjectileSimple simple = soundWave.GetComponent<ProjectileSimple>();
+            simple.lifetime = 5f;
+
+            ProjectileController controller = soundWave.GetComponent<ProjectileController>();
+            controller.ghostPrefab = null;
+
+            soundWave.AddComponent<SoundWaveController>();
+
+            ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundWave);
+
+>>>>>>> Stashed changes
             diskPrefab = UnityEngine.AddressableAssets.Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("BadgerDisk");
             if (!diskPrefab.GetComponent<NetworkIdentity>()) diskPrefab.AddComponent<NetworkIdentity>();
-            diskPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
+            diskPrefab.GetComponent<ProjectileDamage>().damageType = DamageType.CrippleOnHit;
             Component.Destroy(diskPrefab.GetComponent<ProjectileSingleTargetImpact>());
+
+            // ProjectileSimple diskSimple = diskPrefab.GetComponent<ProjectileSimple>();
 
             ProjectileImpactExplosion diskEX = diskPrefab.AddComponent<ProjectileImpactExplosion>();
 
@@ -94,6 +153,18 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             diskEX.impactOnWorld = false;
             diskEX.lifetime = 5f;
 
+<<<<<<< Updated upstream
+=======
+            diskGhost = assetCollection.FindAsset<GameObject>("BadgerDiskGhost");
+
+            diskPrefab.GetComponent<ProjectileController>().ghostPrefab = diskGhost;
+
+            diskExplosion = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/OmniImpactVFXLightningMage.prefab").WaitForCompletion().InstantiateClone("BadgerDiskExplosion");
+
+            diskEX.explosionEffect = diskExplosion;
+            diskEX.impactEffect = diskExplosion;
+
+>>>>>>> Stashed changes
             ScrapyardContent.scrapyardContentPack.projectilePrefabs.AddSingle(diskPrefab);
 
             soundScape = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineAltDetonated.prefab").WaitForCompletion().InstantiateClone("soundBuffZone", false);
@@ -153,8 +224,12 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             }
         }
 
+<<<<<<< Updated upstream
         private static void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
 
+=======
+        private void HealthComponent_TakeDamageProcess(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
+>>>>>>> Stashed changes
         {
             if (NetworkServer.active && self.alive || !self.godMode || self.ospTimer <= 0f)
             {
@@ -198,7 +273,7 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
             orig.Invoke(self, damageInfo);
         }
 
-        private static void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)
+        private void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)
         {
             DamageInfo damageInfo = damageReport.damageInfo;
             if (!damageReport.attackerBody || !damageReport.victimBody)
@@ -219,10 +294,14 @@ namespace FortunesFromTheScrapyard.Survivors.Badger
                 {
                     if (damageInfo.HasModdedDamageType(BadgerExplode))
                     {
+                        // attackerBody.AddTimedBuff(bdBadgerArmorbuff) thinkin of giving him temporary armor for hitting it idk
+
+                        attackerBody.healthComponent.Heal(attackerBody.maxHealth * 0.02f, new ProcChainMask());
+
                         victimBody.AddTimedBuff(ScrapyardContent.Buffs.bdBadgerSlowBuff, 3f);
                     }
                 }
             }
-        }  
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace EntityStates.Badger
 {
     public class BadgerFireAR : BaseSkillState
     {
+<<<<<<< Updated upstream
         public static float damageCoefficient = 0.8f;
         public static float procCoefficient = 0.7f;
         public static float baseDuration = 0.5f; // was 0.1
@@ -23,6 +24,18 @@ namespace EntityStates.Badger
         public static float range = 2000f;
         public static GameObject tracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");
         public static GameObject critTracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCaptainShotgun");
+=======
+        public static float damageCoefficient = BadgerSurvivor.basePrimaryDamage;
+        public static float procCoefficient = 1f;
+        public static float baseDuration = 0.05f; // per shot
+        public static float baseFullDuration = 1f; // FULL SKILL DURATION. This is to add delay between bursts
+        public static float force = 200f;
+        public static float recoil = 1.0f; // was 0.5f
+        public static float range = 2000f;
+        public static GameObject tracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");
+        public static GameObject critTracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCaptainShotgun");
+        public static int maxShotsPerBurst = 6;
+>>>>>>> Stashed changes
 
         private float duration;
         private float fireTime;
@@ -99,7 +112,7 @@ namespace EntityStates.Badger
                 bulletAttack.Fire();
             }
 
-            base.characterBody.AddSpreadBloom(1.25f);
+            base.characterBody.AddSpreadBloom(0.8f);
         }
 
         public override void FixedUpdate()

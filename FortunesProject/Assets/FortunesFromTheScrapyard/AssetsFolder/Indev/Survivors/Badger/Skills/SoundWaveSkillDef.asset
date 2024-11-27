@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SoundWaveSkillDef
   m_EditorClassIdentifier: 
   skillName: SoundScape
-  skillNameToken: SCRAPYARD_BADGER_SPECIAL_NAME
-  skillDescriptionToken: SCRAPYARD_BADGER_SPECIAL_DESC
+  skillNameToken: Beat Drop
+  skillDescriptionToken: Release a sound wave, granting allies attackspeed and slowing
+    enemy projectiles.
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Weapon
