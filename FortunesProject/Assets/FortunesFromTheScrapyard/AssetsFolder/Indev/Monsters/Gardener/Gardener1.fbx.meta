@@ -48,18 +48,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: GardenerArmature|AttackLoop
-      takeName: GardenerArmature|AttackLoop
+      name: GardenerArmature|Aapose
+      takeName: GardenerArmature|Idle
       internalID: -2388965160191534284
       firstFrame: 0
-      lastFrame: 26
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -284,7 +284,7 @@ ModelImporter:
       takeName: GardenerArmature|Jump
       internalID: 1682330489856916632
       firstFrame: 0
-      lastFrame: 102
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -312,8 +312,8 @@ ModelImporter:
       name: GardenerArmature|Landing
       takeName: GardenerArmature|Landing
       internalID: 6301140641044439248
-      firstFrame: 0
-      lastFrame: 102
+      firstFrame: 5
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -525,6 +525,35 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: GardenerArmature|AttackLoop
+      takeName: GardenerArmature|AttackLoop
+      internalID: 1710271988745862485
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

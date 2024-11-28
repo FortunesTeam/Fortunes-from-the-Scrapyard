@@ -15,7 +15,7 @@ namespace EntityStates.Gardener
     {
         private float stopwatch;
 
-        private float missileStopwatch;
+        private float missileStopwatch = 0;
 
         public static float baseDuration = 4f;
 
@@ -23,7 +23,7 @@ namespace EntityStates.Gardener
 
         public float missileSpawnFrequency = 2f;
 
-        public static float missileSpawnDelay = 1f;
+        public static float missileSpawnDelay = 0f;
 
         public static float missileForce = 1000f;
 
@@ -52,6 +52,10 @@ namespace EntityStates.Gardener
         private static int EndGravekeeperBarrageStateHash = Animator.StringToHash("EndGravekeeperBarrage");
 
         private bool isAnimate;
+
+        private bool isFirst = true;
+
+        private bool isLast = false;
 
         public override void OnEnter()
         {
@@ -106,13 +110,23 @@ namespace EntityStates.Gardener
             float deltaTime = GetDeltaTime();
             stopwatch += deltaTime;
             missileStopwatch += deltaTime;
+            if (stopwatch >= (baseDuration - (2f / missileSpawnFrequency)))
+                isLast = true;
             if (missileStopwatch >= 1f / missileSpawnFrequency)
             {
                 missileStopwatch -= 1f / missileSpawnFrequency;
                 //Transform transform = childLocator.FindChild(muzzleString);
                 if (isAnimate)
                 {
-                    PlayAnimation("Body", "Primary", "Primary.playbackRate", 2f / missileSpawnFrequency);
+                    if (isFirst)
+                    {
+                        isFirst = false;
+                        PlayCrossfade("FullBody, Override", "PrimaryLoop", "Primary.playbackRate", 2f / missileSpawnFrequency, 0.5f / missileSpawnFrequency);
+                    }
+                    else if (isLast)
+                        PlayCrossfade("FullBody, Override", "PrimaryEnd", "Primary.playbackRate", 2f / missileSpawnFrequency, 0.1f / missileSpawnFrequency);
+                    else
+                    PlayCrossfade("FullBody, Override", "PrimaryLoop", "Primary.playbackRate", 2f / missileSpawnFrequency, 0.1f / missileSpawnFrequency);
                     isAnimate = false;
                 }
                 else

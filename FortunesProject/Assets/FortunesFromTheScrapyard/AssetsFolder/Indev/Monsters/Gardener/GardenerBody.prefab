@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 117437322578083685}
   - component: {fileID: 7870671709466008877}
   - component: {fileID: 4486542516540146516}
+  - component: {fileID: -5893785304828450762}
   - component: {fileID: 8384041092146233406}
   - component: {fileID: 2975251424011049988}
   - component: {fileID: 4283003863308472335}
@@ -36,7 +37,7 @@ GameObject:
   - component: {fileID: 8493657937289878945}
   m_Layer: 0
   m_Name: GardenerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   inLava: 0
   baseNameToken: SCRAPYARD_GARDENER_BODY_NAME
   subtitleNameToken: 
-  bodyFlags: 1
+  bodyFlags: 0
   lavaCooldown: 0.2
   rootMotionInMainState: 0
   mainRootSpeed: 0
@@ -185,8 +186,7 @@ MonoBehaviour:
   currentVehicle: {fileID: 0}
   preferredPodPrefab: {fileID: 0}
   preferredInitialStateType:
-    _typeName: EntityStates.Uninitialized, RoR2, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _typeName: 
   skinIndex: 0
   customKillTotalStatName: 
   overrideCoreTransform: {fileID: 0}
@@ -293,7 +293,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 200
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   idleStateMachine:
   - {fileID: 2975251424011049988}
   hurtState:
-    _typeName: 
+    _typeName: EntityStates.HurtState, RoR2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   canBeHitStunned: 1
   canBeStunned: 1
   canBeFrozen: 1
@@ -390,8 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathStateMachine: {fileID: 8384041092146233406}
   deathState:
-    _typeName: EntityStates.VoidRaidCrab.Joint.PreDeathState, RoR2, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _typeName: EntityStates.GenericCharacterDeath, RoR2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   idleStateMachine:
   - {fileID: 2975251424011049988}
   bypassDeathLayerChange: 0
@@ -447,6 +447,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredExpansion: {fileID: 11400000, guid: 6f84110d73cce4c4985ff8d773a4382d, type: 2}
   requireEntitlementIfPlayerControlled: 1
+--- !u!114 &-5893785304828450762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279795787227960827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachines:
+  - {fileID: 8384041092146233406}
+  - {fileID: 2975251424011049988}
 --- !u!114 &8384041092146233406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +803,27 @@ PrefabInstance:
       propertyPath: body
       value: 
       objectReference: {fileID: 8508534645916726171}
+    - target: {fileID: 2725183658602240853, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
+      propertyPath: itemDisplayRuleSet
+      value: 
+      objectReference: {fileID: 11400000, guid: d5b5a8d061ebc3244bce771be612b898,
+        type: 2}
+    - target: {fileID: 2725183658602240853, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
+      propertyPath: baseRendererInfos.Array.data[0].hideOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725183658602240853, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
+      propertyPath: baseRendererInfos.Array.data[0].ignoreOverlays
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725183658602240853, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
+      propertyPath: baseRendererInfos.Array.data[0].defaultShadowCastingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2756349492068829787, guid: 7882833c6da64b6438774599283a5c48,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -808,6 +844,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 95e4d1e5cd9eafe4f84691e60053ec1f, type: 2}
+    - target: {fileID: 5784570277220662695, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
+      propertyPath: soundCenter
+      value: 
+      objectReference: {fileID: 791319000512745960, guid: 7882833c6da64b6438774599283a5c48,
+        type: 3}
     - target: {fileID: 6662616001685760046, guid: 7882833c6da64b6438774599283a5c48,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -825,6 +867,42 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f6268ce6da8c8cb438d2da06083ccf0c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7882833c6da64b6438774599283a5c48, type: 3}
+--- !u!1 &29896565213187295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 791319000512745960, guid: 7882833c6da64b6438774599283a5c48,
+    type: 3}
+  m_PrefabInstance: {fileID: 761498340391984439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1906385848216313187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29896565213187295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1533710874, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skins: []
+--- !u!114 &9180460409996620915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29896565213187295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusPointTransform: {fileID: 0}
+  cameraPositionTransform: {fileID: 0}
+  modelRotation: {x: 0, y: 0, z: 0, w: 1}
+  minDistance: 1
+  maxDistance: 10
 --- !u!4 &802175543523481189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 121743273103723346, guid: 7882833c6da64b6438774599283a5c48,

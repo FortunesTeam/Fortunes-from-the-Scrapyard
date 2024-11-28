@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Avatar Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: GardenerArmature
+    m_Weight: 0
+  - m_Path: GardenerArmature/FootIK.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/FootIK.L/FootIK.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/FootIK.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/FootIK.R/FootIK.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/HandIK.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/HandIK.L/HandIK.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/HandIK.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/HandIK.R/HandIK.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/ElbowIK.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/ElbowIK.L/ElbowIK.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/ElbowIK.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/ElbowIK.R/ElbowIK.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/KneeIK.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/KneeIK.L/KneeIK.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/KneeIK.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/KneeIK.R/KneeIK.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.L/LowerLeg.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.R/LowerLeg.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Hips/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Head
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Head/Ear.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Head/Ear.L/Ear.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Head/Ear.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Head/Ear.R/Ear.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarLid
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarLid/JarLid_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarStaff
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarStaff/JarMask1
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarStaff/JarMask1/JarMask2
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarStaff/JarMask1/JarMask2/JarMask3
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/JarStaff/JarMask1/JarMask2/JarMask3/JarMask3_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.001
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.001/RopeAttach.001_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.002
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.002/RopeAttach.002_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.003
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.003/RopeAttach.003_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.004
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/JarBase/RopeAttach.004/RopeAttach.004_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/RopeAttach
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/RopeAttach/RopeAttach_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Finger1.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Finger1.L/Finger2.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Finger1.L/Finger2.L/Finger2.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Middle1.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Middle1.L/Middle2.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Middle1.L/Middle2.L/Middle2.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Pinky1.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Pinky1.L/Pinky2.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Pinky1.L/Pinky2.L/Pinky2.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Thumb1.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Thumb1.L/Thumb2.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.L/UpperArm.R/LowerArm.R/Hand.L/Thumb1.L/Thumb2.L/Thumb2.L_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Finger1.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Finger1.R/Finger2.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Finger1.R/Finger2.R/Finger2.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Middle1.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Middle1.R/Middle2.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Middle1.R/Middle2.R/Middle2.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Pinky1.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Pinky1.R/Pinky2.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Pinky1.R/Pinky2.R/Pinky2.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Thumb1.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Thumb1.R/Thumb2.R
+    m_Weight: 0
+  - m_Path: GardenerArmature/root/Spine1.001/Spine1/Spine2/Shoulder.R/UpperArm.L/LowerArm.L/Hand.R/Thumb1.R/Thumb2.R/Thumb2.R_end
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2/WeaponStaffRopeBase
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2/WeaponStaffRopeBase/WeaponStaffRope1
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2/WeaponStaffRopeBase/WeaponStaffRope1/WeaponStaffRope2
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2/WeaponStaffRopeBase/WeaponStaffRope1/WeaponStaffRope2/WeaponStaffRope3
+    m_Weight: 0
+  - m_Path: GardenerArmature/WeaponStaff1/WeaponStaff2/WeaponStaffRopeBase/WeaponStaffRope1/WeaponStaffRope2/WeaponStaffRope3/WeaponStaffRope3_end
+    m_Weight: 0
+  - m_Path: GardenerBaseMesh
+    m_Weight: 0
+  - m_Path: GardenerFurMesh
+    m_Weight: 0
+  - m_Path: GardenerJarMesh
+    m_Weight: 0
+  - m_Path: GardenerJarStaffMesh
+    m_Weight: 0
+  - m_Path: GardenerMaskMesh
+    m_Weight: 0
+  - m_Path: GardenerStaffMesh
+    m_Weight: 0
