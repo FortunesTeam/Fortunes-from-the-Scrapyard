@@ -84,8 +84,8 @@ namespace FortunesFromTheScrapyard.Monsters.Gump
 
         public void ModifyPrefab()
         {
-            //var cb = characterPrefab.GetComponent<CharacterBody>();
-            //cb._defaultCrosshairPrefab = Resources.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
+            var cb = characterPrefab.GetComponent<CharacterBody>();
+            cb._defaultCrosshairPrefab = Resources.Load<GameObject>("Prefabs/Crosshair/StandardCrosshair");
         }
 
         private void Hooks()

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: acGump
   m_EditorClassIdentifier: 
   assets:
-  - {fileID: 7504561699312847063, guid: ec82369e3e3d8774ea16bd7b5c781dc5, type: 3}
-  - {fileID: 279795787227960827, guid: fc2ecf9416991924ea1b6203b93e597d, type: 3}
+  - {fileID: 7504561699312847063, guid: d5a673ce069ec8b418e65ea82acae68b, type: 3}
+  - {fileID: 279795787227960827, guid: 7273e1df0ac1364458044403f96084fb, type: 3}
   - {fileID: 11400000, guid: a8ebfd8a0db2ebd4586a27679394164b, type: 2}
   - {fileID: 11400000, guid: 282cfbf29db28664fbd546117a4c6cc8, type: 2}
   - {fileID: 11400000, guid: 368bc44b7cfb1ca42947f82444d47ffa, type: 2}
-  - {fileID: 2800000, guid: a9a78cc25cb2f8a49a8e9955c0ddacc2, type: 3}
+  - {fileID: 2100000, guid: d9932012cfc6d864a8bb3b3afc6e07b2, type: 2}
   - {fileID: 2800000, guid: 5c927d25bc9da4c4ca00e2610caf165c, type: 3}
   - {fileID: 2800000, guid: 52caf9ba5def7dd48868148fd1063c9f, type: 3}
-  bodyPrefab: {fileID: 279795787227960827, guid: fc2ecf9416991924ea1b6203b93e597d,
+  bodyPrefab: {fileID: 279795787227960827, guid: 7273e1df0ac1364458044403f96084fb,
     type: 3}
-  masterPrefab: {fileID: 7504561699312847063, guid: ec82369e3e3d8774ea16bd7b5c781dc5,
+  masterPrefab: {fileID: 7504561699312847063, guid: d5a673ce069ec8b418e65ea82acae68b,
     type: 3}
   monsterCardProvider: {fileID: 0}

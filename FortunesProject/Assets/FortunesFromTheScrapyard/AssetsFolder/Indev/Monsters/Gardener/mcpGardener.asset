@@ -14,21 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedCardPairs:
   - stage:
-      Value: 103079219264
+      Value: 927712940096
     customStageNames: []
     monsterCategory: 4
     customCategoryWeight: 0
     customCategoryName: 
-    requiredExpansions:
-    - _asset: {fileID: 0}
-      _address: 
-      _useDirectReference: 0
+    requiredExpansions: []
     card:
       spawnCard:
         _asset: {fileID: 0}
-        _address: 
+        _address: Assets/FortunesFromTheScrapyard/AssetsFolder/Indev/Monsters/Gardener/cscGardener.asset
         _useDirectReference: 0
-      selectionWeight: 0
+      selectionWeight: 1
       spawnDistance: 0
       preventOverhead: 0
       minimumStageCompletions: 0

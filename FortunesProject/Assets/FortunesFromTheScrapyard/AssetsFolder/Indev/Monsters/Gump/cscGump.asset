@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -380008858, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-  m_Name: scGump
+  m_Name: cscGump
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7504561699312847063, guid: ec82369e3e3d8774ea16bd7b5c781dc5, type: 3}
+  prefab: {fileID: 7504561699312847063, guid: d5a673ce069ec8b418e65ea82acae68b, type: 3}
   sendOverNetwork: 1
   hullSize: 0
   nodeGraphType: 0

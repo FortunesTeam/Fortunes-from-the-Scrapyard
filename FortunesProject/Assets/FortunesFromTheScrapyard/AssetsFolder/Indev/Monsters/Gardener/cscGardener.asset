@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: cscGardener
   m_EditorClassIdentifier: 
   prefab: {fileID: 7504561699312847063, guid: af1e72308e3c232409d99a02585a4581, type: 3}
-  sendOverNetwork: 0
-  hullSize: 0
+  sendOverNetwork: 1
+  hullSize: 1
   nodeGraphType: 0
   requiredFlags: 0
   forbiddenFlags: 4
-  directorCreditCost: 0
+  directorCreditCost: 30
   occupyPosition: 0
   eliteRules: 0
   noElites: 0
@@ -27,6 +27,4 @@ MonoBehaviour:
     bodyLoadouts: []
   inventoryToCopy: {fileID: 0}
   equipmentToGrant: []
-  itemsToGrant:
-  - itemDef: {fileID: 0}
-    count: 0
+  itemsToGrant: []
