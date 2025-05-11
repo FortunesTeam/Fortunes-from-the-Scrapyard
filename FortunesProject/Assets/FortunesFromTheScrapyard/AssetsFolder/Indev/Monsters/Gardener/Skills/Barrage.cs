@@ -57,23 +57,25 @@ namespace EntityStates.Gardener
 
         private bool isLast = false;
 
+        private Transform jarTransform;
+
         public override void OnEnter()
         {
             base.OnEnter();
             missileSpawnFrequency *= attackSpeedStat;
             missileStopwatch -= missileSpawnDelay;
-            /*Transform modelTransform = GetModelTransform();
+            Transform modelTransform = GetModelTransform();
             if ((bool)modelTransform)
             {
                 childLocator = modelTransform.GetComponent<ChildLocator>();
                 if ((bool)childLocator)
                 {
-                    childLocator.FindChild("JarEffectLoop").gameObject.SetActive(value: true);
+                    jarTransform = childLocator.FindChild("Jar");
                 }
             }
-            PlayAnimation("Jar, Override", BeginGravekeeperBarrageStateHash);
+            //PlayAnimation("Jar, Override", BeginGravekeeperBarrageStateHash);
             EffectManager.SimpleMuzzleFlash(jarOpenEffectPrefab, base.gameObject, jarEffectChildLocatorString, transmit: false);
-            Util.PlaySound(jarOpenSoundString, base.gameObject);*/
+            Util.PlaySound(jarOpenSoundString, base.gameObject);
             base.characterBody.SetAimTimer(baseDuration + 2f);
             isAnimate = true;
         }
@@ -135,7 +137,7 @@ namespace EntityStates.Gardener
                 if ((bool)transform)
                 {
                     Ray projectileRay = default(Ray);
-                    projectileRay.origin = transform.position + new Vector3(0, 3, 0) + characterDirection.forward.normalized * -2;
+                    projectileRay.origin = jarTransform.position;
                     projectileRay.direction = GetAimRay().direction;
                     float maxDistance = 1000f;
                     if (Physics.Raycast(GetAimRay(), out var hitInfo, maxDistance, LayerIndex.world.mask))

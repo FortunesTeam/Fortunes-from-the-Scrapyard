@@ -64,7 +64,7 @@ namespace FortunesFromTheScrapyard.Ricochet
 
             if (this.damageInfo != null)
             {
-                damageInfo.GetModdedDamageTypeHolder().CopyTo(this.damageInfo);
+                //damageInfo.GetModdedDamageTypeHolder().CopyTo(this.damageInfo);
                 this.damageInfo.damage = damageInfo.damage * DukeSurvivor.damageShareCoefficient;
                 canRicochet = true;
                 return;

@@ -140,8 +140,8 @@ namespace FortunesFromTheScrapyard.Equipments
                         damageType = damageInfo.damageType,
                     };
                     blastAttack.AddModdedDamageType(MoonshineProc);
-                    var d = DamageAPI.GetModdedDamageTypeHolder(damageInfo);
-                    d.CopyTo(blastAttack);
+                    /*var d = DamageAPI.GetModdedDamageTypeHoglder(damageInfo);
+                    d.CopyTo(blastAttack);*/
                     blastAttack.Fire();
 
                     if (NetworkServer.active) attackerBody.SetBuffCount(ScrapyardContent.Buffs.bdMoonshineStack.buffIndex, 0);

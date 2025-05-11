@@ -90,9 +90,9 @@ namespace FortunesFromTheScrapyard.Monsters.Gump
 
         private void Hooks()
         {
-            GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
+            //GlobalEventManager.onServerDamageDealt += GlobalEventManager_onServerDamageDealt;
 
-            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamageProcess;
+            //On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamageProcess;
 
             if (ScrapyardMain.emotesInstalled)
             {
