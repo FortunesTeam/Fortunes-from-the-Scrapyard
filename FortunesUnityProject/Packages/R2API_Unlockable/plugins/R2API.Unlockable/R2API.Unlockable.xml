@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Unlockable</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.IModdedUnlockableDataProvider">
+            <summary>
+            Interface used to provide the metadata needed to register an achievement + unlockable
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementIdentifier">
+            <summary>
+            The identifier of the achievement being added.
+            Should be unique
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableIdentifier">
+            <summary>
+            The identifier of the unlockable granted when the achievement is completed.
+            Should be unique.
+            This is what is used when specifying an unlock condition for various things in the game
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementNameToken">
+            <summary>
+            The unlockableIdentifier of a prerequisite.
+            Should be used for skill unlocks for a custom character if the character has an unlock condition.
+            Multiple prereqs are not supported (as far as I can tell)
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.PrerequisiteUnlockableIdentifier">
+            <summary>
+            The language token for the name to be shown in logbook for this achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableNameToken">
+            <summary>
+            The language token for the unlockable.
+            Not 100% sure where this is shown in game.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementDescToken">
+            <summary>
+            The language token for the description to be shown in logbook for this achievement.
+            Also used to create the 'How to unlock' text.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.Sprite">
+            <summary>
+            Sprite that is used for this achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.GetHowToUnlock">
+            <summary>
+            Delegate that return a string that will be shown to the user on how to unlock the achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.GetUnlocked">
+            <summary>
+            Delegate that return a string that will be shown to the user when the achievement is unlocked.
+            </summary>
+        </member>
+        <member name="T:R2API.ModdedUnlockable">
+            <summary>
+            Class used to provide the metadata needed to register an achievement + unlockable
+            </summary>
+        </member>
+        <member name="T:R2API.UnlockableAPI">
+            <summary>
+            API for adding custom unlockables to the game.
+            </summary>
+        </member>
+        <member name="P:R2API.UnlockableAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.UnlockableAPI.AddAchievement(RoR2.AchievementDef)">
+            <summary>
+            Adds an AchievementDef to the list of achievements to add to the game
+            </summary>
+            <param name="achievementDef">The achievementDef to add</param>
+            <returns>True if succesful, false otherwise</returns>
+        </member>
+        <member name="M:R2API.UnlockableAPI.AddUnlockable``1(System.Type,RoR2.UnlockableDef)">
+            <summary>
+            Add an unlockable tied to an achievement.
+            For an example usage check <see href="https://github.com/ArcPh1r3/HenryTutorial/blob/master/HenryMod/Modules/Achievements/HenryMasteryAchievement.cs">rob repository</see>
+            </summary>
+            <typeparam name="TUnlockable">Class that inherits from BaseAchievement and implements <see cref="T:R2API.IModdedUnlockableDataProvider"/></typeparam>
+            <param name="serverTrackerType">Type that inherits from BaseServerAchievement for achievements that the server needs to track</param>
+            <param name="unlockableDef">For UnlockableDefs created in advance. Leaving null will generate an UnlockableDef instead.</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.UnlockableAPI.AddUnlockable(System.Type,System.Type,RoR2.UnlockableDef)">
+            <summary>
+            Add an unlockable tied to an achievement.
+            For an example usage check <see href="https://github.com/ArcPh1r3/HenryTutorial/blob/master/HenryMod/Modules/Achievements/HenryMasteryAchievement.cs">rob repository</see>
+            </summary>
+            <param name="unlockableType">Class that inherits from BaseAchievement and implements <see cref="T:R2API.IModdedUnlockableDataProvider"/></param>
+            <param name="serverTrackerType">Type that inherits from <see cref="T:RoR2.Achievements.BaseServerAchievement"/> for achievements that the server needs to track</param>
+            <param name="unlockableDef">For <see cref="T:RoR2.UnlockableDef"/> created in advance. Leaving null will generate an <see cref="T:RoR2.UnlockableDef"/> instead.</param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.UnlockableAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

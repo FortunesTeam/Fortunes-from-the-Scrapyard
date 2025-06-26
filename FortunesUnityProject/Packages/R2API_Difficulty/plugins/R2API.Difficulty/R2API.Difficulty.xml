@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Difficulty</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.DifficultyAPI">
+            <summary>
+            API for adding difficulties like Drizzle, Rainstorm, and Monsoon to the game. Does not cover "very easy, easy, ..., HAHAHAHA".
+            </summary>
+        </member>
+        <member name="P:R2API.DifficultyAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="E:R2API.DifficultyAPI.DifficultyCatalogReady">
+            <summary>
+            Fired right before the hooks for the difficultyAPI are set. This is the last chance to add difficulties to the API.
+            </summary>
+        </member>
+        <member name="F:R2API.DifficultyAPI.difficultyDefinitions">
+            <summary>
+            A dictionairy with ALL difficulty definitions. Post start, this includes both the vanilla ones and the ones added by R2API. Not all indexes are promised to be populated. Iterate over the keyset instead.
+            </summary>
+        </member>
+        <member name="M:R2API.DifficultyAPI.AddDifficulty(RoR2.DifficultyDef)">
+            <summary>
+            Add a DifficultyDef to the list of available difficulties.
+            This must be called before the DifficultyCatalog inits, so before plugin.Start()
+            You'll get your new index returned that you can work with for comparing to Run.Instance.selectedDifficulty.
+            If this is called after the DifficultyCatalog inits then this will return -1/DifficultyIndex.Invalid and ignore the difficulty
+            </summary>
+            <param name="difficulty">The difficulty definition to add.</param>
+            <returns>DifficultyIndex.Invalid if it fails. Your index otherwise.</returns>
+        </member>
+        <member name="M:R2API.DifficultyAPI.AddDifficulty(RoR2.DifficultyDef,UnityEngine.Sprite)">
+            <summary>
+            Add a DifficultyDef to the list of available difficulties.
+            This must be called before the DifficultyCatalog inits, so before plugin.Start()
+            You'll get your new index returned that you can work with for comparing to Run.Instance.selectedDifficulty.
+            If this is called after the DifficultyCatalog inits then this will return -1/DifficultyIndex.Invalid and ignore the difficulty
+            </summary>
+            <param name="difficulty">The difficulty definition to add.</param>
+            <param name="difficultyIcon">Sprite to use as the difficulty's icon.</param>
+            <returns>DifficultyIndex.Invalid if it fails. Your index otherwise.</returns>
+        </member>
+        <member name="M:R2API.DifficultyAPI.AddDifficulty(RoR2.DifficultyDef,System.Boolean)">
+            <summary>
+            Add a DifficultyDef to the list of available difficulties.
+            This must be called before the DifficultyCatalog inits, so before plugin.Start()
+            You'll get your new index returned that you can work with for comparing to Run.Instance.selectedDifficulty.
+            If this is called after the DifficultyCatalog inits then this will return -1/DifficultyIndex.Invalid and ignore the difficulty
+            </summary>
+            <param name="difficulty">The difficulty definition to add.</param>
+            <param name="preferPositive">If you prefer to be appended to the array. In game version 1.0.0.X this means you will get all Eclipse modifiers as well when your difficulty is selected. </param>
+            <returns>DifficultyIndex.Invalid if it fails. Your index otherwise.</returns>
+        </member>
+        <member name="M:R2API.DifficultyAPI.AddDifficulty(RoR2.DifficultyDef,System.Boolean,System.Boolean)">
+            <summary>
+            Add a DifficultyDef to the list of available difficulties.
+            This must be called before the DifficultyCatalog inits, so before plugin.Start()
+            You'll get your new index returned that you can work with for comparing to Run.Instance.selectedDifficulty.
+            If this is called after the DifficultyCatalog inits then this will return -1/DifficultyIndex.Invalid and ignore the difficulty
+            </summary>
+            <param name="difficulty">The difficulty definition to add.</param>
+            <param name="preferPositive">If you prefer to be appended to the array. In game version 1.0.0.X this means you will get all Eclipse modifiers as well when your difficulty is selected. </param>
+            <param name="hidden">If set to true, the difficulty def will be hidden from the lobby</param>
+            <returns>DifficultyIndex.Invalid if it fails. Your index otherwise.</returns>
+        </member>
+        <member name="M:R2API.DifficultyAPI.AddDifficulty(R2API.ScriptableObjects.SerializableDifficultyDef)">
+            <summary>
+            Add a DifficultyDef to the list of available difficulties using a SerializableDifficultyDef
+            This must be called before the DifficultyCatalog inits, so before plugin.Start()
+            You can get the DifficultyIndex from the SerializableDifficultyDef's DifficultyIndex property
+            If this is called after the DifficultyCatalog inits, then the DifficultyIndex will return -1/DifficultyIndex.Invalid and ignore the difficulty
+            </summary>
+            <param name="serializableDifficultyDef">The SerializableDifficultyDef from which to create the DifficultyDef</param>
+        </member>
+        <member name="F:R2API.DifficultyAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

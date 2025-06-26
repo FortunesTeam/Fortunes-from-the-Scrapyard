@@ -1,0 +1,13 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_DamageType",
+  "description": "API for registering damage types",
+  "version_number": "1.1.7",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2109",
+    "RiskofThunder-HookGenPatcher-1.2.3",
+    "RiskofThunder-R2API_Core-5.1.5"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_DamageType"
+}

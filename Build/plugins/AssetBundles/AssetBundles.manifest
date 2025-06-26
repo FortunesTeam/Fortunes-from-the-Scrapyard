@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 419633187
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: fftsmain
+      Dependencies: {}
+    Info_1:
+      Name: fftsitems
+      Dependencies:
+        Dependency_0: fftsmain
+        Dependency_1: fftsbase
+    Info_2:
+      Name: fftssurvivors
+      Dependencies:
+        Dependency_0: fftsitems
+        Dependency_1: fftsbase
+    Info_3:
+      Name: fftsbase
+      Dependencies: {}
+    Info_4:
+      Name: fftselites
+      Dependencies:
+        Dependency_0: fftsmain
+        Dependency_1: fftsbase
+    Info_5:
+      Name: fftsdifficulties
+      Dependencies: {}
+    Info_6:
+      Name: fftsequipments
+      Dependencies:
+        Dependency_0: fftsmain
+        Dependency_1: fftsbase
+    Info_7:
+      Name: fftsmonsters
+      Dependencies:
+        Dependency_0: fftsmain
+        Dependency_1: fftsbase

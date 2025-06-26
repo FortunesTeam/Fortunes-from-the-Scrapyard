@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "FFTS_EQUIP_ENERGYBAR_NAME": "Energy Bar",
+    "FFTS_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharging shields.",
+    "FFTS_EQUIP_ENERGYBAR_DESCRIPTION": "Increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> and <style=cIsHealing>heal</style> for <style=cIsHealing>10%</style> of your maximum health every second for <style=cIsUtility>{1}</style> seconds. Begin recharging <style=cIsHealing>shield</style>.",
+    "FFTS_EQUIP_ENERGYBAR_LORE": "The Energy bar has been fueling different worlds’ competitors and robotic athletes for centuries. With enough grams of plant (and other proteins) per bar, as well as high fructose syrups and artificial flavors, this Energy Bar is THE delicious, plant-and-other-based bar that challenges all the expectations of possible food. It remains the final reflection of our ongoing commitment to crafting foods with purpose, for business and for the galaxy.",
+    
+	"FFTS_EQUIP_MOONSHINE_NAME": "Moonshine Flask",
+    "FFTS_EQUIP_MOONSHINE_PICKUP": "Attacks have a chance to miss but every miss causes your attacks to explode.",
+    "FFTS_EQUIP_MOONSHINE_DESCRIPTION": "Drink the Moonshine, gaining <style=cIsDamage>{0}%</style> <style=cStack>(+{0}% per drink)</style> chance to miss. Every miss causes your next hit attack to explode dealing <style=cIsDamage>{1}%</style> of the missed damage in a <style=cIsDamage>{2}m</style> radius <style=cStack>(+{2}m per miss)</style>.",
+    "FFTS_EQUIP_MOONSHINE_LORE": "You know you shouldn’t have brought this with you. Hell, you’re surprised it didn’t come up in any scans. It looks different than when you first had it on you, but the thirst has grown too much.",
+    "FFTS_EQUIP_MOONSHINE_POPUP": "MISSED!",
+    
+	"FFTS_EQUIP_BOOMBARREL_NAME": "Volatile Barrel",
+    "FFTS_EQUIP_BOOMBARREL_PICKUP": "Place an exploding barrel on the ground.",
+    "FFTS_EQUIP_BOOMBARREL_DESCRIPTION": "On use, place a barrel, that explodes for 1000% damage in a 20 m radius, after being struck. ",
+    "FFTS_EQUIP_BOOMBARREL_LORE": "Boom",
+  }
+}

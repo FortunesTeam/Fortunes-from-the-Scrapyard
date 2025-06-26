@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Animations.Runtime</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.Models.AnimatorDiff">
+            <summary>
+            An object containing a difference between 2 RuntimeAnimatorControllers.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.AnimatorDiff.Layers">
+            <summary>
+            Existing layers in source RuntimeAnimatorController that will be modified.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.AnimatorDiff.NewParameters">
+            <summary>
+            New parameters that will be added to RuntimeAnimatorController.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.BlendTree">
+            <summary>
+            Blend trees are used to blend continuously animation between their children.
+            They can either be 1D or 2D.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.BlendTree.BlendParameter">
+            <summary>
+            Parameter that is used to compute the blending weight of the children in 1D blend
+            trees or on the X axis of a 2D blend tree.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.BlendTree.BlendParameterY">
+            <summary>
+            Parameter that is used to compute the blending weight of the children on the
+            Y axis of a 2D blend tree.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.BlendTree.BlendType">
+            <summary>
+            The Blending type can be either 1D or different types of 2D.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.BlendTree.Children">
+            <summary>
+            A list of the blend tree child motions.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.BlendTree.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.BlendTreeType">
+            <summary>
+            The type of blending algorithm that the blend tree uses.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.BlendTreeType.Simple1D">
+            <summary>
+            Basic blending using a single parameter.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.BlendTreeType.SimpleDirectional2D">
+            <summary>
+            Best used when your motions represent different directions, such as "walk forward",
+            "walk backward", "walk left", and "walk right", or "aim up", "aim down", "aim
+            left", and "aim right".
+            </summary>
+        </member>
+        <member name="F:R2API.Models.BlendTreeType.FreeformDirectional2D">
+            <summary>
+            This blend type is used when your motions represent different directions, however
+            you can have multiple motions in the same direction, for example "walk forward"
+            and "run forward".
+            </summary>
+        </member>
+        <member name="F:R2API.Models.BlendTreeType.FreeformCartesian2D">
+            <summary>
+            Best used when your motions do not represent different directions.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.BlendTreeType.Direct">
+            <summary>
+            Direct control of blending weight for each node.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.ChildMotion">
+            <summary>
+            Represents a motion in the context of its parent blend tree.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.ClipBundlePath">
+            <summary>
+            Full path to an AssetBundle that contains AnimationClip for this state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.Clip">
+            <summary>
+            AnimationClip that will be played in this motion. Leave null if BlendTree is set.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.BlendTree">
+            <summary>
+            BlendTree that will be played in this motion. Ignored if Clip is not null.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.Threshold">
+            <summary>
+            The threshold of the child. Used in 1D blend trees.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.Position">
+            <summary>
+            The position of the child. Used in 2D blend trees.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.TimeScale">
+            <summary>
+            The relative speed of the child.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.CycleOffset">
+            <summary>
+            Normalized time offset of the child.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.DirectBlendParameter">
+            <summary>
+            The parameter used by the child when used in a BlendTree of type BlendTreeType.Direct.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ChildMotion.Mirror">
+            <summary>
+            Mirror of the child.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.ChildMotion.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.Condition">
+            <summary>
+            Condition that is used to determine if a transition must be taken.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Condition.ConditionMode">
+            <summary>
+            The mode of the condition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Condition.ParamName">
+            <summary>
+            The name of the parameter used in the condition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Condition.Value">
+            <summary>
+            The Parameter's threshold value for the condition to be true.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.Condition.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.ConditionMode">
+            <summary>
+            The mode of the condition.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsTrue">
+            <summary>
+            The condition is true when the parameter value is true.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsFalse">
+            <summary>
+            The condition is true when the parameter value is false.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsGreater">
+            <summary>
+            The condition is true when parameter value is greater than the threshold.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsLess">
+            <summary>
+            The condition is true when the parameter value is less than the threshold.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsEqual">
+            <summary>
+            The condition is true when parameter value is equal to the threshold.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ConditionMode.IsNotEqual">
+            <summary>
+            The condition is true when the parameter value is not equal to the threshold.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.ExistingLayer">
+            <summary>
+            Changes to an existing layer in a RuntimeAnimationController
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ExistingLayer.Name">
+            <summary>
+            The name of the layer.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ExistingLayer.NewStates">
+            <summary>
+            New state that will be added to the layer.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ExistingLayer.ExistingStates">
+            <summary>
+            Existing states in the layer that will be modified.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.ExistingState">
+            <summary>
+            Changes to an existing state in a layer.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ExistingState.Name">
+            <summary>
+            The name of the state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ExistingState.NewTransitions">
+            <summary>
+            New transitions that will be added to the state.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.InterruptionSource">
+            <summary>
+            Which AnimatorState transitions can interrupt the Transition.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.InterruptionSource.None">
+            <summary>
+            The Transition cannot be interrupted. Formerly know as Atomic.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.InterruptionSource.Source">
+            <summary>
+            The Transition can be interrupted by transitions in the source AnimatorState.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.InterruptionSource.Destination">
+            <summary>
+            The Transition can be interrupted by transitions in the destination AnimatorState.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.InterruptionSource.SourceThenDestination">
+            <summary>
+            The Transition can be interrupted by transitions in the source or the destination AnimatorState.
+            </summary>
+        </member>
+        <member name="F:R2API.Models.InterruptionSource.DestinationThenSource">
+            <summary>
+            The Transition can be interrupted by transitions in the source or the destination AnimatorState.
+            </summary>
+        </member>
+        <member name="T:R2API.Models.Parameter">
+            <summary>
+            Used to communicate between scripting and the controller. Some parameters can be set in scripting and used by the controller,
+            while other parameters are based on Custom Curves in Animation Clips and can be sampled using the scripting API.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Parameter.Name">
+            <summary>
+            The name of the parameter.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Parameter.Type">
+            <summary>
+            The type of the parameter. 
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Parameter.Value">
+            <summary>
+            The default value for the parameter.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.Parameter.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.ParameterType">
+            <summary>
+            Type of a parameter value
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ParameterType.Float">
+            <summary>
+            float type
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ParameterType.Int">
+            <summary>
+            int type
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ParameterType.Bool">
+            <summary>
+            bool type
+            </summary>
+        </member>
+        <member name="F:R2API.Models.ParameterType.Trigger">
+            <summary>
+            Trigger work mostly like bool parameter, but their values are reset to false when used in a Transition 
+            </summary>
+        </member>
+        <member name="T:R2API.Models.ParameterValue">
+            <summary>
+            Value of a parameter
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ParameterValue.BoolValue">
+            <summary>
+            bool value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ParameterValue.FloatValue">
+            <summary>
+            float value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.ParameterValue.IntValue">
+            <summary>
+            int value.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.ParameterValue.#ctor(System.Boolean)">
+            <summary>
+            Initialize with bool value
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:R2API.Models.ParameterValue.#ctor(System.Single)">
+            <summary>
+            Initialize with float value
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:R2API.Models.ParameterValue.#ctor(System.Int32)">
+            <summary>
+            Initialize with int value
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:R2API.Models.ParameterValue.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.State">
+            <summary>
+            States are the basic building blocks of a state machine. Each state contains
+            a Motion (AnimationClip or BlendTree) which will play while the character is
+            in that state. When an event in the game triggers a state transition, the character
+            will be left in a new state whose animation sequence will then take over.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Name">
+            <summary>
+            Name of the state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.ClipBundlePath">
+            <summary>
+            Full path to an AssetBundle that contains AnimationClip for this state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Clip">
+            <summary>
+            AnimationClip that will be played by this state. Leave null if BlendTree is set.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.BlendTree">
+            <summary>
+            BlendTree that will be played by this state. Ignored if Clip is not null.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Tag">
+            <summary>
+            A tag can be used to identify a state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.SpeedParam">
+            <summary>
+            The animator controller parameter that drives the speed value. Leave null if you want to use constant value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.MirrorParam">
+            <summary>
+            The animator controller parameter that drives the mirror value. Leave null if you want to use constant value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.CycleOffsetParam">
+            <summary>
+            The animator controller parameter that drives the cycle offset value. Leave null if you want to use constant value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.TimeParam">
+            <summary>
+            The animator controller parameter that drives the time value. Leave null if you want to use constant value.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Speed">
+            <summary>
+            The default speed of the motion.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.CycleOffset">
+            <summary>
+            Offset at which the animation loop starts. Useful for synchronizing looped animations.
+            Units is normalized time.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.IKOnFeet">
+            <summary>
+            Should Foot IK be respected for this state.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.WriteDefaultValues">
+            <summary>
+            Whether or not the AnimatorStates writes back the default values for properties
+            that are not animated by its Motion.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Loop">
+            <summary>
+            AnimationClip is looped.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Mirror">
+            <summary>
+            Should the state be mirrored.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.State.Transitions">
+            <summary>
+            The transitions that are going out of the state.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.State.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.Models.Transition">
+            <summary>
+            Transitions define when and how the state machine switch from one state to another.
+            Transition always originate from an Animator State (or AnyState)
+            and have timing parameters.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.DestinationStateName">
+            <summary>
+            The name of a destination state of the transition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.TransitionDuration">
+            <summary>
+            The duration of the transition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.Offset">
+            <summary>
+            The time at which the destination state will start.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.ExitTime">
+            <summary>
+            If Transition.HasExitTime is true, ExitTime represents the exact
+            time at which the transition can take effect. This is represented in normalized
+            time, so for example an exit time of 0.75 means that on the first frame where
+            75% of the animation has played, the Exit Time condition will be true. On the
+            next frame, the condition will be false. For looped animations, transitions with
+            exit times smaller than 1 will be evaluated every loop, so you can use this to
+            time your transition with the proper timing in the animation, every loop. Transitions
+            with exit times greater than one will be evaluated only once, so they can be
+            used to exit at a specific time, after a fixed number of loops. For example,
+            a transition with an exit time of 3.5 will be evaluated once, after three and
+            a half loops.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.HasExitTime">
+            <summary>
+            When active the transition will have an exit time condition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.HasFixedDuration">
+            <summary>
+            Determines whether the duration of the transition is reported in a fixed duration
+            in seconds or as a normalized time.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.InterruptionSource">
+            <summary>
+            Which AnimatorState transitions can interrupt the Transition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.OrderedInterruption">
+            <summary>
+            The Transition can be interrupted by a transition that has a higher priority.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.CanTransitionToSelf">
+            <summary>
+            Set to true to allow or disallow transition to self during AnyState transition.
+            </summary>
+        </member>
+        <member name="P:R2API.Models.Transition.Conditions">
+            <summary>
+            Animations.AnimatorCondition conditions that need to be met for a transition
+            to happen.
+            </summary>
+        </member>
+        <member name="M:R2API.Models.Transition.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing modifications into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

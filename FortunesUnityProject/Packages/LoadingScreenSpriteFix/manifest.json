@@ -1,0 +1,9 @@
+{
+    "name": "LoadingScreenSpriteFix",
+    "version_number": "2.0.0",
+    "website_url": "https://github.com/Nebby1999/NebbyVSMods",
+    "description": "API for adding new Loading Sprites to the Loading Screen, also fixes sprite overlapping",
+    "dependencies": [
+        "bbepis-BepInExPack-5.4.2117"
+    ]
+}

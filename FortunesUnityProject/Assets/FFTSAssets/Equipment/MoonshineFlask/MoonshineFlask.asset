@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: MoonshineFlask
+  m_EditorClassIdentifier: 
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: f4c50f1fac12e0946a83b1e3ed9c5d61,
+    type: 3}
+  cooldown: 45
+  nameToken: FFTS_EQUIP_MOONSHINE_NAME
+  pickupToken: FFTS_EQUIP_MOONSHINE_PICKUP
+  descriptionToken: FFTS_EQUIP_MOONSHINE_DESCRIPTION
+  loreToken: FFTS_EQUIP_MOONSHINE_LORE
+  isConsumed: 0
+  pickupIconSprite: {fileID: 21300000, guid: a3369e1f681a73944a507e20b7ad3df6, type: 3}
+  unlockableDef: {fileID: 0}
+  colorIndex: 4
+  canDrop: 1
+  dropOnDeathChance: 0
+  canBeRandomlyTriggered: 0
+  enigmaCompatible: 1
+  isLunar: 1
+  isBoss: 0
+  passiveBuffDef: {fileID: 0}
+  appearsInSinglePlayer: 1
+  appearsInMultiPlayer: 1
+  requiredExpansion: {fileID: 11400000, guid: 081dc6ffa58f0f74a9b6b7232f7d6bf5, type: 2}
+  mageElement: 0

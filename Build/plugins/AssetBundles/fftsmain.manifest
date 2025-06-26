@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 2996038220
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5fbe2b3eaea2da35f1bff753bfa6bcf2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f7988f7769e0f488d93708529316cb95
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/FotSAssets/Main/ScrapyardExpansionDef.asset
+- Assets/FotSAssets/Main/texFortunesIcon.png
+- Assets/FotSAssets/Main/texUnlockIcon.png
+Dependencies: []

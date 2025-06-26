@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  m_Name: acScrapElite
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 67246d474ff843f43a3ab868ce456ba4, type: 2}
+  - {fileID: 11400000, guid: 02f5d88aa02080043a85eb0182c494c5, type: 2}
+  - {fileID: 11400000, guid: d67eb310a2b07de409467afec93fb0b2, type: 2}
+  - {fileID: 11400000, guid: fbc206964d05709428269389a8d2c61f, type: 2}
+  - {fileID: 11400000, guid: 4fb92d2244ced3443822831ff0ac8921, type: 2}
+  - {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e, type: 3}
+  - {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634, type: 3}
+  - {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1, type: 3}
+  - {fileID: 2507292174066636152, guid: 3969424294c0a684386fb9b596c2a1ad, type: 3}
+  itemDisplayPrefabs:
+  - {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e, type: 3}
+  - {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634, type: 3}
+  - {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1, type: 3}
+  equipmentDef: {fileID: 11400000, guid: d67eb310a2b07de409467afec93fb0b2, type: 2}
+  eliteDefs:
+  - {fileID: 11400000, guid: 67246d474ff843f43a3ab868ce456ba4, type: 2}

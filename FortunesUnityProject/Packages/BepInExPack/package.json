@@ -1,0 +1,14 @@
+{
+  "name": "com.bbepis.bepinex",
+  "version": "5.4.2103",
+  "displayName": "BepInEx for KSP 2",
+  "description": "Unified BepInEx all-in-one modding pack - plugin framework, detour library",
+  "unity": "2020.3",
+  "release": "33f1",
+  "author": {
+    "name": "bbepis",
+    "url": "https://github.com/BepInEx/BepInEx"
+  },
+  "dependencies": {
+  }
+}

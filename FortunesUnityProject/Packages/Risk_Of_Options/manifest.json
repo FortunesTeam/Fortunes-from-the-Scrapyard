@@ -1,0 +1,11 @@
+{
+  "namespace": "Rune580",
+  "name": "Risk_Of_Options",
+  "description": "A convenient API for adding BepInEx ConfigEntry's to a option menu",
+  "version_number": "2.8.2",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2113"
+  ],
+  "website_url": "https://github.com/Rune580/RiskOfOptions",
+  "FullName": "Rune580-Risk_Of_Options"
+}

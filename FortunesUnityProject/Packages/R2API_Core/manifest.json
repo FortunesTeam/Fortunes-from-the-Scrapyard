@@ -1,0 +1,12 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_Core",
+  "description": "Core R2API module",
+  "version_number": "5.1.5",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2109",
+    "RiskofThunder-HookGenPatcher-1.2.3"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_Core"
+}

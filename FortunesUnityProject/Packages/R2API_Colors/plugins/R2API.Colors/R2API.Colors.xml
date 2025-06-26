@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Colors</name>
+    </assembly>
+    <members>
+        <member name="M:R2API.ColorsAPI.RegisterDamageColor(UnityEngine.Color)">
+            <summary>
+            Adds a new DamageColor to the game
+            </summary>
+            <param name="color">The color for the new DamageColor</param>
+            <returns>The <see cref="T:RoR2.DamageColorIndex"/> associated with <paramref name="color"/></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:R2API.ColorsAPI.AddSerializableDamageColor(R2API.ScriptableObjects.SerializableDamageColor)">
+            <summary>
+            Adds a new DamageColor using a <see cref="T:R2API.ScriptableObjects.SerializableDamageColor"/>
+            <para>The <see cref="T:RoR2.DamageColorIndex"/> is set in <paramref name="serializableDamageColor"/>'s <see cref="P:R2API.ScriptableObjects.SerializableDamageColor.DamageColorIndex"/> property</para>
+            </summary>
+            <param name="serializableDamageColor">The <see cref="T:R2API.ScriptableObjects.SerializableDamageColor"/> to add</param>
+        </member>
+        <member name="M:R2API.ColorsAPI.RegisterColor(UnityEngine.Color)">
+            <summary>
+            Adds a new Color to the game's <see cref="T:RoR2.ColorCatalog"/>
+            </summary>
+            <param name="color">The color for the new Color for the <see cref="T:RoR2.ColorCatalog"/></param>
+            <returns>The <see cref="T:RoR2.ColorCatalog.ColorIndex"/> associated with <paramref name="color"/></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:R2API.ColorsAPI.AddSerializableColor(R2API.ScriptableObjects.SerializableColorCatalogEntry)">
+            <summary>
+            Adds a new Color to the <see cref="T:RoR2.ColorCatalog"/> using a <see cref="T:R2API.ScriptableObjects.SerializableColorCatalogEntry"/>
+            <para>The <see cref="T:RoR2.ColorCatalog.ColorIndex"/> is set in <paramref name="serializableColor"/>'s <see cref="P:R2API.ScriptableObjects.SerializableColorCatalogEntry.ColorIndex"/></para>
+            </summary>
+            <param name="serializableColor">The <see cref="T:R2API.ScriptableObjects.SerializableDamageColor"/> to add</param>
+        </member>
+        <member name="F:R2API.ColorsAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

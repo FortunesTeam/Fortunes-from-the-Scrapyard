@@ -1,0 +1,232 @@
+ManifestFileVersion: 0
+CRC: 3217688419
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 873e18e0c7bf85b35dd142d4d48703e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 38d849e27f3aa92f702408a87532c09d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1143142494, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1811796171, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -46258121, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1067940895, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -197296741, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 953270592, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1277448904, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1077198318, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -2096938146, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1530905962, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 161585894, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -380008858, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -226763392, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -578974823, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -144590133, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 140337805, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -365436499, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -202159943, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1792105662, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1549848242, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -359660931, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1512185436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1578512655, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -517518216, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -789927658, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 952828898, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1627637702, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -315171339, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 68b43d1b0b7e3074e9c105a44212585b, type: 3}
+- Class: 114
+  Script: {fileID: -1568778350, guid: 050936fea8909af15a3fd3b64da1ff83, type: 3}
+- Class: 114
+  Script: {fileID: 467799289, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 319
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.MonsterCardProvider/StageMonsterCardPair
+- AssemblyName: R2API.Addressables
+  ClassName: R2API.AddressReferencedAssets.AddressReferencedSpawnCard
+- AssemblyName: R2API.Addressables
+  ClassName: R2API.AddressReferencedAssets.AddressReferencedUnlockableDef
+- AssemblyName: R2API.Director
+  ClassName: R2API.AddressableDirectorCard
+- AssemblyName: R2API.Director
+  ClassName: R2API.DirectorAPI/StageSerde
+- AssemblyName: RoR2
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: RoR2
+  ClassName: EntityStates.SerializableEntityStateType
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterFlightParameters
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterGravityParameters
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
+  ClassName: RoR2.DirectorCard
+- AssemblyName: RoR2
+  ClassName: RoR2.DirectorCardCategorySelection/Category
+- AssemblyName: RoR2
+  ClassName: RoR2.SerializableLoadout
+- AssemblyName: RoR2
+  ClassName: RoR2.SerializablePickupIndex
+- AssemblyName: RoR2
+  ClassName: RoR2.SkillLocator/PassiveSkill
+- AssemblyName: RoR2
+  ClassName: RoR2.Skills.SkillFamily/Variant
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
+Assets:
+- Assets/FFTSAssets/Monsters/SporebackCrab/acSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/Gump/acGump.asset
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Barrage.asset
+- Assets/FFTSAssets/Monsters/Gardener/animGardener.controller
+- Assets/FFTSAssets/Monsters/Gump/Skills/GumpSkill1.asset
+- Assets/FFTSAssets/Monsters/Gump/idrsGump.asset
+- Assets/FFTSAssets/Monsters/Gardener/texGravekeeperFurDiffuse.png
+- Assets/FFTSAssets/Monsters/Gardener/mdlGardener.prefab
+- Assets/FFTSAssets/Monsters/SporebackCrab/mdlSporebackCrab.prefab
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Irrigate.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/fdccsSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/Gump/New Avatar Mask.mask
+- Assets/FFTSAssets/Monsters/Gump/GumpBody.prefab
+- Assets/FFTSAssets/Monsters/SporebackCrab/idrsSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/New Avatar Mask.mask
+- Assets/FFTSAssets/Monsters/Gardener/GardenerBody.prefab
+- Assets/FFTSAssets/Monsters/SporebackCrab/cscSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/SporebackCrabBody.prefab
+- Assets/FFTSAssets/Monsters/Gardener/Gardener1.fbx
+- Assets/FFTSAssets/Monsters/Gump/fdccsGump.asset
+- Assets/FFTSAssets/Monsters/Gardener/matGardenerFur.mat
+- Assets/FFTSAssets/Monsters/Gardener/cscGardener.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/mcpSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/Gardener/matGardenerJar.mat
+- Assets/FFTSAssets/Monsters/Gardener/mcpGardener.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/animSporebackCrab.controller
+- Assets/FFTSAssets/Monsters/Gump/gump.fbx
+- Assets/FFTSAssets/Monsters/Gardener/texGravekeeperTestDiffuse.png
+- Assets/FFTSAssets/Monsters/Gardener/texTrimSheetGravePropsNormal.png
+- Assets/FFTSAssets/Monsters/Gump/animGump.controller
+- Assets/FFTSAssets/Monsters/SporebackCrab/horseshoecrab1.fbx
+- Assets/FFTSAssets/Monsters/Gardener/idrsGardener.asset
+- Assets/FFTSAssets/Monsters/Gardener/AimMask.mask
+- Assets/FFTSAssets/Monsters/Gardener/fddcGardener.asset
+- Assets/FFTSAssets/Monsters/SporebackCrab/SporebackCrabMaster.prefab
+- Assets/FFTSAssets/Monsters/Gump/TexGumpDiffuseReal.png
+- Assets/FFTSAssets/Monsters/Gardener/acGardener.asset
+- Assets/FFTSAssets/Monsters/Gardener/animGardenerLegacy.controller
+- Assets/FFTSAssets/Monsters/Gump/New Material.mat
+- Assets/FFTSAssets/Monsters/Gump/TexGumpNormalReal.png
+- Assets/FFTSAssets/Monsters/Gardener/matGardener.mat
+- Assets/FFTSAssets/Monsters/SporebackCrab/Skills/Utility.asset
+- Assets/FFTSAssets/Monsters/Gump/Material.mat
+- Assets/FFTSAssets/Monsters/Gardener/texTrimSheetGravePropsDiffuse.png
+- Assets/FFTSAssets/Monsters/Gump/GumpMaster.prefab
+- Assets/FFTSAssets/Monsters/Gump/GumpMat.mat
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Utility.asset
+- Assets/FFTSAssets/Monsters/Gardener/GardenerMaster.prefab
+- Assets/FFTSAssets/Monsters/SporebackCrab/Skills/Primary.asset
+- Assets/FFTSAssets/Monsters/Gardener/Gardener.png
+- Assets/FFTSAssets/Monsters/SporebackCrab/AimMask.mask
+- Assets/FFTSAssets/Monsters/Gump/TexGumpEmissionREAL.png
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Primary.asset
+- Assets/FFTSAssets/Monsters/Gump/cscGump.asset
+Dependencies:
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain

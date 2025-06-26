@@ -1,0 +1,7 @@
+{
+  "name": "ShaderSwapper",
+  "version_number": "1.0.1",
+  "website_url": "https://github.com/Priscillalala/ShaderSwapper",
+  "description": "A lightweight library for upgrading stubbed shaders to actual shaders at runtime.",
+  "dependencies": []
+}

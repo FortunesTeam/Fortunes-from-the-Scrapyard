@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  m_Name: acSprayCan
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 2080af327bd846149b8f3c81e1251e82, type: 2}
+  - {fileID: 11400000, guid: 3cbc1869ecc2f7542bd219347265af68, type: 2}
+  - {fileID: 11400000, guid: d3c95f38ef130934dbe5c2f728656d28, type: 2}
+  - {fileID: 11400000, guid: 306c00918c6064a45905589760555883, type: 2}
+  - {fileID: 4310206153992917357, guid: 0e508526fb3288b46a9c65f1b63373bf, type: 3}
+  itemDisplayPrefabs:
+  - {fileID: 3890030943585171948, guid: f55c0ea8b8319a84e97c06833703517b, type: 3}
+  itemDef: {fileID: 11400000, guid: 2080af327bd846149b8f3c81e1251e82, type: 2}

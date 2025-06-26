@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoadingScreenFix</name>
+    </assembly>
+    <members>
+        <member name="T:LoadingScreenFix.LoadingScreenFix">
+            <summary>
+            Main plugin, also works as the main API for adding new sprites
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.LoadingScreenFix.PluginGUID">
+            <summary>
+            Plugin GUID
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.LoadingScreenFix.PluginAuthor">
+            <summary>
+            Plugin's Author
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.LoadingScreenFix.PluginName">
+            <summary>
+            Plugin's Name
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.LoadingScreenFix.PluginVersion">
+            <summary>
+            Plugin's Version
+            </summary>
+        </member>
+        <member name="M:LoadingScreenFix.LoadingScreenFix.AddSpriteAnimations(UnityEngine.AssetBundle)">
+            <summary>
+            Adds the <see cref="T:RoR2.SimpleSpriteAnimation"/> found within <paramref name="sourceBundle"/>.
+            
+            <para>The API expects that this assetbundle only contains the sprite animations, as such, once we're past the loading screen, the loaded <see cref="T:RoR2.SimpleSpriteAnimation"/>s and the <paramref name="sourceBundle"/> will be DESTROYED and UNLOADED respectively.</para>
+            <br>If you made your <see cref="T:RoR2.SimpleSpriteAnimation"/> from code, or want to avoid the unloading of the source bundle, look at <see cref="M:LoadingScreenFix.LoadingScreenFix.AddSpriteAnimation(RoR2.SimpleSpriteAnimation)"/></br>
+            </summary>
+            <param name="sourceBundle">The AssetBundle from which we will load the simple sprite animations</param>
+        </member>
+        <member name="M:LoadingScreenFix.LoadingScreenFix.AddSpriteAnimation(RoR2.SimpleSpriteAnimation,UnityEngine.AssetBundle)">
+            <summary>
+            Adds the <paramref name="spriteAnimation"/>, which was loaded from <paramref name="sourceBundle"/>
+            
+            <para>The API expects that this assetbundle only contains the sprite animations, as such, once we're past the loading screen, the <paramref name="spriteAnimation"/> and the <paramref name="sourceBundle"/> will be DESTROYED and UNLOADED respectively.</para>
+            <br>If you made your <see cref="T:RoR2.SimpleSpriteAnimation"/> from code, or want to avoid the unloading of the source bundle, look at <see cref="M:LoadingScreenFix.LoadingScreenFix.AddSpriteAnimation(RoR2.SimpleSpriteAnimation)"/></br>
+            </summary>
+            <param name="spriteAnimation">The <see cref="T:RoR2.SimpleSpriteAnimation"/> that contains the sprite animation</param>
+            <param name="sourceBundle">The AssetBundle from which <paramref name="spriteAnimation"/> was loaded from</param>
+        </member>
+        <member name="M:LoadingScreenFix.LoadingScreenFix.AddSpriteAnimation(RoR2.SimpleSpriteAnimation)">
+            <summary>
+            Adds the <paramref name="spriteAnimation"/> to the loading screen sprite animations.
+            
+            <para>The API will eventually DESTROY the instance of the <paramref name="spriteAnimation"/> once we're past the loading screen, if you want to keep your SpriteAnimation, consider giving the API a duplicate instance by calling UnityEngine.Object.Instantiate() and using your sprite animation as the argument.</para>
+            <code>
+            private static void AddAnimationButKeepObjectAlive(SimpleSpriteAnimation orig)
+            {
+                LoadingScreenFix.AddSpriteAnimation(UnityEngine.Object.Instantiate(orig));
+            }
+            </code>
+            </summary>
+            <param name="spriteAnimation">The sprite animation which will be added.</param>
+        </member>
+        <member name="T:LoadingScreenFix.SimpleSpriteAnimationGenerator">
+            <summary>
+            Static class used for creating SimpleSpriteAnimations at runtime.
+            </summary>
+        </member>
+        <member name="M:LoadingScreenFix.SimpleSpriteAnimationGenerator.CreateSpriteAnimation(System.Collections.Generic.IEnumerable{UnityEngine.Sprite},System.Collections.Generic.IEnumerable{System.Int32},System.Single)">
+            <summary>
+            Creates a <see cref="T:RoR2.SimpleSpriteAnimation"/> utilizing a collection of <paramref name="durations"/>, <paramref name="sprites"/>, and a specified <paramref name="framerate"/>
+            <br>The actual number of frames in the animation is determined by the count of <paramref name="sprites"/>, if <paramref name="durations"/> doesnt match its count, it'll use the last valid count in the collection.</br>
+            </summary>
+            <param name="sprites">The sprites to use for the animation</param>
+            <param name="durations">The duration of each sprite relative to <paramref name="framerate"/></param>
+            <param name="framerate">The framerate for the animation</param>
+            <returns>The created sprite animation</returns>
+        </member>
+        <member name="M:LoadingScreenFix.SimpleSpriteAnimationGenerator.CreateSpriteAnimation(System.Collections.Generic.IEnumerable{System.ValueTuple{UnityEngine.Sprite,System.Int32}},System.Single)">
+            <summary>
+            Creates a <see cref="T:RoR2.SimpleSpriteAnimation"/> utilizing a collection tuple of <see cref="T:UnityEngine.Sprite"/> and <see cref="T:System.Int32"/> within <paramref name="spritesAndDurations"/>, and a specified <paramref name="framerate"/>
+            </summary>
+            <param name="spritesAndDurations">The sprites and durations of each sprite</param>
+            <param name="framerate">The framerate of the animation</param>
+            <returns>The created sprite animation</returns>
+        </member>
+        <member name="M:LoadingScreenFix.SimpleSpriteAnimationGenerator.CreateSpriteAnimation(RoR2.SimpleSpriteAnimation.Frame[],System.Single)">
+            <summary>
+            Creates a <see cref="T:RoR2.SimpleSpriteAnimation"/> utilizing an array of <see cref="T:RoR2.SimpleSpriteAnimation.Frame"/> within <paramref name="frames"/>, and a specified <paramref name="framerate"/>
+            </summary>
+            <param name="frames">The frames for the animation</param>
+            <param name="framerate">The framerate of the animation</param>
+            <returns>The created sprite animation</returns>
+        </member>
+        <member name="M:LoadingScreenFix.SimpleSpriteAnimationGenerator.CreateSpriteAnimation(LoadingScreenFix.SimpleSpriteAnimationArguments)">
+            <summary>
+            Creates a <see cref="T:RoR2.SimpleSpriteAnimation"/> utilizing <see cref="T:LoadingScreenFix.SimpleSpriteAnimationArguments"/> passed in <paramref name="args"/>
+            </summary>
+            <param name="args">The argument to create the animation</param>
+            <returns>The created sprite animation</returns>
+        </member>
+        <member name="T:LoadingScreenFix.SimpleSpriteAnimationArguments">
+            <summary>
+            Represents arguments for creating a SimpleSpriteAnimation
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.SimpleSpriteAnimationArguments.frames">
+            <summary>
+            The Frames for the sprite animation
+            </summary>
+        </member>
+        <member name="F:LoadingScreenFix.SimpleSpriteAnimationArguments.framerate">
+            <summary>
+            The framerate of the animation
+            </summary>
+        </member>
+    </members>
+</doc>

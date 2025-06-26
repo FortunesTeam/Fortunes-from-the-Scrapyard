@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Skills</name>
+    </assembly>
+    <members>
+        <member name="M:R2API.SkillsAPI.GetHideInLoadout(RoR2.GenericSkill)">
+            <summary>
+            Gets the value of whether a GenericSkill row should be hidden in loadout tab or not.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.SetHideInLoadout(RoR2.GenericSkill,System.Boolean)">
+            <summary>
+            Sets the value of whether a GenericSkill row should be hidden in loadout tab or not.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.GetHideInCharacterSelectIfFirstSkillSelected(RoR2.GenericSkill)">
+            <summary>
+            Gets the value of whether a GenericSkill row should be hidden in skills tab if the first skill is selected or not.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.SetHideInCharacterSelectIfFirstSkillSelected(RoR2.GenericSkill,System.Boolean)">
+            <summary>
+            Sets the value of whether a GenericSkill row should be hidden in skills tab if the first skill is selected or not.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.GetOrderPriority(RoR2.GenericSkill)">
+            <summary>
+            Gets the value of a GenericSkill row order for sorting in skills and loadout tabs. Default value is 0.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.SetOrderPriority(RoR2.GenericSkill,System.Int32)">
+            <summary>
+            Sets the value of a GenericSkill row order for sorting in skills and loadout tabs. Default value is 0.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.GetLoadoutTitleTokenOverride(RoR2.GenericSkill)">
+            <summary>
+            Gets the value of a GenericSkill title token that will be used instead of default one in loadout tabs.
+            </summary>
+        </member>
+        <member name="M:R2API.SkillsAPI.SetLoadoutTitleTokenOverride(RoR2.GenericSkill,System.String)">
+            <summary>
+            Sets the value of a GenericSkill title token that will be used instead of default one in loadout tabs.
+            </summary>
+        </member>
+        <member name="F:R2API.SkillsAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

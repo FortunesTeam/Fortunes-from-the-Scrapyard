@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  m_Name: acLostRecord
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 02695d2aa72505f4c929377915f812c9, type: 2}
+  - {fileID: 3203127360887283016, guid: ed2f66d4b7c6eac489c5361bee30eabe, type: 3}
+  itemDisplayPrefabs:
+  - {fileID: 3890030943585171948, guid: 1af4769aa5f332f47b590fff908a9320, type: 3}
+  itemDef: {fileID: 11400000, guid: 02695d2aa72505f4c929377915f812c9, type: 2}
