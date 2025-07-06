@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.ProcType</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.ModdedProcType">
+            <summary>
+            A modded equivalent of <see cref="T:RoR2.ProcType"/> for use with <see cref="T:R2API.ProcTypeAPI"/>.
+            </summary>
+        </member>
+        <member name="F:R2API.ModdedProcType.Invalid">
+            <summary>
+            Represents an invalid value of <see cref="T:R2API.ModdedProcType"/>.
+            </summary>
+            <remarks>All negative values of <see cref="T:R2API.ModdedProcType"/> are considered invalid.</remarks>
+        </member>
+        <member name="T:R2API.ProcTypeAPI">
+            <summary>
+            API for reserving custom ProcTypes and interacting with <see cref="T:RoR2.ProcChainMask"/>.
+            </summary>
+        </member>
+        <member name="P:R2API.ProcTypeAPI.ModdedProcTypeCount">
+            <summary>
+            The number of modded Proc Types currently reserved by <see cref="M:R2API.ProcTypeAPI.ReserveProcType"/>.
+            </summary>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.ReserveProcType">
+            <summary>
+            Reserve a <see cref="T:R2API.ModdedProcType"/> for use with
+            <see cref="M:R2API.ProcTypeAPI.AddModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)"/>,
+            <see cref="M:R2API.ProcTypeAPI.RemoveModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)"/> and
+            <see cref="M:R2API.ProcTypeAPI.HasModdedProc(RoR2.ProcChainMask,R2API.ModdedProcType)"/>.
+            </summary>
+            <returns>A valid <see cref="T:R2API.ModdedProcType"/>.</returns>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.AddModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)">
+            <summary>
+            Enable a <see cref="T:R2API.ModdedProcType"/> on this <see cref="T:RoR2.ProcChainMask"/>.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="procType"/> is invalid</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.RemoveModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)">
+            <summary>
+            Disable a <see cref="T:R2API.ModdedProcType"/> on this <see cref="T:RoR2.ProcChainMask"/>.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="procType"/> is invalid</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.HasModdedProc(RoR2.ProcChainMask,R2API.ModdedProcType)">
+            <summary>
+            Check if a <see cref="T:R2API.ModdedProcType"/> is enabled on this <see cref="T:RoR2.ProcChainMask"/>
+            </summary>
+            <returns>true if the <see cref="T:R2API.ModdedProcType"/> is enabled; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="procType"/> is invalid</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.GetModdedMask(RoR2.ProcChainMask)">
+            <summary>
+            Access a <see cref="T:System.Collections.BitArray"/> that represents the <see cref="T:R2API.ProcTypeAPI"/> equivalent of <see cref="F:RoR2.ProcChainMask.mask"/>. 
+            </summary>
+            <returns>A <see cref="T:System.Collections.BitArray"/> with length equal to <see cref="P:R2API.ProcTypeAPI.ModdedProcTypeCount"/> that is equivalent to the underlying modded procs mask.</returns>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.GetModdedMask(RoR2.ProcChainMask,System.Collections.BitArray)">
+            <inheritdoc cref="M:R2API.ProcTypeAPI.GetModdedMask(RoR2.ProcChainMask)"/>
+            <remarks>This overload allows reuse of a single <see cref="T:System.Collections.BitArray"/>.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dest"/> is null.</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.GetModdedMaskRaw(RoR2.ProcChainMask)">
+            <summary>
+            Access a <see cref="T:System.Collections.BitArray"/> of that represents the <see cref="T:R2API.ProcTypeAPI"/> equivalent of <see cref="F:RoR2.ProcChainMask.mask"/>; this variant does not normalize <see cref="P:System.Collections.BitArray.Length"/>.
+            </summary>
+            <returns>A <see cref="T:System.Collections.BitArray"/> of arbitrary length that is equivalent to the underlying modded procs mask.</returns>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.GetModdedMaskRaw(RoR2.ProcChainMask,System.Collections.BitArray)">
+            <inheritdoc cref="M:R2API.ProcTypeAPI.GetModdedMaskRaw(RoR2.ProcChainMask)"/>
+            <remarks>This overload allows reuse of a single <see cref="T:System.Collections.BitArray"/>.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dest"/> is null.</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.SetModdedMask(RoR2.ProcChainMask@,System.Collections.BitArray)">
+            <summary>
+            Assign the <see cref="T:R2API.ProcTypeAPI"/> equivalent of <see cref="F:RoR2.ProcChainMask.mask"/>. 
+            </summary>
+            <param name="procChainMask"></param>
+            <param name="value">A <see cref="T:System.Collections.BitArray"/> representing a modded procs mask.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is null.</exception>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.GetMaskingBit(System.Int32,R2API.ModdedProcType)">
+            <summary>
+            Util used by <see cref="M:R2API.ProcTypeAPI.AddModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)"/>, <see cref="M:R2API.ProcTypeAPI.RemoveModdedProc(RoR2.ProcChainMask@,R2API.ModdedProcType)"/>, and <see cref="M:R2API.ProcTypeAPI.HasModdedProc(RoR2.ProcChainMask,R2API.ModdedProcType)"/> to find the masking bit for a <see cref="T:R2API.ModdedProcType"/> given a byte index.
+            </summary>
+            <param name="maskIndex">Relevant byte index in a modded mask.</param>
+            <param name="procType"></param>
+            <returns>A byte with one bit flagged.</returns>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.NetworkReadModdedMask(UnityEngine.Networking.NetworkReader)">
+            <returns>A mask trimmed to remove irrelevant trailing bytes, or null for a mask of 0.</returns>
+        </member>
+        <member name="M:R2API.ProcTypeAPI.ModdedMaskEquals(System.Byte[],System.Byte[])">
+            <summary>
+            Compare two masks while ignoring length, null is treated as 0.
+            </summary>
+        </member>
+        <member name="F:R2API.ProcTypeAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

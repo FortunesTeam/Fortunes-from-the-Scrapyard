@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.SceneAsset</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.SceneAssetAPI">
+            <summary>
+            API for retrieving assets from the game scenes.
+            </summary>
+        </member>
+        <member name="P:R2API.SceneAssetAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.SceneAssetAPI.AddAssetRequest(System.String,System.Action{UnityEngine.GameObject[]})">
+            <summary>
+            Add a request that will be executed when the scene is loaded.
+            Will throw an exception if the submodule isn't requested with R2APISubmoduleDependency.
+            </summary>
+            <param name="sceneName">The name of scene you want to retrieve assets from.</param>
+            <param name="onSceneObjectsLoaded">Your action delegate that will be executed when the scene is loaded,
+            the GameObject[] will contains the scene root game objects.</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="F:R2API.SceneAssetAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

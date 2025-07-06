@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Skins</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.SkinLightReplacement">
+            <summary>
+            Static class utilized for implementing Light Replacements for a Model
+            </summary>
+        </member>
+        <member name="M:R2API.SkinLightReplacement.AddLightReplacement(RoR2.SkinDef,R2API.LightReplacement[])">
+            <summary>
+            Adds new LightReplacements that will be applied to a SkinDef
+            </summary>
+            <param name="targetSkinDef">The skin def which will apply the light replacements.</param>
+            <param name="lightReplacements">The light replacements for the skin.</param>
+            <returns>true if the light replacement was added succesfully, false otherwise.</returns>
+        </member>
+        <member name="T:R2API.LightReplacement">
+            <summary>
+            Struct that represents a LightReplacement for a Skin
+            </summary>
+        </member>
+        <member name="T:R2API.SkinDefInfo">
+            <summary>
+            A container struct for all SkinDef parameters.
+            Use this to set skinDef values, then call CreateNewSkinDef().
+            </summary>
+        </member>
+        <member name="T:R2API.SkinIDRS">
+            <summary>
+            Class for adding Skin Specific ItemDisplayRuleSets for skin defs.
+            </summary>
+        </member>
+        <member name="M:R2API.SkinIDRS.AddPair(RoR2.SkinDef,RoR2.ItemDisplayRuleSet)">
+            <summary>
+            Adds a pair of SkinDef and ItemDisplayRuleSet
+            <para>Ingame, once the Skin is applied to the model, the default IDRS will be swapped for the one specified in <paramref name="ruleSet"/></para>
+            </summary>
+            <param name="skinDef"></param>
+            <param name="ruleSet"></param>
+            <returns>True if added succesfully, false otherwise</returns>
+        </member>
+        <member name="M:R2API.SkinIDRS.AddGroupOverride(RoR2.SkinDef,UnityEngine.Object,RoR2.DisplayRuleGroup)">
+            <summary>
+            Adds a displayRuleGroup override for ItemDef/EquipmentDef. If there was no IDRS for the skin, a clone of the IDRS from CharacterModel from a body prefab will be taken as base.
+            </summary>
+            <param name="skinDef"></param>
+            <param name="keyAsset">ItemDef/EquipmentDef</param>
+            <param name="displayRuleGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.Skins.CreateSkinIcon(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Creates a skin icon sprite styled after the ones already in the game.
+            </summary>
+            <param name="top">The color of the top portion</param>
+            <param name="right">The color of the right portion</param>
+            <param name="bottom">The color of the bottom portion</param>
+            <param name="left">The color of the left portion</param>
+            <returns>The icon sprite</returns>
+        </member>
+        <member name="M:R2API.Skins.CreateSkinIcon(UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color,UnityEngine.Color)">
+            <summary>
+            Creates a skin icon sprite styled after the ones already in the game.
+            </summary>
+            <param name="top">The color of the top portion</param>
+            <param name="right">The color of the right portion</param>
+            <param name="bottom">The color of the bottom portion</param>
+            <param name="left">The color of the left portion</param>
+            <param name="line">The color of the dividing lines</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.Skins.CreateNewSkinDef(R2API.SkinDefInfo)">
+            <summary>
+            Creates a new SkinDef from a SkinDefInfo.
+            Note that this prevents null-refs by disabling SkinDef awake while the SkinDef is being created.
+            The things that occur during awake are performed when first applied to a character instead.
+            </summary>
+            <param name="skin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.Skins.AddSkinToCharacter(UnityEngine.GameObject,R2API.SkinDefInfo)">
+            <summary>
+            Adds a skin to the body prefab for a character.
+            Will attempt to create a default skin if one is not present.
+            Must be called during plugin Awake or OnEnable. If called afterwards the new skins must be added to bodycatalog manually.
+            </summary>
+            <param name="bodyPrefab">The body to add the skin to</param>
+            <param name="skin">The SkinDefInfo for the skin to add</param>
+            <returns>True if successful</returns>
+        </member>
+        <member name="M:R2API.Skins.AddSkinToCharacter(UnityEngine.GameObject,RoR2.SkinDef)">
+            <summary>
+            Adds a skin to the body prefab for a character.
+            Will attempt to create a default skin if one is not present.
+            Must be called during plugin Awake or OnEnable. If called afterwards the new skins must be added to bodycatalog manually.
+            </summary>
+            <param name="bodyPrefab">The body to add the skin to</param>
+            <param name="skin">The SkinDef to add</param>
+            <returns>True if successful</returns>
+        </member>
+        <member name="F:R2API.Skins.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.SkinVFX">
+            <summary>
+            Class for adding skin-specific effect replacements for SkinDefs.
+            </summary>
+        </member>
+        <member name="T:R2API.SkinVFX.OnEffectSpawnedDelegate">
+            <summary>
+            Called when a skin-specific effect is ready to be modified.
+            </summary>
+            <param name="spawnedEffect">The effect that was spawned.</param>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,RoR2.EffectIndex,UnityEngine.GameObject)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">The EffectIndex of the effect that should be replaced.</param>
+            <param name="replacementPrefab">A replacement prefab to spawn instead of the effect. To modify the normal prefab, see the overload with OnEffectSpawnedDelegate.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,System.String,UnityEngine.GameObject)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">The name of the effect that should be replaced.</param>
+            <param name="replacementPrefab">A delegate that will be called when the effect is spawned by a character with a matching SkinDef.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,UnityEngine.GameObject,UnityEngine.GameObject)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">The the effect that should be replaced.</param>
+            <param name="replacementPrefab">A delegate that will be called when the effect is spawned by a character with a matching SkinDef.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,RoR2.EffectIndex,R2API.SkinVFX.OnEffectSpawnedDelegate)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">The EffectIndex of the effect that should be replaced.</param>
+            <param name="onEffectSpawned">A delegate that will be called when the effect is spawned by a character with a matching SkinDef.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,System.String,R2API.SkinVFX.OnEffectSpawnedDelegate)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">Name of the effect that should be replaced.</param>
+            <param name="onEffectSpawned">A delegate that will be called when the effect is spawned by a character with a matching SkinDef.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(RoR2.SkinDef,UnityEngine.GameObject,R2API.SkinVFX.OnEffectSpawnedDelegate)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinDef">The SkinDef that should be required for the replacement to occur.</param>
+            <param name="targetEffect">The effect prefab that should be replaced.</param>
+            <param name="onEffectSpawned">A delegate that will be called when the effect is spawned by a character with a matching SkinDef.</param>
+            <returns>The SkinVFXInfo created from the input.</returns>
+        </member>
+        <member name="M:R2API.SkinVFX.AddSkinVFX(R2API.SkinVFXInfo)">
+            <summary>
+            Adds a skin-specific effect replacement.
+            </summary>
+            <param name="skinVFXInfo">The SkinVFXInfo to register. Its Identifier field will be automatically assigned by this method.</param>
+            <returns>True on success, false otherwise.</returns>
+        </member>
+        <member name="T:R2API.SkinVFXInfo">
+            <summary>
+            A container struct for a skin-specific VFX.
+            When the specified VFX would be spawned and the spawner's SkinDef matches, it will be modified by the values here.
+            Call AddSkinVFX() to register this. 
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.RequiredSkin">
+            <summary>
+            SkinDef required before this replacement is applied.
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.TargetEffect">
+            <summary>
+            EffectIndex of the effect that should be replaced.
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.ReplacementEffectPrefab">
+            <summary>
+            A replacement prefab to spawn instead of the effect. This will be used instead of OnEffectSpawn if assigned.
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.OnEffectSpawned">
+            <summary>
+            A delegate that will be called when the effect is spawned by a character with a matching SkinDef.
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.Identifier">
+            <summary>
+            An identifier used to track whether or not this effect met the skin condition. This will be automatically assigned, and shouldn't be modified.
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.EffectPrefab">
+            <summary>
+            The prefab of the effect that should be replaced. This will automatically fill out TargetEffect on EffectCatalog.Init
+            </summary>
+        </member>
+        <member name="F:R2API.SkinVFXInfo.EffectString">
+            <summary>
+            The name of the effect that should be replaced. This will automatically fill out TargetEffect on EffectCatalog.Init
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

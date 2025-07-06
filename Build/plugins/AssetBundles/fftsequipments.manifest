@@ -1,0 +1,88 @@
+ManifestFileVersion: 0
+CRC: 1137827220
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 87dbdd662fa4b73c2ddbbb55ceb01651
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d57348b8dc00cf6ca1f2fbdb215ec903
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1931460509, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1580175318, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayDictionaryEntry
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayRule
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
+  ClassName: RoR2.MageElement
+Assets:
+- Assets/FotSAssets/Equipment/EnergyBar/acEnergyBar.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/nsedMoonshineUse.asset
+- Assets/FotSAssets/Equipment/EnergyBar/EnergyBar.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/MoonshineFlask.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineEmission.png
+- Assets/FotSAssets/Equipment/MoonshineFlask/bdMoonshineFlask.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/acMoonshineFlask.asset
+- Assets/FotSAssets/Equipment/EnergyBar/iddEnergyBar.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/matMoonshineFlask.mat
+- Assets/FotSAssets/Equipment/EnergyBar/nsedEnergyBar.asset
+- Assets/FotSAssets/Equipment/EnergyBar/EnergyBarDiffuse.png
+- Assets/FotSAssets/Equipment/MoonshineFlask/bdMoonshineStack.asset
+- Assets/FotSAssets/Equipment/EnergyBar/bdEnergyBar.asset
+- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineIcon.png
+- Assets/FotSAssets/Equipment/MoonshineFlask/DisplayMoonshineFlask.prefab
+- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineNormal.png
+- Assets/FotSAssets/Equipment/EnergyBar/PickupEnergyBar.prefab
+- Assets/FotSAssets/Equipment/MoonshineFlask/PickupMoonshineFlask.prefab
+- Assets/FotSAssets/Equipment/MoonshineFlask/iddMoonshineFlask.asset
+- Assets/FotSAssets/Equipment/EnergyBar/barBuffIcon.png
+- Assets/FotSAssets/Equipment/EnergyBar/Bar.mesh
+- Assets/FotSAssets/Equipment/EnergyBar/BarIcon.png
+- Assets/FotSAssets/Equipment/EnergyBar/EnergyBarNormal.png
+- Assets/FotSAssets/Equipment/MoonshineFlask/DrunkIcon.png
+- Assets/FotSAssets/Equipment/EnergyBar/DisplayEnergyBar.prefab
+- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineDiffuse.png
+- Assets/FotSAssets/Equipment/MoonshineFlask/meshMoonshine.mesh
+- Assets/FotSAssets/Equipment/EnergyBar/matEnergyBar.mat
+Dependencies:
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain

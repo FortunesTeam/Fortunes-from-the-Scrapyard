@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Stages</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.StageRegistration">
+            <summary>
+            Class for adding and registering SceneDefs
+            </summary>
+        </member>
+        <member name="M:R2API.StageRegistration.AddSceneDef(RoR2.SceneDef,BepInEx.PluginInfo)">
+            <summary>
+            Adds a SceneDef to your Mod's ContentPack
+            </summary>
+            <param name="sceneDef">The SceneDef to add</param>
+            <param name="plugin">Your mod plugin</param>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneCollections">
+            <summary>
+            A debug util to print each SceneDef in a loop and their respective Weights.
+            </summary>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneCollections(System.Int32)">
+            <summary>
+            A debug util to print each SceneDef in a loop and their respective Weights.
+            </summary>
+            <param name="stageNumber">The stages in that stage position</param>
+        </member>
+        <member name="M:R2API.StageRegistration.PrintSceneVariants(System.String)">
+            <summary>
+            A debug util to print each Scene variant of a specific locale.
+            </summary>
+            <param name="key">The baseSceneName (ie. "golemplains")</param>
+        </member>
+        <member name="M:R2API.StageRegistration.RegisterSceneDefToLoop(RoR2.SceneDef)">
+            <summary>
+            Registers the SceneDef into the loop. This method doesn't support extra parameters, use RegisterSceneDefToNormalProgression instead.
+            </summary>
+            <param name="sceneDef">The SceneDef being registered</param>
+        </member>
+        <member name="M:R2API.StageRegistration.RegisterSceneDefToNormalProgression(RoR2.SceneDef,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Registers the SceneDef into the normal stage progression (not Path of the Colossus). Any SceneDef registered with the same baseSceneName as another SceneDef will be counted as a variant.
+            </summary>
+            <param name="sceneDef">The SceneDef being registered</param>
+            <param name="weight">The weight of the SceneDef being rolled in the SceneCollection</param>
+            <param name="preLoop">If the stage will roll pre-loop: if the current stage is between 1-5 </param>
+            <param name="postLoop">If the stage will roll post-loop: if the current stage is greater than 5 </param>
+        </member>
+        <member name="M:R2API.StageRegistration.MakeBazaarSeerMaterial(UnityEngine.Texture2D)">
+            <summary>
+            Returns a material for the bazaar seers.
+            </summary>
+            <param name="texture">The texture to be put in the material</param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.StageRegistration.MakeBazaarSeerMaterial(RoR2.SceneDef)">
+            <summary>
+            Returns a material for the bazaar seers.
+            </summary>
+            <param name="sceneDef">The SceneDef to be used to make the material. A preview texture must be in the SceneDef.</param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.StageRegistration.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

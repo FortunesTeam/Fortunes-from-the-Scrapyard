@@ -1,0 +1,299 @@
+ManifestFileVersion: 0
+CRC: 3458367980
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 57957b8b369135e074899b6b03153533
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b68f9600b9070f65beb84f47d544cfd1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1132406345, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1985007777, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1783796254, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 511512695, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 678291247, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -46258121, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -226763392, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -335047464, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1294804675, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1931460509, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1848696948, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -317677761, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -270136354, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1819008361, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 664490745, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1895344032, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 816898038, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -130519023, guid: b2ac317a67c468eb8fd6ed06da7572d4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 831147854, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayDictionaryEntry
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayRule
+- AssemblyName: RoR2
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
+  ClassName: RoR2.DamageTypeCombo
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: Wwise
+  ClassName: AkGameObjListenerList
+- AssemblyName: Wwise
+  ClassName: AkGameObjPositionOffsetData
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
+Assets:
+- Assets/FFTSAssets/Items/RoughReception/PickupRoughReception.prefab
+- Assets/FFTSAssets/Items/SprayCan/SprayCanIcon.png
+- Assets/FFTSAssets/Items/Takeout/VFX/Sphere, Unwrapped.asset
+- Assets/FFTSAssets/Items/BrokenHeadphones/bdBrokenHeadphonesDisorient.asset
+- Assets/FFTSAssets/Items/LostRecord/matLostRecord.mat
+- Assets/FFTSAssets/Items/Multitool/MultiTool.mesh
+- Assets/FFTSAssets/Items/DuctTape/matDuctTape.mat
+- Assets/FFTSAssets/Items/SprayCan/DisplaySprayCan.prefab
+- Assets/FFTSAssets/Items/Multitool/matMultitool.mat
+- Assets/FFTSAssets/Items/SprayCan/SprayCanConsumedIcon.png
+- Assets/FFTSAssets/Items/SprayCan/VFX/matBoomGraffiti.mat
+- Assets/FFTSAssets/Items/Takeout/PickupTakeout.prefab
+- Assets/FFTSAssets/Items/BrokenHeadphones/BrokenHeadphones_Normal.PNG
+- Assets/FFTSAssets/Items/SprayCan/VFX/matWhoopsGraffiti.mat
+- Assets/FFTSAssets/Items/CounterfeitCurrency/CounterfeitIcon.png
+- Assets/FFTSAssets/Items/Takeout/ChickenRangeIndicator.prefab
+- Assets/FFTSAssets/Items/Takeout/bdTakeoutSpeed.asset
+- Assets/FFTSAssets/Items/Takeout/VFX/matChickenRing.mat
+- Assets/FFTSAssets/Items/CounterfeitCurrency/PickupCounterfeit.prefab
+- Assets/FFTSAssets/Items/CounterfeitCurrency/CounterfeitMesh.mesh
+- Assets/FFTSAssets/Items/Takeout/VFX/matPotstickerRing.mat
+- Assets/FFTSAssets/Items/FaultyTurbo/acFaultyTurbo.asset
+- Assets/FFTSAssets/Items/Takeout/NoodlesRangeIndicator.prefab
+- Assets/FFTSAssets/Items/LethalInjection/LethalInjection.asset
+- Assets/FFTSAssets/Items/BrokenHeadphones/DisplayBrokenHeadphones.prefab
+- Assets/FFTSAssets/Items/DuctTape/texDuctTapeBuffIcon.png
+- Assets/FFTSAssets/Items/DuctTape/DisplayDuctTape.prefab
+- Assets/FFTSAssets/Items/SprayCan/Spraycan_Base_Color.PNG
+- Assets/FFTSAssets/Items/DuctTape/meshDuctTape.mesh
+- Assets/FFTSAssets/Items/Multitool/MultitoolIcon.png
+- Assets/FFTSAssets/Items/LethalInjection/DisplayLethalInjection.prefab
+- Assets/FFTSAssets/Items/RoughReception/mdlRoughReception.prefab
+- Assets/FFTSAssets/Items/Takeout/bdNoodles.asset
+- Assets/FFTSAssets/Items/Takeout/bdTakeoutRegen.asset
+- Assets/FFTSAssets/Items/Takeout/TakeoutChickenCD.png
+- Assets/FFTSAssets/Items/LethalInjection/headacheBuffIcon.png
+- Assets/FFTSAssets/Items/LethalInjection/LethSyringe_Normal.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/PickupBrokenHeadphones.prefab
+- Assets/FFTSAssets/Items/CounterfeitCurrency/acCounterfeitCurrency.asset
+- Assets/FFTSAssets/Items/Takeout/bdTakeoutDmg.asset
+- Assets/FFTSAssets/Items/Multitool/DisplayMultitool.prefab
+- Assets/FFTSAssets/Items/LethalInjection/LethalIcon.png
+- Assets/FFTSAssets/Items/LostRecord/VFX/matNote.mat
+- Assets/FFTSAssets/Items/LethalInjection/iddLethalInjection.asset
+- Assets/FFTSAssets/Items/SprayCan/SprayCanConsumed.asset
+- Assets/FFTSAssets/Items/LostRecord/texLostRecordIcon.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/matBrokenHeadphones.mat
+- Assets/FFTSAssets/Items/LostRecord/meshLostRecord.mesh
+- Assets/FFTSAssets/Items/Multitool/acMultitool.asset
+- Assets/FFTSAssets/Items/Takeout/matTakeout.mat
+- Assets/FFTSAssets/Items/Multitool/Multitool_Normal.PNG
+- Assets/FFTSAssets/Items/RoughReception/RoughReceptionAnimator.controller
+- Assets/FFTSAssets/Items/Multitool/MultitoolConsumedIcon.png
+- Assets/FFTSAssets/Items/Multitool/PickupMultitool.prefab
+- Assets/FFTSAssets/Items/SprayCan/VFX/matPuff.mat
+- Assets/FFTSAssets/Items/BrokenHeadphones/meshBrokenHeadphones.mesh
+- Assets/FFTSAssets/Items/RoughReception/acRoughReception.asset
+- Assets/FFTSAssets/Items/Takeout/TakeoutNoodles.png
+- Assets/FFTSAssets/Items/Multitool/Multitool.asset
+- Assets/FFTSAssets/Items/SprayCan/VFX/texWhoopsGraffiti.png
+- Assets/FFTSAssets/Items/LethalInjection/bdLethalInjection.asset
+- Assets/FFTSAssets/Items/Takeout/VFX/matNoodleRing.mat
+- Assets/FFTSAssets/Items/LostRecord/acLostRecord.asset
+- Assets/FFTSAssets/Items/Takeout/TakeoutChicken.png
+- Assets/FFTSAssets/Items/FaultyTurbo/DisplayFaultyTurbo.prefab
+- Assets/FFTSAssets/Items/CounterfeitCurrency/DisplayCounterfeit.prefab
+- Assets/FFTSAssets/Items/Multitool/MultitoolConsumed.asset
+- Assets/FFTSAssets/Items/FaultyTurbo/turboBuffIcon.png
+- Assets/FFTSAssets/Items/FaultyTurbo/PickupFaultyTurbo.prefab
+- Assets/FFTSAssets/Items/SprayCan/iddSprayCan.asset
+- Assets/FFTSAssets/Items/LethalInjection/LethSyringe_Base_Color1.PNG
+- Assets/FFTSAssets/Items/BrokenHeadphones/BrokenHeadphonesIcon.png
+- Assets/FFTSAssets/Items/LostRecord/DisplayLostRecord.prefab
+- Assets/FFTSAssets/Items/DuctTape/DuctTape.asset
+- Assets/FFTSAssets/Items/DuctTape/iddDuctTape.asset
+- Assets/FFTSAssets/Items/FaultyTurbo/matFaultyTurbo.mat
+- Assets/FFTSAssets/Items/DuctTape/nsedDuctTapeActive.asset
+- Assets/FFTSAssets/Items/Takeout/bdPotstickers.asset
+- Assets/FFTSAssets/Items/LostRecord/PickupLostRecord.prefab
+- Assets/FFTSAssets/Items/BrokenHeadphones/BrokenHeadphones_Base_Color.PNG
+- Assets/FFTSAssets/Items/BrokenHeadphones/VFX/texSwirl.png
+- Assets/FFTSAssets/Items/RoughReception/texLoaderKitty.png
+- Assets/FFTSAssets/Items/RoughReception/DisplayRoughReception.prefab
+- Assets/FFTSAssets/Items/SprayCan/PickupSprayCan.prefab
+- Assets/FFTSAssets/Items/Takeout/iddTakout.asset
+- Assets/FFTSAssets/Items/SprayCan/VFX/texBadgerGraffiti.png
+- Assets/FFTSAssets/Items/FaultyTurbo/meshFan.mesh
+- Assets/FFTSAssets/Items/BrokenHeadphones/acBrokenHeadphones.asset
+- Assets/FFTSAssets/Items/LethalInjection/LethalInjectionPrefab.prefab
+- Assets/FFTSAssets/Items/Takeout/bdChickenCooldown.asset
+- Assets/FFTSAssets/Items/BrokenHeadphones/iddBrokenHeadphones.asset
+- Assets/FFTSAssets/Items/DuctTape/PickupDuctTape.prefab
+- Assets/FFTSAssets/Items/RoughReception/matRoughReception.mat
+- Assets/FFTSAssets/Items/FaultyTurbo/texFaultyTurbo.png
+- Assets/FFTSAssets/Items/Takeout/PotstickersRangeIndicator.prefab
+- Assets/FFTSAssets/Items/LostRecord/weeze.png
+- Assets/FFTSAssets/Items/DuctTape/acDuctTape.asset
+- Assets/FFTSAssets/Items/LostRecord/VFX/texNote.png
+- Assets/FFTSAssets/Items/LethalInjection/PickupLethalInjection.prefab
+- Assets/FFTSAssets/Items/DuctTape/texDuctTape.png
+- Assets/FFTSAssets/Items/LostRecord/iddLostRecord.asset
+- Assets/FFTSAssets/Items/Multitool/Multitool_Base_Color.PNG
+- Assets/FFTSAssets/Items/SprayCan/VFX/texBoomGraffiti.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/VFX/texRampVisualEffect.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/BrokenHeadphonesShockwaveEffect.prefab
+- Assets/FFTSAssets/Items/Takeout/TakeoutGyoza.png
+- Assets/FFTSAssets/Items/Multitool/iddMultiTool.asset
+- Assets/FFTSAssets/Items/RoughReception/meshRoughReception.mesh
+- Assets/FFTSAssets/Items/CounterfeitCurrency/bdCounterfeitLimit.asset
+- Assets/FFTSAssets/Items/CounterfeitCurrency/CounterfeitCurrency.asset
+- Assets/FFTSAssets/Items/LethalInjection/acLethalInjection.asset
+- Assets/FFTSAssets/Items/SprayCan/bdSprayCanReady.asset
+- Assets/FFTSAssets/Items/FaultyTurbo/bdFaultyTurbo.asset
+- Assets/FFTSAssets/Items/RoughReception/LoaderKittyEmission.png
+- Assets/FFTSAssets/Items/SprayCan/SprayCanMesh.mesh
+- Assets/FFTSAssets/Items/SprayCan/VFX/matFightGraffiti.mat
+- Assets/FFTSAssets/Items/Takeout/Takeout.asset
+- Assets/FFTSAssets/Items/Takeout/VFX/donut8Mesh.asset
+- Assets/FFTSAssets/Items/SprayCan/VFX/texHydroGraffiti.png
+- Assets/FFTSAssets/Items/RoughReception/mdlRoughReception.fbx
+- Assets/FFTSAssets/Items/BrokenHeadphones/BrokenHeadphones.asset
+- Assets/FFTSAssets/Items/LethalInjection/LethInjMesh.mesh
+- Assets/FFTSAssets/Items/CounterfeitCurrency/iddCounterfeitCurrency.asset
+- Assets/FFTSAssets/Items/CounterfeitCurrency/texCounterfeit.png
+- Assets/FFTSAssets/Items/DuctTape/texDuctTapeIcon.png
+- Assets/FFTSAssets/Items/LethalInjection/matLethalGas.mat
+- Assets/FFTSAssets/Items/LostRecord/LostRecord.asset
+- Assets/FFTSAssets/Items/RoughReception/LoaderKitty.png
+- Assets/FFTSAssets/Items/SprayCan/bdSprayCanCooldown.asset
+- Assets/FFTSAssets/Items/SprayCan/SprayCanEffect.prefab
+- Assets/FFTSAssets/Items/SprayCan/matSprayCan.mat
+- Assets/FFTSAssets/Items/RoughReception/iddRoughReception.asset
+- Assets/FFTSAssets/Items/DuctTape/bdDuctTape.asset
+- Assets/FFTSAssets/Items/FaultyTurbo/FaultyTurboIcon.png
+- Assets/FFTSAssets/Items/SprayCan/Spraycan_Normal.PNG
+- Assets/FFTSAssets/Items/SprayCan/VFX/texWhisperGraffiti.png
+- Assets/FFTSAssets/Items/SprayCan/VFX/texFightGraffiti.png
+- Assets/FFTSAssets/Items/SprayCan/texSprayCanIcon.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/VFX/matBrokenHeadphonesFlash.mat
+- Assets/FFTSAssets/Items/LethalInjection/matLethalInjection.mat
+- Assets/FFTSAssets/Items/FaultyTurbo/iddFaultyTurbo.asset
+- Assets/FFTSAssets/Items/BrokenHeadphones/VFX/matBrokenHeadphonesSwirl.mat
+- Assets/FFTSAssets/Items/Takeout/TakeoutBox_Normal.PNG
+- Assets/FFTSAssets/Items/LethalInjection/LethalInjectionGhost.prefab
+- Assets/FFTSAssets/Items/Takeout/acTakeout.asset
+- Assets/FFTSAssets/Items/SprayCan/acSprayCan.asset
+- Assets/FFTSAssets/Items/LostRecord/texLostRecordNormal.png
+- Assets/FFTSAssets/Items/Takeout/DisplayTakeout.prefab
+- Assets/FFTSAssets/Items/Takeout/bdChicken.asset
+- Assets/FFTSAssets/Items/Takeout/TakeoutIcon.png
+- Assets/FFTSAssets/Items/BrokenHeadphones/DisorientBuffIcon.png
+- Assets/FFTSAssets/Items/Takeout/TakeoutMEsh.mesh
+- Assets/FFTSAssets/Items/Takeout/takeoutBuffIcon.png
+- Assets/FFTSAssets/Items/LethalInjection/LethalInjectionSoundDef.asset
+- Assets/FFTSAssets/Items/LostRecord/WeezerEffect.prefab
+- Assets/FFTSAssets/Items/SprayCan/Spraycan_Emission.PNG
+- Assets/FFTSAssets/Items/CounterfeitCurrency/matCounterfeit.mat
+- Assets/FFTSAssets/Items/RoughReception/RoughReception.asset
+- Assets/FFTSAssets/Items/Takeout/TakeoutBox_Base_Color.PNG
+- Assets/FFTSAssets/Items/FaultyTurbo/FaultyTurbo.asset
+- Assets/FFTSAssets/Items/SprayCan/SprayCan.asset
+Dependencies:
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain

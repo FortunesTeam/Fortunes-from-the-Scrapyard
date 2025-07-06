@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Configurations>Release;Debug;Mystical;Whoever1;Whoever2</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Whoever2|AnyCPU'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Whoever1|AnyCPU'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Mystical|AnyCPU'">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="nuget.config" />
+  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="ShaderSwapper">
+			<HintPath>..\libs\ShaderSwapper.dll</HintPath>
+		</Reference>
+		<Reference Include="MSU">
+			<HintPath>..\libs\MSU.Runtime.dll</HintPath>
+		</Reference>
+		
+		
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Analyzers" Version="1.0.*">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="R2API" Version="5.0.5" />
+		<PackageReference Include="R2API.Addressables" Version="1.0.4" />
+		<PackageReference Include="R2API.Animations" Version="1.1.1" />
+		<PackageReference Include="R2API.Elites" Version="1.0.7" />
+		<PackageReference Include="R2API.Items" Version="1.0.7" />
+		<PackageReference Include="R2API.Skills" Version="1.0.2" />
+		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.3.9-r.0" />
+		<PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
+		<PackageReference Include="R2API.Prefab" Version="1.*" />
+		<PackageReference Include="R2API.RecalculateStats" Version="1.6.0" />
+		<PackageReference Include="R2API.Sound" Version="1.*" />
+		<PackageReference Include="R2API.ProcType" Version="1.*" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Content\InDev\Elites\" />
+	</ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="REM follow the Building Your Mod page on the henrytutorial wiki for more information on this&#xD;&#xA;REM change this to your username (or add yours if you're working in a team or somethin)&#xD;&#xA;if &quot;$(Username)&quot; == &quot;marsh&quot; set build=true&#xD;&#xA;&#xD;&#xA;if defined build (&#xD;&#xA;&#xD;&#xA;REM copy the built mod to our Build folder&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\Build\plugins&quot;&#xD;&#xA;&#xD;&#xA;REM copy the assetbundle from our unity project to our Build folder&#xD;&#xA;REM change these paths to your (now hopefully renamed) folders&#xD;&#xA;if exist &quot;$(ProjectDir)..\FortunesUnityProject\AssetBundles\lieutenantassetbundle&quot; (&#xD;&#xA;copy &quot;$(ProjectDir)..\FortunesUnityProject\AssetBundles\lieutenantassetbundle&quot; &quot;$(ProjectDir)..\Build\plugins\AssetBundles&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;REM copy the whole Build\plugins folder into your r2modman profile. This mimics how r2modman will install your mod&#xD;&#xA;&#xD;&#xA;Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;$(ProjectDir)..\FortunesUnityProject\Packages\FortunesFromTheScrapyard&quot;&#xD;&#xA;&#xD;&#xA;if $(ConfigurationName) == Mystical (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;B:\r2modman-profiles\RiskOfRain2\profiles\Insanity2\BepInEx\plugins\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA;)&#xD;&#xA;if $(ConfigurationName) == Whoever1 (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;targetpluginspath\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA;)&#xD;&#xA;if $(ConfigurationName) == Whoever2 (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;targetpluginspath\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;)&#xD;&#xA;" />
+  </Target>
+	<Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+		<ItemGroup>
+			<ReferencePath Condition="'%(FileName)' == 'Rewired_CSharp'">
+				<Aliases>Rewired_CSharp_NS</Aliases>
+			</ReferencePath>
+
+			<ReferencePath Condition="'%(FileName)' == 'Rewired_Core'">
+				<Aliases>Rewired_Core_NS</Aliases>
+			</ReferencePath>
+		</ItemGroup>
+	</Target>
+</Project>

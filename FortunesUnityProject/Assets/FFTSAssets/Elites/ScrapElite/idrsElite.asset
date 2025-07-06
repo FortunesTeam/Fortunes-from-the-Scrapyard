@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: idrsElite
+  m_EditorClassIdentifier: 
+  namedItemRuleGroups: []
+  namedEquipmentRuleGroups: []
+  keyAssetRuleGroups:
+  - keyAsset: {fileID: 11400000, guid: d67eb310a2b07de409467afec93fb0b2, type: 2}
+    displayRuleGroup:
+      rules:
+      - ruleType: 0
+        followerPrefab: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        childName: 
+        localPos: {x: 0, y: 0, z: 0}
+        localAngles: {x: 0, y: 0, z: 0}
+        localScale: {x: 0, y: 0, z: 0}
+        limbMask: 0
+      - ruleType: 0
+        followerPrefab: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        childName: 
+        localPos: {x: 0, y: 0, z: 0}
+        localAngles: {x: 0, y: 0, z: 0}
+        localScale: {x: 0, y: 0, z: 0}
+        limbMask: 0
+      - ruleType: 0
+        followerPrefab: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        childName: 
+        localPos: {x: 0, y: 0, z: 0}
+        localAngles: {x: 0, y: 0, z: 0}
+        localScale: {x: 0, y: 0, z: 0}
+        limbMask: 0

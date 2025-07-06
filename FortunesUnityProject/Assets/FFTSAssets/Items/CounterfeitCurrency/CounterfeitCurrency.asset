@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: CounterfeitCurrency
+  m_EditorClassIdentifier: 
+  deprecatedTier: 3
+  _itemTierDef: {fileID: 0}
+  nameToken: FFTS_ITEM_COUNTERFEITCURRENCY_NAME
+  pickupToken: FFTS_ITEM_COUNTERFEITCURRENCY_PICKUP
+  descriptionToken: FFTS_ITEM_COUNTERFEITCURRENCY_DESCRIPTION
+  loreToken: FFTS_ITEM_COUNTERFEITCURRENCY_LORE
+  unlockableDef: {fileID: 0}
+  pickupModelPrefab: {fileID: 7220967244448969959, guid: d4714b6afd74ebc47afeff325495f8b8,
+    type: 3}
+  pickupIconSprite: {fileID: 21300000, guid: 69eab75649a670d45a5456a082434ffd, type: 3}
+  isConsumed: 0
+  hidden: 0
+  canRemove: 1
+  tags: 03000000040000000500000014000000
+  requiredExpansion: {fileID: 11400000, guid: 081dc6ffa58f0f74a9b6b7232f7d6bf5, type: 2}

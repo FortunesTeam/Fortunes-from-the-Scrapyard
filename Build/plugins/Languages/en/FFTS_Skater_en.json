@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "FFTS_SKATER_NAME": "Sex Machine",
+    "FFTS_SKATER_SUBTITLE": "Crowd Controller",
+    "FFTS_SKATER_DESCRIPTION": "wet.",
+
+	"FFTS_SKATER_PASSIVE_NAME": "Speedster",
+    "FFTS_SKATER_PASSIVE_DESCRIPTION": "nyoom.",
+	
+    "FFTS_SKATER_PRIMARY_NAME": "Silly Shoot",
+    "FFTS_SKATER_PRIMARY_DESCRIPTION": "Shoot dual pew guns for speedy damage.",
+	
+    "FFTS_SKATER_SECONDARY_NAME": "booble",
+    "FFTS_SKATER_SECONDARY_DESCRIPTION": "bigger than skater's, somehow.",
+	
+    "FFTS_SKATER_UTILITY_NAME": "Slip n' Slide",
+    "FFTS_SKATER_UTILITY_DESCRIPTION": "Slide along the ground, maintaining the trick counter, spreading foam and then launch into the air.",
+	
+    "FFTS_SKATER_SPECIAL_NAME": "Ass Sniper",
+    "FFTS_SKATER_SPECIAL_DESCRIPTION": "Except you're literally sniping people with your ass.",
+
+    "FFTS_SKATER_LORE": "suck",
+    "FFTS_SKATER_OUTRO_FLAVOR": "..and so she skated, skating to skate her next skate.",
+    "FFTS_SKATER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "...thug",
+  }
+}

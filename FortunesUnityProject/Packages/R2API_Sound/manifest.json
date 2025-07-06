@@ -1,0 +1,14 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_Sound",
+  "description": "API for adding custom sounds or musics",
+  "version_number": "1.0.3",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2109",
+    "RiskofThunder-HookGenPatcher-1.2.3",
+    "RiskofThunder-R2API_Core-5.1.1",
+    "RiskofThunder-R2API_ContentManagement-1.0.5"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_Sound"
+}

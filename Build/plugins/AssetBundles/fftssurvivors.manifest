@@ -1,0 +1,419 @@
+ManifestFileVersion: 0
+CRC: 1278757223
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ba7821f3f691a57807a3fbb10e4f0004
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: adf8e45a3ad308b9a412a9952d0ac3b1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1985007777, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
+  Script: {fileID: 1143142494, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1788389205, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 488236779, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 511512695, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1490543093, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 678291247, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 422384671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1811796171, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -46258121, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1845404088, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1067940895, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -197296741, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 953270592, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1277448904, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1077198318, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -2096938146, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1530905962, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 161585894, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -226763392, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 802132372, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -365436499, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -146705984, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -202159943, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1792105662, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1549848242, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -359660931, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1512185436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1578512655, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1533710874, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1630511094, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1848696948, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -270136354, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1819008361, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -517518216, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -789927658, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 952828898, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1627637702, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1881990681, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -315171339, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1895344032, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1561644061, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 816898038, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: -1568778350, guid: 050936fea8909af15a3fd3b64da1ff83, type: 3}
+- Class: 114
+  Script: {fileID: 1667754706, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -1004909643, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -754211069, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -1350745802, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 1186219863, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -2101996188, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -565807913, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 1030275901, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -793381914, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 319
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: RoR2
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: RoR2
+  ClassName: EntityStates.SerializableEntityStateType
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterFlightParameters
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterGravityParameters
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
+  ClassName: RoR2.DamageTypeCombo
+- AssemblyName: RoR2
+  ClassName: RoR2.SkillLocator/PassiveSkill
+- AssemblyName: RoR2
+  ClassName: RoR2.Skills.SkillFamily/Variant
+- AssemblyName: RoR2
+  ClassName: RoR2.UI.CrosshairController/SpritePosition
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
+Assets:
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Utility.png
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/animWrecker.controller
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/UtilitySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairOutNibLeft.png
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSecondaryFamily.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/AimMask.mask
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/UtilitySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/acCloaker.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/SpecialSkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerTrackingIndicator.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Primary.png
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkIndicator.png
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerEmission.png
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerPrimaryFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunB_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/matCloaker2.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Special_Stealthed.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Ascend.fbx
+- Assets/FFTSAssets/Survivors/Skater/Skater.controller
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/matWreckerDiskRing.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerAimMask.mask
+- Assets/FFTSAssets/Survivors/Skater/Skills/SkaterSpecialFamily.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/SecondarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker.asset
+- Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Passive.png
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerPitch.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Start_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunL_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/mdlSkater.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Jump.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunBL_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunB.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunR.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Buffs/bdCloakerMarked.asset
+- Assets/FFTSAssets/Survivors/Cloaker/CloakerDisplay.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/matWreckerGun.mat
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerUtilityFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Secondary_Rough_2.png
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkedConsumeEffect.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@IdleIn.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Secondary_Fire.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerGestureMask.mask
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/animWreckerCSS.controller
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/mdlDisk.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@SkillPrimary_Dual02.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/SpecialSkillDef.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Secondary.png
+- Assets/FFTSAssets/Survivors/Wrecker/Wrecker.asset
+- Assets/FFTSAssets/Survivors/Skater/Skater.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerSecondaryFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Primary_Simple.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@SkillPrimary_Dual01.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_03_normal.png
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/mdlDisk.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_03_diffuse.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunR_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/bdSkaterSpeedBuff.asset
+- Assets/FFTSAssets/Survivors/Skater/Skills/PrimarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Jump_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Utility.png
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/matWreckerLightShaft.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_04_diffuse.png
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/SecondaryAltSkillDef.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Secondary_Alt1.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@AimPitch_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Skater/Skills/SkaterSecondaryFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerMarkBackdrop.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Primary.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/FortunesCrosshairsWhisperLock-On.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Sprint.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerParticleFade.png
+- Assets/FFTSAssets/Survivors/Cloaker/matCloaker3.mat
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerDisplay.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/matCloaker4.mat
+- Assets/FFTSAssets/Survivors/Skater/Skills/UtilitySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerPassiveFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/CloakerMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Descend.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/mdlCloaker.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkEffect.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Idle_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/Skills/SpecialSkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerSpecialFamily.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerPassiveFamily.asset
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerBody.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunF_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Special2SkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/CloakerBody.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/WreckerDiskBombGhost.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Fire_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerRangeIndicator.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_02_diffuse.png
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/PassiveAltSkillDef.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSpecialFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Secondary_Idle.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Ascend_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Utility.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@AimPitch.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunBR_Dual.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/WreckerSoundScapeProjectile.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Buffs/bdWreckerSoundBuff.asset
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairOutNibRight.png
+- Assets/FFTSAssets/Survivors/Skater/SkaterMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/GestureMask.mask
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerLeftArmMask.mask
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Special02.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/mdlWrecker.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/mdlCloaker.fbx
+- Assets/FFTSAssets/Survivors/Skater/Skills/SecondarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerRing.mat
+- Assets/FFTSAssets/Survivors/Cloaker/UI/CloakerCrosshair.prefab
+- Assets/FFTSAssets/Survivors/Skater/SkaterDisplay.prefab
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_01_diffuse.png
+- Assets/FFTSAssets/Survivors/Skater/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@CharSelect_Idle.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Idle.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@IdleIn_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@AimYaw.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairInNibRight.png
+- Assets/FFTSAssets/Survivors/Wrecker/matWrecker.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Special01_Dual.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/acWrecker.asset
+- Assets/FFTSAssets/Survivors/Skater/Skills/SkaterUtilityFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunBR.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@AimYaw_Dual.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/Buffs/bdWreckerSlowBuff.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@CharSelect_Intro.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairInNibLeft.png
+- Assets/FFTSAssets/Survivors/Skater/acSkater.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_01_normal.png
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Passive.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/animCloaker.controller
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@LandImpact_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerMark.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Utility_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/SkaterBody.png
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerPrimaryFamily.asset
+- Assets/FFTSAssets/Survivors/Skater/Skills/SkaterPassiveFamily.asset
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerDiffuse.png
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerUtilityFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Special02_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/animCloakerCSS.controller
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Wrecker/mdlWrecker.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/Sphere, Unwrapped.asset
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/Sphere, Unwrapped 1.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Sprint_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairDot.png
+- Assets/FFTSAssets/Survivors/Skater/SkaterBody.prefab
+- Assets/FFTSAssets/Survivors/Skater/Skills/SkaterPrimaryFamily.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Idle_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Special01.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunF.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/UI/FortunesCrosshairsWhisper.png
+- Assets/FFTSAssets/Survivors/Wrecker/texWreckerIcon.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@LandImpact.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/texWreckerBuffPlaceholder.png
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/PrimarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/matCloaker1.mat
+- Assets/FFTSAssets/Survivors/Wrecker/texWreckerGunDiffuse.png
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/matWreckerRingCore.mat
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Secondary_Start.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/animWreckerEmotes.controller
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/CloakerEmotes.controller
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Special_Unstealthed.png
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/donut8Mesh 1.asset
+- Assets/FFTSAssets/Survivors/Skater/HydroFinal.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_04_normal.png
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Descend_Dual.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker_02_normal.png
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerNormalTemp.png
+- Assets/FFTSAssets/Survivors/Cloaker/Buffs/bdCloakerMarkCd.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/PrimarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunBL.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunL.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Skills/SecondarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkedBuffIcon.png
+Dependencies:
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsitems

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1580175318, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  m_Name: acMoonshineFlask
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: f6f2e764c28275446a5e4ef9659fa562, type: 2}
+  - {fileID: 11400000, guid: 5ec8847bbc2e52a499c4cd91494d7850, type: 2}
+  - {fileID: 11400000, guid: 0d6d158eaf813a24fb131ff4513eb32a, type: 2}
+  - {fileID: 11400000, guid: b58725923d5f810439db82a0c379c799, type: 2}
+  itemDisplayPrefabs:
+  - {fileID: 8077648720655750967, guid: c107573f8261aad44ba8c184801610d9, type: 3}
+  equipmentDef: {fileID: 11400000, guid: f6f2e764c28275446a5e4ef9659fa562, type: 2}

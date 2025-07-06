@@ -1,0 +1,13 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_ProcType",
+  "description": "API for registering proc types",
+  "version_number": "1.0.2",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2113",
+    "RiskofThunder-HookGenPatcher-1.2.3",
+    "RiskofThunder-R2API_Core-5.1.5"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_ProcType"
+}

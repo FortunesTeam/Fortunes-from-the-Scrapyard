@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RoR2BepInExPack</name>
+    </assembly>
+    <members>
+        <member name="T:RoR2BepInExPack.VanillaFixes.FixHasEffectiveAuthority">
+            <summary>
+            On a server there is a short time when authority is not assigned yet the object should have authority.
+            Which is the reason for Captain to sometimes not have supply beacon charges.
+            HasEffectiveAuthority makes additional checks to see if object should have authority but not enough.
+            fix: check if clientAuthorityOwner is of type ULocalConnectionToClient
+            </summary>
+        </member>
+        <member name="E:RoR2BepInExPack.VanillaFixes.SaferAchievementManager.OnRegisterAchievementAttributeFound">
+            <summary>
+            Called for each type that implement <see cref="T:RoR2.Achievements.BaseAchievement"/>,
+            the code tries to find a <see cref="T:RoR2.RegisterAchievementAttribute"/> on the type definition
+            and the event is invoked with the POTENTIALLY NULL <see cref="T:RoR2.RegisterAchievementAttribute"/>,
+            the <see cref="T:System.Type"/> is also provided to the event for the subscriber to inspect.
+            The use case for this event is mostly for mod creators to run their own logic for determining if the <see cref="T:RoR2.RegisterAchievementAttribute"/>
+            should be ultimately used for creating an Achievement.
+            </summary>
+        </member>
+        <member name="E:RoR2BepInExPack.VanillaFixes.SaferAchievementManager.OnCollectAchievementDefs">
+            <summary>
+            Called once all <see cref="T:RoR2.AchievementDef"/> have been created
+            by the code that iterates over all types that implemented <see cref="T:RoR2.Achievements.BaseAchievement"/>
+            and <see cref="T:RoR2.RegisterAchievementAttribute"/>.
+            You can add or remove <see cref="T:RoR2.AchievementDef"/> with this event.
+            The use case for this event is mostly for mod creators to run their own code
+            for adding or removing <see cref="T:RoR2.AchievementDef"/> to the game.
+            </summary>
+        </member>
+        <member name="T:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2">
+            <summary>
+            Alternative implementation for ConditionalWeakTable that actually works
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2.Add(`0,`1)">
+            <summary>
+            Add a value for the specified key
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2.Remove(`0)">
+            <summary>
+            Removes a key and its value from the table.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries to get the value of the specified key.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2.GetValue(`0,System.Func{`0,`1})">
+            <summary>
+            Gets the value of the specified key, or creates a new one with defaultFunc and adds it to the table
+            </summary>
+            <param name="key"></param>
+            <param name="defaultFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.FixedConditionalWeakTable`2.GetOrCreateValue(`0)">
+            <summary>
+            Gets the value of the specified key, or creates a new one with default constructor and adds it to the table
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+            <exception cref="T:System.MissingMethodException"></exception>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.NativeDetourExtensions.GenerateTrampolineWithRecursionSupport``1(MonoMod.RuntimeDetour.NativeDetour,System.UInt32)">
+            <summary>
+            Generate a new delegate with which you can invoke the previous state.
+            Instead of an "undo-call-redo" trampoline generated with <see cref="M:MonoMod.RuntimeDetour.NativeDetour.GenerateTrampoline``1"/>
+            copies bytesCount bytes from original method into the trampoline and then puts detour back to the original method,
+            effectively splitting the method.
+            <para/> This way of doing trampoline has restrictions:
+            <para/>    Part of the method that is in trampoline can't have jumps.
+            <para/>    The method split should happen between two instructions,
+                so you need to supply the amount of bytes that is >= 14 (max size of a detour) and is on the edge of an instruction.
+            </summary>
+            <param name="detour">Native detour</param>
+            <param name="bytesCount">The amount of bytes to copy from original method</param>
+        </member>
+        <member name="M:RoR2BepInExPack.Utilities.NativeDetourExtensions.GenerateNativeProxy(MonoMod.RuntimeDetour.NativeDetour,System.Reflection.MethodBase,System.UInt32)">
+            <summary>
+            Generate a method that executes part of the detoured method then jumps to the original method to continue execution
+            </summary>
+            <param name="detour">Native detour</param>
+            <param name="signature">A MethodBase with the target function's signature.</param>
+            <param name="bytesCount">The amount of bytes to copy from original method</param>
+            <returns>The detoured DynamicMethod.</returns>
+        </member>
+    </members>
+</doc>

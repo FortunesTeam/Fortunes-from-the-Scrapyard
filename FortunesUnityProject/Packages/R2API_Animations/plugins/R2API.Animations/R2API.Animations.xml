@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Animations</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.AnimationsAPI">
+            <summary>
+            API for modifying <see cref="T:UnityEngine.RuntimeAnimatorController" />
+            </summary>
+        </member>
+        <member name="M:R2API.AnimationsAPI.AddModifications(System.String,UnityEngine.RuntimeAnimatorController,R2API.AnimatorModifications)">
+            <summary>
+            Add <see cref="T:UnityEngine.RuntimeAnimatorController" /> modifications
+            </summary>
+            <param name="sourceBundlePath">Path to a bundle containing <see cref="T:UnityEngine.RuntimeAnimatorController" />. For game bundles you can do System.IO.Path.Combine(Addressables.RuntimePath, "StandaloneWindows64", "bundle_name")</param>
+            <param name="sourceAnimatorController"><see cref="T:UnityEngine.RuntimeAnimatorController" /> to which modifications would be applied</param>
+            <param name="modifications">Modifications for <see cref="T:UnityEngine.RuntimeAnimatorController" /></param>
+        </member>
+        <member name="M:R2API.AnimationsAPI.AddAnimatorController(UnityEngine.Animator,UnityEngine.RuntimeAnimatorController)">
+            <summary>
+            Mapping <see cref="T:UnityEngine.RuntimeAnimatorController" /> to an <see cref="T:UnityEngine.Animator"/>. After modified controller will be created it will be applied to mapped animator. 
+            </summary>
+            <param name="animator"><see cref="T:UnityEngine.Animator"/> component from a prefab</param>
+            <param name="controller"><see cref="T:UnityEngine.RuntimeAnimatorController"/> that will have modifications applied</param>
+        </member>
+        <member name="F:R2API.AnimationsAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AnimatorModifications">
+            <summary>
+            Modifications for a <see cref="T:UnityEngine.RuntimeAnimatorController"/>
+            </summary>
+        </member>
+        <member name="P:R2API.AnimatorModifications.Key">
+            <summary>
+            A key for caching, calculated from plugin info.
+            </summary>
+        </member>
+        <member name="P:R2API.AnimatorModifications.NewStates">
+            <summary>
+            New states to add. The Key is a layer name to which a state will be added.
+            </summary>
+        </member>
+        <member name="P:R2API.AnimatorModifications.NewTransitions">
+            <summary>
+            New transitions to add. The key is a (layer name, state name)
+            </summary>
+        </member>
+        <member name="P:R2API.AnimatorModifications.NewParameters">
+            <summary>
+            New parameters to add.
+            </summary>
+        </member>
+        <member name="M:R2API.AnimatorModifications.#ctor(BepInEx.BepInPlugin)">
+            <summary>
+            Modifications for a <see cref="T:UnityEngine.RuntimeAnimatorController"/>
+            </summary>
+            <param name="plugin">BepInPlugin instance</param>
+        </member>
+        <member name="M:R2API.AnimatorModifications.WriteBinary(System.IO.BinaryWriter)">
+            <summary>
+            Writing modifications into a binary writer for caching purposes.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:R2API.AnimatorModifications.CreateFromDiff(R2API.Models.AnimatorDiff,BepInEx.BepInPlugin,System.String)">
+            <summary>
+            Creates an <see cref="T:R2API.AnimatorModifications"/> from <see cref="T:R2API.Models.AnimatorDiff"/> created in Unity.
+            </summary>
+            <param name="diff"></param>
+            <param name="plugin"></param>
+            <param name="clipBundlePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

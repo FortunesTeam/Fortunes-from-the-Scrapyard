@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418323186c6d3bf4aa9fab1aa65bef7c, type: 3}
+  m_Name: edScrap
+  m_EditorClassIdentifier: 
+  modifierToken: ELITE_MODIFIER_SCRAP
+  eliteEquipmentDef: {fileID: 11400000, guid: d67eb310a2b07de409467afec93fb0b2, type: 2}
+  color:
+    serializedVersion: 2
+    rgba: 4291401891
+  shaderEliteRampIndex: -1
+  healthBoostCoefficient: 4
+  damageBoostCoefficient: 1
+  devotionLevel: 0
+  eliteTier: 1
+  eliteRamp: {fileID: 2800000, guid: 0e901df432ea86741a6db5f369a8edd7, type: 3}
+  overlayMaterial: {fileID: 2100000, guid: cd7a25a125bfb204a8a0ae2acdb74c6e, type: 2}
+  applyLightColorOverrides: 0
+  particleReplacementMaterial: {fileID: 0}
+  effect: {fileID: 0}

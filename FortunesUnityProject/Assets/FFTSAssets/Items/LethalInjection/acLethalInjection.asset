@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  m_Name: acLethalInjection
+  m_EditorClassIdentifier: 
+  assets:
+  - {fileID: 11400000, guid: 774f57697e39d0c45a3905d9546808d8, type: 2}
+  - {fileID: 11400000, guid: 37f2018afffbfa142b7e18800948e984, type: 2}
+  - {fileID: 3867932828267146543, guid: 44c0b2633014399459838ea8250ea488, type: 3}
+  itemDisplayPrefabs:
+  - {fileID: 3890030943585171948, guid: 2c1fd5176e5fc83449bef4b7cc407720, type: 3}
+  itemDef: {fileID: 11400000, guid: 774f57697e39d0c45a3905d9546808d8, type: 2}

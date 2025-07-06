@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Sound</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.SoundAPI">
+            <summary>
+            API for adding sounds with Wwise
+            </summary>
+        </member>
+        <member name="P:R2API.SoundAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.LoadBanks">
+            <summary>
+            Loads all the banks, called after wwise engine init
+            </summary>
+        </member>
+        <member name="T:R2API.SoundAPI.SoundBanks">
+            <summary>
+            class for SoundBanks to load
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Loaded">
+            <summary>
+            Makes sure to correctly load banks added before or after RoR2.RoR2Application.OnLoad()
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Add(System.Byte[])">
+            <summary>
+            Adds a soundbank to load, returns the ID used for unloading
+            </summary>
+            <param name="bank">byte array of the entire .bnk file</param>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Add(System.String)">
+            <summary>
+            Adds an external soundbank to load, returns the ID used for unloading (.sound files are loaded automatically)
+            </summary>
+            <param name="path">the absolute path to the file</param>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Add(System.String,System.Reflection.Assembly)">
+            <summary>
+            Adds an external soundbank to load, loaded from an embedded resource in the assembly
+            </summary>
+            <param name="resourceName"></param>
+            <param name="owningAssembly"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Remove(System.UInt32)">
+            <summary>
+            Unloads an bank using the ID (ID is returned at the Add() of the bank)
+            </summary>
+            <param name="ID">BankID</param>
+            <returns></returns>
+        </member>
+        <member name="T:R2API.SoundAPI.SoundBanks.Bank">
+            <summary>
+            Class containing all the information of a bank
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank._bankIteration">
+            <summary>
+            Number keeping track of PublicID to give
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.BankDataPtr">
+            <summary>
+            Pointer to bank data
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.BankData">
+            <summary>
+            BankData supplied by the user
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.Memory">
+            <summary>
+            Handle for BankData array
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.Size">
+            <summary>
+            Size of the bank in bytes
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.PublicID">
+            <summary>
+            Identifier for the User
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.Bank.BankID">
+            <summary>
+            Identifier for the engine
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Bank.Load">
+            <summary>
+            Loads the bank into the wwise engine
+            </summary>
+            <returns>True if the bank successfully loaded, false otherwise</returns>
+        </member>
+        <member name="M:R2API.SoundAPI.SoundBanks.Bank.UnLoad">
+            <summary>
+            Unloads the bank from the wwise engine
+            </summary>
+            <returns>The AKRESULT of unloading itself</returns>
+        </member>
+        <member name="F:R2API.SoundAPI.SoundBanks.soundBanks">
+            <summary>
+            List of all the Banks
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.AddNetworkedSoundEvent(RoR2.NetworkSoundEventDef)">
+            <summary>
+            Add a custom network sound event to the list of available network sound events.
+            If this is called after the NetworkSoundEventCatalog inits then this will return false and ignore the custom network sound event.
+            </summary>
+            <param name="networkSoundEventDef">The network sound event def to add.</param>
+            <returns>true if added, false otherwise</returns>
+        </member>
+        <member name="M:R2API.SoundAPI.AddNetworkedSoundEvent(System.String)">
+            <summary>
+            Add a custom network sound event to the list of available network sound events.
+            If this is called after the NetworkSoundEventCatalog inits then this will return false and ignore the custom network sound event.
+            </summary>
+            <param name="eventName">The name of the AKWwise Sound Event to add.</param>
+            <returns>true if added, false otherwise</returns>
+        </member>
+        <member name="T:R2API.SoundAPI.Music">
+            <summary>
+            Class for adding music to the game music system.
+            <see href="https://github.com/risk-of-thunder/R2Wiki/wiki/Custom-Music---WWise">Tutorial available here</see>
+            </summary>
+        </member>
+        <member name="T:R2API.SoundAPI.Music.CustomMusicData">
+            <summary>
+            Class that contains all the needed information
+            for the api to process your custom tracks into
+            the game music system.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.BepInPlugin">
+            <summary>
+            Used for logging purposes.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.PlayMusicSystemEventName">
+            <summary>
+            The event name that is used for firing the whole custom music system.
+            It must be different than the game one which is <see cref="F:R2API.SoundAPI.Music.GameEventNamePlayMusicSystem"></see>.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.BanksFolderPath">
+            <summary>
+            The absolute path of the folder that contains your init bank and your sound bank.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.InitBankName">
+            <summary>
+            Should be different than the game one which is called <see cref="F:R2API.SoundAPI.Music.GameInitBankName"></see>.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.SoundBankName">
+            <summary>
+            The name of the sound bank that contains your music tracks.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicData.SceneDefToTracks">
+            <summary>
+            Dictionary for replacing the main and boss tracks of scene defs.
+            Can be null.
+            </summary>
+        </member>
+        <member name="P:R2API.SoundAPI.Music.CustomMusicData.LoadedInitBankId">
+            <summary>
+            Will be filled after using <see cref="M:R2API.SoundAPI.Music.Add(R2API.SoundAPI.Music.CustomMusicData)"></see> and after the Wwise sound engine get initialized.
+            </summary>
+        </member>
+        <member name="P:R2API.SoundAPI.Music.CustomMusicData.LoadedSoundBankId">
+            <inheritdoc cref="P:R2API.SoundAPI.Music.CustomMusicData.LoadedInitBankId"/>
+        </member>
+        <member name="T:R2API.SoundAPI.Music.MainAndBossTracks">
+            <summary>
+            Contains the two MusicTrackDef that are fired by the game music system depending on the game current state.
+            <see cref="F:RoR2.MusicTrackDef.states"></see> usually have only two states.
+            One <see cref="T:AK.Wwise.State"></see> should serve a similar purpose as the game one called gameplaySongChoice,
+            which is normally used for telling Wwise which track to play.
+            That gameplaySongChoice <see cref="T:AK.Wwise.State"></see> should have a custom group id associated with it which
+            should be different than the game one called gameplaySongChoice.
+            The other <see cref="T:AK.Wwise.State"></see> should have the same group id as the game one which
+            is currently called Music_system and is used for telling the game if
+            its either a Gameplay, a Bossfight, or a Menu track.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.MainAndBossTracks.MainTrack">
+            <inheritdoc cref="T:R2API.SoundAPI.Music.MainAndBossTracks"/>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.MainAndBossTracks.BossTrack">
+            <inheritdoc cref="T:R2API.SoundAPI.Music.MainAndBossTracks"/>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.MainAndBossTracks.#ctor(RoR2.MusicTrackDef,RoR2.MusicTrackDef)">
+            <inheritdoc cref="T:R2API.SoundAPI.Music.MainAndBossTracks"/>
+        </member>
+        <member name="T:R2API.SoundAPI.Music.CustomMusicTrackDef">
+            <summary>
+            Extended <see cref="T:RoR2.MusicTrackDef"/> for a more code based project.
+            This can also be used to an extent by unity editor users as a baseline for whats needed.
+            </summary>
+        </member>
+        <member name="T:R2API.SoundAPI.Music.CustomMusicTrackDef.CustomState">
+            <summary>
+            Struct for storing the wwise state data
+            that will be posted to the wwise engine
+            through <see cref="M:AkSoundEngine.SetState(System.UInt32,System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicTrackDef.CustomState.GroupId">
+            <summary>
+            First arg of <see cref="M:AkSoundEngine.SetState(System.UInt32,System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicTrackDef.CustomState.StateId">
+            <summary>
+            Second arg of <see cref="M:AkSoundEngine.SetState(System.UInt32,System.UInt32)"/>
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicTrackDef.CustomStates">
+            <summary>
+            Iterated in the <see cref="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Play"/> and <see cref="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Stop"/> methods.
+            </summary>
+        </member>
+        <member name="F:R2API.SoundAPI.Music.CustomMusicTrackDef.SoundBankName">
+            <summary>
+            Used in the <see cref="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Preload"/> (which should be called by <see cref="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Play"/>).
+            Can NOT be null or whitespace.
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Preload">
+            <summary>
+            Preload should try to load your music bank with <see cref="F:R2API.SoundAPI.Music.CustomMusicTrackDef.SoundBankName"/>
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Play">
+            <summary>
+            Call Preload and set the states to the Wwise sound engine.
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.CustomMusicTrackDef.Stop">
+            <summary>
+            Set the states to 0 to the Wwise sound engine
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.PauseMusicIfGameMusicBankNotInUse(MonoMod.Cil.ILContext)">
+            <summary>
+            Needed otherwise the vanilla music system plays the default track of the bank on top of the custom music
+            </summary>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.Add(R2API.SoundAPI.Music.CustomMusicData)">
+            <summary>
+            Please refer to the <see cref="T:R2API.SoundAPI.Music.CustomMusicData"/> fields documentation
+            for indication on how to fill the fields properly.
+            </summary>
+            <returns>True if the preliminary checks succeed</returns>
+        </member>
+        <member name="M:R2API.SoundAPI.Music.Remove(R2API.SoundAPI.Music.CustomMusicData)">
+            <summary>
+            Remove everything related to your custom music data.
+            Both the sound banks get unloaded.
+            The scene tracks that were override by your dictionary are restored.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.SoundAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

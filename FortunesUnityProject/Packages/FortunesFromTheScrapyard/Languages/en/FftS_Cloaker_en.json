@@ -1,0 +1,35 @@
+{
+  "strings": {
+    "FFTS_CLOAKER_BODY_NAME": "Cloaker",
+    "FFTS_CLOAKER_BODY_SUBTITLE": "S",
+    "FFTS_CLOAKER_DESCRIPTION": ".",
+	
+    "FFTS_CLOAKER_PASSIVE_NAME": "Cloak",
+    "FFTS_CLOAKER_PASSIVE_DESCRIPTION": "Stealth. Range. Break stealth.",
+	
+    "FFTS_CLOAKER_PASSIVE_ALT1_NAME": "Akimbo",
+    "FFTS_CLOAKER_PASSIVE_ALT1_DESCRIPTION": ".",
+	
+    "FFTS_CLOAKER_PRIMARY_NAME": "Shoot",
+    "FFTS_CLOAKER_PRIMARY_DESCRIPTION": "",
+	
+    "FFTS_CLOAKER_SECONDARY_NAME": "Shoot Harder",
+    "FFTS_CLOAKER_SECONDARY_DESCRIPTION": "",
+	
+    "FFTS_CLOAKER_UTILITY_NAME": "zippy",
+    "FFTS_CLOAKER_UTILITY_DESCRIPTION": "zoomy",
+	
+    "FFTS_CLOAKER_SPECIAL_NAME": "mark enemy while stealthed",
+    "FFTS_CLOAKER_SPECIAL_DESCRIPTION": "they take more damage",
+	
+    "FFTS_CLOAKER_SPECIAL2_NAME": "scream",
+    "FFTS_CLOAKER_SPECIAL2_DESCRIPTION": "riff out for aoe damage",
+	
+	
+	"FFTS_CLOAKER_LORE": ".",
+    "FFTS_CLOAKER_OUTRO_FLAVOR": "..and so he left,",
+    "FFTS_CLOAKER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "..and so he vanished,",
+
+
+  }
+}

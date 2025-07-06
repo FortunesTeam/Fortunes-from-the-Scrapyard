@@ -1,0 +1,124 @@
+ManifestFileVersion: 0
+CRC: 2662560707
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1bebd03a1cf05c0461fbcc21cec63d51
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: eed41732b51ef3894da355afa46e82c9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 871971028, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 418323186c6d3bf4aa9fab1aa65bef7c, type: 3}
+- Class: 114
+  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1931460509, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1247058517, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
+- Class: 114
+  Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayDictionaryEntry
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.ItemDisplayDictionary/DisplayRule
+- AssemblyName: R2API.Addressables
+  ClassName: R2API.AddressReferencedAssets.AddressReferencedEliteDef
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
+  ClassName: RoR2.DisplayRuleGroup
+- AssemblyName: RoR2
+  ClassName: RoR2.ItemDisplayRule
+- AssemblyName: RoR2
+  ClassName: RoR2.ItemDisplayRuleSet/KeyAssetRuleGroup
+- AssemblyName: RoR2
+  ClassName: RoR2.MageElement
+- AssemblyName: RoR2
+  ClassName: RoR2.PickupIndex
+- AssemblyName: RoR2
+  ClassName: Wave
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
+Assets:
+- Assets/FotSAssets/Elites/ScrapElite/acScrapElite.asset
+- Assets/FotSAssets/Elites/ScrapElite/matEliteScrapTrail.mat
+- Assets/FotSAssets/Elites/ScrapElite/mdlEliteScrapCrownL.mesh
+- Assets/FotSAssets/Elites/ScrapElite/PickupScrapElite.prefab
+- Assets/FotSAssets/Elites/ScrapElite/texRampFallboots 1.png
+- Assets/FotSAssets/Elites/ScrapElite/texEngiShieldBlurred.png
+- Assets/FotSAssets/Elites/ScrapElite/texRampScrap.png
+- Assets/FotSAssets/Elites/ScrapElite/mdlHeart.mesh
+- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapElite.prefab
+- Assets/FotSAssets/Elites/ScrapElite/nsedScrapEliteSpawn.asset
+- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownDiffuse2.png
+- Assets/FotSAssets/EliteTiers/WhirlwindSpecialEliteTierDef.asset
+- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownDiffuse.png
+- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownEmission.png
+- Assets/FotSAssets/Elites/ScrapElite/iddScrapElite.asset
+- Assets/FotSAssets/Elites/ScrapElite/ScrapCrown.fbx
+- Assets/FotSAssets/Elites/ScrapElite/matEliteScrapPickup.mat
+- Assets/FotSAssets/Elites/ScrapElite/EliteScrapEquipment.asset
+- Assets/FotSAssets/Elites/ScrapElite/matScrapHologram.mat
+- Assets/FotSAssets/Elites/ScrapElite/mdlEliteScrapCrownR.mesh
+- Assets/FotSAssets/Elites/ScrapElite/bdEliteScrap.asset
+- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapEliteR.prefab
+- Assets/FotSAssets/Elites/ScrapElite/idrsElite.asset
+- Assets/FotSAssets/Elites/ScrapElite/edScrap.asset
+- Assets/FotSAssets/Elites/ScrapElite/matScrapCrown.mat
+- Assets/FotSAssets/Elites/ScrapElite/ScrapAffixEffect.prefab
+- Assets/FotSAssets/Elites/ScrapElite/texScrapEliteIcon.png
+- Assets/FotSAssets/Elites/ScrapElite/texBuffAffixScrap.png
+- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownEmission2.png
+- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapEliteL.prefab
+- Assets/FotSAssets/EliteTiers/WhirlwindEliteTierDef.asset
+- Assets/FotSAssets/Elites/ScrapElite/matScrapCrown2.mat
+Dependencies:
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain
