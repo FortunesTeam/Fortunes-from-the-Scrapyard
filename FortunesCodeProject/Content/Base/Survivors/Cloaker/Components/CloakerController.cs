@@ -34,8 +34,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         public static float baseRestealthCooldown = 7f;
 
         public static float baseGracePeriod = 3f;
-
-        public bool isAkimbo => base.gameObject.GetComponent<CloakerPassive>().isAkimbo;
+        
         private float restealthCooldown;
 
         private float restealthTimer;
@@ -45,6 +44,61 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         public float graceTimer = 0f;
         [HideInInspector]
         public bool passiveCloakOn = false;
+
+        public SkillDef passiveCloakSkillDef;
+
+        public SkillDef passiveAkimboSkillDef;
+
+        public GenericSkill passiveSkillSlot;
+        [HideInInspector]
+        public bool isCloak;
+        [HideInInspector]
+        public bool isAkimbo;
+
+        private bool wasOutOfCombat;
+
+        private void EvaluatePassiveSkill()
+        {
+            isCloak = false;
+            isAkimbo = false;
+            if (passiveSkillSlot)
+            {
+                if (passiveCloakSkillDef)
+                {
+                    isCloak = passiveSkillSlot.skillDef == passiveCloakSkillDef;
+                }
+                if (passiveAkimboSkillDef)
+                {
+                    isAkimbo = passiveSkillSlot.skillDef == passiveAkimboSkillDef;
+                }
+            }
+            indicatorEnabled = isCloak;
+            if (isAkimbo)
+            {
+                SetAkimboActive(true);
+                skillLocator.primary.skillDef.cancelSprintingOnActivation = false;
+                skillLocator.primary.skillDef.mustKeyPress = false;
+            }
+            else
+            {
+                SetAkimboActive(false); 
+                skillLocator.primary.skillDef.cancelSprintingOnActivation = true;
+                skillLocator.primary.skillDef.mustKeyPress = true;
+            }
+        }
+
+        private void SetAkimboActive(bool value)
+        {
+            if (animator)
+            {
+                animator.SetBool("isAkimbo", value);
+                animator.SetFloat("isAkimboFloat", value ? 1 : 0);
+            }
+            if (childLocator)
+            {
+                childLocator.FindChild("DualGunMesh").gameObject.SetActive(value);
+            }
+        }
 
         private bool indicatorEnabled
         {
@@ -58,24 +112,22 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
                 {
                     if (value)
                     {
-                        GameObject original = null;
-
-                        original = Cloaker.CloakerRangeIndicatorPrefab;
-
-                        if (original != null)
+                        if (!nearbyIndicator)
                         {
-                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>().ownerBody = characterBody;
-                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>().cloakerController = this;
-                            original.GetComponentInChildren<CloakerRangeIndicatorComponent>()._teamIndex = characterBody.teamComponent.teamIndex;
-
-                            nearbyIndicator = UnityEngine.Object.Instantiate(original, characterBody.corePosition, Quaternion.identity);
-                            nearbyIndicator.GetComponent<NetworkedBodyAttachment>().AttachToGameObjectAndSpawn(base.gameObject);
+                            nearbyIndicator = UnityEngine.Object.Instantiate(Cloaker.CloakerRangeIndicatorPrefab, characterBody.corePosition, Quaternion.identity);
+                            if (nearbyIndicator)
+                            {
+                                CloakerRangeIndicatorComponent cloakerRangeIndicator = nearbyIndicator.transform.Find("ProximityTrigger").gameObject.GetComponent<CloakerRangeIndicatorComponent>();
+                                cloakerRangeIndicator.ownerBody = characterBody;
+                                cloakerRangeIndicator._teamIndex = characterBody.teamComponent.teamIndex;
+                                cloakerRangeIndicator.cloakerController = this;
+                                nearbyIndicator.GetComponent<NetworkedBodyAttachment>().AttachToGameObjectAndSpawn(base.gameObject);
+                            }
                         }
                     }
-                    else
+                    if (nearbyIndicator)
                     {
-                        UnityEngine.Object.Destroy(nearbyIndicator);
-                        nearbyIndicator = null;
+                        nearbyIndicator.SetActive(value);
                     }
                 }
             }
@@ -89,27 +141,22 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             this.characterModel = modelLocator.modelBaseTransform.GetComponentInChildren<CharacterModel>();
             this.skillLocator = this.GetComponent<SkillLocator>();
             this.skinController = modelLocator.modelTransform.gameObject.GetComponent<ModelSkinController>();
-
-            Invoke("PassiveSetup", 0.5f);
         }
 
-        private void PassiveSetup()
+        private void OnEnable()
         {
-            if (isAkimbo)
+            if (passiveSkillSlot)
             {
-                skillLocator.primary.skillDef.cancelSprintingOnActivation = false;
-                skillLocator.primary.skillDef.mustKeyPress = false;
+                passiveSkillSlot.onSkillChanged += ReevaluatePassiveOnChange;
             }
-            else
-            {
-                skillLocator.primary.skillDef.cancelSprintingOnActivation = true;
-                skillLocator.primary.skillDef.mustKeyPress = true;
-            }
-        }
-
-        private void Start()
-        {
+            Invoke("EvaluatePassiveSkill", Time.fixedDeltaTime);
             SetStealthCooldown();
+            StartGracePeriod();
+        }
+
+        private void ReevaluatePassiveOnChange(GenericSkill skill)
+        {
+            EvaluatePassiveSkill();
         }
 
         public void SetStealthCooldown()
@@ -120,45 +167,95 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         {
             graceTimer = baseGracePeriod;
         }
+        public void ActivateCloak()
+        {
+            if (passiveCloakOn)
+            { 
+                return; 
+            }
+            SetStealthCooldown();
+            restealthTimer = restealthCooldown;
+            passiveCloakOn = true;
+            if (NetworkServer.active)
+            {
+                characterBody.AddBuff(RoR2Content.Buffs.Cloak);
+                characterBody.AddBuff(RoR2Content.Buffs.CloakSpeed);
+            }
+            if (characterBody)
+            {
+                characterBody.onSkillActivatedAuthority += CharacterBody_onSkillActivatedAuthority;
+            }
+        }
+
+        private void CharacterBody_onSkillActivatedAuthority(GenericSkill skill)
+        {
+            if (skill.skillDef.isCombatSkill)
+            {
+                DeactivateCloak();
+            }
+        }
+
+        public void DeactivateCloak()
+        {
+            if (!passiveCloakOn)
+            {
+                return;
+            }
+            SetStealthCooldown();
+            restealthTimer = restealthCooldown;
+            passiveCloakOn = true;
+            if (NetworkServer.active)
+            {
+                characterBody.RemoveBuff(RoR2Content.Buffs.Cloak);
+                characterBody.RemoveBuff(RoR2Content.Buffs.CloakSpeed);
+            }
+            if (characterBody)
+            {
+                characterBody.onSkillActivatedAuthority -= CharacterBody_onSkillActivatedAuthority;
+            }
+        }
 
         private void FixedUpdate()
         {
             if (isAkimbo)
             {
-                passiveCloakOn = false;
                 return;
             }
 
-            if (graceTimer > 0f)
+            /*if (graceTimer > 0f)
             {
                 graceTimer -= Time.fixedDeltaTime;
-            }
-            else graceTimer = 0f;
+                if (characterBody.HasBuff(RoR2Content.Buffs.HiddenInvincibility))
+                {
+                    return;
+                }
+            }*/
 
             if (characterBody.outOfCombat)
             {
-                restealthTimer += Time.fixedDeltaTime;
-
-                if (restealthTimer >= restealthCooldown && !characterBody.hasCloakBuff && !passiveCloakOn)
+                if (!wasOutOfCombat)
                 {
-                    indicatorEnabled = true;
-                    restealthTimer = 0f;
-                    passiveCloakOn = true;
-                    if (NetworkServer.active)
-                    {
-                        characterBody.AddBuff(RoR2Content.Buffs.Cloak);
-                        characterBody.AddBuff(RoR2Content.Buffs.CloakSpeed);
-                    }
+                    SetStealthCooldown();
+                }
+                restealthTimer -= Time.fixedDeltaTime;
+
+                if (restealthTimer <= 0f && !characterBody.hasCloakBuff && !passiveCloakOn)
+                {
+                    ActivateCloak();
                 }
             }
-            else
+            else if (passiveCloakOn)
             {
-                indicatorEnabled = false;
-                passiveCloakOn = false;
+                DeactivateCloak();
             }
+            wasOutOfCombat = characterBody.outOfCombat;
         }
-        private void OnDestroy()
+        private void OnDisable()
         {
+            if (passiveSkillSlot)
+            {
+                passiveSkillSlot.onSkillChanged -= ReevaluatePassiveOnChange;
+            }
             indicatorEnabled = false;
 
             UnityEngine.Object.Destroy(nearbyIndicator);

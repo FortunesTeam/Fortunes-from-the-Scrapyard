@@ -23,4 +23,4 @@ MonoBehaviour:
   isCooldown: 0
   isHidden: 0
   flags: 0
-  startSfx: {fileID: 0}
+  startSfx: {fileID: 11400000, guid: b58725923d5f810439db82a0c379c799, type: 2}

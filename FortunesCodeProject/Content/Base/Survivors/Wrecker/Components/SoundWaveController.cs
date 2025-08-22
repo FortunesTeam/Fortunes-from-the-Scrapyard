@@ -61,7 +61,7 @@ namespace EntityStates.Wrecker.Components
                 currentProjectiles--;
                 buffWard.radius += 2.5f;
                 sphereCollider.radius += 2.5f;
-                interval += 0.025f;
+                interval *= 1.5f;
                 timer -= interval;
             }
             else if (currentProjectiles <= 0)

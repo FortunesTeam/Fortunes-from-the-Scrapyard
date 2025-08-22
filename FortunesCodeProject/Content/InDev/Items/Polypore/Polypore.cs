@@ -105,7 +105,7 @@ namespace FortunesFromTheScrapyard.Items
 
         public override FFTSAssetRequest LoadAssetRequest()
         {
-            return FFTSAssets.LoadAssetAsync<ItemAssetCollection>("acPolypore", FFTSBundle.Indev);
+            return FFTSAssets.LoadAssetAsync<ItemAssetCollection>("acPolypore", FFTSBundle.Items);
         }
         public class PolyporeBehaviour : BaseItemBodyBehavior
         {

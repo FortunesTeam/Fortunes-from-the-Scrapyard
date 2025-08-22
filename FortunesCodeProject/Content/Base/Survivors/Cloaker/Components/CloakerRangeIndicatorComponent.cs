@@ -15,51 +15,70 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerRangeIndicatorComponent : MonoBehaviour
     {
-        public UnityEvent triggerEvents;
-
+        [HideInInspector]
         public TeamIndex _teamIndex;
-
+        [HideInInspector]
         public CharacterBody ownerBody;
-
+        [HideInInspector]
         public CloakerController cloakerController;
 
-        public bool on => cloakerController.passiveCloakOn && cloakerController.graceTimer <= 0f;
+        public GameObject passiveCloakOnPrefab;
 
-        public void Start()
+        public GameObject passiveCloakOffPrefab;
+
+        private bool _cloakOn;
+        private bool cloakOn
         {
-            cloakerController = GetComponent<CloakerController>();
+            get 
+            { 
+                return _cloakOn;
+            } 
+            set
+            {
+                if (_cloakOn != value)
+                {
+                    _cloakOn = value;
+                    if (passiveCloakOnPrefab)
+                    {
+                        passiveCloakOnPrefab.SetActive(value);
+                    }
+                    if (passiveCloakOffPrefab)
+                    {
+                        passiveCloakOffPrefab.SetActive(!value);
+                    }
+                }
+            }
         }
-
+        public bool on => cloakerController.passiveCloakOn && cloakerController.graceTimer <= 0f;
         private void FixedUpdate()
         {
-            if (on)
+            if (!cloakOn && cloakerController.passiveCloakOn)
             {
-                base.transform.parent.Find("Radius").gameObject.SetActive(true);
+                cloakOn = true;
             }
         }
 
-        public void OnTriggerStay(Collider collider)
+        public void OnTriggerStay(Collider other)
         {
-            if (!collider || !ownerBody.hasCloakBuff)
+            if (!other || !cloakOn)
             {
                 return;
             }
-            CharacterBody characterBody = collider.GetComponent<CharacterBody>();
-            if (!characterBody) collider.GetComponentInChildren<CharacterBody>();
+            CharacterBody characterBody = other.GetComponent<CharacterBody>();
+            if (!characterBody) 
+            { 
+                characterBody = other.GetComponentInChildren<CharacterBody>(); 
+            }
 
             if (characterBody)
             {
                 TeamComponent enemyTeam = characterBody.teamComponent;
-                if (enemyTeam.teamIndex != _teamIndex && ownerBody.hasCloakBuff && on)
+                TeamMask enemyMask = TeamMask.GetEnemyTeams(_teamIndex);
+                enemyMask.RemoveTeam(TeamIndex.Neutral);
+                if (enemyTeam && enemyMask.HasTeam(enemyTeam.teamIndex))
                 {
-                    if (NetworkServer.active)
-                    {
-                        ownerBody.RemoveBuff(RoR2Content.Buffs.Cloak);
-                        ownerBody.RemoveBuff(RoR2Content.Buffs.CloakSpeed);
-                        cloakerController.passiveCloakOn = false;
-                    }
-
-                    triggerEvents.Invoke();
+                    cloakerController.DeactivateCloak();
+                    cloakOn = false;
                 }
             }
         }

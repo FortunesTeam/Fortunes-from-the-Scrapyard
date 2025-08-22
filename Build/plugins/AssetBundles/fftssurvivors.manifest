@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1278757223
+CRC: 1091753529
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ba7821f3f691a57807a3fbb10e4f0004
+    Hash: 76f06d01f12dba367d904c40d6bf141f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: adf8e45a3ad308b9a412a9952d0ac3b1
+    Hash: cb3ab07c2a2d78c44d9f9b6fa79c56df
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -114,6 +114,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: -1578512655, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -163,8 +165,6 @@ ClassTypes:
   Script: {fileID: 1667754706, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: -1004909643, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
-  Script: {fileID: -754211069, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: -1350745802, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
@@ -240,6 +240,7 @@ Assets:
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSecondaryFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/AimMask.mask
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/UtilitySkillDef.asset
+- Assets/FFTSAssets/Survivors/Cloaker/CloakerPlsWork.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/acCloaker.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/SpecialSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerTrackingIndicator.prefab
@@ -343,7 +344,6 @@ Assets:
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerLeftArmMask.mask
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Special02.fbx
 - Assets/FFTSAssets/Survivors/Wrecker/mdlWrecker.fbx
-- Assets/FFTSAssets/Survivors/Cloaker/mdlCloaker.fbx
 - Assets/FFTSAssets/Survivors/Skater/Skills/SecondarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerRing.mat
 - Assets/FFTSAssets/Survivors/Cloaker/UI/CloakerCrosshair.prefab
@@ -354,6 +354,7 @@ Assets:
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Idle.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@IdleIn_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@AimYaw.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/idrsCloaker.asset
 - Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairInNibRight.png
 - Assets/FFTSAssets/Survivors/Wrecker/matWrecker.mat
@@ -415,5 +416,5 @@ Assets:
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/SecondarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkedBuffIcon.png
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsitems
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsitems

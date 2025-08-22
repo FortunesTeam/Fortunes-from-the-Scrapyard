@@ -30,34 +30,39 @@ namespace EntityStates.Cloaker.Weapon
         protected bool isCrit;
         protected virtual GameObject tracerPrefab => this.isCrit ? critTracerEffectPrefab : tracerEffectPrefab;
         public string shootSoundString = "";
+        public string animationString;
         public virtual BulletAttack.FalloffModel falloff => BulletAttack.FalloffModel.DefaultBullet;
         private CloakerController cloakerController;
         private int step;
 
         public override void OnEnter()
         {
-            this.cloakerController = base.gameObject.GetComponent<CloakerController>();
+            if (!cloakerController)
+            {
+                this.cloakerController = base.gameObject.GetComponent<CloakerController>();
+            }
+            
 
             base.OnEnter();
-
-            if (this.characterBody.hasCloakBuff)
-            {
-                if (NetworkServer.active)
-                {
-                    this.characterBody.RemoveBuff(RoR2Content.Buffs.Cloak);
-                    this.characterBody.RemoveBuff(RoR2Content.Buffs.CloakSpeed);
-                }
-                this.cloakerController.passiveCloakOn = false;
-            }
+            characterBody.SetAimTimer(2f);
             this.duration = CloakerShoot.baseDuration / this.attackSpeedStat;
-            this.characterBody.isSprinting = false;
-
-            base.characterBody.SetAimTimer(2f);
-            this.muzzleString = "MuzzleRight";
-
-            if (this.cloakerController.isAkimbo)
+            switch (step)
             {
-                this.muzzleString = step % 2 == 0 ? "MuzzleRight" : "MuzzleLeft";
+                default:
+                case 0:
+                    animationString = "Shoot";
+                    muzzleString = "MuzzleRight";
+                    break;
+                case 1:
+                    duration *= 0.4f;
+                    animationString = "ShootDual1";
+                    muzzleString = "MuzzleRight";
+                    break;
+                case 2:
+                    duration *= 0.4f;
+                    animationString = "ShootDual2";
+                    muzzleString = "MuzzleLeft";
+                    break;
             }
 
             this.isCrit = base.RollCrit();
@@ -122,7 +127,7 @@ namespace EntityStates.Cloaker.Weapon
                     bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerChargedDamageType);
                 }
 
-                if (muzzleString == "MuzzleLeft") bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerAkimboDamageType);
+                if (step == 2) bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerAkimboDamageType);
                 bulletAttack.Fire();
             }
 
@@ -147,12 +152,31 @@ namespace EntityStates.Cloaker.Weapon
         public void SetStep(int i)
         {
             step = i;
+            if (!cloakerController)
+            {
+                this.cloakerController = activatorSkillSlot.gameObject.GetComponent<CloakerController>();
+            }
+            if (cloakerController)
+            {
+                step = cloakerController.isAkimbo ? i + 1 : 0;
+            }
         }
 
         public void PlayAnimation()
         {
-            if (charged) this.PlayCrossfade("Gesture, Additive", ShootSecondaryStateHash, this.duration * 0.05f);
-            else this.PlayCrossfade("Gesture, Additive", ShootStateHash, this.duration * 0.05f);
+            switch (step)
+            {
+                case int _ when charged:
+                    this.PlayCrossfade("Gesture, Additive", ShootSecondaryStateHash, this.duration * 0.05f);
+                    break;
+                case 0:
+                    this.PlayCrossfade("Gesture, Additive", animationString, this.duration * 0.05f);
+                    break;
+                case 1:
+                case 2:
+                    this.PlayAnimation("Gesture, Additive", animationString);
+                    break;
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ namespace EntityStates.Cloaker
                 victim = this.tracker.GetTrackingTarget();
             }
 
-            if (victim && victim.healthComponent.body) victimBody = victim.healthComponent.body;
+            if (victim && victim.healthComponent) victimBody = victim.healthComponent.body;
 
             if (!victim || !victimBody || !tracker)
             {

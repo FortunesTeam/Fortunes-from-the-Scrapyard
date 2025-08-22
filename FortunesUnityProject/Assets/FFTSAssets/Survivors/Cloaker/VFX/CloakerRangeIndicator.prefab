@@ -1,5 +1,88 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &225893569834426716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2158189566918703017}
+  - component: {fileID: 7591173334765867995}
+  - component: {fileID: 1853575820127980546}
+  m_Layer: 0
+  m_Name: PassiveOffRadius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2158189566918703017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225893569834426716}
+  m_LocalRotation: {x: 0.4304593, y: 0.56098557, z: -0.56098557, w: 0.4304593}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 13, y: 13, z: 13}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7355088244062692342}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -8.9819264e+35, y: -0.04288736, z: -1.056618e-19}
+--- !u!33 &7591173334765867995
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225893569834426716}
+  m_Mesh: {fileID: 4300000, guid: 96b33e4d0e899f04aa5789297f4cef95, type: 2}
+--- !u!23 &1853575820127980546
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225893569834426716}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c7106eb4300e53d489dd9c756f2da305, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7355088241998228497
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,12 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: -1350745802, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerEvents:
-    m_PersistentCalls:
-      m_Calls: []
   _teamIndex: 0
   ownerBody: {fileID: 0}
   cloakerController: {fileID: 0}
+  passiveCloakOnPrefab: {fileID: 7355088243589263518}
+  passiveCloakOffPrefab: {fileID: 225893569834426716}
 --- !u!1 &7355088243589263518
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +241,7 @@ GameObject:
   - component: {fileID: 7355088243589263513}
   - component: {fileID: 7355088243589263512}
   m_Layer: 0
-  m_Name: Radius
+  m_Name: PassiveOnRadius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +323,6 @@ GameObject:
   - component: {fileID: 7355088244062692342}
   - component: {fileID: 7355088244062692336}
   - component: {fileID: 7355088244062692343}
-  - component: {fileID: 8247730022649454285}
   m_Layer: 0
   m_Name: CloakerRangeIndicator
   m_TagString: Untagged
@@ -264,6 +345,7 @@ Transform:
   - {fileID: 7355088243396438620}
   - {fileID: 7355088241998228498}
   - {fileID: 7355088243589263519}
+  - {fileID: 2158189566918703017}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,21 +396,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldParentToAttachedBody: 1
   forceHostAuthority: 0
---- !u!114 &8247730022649454285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7355088244062692341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1350745802, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  _teamIndex: 0
-  ownerBody: {fileID: 0}
-  cloakerController: {fileID: 0}

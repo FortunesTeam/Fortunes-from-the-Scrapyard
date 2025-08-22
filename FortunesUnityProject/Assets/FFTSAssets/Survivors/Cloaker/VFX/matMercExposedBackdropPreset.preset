@@ -15,9 +15,17 @@ Preset:
   - target: {fileID: 0}
     propertyPath: m_Shader
     value: 
-    objectReference: {fileID: 4800000, guid: 0d4838f326dd67140acbf335e7b3bffa, type: 3}
+    objectReference: {fileID: 4800000, guid: 0baae4dd48015244ea41a2041fc03635, type: 3}
   - target: {fileID: 0}
-    propertyPath: m_ShaderKeywords
+    propertyPath: m_ValidKeywords.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_InvalidKeywords.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_InvalidKeywords.Array.data[0]
     value: VERTEXCOLOR
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -142,6 +150,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SavedProperties.m_TexEnvs.Array.data[3].second.m_Offset.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SavedProperties.m_Ints.Array.size
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -560,3 +572,8 @@ Preset:
     propertyPath: m_SavedProperties.m_Colors.Array.data[3].second.a
     value: 1
     objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_BuildTextureStacks.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

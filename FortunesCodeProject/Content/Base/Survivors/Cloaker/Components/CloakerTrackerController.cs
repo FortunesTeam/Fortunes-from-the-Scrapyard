@@ -28,7 +28,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 
         private void Awake()
         {
-            indicator = new Indicator(base.gameObject, FFTSAssets.GetAssetBundle(FFTSBundle.Indev).LoadAsset<GameObject>("CloakerTrackingIndicator"));
+            indicator = new Indicator(base.gameObject, FFTSAssets.GetAssetBundle(FFTSBundle.Survivors).LoadAsset<GameObject>("CloakerTrackingIndicator"));
         }
 
         private void Start()

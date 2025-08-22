@@ -1335,6 +1335,14 @@ MonoBehaviour:
     transform: {fileID: 3030623119715491149}
   - name: Muzzle
     transform: {fileID: 6482403809623579506}
+  - name: Chest
+    transform: {fileID: 1727438410231324792}
+  - name: FootR
+    transform: {fileID: 4915359969965897553}
+  - name: FootL
+    transform: {fileID: 3818636792859442649}
+  - name: Head
+    transform: {fileID: 6233240913919129291}
 --- !u!1 &3524536325029545250
 GameObject:
   m_ObjectHideFlags: 0

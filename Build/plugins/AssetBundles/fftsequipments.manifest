@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1137827220
+CRC: 4186169072
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 87dbdd662fa4b73c2ddbbb55ceb01651
+    Hash: a9953aae732f43b24cc419df8f44652e
   TypeTreeHash:
     serializedVersion: 2
     Hash: d57348b8dc00cf6ca1f2fbdb215ec903
@@ -55,34 +55,34 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: RoR2
   ClassName: RoR2.MageElement
 Assets:
-- Assets/FotSAssets/Equipment/EnergyBar/acEnergyBar.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/nsedMoonshineUse.asset
-- Assets/FotSAssets/Equipment/EnergyBar/EnergyBar.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/MoonshineFlask.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineEmission.png
-- Assets/FotSAssets/Equipment/MoonshineFlask/bdMoonshineFlask.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/acMoonshineFlask.asset
-- Assets/FotSAssets/Equipment/EnergyBar/iddEnergyBar.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/matMoonshineFlask.mat
-- Assets/FotSAssets/Equipment/EnergyBar/nsedEnergyBar.asset
-- Assets/FotSAssets/Equipment/EnergyBar/EnergyBarDiffuse.png
-- Assets/FotSAssets/Equipment/MoonshineFlask/bdMoonshineStack.asset
-- Assets/FotSAssets/Equipment/EnergyBar/bdEnergyBar.asset
-- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineIcon.png
-- Assets/FotSAssets/Equipment/MoonshineFlask/DisplayMoonshineFlask.prefab
-- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineNormal.png
-- Assets/FotSAssets/Equipment/EnergyBar/PickupEnergyBar.prefab
-- Assets/FotSAssets/Equipment/MoonshineFlask/PickupMoonshineFlask.prefab
-- Assets/FotSAssets/Equipment/MoonshineFlask/iddMoonshineFlask.asset
-- Assets/FotSAssets/Equipment/EnergyBar/barBuffIcon.png
-- Assets/FotSAssets/Equipment/EnergyBar/Bar.mesh
-- Assets/FotSAssets/Equipment/EnergyBar/BarIcon.png
-- Assets/FotSAssets/Equipment/EnergyBar/EnergyBarNormal.png
-- Assets/FotSAssets/Equipment/MoonshineFlask/DrunkIcon.png
-- Assets/FotSAssets/Equipment/EnergyBar/DisplayEnergyBar.prefab
-- Assets/FotSAssets/Equipment/MoonshineFlask/texMoonshineDiffuse.png
-- Assets/FotSAssets/Equipment/MoonshineFlask/meshMoonshine.mesh
-- Assets/FotSAssets/Equipment/EnergyBar/matEnergyBar.mat
+- Assets/FFTSAssets/Equipment/EnergyBar/acEnergyBar.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/nsedMoonshineUse.asset
+- Assets/FFTSAssets/Equipment/EnergyBar/EnergyBar.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/MoonshineFlask.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineEmission.png
+- Assets/FFTSAssets/Equipment/MoonshineFlask/bdMoonshineFlask.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/acMoonshineFlask.asset
+- Assets/FFTSAssets/Equipment/EnergyBar/iddEnergyBar.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/matMoonshineFlask.mat
+- Assets/FFTSAssets/Equipment/EnergyBar/nsedEnergyBar.asset
+- Assets/FFTSAssets/Equipment/EnergyBar/EnergyBarDiffuse.png
+- Assets/FFTSAssets/Equipment/MoonshineFlask/bdMoonshineStack.asset
+- Assets/FFTSAssets/Equipment/EnergyBar/bdEnergyBar.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineIcon.png
+- Assets/FFTSAssets/Equipment/MoonshineFlask/DisplayMoonshineFlask.prefab
+- Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineNormal.png
+- Assets/FFTSAssets/Equipment/EnergyBar/PickupEnergyBar.prefab
+- Assets/FFTSAssets/Equipment/MoonshineFlask/PickupMoonshineFlask.prefab
+- Assets/FFTSAssets/Equipment/MoonshineFlask/iddMoonshineFlask.asset
+- Assets/FFTSAssets/Equipment/EnergyBar/barBuffIcon.png
+- Assets/FFTSAssets/Equipment/EnergyBar/Bar.mesh
+- Assets/FFTSAssets/Equipment/EnergyBar/BarIcon.png
+- Assets/FFTSAssets/Equipment/EnergyBar/EnergyBarNormal.png
+- Assets/FFTSAssets/Equipment/MoonshineFlask/DrunkIcon.png
+- Assets/FFTSAssets/Equipment/EnergyBar/DisplayEnergyBar.prefab
+- Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineDiffuse.png
+- Assets/FFTSAssets/Equipment/MoonshineFlask/meshMoonshine.mesh
+- Assets/FFTSAssets/Equipment/EnergyBar/matEnergyBar.mat
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain

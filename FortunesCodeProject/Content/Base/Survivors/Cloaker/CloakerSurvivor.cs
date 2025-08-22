@@ -60,8 +60,11 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             CloakerRangeIndicatorPrefab.transform.Find("Donut").gameObject.GetComponent<MeshRenderer>().material = cloakerRange.transform.Find("Donut").gameObject.GetComponent<MeshRenderer>().material;
             CloakerRangeIndicatorPrefab.transform.Find("Donut").gameObject.GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(0.2358491f, 0.1768868f, 0.2268582f));
 
-            CloakerRangeIndicatorPrefab.transform.Find("Radius").gameObject.GetComponent<MeshRenderer>().material = cloakerRange.transform.Find("Radius, Spherical").gameObject.GetComponent<MeshRenderer>().material;
-            CloakerRangeIndicatorPrefab.transform.Find("Radius").gameObject.GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(0.2358491f, 0.1768868f, 0.2268582f));
+            CloakerRangeIndicatorPrefab.transform.Find("PassiveOnRadius").gameObject.GetComponent<MeshRenderer>().material = cloakerRange.transform.Find("Radius, Spherical").gameObject.GetComponent<MeshRenderer>().material;
+            CloakerRangeIndicatorPrefab.transform.Find("PassiveOnRadius").gameObject.GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(0.2358491f, 0.1768868f, 0.2268582f));
+
+            CloakerRangeIndicatorPrefab.transform.Find("PassiveOffRadius").gameObject.GetComponent<MeshRenderer>().material = cloakerRange.transform.Find("Radius, Spherical").gameObject.GetComponent<MeshRenderer>().material;
+            CloakerRangeIndicatorPrefab.transform.Find("PassiveOffRadius").gameObject.GetComponent<MeshRenderer>().material.SetColor("_TintColor", new Color(0.75f, 0.1768868f, 0.2268582f));
         }
         #region projectiles
         private void CreateProjectiles()
@@ -92,14 +95,12 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             if (sender.bodyIndex == BodyCatalog.FindBodyIndex("CloakerBody"))
             {
                 if (sender.hasCloakBuff) args.damageMultAdd += 1.5f;
-
-                if (sender.TryGetComponent<CloakerController>(out var cloakerController)) cloakerController.SetStealthCooldown();
             }
 
-            if (sender.TryGetComponent<CloakerController>(out var cloak2) && cloak2.isAkimbo)
+            /*if (sender.TryGetComponent<CloakerController>(out var cloak2) && cloak2.isAkimbo)
             {
                 args.attackSpeedMultAdd += 1.5f;
-            }
+            }*/
         }
         private void GlobalEventManager_onServerDamageDealt(DamageReport damageReport)
         {
