@@ -15,8 +15,8 @@ namespace FortunesFromTheScrapyard
     public class FFTSContent : IContentPackProvider
     {
         public string identifier => FFTSMain.MODUID;
-        public static ReadOnlyContentPack readOnlyContentPack => new ReadOnlyContentPack(scrapyardContentPack);
-        internal static ContentPack scrapyardContentPack { get; } = new ContentPack();
+        public static ReadOnlyContentPack readOnlyContentPack => new ReadOnlyContentPack(fftsContentPack);
+        internal static ContentPack fftsContentPack { get; } = new ContentPack();
 
         internal static ParallelMultiStartCoroutine _parallelPreLoadDispatchers = new ParallelMultiStartCoroutine();
         private static Func<IEnumerator>[] _loadDispatchers;
@@ -53,7 +53,7 @@ namespace FortunesFromTheScrapyard
 
         public IEnumerator GenerateContentPackAsync(GetContentPackAsyncArgs args)
         {
-            ContentPack.Copy(scrapyardContentPack, args.output);
+            ContentPack.Copy(fftsContentPack, args.output);
             args.ReportProgress(1f);
             yield return null;
         }
@@ -72,8 +72,8 @@ namespace FortunesFromTheScrapyard
         private static IEnumerator LoadFromAssetBundles()
         {
             FFTSLog.Info($"Populating EntityStateTypes array...");
-            scrapyardContentPack.entityStateTypes.Clear();
-            scrapyardContentPack.entityStateTypes.Add(typeof(FFTSContent).Assembly.GetTypes().Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type)).ToArray());
+            fftsContentPack.entityStateTypes.Clear();
+            fftsContentPack.entityStateTypes.Add(typeof(FFTSContent).Assembly.GetTypes().Where(type => typeof(EntityStates.EntityState).IsAssignableFrom(type)).ToArray());
 
             /*
             ScrapyardLog.Info("Populating EntityStateConfiguration array...");
@@ -118,7 +118,7 @@ namespace FortunesFromTheScrapyard
             foreach (var survivor in list)
             {
                 survivor.Initialize();
-                survivor.ModifyContentPack(scrapyardContentPack);
+                survivor.ModifyContentPack(fftsContentPack);
             }
         }
 
@@ -128,7 +128,7 @@ namespace FortunesFromTheScrapyard
             while (!request.isComplete)
                 yield return null;
 
-            scrapyardContentPack.expansionDefs.AddSingle(request.asset);
+            fftsContentPack.expansionDefs.AddSingle(request.asset);
             yield break;
         }
         internal FFTSContent()
@@ -149,17 +149,17 @@ namespace FortunesFromTheScrapyard
                 //EliteTierModule.Init,
                 () =>
                 {
-                    CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectGenericContentPieceProvider<CharacterBody>(main, scrapyardContentPack));
+                    CharacterModule.AddProvider(main, ContentUtil.CreateGameObjectGenericContentPieceProvider<CharacterBody>(main, fftsContentPack));
                     return CharacterModule.InitializeCharacters(main);
                 },
                 () =>
                 {
-                    ItemModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<ItemDef>(main, scrapyardContentPack));
+                    ItemModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<ItemDef>(main, fftsContentPack));
                     return ItemModule.InitializeItems(main);
                 },
                 () =>
                 {
-                    EquipmentModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<EquipmentDef>(main, scrapyardContentPack));
+                    EquipmentModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<EquipmentDef>(main, fftsContentPack));
                     return EquipmentModule.InitializeEquipments(main);
                 },
                 LoadFromAssetBundles
@@ -167,12 +167,12 @@ namespace FortunesFromTheScrapyard
 
             _fieldAssignDispatchers = new Action[]
             {
-                () => ContentUtil.PopulateTypeFields(typeof(Items), scrapyardContentPack.itemDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(Equipments), scrapyardContentPack.equipmentDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(Buffs), scrapyardContentPack.buffDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(Survivors), scrapyardContentPack.survivorDefs),
-                () => ContentUtil.PopulateTypeFields(typeof(NetworkedBodyAttachments), scrapyardContentPack.networkedObjectPrefabs),
-                () => ContentUtil.PopulateTypeFields(typeof(NetworkSoundEventDefs), scrapyardContentPack.networkSoundEventDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Items), fftsContentPack.itemDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Equipments), fftsContentPack.equipmentDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Buffs), fftsContentPack.buffDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(Survivors), fftsContentPack.survivorDefs),
+                () => ContentUtil.PopulateTypeFields(typeof(NetworkedBodyAttachments), fftsContentPack.networkedObjectPrefabs),
+                () => ContentUtil.PopulateTypeFields(typeof(NetworkSoundEventDefs), fftsContentPack.networkSoundEventDefs),
             };
         }
         public static class NetworkSoundEventDefs
@@ -273,12 +273,12 @@ namespace FortunesFromTheScrapyard
         {
             EffectDef effectDef = new EffectDef(effect);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(effectDef);
         }
 
         public static void AddNetworkSoundEventDef(NetworkSoundEventDef networkSoundEventDef)
         {
-            FFTSContent.scrapyardContentPack.networkSoundEventDefs.AddSingle(networkSoundEventDef);
+            FFTSContent.fftsContentPack.networkSoundEventDefs.AddSingle(networkSoundEventDef);
         }
         public static NetworkSoundEventDef CreateAndAddNetworkSoundEventDef(string eventName)
         {

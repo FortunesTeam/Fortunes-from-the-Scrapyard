@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1091753529
+CRC: 782900866
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 76f06d01f12dba367d904c40d6bf141f
+    Hash: 7f5d653e831ad58b0e60adba0634cebf
   TypeTreeHash:
     serializedVersion: 2
     Hash: cb3ab07c2a2d78c44d9f9b6fa79c56df
@@ -240,7 +240,7 @@ Assets:
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSecondaryFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/AimMask.mask
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/UtilitySkillDef.asset
-- Assets/FFTSAssets/Survivors/Cloaker/CloakerPlsWork.fbx
+- Assets/FFTSAssets/Survivors/Cloaker/Cloaker.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/acCloaker.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/SpecialSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerTrackingIndicator.prefab

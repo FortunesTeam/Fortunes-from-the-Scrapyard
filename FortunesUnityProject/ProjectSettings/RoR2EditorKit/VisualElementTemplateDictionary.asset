@@ -29,3 +29,11 @@ MonoBehaviour:
     _hexRepresentation: 92acaa6b3e4e4274d8ce9b0caa4ac328
   - k_templateName: ShaderDictionary
     _hexRepresentation: eb748256c0573e64aa147f2339196579
+  - k_templateName: ItemDisplayDictionaryEditorWindow
+    _hexRepresentation: 7a7b3bfc4e2696f47a664730f95fe948
+  - k_templateName: ItemDisplayDictionary_KeyAssetDisplayPrefabsElement
+    _hexRepresentation: 36b34c0ca6e547140bbf93f7cbbb72fc
+  - k_templateName: EntityStateMachineInspector
+    _hexRepresentation: 80f85cf135da6ea41834b0e48a22acfa
+  - k_templateName: ContextMenuWrapperElement
+    _hexRepresentation: 77311b170172e5f459337eef42862d00

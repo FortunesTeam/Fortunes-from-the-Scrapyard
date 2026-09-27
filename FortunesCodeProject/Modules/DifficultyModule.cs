@@ -26,7 +26,7 @@ namespace FortunesFromTheScrapyard
             if (moduleAvailability.available)
                 yield break;
 
-            _contentPieceProvider = ContentUtil.CreateGenericContentPieceProvider<SerializableDifficultyDef>(FFTSMain.instance, FFTSContent.scrapyardContentPack);
+            _contentPieceProvider = ContentUtil.CreateGenericContentPieceProvider<SerializableDifficultyDef>(FFTSMain.instance, FFTSContent.fftsContentPack);
 
             var enumerator = InitializeDifficultiesFromScrapyard();
             while (!enumerator.IsDone())

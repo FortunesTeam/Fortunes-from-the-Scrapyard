@@ -35,7 +35,7 @@
     
 	"FFTS_ITEM_SPRAYCAN_NAME": "Spray Can",
     "FFTS_ITEM_SPRAYCAN_PICKUP": "High damage causes a <style=cIsDamage>graffiti explosion</style>. Recharges over time, and is usable <style=cIsDamage>{0}</style> times per stage.",
-    "FFTS_ITEM_SPRAYCAN_DESCRIPTION": "Hits that deal <style=cIsDamage>more than {2}% damage</style> also blast enemies with a <style=cIsDamage>graffiti explosion</style> dealing <style=cIsDamage>{3}%</style> TOTAL damage. Recharges every <style=cIsUtility>{1}</style> seconds. This item can be used <style=cIsUtility>{0}</style> <style=cIsStack>(+10 per stack)</style> times per stage.",
+    "FFTS_ITEM_SPRAYCAN_DESCRIPTION": "Hits that deal <style=cIsDamage>more than {2}% damage</style> also blast enemies with a <style=cIsDamage>graffiti explosion</style> dealing <style=cIsDamage>{3}%</style> TOTAL damage. Recharges every <style=cIsUtility>{1}</style> seconds. This item can be used <style=cIsUtility>{0}</style> <style=cStack>(+10 per stack)</style> times per stage.",
     "FFTS_ITEM_SPRAYCAN_LORE": "\"The can normally goes pshhht, y’know? This one goes pshhhhhhhhhhhht till there’s no more paint.\" - [Redacted 1]\n\"What are you even saying?\"- [Redacted 2]\n\"Yeah, they’re right though, cans do normally go pshhht.\" - [Redacted 3]",
     
 	"FFTS_ITEM_SPRAYCANCONSUMED_NAME": "Spray Can (Consumed)",

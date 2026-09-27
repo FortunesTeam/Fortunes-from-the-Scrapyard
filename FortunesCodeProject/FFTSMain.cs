@@ -38,8 +38,6 @@ namespace FortunesFromTheScrapyard
         public const string MODNAME = "Fortunes From the Scrapyard";
         public const string MODVERSION = "0.0.1";
 
-        //public const string DEVELOPER_PREFIX = "MYSTICAL";
-
         public static FFTSMain instance;
 
         public static bool emotesInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");

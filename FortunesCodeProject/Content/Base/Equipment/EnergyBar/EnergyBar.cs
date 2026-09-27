@@ -23,15 +23,17 @@ namespace FortunesFromTheScrapyard.Equipments
         public override bool Execute(EquipmentSlot slot)
         {
             CharacterBody body = slot.characterBody;
-            SkillLocator skill = body.skillLocator;
-            if (skill != null)
+            //SkillLocator skill = body.skillLocator;
+            if (body)
             {
                 if (NetworkServer.active)
                 {
                     body.AddTimedBuff(FFTSContent.Buffs.bdEnergyBar, buffDuration);
                     body.AddTimedBuff(RoR2Content.Buffs.CrocoRegen, buffDuration);
+                    body.outOfDangerStopwatch = 7f;
+                    body.outOfDanger = true;
+                    body.healthComponent.ForceShieldRegen();
                 }
-                body.healthComponent.ForceShieldRegen();
                 return true;
             }
             return false;

@@ -29,7 +29,7 @@ namespace FortunesFromTheScrapyard
             if (moduleAvailability.available)
                 yield break;
 
-            _contentPieceProvider = ContentUtil.CreateGenericContentPieceProvider<SerializableEliteTierDef>(FFTSMain.instance, FFTSContent.scrapyardContentPack);
+            _contentPieceProvider = ContentUtil.CreateGenericContentPieceProvider<SerializableEliteTierDef>(FFTSMain.instance, FFTSContent.fftsContentPack);
 
             var enumerator = InitializeEliteTiersFromScrapyard();
             while (!enumerator.IsDone())

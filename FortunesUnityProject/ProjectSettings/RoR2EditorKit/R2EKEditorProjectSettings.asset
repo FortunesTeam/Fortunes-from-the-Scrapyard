@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a797bc9ab1d580e4089f16a5204d77ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectSettings: []
+  _projectSettings:
+  - _typeName: ItemDisplayDictionaryEditorWindow
+    _editorTypeQualifiedName: MSU.Editor.EditorWindows.ItemDisplayDictionaryEditorWindow,
+      MSU.Editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _editorTypeQualifiedHash: -1013320360
+    _serializedSettings:
+    - _settingName: _lastEditedIDDGuid
+      _settingID: -1903495812
+      _valueTypeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      _serializedValue: 
+      _defaultSerializedValue: 
+    _settingType: 0
+    _settingProviderName: R2EKEditorProjectSettings

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2662560707
+CRC: 3289265006
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1bebd03a1cf05c0461fbcc21cec63d51
+    Hash: fcca3ccf5fee3e496c32dc2c6fe20b3c
   TypeTreeHash:
     serializedVersion: 2
     Hash: eed41732b51ef3894da355afa46e82c9
@@ -87,38 +87,39 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
-- Assets/FotSAssets/Elites/ScrapElite/acScrapElite.asset
-- Assets/FotSAssets/Elites/ScrapElite/matEliteScrapTrail.mat
-- Assets/FotSAssets/Elites/ScrapElite/mdlEliteScrapCrownL.mesh
-- Assets/FotSAssets/Elites/ScrapElite/PickupScrapElite.prefab
-- Assets/FotSAssets/Elites/ScrapElite/texRampFallboots 1.png
-- Assets/FotSAssets/Elites/ScrapElite/texEngiShieldBlurred.png
-- Assets/FotSAssets/Elites/ScrapElite/texRampScrap.png
-- Assets/FotSAssets/Elites/ScrapElite/mdlHeart.mesh
-- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapElite.prefab
-- Assets/FotSAssets/Elites/ScrapElite/nsedScrapEliteSpawn.asset
-- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownDiffuse2.png
-- Assets/FotSAssets/EliteTiers/WhirlwindSpecialEliteTierDef.asset
-- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownDiffuse.png
-- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownEmission.png
-- Assets/FotSAssets/Elites/ScrapElite/iddScrapElite.asset
-- Assets/FotSAssets/Elites/ScrapElite/ScrapCrown.fbx
-- Assets/FotSAssets/Elites/ScrapElite/matEliteScrapPickup.mat
-- Assets/FotSAssets/Elites/ScrapElite/EliteScrapEquipment.asset
-- Assets/FotSAssets/Elites/ScrapElite/matScrapHologram.mat
-- Assets/FotSAssets/Elites/ScrapElite/mdlEliteScrapCrownR.mesh
-- Assets/FotSAssets/Elites/ScrapElite/bdEliteScrap.asset
-- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapEliteR.prefab
-- Assets/FotSAssets/Elites/ScrapElite/idrsElite.asset
-- Assets/FotSAssets/Elites/ScrapElite/edScrap.asset
-- Assets/FotSAssets/Elites/ScrapElite/matScrapCrown.mat
-- Assets/FotSAssets/Elites/ScrapElite/ScrapAffixEffect.prefab
-- Assets/FotSAssets/Elites/ScrapElite/texScrapEliteIcon.png
-- Assets/FotSAssets/Elites/ScrapElite/texBuffAffixScrap.png
-- Assets/FotSAssets/Elites/ScrapElite/texScrapCrownEmission2.png
-- Assets/FotSAssets/Elites/ScrapElite/DisplayScrapEliteL.prefab
-- Assets/FotSAssets/EliteTiers/WhirlwindEliteTierDef.asset
-- Assets/FotSAssets/Elites/ScrapElite/matScrapCrown2.mat
+- Assets/FFTSAssets/Elites/ScrapElite/acScrapElite.asset
+- Assets/FFTSAssets/Elites/ScrapElite/matEliteScrapTrail.mat
+- Assets/FFTSAssets/Elites/ScrapElite/mdlEliteScrapCrownL.mesh
+- Assets/FFTSAssets/Elites/ScrapElite/PickupScrapElite.prefab
+- Assets/FFTSAssets/Elites/ScrapElite/texRampFallboots 1.png
+- Assets/FFTSAssets/Elites/ScrapElite/texEngiShieldBlurred.png
+- Assets/FFTSAssets/Elites/ScrapElite/texRampScrap.png
+- Assets/FFTSAssets/Elites/ScrapElite/mdlHeart.mesh
+- Assets/FFTSAssets/Elites/ScrapElite/DisplayScrapElite.prefab
+- Assets/FFTSAssets/Elites/ScrapElite/nsedScrapEliteSpawn.asset
+- Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownDiffuse2.png
+- Assets/FFTSAssets/EliteTiers/WhirlwindSpecialEliteTierDef.asset
+- Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownDiffuse.png
+- Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownEmission.png
+- Assets/FFTSAssets/Elites/ScrapElite/iddScrapElite.asset
+- Assets/FFTSAssets/Elites/ScrapElite/edScrapHonor.asset
+- Assets/FFTSAssets/Elites/ScrapElite/ScrapCrown.fbx
+- Assets/FFTSAssets/Elites/ScrapElite/matEliteScrapPickup.mat
+- Assets/FFTSAssets/Elites/ScrapElite/EliteScrapEquipment.asset
+- Assets/FFTSAssets/Elites/ScrapElite/matScrapHologram.mat
+- Assets/FFTSAssets/Elites/ScrapElite/mdlEliteScrapCrownR.mesh
+- Assets/FFTSAssets/Elites/ScrapElite/bdEliteScrap.asset
+- Assets/FFTSAssets/Elites/ScrapElite/DisplayScrapEliteR.prefab
+- Assets/FFTSAssets/Elites/ScrapElite/idrsElite.asset
+- Assets/FFTSAssets/Elites/ScrapElite/edScrap.asset
+- Assets/FFTSAssets/Elites/ScrapElite/matScrapCrown.mat
+- Assets/FFTSAssets/Elites/ScrapElite/ScrapAffixEffect.prefab
+- Assets/FFTSAssets/Elites/ScrapElite/texScrapEliteIcon.png
+- Assets/FFTSAssets/Elites/ScrapElite/texBuffAffixScrap.png
+- Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownEmission2.png
+- Assets/FFTSAssets/Elites/ScrapElite/DisplayScrapEliteL.prefab
+- Assets/FFTSAssets/EliteTiers/WhirlwindEliteTierDef.asset
+- Assets/FFTSAssets/Elites/ScrapElite/matScrapCrown2.mat
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain

@@ -23,26 +23,6 @@ namespace FortunesFromTheScrapyard.Monsters.Gardener
 {
     public class GardenerMonster : FFTSMonster
     {
-        public const string PRIMARYTOKEN = "SCRAPYARD_GARDENER_PRIMARY_DESC";
-        public const string SECONDARYTOKEN = "SCRAPYARD_GARDENER_SECONDARY_DESC";
-        public const string UTILITYTOKEN = "SCRAPYARD_GARDENER_UTILITY_DESC";
-        public const string SPECIALTOKEN = "SCRAPYARD_GARDENER_SPECIAL_DESC";
-
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
-        [FormatToken(PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
-        public static float basePrimaryDamage = 0.6f;
-
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
-        [FormatToken(SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
-        internal static float baseSecondaryDamage = 1.2f;
-
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
-        [FormatToken(UTILITYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
-        public static float baseUtilityDamage = 4f;
-
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
-        [FormatToken(SPECIALTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
-        public static float baseSpecialDamage = 6f;
 
         // DamageTypes
         public static DamageAPI.ModdedDamageType GardenerExplode;

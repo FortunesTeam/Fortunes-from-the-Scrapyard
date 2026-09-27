@@ -72,7 +72,7 @@ namespace FortunesFromTheScrapyard.Equipments
 
             EffectDef missEffectDef = new EffectDef(missEffect);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(missEffectDef);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(missEffectDef);
 
             explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/LunarWisp/LunarWispTrackingBombExplosion.prefab").WaitForCompletion().InstantiateClone("MoonshineExplosionEffect", false);
             EffectComponent ex = explosionEffect.EnsureComponent<EffectComponent>();
@@ -81,7 +81,7 @@ namespace FortunesFromTheScrapyard.Equipments
 
             EffectDef explosionEffectDef = new EffectDef(explosionEffect);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(explosionEffectDef);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(explosionEffectDef);
 
             On.RoR2.HealthComponent.TakeDamageProcess += HealthComponent_TakeDamageProcess; ;
         }

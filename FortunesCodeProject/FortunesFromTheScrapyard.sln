@@ -10,6 +10,7 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Mystical|Any CPU = Mystical|Any CPU
 		Release|Any CPU = Release|Any CPU
+		ToUnity|Any CPU = ToUnity|Any CPU
 		Whoever1|Any CPU = Whoever1|Any CPU
 		Whoever2|Any CPU = Whoever2|Any CPU
 	EndGlobalSection
@@ -20,6 +21,8 @@ Global
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Mystical|Any CPU.Build.0 = Mystical|Any CPU
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.ToUnity|Any CPU.ActiveCfg = ToUnity|Any CPU
+		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.ToUnity|Any CPU.Build.0 = ToUnity|Any CPU
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Whoever1|Any CPU.ActiveCfg = Whoever1|Any CPU
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Whoever1|Any CPU.Build.0 = Whoever1|Any CPU
 		{685EAC6F-14E3-4439-9394-3345F1CBD1AD}.Whoever2|Any CPU.ActiveCfg = Whoever2|Any CPU

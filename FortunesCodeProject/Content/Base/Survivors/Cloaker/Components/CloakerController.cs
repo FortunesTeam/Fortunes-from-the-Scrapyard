@@ -76,14 +76,14 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             if (isAkimbo)
             {
                 SetAkimboActive(true);
-                skillLocator.primary.skillDef.cancelSprintingOnActivation = false;
-                skillLocator.primary.skillDef.mustKeyPress = false;
+                /*skillLocator.primary.skillDef.cancelSprintingOnActivation = false;
+                skillLocator.primary.skillDef.mustKeyPress = false;*/
             }
             else
             {
                 SetAkimboActive(false); 
-                skillLocator.primary.skillDef.cancelSprintingOnActivation = true;
-                skillLocator.primary.skillDef.mustKeyPress = true;
+                /*skillLocator.primary.skillDef.cancelSprintingOnActivation = true;
+                skillLocator.primary.skillDef.mustKeyPress = true;*/
             }
         }
 

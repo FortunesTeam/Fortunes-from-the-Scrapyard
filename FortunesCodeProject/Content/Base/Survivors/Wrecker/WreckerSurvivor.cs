@@ -149,7 +149,7 @@ namespace FortunesFromTheScrapyard.Survivors.Wrecker
 
             //soundScape = assetCollection.FindAsset<GameObject>("WreckerSoundScapeProjectile");
 
-            FFTSContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundScape);
+            FFTSContent.fftsContentPack.projectilePrefabs.AddSingle(soundScape);
 
             soundWave = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab").WaitForCompletion().InstantiateClone("soundBuffProjectile");
             if (!soundWave.GetComponent<NetworkIdentity>()) soundWave.AddComponent<NetworkIdentity>();
@@ -172,7 +172,7 @@ namespace FortunesFromTheScrapyard.Survivors.Wrecker
 
             soundWave.AddComponent<SoundWaveController>();
 
-            FFTSContent.scrapyardContentPack.projectilePrefabs.AddSingle(soundWave);
+            FFTSContent.fftsContentPack.projectilePrefabs.AddSingle(soundWave);
 
             diskPrefab = UnityEngine.AddressableAssets.Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Bandit2/Bandit2ShivProjectile.prefab").WaitForCompletion().InstantiateClone("WreckerDisk");
             if (!diskPrefab.GetComponent<NetworkIdentity>()) diskPrefab.AddComponent<NetworkIdentity>();
@@ -199,7 +199,7 @@ namespace FortunesFromTheScrapyard.Survivors.Wrecker
 
             diskPrefab.GetComponent<ProjectileImpactExplosion>().explosionEffect = diskExplosion;
 
-            FFTSContent.scrapyardContentPack.projectilePrefabs.AddSingle(diskPrefab);
+            FFTSContent.fftsContentPack.projectilePrefabs.AddSingle(diskPrefab);
         }
         #endregion
 

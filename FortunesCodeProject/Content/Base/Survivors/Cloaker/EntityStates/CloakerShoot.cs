@@ -170,11 +170,11 @@ namespace EntityStates.Cloaker.Weapon
                     this.PlayCrossfade("Gesture, Additive", ShootSecondaryStateHash, this.duration * 0.05f);
                     break;
                 case 0:
-                    this.PlayCrossfade("Gesture, Additive", animationString, this.duration * 0.05f);
+                    this.PlayCrossfade("Gesture, Override", animationString, this.duration * 0.1f);
                     break;
                 case 1:
                 case 2:
-                    this.PlayAnimation("Gesture, Additive", animationString);
+                    this.PlayAnimation("Gesture, Override", animationString);
                     break;
             }
         }

@@ -54,13 +54,13 @@ namespace FortunesFromTheScrapyard.Elite
 
             EffectDef effectDef = new EffectDef(ScrapPulseEffect);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(effectDef);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(effectDef);
 
             ScrapExplosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion().InstantiateClone("ScrapExplosionEffect", false);
 
             EffectDef effectDef2 = new EffectDef(ScrapExplosionEffect);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(effectDef2);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(effectDef2);
 
             ScrapDefenseMatrix = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/CaptainDefenseMatrix/CaptainDefenseMatrixItemBodyAttachment.prefab").WaitForCompletion().InstantiateClone("ScrapMatrix");
             ScrapDefenseMatrix.EnsureComponent<NetworkIdentity>();
@@ -73,7 +73,7 @@ namespace FortunesFromTheScrapyard.Elite
 
             EffectDef effectDef3 = new EffectDef(ScrapLaser);
 
-            FFTSContent.scrapyardContentPack.effectDefs.AddSingle(effectDef3);
+            FFTSContent.fftsContentPack.effectDefs.AddSingle(effectDef3);
 
             On.RoR2.EquipmentCatalog.SetEquipmentDefs += EquipmentCatalog_SetEquipmentDefs;
 

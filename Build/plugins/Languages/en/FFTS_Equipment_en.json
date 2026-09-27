@@ -1,8 +1,8 @@
 {
   "strings": {
     "FFTS_EQUIP_ENERGYBAR_NAME": "Energy Bar",
-    "FFTS_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and begin recharging shields.",
-    "FFTS_EQUIP_ENERGYBAR_DESCRIPTION": "Increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> and <style=cIsHealing>heal</style> for <style=cIsHealing>10%</style> of your maximum health every second for <style=cIsUtility>{1}</style> seconds. Begin recharging <style=cIsHealing>shield</style>.",
+    "FFTS_EQUIP_ENERGYBAR_PICKUP": "Gain a brief health regeneration boost, a brief speed boost, and activate out of danger effects.",
+    "FFTS_EQUIP_ENERGYBAR_DESCRIPTION": "Increase <style=cIsUtility>movement speed</style> by <style=cIsUtility>{0}%</style> and <style=cIsHealing>heal</style> for <style=cIsHealing>10%</style> of your maximum health every second for <style=cIsUtility>{1}</style> seconds, as well as activating out of danger effects.",
     "FFTS_EQUIP_ENERGYBAR_LORE": "The Energy bar has been fueling different worlds’ competitors and robotic athletes for centuries. With enough grams of plant (and other proteins) per bar, as well as high fructose syrups and artificial flavors, this Energy Bar is THE delicious, plant-and-other-based bar that challenges all the expectations of possible food. It remains the final reflection of our ongoing commitment to crafting foods with purpose, for business and for the galaxy.",
     
 	"FFTS_EQUIP_MOONSHINE_NAME": "Moonshine Flask",

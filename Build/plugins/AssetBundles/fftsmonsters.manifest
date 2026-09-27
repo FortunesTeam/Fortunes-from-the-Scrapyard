@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3217688419
+CRC: 2696218931
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 873e18e0c7bf85b35dd142d4d48703e6
+    Hash: 02c9bbfa1824962f5531410c992fdb97
   TypeTreeHash:
     serializedVersion: 2
     Hash: 38d849e27f3aa92f702408a87532c09d
@@ -173,60 +173,46 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
-- Assets/FFTSAssets/Monsters/SporebackCrab/acSporebackCrab.asset
-- Assets/FFTSAssets/Monsters/Gump/acGump.asset
-- Assets/FFTSAssets/Monsters/Gardener/Skills/Barrage.asset
-- Assets/FFTSAssets/Monsters/Gardener/animGardener.controller
-- Assets/FFTSAssets/Monsters/Gump/Skills/GumpSkill1.asset
-- Assets/FFTSAssets/Monsters/Gump/idrsGump.asset
-- Assets/FFTSAssets/Monsters/Gardener/texGravekeeperFurDiffuse.png
-- Assets/FFTSAssets/Monsters/Gardener/mdlGardener.prefab
-- Assets/FFTSAssets/Monsters/SporebackCrab/mdlSporebackCrab.prefab
-- Assets/FFTSAssets/Monsters/Gardener/Skills/Irrigate.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/fdccsSporebackCrab.asset
-- Assets/FFTSAssets/Monsters/Gump/New Avatar Mask.mask
-- Assets/FFTSAssets/Monsters/Gump/GumpBody.prefab
-- Assets/FFTSAssets/Monsters/SporebackCrab/idrsSporebackCrab.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/New Avatar Mask.mask
-- Assets/FFTSAssets/Monsters/Gardener/GardenerBody.prefab
-- Assets/FFTSAssets/Monsters/SporebackCrab/cscSporebackCrab.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/SporebackCrabBody.prefab
-- Assets/FFTSAssets/Monsters/Gardener/Gardener1.fbx
-- Assets/FFTSAssets/Monsters/Gump/fdccsGump.asset
-- Assets/FFTSAssets/Monsters/Gardener/matGardenerFur.mat
 - Assets/FFTSAssets/Monsters/Gardener/cscGardener.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/mcpSporebackCrab.asset
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Primary.asset
 - Assets/FFTSAssets/Monsters/Gardener/matGardenerJar.mat
-- Assets/FFTSAssets/Monsters/Gardener/mcpGardener.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/animSporebackCrab.controller
+- Assets/FFTSAssets/Monsters/Gump/TexGumpEmissionREAL.png
+- Assets/FFTSAssets/Monsters/Gump/fdccsGump.asset
+- Assets/FFTSAssets/Monsters/Gump/cscGump.asset
 - Assets/FFTSAssets/Monsters/Gump/gump.fbx
 - Assets/FFTSAssets/Monsters/Gardener/texGravekeeperTestDiffuse.png
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Barrage.asset
 - Assets/FFTSAssets/Monsters/Gardener/texTrimSheetGravePropsNormal.png
+- Assets/FFTSAssets/Monsters/Gardener/animGardener.controller
 - Assets/FFTSAssets/Monsters/Gump/animGump.controller
-- Assets/FFTSAssets/Monsters/SporebackCrab/horseshoecrab1.fbx
+- Assets/FFTSAssets/Monsters/Gump/idrsGump.asset
 - Assets/FFTSAssets/Monsters/Gardener/idrsGardener.asset
 - Assets/FFTSAssets/Monsters/Gardener/AimMask.mask
 - Assets/FFTSAssets/Monsters/Gardener/fddcGardener.asset
-- Assets/FFTSAssets/Monsters/SporebackCrab/SporebackCrabMaster.prefab
+- Assets/FFTSAssets/Monsters/Gardener/texGravekeeperFurDiffuse.png
+- Assets/FFTSAssets/Monsters/Gardener/mdlGardener.prefab
 - Assets/FFTSAssets/Monsters/Gump/TexGumpDiffuseReal.png
+- Assets/FFTSAssets/Monsters/Gardener/Skills/Irrigate.asset
 - Assets/FFTSAssets/Monsters/Gardener/acGardener.asset
+- Assets/FFTSAssets/Monsters/Gump/Skills/GumpSkill1.asset
 - Assets/FFTSAssets/Monsters/Gardener/animGardenerLegacy.controller
+- Assets/FFTSAssets/Monsters/Gump/New Avatar Mask.mask
 - Assets/FFTSAssets/Monsters/Gump/New Material.mat
 - Assets/FFTSAssets/Monsters/Gump/TexGumpNormalReal.png
 - Assets/FFTSAssets/Monsters/Gardener/matGardener.mat
-- Assets/FFTSAssets/Monsters/SporebackCrab/Skills/Utility.asset
 - Assets/FFTSAssets/Monsters/Gump/Material.mat
 - Assets/FFTSAssets/Monsters/Gardener/texTrimSheetGravePropsDiffuse.png
 - Assets/FFTSAssets/Monsters/Gump/GumpMaster.prefab
-- Assets/FFTSAssets/Monsters/Gump/GumpMat.mat
+- Assets/FFTSAssets/Monsters/Gump/GumpBody.prefab
 - Assets/FFTSAssets/Monsters/Gardener/Skills/Utility.asset
+- Assets/FFTSAssets/Monsters/Gump/GumpMat.mat
+- Assets/FFTSAssets/Monsters/Gardener/GardenerBody.prefab
 - Assets/FFTSAssets/Monsters/Gardener/GardenerMaster.prefab
-- Assets/FFTSAssets/Monsters/SporebackCrab/Skills/Primary.asset
 - Assets/FFTSAssets/Monsters/Gardener/Gardener.png
-- Assets/FFTSAssets/Monsters/SporebackCrab/AimMask.mask
-- Assets/FFTSAssets/Monsters/Gump/TexGumpEmissionREAL.png
-- Assets/FFTSAssets/Monsters/Gardener/Skills/Primary.asset
-- Assets/FFTSAssets/Monsters/Gump/cscGump.asset
+- Assets/FFTSAssets/Monsters/Gardener/Gardener1.fbx
+- Assets/FFTSAssets/Monsters/Gump/acGump.asset
+- Assets/FFTSAssets/Monsters/Gardener/matGardenerFur.mat
+- Assets/FFTSAssets/Monsters/Gardener/mcpGardener.asset
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-2-Forgotten-Edition/Build/plugins/AssetBundles/fftsmain
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain
