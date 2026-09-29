@@ -8,6 +8,26 @@ Currently it adds the AddressReferencedAsset system, which allows you on the Edi
 
 ## Changelog
 
+### '1.1.3'
+
+* Added the ``NoCataloLoad`` attribute, which when implemented on a field and in conjunction with RoR2EditorKit, forces an AddressReferencedAsset to never be loaded from the catalog.
+* Added the ``AddressableComponentRequirement`` attribute, when used with an AssetReferenceGameObject or an AddressReferencedPrefab, it can restrict the lookup search in RoR2EditorKit to only include Game objects that have the specified component
+
+### '1.1.2'
+
+* Reimplemented version '1.1.0' with fixes, changes and improvements.
+
+### '1.1.1'
+
+* Revert 1.1.0
+
+### '1.1.0'
+
+* Implemented the ability to restrict a load to not use the ingame catalogs, forcing an address to be used instead.
+* implemented IDisposeable an AddressReferencedAsset, which releases an internal handle for the addressable asset.
+* Added the ability to bypass the secure loading by calling ResolveAsset().
+* Replaced most of the Task returning methods with IEnumerator coroutines.
+
 ### '1.0.4'
 
 * Added Safeguards for the loading process to avoid loading assets with addresses that are invalid or malformed.
