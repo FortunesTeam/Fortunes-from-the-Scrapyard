@@ -33,3 +33,5 @@ MonoBehaviour:
     _hexRepresentation: 77311b170172e5f459337eef42862d00
   - k_templateName: ShaderDictionary
     _hexRepresentation: eb748256c0573e64aa147f2339196579
+  - k_templateName: ItemDisplayRuleSetInspector
+    _hexRepresentation: 574ef3f93d22177419111e3d3d646c23

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3289265006
+CRC: 2870104407
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fcca3ccf5fee3e496c32dc2c6fe20b3c
+    Hash: 1512d5c741b15532131999998f4a51d9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: eed41732b51ef3894da355afa46e82c9
+    Hash: 4243ba20aa09d7f57816307f9a4ef437
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -25,6 +25,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
 - Class: 114
   Script: {fileID: 871971028, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -46,13 +48,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1247058517, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
 - Class: 114
-  Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
+- Class: 114
+  Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 198
@@ -69,7 +69,7 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: R2API.Addressables
   ClassName: R2API.AddressReferencedAssets.AddressReferencedEliteDef
 - AssemblyName: RoR2
-  ClassName: RoR2.CharacterModel/RendererInfo
+  ClassName: RoR2.AddressableAssets.IDRSKeyAssetReference
 - AssemblyName: RoR2
   ClassName: RoR2.DisplayRuleGroup
 - AssemblyName: RoR2
@@ -79,9 +79,15 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: RoR2
   ClassName: RoR2.MageElement
 - AssemblyName: RoR2
-  ClassName: RoR2.PickupIndex
-- AssemblyName: RoR2
   ClassName: Wave
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceGameObject
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkHash128
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime

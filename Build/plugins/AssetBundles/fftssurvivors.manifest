@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 782900866
+CRC: 2480751460
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7f5d653e831ad58b0e60adba0634cebf
+    Hash: 1e989d45a22fcb5f7c677dab557518af
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cb3ab07c2a2d78c44d9f9b6fa79c56df
+    Hash: 3d334fe31693f73337390cfce350170f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,38 +35,72 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
+- Class: 96
+  Script: {instanceID: 0}
 - Class: 108
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 678291247, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1297580292, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1985007777, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+- Class: 114
+  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1783796254, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
 - Class: 114
   Script: {fileID: 1143142494, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1512185436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1530905962, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1533710874, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 161585894, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 952828898, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 1788389205, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 422384671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 488236779, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 511512695, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: 816898038, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 1490543093, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 678291247, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: 1186219863, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
-  Script: {fileID: 422384671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
 - Class: 114
   Script: {fileID: -1811796171, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -46258121, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -84,21 +118,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -2096938146, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 1530905962, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 161585894, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
   Script: {fileID: -226763392, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 802132372, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: -960361785, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: 1653386690, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 298587437, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -365436499, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1294804675, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -146705984, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -110,25 +142,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -359660931, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 1512185436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
   Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1578512655, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 1533710874, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1630511094, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1848696948, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -270136354, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -136,15 +160,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -517518216, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: -789927658, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: -1124653335, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 952828898, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: -789927658, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1391837873, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1627637702, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  Script: {fileID: -1255927399, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1348642413, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -156,34 +180,46 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1561644061, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 816898038, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  Script: {fileID: 11500000, guid: 02a17d3a7bea384489c0fc6e66051d29, type: 3}
 - Class: 114
   Script: {fileID: -1568778350, guid: 050936fea8909af15a3fd3b64da1ff83, type: 3}
 - Class: 114
   Script: {fileID: 1667754706, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
-  Script: {fileID: -1004909643, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
   Script: {fileID: -1350745802, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
-  Script: {fileID: 1186219863, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: -2101996188, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: -565807913, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
+  Script: {fileID: -793381914, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4f4f59b83057a85408a1cb4718ca9004, type: 3}
+- Class: 114
   Script: {fileID: 1030275901, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
-  Script: {fileID: -793381914, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  Script: {fileID: -794025324, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -1004909643, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: -868256576, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 1170579581, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 2105105017, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 1264694691, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 120
   Script: {instanceID: 0}
 - Class: 135
   Script: {instanceID: 0}
 - Class: 136
   Script: {instanceID: 0}
 - Class: 137
+  Script: {instanceID: 0}
+- Class: 144
   Script: {instanceID: 0}
 - Class: 198
   Script: {instanceID: 0}
@@ -200,10 +236,30 @@ ClassTypes:
 - Class: 319
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: AK.Wwise.Unity.API.WwiseTypes
+  ClassName: AK.Wwise.Event
+- AssemblyName: HGUnityUtils
+  ClassName: HG.BlendableTypes.BlendableBool
+- AssemblyName: HGUnityUtils
+  ClassName: HG.BlendableTypes.BlendableFloat
+- AssemblyName: HGUnityUtils
+  ClassName: HG.BlendableTypes.BlendableVector3
+- AssemblyName: HGUnityUtils
+  ClassName: HG.SerializableSystemType
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.AchievableUnlockableDef/PreRequisiteAchievementIdentifier
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.NamedItemDisplayRuleSet/DisplayRule
+- AssemblyName: MSU.Runtime
+  ClassName: MSU.NamedItemDisplayRuleSet/RuleGroup
 - AssemblyName: RoR2
   ClassName: ChildLocator/NameTransformPair
 - AssemblyName: RoR2
   ClassName: EntityStates.SerializableEntityStateType
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterAI.BaseAI/FollowPattern
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterCameraParamsData
 - AssemblyName: RoR2
   ClassName: RoR2.CharacterFlightParameters
 - AssemblyName: RoR2
@@ -213,11 +269,27 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: RoR2
   ClassName: RoR2.DamageTypeCombo
 - AssemblyName: RoR2
+  ClassName: RoR2.Run/FixedTimeStamp
+- AssemblyName: RoR2
   ClassName: RoR2.SkillLocator/PassiveSkill
 - AssemblyName: RoR2
   ClassName: RoR2.Skills.SkillFamily/Variant
 - AssemblyName: RoR2
+  ClassName: RoR2.SkinDef/MeshReplacement
+- AssemblyName: RoR2
+  ClassName: RoR2.SkinDef/MinionSkinReplacement
+- AssemblyName: RoR2
   ClassName: RoR2.UI.CrosshairController/SpritePosition
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[RoR2.SkinDefParams]
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Avatar]
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Material]
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.RuntimeAnimatorController]
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.ArgumentCache
 - AssemblyName: UnityEngine.CoreModule
@@ -237,38 +309,60 @@ Assets:
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/animWrecker.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/UtilitySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairOutNibLeft.png
-- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSecondaryFamily.asset
-- Assets/FFTSAssets/Survivors/Wrecker/Animations/AimMask.mask
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/UtilitySkillDef.asset
+- Assets/FFTSAssets/Survivors/Wrecker/Animations/AimMask.mask
+- Assets/FFTSAssets/Survivors/Duke/mdlDuke.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterBodyNormals.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeGunDiffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorDiffuse.png
+- Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSecondaryFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/acCloaker.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/SpecialSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerTrackingIndicator.prefab
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/skinGrifterDecoy.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Primary.png
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkIndicator.png
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/texAlphaGradient6Mask.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterVisorEmission.png
+- Assets/FFTSAssets/Survivors/Duke/acDuke.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeVisorAlt.mat
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerPrimaryFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/Duke.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunB_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/matCloaker2.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Special_Stealthed.png
+- Assets/FFTSAssets/Survivors/Duke/Animations/dukeLeftArmMask.mask
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Ascend.fbx
-- Assets/FFTSAssets/Survivors/Skater/Skater.controller
+- Assets/FFTSAssets/Survivors/Duke/Skills/KineticReplicatorSkillDef.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Projectiles/matWreckerDiskRing.mat
+- Assets/FFTSAssets/Survivors/Skater/Skater.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerAimMask.mask
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeGunEmission.png
 - Assets/FFTSAssets/Survivors/Skater/Skills/SkaterSpecialFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/SecondarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker.asset
-- Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeEmission.png
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/skinDukeDecoyDefault.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeGunNormals.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukeSpecial2.png
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Passive.png
-- Assets/FFTSAssets/Survivors/Wrecker/WreckerPitch.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Start_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/DukeDefaultSkin.png
+- Assets/FFTSAssets/Survivors/Wrecker/WreckerPitch.fbx
+- Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunL_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/DukeDisplay.prefab
 - Assets/FFTSAssets/Survivors/Skater/mdlSkater.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Jump.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunBL_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunB.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunR.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Buffs/bdCloakerMarked.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/SteadyHandSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterBodyEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/CloakerDisplay.prefab
 - Assets/FFTSAssets/Survivors/Wrecker/matWreckerGun.mat
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerUtilityFamily.asset
@@ -279,110 +373,192 @@ Assets:
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerGestureMask.mask
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/animWreckerCSS.controller
 - Assets/FFTSAssets/Survivors/Wrecker/Projectiles/mdlDisk.fbx
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/matDukeFieldSphere.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@SkillPrimary_Dual02.fbx
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/SpecialSkillDef.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Secondary.png
 - Assets/FFTSAssets/Survivors/Wrecker/Wrecker.asset
 - Assets/FFTSAssets/Survivors/Skater/Skater.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerSecondaryFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/bdDukeSpeedBuff.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukePassive.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/DukeSpecialSkillFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterVisorDiffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Animations/animDukeCSS.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Primary_Simple.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/DukeAltSkin.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/DukePrimarySkillFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@SkillPrimary_Dual01.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_03_normal.png
 - Assets/FFTSAssets/Survivors/Wrecker/Projectiles/mdlDisk.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_03_diffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/DukePassiveSkillFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukeSpecial.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunR_Dual.fbx
 - Assets/FFTSAssets/Survivors/Skater/bdSkaterSpeedBuff.asset
-- Assets/FFTSAssets/Survivors/Skater/Skills/PrimarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/texRampCrocoDiseaseDark.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Jump_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/Skills/PrimarySkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorNormals.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Utility.png
 - Assets/FFTSAssets/Survivors/Wrecker/Projectiles/matWreckerLightShaft.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_04_diffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterGunDiffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/Twinkle.png
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/SecondaryAltSkillDef.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/Wrecker_Secondary_Alt1.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@AimPitch_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/mdlDuke.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/matDukeDecoy.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeMonsoonVisor.mat
 - Assets/FFTSAssets/Survivors/Skater/Skills/SkaterSecondaryFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerMarkBackdrop.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Primary.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeGun.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonGunEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/FortunesCrosshairsWhisperLock-On.png
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/texRampDecoy.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Sprint.fbx
+- Assets/FFTSAssets/Survivors/Duke/idrsDuke.asset
+- Assets/FFTSAssets/Survivors/Duke/mdlDukeAlt.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorDiffuseAlt.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/FlourishSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerParticleFade.png
 - Assets/FFTSAssets/Survivors/Cloaker/matCloaker3.mat
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerDisplay.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/matCloaker4.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterVisorNormals.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeMonsoonBody.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonGunDiffuse.png
 - Assets/FFTSAssets/Survivors/Skater/Skills/UtilitySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerPassiveFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/CloakerMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonGunNormals.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Descend.fbx
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/matDukeDome.mat
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/DukeDecoyBody.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/mdlCloaker.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkEffect.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeBody.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Idle_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/skinDukeDecoyMonsoon.asset
 - Assets/FFTSAssets/Survivors/Skater/Skills/SpecialSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/SalvoSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerSpecialFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerPassiveFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerBody.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunF_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Skills/FanTheHammerSkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Special2SkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/CloakerBody.prefab
-- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/WreckerDiskBombGhost.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonNormal.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Fire_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerRangeIndicator.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_02_diffuse.png
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/PassiveAltSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/texRampRicochet.png
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerSpecialFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Secondary_Idle.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Ascend_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Utility.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@AimPitch.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@RunBR_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/skinDukeMonsoon.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/PretentiousMimicrySkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/DukeSecondarySkillFamily.asset
 - Assets/FFTSAssets/Survivors/Wrecker/Projectiles/WreckerSoundScapeProjectile.prefab
 - Assets/FFTSAssets/Survivors/Wrecker/Buffs/bdWreckerSoundBuff.asset
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairOutNibRight.png
 - Assets/FFTSAssets/Survivors/Skater/SkaterMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/WreckerDiskBombGhost.prefab
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerMonsterMaster.prefab
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/matRicochetTwinkle.mat
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/matDukeDecoyGun.mat
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/GestureMask.mask
+- Assets/FFTSAssets/Survivors/Duke/DukeMonsterMaster.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/cloakerLeftArmMask.mask
+- Assets/FFTSAssets/Survivors/Duke/duke_emoteskeleton.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterGunNormals.png
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/matDukeVisorDecoy.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Special02.fbx
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukeUtility2.png
 - Assets/FFTSAssets/Survivors/Wrecker/mdlWrecker.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeSpeedBuff.png
 - Assets/FFTSAssets/Survivors/Skater/Skills/SecondarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerRing.mat
+- Assets/FFTSAssets/Survivors/Duke/Skills/DukeUtilitySkillFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/UI/CloakerCrosshair.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorNormalsAlt.png
 - Assets/FFTSAssets/Survivors/Skater/SkaterDisplay.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_01_diffuse.png
 - Assets/FFTSAssets/Survivors/Skater/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/dukeicon.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@CharSelect_Idle.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Idle.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@IdleIn_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@AimYaw.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/idrsCloaker.asset
 - Assets/FFTSAssets/Survivors/Wrecker/wrecker_emoteskeleton.fbx
+- Assets/FFTSAssets/Survivors/Duke/Animations/animDuke.controller
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairInNibRight.png
 - Assets/FFTSAssets/Survivors/Wrecker/matWrecker.mat
+- Assets/FFTSAssets/Survivors/Duke/Skills/QuickStepSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/mdlGrifter.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Special01_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/RicochetImpactHit.prefab
 - Assets/FFTSAssets/Survivors/Wrecker/acWrecker.asset
+- Assets/FFTSAssets/Survivors/Duke/mdlDukeMonsoon.fbx
 - Assets/FFTSAssets/Survivors/Skater/Skills/SkaterUtilityFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/Animations/dukeGestureMask.mask
+- Assets/FFTSAssets/Survivors/Duke/Unlockables/DukeMasteryAchievement.asset
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/RicochetOrbEffect.prefab
+- Assets/FFTSAssets/Survivors/Duke/Animations/dukeAimMask.mask
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunBR.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@AimYaw_Dual.fbx
 - Assets/FFTSAssets/Survivors/Wrecker/Buffs/bdWreckerSlowBuff.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukePrimary.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeVisor.mat
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/LightningTrail.tif
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@CharSelect_Intro.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairInNibLeft.png
-- Assets/FFTSAssets/Survivors/Skater/acSkater.asset
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukePrimaryEmpower.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukeUtility.png
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_01_normal.png
+- Assets/FFTSAssets/Survivors/Duke/bdDukeDamageShare.asset
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/acDukeDecoy.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Passive.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/animCloaker.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@LandImpact_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/matGrifterVisor.mat
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/texRampRicochet2.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeMonsoonDiffuse.png
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/matCloakerMark.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/skinDukeDefault.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Utility_Dual.fbx
 - Assets/FFTSAssets/Survivors/Skater/SkaterBody.png
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/WreckerPrimaryFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/Animations/DukeEmotes.controller
+- Assets/FFTSAssets/Survivors/Duke/Assets/skinGrifter.asset
 - Assets/FFTSAssets/Survivors/Skater/Skills/SkaterPassiveFamily.asset
+- Assets/FFTSAssets/Survivors/Duke/DukeBody.prefab
+- Assets/FFTSAssets/Survivors/Duke/Assets/matGrifterBody.mat
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerDiffuse.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeVisorEmissionAlt.png
+- Assets/FFTSAssets/Survivors/Skater/acSkater.asset
+- Assets/FFTSAssets/Survivors/Duke/nidrsDuke.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeNormals.png
+- Assets/FFTSAssets/Survivors/Duke/bdDukeFreeShot.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/CloakerUtilityFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Special02_Dual.fbx
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/matDukeChargeIn.mat
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/skinDukeDecoyAlt.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterBodyDiffuse.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/animCloakerCSS.controller
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/PassiveSkillDef.asset
+- Assets/FFTSAssets/Survivors/Duke/Assets/skinDukeAlt.asset
 - Assets/FFTSAssets/Survivors/Wrecker/mdlWrecker.prefab
-- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/Sphere, Unwrapped.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/Sphere, Unwrapped 1.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Sprint_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/UI/texCloakerCrosshairDot.png
@@ -390,9 +566,11 @@ Assets:
 - Assets/FFTSAssets/Survivors/Skater/Skills/SkaterPrimaryFamily.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Skill_Secondary_Idle_Dual.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@Skill_Special01.fbx
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/DukeDecoyMaster.prefab
+- Assets/FFTSAssets/Survivors/Duke/DukeDecoy/mdlDukeDecoy.prefab
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunF.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/UI/FortunesCrosshairsWhisper.png
-- Assets/FFTSAssets/Survivors/Wrecker/texWreckerIcon.png
+- Assets/FFTSAssets/Survivors/Wrecker/Projectiles/Sphere, Unwrapped.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@LandImpact.fbx
 - Assets/FFTSAssets/Survivors/Wrecker/texWreckerBuffPlaceholder.png
 - Assets/FFTSAssets/Survivors/Wrecker/Skills/PrimarySkillDef.asset
@@ -403,18 +581,28 @@ Assets:
 - Assets/FFTSAssets/Survivors/Wrecker/Animations/animWreckerEmotes.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/CloakerEmotes.controller
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/Cloaker_Special_Unstealthed.png
+- Assets/FFTSAssets/Survivors/Duke/Assets/matDukeMonsoonGun.mat
+- Assets/FFTSAssets/Survivors/Wrecker/texWreckerIcon.png
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/donut8Mesh 1.asset
-- Assets/FFTSAssets/Survivors/Skater/HydroFinal.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/matGrifterGun.mat
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_04_normal.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Dual/Cloaker@Descend_Dual.fbx
+- Assets/FFTSAssets/Survivors/Skater/HydroFinal.fbx
+- Assets/FFTSAssets/Survivors/Duke/duke_emoteskeleton.prefab
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/RicochetTracer.prefab
+- Assets/FFTSAssets/Survivors/Duke/Projectiles/LightningTrail.mat
+- Assets/FFTSAssets/Survivors/Duke/Assets/texGrifterGunEmission.png
 - Assets/FFTSAssets/Survivors/Cloaker/Cloaker_02_normal.png
 - Assets/FFTSAssets/Survivors/Wrecker/WreckerNormalTemp.png
+- Assets/FFTSAssets/Survivors/Duke/Skills/iconDukeSecondary.png
 - Assets/FFTSAssets/Survivors/Cloaker/Buffs/bdCloakerMarkCd.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/PrimarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunBL.fbx
+- Assets/FFTSAssets/Survivors/Duke/Assets/texDukeDiffuse.png
 - Assets/FFTSAssets/Survivors/Cloaker/Animations/Cloaker@RunL.fbx
 - Assets/FFTSAssets/Survivors/Cloaker/Skills/SecondarySkillDef.asset
 - Assets/FFTSAssets/Survivors/Cloaker/VFX/CloakerMarkedBuffIcon.png
 Dependencies:
 - D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
 - D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsitems
+- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain

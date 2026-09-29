@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 893257713
+CRC: 964598527
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 85f9e568c4a6a84fe7a8ef2ca1235b0b
+    Hash: 55a781cdb6100b4f28e08e82baa72d2d
   TypeTreeHash:
     serializedVersion: 2
     Hash: 799de169664f4efbd60b5cd48e1fa3e4
@@ -19,6 +19,6 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/FotSAssets/Difficulties/Whirlwind/texWhirlwind.png
-- Assets/FotSAssets/Difficulties/Whirlwind/Whirlwind.asset
+- Assets/FFTSAssets/Difficulties/Whirlwind/texWhirlwind.png
+- Assets/FFTSAssets/Difficulties/Whirlwind/Whirlwind.asset
 Dependencies: []
