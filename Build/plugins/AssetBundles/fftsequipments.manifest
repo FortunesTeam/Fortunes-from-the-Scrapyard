@@ -3,10 +3,10 @@ CRC: 3512471557
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4f24431fc2856f0e402bee801fa82894
+    Hash: aad03f3f3d05b7f1309f91b53fa35912
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cef6e288f07e34e086bff6a4a7bd074a
+    Hash: 18161f139c674beb893936d2fd013632
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,9 +38,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1931460509, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
-- Class: 114
   Script: {fileID: -1580175318, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -88,5 +88,5 @@ Assets:
 - Assets/FFTSAssets/Equipment/MoonshineFlask/meshMoonshine.mesh
 - Assets/FFTSAssets/Equipment/EnergyBar/matEnergyBar.mat
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsbase
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsmain

@@ -239,17 +239,13 @@ namespace FortunesFromTheScrapyard
             public static BuffDef bdCounterfeitLimit;
             public static BuffDef bdWreckerSoundBuff;
             public static BuffDef bdWreckerSlowBuff;
-            public static BuffDef bdSkaterSpeedBuff;
         }
 
         public static class Survivors
         {
-            //public static SurvivorDef Predator;
-            //public static SurvivorDef Neuromancer;
             public static SurvivorDef Wrecker;
             public static SurvivorDef Cloaker;
             public static SurvivorDef Duke;
-            public static SurvivorDef Skater;
         }
 
         public static class Characters

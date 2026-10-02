@@ -1,35 +1,34 @@
 {
   "strings": {
     "FFTS_CLOAKER_BODY_NAME": "Cloaker",
-    "FFTS_CLOAKER_BODY_SUBTITLE": "S",
-    "FFTS_CLOAKER_DESCRIPTION": ".",
-	
+    "FFTS_CLOAKER_BODY_SUBTITLE": "The Unseen",
+    "FFTS_CLOAKER_DESCRIPTION": "Cloaker uses stealth and precise gunfire to expose vulnerable targets.\n\n<style=cSub>Choose Cloak to ambush enemies, or Akimbo to trade stealth for rapid alternating shots.</style>",
+
     "FFTS_CLOAKER_PASSIVE_NAME": "Cloak",
-    "FFTS_CLOAKER_PASSIVE_DESCRIPTION": "Stealth. Range. Break stealth.",
-	
+    "FFTS_CLOAKER_PASSIVE_DESCRIPTION": "After <style=cIsUtility>7 seconds out of combat</style>, become invisible and gain movement speed. While invisible, gain <style=cIsDamage>150% bonus damage</style>. Shooting, taking damage, or an enemy within <style=cIsUtility>6m</style> breaks stealth. Cooldown reduction reduces the delay.",
+
     "FFTS_CLOAKER_PASSIVE_ALT1_NAME": "Akimbo",
-    "FFTS_CLOAKER_PASSIVE_ALT1_DESCRIPTION": ".",
-	
+    "FFTS_CLOAKER_PASSIVE_ALT1_DESCRIPTION": "Replace passive stealth with <style=cIsDamage>150% bonus attack speed</style>. Hold Shoot to alternate pistols. Pistol hits do not apply marks.",
+
     "FFTS_CLOAKER_PRIMARY_NAME": "Shoot",
-    "FFTS_CLOAKER_PRIMARY_DESCRIPTION": "",
-	
+    "FFTS_CLOAKER_PRIMARY_DESCRIPTION": "Fire a precise bullet for <style=cIsDamage>130% damage</style>.",
+
     "FFTS_CLOAKER_SECONDARY_NAME": "Shoot Harder",
-    "FFTS_CLOAKER_SECONDARY_DESCRIPTION": "",
-	
-    "FFTS_CLOAKER_UTILITY_NAME": "zippy",
-    "FFTS_CLOAKER_UTILITY_DESCRIPTION": "zoomy",
-	
-    "FFTS_CLOAKER_SPECIAL_NAME": "mark enemy while stealthed",
-    "FFTS_CLOAKER_SPECIAL_DESCRIPTION": "they take more damage",
-	
-    "FFTS_CLOAKER_SPECIAL2_NAME": "scream",
-    "FFTS_CLOAKER_SPECIAL2_DESCRIPTION": "riff out for aoe damage",
-	
-	
-	"FFTS_CLOAKER_LORE": ".",
-    "FFTS_CLOAKER_OUTRO_FLAVOR": "..and so he left,",
-    "FFTS_CLOAKER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "..and so he vanished,",
+    "FFTS_CLOAKER_SECONDARY_DESCRIPTION": "Charge a shot for up to <style=cIsDamage>400% damage</style>. Charging takes <style=cIsUtility>1.5 seconds</style>, reduced by attack speed.",
 
+    "FFTS_CLOAKER_UTILITY_NAME": "Restealth",
+    "FFTS_CLOAKER_UTILITY_DESCRIPTION": "Dash in your movement direction, becoming <style=cIsUtility>invincible for 0.3 seconds</style>. With Cloak, enter stealth and ignore damage and proximity reveals for <style=cIsUtility>3 seconds</style>.",
 
+    "FFTS_CLOAKER_SPECIAL_NAME": "Mark",
+    "FFTS_CLOAKER_SPECIAL_DESCRIPTION": "Mark a target within <style=cIsUtility>40m</style>. The next hit is a <style=cIsDamage>guaranteed critical strike</style>, or deals <style=cIsDamage>50% more damage</style> if it already crits. Consumed marks cannot be reapplied for <style=cIsUtility>5 seconds</style>.",
+
+    "FFTS_CLOAKER_SPECIAL2_NAME": "Screech",
+    "FFTS_CLOAKER_SPECIAL2_DESCRIPTION": "Unleash a shockwave for <style=cIsDamage>600% damage</style> to enemies within <style=cIsUtility>14m</style>, knocking them back.",
+
+    "FFTS_CLOAKER_LORE": "An unseen threat waits for the right moment.",
+    "FFTS_CLOAKER_BODY_LORE": "An unseen threat waits for the right moment.",
+    "FFTS_CLOAKER_OUTRO_FLAVOR": "..and so they left, unseen once more.",
+    "FFTS_CLOAKER_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR": "..and so they vanished, leaving only an echo.",
+    "FFTS_CLOAKER_SKIN_DEFAULT": "Default"
   }
 }

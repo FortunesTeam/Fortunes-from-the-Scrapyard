@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383767769444083}
   - component: {fileID: 7833383767769444085}
-  - component: {fileID: 1995896629828443918}
+  - component: {fileID: 7833383767769444084}
   m_Layer: 5
   m_Name: Center, Out
   m_TagString: Untagged
@@ -27,8 +27,8 @@ RectTransform:
   m_GameObject: {fileID: 7833383767769444082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7833383769011685218}
   m_RootOrder: 5
@@ -46,21 +46,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383767769444082}
   m_CullTransparentMesh: 0
---- !u!114 &1995896629828443918
+--- !u!114 &7833383767769444084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383767769444082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6117647, g: 0.6117647, b: 0.6117647, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383768101807461}
   - component: {fileID: 7833383768101807463}
-  - component: {fileID: 7991294605444755377}
+  - component: {fileID: 7833383768101807462}
   m_Layer: 5
   m_Name: Center, Available
   m_TagString: Untagged
@@ -103,8 +103,8 @@ RectTransform:
   m_GameObject: {fileID: 7833383768101807460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7833383769011685218}
   m_RootOrder: 4
@@ -122,7 +122,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383768101807460}
   m_CullTransparentMesh: 0
---- !u!114 &7991294605444755377
+--- !u!114 &7833383768101807462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383768326047153}
   - component: {fileID: 7833383768326047155}
-  - component: {fileID: 5238538371490049770}
+  - component: {fileID: 7833383768326047154}
   m_Layer: 5
   m_Name: Image, Left
   m_TagString: Untagged
@@ -198,7 +198,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383768326047152}
   m_CullTransparentMesh: 0
---- !u!114 &5238538371490049770
+--- !u!114 &7833383768326047154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383768540428441}
   - component: {fileID: 7833383768540428443}
-  - component: {fileID: 7991525985430418314}
+  - component: {fileID: 7833383768540428442}
   m_Layer: 5
   m_Name: Image, Right
   m_TagString: Untagged
@@ -274,7 +274,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383768540428440}
   m_CullTransparentMesh: 0
---- !u!114 &7991525985430418314
+--- !u!114 &7833383768540428442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383768732935466}
   - component: {fileID: 7833383768732935468}
-  - component: {fileID: 327370204328886287}
+  - component: {fileID: 7833383768732935467}
   m_Layer: 5
   m_Name: Image, RightIn
   m_TagString: Untagged
@@ -350,7 +350,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383768732935465}
   m_CullTransparentMesh: 0
---- !u!114 &327370204328886287
+--- !u!114 &7833383768732935467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383768743821939}
   - component: {fileID: 7833383768743821941}
-  - component: {fileID: 3730861410966211459}
+  - component: {fileID: 7833383768743821940}
   m_Layer: 5
   m_Name: Image, LeftIn
   m_TagString: Untagged
@@ -426,7 +426,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383768743821938}
   m_CullTransparentMesh: 0
---- !u!114 &3730861410966211459
+--- !u!114 &7833383768743821940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7833383769011685218}
   - component: {fileID: 7833383769011685217}
-  - component: {fileID: 8775533213619766958}
+  - component: {fileID: 7833383769011685216}
   - component: {fileID: 7833383769011685231}
   - component: {fileID: 7833383769011685230}
   m_Layer: 5
@@ -510,7 +510,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833383769011685229}
   m_CullTransparentMesh: 0
---- !u!114 &8775533213619766958
+--- !u!114 &7833383769011685216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

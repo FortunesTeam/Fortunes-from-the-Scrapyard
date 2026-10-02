@@ -1,0 +1,8 @@
+{
+    "name": "Fortunes.Helpers.Editor",
+    "references": [
+        "Fortunes.Unity"
+    ],
+    "includePlatforms": ["Editor"],
+    "overrideReferences": true
+}

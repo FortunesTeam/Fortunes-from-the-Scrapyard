@@ -1,182 +1,119 @@
-﻿using RoR2;
-using UnityEngine;
-using EntityStates;
-using EntityStates.Commando;
-using R2API;
-using UnityEngine.AddressableAssets;
-using UnityEngine.Networking;
-using FortunesFromTheScrapyard.Survivors.Cloaker.Components;
 using FortunesFromTheScrapyard.Survivors.Cloaker;
+using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
+using EntityStates;
+using R2API;
+using RoR2;
 using RoR2.Skills;
+using UnityEngine;
+using UnityEngine.Networking;
 
 namespace EntityStates.Cloaker.Weapon
 {
     public class CloakerShoot : BaseSkillState, SteppedSkillDef.IStepSetter
     {
-        public static int ShootStateHash = Animator.StringToHash("Shoot");
-        public static int ShootSecondaryStateHash = Animator.StringToHash("ShootSecondary");
-        public float baseDamageCoefficient = 2.6f;
-        public static float procCoefficient = 1f;
-        public static float baseDuration = 0.4f;
-        public static float force = 200f;
-        public static float recoil = 2f;
-        public static float range = 2000f;
-        public GameObject tracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");
-        public GameObject critTracerEffectPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/Tracers/TracerCaptainShotgun");
-        public GameObject hitEffectPrefab = EntityStates.Commando.CommandoWeapon.FirePistol2.hitEffectPrefab;
-        public bool charged = false;
-        protected float duration;
-        protected string muzzleString;
-        protected bool isCrit;
-        protected virtual GameObject tracerPrefab => this.isCrit ? critTracerEffectPrefab : tracerEffectPrefab;
-        public string shootSoundString = "";
-        public string animationString;
-        public virtual BulletAttack.FalloffModel falloff => BulletAttack.FalloffModel.DefaultBullet;
-        private CloakerController cloakerController;
+        public const float PrimaryDamageCoefficient = 1.3f;
+        public float damageCoefficient = PrimaryDamageCoefficient;
+        public bool charged;
+        internal float? cloakedDamage;
+        private const float BaseDuration = 0.4f;
+        private float duration;
         private int step;
+        private bool crit;
+        private string muzzle;
+        public void SetStep(int value) => step = value;
 
         public override void OnEnter()
         {
-            if (!cloakerController)
-            {
-                this.cloakerController = base.gameObject.GetComponent<CloakerController>();
-            }
-            
-
             base.OnEnter();
+            if (charged) damageStat = cloakedDamage ?? damageStat;
+            CloakerController controller = GetComponent<CloakerController>();
+            controller.BreakStealth();
+            duration = BaseDuration / attackSpeedStat;
+            characterBody.isSprinting = false;
             characterBody.SetAimTimer(2f);
-            this.duration = CloakerShoot.baseDuration / this.attackSpeedStat;
-            switch (step)
-            {
-                default:
-                case 0:
-                    animationString = "Shoot";
-                    muzzleString = "MuzzleRight";
-                    break;
-                case 1:
-                    duration *= 0.4f;
-                    animationString = "ShootDual1";
-                    muzzleString = "MuzzleRight";
-                    break;
-                case 2:
-                    duration *= 0.4f;
-                    animationString = "ShootDual2";
-                    muzzleString = "MuzzleLeft";
-                    break;
-            }
-
-            this.isCrit = base.RollCrit();
-
-            this.shootSoundString = this.isCrit ? "sfx_spy_revolver_shoot_crit" : "sfx_spy_revolver_shoot";
-            if (base.isAuthority)
-            {
-                this.Fire();
-            }
+            muzzle = controller.isAkimbo && step % 2 != 0 ? "MuzzleLeft" : "MuzzleRight";
+            if (isAuthority) crit = RollCrit();
+            string animation = charged ? "ShootSecondary"
+                : controller.isAkimbo ? (muzzle == "MuzzleLeft" ? "ShootDual2" : "ShootDual1") : "Shoot";
+            PlayCrossfade("Gesture, Override", controller.GetAnimationStateName("Gesture, Override", animation),
+                charged ? "Secondary.playbackRate" : "Primary.playbackRate", duration, duration * 0.05f);
+            EffectManager.SimpleMuzzleFlash(CloakerAssets.PistolMuzzle, gameObject, muzzle, false);
+            Util.PlaySound(charged ? CloakerAssets.ChargedShotSound : CloakerAssets.ShotSound, gameObject);
+            if (isAuthority) Fire();
+            characterBody.AddSpreadBloom(1.25f);
         }
 
-        public override void OnExit()
+        private void Fire()
         {
-            base.OnExit();
-        }
-
-        public void Fire()
-        {
-            EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FirePistol2.muzzleEffectPrefab, this.gameObject, this.muzzleString, false);
-
-            Util.PlaySound(this.shootSoundString, this.gameObject);
-
-            if (base.isAuthority)
+            Ray aimRay = GetAimRay();
+            AddRecoil(-1f, -1f, -1f, 1f);
+            BulletAttack bullet = new BulletAttack
             {
-                Ray aimRay = base.GetAimRay();
-                base.AddRecoil(-0.5f * CloakerShoot.recoil, -0.5f * CloakerShoot.recoil, -0.5f * CloakerShoot.recoil, 0.5f * CloakerShoot.recoil);
-
-                BulletAttack bulletAttack = new BulletAttack
-                {
-                    bulletCount = 1,
-                    aimVector = aimRay.direction,
-                    origin = aimRay.origin,
-                    damage = this.baseDamageCoefficient * damageStat,
-                    damageColorIndex = DamageColorIndex.Default,
-                    falloffModel = this.falloff,
-                    maxDistance = CloakerShoot.range,
-                    force = CloakerShoot.force,
-                    hitMask = LayerIndex.CommonMasks.bullet,
-                    minSpread = 0f,
-                    maxSpread = this.characterBody.spreadBloomAngle * 2f,
-                    isCrit = this.isCrit,
-                    owner = base.gameObject,
-                    muzzleName = muzzleString,
-                    smartCollision = true,
-                    procChainMask = default(ProcChainMask),
-                    procCoefficient = procCoefficient,
-                    radius = 0.75f,
-                    sniper = false,
-                    stopperMask = LayerIndex.CommonMasks.bullet,
-                    weapon = null,
-                    tracerEffectPrefab = this.tracerPrefab,
-                    spreadPitchScale = 1f,
-                    spreadYawScale = 1f,
-                    queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
-                    hitEffectPrefab = hitEffectPrefab,
-                };
-
-                PlayAnimation();
-
-                if (charged)
-                {
-                    bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerChargedDamageType);
-                }
-
-                if (step == 2) bulletAttack.AddModdedDamageType(FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker.CloakerAkimboDamageType);
-                bulletAttack.Fire();
-            }
-
-            base.characterBody.AddSpreadBloom(1.25f);
+                bulletCount = 1,
+                origin = aimRay.origin,
+                aimVector = aimRay.direction,
+                damage = damageCoefficient * damageStat,
+                damageColorIndex = DamageColorIndex.Default,
+                falloffModel = BulletAttack.FalloffModel.DefaultBullet,
+                maxDistance = 2000f,
+                force = 200f,
+                hitMask = LayerIndex.CommonMasks.bullet,
+                stopperMask = LayerIndex.CommonMasks.bullet,
+                minSpread = 0f,
+                maxSpread = characterBody.spreadBloomAngle * 2f,
+                isCrit = crit,
+                owner = gameObject,
+                muzzleName = muzzle,
+                smartCollision = true,
+                procChainMask = default,
+                procCoefficient = 1f,
+                radius = 0.75f,
+                sniper = false,
+                tracerEffectPrefab = crit ? CloakerAssets.CritTracer : charged ? CloakerAssets.RailTracer : CloakerAssets.GoldTracer,
+                hitEffectPrefab = charged ? CloakerAssets.RailImpact : CloakerAssets.PistolImpact,
+                spreadPitchScale = 1f,
+                spreadYawScale = 1f,
+                queryTriggerInteraction = QueryTriggerInteraction.UseGlobal
+            };
+            if (charged) bullet.AddModdedDamageType(CloakerContent.CloakerChargedDamageType);
+            bullet.Fire();
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
-            if (base.fixedAge >= this.duration && base.isAuthority)
-            {
-                this.outer.SetNextStateToMain();
-            }
+            if (isAuthority && fixedAge >= duration) outer.SetNextStateToMain();
         }
-
-        public override InterruptPriority GetMinimumInterruptPriority()
+        public override InterruptPriority GetMinimumInterruptPriority() => InterruptPriority.PrioritySkill;
+        public override void Reset()
         {
-            return InterruptPriority.PrioritySkill;
+            base.Reset();
+            cloakedDamage = null;
+            damageCoefficient = PrimaryDamageCoefficient;
+            charged = false;
+            step = 0;
+            crit = false;
         }
-
-        public void SetStep(int i)
+        public override void OnSerialize(NetworkWriter writer)
         {
-            step = i;
-            if (!cloakerController)
-            {
-                this.cloakerController = activatorSkillSlot.gameObject.GetComponent<CloakerController>();
-            }
-            if (cloakerController)
-            {
-                step = cloakerController.isAkimbo ? i + 1 : 0;
-            }
+            base.OnSerialize(writer);
+            writer.Write(damageCoefficient);
+            writer.Write(charged);
+            writer.Write(step);
+            writer.Write(crit);
+            writer.Write(cloakedDamage.HasValue);
+            writer.Write(cloakedDamage.GetValueOrDefault());
         }
-
-        public void PlayAnimation()
+        public override void OnDeserialize(NetworkReader reader)
         {
-            switch (step)
-            {
-                case int _ when charged:
-                    this.PlayCrossfade("Gesture, Additive", ShootSecondaryStateHash, this.duration * 0.05f);
-                    break;
-                case 0:
-                    this.PlayCrossfade("Gesture, Override", animationString, this.duration * 0.1f);
-                    break;
-                case 1:
-                case 2:
-                    this.PlayAnimation("Gesture, Override", animationString);
-                    break;
-            }
+            base.OnDeserialize(reader);
+            damageCoefficient = reader.ReadSingle();
+            charged = reader.ReadBoolean();
+            step = reader.ReadInt32();
+            crit = reader.ReadBoolean();
+            bool hasCloakedDamage = reader.ReadBoolean();
+            float damage = reader.ReadSingle();
+            cloakedDamage = hasCloakedDamage ? (float?)damage : null;
         }
     }
 }

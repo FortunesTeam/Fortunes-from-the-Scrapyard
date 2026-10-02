@@ -1,0 +1,497 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd7927c3c75b8f4b96ab0387b240e46, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 06764df936e43a4b91a03547afad3036
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 06764df936e43a4b91a03547afad3036
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 164b9287b03e5f419b8ac7f84120efa5
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: 164b9287b03e5f419b8ac7f84120efa5
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 164b9287b03e5f419b8ac7f84120efa5
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 872283d6992b8f49a333f5043ea1bac6
+    ParentPath: SoundBanks\Default Work Unit
+    guid: 872283d6992b8f49a333f5043ea1bac6
+    GuidInternal: 
+    m_lastTime: -8584107106565168177
+    List:
+    - name: FFTSSoundBank
+      guid: e9685248efa95f43b146efe5849a5099
+      id: 2023758821
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 872283d6992b8f49a333f5043ea1bac6
+      - ElementName: FFTSSoundBank
+        ObjectType: 7
+        guid: e9685248efa95f43b146efe5849a5099
+      Path: SoundBanks\Default Work Unit\FFTSSoundBank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+    ParentPath: Events\Default Work Unit
+    guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+    GuidInternal: 
+    m_lastTime: -8584107111313391148
+    List:
+    - name: Play_sfx_cloaker_charge
+      guid: 56b7f6c9f088f041b96cb4c8b7287abb
+      id: 7833762
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_charge
+        ObjectType: 3
+        guid: 56b7f6c9f088f041b96cb4c8b7287abb
+      Path: Events\Default Work Unit\Play_sfx_cloaker_charge
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_cloaker_chargeshot
+      guid: 4ecd3e1d9610f34b8074b9428fea41d6
+      id: 1235942890
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_chargeshot
+        ObjectType: 3
+        guid: 4ecd3e1d9610f34b8074b9428fea41d6
+      Path: Events\Default Work Unit\Play_sfx_cloaker_chargeshot
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_cloaker_ping
+      guid: 7c1ba0f8ba6c56438284a5a6ed30acaa
+      id: 677630362
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_ping
+        ObjectType: 3
+        guid: 7c1ba0f8ba6c56438284a5a6ed30acaa
+      Path: Events\Default Work Unit\Play_sfx_cloaker_ping
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_cloaker_scream
+      guid: fa757852dc9cc547aaf7066097096fcb
+      id: 1293912337
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_scream
+        ObjectType: 3
+        guid: fa757852dc9cc547aaf7066097096fcb
+      Path: Events\Default Work Unit\Play_sfx_cloaker_scream
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_cloaker_shot
+      guid: 8a320f80d7fa934987a3f98a705a412b
+      id: 3673262522
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_shot
+        ObjectType: 3
+        guid: 8a320f80d7fa934987a3f98a705a412b
+      Path: Events\Default Work Unit\Play_sfx_cloaker_shot
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_sfx_cloaker_stealth
+      guid: 4bbecfda3a461747877a2cbdc5cea5b8
+      id: 347077527
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: Play_sfx_cloaker_stealth
+        ObjectType: 3
+        guid: 4bbecfda3a461747877a2cbdc5cea5b8
+      Path: Events\Default Work Unit\Play_sfx_cloaker_stealth
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_cd_1
+      guid: 85a2d861bd43514381a57a5568513c18
+      id: 73920332
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_cd_1
+        ObjectType: 3
+        guid: 85a2d861bd43514381a57a5568513c18
+      Path: Events\Default Work Unit\sfx_cd_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_cd_2
+      guid: 6d59498dd2651f4e943dec02fae23850
+      id: 73920335
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_cd_2
+        ObjectType: 3
+        guid: 6d59498dd2651f4e943dec02fae23850
+      Path: Events\Default Work Unit\sfx_cd_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_cd_3
+      guid: 77b368d29a8efc4fbdb21d0e5ecad6fd
+      id: 73920334
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_cd_3
+        ObjectType: 3
+        guid: 77b368d29a8efc4fbdb21d0e5ecad6fd
+      Path: Events\Default Work Unit\sfx_cd_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_ducttape_active
+      guid: fcf5ac5c869b164da9a4bdccf3a40ab6
+      id: 3730456474
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_ducttape_active
+        ObjectType: 3
+        guid: fcf5ac5c869b164da9a4bdccf3a40ab6
+      Path: Events\Default Work Unit\sfx_ducttape_active
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_energybar_use
+      guid: 0a6a98f19d956e4ebe36223464cfcdbd
+      id: 3280223896
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_energybar_use
+        ObjectType: 3
+        guid: 0a6a98f19d956e4ebe36223464cfcdbd
+      Path: Events\Default Work Unit\sfx_energybar_use
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_headphones_activate
+      guid: 2769a5d8e38f9e4f98bc20eb7620a3d5
+      id: 666364388
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_headphones_activate
+        ObjectType: 3
+        guid: 2769a5d8e38f9e4f98bc20eb7620a3d5
+      Path: Events\Default Work Unit\sfx_headphones_activate
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_lethalinjection_activate
+      guid: 15abe82f838fa649852c446b30d81b6a
+      id: 3491240262
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_lethalinjection_activate
+        ObjectType: 3
+        guid: 15abe82f838fa649852c446b30d81b6a
+      Path: Events\Default Work Unit\sfx_lethalinjection_activate
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_lunarmoney_start
+      guid: 47a7d1b87c44c9479b2c198d3a60414e
+      id: 193125100
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_lunarmoney_start
+        ObjectType: 3
+        guid: 47a7d1b87c44c9479b2c198d3a60414e
+      Path: Events\Default Work Unit\sfx_lunarmoney_start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_moonshine_miss
+      guid: d60d1ce2912a3a49b2d7564a556cd2ed
+      id: 1222943750
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_moonshine_miss
+        ObjectType: 3
+        guid: d60d1ce2912a3a49b2d7564a556cd2ed
+      Path: Events\Default Work Unit\sfx_moonshine_miss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_moonshine_use
+      guid: 70c273540998f045ac3134ab6f6ff45e
+      id: 1755670239
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_moonshine_use
+        ObjectType: 3
+        guid: 70c273540998f045ac3134ab6f6ff45e
+      Path: Events\Default Work Unit\sfx_moonshine_use
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_scrap_elite_spawn
+      guid: 295a77fabe67d04bb930ec81fe04e8e4
+      id: 397976872
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_scrap_elite_spawn
+        ObjectType: 3
+        guid: 295a77fabe67d04bb930ec81fe04e8e4
+      Path: Events\Default Work Unit\sfx_scrap_elite_spawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_spraycan_activate
+      guid: 68bacba306e9e34d9128990e0aba7eac
+      id: 1927010350
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_spraycan_activate
+        ObjectType: 3
+        guid: 68bacba306e9e34d9128990e0aba7eac
+      Path: Events\Default Work Unit\sfx_spraycan_activate
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: sfx_turbo_start
+      guid: 54119088e60d504781bab10d63d7cd06
+      id: 2377754410
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 77d4b4c535e3584ebde6f8ab7816dbcd
+      - ElementName: sfx_turbo_start
+        ObjectType: 3
+        guid: 54119088e60d504781bab10d63d7cd06
+      Path: Events\Default Work Unit\sfx_turbo_start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 4adbd3c0f02a5c49aceb1a46dfb4a9c0
+    ParentPath: Game Parameters\Default Work Unit
+    guid: 4adbd3c0f02a5c49aceb1a46dfb4a9c0
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List:
+    - name: Volume_SFX
+      guid: d9067dc6189b7b4bb8b906221143807d
+      id: 3673881719
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4adbd3c0f02a5c49aceb1a46dfb4a9c0
+      - ElementName: Volume_SFX
+        ObjectType: 13
+        guid: d9067dc6189b7b4bb8b906221143807d
+      Path: Game Parameters\Default Work Unit\Volume_SFX
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: a055d6ff979a0f4d955899a752e4f6eb
+    ParentPath: States\Default Work Unit
+    guid: a055d6ff979a0f4d955899a752e4f6eb
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 32517ed4985bbc4092fec10ab4061158
+    ParentPath: Switches\Default Work Unit
+    guid: 32517ed4985bbc4092fec10ab4061158
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 6a5ad7be08fc034690e47a8a6179956f
+    ParentPath: Triggers\Default Work Unit
+    guid: 6a5ad7be08fc034690e47a8a6179956f
+    GuidInternal: 
+    m_lastTime: -8584107117774775808
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 0
+  CurrentPluginConfig: 

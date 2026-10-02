@@ -17,7 +17,7 @@ using RoR2.Projectile;
 
 namespace FortunesFromTheScrapyard.Elite
 {
-    public sealed class ScrapElite : FFTSEliteEquipment
+    public class ScrapElite : FFTSEliteEquipment
     {
         public const string TOKEN = "FFTS_EQUIP_SCRAP_ELITE_DESCRIPTION";
 

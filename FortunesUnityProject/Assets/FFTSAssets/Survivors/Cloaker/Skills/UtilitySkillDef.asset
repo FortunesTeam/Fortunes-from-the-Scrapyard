@@ -37,8 +37,10 @@ MonoBehaviour:
   cancelSprintingOnActivation: 0
   forceSprintDuringState: 1
   canceledFromSprinting: 0
-  isCombatSkill: 0
+  isCombatSkill: 1
   mustKeyPress: 0
   triggeredByPressRelease: 0
   autoHandleLuminousShot: 1
+  suppressSkillActivation: 0
   hideStockCount: 0
+  hideCooldown: 0

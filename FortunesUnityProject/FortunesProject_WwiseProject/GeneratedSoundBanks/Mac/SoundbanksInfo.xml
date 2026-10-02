@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F150F569-00FD-47CF-CA24-E26B6972B891}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="2023758821" Type="User" Language="SFX" Hash="{147507B6-A22E-7F5F-7A57-EF8A069C9C1A}">
+			<ShortName>FFTSSoundBank</ShortName>
+			<Path>FFTSSoundBank.bnk</Path>
+			<Media>
+				<File Id="97956577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_2.wav</ShortName>
+					<CachePath>SFX/sfx_cd_2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="240724819" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_headphones_activate.wav</ShortName>
+					<CachePath>SFX/sfx_headphones_activate_818F3B66.wem</CachePath>
+				</File>
+				<File Id="253797691" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_turbo_start.wav</ShortName>
+					<CachePath>SFX/sfx_turbo_start_818F3B66.wem</CachePath>
+				</File>
+				<File Id="267112511" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerStealth.wav</ShortName>
+					<CachePath>SFX/CloakerStealth_818F3B66.wem</CachePath>
+				</File>
+				<File Id="427419216" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnergyBar.wav</ShortName>
+					<CachePath>SFX/EnergyBar_5BD0AC9B.wem</CachePath>
+				</File>
+				<File Id="472270602" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_3.wav</ShortName>
+					<CachePath>SFX/sfx_cd_3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="506165882" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>air-or-steam-pressure-release-29600.wav</ShortName>
+					<CachePath>SFX/air-or-steam-pressure-release-29600_7119EE94.wem</CachePath>
+				</File>
+				<File Id="520802587" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerShot.wav</ShortName>
+					<CachePath>SFX/CloakerShot_818F3B66.wem</CachePath>
+				</File>
+				<File Id="522541223" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_moonshine_use.wav</ShortName>
+					<CachePath>SFX/sfx_moonshine_use_818F3B66.wem</CachePath>
+				</File>
+				<File Id="557734107" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerPing.wav</ShortName>
+					<CachePath>SFX/CloakerPing_818F3B66.wem</CachePath>
+				</File>
+				<File Id="575963976" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_ducttape_active.wav</ShortName>
+					<CachePath>SFX/sfx_ducttape_active_818F3B66.wem</CachePath>
+				</File>
+				<File Id="578793253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerBreath.wav</ShortName>
+					<CachePath>SFX/CloakerBreath_818F3B66.wem</CachePath>
+				</File>
+				<File Id="611923983" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_cd_1.wav</ShortName>
+					<CachePath>SFX/sfx_cd_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="665679745" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerChargeshot.wav</ShortName>
+					<CachePath>SFX/CloakerChargeshot_818F3B66.wem</CachePath>
+				</File>
+				<File Id="704960360" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_spraycan_activate.wav</ShortName>
+					<CachePath>SFX/sfx_spraycan_activate_6682FE55.wem</CachePath>
+				</File>
+				<File Id="710233405" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_lunarmoney_start.wav</ShortName>
+					<CachePath>SFX/sfx_lunarmoney_start_818F3B66.wem</CachePath>
+				</File>
+				<File Id="753183646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerScream.wav</ShortName>
+					<CachePath>SFX/CloakerScream_818F3B66.wem</CachePath>
+				</File>
+				<File Id="780513971" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerStep.wav</ShortName>
+					<CachePath>SFX/CloakerStep_818F3B66.wem</CachePath>
+				</File>
+				<File Id="844783110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerCharge.wav</ShortName>
+					<CachePath>SFX/CloakerCharge_818F3B66.wem</CachePath>
+				</File>
+				<File Id="990511896" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CloakerStealthStep.wav</ShortName>
+					<CachePath>SFX/CloakerStealthStep_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1019549591" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_moonshine_miss.wav</ShortName>
+					<CachePath>SFX/sfx_moonshine_miss_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1072221443" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ScrapElite.wav</ShortName>
+					<CachePath>SFX/ScrapElite_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="7833762" Name="Play_sfx_cloaker_charge">
+					<MediaRefs>
+						<MediaRef Id="844783110"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1235942890" Name="Play_sfx_cloaker_chargeshot">
+					<MediaRefs>
+						<MediaRef Id="665679745"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="677630362" Name="Play_sfx_cloaker_ping">
+					<MediaRefs>
+						<MediaRef Id="557734107"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1293912337" Name="Play_sfx_cloaker_scream">
+					<MediaRefs>
+						<MediaRef Id="753183646"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3673262522" Name="Play_sfx_cloaker_shot">
+					<MediaRefs>
+						<MediaRef Id="520802587"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="347077527" Name="Play_sfx_cloaker_stealth">
+					<MediaRefs>
+						<MediaRef Id="267112511"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="73920332" Name="sfx_cd_1">
+					<MediaRefs>
+						<MediaRef Id="611923983"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="73920335" Name="sfx_cd_2">
+					<MediaRefs>
+						<MediaRef Id="97956577"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="73920334" Name="sfx_cd_3">
+					<MediaRefs>
+						<MediaRef Id="472270602"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3730456474" Name="sfx_ducttape_active">
+					<MediaRefs>
+						<MediaRef Id="575963976"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3280223896" Name="sfx_energybar_use">
+					<MediaRefs>
+						<MediaRef Id="427419216"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="666364388" Name="sfx_headphones_activate">
+					<MediaRefs>
+						<MediaRef Id="240724819"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3491240262" Name="sfx_lethalinjection_activate">
+					<MediaRefs>
+						<MediaRef Id="506165882"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="193125100" Name="sfx_lunarmoney_start">
+					<MediaRefs>
+						<MediaRef Id="710233405"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1222943750" Name="sfx_moonshine_miss">
+					<MediaRefs>
+						<MediaRef Id="1019549591"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1755670239" Name="sfx_moonshine_use">
+					<MediaRefs>
+						<MediaRef Id="522541223"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="397976872" Name="sfx_scrap_elite_spawn">
+					<MediaRefs>
+						<MediaRef Id="1072221443"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1927010350" Name="sfx_spraycan_activate">
+					<MediaRefs>
+						<MediaRef Id="704960360"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2377754410" Name="sfx_turbo_start">
+					<MediaRefs>
+						<MediaRef Id="253797691"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{A696D374-98A9-DCE4-1924-E7CA22AA5D98}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,8 @@
+{
+    "name": "Fortunes.Unity",
+    "references": [
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "overrideReferences": true
+}
