@@ -1,0 +1,50 @@
+Event	ID	Name			Wwise Object Path	Notes
+	7833762	Play_sfx_cloaker_charge			\Default Work Unit\Play_sfx_cloaker_charge	
+	73920332	sfx_cd_1			\Default Work Unit\sfx_cd_1	
+	73920334	sfx_cd_3			\Default Work Unit\sfx_cd_3	
+	73920335	sfx_cd_2			\Default Work Unit\sfx_cd_2	
+	193125100	sfx_lunarmoney_start			\Default Work Unit\sfx_lunarmoney_start	
+	347077527	Play_sfx_cloaker_stealth			\Default Work Unit\Play_sfx_cloaker_stealth	
+	397976872	sfx_scrap_elite_spawn			\Default Work Unit\sfx_scrap_elite_spawn	
+	666364388	sfx_headphones_activate			\Default Work Unit\sfx_headphones_activate	
+	677630362	Play_sfx_cloaker_ping			\Default Work Unit\Play_sfx_cloaker_ping	
+	1222943750	sfx_moonshine_miss			\Default Work Unit\sfx_moonshine_miss	
+	1235942890	Play_sfx_cloaker_chargeshot			\Default Work Unit\Play_sfx_cloaker_chargeshot	
+	1293912337	Play_sfx_cloaker_scream			\Default Work Unit\Play_sfx_cloaker_scream	
+	1755670239	sfx_moonshine_use			\Default Work Unit\sfx_moonshine_use	
+	1927010350	sfx_spraycan_activate			\Default Work Unit\sfx_spraycan_activate	
+	2377754410	sfx_turbo_start			\Default Work Unit\sfx_turbo_start	
+	3280223896	sfx_energybar_use			\Default Work Unit\sfx_energybar_use	
+	3491240262	sfx_lethalinjection_activate			\Default Work Unit\sfx_lethalinjection_activate	
+	3673262522	Play_sfx_cloaker_shot			\Default Work Unit\Play_sfx_cloaker_shot	
+	3730456474	sfx_ducttape_active			\Default Work Unit\sfx_ducttape_active	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	97956577	sfx_cd_2	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_2		142712
+	240724819	sfx_headphones_activate	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_headphones_activate_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_headphones_activate		144868
+	253797691	sfx_turbo_start	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_turbo_start_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_turbo_start		170500
+	264565919	sfx_neuromancer_punch	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_ravager_punch_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_neuromancer_punch		33888
+	267112511	sfx_cloaker_stealth	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerStealth_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_stealth		325804
+	427419216	sfx_energybar_use	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\EnergyBar_5BD0AC9B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_energybar_use		77452
+	472270602	sfx_cd_3	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_3		331832
+	506165882	sfx_lethalinjection_activate	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\air-or-steam-pressure-release-29600_7119EE94.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lethalinjection_activate		132956
+	520802587	sfx_cloaker_shot	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerShot_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_shot		122268
+	522541223	sfx_moonshine_use	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_use_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_use		168032
+	557734107	sfx_cloaker_ping	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerPing_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_ping		285096
+	575963976	sfx_ducttape_active	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_ducttape_active_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_ducttape_active		118880
+	578793253	sfx_cloaker_breath	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerBreath_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_breath		325804
+	611923983	sfx_cd_1	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_cd_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cd_1		90208
+	665679745	sfx_cloaker_chargeshot	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerChargeshot_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_chargeshot		162976
+	704960360	sfx_spraycan_activate	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_spraycan_activate_6682FE55.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_spraycan_activate		44596
+	710233405	sfx_lunarmoney_start	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_lunarmoney_start_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_lunarmoney_start		380984
+	753183646	sfx_cloaker_scream	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerScream_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_scream		366512
+	780513971	sfx_cloaker_step	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerStep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_step		162976
+	844783110	sfx_cloaker_charge	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerCharge_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_charge		447928
+	885078543	sfx_neuromancer_steam	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_ravager_steam_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_neuromancer_steam		95520
+	990511896	sfx_cloaker_stealth_step	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\CloakerStealthStep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_cloaker_stealth_step		122268
+	1019549591	sfx_moonshine_miss	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\sfx_moonshine_miss_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\RandomPitch\sfx_moonshine_miss		55392
+	1072221443	sfx_scrap_elite_spawn	D:\RoR2Mods\Fortunes-from-the-Scrapyard\FortunesUnityProject\FortunesProject_WwiseProject\.cache\Mac\SFX\ScrapElite_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\sfx_scrap_elite_spawn		671820
+

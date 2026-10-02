@@ -1,0 +1,9 @@
+{
+    "name": "Fortunes.GameAddressables.Editor",
+    "references": ["ThunderKit.Core", "ThunderKit.Addressable.Tools"],
+    "includePlatforms": ["Editor"],
+    "overrideReferences": true,
+    "precompiledReferences": ["Unity.Addressables.dll", "Unity.ResourceManager.dll"],
+    "defineConstraints": ["RISKOFRAIN2"],
+    "autoReferenced": false
+}

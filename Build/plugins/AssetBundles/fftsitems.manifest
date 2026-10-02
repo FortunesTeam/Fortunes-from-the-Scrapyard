@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3253313928
+CRC: 2301611048
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 580a268dfbaaf08a292a546eb4f4141c
+    Hash: 697814387a25c170e75af6e74b626ed0
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 75f1f16e4bd595d3f4e2a332ec6b4b7f
+    Hash: c781ddc8a5cdccb5d24ab1c3a85e1195
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -88,11 +88,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1895344032, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: -130519023, guid: b2ac317a67c468eb8fd6ed06da7572d4, type: 3}
+  Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
 - Class: 114
-  Script: {fileID: 1093960770, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
+  Script: {fileID: -130519023, guid: b2ac317a67c468eb8fd6ed06da7572d4, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 135
@@ -122,10 +122,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Events.PersistentListenerMode
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.UnityEvent
-- AssemblyName: Wwise
-  ClassName: AkGameObjListenerList
-- AssemblyName: Wwise
-  ClassName: AkGameObjPositionOffsetData
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkHash128
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
@@ -293,5 +289,5 @@ Assets:
 - Assets/FFTSAssets/Items/FaultyTurbo/FaultyTurbo.asset
 - Assets/FFTSAssets/Items/SprayCan/SprayCan.asset
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsbase
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsmain

@@ -23,28 +23,18 @@ using MSU;
 
 namespace FortunesFromTheScrapyard
 {
-    //[BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [BepInDependency("com.Moffein.AccurateEnemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.Moffein.RiskyArtifacts", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("EarthZebra.someshitidk", BepInDependency.DependencyFlags.SoftDependency)]
     public class FFTSMain : BaseUnityPlugin
     {
         public const string MODUID = "com.FortunesTeam.FortunesFromTheScrapyard";
         public const string MODNAME = "Fortunes From the Scrapyard";
-        public const string MODVERSION = "0.0.1";
+        public const string MODVERSION = "1.0.0";
 
         public static FFTSMain instance;
 
-        public static bool emotesInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
-        public static bool scepterInstalled => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
-        public static bool InfernoInstalled => Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
-        public static bool RiskyArtifactsInstalled => Chainloader.PluginInfos.ContainsKey("com.Moffein.RiskyArtifacts");
-        public static bool NeuromancerInstalled => Chainloader.PluginInfos.ContainsKey("EarthZebra.someshitidk");
+        public static bool emotesInstalled => Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
 
         void Awake()
         {
@@ -64,6 +54,12 @@ namespace FortunesFromTheScrapyard
         {
             FFTSSoundbank.Init();
             AddHooks();
+        }
+
+        private void OnDestroy()
+        {
+            if (emotesInstalled)
+                Survivors.Cloaker.CloakerEmotes.Uninstall();
         }
 
         private void AddHooks()

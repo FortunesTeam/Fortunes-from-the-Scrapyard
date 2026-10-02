@@ -1,14 +1,18 @@
 ManifestFileVersion: 0
-CRC: 3575920158
+CRC: 3207550557
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 87932d6f73d2ecf660a6135d92c0cfb3
+    Hash: 672bc43243b5ade9b77ae20dbcefb851
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 24c1e189f00dd369658449ec7ac14c05
+    Hash: 55e13fe0602458ec33f0cfafa8fd3ab1
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
 - Class: 28
@@ -579,6 +583,7 @@ Assets:
 - Assets/FFTSAssets/AssetsCommon/TiledTextures/Normals/texNormalIcePainted.png
 - Assets/FFTSAssets/AssetsCommon/TiledTextures/Trims/Normals/texTrimSheetConcreteNormal.asset
 - Assets/FFTSAssets/AssetsCommon/Textures/texCloudDirtyFire.png
+- Assets/FFTSAssets/AssetsCommon/SomeBullshit.prefab
 - Assets/FFTSAssets/AssetsCommon/Textures/texCloud2.png
 - Assets/FFTSAssets/AssetsCommon/Ramps/texRampBrownMiddle.png
 - Assets/FFTSAssets/AssetsCommon/Textures/texGlowSoftCenterMask.png

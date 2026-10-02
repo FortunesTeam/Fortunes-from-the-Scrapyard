@@ -101,7 +101,7 @@ namespace EntityStates.Duke
             {
                 base.PlayCrossfade("FullBody, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
             }
-            else base.PlayCrossfade("Gesture, Additive", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
+            else base.PlayCrossfade("Gesture, Override", "DeployFan", "Special.playbackRate", this.windupDuration, 0.05f);
         }
 
         public override void OnExit()

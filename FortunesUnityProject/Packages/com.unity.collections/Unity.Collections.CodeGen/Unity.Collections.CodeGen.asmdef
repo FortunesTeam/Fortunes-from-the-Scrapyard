@@ -1,0 +1,40 @@
+{
+    "name": "Unity.Collections.CodeGen",
+    "allowUnsafeCode": true,
+    "autoReferenced": false,
+    "noEngineReferences": false,
+    "overrideReferences": true,
+    "rootNamespace": "",
+    "defineConstraints": [
+        "R2TB_BEPINEX_INSTALLED"
+    ],
+    "references": [
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Properties"
+    ],
+    "precompiledReferences": [
+        "Mono.Cecil.dll",
+        "Mono.Cecil.Rocks.dll",
+        "Mono.Cecil.Pdb.dll",
+        "Unity.IL2CPP",
+        "Unity.IL2CPP.Common"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.jobs",
+            "expression": "[0.0.0,0.70.0-preview.1)",
+            "define": "UNITY_JOBS_LESS_THAN_0_7"
+        },
+        {
+            "name": "bbepis-bepinexpack",
+            "expression": "5.4",
+            "define": "R2TB_BEPINEX_INSTALLED"
+        }
+    ]
+}

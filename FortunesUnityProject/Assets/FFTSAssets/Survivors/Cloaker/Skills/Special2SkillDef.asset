@@ -41,4 +41,6 @@ MonoBehaviour:
   mustKeyPress: 0
   triggeredByPressRelease: 0
   autoHandleLuminousShot: 1
+  suppressSkillActivation: 0
   hideStockCount: 0
+  hideCooldown: 0

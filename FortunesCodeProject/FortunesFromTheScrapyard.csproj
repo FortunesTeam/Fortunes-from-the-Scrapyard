@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Configurations>Release;Debug;Mystical;Whoever1;Whoever2;ToUnity</Configurations>
+    <Configurations>Release;Debug;Mystical;Kenko;Whoever2;ToUnity</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -17,7 +17,7 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Whoever1|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Kenko|AnyCPU'">
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
@@ -39,6 +39,10 @@
 		</Reference>
 		<Reference Include="MSU">
 			<HintPath>..\libs\MSU.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="CustomEmotesAPI">
+			<HintPath>..\libs\CustomEmotesAPI.dll</HintPath>
+			<Private>false</Private>
 		</Reference>
 		
 		
@@ -64,8 +68,54 @@
 	<ItemGroup>
 	  <Folder Include="Content\InDev\Elites\" />
 	</ItemGroup>
+  <Target Name="WeaveNetworkAssembly" DependsOnTargets="ResolveReferences" Condition="'$(Configuration)' != 'ToUnity'">
+    <PropertyGroup>
+      <_WeaverDirectory Condition="'$(_WeaverDirectory)' == ''">$(MSBuildProjectDirectory)\Weaver</_WeaverDirectory>
+      <_WeaverIntermediateDirectory>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Weaver'))</_WeaverIntermediateDirectory>
+      <_WeaverInputDirectory>$(_WeaverIntermediateDirectory)\Input</_WeaverInputDirectory>
+      <_WeaverReferencesDirectory>$(_WeaverIntermediateDirectory)\References</_WeaverReferencesDirectory>
+      <_WeaverOutputDirectory>$(_WeaverIntermediateDirectory)\Patched</_WeaverOutputDirectory>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(_WeaverDirectory)\Unity.UNetWeaver.exe')" Text="Network Weaver was not found at '$(_WeaverDirectory)\Unity.UNetWeaver.exe'." />
+    <MakeDir Directories="$(_WeaverInputDirectory);$(_WeaverReferencesDirectory);$(_WeaverOutputDirectory)" />
+    <Copy SourceFiles="@(ReferencePath)" DestinationFolder="$(_WeaverReferencesDirectory)" SkipUnchangedFiles="true" />
+    <Delete Files="$(_WeaverInputDirectory)\$(TargetName).pdb;$(_WeaverInputDirectory)\$(TargetFileName).mdb;$(_WeaverOutputDirectory)\$(TargetFileName);$(_WeaverOutputDirectory)\$(TargetName).pdb;$(_WeaverOutputDirectory)\$(TargetFileName).mdb" />
+    <ItemGroup>
+      <_WeaverInput Include="$(TargetPath)" />
+      <_WeaverInput Include="$(TargetDir)$(TargetName).pdb" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+      <_WeaverInput Include="$(TargetPath).mdb" Condition="Exists('$(TargetPath).mdb')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_WeaverInput)" DestinationFolder="$(_WeaverInputDirectory)" />
+    <Exec Command="&quot;$(_WeaverDirectory)\Unity.UNetWeaver.exe&quot; &quot;$(_WeaverReferencesDirectory)\UnityEngine.CoreModule.dll&quot; &quot;$(_WeaverReferencesDirectory)\com.unity.multiplayer-hlapi.Runtime.dll&quot; &quot;$(_WeaverOutputDirectory)&quot; &quot;$(_WeaverInputDirectory)\$(TargetFileName)&quot; &quot;$(_WeaverReferencesDirectory)&quot;"
+          WorkingDirectory="$(_WeaverIntermediateDirectory)" ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" ItemName="_WeaverConsoleOutput" />
+    </Exec>
+    <ItemGroup>
+      <_WeaverSuccess Include="@(_WeaverConsoleOutput)" Condition="'%(_WeaverConsoleOutput.Identity)' == 'successfull'" />
+    </ItemGroup>
+    <Error Condition="'@(_WeaverSuccess)' == ''" Text="Network Weaver failed. See its output above; no plugin files were deployed." />
+  </Target>
+  <Target Name="StagePluginBuild" BeforeTargets="PostBuild" DependsOnTargets="WeaveNetworkAssembly">
+    <PropertyGroup>
+      <_BuildPluginsDirectory Condition="'$(_BuildPluginsDirectory)' == ''">$(MSBuildProjectDirectory)\..\Build\plugins</_BuildPluginsDirectory>
+      <_AssemblyToStage>$(TargetPath)</_AssemblyToStage>
+      <_AssemblyToStage Condition="'$(Configuration)' != 'ToUnity' And Exists('$(_WeaverOutputDirectory)\$(TargetFileName)')">$(_WeaverOutputDirectory)\$(TargetFileName)</_AssemblyToStage>
+    </PropertyGroup>
+    <ItemGroup>
+      <_PluginAssembly Include="$(_AssemblyToStage)" />
+      <_ObsoleteSymbols Include="$(TargetName).pdb;$(TargetFileName).mdb" />
+      <_AssetBundles Include="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\*"
+                     Exclude="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows;$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows.manifest" />
+    </ItemGroup>
+    <Warning Condition="'@(_AssetBundles)' == ''" Text="No exported Unity asset bundles were found in FortunesUnityProject\AssetBundles\StandaloneWindows. Build the bundles in Unity before running or deploying the mod; existing staged bundles will not be updated." />
+    <Delete Files="@(_ObsoleteSymbols->'$(_BuildPluginsDirectory)\%(Identity)')" />
+    <Copy SourceFiles="@(_PluginAssembly)" DestinationFolder="$(_BuildPluginsDirectory)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\FortunesUnityProject\Assets\StreamingAssets\aa\FFTSSoundBank.bnk"
+          DestinationFiles="$(_BuildPluginsDirectory)\Soundbanks\FFTSSoundBank.bnk" />
+    <Copy SourceFiles="@(_AssetBundles)" DestinationFolder="$(_BuildPluginsDirectory)\AssetBundles" />
+  </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="REM copy this and change to your username&#xD;&#xA;if &quot;$(Username)&quot; == &quot;marsh&quot; set build=true&#xD;&#xA;&#xD;&#xA;if defined build (&#xD;&#xA;&#xD;&#xA; REM copy the dll and asset bundles to build folder&#xD;&#xA; &#xD;&#xA; copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\Build\plugins&quot;&#xD;&#xA; if exist &quot;$(ProjectDir)..\FortunesUnityProject\AssetBundles&quot; (&#xD;&#xA;  copy &quot;$(ProjectDir)..\FortunesUnityProject\AssetBundles&quot; &quot;$(ProjectDir)..\Build\plugins&quot;&#xD;&#xA; )&#xD;&#xA;&#xD;&#xA; REM apply unetweaver if not unity build&#xD;&#xA; if $(ConfigurationName) NEQ ToUnity (&#xD;&#xA;  REM First we copy the from the output folder to the NetworkWeaver folder.&#xD;&#xA;  REM We store the output from robocopy in a file called robocopy which we'll delete at the end of the file.&#xD;&#xA;  robocopy &quot;$(TargetDir) &quot; &quot;$(ProjectDir)..\NetworkWeaver&quot; &quot;$(TargetFileName)&quot; &gt; &quot;$(TargetDir)Robocopy&quot;&#xD;&#xA;  robocopy &quot;$(TargetDir) &quot; &quot;$(ProjectDir)..\NetworkWeaver&quot; &quot;$(TargetName).pdb&quot; &gt; &quot;$(TargetDir)Robocopy&quot;&#xD;&#xA;&#xD;&#xA;  REM Then we navigate our script to the NetworkWeaver folder to make the follow up line less verbose.&#xD;&#xA;  cd &quot;$(ProjectDir)..\\NetworkWeaver&quot;&#xD;&#xA;&#xD;&#xA;  REM Unity.UNetWeaver.exe {path to Coremodule} {Path to Networking} {Path to output folder} {Path to the dll you want patched} {Path to all needed references for the to-be-patched dll}&#xD;&#xA;  Unity.UNetWeaver.exe &quot;$(ProjectDir)../libs/UnityEngine.CoreModule.dll&quot; &quot;$(ProjectDir)../libs/com.unity.multiplayer-hlapi.Runtime.dll&quot; &quot;Patched/&quot;  $(TargetFileName) &quot;$(ProjectDir)../libs&quot;&#xD;&#xA;&#xD;&#xA;  REM We store the prepatched dll disabled as a .prepatch so that you can check it if you want, but first we need to make sure that file doesn't exist already.&#xD;&#xA;  IF EXIST &quot;$(TargetFileName).prepatch&quot; (&#xD;&#xA;   DEL /F &quot;$(TargetFileName).prepatch&quot;&#xD;&#xA;  )&#xD;&#xA;  IF EXIST &quot;$(TargetFileName).prepatch&quot; (&#xD;&#xA;   DEL /F &quot;$(TargetFile).pdb.prepatch&quot;&#xD;&#xA;  )&#xD;&#xA;&#xD;&#xA;  REM Then we rename the prepatched file to bla.dll.prepatch&#xD;&#xA;  ren &quot;$(TargetFileName)&quot; &quot;$(TargetFileName).prepatch&quot;&#xD;&#xA;  ren &quot;$(TargetName).pdb&quot; &quot;$(TargetName).pdb.prepatch&quot;&#xD;&#xA;&#xD;&#xA;  REM move our script to the Patched Folder&#xD;&#xA;  cd Patched&#xD;&#xA;&#xD;&#xA;  REM move from the current directory (.) to the projectDirectory and store the output once more to the Robocopy file.&#xD;&#xA;  robocopy &quot;.&quot; &quot;$(ProjectDir)..\Build\plugins &quot; &quot;$(TargetFileName)&quot; &gt; &quot;$(TargetDir)Robocopy&quot;&#xD;&#xA;  robocopy &quot;.&quot; &quot;$(ProjectDir)..\Build\plugins &quot; &quot;$(TargetName).pdb&quot; &gt; &quot;$(TargetDir)Robocopy&quot;&#xD;&#xA;&#xD;&#xA;  REM Remove the patched file from the Patched folder, because the Weaver won't run if the file already exists.&#xD;&#xA;  del &quot;$(TargetFileName)&quot;&#xD;&#xA;  del &quot;$(TargetName).pdb&quot;&#xD;&#xA;&#xD;&#xA;  REM Delete the holder for all robocopy output.&#xD;&#xA;  del &quot;$(TargetDir)Robocopy&quot;&#xD;&#xA; )&#xD;&#xA;&#xD;&#xA; REM copy the build to gale profile depending on who is building&#xD;&#xA;&#xD;&#xA; if $(ConfigurationName) == Mystical (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;B:\gale-profiles\riskofrain2\profiles\FortunesFromTheGraveyard\BepInEx\plugins\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA; )&#xD;&#xA; if $(ConfigurationName) == Whoever1 (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;targetpluginspath\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA; )&#xD;&#xA; if $(ConfigurationName) == Whoever2 (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins&quot; &quot;targetpluginspath\fortunesteam-FortunesFromTheScrapyard\&quot;&#xD;&#xA; )&#xD;&#xA; &#xD;&#xA; REM copy the build to the unity project side for dll reference&#xD;&#xA; if $(ConfigurationName) == ToUnity (&#xD;&#xA;  Xcopy /E /I /Y &quot;$(ProjectDir)..\Build\plugins\FortunesFromTheScrapyard.dll&quot; &quot;$(ProjectDir)..\FortunesUnityProject\Packages\FortunesFromTheScrapyard&quot;&#xD;&#xA; )&#xD;&#xA; &#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+    <Exec Command="@echo off&#xD;&#xA;setlocal&#xD;&#xA;set &quot;profilePlugins=&quot;&#xD;&#xA;if &quot;$(Configuration)&quot; == &quot;Mystical&quot; set &quot;profilePlugins=B:\gale-profiles\riskofrain2\profiles\FortunesFromTheGraveyard\BepInEx\plugins\fortunesteam-FortunesFromTheScrapyard&quot;&#xD;&#xA;if &quot;$(Configuration)&quot; == &quot;Kenko&quot; set &quot;profilePlugins=F:\WebfishingMods\RiskOfRain2\profiles\testing\BepInEx\plugins\fortunesteam-FortunesFromTheScrapyard&quot;&#xD;&#xA;if &quot;$(Configuration)&quot; == &quot;Whoever2&quot; set &quot;profilePlugins=targetpluginspath\fortunesteam-FortunesFromTheScrapyard&quot;&#xD;&#xA;&#xD;&#xA;if defined profilePlugins (&#xD;&#xA; for %25%25F in (&quot;$(TargetName).pdb&quot; &quot;$(TargetFileName).mdb&quot;) do (&#xD;&#xA;  if not exist &quot;$(_BuildPluginsDirectory)\%25%25~F&quot; if exist &quot;%25profilePlugins%25\%25%25~F&quot; (&#xD;&#xA;   del /F /Q &quot;%25profilePlugins%25\%25%25~F&quot; || exit /b 1&#xD;&#xA;  )&#xD;&#xA; )&#xD;&#xA; xcopy &quot;$(_BuildPluginsDirectory)\*&quot; &quot;%25profilePlugins%25\&quot; /E /I /Y || exit /b 1&#xD;&#xA;)&#xD;&#xA;if &quot;$(Configuration)&quot; == &quot;ToUnity&quot; (&#xD;&#xA; xcopy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)..\FortunesUnityProject\Packages\FortunesFromTheScrapyard\&quot; /I /Y || exit /b 1&#xD;&#xA;)&#xD;&#xA;exit /b 0" WorkingDirectory="$(ProjectDir)" />
   </Target>
 	<Target Name="ChangeAliasesOfStrongNameAssemblies" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
 		<ItemGroup>

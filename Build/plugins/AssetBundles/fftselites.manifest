@@ -3,10 +3,10 @@ CRC: 2870104407
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1512d5c741b15532131999998f4a51d9
+    Hash: f195ed1f8251d7e89ebb5105b72113a6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4243ba20aa09d7f57816307f9a4ef437
+    Hash: 93a2974670ed97e528bc7ce9382eff7c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -32,6 +32,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 418323186c6d3bf4aa9fab1aa65bef7c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
+- Class: 114
   Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -48,11 +50,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1247058517, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
+  Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
-- Class: 114
-  Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 198
@@ -127,5 +127,5 @@ Assets:
 - Assets/FFTSAssets/EliteTiers/WhirlwindEliteTierDef.asset
 - Assets/FFTSAssets/Elites/ScrapElite/matScrapCrown2.mat
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsbase
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsmain

@@ -1,77 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using FortunesFromTheScrapyard.Survivors.Cloaker;
+using EntityStates;
 using RoR2;
-using FortunesFromTheScrapyard;
 using UnityEngine.Networking;
 
 namespace EntityStates.Cloaker
 {
     public class CloakerMark : BaseSkillState
     {
-        public static float baseDuration = 0.5f;
-
-        private CloakerTrackerController tracker;
-
         private HurtBox victim;
-
-        private CharacterBody victimBody;
-
         private float duration;
         public override void OnEnter()
         {
             base.OnEnter();
-
-            duration = baseDuration / this.attackSpeedStat;
-            tracker = base.gameObject.GetComponent<CloakerTrackerController>();
-
-            if (base.isAuthority && tracker)
+            duration = 0.5f / attackSpeedStat;
+            CloakerTrackerController tracker = GetComponent<CloakerTrackerController>();
+            if (isAuthority) victim = tracker.GetTrackingTarget();
+            if (!victim || !victim.healthComponent || !victim.healthComponent.body)
             {
-                victim = this.tracker.GetTrackingTarget();
-            }
-
-            if (victim && victim.healthComponent) victimBody = victim.healthComponent.body;
-
-            if (!victim || !victimBody || !tracker)
-            {
-                this.skillLocator.special.AddOneStock();
-                this.outer.SetNextStateToMain();
+                if (isAuthority) outer.SetNextStateToMain();
                 return;
             }
-
-            StartAimMode(this.duration);
-
-            this.PlayCrossfade("Gesture, Additive", Animator.StringToHash("Special2"), this.duration * 0.05f);
-
-            if (NetworkServer.active)
-            {
-                victimBody.AddBuff(FFTSContent.Buffs.bdCloakerMarked);
-            }
+            StartAimMode(duration);
+            string animation = GetComponent<CloakerController>().GetAnimationStateName("Gesture, Override", "Special2");
+            PlayCrossfade("Gesture, Override", animation, "Special.playbackRate", duration, duration * 0.05f);
+            Util.PlaySound(CloakerAssets.PingSound, gameObject);
+            if (NetworkServer.active && tracker.IsValidTarget(victim))
+                victim.healthComponent.body.AddBuff(FortunesFromTheScrapyard.FFTSContent.Buffs.bdCloakerMarked);
         }
-
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
-            if (base.isAuthority && base.fixedAge >= this.duration)
-            {
-                outer.SetNextStateToMain();
-            }
-        }
-
-        public override void OnExit()
-        {
-            base.OnExit();
-            victim = null;
-            victimBody = null;
+            if (isAuthority && fixedAge >= duration) outer.SetNextStateToMain();
         }
         public override void OnSerialize(NetworkWriter writer)
         {
+            base.OnSerialize(writer);
             writer.Write(HurtBoxReference.FromHurtBox(victim));
         }
         public override void OnDeserialize(NetworkReader reader)
         {
+            base.OnDeserialize(reader);
             victim = reader.ReadHurtBoxReference().ResolveHurtBox();
         }
     }

@@ -24,11 +24,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker.Components
 
         private static bool HasTarget([NotNull] GenericSkill skillSlot)
         {
-            if (!(((InstanceData)skillSlot.skillInstanceData).tracker?.GetTrackingTarget()))
-            {
-                return false;
-            }
-            return true;
+            return skillSlot.skillInstanceData is InstanceData data && data.tracker && data.tracker.GetTrackingTarget();
         }
 
         public override bool CanExecute([NotNull] GenericSkill skillSlot)
@@ -50,5 +46,4 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker.Components
         }
     }
 }
-
 

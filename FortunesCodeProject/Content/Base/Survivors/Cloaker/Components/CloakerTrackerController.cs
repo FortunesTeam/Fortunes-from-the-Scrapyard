@@ -1,94 +1,111 @@
-﻿using RoR2;
-using System.Linq;
+using RoR2;
 using UnityEngine;
 
 namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerTrackerController : MonoBehaviour
     {
-        public float maxTrackingDistance = 60f;
-
-        public float maxTrackingAngle = 10f;
-
-        public float trackerUpdateFrequency = 10f;
-
-        private HurtBox trackingTarget;
-
-        private CharacterBody characterBody;
-
-        private TeamComponent teamComponent;
-
-        private InputBankTest inputBank;
-
-        private float trackerUpdateStopwatch;
-
-        private Indicator indicator;
-
+        public const float MaxTrackingDistance = 40f;
+        public RoR2.Skills.SkillDef markSkillDef;
+        public const float MaxTrackingAngle = 10f;
         private readonly BullseyeSearch search = new BullseyeSearch();
+        private CharacterBody body;
+        private InputBankTest input;
+        private SkillLocator skills;
+        private GenericSkill observedSpecial;
+        private Indicator indicator;
+        private HurtBox target;
+        private float stopwatch;
 
         private void Awake()
         {
-            indicator = new Indicator(base.gameObject, FFTSAssets.GetAssetBundle(FFTSBundle.Survivors).LoadAsset<GameObject>("CloakerTrackingIndicator"));
+            body = GetComponent<CharacterBody>();
+            input = GetComponent<InputBankTest>();
+            skills = GetComponent<SkillLocator>();
+            indicator = new Indicator(gameObject, CloakerAssets.TrackingIndicator);
         }
+        private void OnEnable() => UpdateTrackingState();
+        private void OnDisable() { StopObservingSpecial(); ClearTracking(); }
+        private void OnDestroy() { StopObservingSpecial(); ClearTracking(); }
+        public HurtBox GetTrackingTarget() => UpdateTrackingState() && IsValidTarget(target) ? target : null;
 
-        private void Start()
+        private bool UpdateTrackingState()
         {
-            characterBody = GetComponent<CharacterBody>();
-            inputBank = GetComponent<InputBankTest>();
-            teamComponent = GetComponent<TeamComponent>();
-        }
-
-        public HurtBox GetTrackingTarget()
-        {
-            return trackingTarget;
-        }
-
-        private void OnEnable()
-        {
+            if (!isActiveAndEnabled)
+            {
+                ClearTracking();
+                return false;
+            }
+            GenericSkill special = skills ? skills.special : null;
+            if (!object.ReferenceEquals(observedSpecial, special))
+            {
+                StopObservingSpecial();
+                observedSpecial = special;
+                if (observedSpecial) observedSpecial.onSkillChanged += OnSpecialChanged;
+                ClearTracking();
+            }
+            bool equipped = special && markSkillDef && special.skillDef == markSkillDef
+                && body && body.healthComponent && body.healthComponent.alive;
+            if (!equipped)
+            {
+                ClearTracking();
+                return false;
+            }
             indicator.active = true;
+            return true;
         }
 
-        private void OnDisable()
+        private void OnSpecialChanged(GenericSkill special)
         {
+            ClearTracking();
+            UpdateTrackingState();
+        }
+
+        private void StopObservingSpecial()
+        {
+            if (!object.ReferenceEquals(observedSpecial, null)) observedSpecial.onSkillChanged -= OnSpecialChanged;
+            observedSpecial = null;
+        }
+
+        private void ClearTracking()
+        {
+            target = null;
+            stopwatch = 0f;
+            if (indicator == null) return;
+            indicator.targetTransform = null;
+            indicator.SetVisible(false);
             indicator.active = false;
+        }
+
+        internal bool IsValidTarget(HurtBox candidate)
+        {
+            if (!candidate || !candidate.healthComponent || !candidate.healthComponent.alive) return false;
+            CharacterBody other = candidate.healthComponent.body;
+            return other && other != body && other.teamComponent
+                && TeamMask.GetUnprotectedTeams(body.teamComponent.teamIndex).HasTeam(other.teamComponent.teamIndex)
+                && !other.HasBuff(FFTSContent.Buffs.bdCloakerMarked) && !other.HasBuff(FFTSContent.Buffs.bdCloakerMarkCd)
+                && (candidate.transform.position - input.aimOrigin).sqrMagnitude <= MaxTrackingDistance * MaxTrackingDistance;
         }
 
         private void FixedUpdate()
         {
-            trackerUpdateStopwatch += Time.fixedDeltaTime;
-            if (trackerUpdateStopwatch >= 1f / trackerUpdateFrequency)
-            {
-                trackerUpdateStopwatch -= 1f / trackerUpdateFrequency;
-                _ = trackingTarget;
-                Ray aimRay = new Ray(inputBank.aimOrigin, inputBank.aimDirection);
-                SearchForTarget(aimRay);
-                indicator.targetTransform = trackingTarget ? trackingTarget.transform : null;
-            }
-        }
-
-        private void SearchForTarget(Ray aimRay)
-        {
-            search.teamMaskFilter = TeamMask.GetUnprotectedTeams(teamComponent.teamIndex);
+            if (!UpdateTrackingState()) return;
+            stopwatch -= Time.fixedDeltaTime;
+            if (stopwatch > 0f) return;
+            stopwatch = 0.1f;
+            search.teamMaskFilter = TeamMask.GetUnprotectedTeams(body.teamComponent.teamIndex);
             search.filterByLoS = true;
-            search.searchOrigin = aimRay.origin;
-            search.searchDirection = aimRay.direction;
+            search.searchOrigin = input.aimOrigin;
+            search.searchDirection = input.aimDirection;
             search.sortMode = BullseyeSearch.SortMode.Distance;
-            search.maxDistanceFilter = maxTrackingDistance;
-            search.maxAngleFilter = maxTrackingAngle;
+            search.maxDistanceFilter = MaxTrackingDistance;
+            search.maxAngleFilter = MaxTrackingAngle;
             search.RefreshCandidates();
-            search.FilterOutGameObject(base.gameObject);
-            foreach (HurtBox hurt in this.search.GetResults())
-            {
-                if (hurt && hurt.healthComponent && hurt.healthComponent.body)
-                {
-                    if (hurt.healthComponent.body.HasBuff(FFTSContent.Buffs.bdCloakerMarkCd) && hurt.healthComponent.body.HasBuff(FFTSContent.Buffs.bdCloakerMarked))
-                    {
-                        this.search.FilterOutGameObject(hurt.healthComponent.gameObject);
-                    }
-                }
-            }
-            trackingTarget = search.GetResults().FirstOrDefault();
+            search.FilterOutGameObject(gameObject);
+            target = null;
+            foreach (HurtBox candidate in search.GetResults())
+                if (IsValidTarget(candidate)) { target = candidate; break; }
+            indicator.targetTransform = target ? target.transform : null;
         }
     }
 }
-

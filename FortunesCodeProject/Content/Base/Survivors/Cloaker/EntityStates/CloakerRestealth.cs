@@ -1,115 +1,74 @@
-﻿using EntityStates;
-using EntityStates.GravekeeperMonster.Weapon;
+using FortunesFromTheScrapyard.Survivors.Cloaker;
+using EntityStates;
 using RoR2;
-using RoR2.Orbs;
 using UnityEngine;
 using UnityEngine.Networking;
-using RoR2.Projectile;
-using FortunesFromTheScrapyard.Survivors.Cloaker;
 
 namespace EntityStates.Cloaker
 {
     public class CloakerRestealth : BaseSkillState
     {
-        protected Vector3 hopVector;
-        public float duration = 0.3f;
-        public float speedCoefficient = 7f;
-        protected CameraTargetParams.AimRequest request;
-        private CloakerController cloakerController;
-
+        private const float Duration = 0.3f;
+        private Vector3 hop;
+        private float speed;
+        private CameraTargetParams.AimRequest cameraRequest;
+        private bool invincibilityApplied;
         public override void OnEnter()
         {
-            cloakerController = base.gameObject.GetComponent<CloakerController>();
-
             base.OnEnter();
-
+            CloakerController controller = GetComponent<CloakerController>();
             characterBody.SetAimTimer(2f);
-
-            if (cameraTargetParams)
+            if (cameraTargetParams) cameraRequest = cameraTargetParams.RequestAimType(CameraTargetParams.AimType.Aura);
+            Vector3 horizontalAim = inputBank.aimDirection;
+            horizontalAim.y = 0f;
+            Vector3 axis = -Vector3.Cross(Vector3.up, horizontalAim);
+            float angle = Vector3.Angle(inputBank.aimDirection, horizontalAim);
+            if (inputBank.aimDirection.y < 0f) angle = -angle;
+            Vector3 moveDirection = inputBank.moveVector;
+            if (moveDirection == Vector3.zero) moveDirection = characterDirection.forward;
+            hop = (Quaternion.AngleAxis(angle, axis) * moveDirection).normalized;
+            if ((inputBank.aimDirection.y < 0f && Vector3.Angle(horizontalAim, hop) <= 90f)
+                || (inputBank.aimDirection.y > 0f && Vector3.Angle(horizontalAim, hop) >= 90f))
+                hop.y *= -1f;
+            if (Vector3.Angle(inputBank.aimDirection, horizontalAim) <= 45f) hop.y = 0.25f;
+            hop.y = Mathf.Clamp(hop.y, 0.1f, 0.75f);
+            if (isAuthority)
             {
-                request = cameraTargetParams.RequestAimType(CameraTargetParams.AimType.Aura);
+                characterMotor.velocity = Vector3.zero;
+                characterDirection.moveVector = hop;
             }
-            hopVector = GetHopVector();
-
-            characterMotor.velocity = Vector3.zero;
-            Vector3 to = inputBank.aimDirection;
-            to.y = 0f;
-            if (inputBank.aimDirection.y < 0f && (Vector3.Angle(to, hopVector) <= 90) || inputBank.aimDirection.y > 0f && (Vector3.Angle(to, hopVector) >= 90))
-            {
-                hopVector.y *= -1;
-            }
-            if (Vector3.Angle(inputBank.aimDirection, to) <= 45)
-            {
-                hopVector.y = 0.25f;
-            }
-
-            hopVector.y = Mathf.Clamp(hopVector.y, 0.1f, 0.75f);
-
-            characterDirection.moveVector = hopVector;
-
-            base.PlayCrossfade("FullBody, Override", Animator.StringToHash("Dash"), this.duration * 0.05f);
-
-            speedCoefficient = 0.3f * characterBody.jumpPower * Mathf.Clamp((characterBody.moveSpeed) / 4f, 5f, 20f);
-
+            PlayCrossfade("FullBody, Override", controller.GetAnimationStateName("FullBody, Override", "Dash"),
+                "Utility.playbackRate", Duration, Duration * 0.05f);
+            speed = 0.3f * characterBody.jumpPower * Mathf.Clamp(characterBody.moveSpeed / 4f, 5f, 20f);
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.HiddenInvincibility);
-                if (!characterBody.hasCloakBuff && !cloakerController.isAkimbo) characterBody.AddBuff(RoR2Content.Buffs.Cloak);
+                invincibilityApplied = true;
+                if (!characterBody.hasCloakBuff && !controller.isAkimbo)
+                {
+                    characterBody.AddBuff(RoR2Content.Buffs.Cloak);
+                    EffectManager.SimpleSoundEffect(CloakerAssets.StealthSound.index, characterBody.corePosition, true);
+                }
             }
-
-            if (!cloakerController.isAkimbo)
-            {
-                cloakerController.passiveCloakOn = true;
-                cloakerController.StartGracePeriod();
-            }
-        }
-        protected virtual Vector3 GetHopVector()
-        {
-            Vector3 aimDirection = inputBank.aimDirection;
-            aimDirection.y = 0f;
-            Vector3 axis = -Vector3.Cross(Vector3.up, aimDirection);
-            float num = Vector3.Angle(inputBank.aimDirection, aimDirection);
-            if (inputBank.aimDirection.y < 0f)
-            {
-                num = 0f - num;
-            }
-            return Vector3.Normalize(Quaternion.AngleAxis(num, axis) * inputBank.moveVector);
+            if (!controller.isAkimbo) controller.StartGracePeriod();
         }
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
-            if (characterMotor && characterDirection && base.isAuthority)
+            if (isAuthority && characterMotor && characterDirection)
             {
                 characterMotor.Motor.ForceUnground();
-                characterMotor.velocity = hopVector * speedCoefficient;
+                characterMotor.velocity = hop * speed;
             }
-
-            if (fixedAge >= this.duration && base.isAuthority)
-            {
-                outer.SetNextStateToMain();
-            }
+            if (isAuthority && fixedAge >= Duration) outer.SetNextStateToMain();
         }
         public override void OnExit()
         {
-            if (!outer.destroying)
-            {
-                if (cameraTargetParams)
-                {
-                    request.Dispose();
-                }
-            }
-            base.OnExit();
-
-            if (NetworkServer.active)
-            {
+            cameraRequest?.Dispose();
+            if (NetworkServer.active && invincibilityApplied)
                 characterBody.RemoveBuff(RoR2Content.Buffs.HiddenInvincibility);
-            }
+            base.OnExit();
         }
-
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            return InterruptPriority.Frozen;
-        }
+        public override InterruptPriority GetMinimumInterruptPriority() => InterruptPriority.Frozen;
     }
 }

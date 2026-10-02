@@ -1,90 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using FortunesFromTheScrapyard.Survivors.Cloaker;
-using RoR2;
-using FortunesFromTheScrapyard;
-using UnityEngine.Networking;
-using UnityEngine.UIElements;
-using RoR2.Orbs;
+using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
+using EntityStates;
 using R2API;
-using FortunesFromTheScrapyard.Survivors.Wrecker;
+using RoR2;
+using UnityEngine;
+using UnityEngine.Networking;
 
 namespace EntityStates.Cloaker
 {
     public class CloakerScreech : BaseSkillState
     {
-        public static float baseDuration = 0.5f;
-
-        public static float blastRadius = 14f;
-
-        public static float blastProcCoefficient = 1f;
-
-        public static float blastDamageCoefficient = 600f;
-
-        public static float blastForce = 700f;
-
-        public static Vector3 blastBonusForce = new Vector3(0f, 0f, 0f);
-
+        public const float DamageCoefficient = 6f;
         private float duration;
-
         public override void OnEnter()
         {
             base.OnEnter();
-
-            duration = baseDuration / attackSpeedStat;
-
-            Fire();
-        }
-
-        public void Fire()
-        {
-            this.PlayCrossfade("Gesture, Additive", Animator.StringToHash("Special"), this.duration * 0.05f);
-
-            BlastAttack blastAttack = new BlastAttack();
+            duration = 0.5f / attackSpeedStat;
+            string animation = GetComponent<CloakerController>().GetAnimationStateName("Gesture, Override", "Special");
+            PlayCrossfade("Gesture, Override", animation, "Special.playbackRate", duration, duration * 0.05f);
+            if (!NetworkServer.active) return;
+            BlastAttack blast = new BlastAttack
             {
-                blastAttack.attacker = base.gameObject;
-                blastAttack.baseDamage = characterBody.damage * blastDamageCoefficient;
-                blastAttack.baseForce = blastForce;
-                blastAttack.bonusForce = blastBonusForce;
-                blastAttack.crit = RollCrit();
-                blastAttack.damageType = DamageType.Generic;
-                blastAttack.AddModdedDamageType(WreckerSurvivor.WreckerExplode);
-                blastAttack.falloffModel = BlastAttack.FalloffModel.None;
-                blastAttack.procCoefficient = blastProcCoefficient;
-                blastAttack.radius = blastRadius;
-                blastAttack.position = base.gameObject.transform.position;
-                blastAttack.attackerFiltering = AttackerFiltering.NeverHitSelf;
-                blastAttack.teamIndex = base.teamComponent.teamIndex;
-
-            }
-            blastAttack.Fire();
-
-            EffectManager.SpawnEffect(FortunesFromTheScrapyard.Items.BrokenHeadphones.headphonesShockwavePrefab, new EffectData
-            {
-                origin = characterBody.corePosition,
-                rotation = Quaternion.identity,
-            }, true);
-
+                attacker = gameObject,
+                baseDamage = damageStat * DamageCoefficient,
+                baseForce = 700f,
+                bonusForce = Vector3.zero,
+                crit = RollCrit(),
+                damageType = DamageType.Generic,
+                falloffModel = BlastAttack.FalloffModel.None,
+                procCoefficient = 1f,
+                radius = 14f,
+                position = transform.position,
+                attackerFiltering = AttackerFiltering.NeverHitSelf,
+                teamIndex = teamComponent.teamIndex
+            };
+            blast.AddModdedDamageType(CloakerContent.CloakerScreechDamageType);
+            blast.Fire();
+            EffectManager.SpawnEffect(CloakerAssets.ScreechEffect,
+                new EffectData { origin = characterBody.corePosition, rotation = Quaternion.identity }, true);
         }
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
-            if (base.isAuthority && fixedAge >= duration)
-            {
-                outer.SetNextStateToMain();
-            }
+            if (isAuthority && fixedAge >= duration) outer.SetNextStateToMain();
         }
-
-        public override void OnExit()
-        {
-            base.OnExit();
-        }
-
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            return InterruptPriority.Frozen;
-        }
+        public override InterruptPriority GetMinimumInterruptPriority() => InterruptPriority.Frozen;
     }
 }

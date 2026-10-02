@@ -3,10 +3,10 @@ CRC: 2416268992
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5aa254cf5afdea5ead54945242e295aa
+    Hash: 405c821e3713f5fb0d5d3b4388fb9346
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d22bf7030295e68e0b1b5d2761bebbe0
+    Hash: 3816e6382638ce78cefca8132805a956
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,19 +38,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
 - Class: 114
-  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
   Script: {fileID: 1357070253, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 682687671, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: 1918207524, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 1143142494, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1144835783, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1512185436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -63,6 +59,10 @@ ClassTypes:
   Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 952828898, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1392865457, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1480773730, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1811796171, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -224,5 +224,5 @@ Assets:
 - Assets/FFTSAssets/Monsters/Gardener/matGardenerFur.mat
 - Assets/FFTSAssets/Monsters/Gardener/mcpGardener.asset
 Dependencies:
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsbase
-- D:/Users/IOZ TECH/Documents/GitHub/Fortunes-from-the-Scrapyard/Build/plugins/AssetBundles/fftsmain
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsbase
+- D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsmain

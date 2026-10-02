@@ -62,7 +62,7 @@ AvatarMask:
   - m_Path: DeformationSystem/Root_M/Pelvis_M/Satchel_L/SatchelEnd_L
     m_Weight: 0
   - m_Path: DeformationSystem/Root_M/SpineBase_M
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: DeformationSystem/Root_M/SpineBase_M/Spine1_M
     m_Weight: 1
   - m_Path: DeformationSystem/Root_M/SpineBase_M/Spine1_M/Chest_M

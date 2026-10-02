@@ -1,0 +1,12 @@
+{
+    "name": "Fortunes.Import.Editor",
+    "rootNamespace": "Fortunes.Editor",
+    "references": [
+        "ThunderKit.Core",
+        "ThunderKit.Common",
+        "RoR2Importers"
+    ],
+    "includePlatforms": ["Editor"],
+    "overrideReferences": true,
+    "autoReferenced": false
+}
