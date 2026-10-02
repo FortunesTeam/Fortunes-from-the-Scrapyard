@@ -1,3 +1,5 @@
+using MSU;
+using MSU.Config;
 using RoR2;
 using UnityEngine;
 
@@ -5,9 +7,14 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerTrackerController : MonoBehaviour
     {
-        public const float MaxTrackingDistance = 40f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Maximum Mark targeting distance in meters.")]
+        [FormatToken(Cloaker.MARKTOKEN, 0)]
+        public static float MaxTrackingDistance = 40f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Maximum Mark targeting angle in degrees.")]
+        public static float MaxTrackingAngle = 10f;
+
         public RoR2.Skills.SkillDef markSkillDef;
-        public const float MaxTrackingAngle = 10f;
         private readonly BullseyeSearch search = new BullseyeSearch();
         private CharacterBody body;
         private InputBankTest input;

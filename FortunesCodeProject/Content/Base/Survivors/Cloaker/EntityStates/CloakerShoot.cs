@@ -1,21 +1,41 @@
-using FortunesFromTheScrapyard.Survivors.Cloaker;
-using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
 using EntityStates;
+using FortunesFromTheScrapyard;
+using FortunesFromTheScrapyard.Survivors.Cloaker;
+using MSU;
+using MSU.Config;
 using R2API;
 using RoR2;
 using RoR2.Skills;
 using UnityEngine;
 using UnityEngine.Networking;
+using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
 
 namespace EntityStates.Cloaker.Weapon
 {
     public class CloakerShoot : BaseSkillState, SteppedSkillDef.IStepSetter
     {
-        public const float PrimaryDamageCoefficient = 1.3f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Primary bullet damage coefficient. 2.8 deals 280% damage.")]
+        [FormatToken(CloakerContent.PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float PrimaryDamageCoefficient = 2.8f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Shot duration in seconds before attack speed scaling.")]
+        public static float BaseDuration = 0.4f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Maximum bullet travel distance in meters, for primary and charged shots.")]
+        public static float MaxDistance = 2000f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Bullet knockback force, for primary and charged shots.")]
+        public static float Force = 200f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Bullet proc coefficient, for primary and charged shots.")]
+        public static float ProcCoefficient = 1f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Bullet hit radius in meters, for primary and charged shots.")]
+        public static float Radius = 0.75f;
+
         public float damageCoefficient = PrimaryDamageCoefficient;
         public bool charged;
         internal float? cloakedDamage;
-        private const float BaseDuration = 0.4f;
         private float duration;
         private int step;
         private bool crit;
@@ -25,6 +45,7 @@ namespace EntityStates.Cloaker.Weapon
         public override void OnEnter()
         {
             base.OnEnter();
+            if (!charged) damageCoefficient = PrimaryDamageCoefficient;
             if (charged) damageStat = cloakedDamage ?? damageStat;
             CloakerController controller = GetComponent<CloakerController>();
             controller.BreakStealth();
@@ -55,8 +76,8 @@ namespace EntityStates.Cloaker.Weapon
                 damage = damageCoefficient * damageStat,
                 damageColorIndex = DamageColorIndex.Default,
                 falloffModel = BulletAttack.FalloffModel.DefaultBullet,
-                maxDistance = 2000f,
-                force = 200f,
+                maxDistance = MaxDistance,
+                force = Force,
                 hitMask = LayerIndex.CommonMasks.bullet,
                 stopperMask = LayerIndex.CommonMasks.bullet,
                 minSpread = 0f,
@@ -66,8 +87,8 @@ namespace EntityStates.Cloaker.Weapon
                 muzzleName = muzzle,
                 smartCollision = true,
                 procChainMask = default,
-                procCoefficient = 1f,
-                radius = 0.75f,
+                procCoefficient = ProcCoefficient,
+                radius = Radius,
                 sniper = false,
                 tracerEffectPrefab = crit ? CloakerAssets.CritTracer : charged ? CloakerAssets.RailTracer : CloakerAssets.GoldTracer,
                 hitEffectPrefab = charged ? CloakerAssets.RailImpact : CloakerAssets.PistolImpact,

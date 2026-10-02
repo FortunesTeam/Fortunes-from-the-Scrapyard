@@ -1,3 +1,5 @@
+using MSU;
+using MSU.Config;
 using RoR2;
 using RoR2.Skills;
 using UnityEngine;
@@ -7,9 +9,18 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerController : MonoBehaviour
     {
-        public const float BaseRestealthCooldown = 7f;
-        public const float BaseGracePeriod = 3f;
-        public const float DetectionRadius = 6f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Out-of-combat delay before passive stealth, in seconds. Reduced by cooldown reduction.")]
+        [FormatToken(Cloaker.PASSIVETOKEN, 0)]
+        public static float BaseRestealthCooldown = 7f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Seconds Restealth protects Cloak from damage and proximity reveals.")]
+        [FormatToken(Cloaker.UTILITYTOKEN, 1)]
+        public static float BaseGracePeriod = 3f;
+
+        private const float DefaultDetectionRadius = 6f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Enemy proximity reveal radius in meters.")]
+        [FormatToken(Cloaker.PASSIVETOKEN, 2)]
+        public static float DetectionRadius = DefaultDetectionRadius;
 
         public SkillDef passiveCloakSkillDef;
         public SkillDef passiveAkimboSkillDef;
@@ -122,6 +133,7 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
             {
                 indicator.SetActive(show);
                 indicator.transform.position = body.corePosition;
+                indicator.transform.localScale = Vector3.one * (DetectionRadius / DefaultDetectionRadius);
                 radius.gameObject.SetActive(show && graceTimer <= 0f);
             }
         }

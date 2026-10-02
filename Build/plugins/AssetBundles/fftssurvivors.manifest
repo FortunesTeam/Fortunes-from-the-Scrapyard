@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4193844520
+CRC: 2533839625
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fc09f6924281c3cd45792dad50bf8fb2
+    Hash: 4a78fb28629331a9f074866a65cd699a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b5c37a5103d70d4020323073e788122f
+    Hash: 807f1dd1093c6a4ec24ac5bf9fb2af99
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,6 +26,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 54
+  Script: {instanceID: 0}
+- Class: 65
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -142,6 +144,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -359660931, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: -1888550019, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1578512655, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -255,6 +259,8 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: RoR2
   ClassName: EntityStates.SerializableEntityStateType
 - AssemblyName: RoR2
+  ClassName: RoR2.AddressableAssets.IDRSKeyAssetReference
+- AssemblyName: RoR2
   ClassName: RoR2.CharacterAI.BaseAI/FollowPattern
 - AssemblyName: RoR2
   ClassName: RoR2.CharacterCameraParamsData
@@ -267,6 +273,12 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: RoR2
   ClassName: RoR2.DamageTypeCombo
 - AssemblyName: RoR2
+  ClassName: RoR2.DisplayRuleGroup
+- AssemblyName: RoR2
+  ClassName: RoR2.ItemDisplayRule
+- AssemblyName: RoR2
+  ClassName: RoR2.ItemDisplayRuleSet/KeyAssetRuleGroup
+- AssemblyName: RoR2
   ClassName: RoR2.Run/FixedTimeStamp
 - AssemblyName: RoR2
   ClassName: RoR2.SkillLocator/PassiveSkill
@@ -278,6 +290,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: RoR2.SkinDef/MinionSkinReplacement
 - AssemblyName: RoR2
   ClassName: RoR2.UI.CrosshairController/SpritePosition
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceGameObject
 - AssemblyName: Unity.Addressables
   ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[RoR2.SkinDefParams]
 - AssemblyName: Unity.Addressables

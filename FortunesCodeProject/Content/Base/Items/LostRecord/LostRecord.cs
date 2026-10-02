@@ -22,12 +22,12 @@ namespace FortunesFromTheScrapyard.Items
         public static float cooldownReductionStack = 10f;
 
         [ConfigureField(FFTSConfig.ID_ITEMS)]
-        public static bool weezerEnabled = true;
+        public static bool recordEnabled = true;
 
-        public static GameObject WeezerEffect;
+        public static GameObject RecordEffect;
         public override void Initialize()
         {
-            WeezerEffect = assetCollection.FindAsset<GameObject>("WeezerEffect");
+            RecordEffect = assetCollection.FindAsset<GameObject>("WeezerEffect");
 
             On.RoR2.GenericSkill.OnExecute += GenericSkill_OnExecute;
         }
@@ -53,7 +53,7 @@ namespace FortunesFromTheScrapyard.Items
                     if (skillSlot != utility) utility.rechargeStopwatch += utility.cooldownRemaining * (refund / 100f);
                     if (skillSlot != special) special.rechargeStopwatch += special.cooldownRemaining * (refund / 100f);
 
-                    if (weezerEnabled)
+                    if (recordEnabled)
                     {
                         int randomSFX;
                         if (skillSlot == primary)
@@ -82,7 +82,7 @@ namespace FortunesFromTheScrapyard.Items
                         }
                     }
 
-                    EffectManager.SimpleImpactEffect(WeezerEffect, skillSlot.characterBody.corePosition, Vector3.up, transmit: true);
+                    EffectManager.SimpleImpactEffect(RecordEffect, skillSlot.characterBody.corePosition, Vector3.up, transmit: true);
                 }
             }
         }

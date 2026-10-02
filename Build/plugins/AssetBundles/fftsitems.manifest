@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2301611048
+CRC: 1027852541
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 697814387a25c170e75af6e74b626ed0
+    Hash: 7d8094da60ba425da413452ee0d5099e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c781ddc8a5cdccb5d24ab1c3a85e1195
+    Hash: cf362b67784790e8a15a8f2e4716e609
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -111,15 +111,17 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: MSU.Runtime
   ClassName: MSU.ItemDisplayDictionary/DisplayRule
 - AssemblyName: RoR2
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
+- AssemblyName: RoR2
   ClassName: RoR2.DamageTypeCombo
 - AssemblyName: Unity.Addressables
   ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]
-- AssemblyName: UnityEngine.CoreModule
-  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Material]
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
-- AssemblyName: UnityEngine.CoreModule
-  ClassName: UnityEngine.Events.PersistentListenerMode
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.UnityEvent
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime

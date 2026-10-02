@@ -1,5 +1,7 @@
 using FortunesFromTheScrapyard.Survivors.Cloaker;
+using FortunesFromTheScrapyard;
 using EntityStates;
+using MSU.Config;
 using RoR2;
 using UnityEngine.Networking;
 
@@ -7,12 +9,15 @@ namespace EntityStates.Cloaker
 {
     public class CloakerMark : BaseSkillState
     {
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Mark animation duration in seconds before attack speed scaling.")]
+        public static float BaseDuration = 0.5f;
+
         private HurtBox victim;
         private float duration;
         public override void OnEnter()
         {
             base.OnEnter();
-            duration = 0.5f / attackSpeedStat;
+            duration = BaseDuration / attackSpeedStat;
             CloakerTrackerController tracker = GetComponent<CloakerTrackerController>();
             if (isAuthority) victim = tracker.GetTrackingTarget();
             if (!victim || !victim.healthComponent || !victim.healthComponent.body)

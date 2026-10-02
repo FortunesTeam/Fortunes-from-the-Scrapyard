@@ -1,5 +1,0 @@
-{
-    "name": "CloakerRagdollSetup.Editor",
-    "includePlatforms": ["Editor"],
-    "overrideReferences": true
-}

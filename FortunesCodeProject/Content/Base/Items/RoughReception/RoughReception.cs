@@ -1,10 +1,11 @@
 ﻿using MSU;
 using MSU.Config;
 using R2API;
+using R2API.Networking;
+using R2API.Networking.Interfaces;
 using RoR2;
 using RoR2.ContentManagement;
 using RoR2.Items;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -28,8 +29,12 @@ namespace FortunesFromTheScrapyard
         public static GameObject roughSwingPrefab;
         public override void Initialize()
         {
-            roughSwingPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Croco/CrocoSlash.prefab").WaitForCompletion().InstantiateClone("RoughSwingPrefab");
+            roughSwingPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Croco/CrocoSlash.prefab").WaitForCompletion()
+                .InstantiateClone("RoughReceptionSwingEffect", false);
+            roughSwingPrefab.EnsureComponent<EffectComponent>().applyScale = true;
+            roughSwingPrefab.EnsureComponent<DestroyOnTimer>().duration = RoughReceptionComponent.baseSwingDuration / 2f;
 
+            NetworkingAPI.RegisterMessageType<SyncRoughReceptionSwing>();
             On.RoR2.CharacterBody.OnSkillActivated += CharacterBody_OnSkillActivated;
         }
 
@@ -37,23 +42,34 @@ namespace FortunesFromTheScrapyard
         {
             orig.Invoke(self, skill);
 
-            if (self.HasItem(FFTSContent.Items.RoughReception) && skill == self.skillLocator.primary)
+            if (NetworkServer.active && self.HasItem(FFTSContent.Items.RoughReception) && self.skillLocator && skill == self.skillLocator.primary)
             {
-                RoughReceptionComponent swingComponent = self.gameObject.GetComponent<RoughReceptionComponent>();
-                List<GameObject> itemDisplayObjects = self.modelLocator.modelTransform.GetComponent<CharacterModel>().GetItemDisplayObjects(FFTSContent.Items.RoughReception.itemIndex);
+                RoughReceptionComponent swingComponent = self.gameObject.EnsureComponent<RoughReceptionComponent>();
+                swingComponent.enabled = true;
+                swingComponent.RoughReceptionSwing(self);
+            }
+        }
 
-                if (itemDisplayObjects.Count > 0)
+        private static void PlaySwing(CharacterBody body, float duration, int step)
+        {
+            CharacterModel model = body.modelLocator && body.modelLocator.modelTransform
+                ? body.modelLocator.modelTransform.GetComponent<CharacterModel>()
+                : null;
+            if (!model) return;
+
+            foreach (GameObject display in model.GetItemDisplayObjects(FFTSContent.Items.RoughReception.itemIndex))
+            {
+                Animator animator = display ? display.GetComponentInChildren<Animator>() : null;
+                if (animator && animator.GetLayerIndex("Body") >= 0)
                 {
-                    swingComponent.Reset();
-                    swingComponent.RoughReceptionSwing(self, itemDisplayObjects[0]);
+                    EntityState.PlayAnimationOnAnimator(animator, "Body", "Swing" + (step + 1), "Swing.playbackRate", duration);
                 }
-                else swingComponent.RoughReceptionSwing(self);
             }
         }
 
         public override bool IsAvailable(ContentPack contentPack)
         {
-            return false; //fuckin cat no
+            return true;
         }
 
         public override FFTSAssetRequest LoadAssetRequest()
@@ -61,141 +77,159 @@ namespace FortunesFromTheScrapyard
             return FFTSAssets.LoadAssetAsync<ItemAssetCollection>("acRoughReception", FFTSBundle.Items);
         }
 
+        public override void ModifyContentPack(ContentPack contentPack)
+        {
+            base.ModifyContentPack(contentPack);
+            contentPack.effectDefs.AddSingle(new EffectDef(roughSwingPrefab));
+        }
+
         public class RoughReceptionBehaviour : BaseItemBodyBehavior
         {
-            [ItemDefAssociation]
+            private RoughReceptionComponent swingComponent;
+
+            [ItemDefAssociation(useOnClient = false)]
             public static ItemDef GetItemDef() => FFTSContent.Items.RoughReception;
             private void OnEnable()
             {
-                body.gameObject.EnsureComponent<RoughReceptionComponent>();
+                swingComponent = body.gameObject.EnsureComponent<RoughReceptionComponent>();
+                swingComponent.enabled = true;
             }
             private void OnDisable()
             {
-                body.gameObject.GetComponent<RoughReceptionComponent>().enabled = false;
+                if (swingComponent) swingComponent.enabled = false;
             }
         }
         public class RoughReceptionComponent : MonoBehaviour
         {
             private CharacterBody body;
-            private Animator roughAnimator;
-            private ChildLocator roughLocator;
-
             public static float baseSwingDuration = 0.5f;
-            public float swingDuration;
-            public GameObject swingInstance;
-
+            private readonly List<float> pendingHits = new List<float>();
             private int step;
 
-            private float timer;
-            private bool startSwing;
-            private bool hasFired;
-
-            public void Reset()
+            public void RoughReceptionSwing(CharacterBody characterBody)
             {
-                this.timer = 0;
-                if (this.swingInstance) Destroy(this.swingInstance);
-                this.swingInstance = null;
-                this.startSwing = false;
-                this.roughLocator = null;
-                this.roughAnimator = null;
-                this.body = null;
-                this.hasFired = false;
+                body = characterBody;
+                float duration = baseSwingDuration / Mathf.Max(characterBody.attackSpeed, 0.01f);
+                pendingHits.Add(duration / 2f);
+
+                new SyncRoughReceptionSwing(body.networkIdentity.netId, duration, step).Send(NetworkDestination.Clients);
+                step = step == 0 ? 1 : 0;
             }
-            public void RoughReceptionSwing(CharacterBody characterBody) => RoughReceptionSwing(characterBody, null);
 
-            public void RoughReceptionSwing(CharacterBody characterBody, GameObject roughObject)
-            {
-                if (body == null)
-                {
-                    body = characterBody;
-                }
-
-                if (roughObject && !roughAnimator && !roughLocator)
-                {
-                    roughAnimator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<Animator>();
-
-                    roughLocator = roughObject.transform.Find("mdlRoughReception").gameObject.GetComponent<ChildLocator>();
-                }
-
-                this.swingDuration = RoughReceptionComponent.baseSwingDuration / characterBody.attackSpeed;
-
-                if (roughAnimator)
-                {
-                    int layerIndex = roughAnimator.GetLayerIndex("Body");
-                    if (layerIndex >= 0)
-                    {
-                        EntityState.PlayAnimationOnAnimator(roughAnimator, "Body", "Swing" + (this.step + 1), "Swing.playbackRate", swingDuration);
-                    }
-                }
-
-                //ScrapyardLog.Debug("Step" + step);
-                this.step = this.step == 0 ? 1 : 0;
-                //ScrapyardLog.Debug("Step" + step);
-                this.startSwing = true;
-            }
             public void FixedUpdate()
             {
-                if (this.startSwing && this.body)
+                if (!NetworkServer.active || !body || !body.healthComponent.alive || !body.HasItem(FFTSContent.Items.RoughReception))
                 {
-                    this.timer += Time.fixedDeltaTime;
+                    pendingHits.Clear();
+                    return;
+                }
 
-                    if (this.timer >= swingDuration / 2f && !hasFired)
+                for (int i = 0; i < pendingHits.Count;)
+                {
+                    pendingHits[i] -= Time.fixedDeltaTime;
+                    if (pendingHits[i] <= 0f)
                     {
+                        pendingHits.RemoveAt(i);
                         Fire();
-
-                        this.swingInstance = UnityEngine.Object.Instantiate(roughSwingPrefab, body.corePosition + (body.transform.forward * 2f), step == 0 ?
-                            new Quaternion(0f, 0f, 0f, 0f) : new Quaternion(0f, 0f, 0f, 0f));
                     }
-
-                    if (this.timer >= swingDuration)
+                    else
                     {
-                        Reset();
+                        i++;
                     }
                 }
             }
 
             private void Fire()
             {
-                //ScrapyardLog.Debug("Running Catattack?");
-                if (Util.HasEffectiveAuthority(body.networkIdentity))
+                int itemCount = body.GetItemCount(FFTSContent.Items.RoughReception);
+                if (itemCount <= 0 || !body.healthComponent.alive) return;
+
+                Ray aimRay = body.inputBank
+                    ? new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection)
+                    : new Ray(body.corePosition, body.transform.forward);
+
+                BulletAttack catAttack = new BulletAttack
                 {
-                    Ray aimRay;
-                    if (body.inputBank) aimRay = new Ray(body.inputBank.aimOrigin, body.inputBank.aimDirection);
-                    else aimRay = new Ray(body.transform.position, body.transform.forward);
-
-                    BulletAttack catAttack = new BulletAttack
-                    {
-                        aimVector = aimRay.direction,
-                        origin = aimRay.origin,
-                        owner = body.gameObject,
-                        weapon = null,
-                        bulletCount = 1,
-                        damage = body.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, body.GetItemCount(FFTSContent.Items.RoughReception)),
-                        damageColorIndex = DamageColorIndex.Item,
-                        damageType = DamageType.Generic,
-                        falloffModel = BulletAttack.FalloffModel.None,
-                        force = 400f,
-                        HitEffectNormal = false,
-                        procChainMask = default(ProcChainMask),
-                        procCoefficient = 0.7f,
-                        maxDistance = 12,
-                        radius = 5,
-                        isCrit = body.RollCrit(),
-                        muzzleName = "",
-                        tracerEffectPrefab = null
-                    };
-
-                    catAttack.Fire();
-
-                    hasFired = true;
-                    //ScrapyardLog.Debug("Fired Catattack?");
-
-                }
+                    aimVector = aimRay.direction,
+                    origin = aimRay.origin,
+                    owner = body.gameObject,
+                    weapon = null,
+                    bulletCount = 1,
+                    damage = body.damage * GetStackValue(swingBaseDamageCoefficient, swingDamageCoefficientPerStack, itemCount),
+                    damageColorIndex = DamageColorIndex.Item,
+                    damageType = DamageType.Generic,
+                    falloffModel = BulletAttack.FalloffModel.None,
+                    force = 400f,
+                    HitEffectNormal = false,
+                    procChainMask = default(ProcChainMask),
+                    procCoefficient = 0.7f,
+                    maxDistance = 12,
+                    radius = 5,
+                    smartCollision = true,
+                    isCrit = body.RollCrit(),
+                    muzzleName = "",
+                    tracerEffectPrefab = null
+                };
+                EffectData effectData = new EffectData
+                {
+                    origin = body.corePosition + aimRay.direction * 2f,
+                    rotation = Util.QuaternionSafeLookRotation(aimRay.direction),
+                    scale = 1f
+                };
+                catAttack.Fire();
+                EffectManager.SpawnEffect(roughSwingPrefab, effectData, true);
             }
+
             public void OnDisable()
             {
-                Reset();
+                pendingHits.Clear();
+                body = null;
                 step = 0;
+            }
+        }
+
+        public class SyncRoughReceptionSwing : INetMessage
+        {
+            private NetworkInstanceId bodyId;
+            private float duration;
+            private byte step;
+
+            public SyncRoughReceptionSwing()
+            {
+            }
+
+            public SyncRoughReceptionSwing(NetworkInstanceId bodyId, float duration, int step)
+            {
+                this.bodyId = bodyId;
+                this.duration = duration;
+                this.step = (byte)step;
+            }
+
+            public void Serialize(NetworkWriter writer)
+            {
+                writer.Write(bodyId);
+                writer.Write(duration);
+                writer.Write(step);
+            }
+
+            public void Deserialize(NetworkReader reader)
+            {
+                bodyId = reader.ReadNetworkId();
+                duration = reader.ReadSingle();
+                step = reader.ReadByte();
+            }
+
+            public void OnReceived()
+            {
+                GameObject bodyObject = Util.FindNetworkObject(bodyId);
+                CharacterBody body = bodyObject ? bodyObject.GetComponent<CharacterBody>() : null;
+                if (!body)
+                {
+                    FFTSLog.Debug($"Rough Reception swing body {bodyId} is no longer available.");
+                    return;
+                }
+
+                PlaySwing(body, duration, step);
             }
         }
     }

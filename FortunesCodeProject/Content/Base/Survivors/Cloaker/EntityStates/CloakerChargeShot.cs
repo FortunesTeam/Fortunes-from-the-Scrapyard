@@ -1,15 +1,29 @@
 using FortunesFromTheScrapyard.Survivors.Cloaker;
+using FortunesFromTheScrapyard;
 using EntityStates;
+using MSU;
+using MSU.Config;
 using RoR2;
 using RoR2.UI;
 using UnityEngine;
 using UnityEngine.Networking;
+using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
 
 namespace EntityStates.Cloaker.Weapon
 {
     public class CloakerChargeShot : BaseSkillState
     {
-        public const float MaxDamageCoefficient = 4f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Fully charged shot damage coefficient. 4 deals 400% damage.")]
+        [FormatToken(CloakerContent.SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        public static float MaxDamageCoefficient = 4f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Full charge time in seconds before attack speed scaling.")]
+        [FormatToken(CloakerContent.SECONDARYTOKEN, 1)]
+        public static float BaseDuration = 1.5f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Minimum seconds before releasing a partially charged shot. A full charge can fire sooner.")]
+        public static float MinimumChargeDuration = 0.5f;
+
         private float duration;
         private float? cloakedDamage;
         private CrosshairUtils.OverrideRequest crosshair;
@@ -23,7 +37,7 @@ namespace EntityStates.Cloaker.Weapon
             base.OnEnter();
             if (captureStealthDamage)
                 cloakedDamage = damageStat;
-            duration = 1.5f / attackSpeedStat;
+            duration = BaseDuration / attackSpeedStat;
             controller = GetComponent<CloakerController>();
             controller.BreakStealth();
             PlayCrossfade("Gesture, Override", controller.GetAnimationStateName("Gesture, Override", "EnterSecondary"),
@@ -35,7 +49,7 @@ namespace EntityStates.Cloaker.Weapon
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (isAuthority && ((!IsKeyDownAuthority() && fixedAge >= 0.5f) || fixedAge >= duration))
+            if (isAuthority && ((!IsKeyDownAuthority() && fixedAge >= MinimumChargeDuration) || fixedAge >= duration))
                 outer.SetNextState(new CloakerShoot
                 {
                     damageCoefficient = MaxDamageCoefficient * Mathf.Clamp01(fixedAge / duration),

@@ -1,14 +1,24 @@
 using FortunesFromTheScrapyard.Survivors.Cloaker;
+using FortunesFromTheScrapyard;
 using EntityStates;
+using MSU;
+using MSU.Config;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
+using CloakerContent = FortunesFromTheScrapyard.Survivors.Cloaker.Cloaker;
 
 namespace EntityStates.Cloaker
 {
     public class CloakerRestealth : BaseSkillState
     {
-        private const float Duration = 0.3f;
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Dash and invincibility duration in seconds.")]
+        [FormatToken(CloakerContent.UTILITYTOKEN, 0)]
+        public static float Duration = 0.3f;
+
+        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Dash speed coefficient, scaled by jump power and movement speed.")]
+        public static float SpeedCoefficient = 0.3f;
+
         private Vector3 hop;
         private float speed;
         private CameraTargetParams.AimRequest cameraRequest;
@@ -39,7 +49,7 @@ namespace EntityStates.Cloaker
             }
             PlayCrossfade("FullBody, Override", controller.GetAnimationStateName("FullBody, Override", "Dash"),
                 "Utility.playbackRate", Duration, Duration * 0.05f);
-            speed = 0.3f * characterBody.jumpPower * Mathf.Clamp(characterBody.moveSpeed / 4f, 5f, 20f);
+            speed = SpeedCoefficient * characterBody.jumpPower * Mathf.Clamp(characterBody.moveSpeed / 4f, 5f, 20f);
             if (NetworkServer.active)
             {
                 characterBody.AddBuff(RoR2Content.Buffs.HiddenInvincibility);

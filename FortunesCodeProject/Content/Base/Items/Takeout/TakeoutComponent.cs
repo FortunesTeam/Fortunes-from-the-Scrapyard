@@ -1,115 +1,60 @@
 ﻿using RoR2;
-using RoR2.ContentManagement;
-using MSU.Config;
-using RoR2.Items;
-using MSU;
-using RoR2.UI;
-using R2API;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Networking;
-using UnityEngine.AddressableAssets;
-using HG;
 
 namespace FortunesFromTheScrapyard.Items
 {
     public class TakeoutComponent : MonoBehaviour
     {
-        public UnityEvent triggerEvents;
+        private NetworkedBodyAttachment attachment;
+        private MeshRenderer[] ringRenderers;
+        private MaterialPropertyBlock propertyBlock;
+        private BuffDef displayedFood;
 
-        public TeamIndex _teamIndex;
-
-        public CharacterBody ownerBody;
-
-        public BuffDef buff;
-
-        private bool on = false;
-
-        private void FixedUpdate()
+        private void Awake()
         {
-            if (!ownerBody.HasBuff(buff) && !on)
-            {
-                base.transform.parent.Find("Radius").gameObject.SetActive(true);
-                if (buff == FFTSContent.Buffs.bdChickenCooldown)
-                {
-                    ownerBody.SetBuffCount(FFTSContent.Buffs.bdChicken.buffIndex, 1);
-                }
-                on = true;
-            }
+            attachment = GetComponentInParent<NetworkedBodyAttachment>();
+            ringRenderers = attachment.GetComponentsInChildren<MeshRenderer>(true);
+            propertyBlock = new MaterialPropertyBlock();
         }
 
-        public void OnTriggerStay(Collider collider)
+        private void LateUpdate()
         {
-            if (!collider)
+            CharacterBody ownerBody = attachment.attachedBody;
+            if (!ownerBody)
+                return;
+
+            BuffDef nextFood;
+            Color color;
+            if (ownerBody.HasBuff(FFTSContent.Buffs.bdTakeoutDmg))
+            {
+                nextFood = FFTSContent.Buffs.bdTakeoutDmg;
+                color = Takeout.chickenColor;
+            }
+            else if (ownerBody.HasBuff(FFTSContent.Buffs.bdTakeoutSpeed))
+            {
+                nextFood = FFTSContent.Buffs.bdTakeoutSpeed;
+                color = Takeout.noodlesColor;
+            }
+            else if (ownerBody.HasBuff(FFTSContent.Buffs.bdTakeoutRegen))
+            {
+                nextFood = FFTSContent.Buffs.bdTakeoutRegen;
+                color = Takeout.potstickersColor;
+            }
+            else
             {
                 return;
             }
-            CharacterBody characterBody = collider.GetComponent<CharacterBody>();
-            if (!characterBody) collider.GetComponentInChildren<CharacterBody>();
 
-            if (characterBody)
+            if (displayedFood == nextFood)
+                return;
+
+            displayedFood = nextFood;
+            foreach (MeshRenderer renderer in ringRenderers)
             {
-                TeamComponent enemyTeam = characterBody.teamComponent;
-                if (enemyTeam.teamIndex != _teamIndex && !ownerBody.HasBuff(buff))
-                {
-                    if (NetworkServer.active)
-                    {
-                        if (buff == FFTSContent.Buffs.bdPotstickers)
-                        {
-                            ownerBody.AddTimedBuff(buff, 7.5f);
-
-                            ownerBody.healthComponent.Heal(ownerBody.healthComponent.fullCombinedHealth * Takeout.GetStackValue(Takeout.healBase, Takeout.healStack, ownerBody.GetItemCount(FFTSContent.Items.Takeout)), default);
-
-                            EffectManager.SpawnEffect(Takeout.potstickerImpactEffect, new EffectData
-                            {
-                                origin = ownerBody.corePosition,
-                            }, transmit: true);
-                        }
-                        else if (buff == FFTSContent.Buffs.bdChickenCooldown)
-                        {
-                            ownerBody.SetBuffCount(FFTSContent.Buffs.bdChicken.buffIndex, 0);
-
-                            for (int i = 0; i <= Takeout.chickenCooldown; i++)
-                            {
-                                ownerBody.AddTimedBuff(buff, i);
-                            }
-
-                            EffectManager.SpawnEffect(Takeout.chickenExplosionEffect, new EffectData
-                            {
-                                origin = ownerBody.corePosition,
-                                scale = 13,
-                            }, transmit: true);
-
-                            BlastAttack blastAttack = new BlastAttack
-                            {
-                                position = ownerBody.corePosition,
-                                baseDamage = ownerBody.damage * Takeout.GetStackValue(Takeout.igniteBase, Takeout.igniteStack, ownerBody.GetItemCount(FFTSContent.Items.Takeout)),
-                                baseForce = 0f,
-                                radius = 13,
-                                attacker = ownerBody.gameObject,
-                                inflictor = null
-                            };
-                            blastAttack.teamIndex = TeamComponent.GetObjectTeam(blastAttack.attacker);
-                            blastAttack.crit = characterBody.RollCrit();
-                            blastAttack.procChainMask = default;
-                            blastAttack.procCoefficient = 0.5f;
-                            blastAttack.damageColorIndex = DamageColorIndex.Item;
-                            blastAttack.falloffModel = BlastAttack.FalloffModel.None;
-                            blastAttack.damageType = DamageType.IgniteOnHit;
-                            blastAttack.Fire();
-                        }
-                        else if (buff == FFTSContent.Buffs.bdNoodles)
-                        {
-                            ownerBody.AddTimedBuff(buff, 7.5f);
-                        }
-
-                    }
-                    on = false;
-                    triggerEvents.Invoke();
-                    Util.PlaySound("sfx_energybar_use", ownerBody.gameObject);
-                }
+                renderer.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetColor("_TintColor", color);
+                renderer.SetPropertyBlock(propertyBlock);
             }
         }
     }
 }
-
