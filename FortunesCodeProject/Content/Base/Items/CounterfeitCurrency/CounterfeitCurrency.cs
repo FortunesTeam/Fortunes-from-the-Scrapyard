@@ -14,30 +14,30 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "FFTS_ITEM_COUNTERFEITCURRENCY_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 0)]
         public static int commonChestLifePercent = 5;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 1)]
         public static int uncommonChestLifePercent = 10;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 2)]
         public static int rareChestLifePercent = 50;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 3)]
         public static int minCommonCost = 1;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 500f)]
         [FormatToken(TOKEN, 4)]
         public static int minUncommonCost = 50;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 2000f)]
         [FormatToken(TOKEN, 5)]
         public static int minRareCost = 250;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 30f)]
         [FormatToken(TOKEN, 6)]
         public static int maxChests = 3;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 30f)]
         [FormatToken(TOKEN, 7)]
         public static int maxChestsStack = 3;
 

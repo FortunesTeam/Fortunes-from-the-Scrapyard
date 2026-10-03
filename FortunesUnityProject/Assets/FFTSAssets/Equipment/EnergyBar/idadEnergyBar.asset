@@ -1,0 +1,1312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f727041e2de4c654eb149643cbe8e537, type: 3}
+  m_Name: idadEnergyBar
+  m_EditorClassIdentifier: 
+  keyAsset: {fileID: 11400000, guid: a27cd0c84bd8ec949b4b6e50a1beca9c, type: 2}
+  displayEntries:
+  - targetIDRS:
+      m_AssetGUID: ffea13199016c4e4092b864bc59963ad
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 5fa2b0eaf6b131a44b5fbe48bac602fc
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 70356ba47794caf48a34625ce3b8442f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b577943ff3308142a3def6a58446ecf
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 073f1d77c0d808240b5404fc6d0a4c88
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 20a7e7f739f6ac84cb8b9d641a179713
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 439b59d9c7033d444b14ca8400232532
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c3a3fa07aaccea24abc93cf90166fa0d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HandR
+      localPos: {x: 0.01383, y: 0.18031, z: -0.0024}
+      localAngles: {x: 353.228, y: 53.90981, z: 246.1784}
+      localScale: {x: 0.05, y: 0.05, z: 0.05}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8fb06b526e229f34e802f5754f4f918f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f9fa5389670c16b41a3f036f547c928d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 38951619ee759b1489143b3fd4f0771f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: dc2058c94a60d83498d3f9c9d0770ed7
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f83fd7257a4f7404ba290e9f43717960
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b03760dbbc74a34289e67486b831f62
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2c5041dbe428e6f43b5ac7f8b990c514
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1bd5a05e0d8dab543854f79e3bc08442
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 73d5735eceffe06489510a1f11a71f65
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 18e2be81afd31b64491182c8deee2581
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: bc72507d5f0ceea4a80f262f87e10016
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fadd4085e6433274b8666a2d224f3905
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 01862a8dd15bc6e4a9ef7d03a16e37ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 4dc93ed565737484eaa589cddedb5944
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 322a5e452db7a0349bee49207cfb2123
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fece71c1e492a0f438075fea8832fd6f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cc54a280603ce03429294dcbe5fe2e2e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 63c4086f1b5f7c548a82d190d04fc143
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7d6fc2aa6fd5d5b47b3b39a7abf9c951
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8464d010b0eb5874087422831a1044e2
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 3aec5746b27f9b744bc2ac3efc5847d9
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 78c9eb3a198a3334088bab3d4a18a989
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: af09429073bdad54e93a8cee326c98e1
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b243683536da4b43b3a8ce850fbad8a
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cb9b6a9066bda7d43a74e51e17d44c7c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b885310f48d366643a35aa3d29dddfda
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fbf59cc865daebc43bb6f64665de4051
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: df1e1b17f3786c44587a9f50be2a81c6
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7ce0109c76dca434d90d3801cdf29e5c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: e41df75420286364199c62cd5f17f946
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7033b005e9ef98c4b96fadc5d816fa62
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 35afb92e00847de4a9f73f843ff33384
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b9d4a47c45ce5154bb68a1eeea2d8010
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: d1f9100bb0816e943ab73777c4b1c9dc
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 87379478f528bb8469d8a59106a4bd90
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: aac27bb99e7f04143bd7a9b160adbb81
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8c26b97be9bef2f4690d98258ff8bcb5
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cc0f862e9dd1c9b4d8df24c8a0d51577
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c50164cd9a54ce84383d5892edabb382
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: dc0536c8029a5ae47abd7373e2296bb5
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b273a7b162d1a344f9ede92f48721886
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 79e031d2a3ced264f9eab594d590128d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 89e5e01e9a5447e4ba5701873efb6074
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 542679c002051b844a83426dd874e4c9
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6d4b4a2d8a9b1554da3758590ac700b2
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 3afa462e93b5f1443bd8cf84b3dad515
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 4409628366589f04baa797fb48bf7386
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 450392afe7be1cf46b450361cbcb876c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c90b7466017dae2409bcf63d4d87a819
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2267a1c58f2a49a4e97c1bac7c07cb03
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 56fb6d72c43a44d4fb988a29bb782174
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: e7051f19ae8673b42945cdf3237b02c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 391ee0e41b6ed504aa3009df76d08a39
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f6e3e105c2d53344ea0f510d3b945abe
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6fc9b746607b41b40bed5215e6979bb3
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 954167ffa5109704db6a8d500c174224
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2a1e3aa61263d0e48860733269971e4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: a4eec23ec0654b047bf06a9a93e5f30a
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6c5433b81cfe52e47956fee12f62ff80
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2d41357d5bec41147be42ecc8a8fc5b4
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 26a865733b30c7741af13663e7927490
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f5bda7d11b594d74e9e8cffcc5ee521b
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 317a62a8f32274947a964644efee737e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 0314b4d7970e7684f816e75a2c83837f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8e2ba4ec55103ff4585554d92e2611a8
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 28b0b23e9c4a2e64894aac312942a615
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: ed1727397a6b0e046870e593d7a95fab
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 5d5a451f70214e549961ef08134807bb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 36904b34349627940999314e54120a1e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c9550f1020b527d44b8d591474b24c0f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1011af1ee36365e47be5c6f44c08ad17
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fb3eb1bc8b7160a45821f6116e2bf642
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: de4337c3785ce044a97fcc0f95115b6e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 3ac7d9d951bd8a54ea022daaf6512211,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0

@@ -21,7 +21,7 @@ namespace FortunesFromTheScrapyard.Elite
     {
         public const string TOKEN = "FFTS_EQUIP_SCRAP_ELITE_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ELITES)]
+        [FFTSConfigureField(FFTSConfig.ID_ELITES, restartRequired = true)]
         public static bool enablePlayerLunars = false;
 
         public static List<EquipmentIndex> scrapEliteEquipmentListEnemy = new List<EquipmentIndex>();
@@ -76,6 +76,7 @@ namespace FortunesFromTheScrapyard.Elite
             FFTSContent.fftsContentPack.effectDefs.AddSingle(effectDef3);
 
             On.RoR2.EquipmentCatalog.SetEquipmentDefs += EquipmentCatalog_SetEquipmentDefs;
+            FFTSMain.instance.StartCoroutine(FFTSConfig.AfterConfigsBound(RefreshEquipmentLists));
 
             On.RoR2.Run.GenerateSeedForNewRun += Run_GenerateSeedForNewRun;
         }
@@ -111,10 +112,14 @@ namespace FortunesFromTheScrapyard.Elite
         }
         private void EquipmentCatalog_SetEquipmentDefs(On.RoR2.EquipmentCatalog.orig_SetEquipmentDefs orig, EquipmentDef[] newEquipmentDefs)
         {
+            orig(newEquipmentDefs);
+            RefreshEquipmentLists();
+        }
+
+        private static void RefreshEquipmentLists()
+        {
             scrapEliteEquipmentListPlayer.Clear();
             scrapEliteEquipmentListEnemy.Clear();
-
-            orig(newEquipmentDefs);
 
             FillWhiteList(EquipmentCatalog.enigmaEquipmentList);
         }

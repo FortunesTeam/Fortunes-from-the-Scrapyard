@@ -25,8 +25,6 @@ namespace Fortunes.Editor
         [InitializeOnLoadMethod]
         private static void InitializeImportDefines()
         {
-            EditorApplication.quitting -= ClearAddressableDefine;
-            EditorApplication.quitting += ClearAddressableDefine;
             if (!File.Exists("Packages/Risk of Rain 2/package.json") ||
                 !File.Exists("Packages/Risk of Rain 2/RoR2.dll"))
             {
@@ -38,12 +36,6 @@ namespace Fortunes.Editor
                 EditorApplication.update -= RestoreAddressableDefine;
                 EditorApplication.update += RestoreAddressableDefine;
             }
-        }
-
-        private static void ClearAddressableDefine()
-        {
-            // The next session must import settings before ThunderKit initializes Addressables.
-            ScriptingSymbolManager.RemoveScriptingDefine("TK_ADDRESSABLE");
         }
 
         private static void RestoreAddressableDefine()

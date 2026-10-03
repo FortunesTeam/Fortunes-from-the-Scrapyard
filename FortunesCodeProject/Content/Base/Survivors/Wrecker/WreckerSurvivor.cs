@@ -32,19 +32,19 @@ namespace FortunesFromTheScrapyard.Survivors.Wrecker
         public const string UTILITYTOKEN = "FFTS_WRECKER_UTILITY_DESCRIPTION";
         public const string SPECIALTOKEN = "FFTS_WRECKER_SPECIAL_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 20f, restartRequired = true)]
         //[FormatToken(PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float basePrimaryDamage = 0.6f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 20f, restartRequired = true)]
         //[FormatToken(SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         internal static float baseSecondaryDamage = 1.2f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 20f, restartRequired = true)]
         //[FormatToken(UTILITYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float baseUtilityDamage = 4f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, restartRequired = true)]
         //[FormatToken(SPECIALTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         public static float baseSpecialDamage = 6f;
 

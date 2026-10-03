@@ -14,10 +14,10 @@ namespace FortunesFromTheScrapyard.Equipments
         //[ConfigureField(ScrapyardConfig.ID_EQUIPS)]
         //[FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         //public static float regenAmount = 15f;
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 5f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float speedBonus = 0.90f;
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 30f)]
         [FormatToken(TOKEN, 1)]
         public static float buffDuration = 2f;
         public override bool Execute(EquipmentSlot slot)

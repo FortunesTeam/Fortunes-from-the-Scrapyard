@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.CharacterBody</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.CharacterBodyAPI">
+            <summary>
+            API for adding various stuff to Character Body such as: Modded Body Flags
+            </summary>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.ReserveBodyFlag">
+            <summary>
+            Reserve ModdedBodyFlag to use it with
+            <see cref="M:R2API.CharacterBodyAPI.AddModdedBodyFlag(RoR2.CharacterBody,R2API.CharacterBodyAPI.ModdedBodyFlag)"/>,
+            <see cref="M:R2API.CharacterBodyAPI.RemoveModdedBodyFlag(RoR2.CharacterBody,R2API.CharacterBodyAPI.ModdedBodyFlag)"/> and
+            <see cref="!:HasModdedBodyFlag(CharacterBody, ModdedBodyFlag))"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:R2API.CharacterBodyAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="P:R2API.CharacterBodyAPI.ModdedBodyFlagCount">
+            <summary>
+            Reserved ModdedBodyFlagCount count
+            </summary>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.AddModdedBodyFlag(RoR2.CharacterBody,R2API.CharacterBodyAPI.ModdedBodyFlag)">
+            <summary>
+            Adding ModdedBodyFlag to CharacterBody. You can add more than one body flag to one CharacterBody
+            </summary>
+            <param name="characterBody"></param>
+            <param name="moddedBodyFlag"></param>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.RemoveModdedBodyFlag(RoR2.CharacterBody,R2API.CharacterBodyAPI.ModdedBodyFlag)">
+            <summary>
+            Removing ModdedBodyFlag from CharacterBody instance.
+            </summary>
+            <param name="characterBody"></param>
+            <param name="moddedBodyFlag"></param>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.HasAnyModdedBodyFlag(RoR2.CharacterBody)">
+            <summary>
+            Checks if CharacterBody instance has any ModdedBodyFlag assigned. One CharacterBody can have more than one body flag.
+            </summary>
+            <param name="characterBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.HasModdedBodyFlag(RoR2.CharacterBody,R2API.CharacterBodyAPI.ModdedBodyFlag)">
+            <summary>
+            Checks if CharacterBody instance has ModdedBodyFlag assigned. One CharacterBody can have more than one body flag.
+            </summary>
+            <param name="characterBody"></param>
+            <param name="moddedBodyFlag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.GetCustomSprintIcon(RoR2.CharacterBody)">
+            <summary>
+            Get custom sprint HUD icon sprite for this body.
+            </summary>
+            <param name="characterBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.SetCustomSprintIcon(RoR2.CharacterBody,UnityEngine.Sprite)">
+            <summary>
+            Set custom sprint HUD icon sprite for this body.
+            </summary>
+            <param name="characterBody"></param>
+            <param name="sprite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.GetCustomSprintColor(RoR2.CharacterBody)">
+            <summary>
+            Get custom sprint HUD icon color for this body.
+            </summary>
+            <param name="characterBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.SetCustomSprintColor(RoR2.CharacterBody,System.Nullable{UnityEngine.Color})">
+            <summary>
+            Set custom sprint HUD icon color for this body.
+            </summary>
+            <param name="characterBody"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.GetAlwaysSprint(RoR2.CharacterBody)">
+            <summary>
+            Get ability for the body to always sprint.
+            </summary>
+            <param name="characterBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.CharacterBodyAPI.AddAlwaysSprintCondition(R2API.CharacterBodyAPI.CanAlwaysSprint)">
+            <summary>
+            Add a condition for if the body is able to always sprint
+            </summary>
+            <param name="canAlwaysSprint"></param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.CharacterBodyAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.HealthBarAPI">
+            <summary>
+            API for modifying the HealthBar
+            </summary>
+        </member>
+        <member name="M:R2API.HealthBarAPI.RegisterBarOverlay(R2API.HealthBarAPI.BarOverlayInfo)">
+            <summary>Registers a new HealthBar overlay. Must be called before RoR2Application.onLoad finishes.</summary>
+            <param name="overlayInfo">The BarOverlayInfo defining your overlay.</param>
+            <returns>The BarOverlayIndex that corresponds to your overlay, or BarOverlayIndex.None if called too late. Use this if you need to assign the bar to a specific body.</returns>
+        </member>
+        <member name="M:R2API.HealthBarAPI.AddOverlayToBody(RoR2.CharacterBody,R2API.HealthBarAPI.BarOverlayIndex)">
+            <summary>Marks a HealthBar overlay as applying to a specific body.</summary>
+            <param name="body">The body to apply to.</param>
+            <param name="index">The index of your overlay.</param>
+        </member>
+        <member name="M:R2API.HealthBarAPI.RemoveOverlayFromBody(RoR2.CharacterBody,R2API.HealthBarAPI.BarOverlayIndex)">
+            <summary>Unmarks a HealthBar overlay as applying to a specific body.</summary>
+            <param name="body">The body to remove from.</param>
+            <param name="index">The index of your overlay.</param>
+        </member>
+        <member name="T:R2API.HealthBarAPI.BarOverlayInfo">
+            <summary>Defines on a modded HealthBar overlay.</summary>
+        </member>
+        <member name="F:R2API.HealthBarAPI.BarOverlayInfo.BarInfo">
+            <summary>A template BarInfo that will be applied to the HealthBar if assigned.</summary>
+        </member>
+        <member name="F:R2API.HealthBarAPI.BarOverlayInfo.BodySpecific">
+            <summary>Causes your bar to only be handled on bodies it is assigned to, via AddOverlayToCharacterBody.</summary>
+        </member>
+        <member name="F:R2API.HealthBarAPI.BarOverlayInfo.ModifyBarInfo">
+            <summary>A delegate which will run when HealthBar overlays are updated. Use this to set things like whether your bar is enabled or its size.</summary>
+        </member>
+        <member name="F:R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValues">
+            <summary>A delegate that which will run when HealthBar display values are being calculated. Use this to modify the numerical health values before they render on the HUD.</summary>
+        </member>
+        <member name="T:R2API.HealthBarAPI.BarOverlayInfo.ModifyBarInfoCallback">
+            <summary>A delegate that can be run when HealthBar overlays are updated. Use this to set things like whether your bar is enabled or its size.</summary>
+            <param name="source">The HealthBar the overlay is being handled on.</param>
+            <param name="barInfo">A reference to the BarInfo that is being used to define your overlay.</param> 
+        </member>
+        <member name="T:R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback">
+            <summary>A delegate that can be run when HealthBar display values are being calculated. Use this to modify the numerical health values before they render on the HUD.</summary>
+            <param name="source">The HealthBar the display values are being modified on.</param>
+            <param name="currentHealth">A reference to the current health value that will be displayed on the healthbar. Modify this in-place.</param> 
+            <param name="maxHealth">A reference to the current health value that will be displayed on the healthbar. Modify this in-place.</param> 
+        </member>
+        <member name="F:R2API.HealthBarAPI.BarOverlayInfo.OverlayIndex">
+            <summary>The identifier for this overlay type.</summary>
+        </member>
+        <member name="T:R2API.HealthBarAPI.BarOverlayIndex">
+            <summary>An identifier for a modded HealthBar overlay.</summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

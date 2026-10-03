@@ -17,19 +17,19 @@ namespace FortunesFromTheScrapyard.Equipments
     {
         public const string TOKEN = "FFTS_EQUIP_MOONSHINE_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 100f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.DivideByN, 2, 0)]
         public static float chanceToHit = 100f;
 
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 1f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float basePercentageSaved = 0.75f;
 
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 50f)]
         [FormatToken(TOKEN, 2)]
         public static float baseRadius = 2.5f;
 
-        [ConfigureField(FFTSConfig.ID_EQUIPS)]
+        [FFTSConfigureField(FFTSConfig.ID_EQUIPS, 0f, 60f)]
         [FormatToken(TOKEN, 3)]
         public static float buffDuration = 15f;
 

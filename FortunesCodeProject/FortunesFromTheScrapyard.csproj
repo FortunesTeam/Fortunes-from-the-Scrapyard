@@ -30,6 +30,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Content\InDev\Elites\**" />
+    <EmbeddedResource Remove="Content\InDev\Elites\**" />
+    <None Remove="Content\InDev\Elites\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove="nuget.config" />
   </ItemGroup>
@@ -39,6 +45,10 @@
 		</Reference>
 		<Reference Include="MSU">
 			<HintPath>..\libs\MSU.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="RiskOfOptions">
+			<HintPath>..\FortunesUnityProject\Packages\Risk_Of_Options\plugins\RiskOfOptions\RiskOfOptions.dll</HintPath>
+			<Private>false</Private>
 		</Reference>
 		<Reference Include="CustomEmotesAPI">
 			<HintPath>..\libs\CustomEmotesAPI.dll</HintPath>
@@ -56,6 +66,7 @@
 		<PackageReference Include="R2API.Addressables" Version="1.0.4" />
 		<PackageReference Include="R2API.Animations" Version="1.1.1" />
 		<PackageReference Include="R2API.Elites" Version="1.0.7" />
+		<PackageReference Include="R2API.Execute" Version="1.1.1" />
 		<PackageReference Include="R2API.Items" Version="1.0.7" />
 		<PackageReference Include="R2API.Skills" Version="1.0.2" />
 		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.3.9-r.0" />
@@ -64,9 +75,6 @@
 		<PackageReference Include="R2API.RecalculateStats" Version="1.6.0" />
 		<PackageReference Include="R2API.Sound" Version="1.*" />
 		<PackageReference Include="R2API.ProcType" Version="1.*" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Content\InDev\Elites\" />
 	</ItemGroup>
   <Target Name="WeaveNetworkAssembly" DependsOnTargets="ResolveReferences" Condition="'$(Configuration)' != 'ToUnity'">
     <PropertyGroup>
@@ -86,8 +94,7 @@
       <_WeaverInput Include="$(TargetPath).mdb" Condition="Exists('$(TargetPath).mdb')" />
     </ItemGroup>
     <Copy SourceFiles="@(_WeaverInput)" DestinationFolder="$(_WeaverInputDirectory)" />
-    <Exec Command="&quot;$(_WeaverDirectory)\Unity.UNetWeaver.exe&quot; &quot;$(_WeaverReferencesDirectory)\UnityEngine.CoreModule.dll&quot; &quot;$(_WeaverReferencesDirectory)\com.unity.multiplayer-hlapi.Runtime.dll&quot; &quot;$(_WeaverOutputDirectory)&quot; &quot;$(_WeaverInputDirectory)\$(TargetFileName)&quot; &quot;$(_WeaverReferencesDirectory)&quot;"
-          WorkingDirectory="$(_WeaverIntermediateDirectory)" ConsoleToMSBuild="true">
+    <Exec Command="&quot;$(_WeaverDirectory)\Unity.UNetWeaver.exe&quot; &quot;$(_WeaverReferencesDirectory)\UnityEngine.CoreModule.dll&quot; &quot;$(_WeaverReferencesDirectory)\com.unity.multiplayer-hlapi.Runtime.dll&quot; &quot;$(_WeaverOutputDirectory)&quot; &quot;$(_WeaverInputDirectory)\$(TargetFileName)&quot; &quot;$(_WeaverReferencesDirectory)&quot;" WorkingDirectory="$(_WeaverIntermediateDirectory)" ConsoleToMSBuild="true">
       <Output TaskParameter="ConsoleOutput" ItemName="_WeaverConsoleOutput" />
     </Exec>
     <ItemGroup>
@@ -104,14 +111,12 @@
     <ItemGroup>
       <_PluginAssembly Include="$(_AssemblyToStage)" />
       <_ObsoleteSymbols Include="$(TargetName).pdb;$(TargetFileName).mdb" />
-      <_AssetBundles Include="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\*"
-                     Exclude="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows;$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows.manifest" />
+      <_AssetBundles Include="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\*" Exclude="$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows;$(MSBuildProjectDirectory)\..\FortunesUnityProject\AssetBundles\StandaloneWindows\StandaloneWindows.manifest" />
     </ItemGroup>
     <Warning Condition="'@(_AssetBundles)' == ''" Text="No exported Unity asset bundles were found in FortunesUnityProject\AssetBundles\StandaloneWindows. Build the bundles in Unity before running or deploying the mod; existing staged bundles will not be updated." />
     <Delete Files="@(_ObsoleteSymbols->'$(_BuildPluginsDirectory)\%(Identity)')" />
     <Copy SourceFiles="@(_PluginAssembly)" DestinationFolder="$(_BuildPluginsDirectory)" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\FortunesUnityProject\Assets\StreamingAssets\aa\FFTSSoundBank.bnk"
-          DestinationFiles="$(_BuildPluginsDirectory)\Soundbanks\FFTSSoundBank.bnk" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\FortunesUnityProject\Assets\StreamingAssets\aa\FFTSSoundBank.bnk" DestinationFiles="$(_BuildPluginsDirectory)\Soundbanks\FFTSSoundBank.bnk" />
     <Copy SourceFiles="@(_AssetBundles)" DestinationFolder="$(_BuildPluginsDirectory)\AssetBundles" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

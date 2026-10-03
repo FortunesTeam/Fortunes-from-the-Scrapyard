@@ -1,0 +1,9 @@
+{
+  "name": "BurstsOfRain",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/risk-of-thunder/BurstsOfRain",
+  "description": "ALPHA RELEASE: Burst Assembly Loader and Redistribution of specific Unity.DOTS libraries.",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2113"
+  ]
+}

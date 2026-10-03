@@ -25,7 +25,10 @@ namespace FortunesFromTheScrapyard
 {
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
+    [BepInDependency(MSUMain.GUID)]
+    [BepInDependency("com.rune580.riskofoptions")]
     [BepInDependency(NetworkingAPI.PluginGUID)]
+    [BepInDependency(ExecuteAPI.PluginGUID, "1.1.1")]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     public class FFTSMain : BaseUnityPlugin
     {

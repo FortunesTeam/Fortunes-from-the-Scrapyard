@@ -17,20 +17,20 @@ namespace FortunesFromTheScrapyard.Items
         public const string TOKEN = "FFTS_ITEM_SPRAYCAN_DESCRIPTION";
         public const string TOKEN2 = "FFTS_ITEM_SPRAYCAN_PICKUP";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 1f, 100f)]
         [FormatToken(TOKEN, 0)]
         [FormatToken(TOKEN2, 0)]
         public static int baseUses = 10;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 60f)]
         [FormatToken(TOKEN, 1)]
         public static int baseCooldown = 5;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float baseDamageRequirement = 4.0f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         public static float baseDamageCoefficient = 2.75f;
 

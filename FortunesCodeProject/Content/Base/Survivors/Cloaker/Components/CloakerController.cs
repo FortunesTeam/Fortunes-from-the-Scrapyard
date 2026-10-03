@@ -9,16 +9,16 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerController : MonoBehaviour
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Out-of-combat delay before passive stealth, in seconds. Reduced by cooldown reduction.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, configDescOverride = "Out-of-combat delay before passive stealth, in seconds. Reduced by cooldown reduction.")]
         [FormatToken(Cloaker.PASSIVETOKEN, 0)]
-        public static float BaseRestealthCooldown = 7f;
+        public static float BaseRestealthCooldown = 4f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Seconds Restealth protects Cloak from damage and proximity reveals.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, configDescOverride = "Seconds Restealth protects Cloak from damage and proximity reveals.")]
         [FormatToken(Cloaker.UTILITYTOKEN, 1)]
         public static float BaseGracePeriod = 3f;
 
         private const float DefaultDetectionRadius = 6f;
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Enemy proximity reveal radius in meters.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 50f, configDescOverride = "Enemy proximity reveal radius in meters.")]
         [FormatToken(Cloaker.PASSIVETOKEN, 2)]
         public static float DetectionRadius = DefaultDetectionRadius;
 

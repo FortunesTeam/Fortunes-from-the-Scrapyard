@@ -18,11 +18,11 @@ namespace FortunesFromTheScrapyard
     {
         public const string TOKEN = "FFTS_ITEM_ROUGHRECEPTION_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float swingBaseDamageCoefficient = 2.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float swingDamageCoefficientPerStack = 2.5f;
 
@@ -31,8 +31,12 @@ namespace FortunesFromTheScrapyard
         {
             roughSwingPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Croco/CrocoSlash.prefab").WaitForCompletion()
                 .InstantiateClone("RoughReceptionSwingEffect", false);
-            roughSwingPrefab.EnsureComponent<EffectComponent>().applyScale = true;
             roughSwingPrefab.EnsureComponent<DestroyOnTimer>().duration = RoughReceptionComponent.baseSwingDuration / 2f;
+            foreach (ParticleSystem particleSystem in roughSwingPrefab.GetComponentsInChildren<ParticleSystem>())
+            {
+                ParticleSystem.MainModule main = particleSystem.main;
+                main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            }
 
             NetworkingAPI.RegisterMessageType<SyncRoughReceptionSwing>();
             On.RoR2.CharacterBody.OnSkillActivated += CharacterBody_OnSkillActivated;
@@ -62,7 +66,7 @@ namespace FortunesFromTheScrapyard
                 Animator animator = display ? display.GetComponentInChildren<Animator>() : null;
                 if (animator && animator.GetLayerIndex("Body") >= 0)
                 {
-                    EntityState.PlayAnimationOnAnimator(animator, "Body", "Swing" + (step + 1), "Swing.playbackRate", duration);
+                    animator.gameObject.EnsureComponent<RoughReceptionDisplay>().PlaySwing(duration, step);
                 }
             }
         }
@@ -77,10 +81,87 @@ namespace FortunesFromTheScrapyard
             return FFTSAssets.LoadAssetAsync<ItemAssetCollection>("acRoughReception", FFTSBundle.Items);
         }
 
-        public override void ModifyContentPack(ContentPack contentPack)
+        public class RoughReceptionDisplay : MonoBehaviour
         {
-            base.ModifyContentPack(contentPack);
-            contentPack.effectDefs.AddSingle(new EffectDef(roughSwingPrefab));
+            // The forward claw stroke spans frames 7-12 of each 20-frame swing.
+            private const float swipeStart = 0.35f;
+            private const float swipeEnd = 0.6f;
+            private Animator animator;
+            private ItemDisplay itemDisplay;
+            private Transform rightClaw;
+            private Transform leftClaw;
+            private Transform swingClaw;
+            private GameObject swingEffect;
+            private int layerIndex;
+            private int swingStateHash;
+            private float swingDuration;
+            private bool awaitingSwipe;
+
+            private void Awake()
+            {
+                animator = GetComponent<Animator>();
+                itemDisplay = GetComponentInParent<ItemDisplay>();
+                layerIndex = animator.GetLayerIndex("Body");
+                foreach (Transform child in GetComponentsInChildren<Transform>())
+                {
+                    if (child.name == "DEF-hand.R.002") rightClaw = child;
+                    if (child.name == "DEF-hand.L.002") leftClaw = child;
+                }
+
+                if (!rightClaw || !leftClaw)
+                    FFTSLog.Error("Rough Reception display is missing its animated claw bones.");
+            }
+
+            public void PlaySwing(float duration, int step)
+            {
+                ClearEffect();
+                swingDuration = duration;
+                swingClaw = step == 0 ? rightClaw : leftClaw;
+                string stateName = "Swing" + (step + 1);
+                swingStateHash = Animator.StringToHash(stateName);
+                awaitingSwipe = swingClaw;
+                EntityState.PlayAnimationOnAnimator(animator, "Body", stateName, "Swing.playbackRate", duration);
+            }
+
+            private void LateUpdate()
+            {
+                AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(layerIndex);
+                if (state.shortNameHash != swingStateHash || state.normalizedTime >= swipeEnd ||
+                    (itemDisplay && itemDisplay.GetVisibilityLevel() <= VisibilityLevel.Cloaked))
+                {
+                    awaitingSwipe = false;
+                    ClearEffect();
+                    return;
+                }
+
+                if (awaitingSwipe && state.normalizedTime >= swipeStart)
+                {
+                    awaitingSwipe = false;
+                    swingEffect = Instantiate(roughSwingPrefab, swingClaw);
+                    swingEffect.transform.localPosition = Vector3.zero;
+                    swingEffect.transform.localRotation = Quaternion.identity;
+                    swingEffect.transform.localScale = Vector3.one * 0.75f;
+                    float duration = swingDuration * (swipeEnd - swipeStart);
+                    swingEffect.GetComponent<ScaleParticleSystemDuration>().newDuration = duration;
+                    swingEffect.GetComponent<DestroyOnTimer>().duration = duration;
+                }
+            }
+
+            private void ClearEffect()
+            {
+                if (swingEffect)
+                {
+                    swingEffect.SetActive(false);
+                    Destroy(swingEffect);
+                }
+                swingEffect = null;
+            }
+
+            private void OnDisable()
+            {
+                awaitingSwipe = false;
+                ClearEffect();
+            }
         }
 
         public class RoughReceptionBehaviour : BaseItemBodyBehavior
@@ -164,20 +245,13 @@ namespace FortunesFromTheScrapyard
                     procChainMask = default(ProcChainMask),
                     procCoefficient = 0.7f,
                     maxDistance = 12,
-                    radius = 5,
+                    radius = 10f / 3f,
                     smartCollision = true,
                     isCrit = body.RollCrit(),
                     muzzleName = "",
                     tracerEffectPrefab = null
                 };
-                EffectData effectData = new EffectData
-                {
-                    origin = body.corePosition + aimRay.direction * 2f,
-                    rotation = Util.QuaternionSafeLookRotation(aimRay.direction),
-                    scale = 1f
-                };
                 catAttack.Fire();
-                EffectManager.SpawnEffect(roughSwingPrefab, effectData, true);
             }
 
             public void OnDisable()

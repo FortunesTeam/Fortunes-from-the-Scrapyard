@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Buffs</name>
+    </assembly>
+    <members>
+        <member name="T:R2API.BuffsAPI">
+            <summary>
+            API for adding various stuff to Character Body such as: Modded Body Flags
+            </summary>
+        </member>
+        <member name="F:R2API.BuffsAPI.NoneStackingDisplayMethod">
+            <summary>
+            Ready-to-use custom StackingDisplayMethod to hide stacking buff display text while also retaining its stacking functionality
+            </summary>
+        </member>
+        <member name="M:R2API.BuffsAPI.RegisterStackingDisplayMethod(R2API.BuffsAPI.CustomStackingDisplayMethod)">
+            <summary>
+            Create and reserve StackingDisplayMethod for custom buff display text. Modify <see cref="F:RoR2.UI.BuffIcon.sharedStringBuilder"/> inside of your CustomStackingDisplayMethod method
+            </summary>
+        </member>
+        <member name="M:R2API.BuffsAPI.SetSimpleSpriteAnimation(RoR2.BuffDef,RoR2.SimpleSpriteAnimation)">
+            <summary>
+            Set animated sprite for your BuffDef
+            </summary>
+            <param name="buffDef"></param>
+            <param name="simpleSpriteAnimation"></param>
+        </member>
+        <member name="M:R2API.BuffsAPI.SetCustomSimpleSpriteAnimation(RoR2.BuffDef,R2API.BuffsAPI.CustomSimpleSpriteAnimation)">
+            <summary>
+            Set custom animated sprite for your BuffDef
+            </summary>
+            <param name="buffDef"></param>
+            <param name="customSimpleSpriteAnimation"></param>
+        </member>
+        <member name="M:R2API.BuffsAPI.GetCustomSimpleSpriteAnimation(RoR2.BuffDef)">
+            <summary>
+            Get custom animated sprite of your BuffDef
+            </summary>
+            <param name="buffDef"></param>
+        </member>
+        <member name="M:R2API.BuffsAPI.ReserveBuffFlag">
+            <summary>
+            Reserve ModdedBodyFlag to use it with
+            <see cref="M:R2API.BuffsAPI.AddModdedBuffFlag(RoR2.BuffDef,R2API.BuffsAPI.ModdedBuffFlag)"/>,
+            <see cref="M:R2API.BuffsAPI.RemoveModdedBuffFlag(RoR2.BuffDef,R2API.BuffsAPI.ModdedBuffFlag)"/> and
+            <see cref="!:HasModdedBuffFlag(BuffDef, ModdedBuffFlag))"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:R2API.BuffsAPI.ModdedBuffFlagCount">
+            <summary>
+            Reserved ModdedBuffFlagCount count
+            </summary>
+        </member>
+        <member name="M:R2API.BuffsAPI.AddModdedBuffFlag(RoR2.BuffDef,R2API.BuffsAPI.ModdedBuffFlag)">
+            <summary>
+            Adding ModdedBuffFlag to BuffDef. You can add more than one body flag to one BuffDef
+            </summary>
+            <param name="buffDef"></param>
+            <param name="moddedBuffFlag"></param>
+        </member>
+        <member name="M:R2API.BuffsAPI.RemoveModdedBuffFlag(RoR2.BuffDef,R2API.BuffsAPI.ModdedBuffFlag)">
+            <summary>
+            Removing ModdedBuffFlag from BuffDef instance.
+            </summary>
+            <param name="buffDef"></param>
+            <param name="moddedBuffFlag"></param>
+        </member>
+        <member name="M:R2API.BuffsAPI.HasAnyModdedBodyFlag(RoR2.BuffDef)">
+            <summary>
+            Checks if BuffDef instance has any ModdedBuffFlag assigned. One BuffDef can have more than one buff flag.
+            </summary>
+            <param name="buffDef"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.BuffsAPI.HasModdedBuffFlag(RoR2.BuffDef,R2API.BuffsAPI.ModdedBuffFlag)">
+            <summary>
+            Checks if BuffDef instance has ModdedBuffFlag assigned. One BuffDef can have more than one buff flag.
+            </summary>
+            <param name="buffDef"></param>
+            <param name="moddedBuffFlag"></param>
+            <returns></returns>
+        </member>
+        <member name="F:R2API.BuffsAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

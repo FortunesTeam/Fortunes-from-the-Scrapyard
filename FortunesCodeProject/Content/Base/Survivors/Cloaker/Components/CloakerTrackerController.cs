@@ -7,11 +7,11 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
 {
     public class CloakerTrackerController : MonoBehaviour
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Maximum Mark targeting distance in meters.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 200f, configDescOverride = "Maximum Mark targeting distance in meters.")]
         [FormatToken(Cloaker.MARKTOKEN, 0)]
         public static float MaxTrackingDistance = 40f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Maximum Mark targeting angle in degrees.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 180f, configDescOverride = "Maximum Mark targeting angle in degrees.")]
         public static float MaxTrackingAngle = 10f;
 
         public RoR2.Skills.SkillDef markSkillDef;

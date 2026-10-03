@@ -21,38 +21,38 @@ namespace FortunesFromTheScrapyard.Survivors.Cloaker
         public const string MARKTOKEN = "FFTS_CLOAKER_SPECIAL_DESCRIPTION";
         public const string SCREECHTOKEN = "FFTS_CLOAKER_SPECIAL2_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Additive damage bonus while cloaked. 1.5 grants 150% bonus damage.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 10f, configDescOverride = "Additive damage bonus while cloaked. 1.5 grants 150% bonus damage.")]
         [FormatToken(PASSIVETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float CloakDamageBonus = 1.5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Additive attack speed bonus with Akimbo. 1.5 grants 150% bonus attack speed.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 10f, configDescOverride = "Additive attack speed bonus with Akimbo. 1.5 grants 150% bonus attack speed.")]
         [FormatToken(AKIMBOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float AkimboAttackSpeedBonus = 1.5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Seconds before a consumed mark can be reapplied to the same target.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 60f, configDescOverride = "Seconds before a consumed mark can be reapplied to the same target.")]
         [FormatToken(MARKTOKEN, 2)]
         public static float MarkCooldown = 5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Additional damage when a marked hit already crits. 0.5 grants 50% more damage.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 10f, configDescOverride = "Additional damage when a marked hit already crits. 0.5 grants 50% more damage.")]
         [FormatToken(MARKTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float MarkCritDamageBonus = 0.5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Shoot Harder's recharge time in seconds. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 60f, restartRequired = true, configDescOverride = "Shoot Harder's recharge time in seconds. Requires a restart.")]
         public static float SecondaryCooldown = 4f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Restealth's recharge time in seconds. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 60f, restartRequired = true, configDescOverride = "Restealth's recharge time in seconds. Requires a restart.")]
         public static float UtilityCooldown = 7f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech's recharge time in seconds. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 120f, restartRequired = true, configDescOverride = "Screech's recharge time in seconds. Requires a restart.")]
         public static float ScreechCooldown = 15f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Shoot Harder's maximum stock. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 1f, 10f, restartRequired = true, configDescOverride = "Shoot Harder's maximum stock. Requires a restart.")]
         public static int SecondaryStock = 1;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Restealth's maximum stock. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 1f, 10f, restartRequired = true, configDescOverride = "Restealth's maximum stock. Requires a restart.")]
         public static int UtilityStock = 1;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech's maximum stock. Requires a restart.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 1f, 10f, restartRequired = true, configDescOverride = "Screech's maximum stock. Requires a restart.")]
         public static int ScreechStock = 1;
 
         public static DamageAPI.ModdedDamageType CloakerChargedDamageType;

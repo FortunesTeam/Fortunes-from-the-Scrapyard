@@ -13,21 +13,21 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "FFTS_ITEM_LOSTRECORD_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 0)]
-        public static float cooldownReduction = 10f;
+        public static float cooldownReduction = 7.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 1)]
-        public static float cooldownReductionStack = 10f;
+        public static float cooldownReductionStack = 7.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS)]
         public static bool recordEnabled = true;
 
         public static GameObject RecordEffect;
         public override void Initialize()
         {
-            RecordEffect = assetCollection.FindAsset<GameObject>("WeezerEffect");
+            RecordEffect = assetCollection.FindAsset<GameObject>("RecordEffect");
 
             On.RoR2.GenericSkill.OnExecute += GenericSkill_OnExecute;
         }

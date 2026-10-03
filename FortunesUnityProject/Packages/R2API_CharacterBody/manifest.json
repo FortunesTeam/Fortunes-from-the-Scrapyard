@@ -1,0 +1,13 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_CharacterBody",
+  "description": "API for adding various stuff related to Character Body such as: Modded Body Flags, Custom Sprint Icon and Color, Always Sprint Condition and Body Flag, Health Bar Overlays and Custom Footstep Effects",
+  "version_number": "1.4.0",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.2118",
+    "RiskofThunder-HookGenPatcher-1.2.8",
+    "RiskofThunder-R2API_Core-5.3.0"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_CharacterBody"
+}

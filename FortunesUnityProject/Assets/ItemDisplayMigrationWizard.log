@@ -1,0 +1,129 @@
+Found 121 Key Assets (116 Addressable, 5 as Assets)
+
+Upgrading iddLethalInjection (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsFusionCellDestructibleBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsGhoul found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMegaConstructBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyDecoyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsTombstone found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddLethalInjection (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Items/LethalInjection/idadLethalInjection_1.asset
+
+Upgrading iddFaultyTurbo (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddFaultyTurbo (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Items/FaultyTurbo/idadFaultyTurbo.asset
+
+Upgrading iddEnergyBar (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsFusionCellDestructibleBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsGhoul found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMegaConstructBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyDecoyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsTombstone found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddEnergyBar (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Equipment/EnergyBar/idadEnergyBar.asset
+
+Upgrading iddDuctTape (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsFusionCellDestructibleBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsGhoul found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMegaConstructBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyDecoyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsTombstone found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddDuctTape (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Items/DuctTape/idadDuctTape.asset
+
+Upgrading iddCounterfeitCurrency (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddCounterfeitCurrency (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Items/CounterfeitCurrency/idadCounterfeitCurrency.asset
+
+Upgrading iddBrokenHeadphones (MSU.ItemDisplayDictionary)
+WARN: No match for IDRS with name idrsCadetBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsDeputy found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsFusionCellDestructibleBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsGhoul found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsHereticBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsInterrogatorBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMegaConstructBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsMorris found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsNeuromancer found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobDriverBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRobRavagerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsRocket found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsScoutBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSeamstressBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSpyDecoyBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsSubmarinerBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsTombstone found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+WARN: No match for IDRS with name idrsUnforgivenBody found. It was probably retireved at runtime from the IDRS catalog. Not adding entry.
+iddBrokenHeadphones (MSU.ItemDisplayDictionary) Upgraded succesfully.
+Created new ItemDisplayAddressedDictionary at Assets/FFTSAssets/Items/BrokenHeadphones/idadBrokenHeadphones_1.asset

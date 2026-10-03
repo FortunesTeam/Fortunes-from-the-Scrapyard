@@ -12,11 +12,11 @@ namespace EntityStates.Cloaker
 {
     public class CloakerRestealth : BaseSkillState
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Dash and invincibility duration in seconds.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0.01f, 5f, configDescOverride = "Dash and invincibility duration in seconds.")]
         [FormatToken(CloakerContent.UTILITYTOKEN, 0)]
         public static float Duration = 0.3f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Dash speed coefficient, scaled by jump power and movement speed.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 3f, configDescOverride = "Dash speed coefficient, scaled by jump power and movement speed.")]
         public static float SpeedCoefficient = 0.3f;
 
         private Vector3 hop;

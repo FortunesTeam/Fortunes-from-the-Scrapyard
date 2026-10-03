@@ -8,11 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: matLethalGas
-  m_Shader: {fileID: 4800000, guid: dc2c161f49c4dca47807911a7b8f9843, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8f3f3d0bf2267f74ca405c5ec04db15a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - USE_CLOUDS
-  - _ALPHABLEND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -90,7 +89,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DisableRemapOn: 0
     - _DistortionStrength: 0.1
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _DstBlendFloat: 1
     - _EmissionFromAlbedo: 0
     - _ExternalAlpha: 1
@@ -122,7 +121,7 @@ Material:
     - _SpecularExponent: 1
     - _SpecularHighlights: 1
     - _SpecularStrength: 0
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _SrcBlendFloat: 1
     - _TriplanarOn: 0
     - _UVSec: 0

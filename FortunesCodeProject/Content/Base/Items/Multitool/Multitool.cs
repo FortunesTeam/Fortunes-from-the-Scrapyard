@@ -13,17 +13,22 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "FFTS_ITEM_MULTITOOL_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        // BodyFlags.Drone is not named in the project's compile-time game libraries.
+        private const CharacterBody.BodyFlags droneBodyFlag = (CharacterBody.BodyFlags)0x400000;
+
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true, configDescOverride = "Enable legacy effects on non-drone interactables. Individual shrine, terminal, and minion settings still apply.")]
+        public static bool legacyInteractables = false;
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true)]
         public static bool shrineBlood = true;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true)]
         public static bool shrineMountain = true;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true)]
         public static bool shrineChance = true;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true)]
         public static bool shrineCombat = false;
-        [ConfigureField(FFTSConfig.ID_ITEMS, configDescOverride = "Includes printers and shops.")]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true, configDescOverride = "Includes printers and shops.")]
         public static bool terminals = true;
-        [ConfigureField(FFTSConfig.ID_ITEMS, configDescOverride = "Pretty much drones, but might work with other similar effects.")]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, restartRequired = true, configDescOverride = "Duplicate purchased drones and gunner turrets. Other summoned minions require Legacy Interactables.")]
         public static bool minions = true;
 
 
@@ -33,17 +38,25 @@ namespace FortunesFromTheScrapyard.Items
         //public static bool roulette = true;
         public override void Initialize()
         {
+            FFTSMain.instance.StartCoroutine(FFTSConfig.AfterConfigsBound(InstallHooks));
+        }
+
+        private void InstallHooks()
+        {
             On.RoR2.PurchaseInteraction.OnInteractionBegin += MultitoolInteract;
-            if (terminals)
-                On.RoR2.ShopTerminalBehavior.DropPickup += MultitoolTerminal;
-            if (shrineMountain)
-                On.RoR2.ShrineBossBehavior.AddShrineStack += MultitoolMountain;
-            if (shrineBlood)
-                On.RoR2.ShrineBloodBehavior.AddShrineStack += MultitoolBlood;
-            if (shrineChance)
-                IL.RoR2.ShrineChanceBehavior.AddShrineStack += MultitoolChance;
-            if (shrineCombat)
-                IL.RoR2.ShrineCombatBehavior.AddShrineStack += MultitoolCombat;
+            if (legacyInteractables)
+            {
+                if (terminals)
+                    On.RoR2.ShopTerminalBehavior.DropPickup += MultitoolTerminal;
+                if (shrineMountain)
+                    On.RoR2.ShrineBossBehavior.AddShrineStack += MultitoolMountain;
+                if (shrineBlood)
+                    On.RoR2.ShrineBloodBehavior.AddShrineStack += MultitoolBlood;
+                if (shrineChance)
+                    IL.RoR2.ShrineChanceBehavior.AddShrineStack += MultitoolChance;
+                if (shrineCombat)
+                    IL.RoR2.ShrineCombatBehavior.AddShrineStack += MultitoolCombat;
+            }
             if (minions)
                 On.RoR2.SummonMasterBehavior.OpenSummonReturnMaster += MultitoolMinions;
             //if (chests)
@@ -69,12 +82,27 @@ namespace FortunesFromTheScrapyard.Items
         {
             CharacterMaster result = orig(self, activator);
 
-            if (NetworkServer.active && self.TryGetComponent(out MultitoolComponent mtc) && mtc.VerifyMultitoolAndBreak())
+            if (NetworkServer.active && result && CanDuplicateSummon(self) &&
+                self.TryGetComponent(out MultitoolComponent mtc) && mtc.VerifyMultitoolAndBreak())
             {
                 orig(self,activator);
             }
 
             return result;
+        }
+
+        private static bool CanDuplicateSummon(SummonMasterBehavior summon)
+        {
+            if (!minions)
+                return false;
+            if (legacyInteractables)
+                return true;
+            if (!summon.masterPrefab || !summon.masterPrefab.TryGetComponent(out CharacterMaster master) ||
+                !master.bodyPrefab || !master.bodyPrefab.TryGetComponent(out CharacterBody body))
+                return false;
+
+            return (body.bodyFlags & droneBodyFlag) != CharacterBody.BodyFlags.None ||
+                master.bodyPrefab.name == "Turret1Body";
         }
 
         private void MultitoolCombat(ILContext il)
@@ -239,7 +267,9 @@ namespace FortunesFromTheScrapyard.Items
             }
 
             CharacterBody activatorBody = null;
-            if (activator.gameObject.TryGetComponent(out activatorBody))
+            if (NetworkServer.active &&
+                (legacyInteractables || (self.TryGetComponent(out SummonMasterBehavior summon) && CanDuplicateSummon(summon))) &&
+                activator.gameObject.TryGetComponent(out activatorBody) && activatorBody.inventory)
             {
                 Inventory inv = activatorBody.inventory;
                 int multitoolCount = inv.GetItemCount(FFTSContent.Items.Multitool);

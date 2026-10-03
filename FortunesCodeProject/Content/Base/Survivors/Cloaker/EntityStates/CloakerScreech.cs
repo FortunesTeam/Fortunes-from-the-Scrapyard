@@ -13,22 +13,22 @@ namespace EntityStates.Cloaker
 {
     public class CloakerScreech : BaseSkillState
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech damage coefficient. 6 deals 600% damage.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, configDescOverride = "Screech damage coefficient. 6 deals 600% damage.")]
         [FormatToken(CloakerContent.SCREECHTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float DamageCoefficient = 6f;
 
         private const float DefaultRadius = 14f;
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech blast radius in meters.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 100f, configDescOverride = "Screech blast radius in meters.")]
         [FormatToken(CloakerContent.SCREECHTOKEN, 1)]
         public static float Radius = DefaultRadius;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech animation duration in seconds before attack speed scaling.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0.01f, 5f, configDescOverride = "Screech animation duration in seconds before attack speed scaling.")]
         public static float BaseDuration = 0.5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech knockback force.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 5000f, configDescOverride = "Screech knockback force.")]
         public static float Force = 700f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Screech proc coefficient.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 5f, configDescOverride = "Screech proc coefficient.")]
         public static float ProcCoefficient = 1f;
 
         private float duration;

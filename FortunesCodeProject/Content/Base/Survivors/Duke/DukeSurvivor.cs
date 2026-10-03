@@ -27,19 +27,19 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         public const string MINETOKEN = "FFTS_DUKE_KINETIC_DESC";
         public const string CLONETOKEN = "FFTS_DUKE_CLONE_DESC";
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 20f, restartRequired = true)]
         [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float baseSalvoDamageCoefficient = 3.75f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 10f, restartRequired = true)]
         [FormatToken(MINETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         internal static float damageShareCoefficient = 1.05f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, restartRequired = true)]
         [FormatToken(CLONETOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float baseCloneDamageCoefficient = 5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS)]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 20f, restartRequired = true)]
         [FormatToken(SALVOTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float baseFanDamageCoefficient = 3f;
 
@@ -525,4 +525,3 @@ namespace FortunesFromTheScrapyard.Survivors.Duke
         }*/
     }
 }
-

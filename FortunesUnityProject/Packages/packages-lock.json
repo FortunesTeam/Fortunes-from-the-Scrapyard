@@ -209,6 +209,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "riskofthunder-burstsofrain": {
+      "version": "file:BurstsOfRain",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "riskofthunder-fixplugintypesserialization": {
       "version": "file:FixPluginTypesSerialization",
       "depth": 0,
@@ -235,6 +241,18 @@
     },
     "riskofthunder-r2api_artifactcode": {
       "version": "file:R2API_ArtifactCode",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_buffs": {
+      "version": "file:R2API_Buffs",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_characterbody": {
+      "version": "file:R2API_CharacterBody",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -295,6 +313,12 @@
     },
     "riskofthunder-r2api_elites": {
       "version": "file:R2API_Elites",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_execute": {
+      "version": "file:R2API_Execute",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
@@ -391,6 +415,12 @@
     },
     "riskofthunder-r2api_stringserializerextensions": {
       "version": "file:R2API_StringSerializerExtensions",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "riskofthunder-r2api_teams": {
+      "version": "file:R2API_Teams",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

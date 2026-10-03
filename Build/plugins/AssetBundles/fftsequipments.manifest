@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3512471557
+CRC: 3075629103
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aad03f3f3d05b7f1309f91b53fa35912
+    Hash: b87c3d2fd1f3937403978a00c6ba114b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 18161f139c674beb893936d2fd013632
+    Hash: b569bc089341147858024f6d78f8552c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,6 +26,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: f727041e2de4c654eb149643cbe8e537, type: 3}
+- Class: 114
   Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -39,19 +41,21 @@ ClassTypes:
   Script: {fileID: 1931460509, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1580175318, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: MSU.Runtime
-  ClassName: MSU.ItemDisplayDictionary/DisplayDictionaryEntry
+  ClassName: MSU.ItemDisplayAddressedDictionary/DisplayDictionaryEntry
 - AssemblyName: MSU.Runtime
-  ClassName: MSU.ItemDisplayDictionary/DisplayRule
+  ClassName: MSU.ItemDisplayAddressedDictionary/ItemAddressedDisplayRule
+- AssemblyName: R2API.Addressables
+  ClassName: R2API.AddressReferencedAssets.AddressReferencedPrefab
 - AssemblyName: RoR2
   ClassName: RoR2.MageElement
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[RoR2.ItemDisplayRuleSet]
 - AssemblyName: Unity.Addressables
   ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]
 - AssemblyName: UnityEngine.CoreModule
@@ -66,18 +70,17 @@ Assets:
 - Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineEmission.png
 - Assets/FFTSAssets/Equipment/MoonshineFlask/bdMoonshineFlask.asset
 - Assets/FFTSAssets/Equipment/MoonshineFlask/acMoonshineFlask.asset
-- Assets/FFTSAssets/Equipment/EnergyBar/iddEnergyBar.asset
 - Assets/FFTSAssets/Equipment/MoonshineFlask/matMoonshineFlask.mat
 - Assets/FFTSAssets/Equipment/EnergyBar/nsedEnergyBar.asset
 - Assets/FFTSAssets/Equipment/EnergyBar/EnergyBarDiffuse.png
 - Assets/FFTSAssets/Equipment/MoonshineFlask/bdMoonshineStack.asset
 - Assets/FFTSAssets/Equipment/EnergyBar/bdEnergyBar.asset
+- Assets/FFTSAssets/Equipment/MoonshineFlask/idadMoonshineFlask.asset
 - Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineIcon.png
 - Assets/FFTSAssets/Equipment/MoonshineFlask/DisplayMoonshineFlask.prefab
 - Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineNormal.png
 - Assets/FFTSAssets/Equipment/EnergyBar/PickupEnergyBar.prefab
 - Assets/FFTSAssets/Equipment/MoonshineFlask/PickupMoonshineFlask.prefab
-- Assets/FFTSAssets/Equipment/MoonshineFlask/iddMoonshineFlask.asset
 - Assets/FFTSAssets/Equipment/EnergyBar/barBuffIcon.png
 - Assets/FFTSAssets/Equipment/EnergyBar/Bar.mesh
 - Assets/FFTSAssets/Equipment/EnergyBar/BarIcon.png
@@ -87,6 +90,7 @@ Assets:
 - Assets/FFTSAssets/Equipment/MoonshineFlask/texMoonshineDiffuse.png
 - Assets/FFTSAssets/Equipment/MoonshineFlask/meshMoonshine.mesh
 - Assets/FFTSAssets/Equipment/EnergyBar/matEnergyBar.mat
+- Assets/FFTSAssets/Equipment/EnergyBar/idadEnergyBar.asset
 Dependencies:
 - D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsbase
 - D:/RoR2Mods/Fortunes-from-the-Scrapyard/FortunesUnityProject/AssetBundles/StandaloneWindows/fftsmain

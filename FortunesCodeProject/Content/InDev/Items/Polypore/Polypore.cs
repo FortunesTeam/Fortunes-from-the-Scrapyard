@@ -16,15 +16,15 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "SCRAPYARD_ITEM_POLYPORE_DESC";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 10f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float basePolyporeDamage = 0.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 10f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         public static float basePolyporeDamageStack = 0.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0.05f, 30f)]
         [FormatToken(TOKEN, 2)]
         public static float basePolyporeTimer = 3f;
 
@@ -32,11 +32,11 @@ namespace FortunesFromTheScrapyard.Items
         //[FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         //public static float basePolyporeTimerStack = 0.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 100f)]
         [FormatToken(TOKEN, 3)]
         public static float basePolyporePopRadius = 8f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 50f)]
         [FormatToken(TOKEN, 4)]
         public static float basePolyporePopRadiusStack = 2.8f;
 

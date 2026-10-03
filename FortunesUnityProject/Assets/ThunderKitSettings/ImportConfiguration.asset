@@ -223,7 +223,7 @@ MonoBehaviour:
   - {fileID: -6554349267969378363}
   - {fileID: 240749254600073124}
   - {fileID: -2128419198992300543}
-  configurationIndex: -1
+  configurationIndex: 23
   totalImportExtensionCount: 23
 --- !u!114 &240749254600073124
 MonoBehaviour:
@@ -338,7 +338,7 @@ MonoBehaviour:
   - submoduleName: R2API_Buffs
     description: R2API_Buffs
     dependedncyID: RiskofThunder-R2API_Buffs
-    shouldInstall: 0
+    shouldInstall: 1
     isHardDependency: 0
     dependencies:
     - R2API_Core
@@ -346,7 +346,7 @@ MonoBehaviour:
   - submoduleName: R2API_CharacterBody
     description: R2API_CharacterBody
     dependedncyID: RiskofThunder-R2API_CharacterBody
-    shouldInstall: 0
+    shouldInstall: 1
     isHardDependency: 0
     dependencies:
     - BepInExPack
@@ -429,8 +429,8 @@ MonoBehaviour:
   - submoduleName: R2API_Execute
     description: R2API_Execute
     dependedncyID: RiskofThunder-R2API_Execute
-    shouldInstall: 0
-    isHardDependency: 0
+    shouldInstall: 1
+    isHardDependency: 1
     dependencies:
     - BepInExPack
     - R2API_Core
@@ -587,7 +587,7 @@ MonoBehaviour:
   - submoduleName: R2API_Teams
     description: R2API_Teams
     dependedncyID: RiskofThunder-R2API_Teams
-    shouldInstall: 0
+    shouldInstall: 1
     isHardDependency: 0
     dependencies:
     - BepInExPack

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using ThunderKit.Core.Data;
 using UnityEditor;
@@ -6,12 +7,25 @@ using UnityEngine.AddressableAssets.Initialization;
 
 namespace Fortunes.Editor
 {
-    [InitializeOnLoad]
-    public static class GameAddressablesPath
+    public sealed class GameAddressablesPath : AssetPostprocessor
     {
-        static GameAddressablesPath()
+        private const string SettingsPath = "Assets/ThunderKitSettings/ThunderKitSettings.asset";
+
+        private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets,
+            string[] movedAssets, string[] movedFromAssetPaths, bool didDomainReload)
         {
-            var settings = ThunderKitSetting.GetOrCreateSettings<ThunderKitSettings>();
+            if (!didDomainReload && Array.IndexOf(importedAssets, SettingsPath) < 0 &&
+                Array.IndexOf(movedAssets, SettingsPath) < 0)
+                return;
+
+            // Before asset import, GetOrCreateSettings can overwrite settings that are not yet loadable.
+            var settings = AssetDatabase.LoadAssetAtPath<ThunderKitSettings>(SettingsPath);
+            if (!settings)
+            {
+                Debug.LogError("Fortunes cannot load ThunderKit Settings at " + SettingsPath);
+                return;
+            }
+
             string path = settings.AddressableAssetsPath;
             if (!File.Exists(Path.Combine(path, "catalog.json")))
             {

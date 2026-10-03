@@ -28,19 +28,19 @@ namespace FortunesFromTheScrapyard.Monsters.Gump
         public const string UTILITYTOKEN = "SCRAPYARD_GUMP_UTILITY_DESC";
         public const string SPECIALTOKEN = "SCRAPYARD_GUMP_SPECIAL_DESC";
 
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
+        [FFTSConfigureField(FFTSConfig.ID_MONSTERS, 0f, 20f, restartRequired = true)]
         [FormatToken(PRIMARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float basePrimaryDamage = 0.6f;
 
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
+        [FFTSConfigureField(FFTSConfig.ID_MONSTERS, 0f, 20f, restartRequired = true)]
         [FormatToken(SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
         internal static float baseSecondaryDamage = 1.2f;
 
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
+        [FFTSConfigureField(FFTSConfig.ID_MONSTERS, 0f, 20f, restartRequired = true)]
         [FormatToken(UTILITYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float baseUtilityDamage = 4f;
 
-        [ConfigureField(FFTSConfig.ID_MONSTERS)]
+        [FFTSConfigureField(FFTSConfig.ID_MONSTERS, 0f, 30f, restartRequired = true)]
         [FormatToken(SPECIALTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         public static float baseSpecialDamage = 6f;
 

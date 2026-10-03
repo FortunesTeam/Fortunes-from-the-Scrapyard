@@ -13,22 +13,22 @@ namespace FortunesFromTheScrapyard.Items
     {
         public const string TOKEN = "FFTS_ITEM_FAULTYTURBO_DESCRIPTION";
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 30f)]
         [FormatToken(TOKEN, 0)]
         public static int maxStacks = 3;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 30f)]
         [FormatToken(TOKEN, 1)]
         public static int maxStacksPerStack = 1;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 2f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 2)]
         public static float movespeedBonusPerInterval = 0.1f; //0.1f
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 2f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         public static float movespeedBonusPerIntervalStack = 0.025f; //0.1f
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0.05f, 10f)]
         [FormatToken(TOKEN, 4)]
         public static float checkInterval = 1f;
 

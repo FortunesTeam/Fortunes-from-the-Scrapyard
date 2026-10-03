@@ -13,15 +13,15 @@ namespace EntityStates.Cloaker.Weapon
 {
     public class CloakerChargeShot : BaseSkillState
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Fully charged shot damage coefficient. 4 deals 400% damage.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 30f, configDescOverride = "Fully charged shot damage coefficient. 4 deals 400% damage.")]
         [FormatToken(CloakerContent.SECONDARYTOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
         public static float MaxDamageCoefficient = 4f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Full charge time in seconds before attack speed scaling.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0.01f, 10f, configDescOverride = "Full charge time in seconds before attack speed scaling.")]
         [FormatToken(CloakerContent.SECONDARYTOKEN, 1)]
         public static float BaseDuration = 1.5f;
 
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Minimum seconds before releasing a partially charged shot. A full charge can fire sooner.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0f, 10f, configDescOverride = "Minimum seconds before releasing a partially charged shot. A full charge can fire sooner.")]
         public static float MinimumChargeDuration = 0.5f;
 
         private float duration;

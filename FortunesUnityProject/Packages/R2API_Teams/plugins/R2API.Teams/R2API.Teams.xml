@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R2API.Teams</name>
+    </assembly>
+    <members>
+        <member name="P:R2API.TeamsAPI.TeamCountLimit">
+            <summary>
+            The absolute maximum amount of teams there can be in the catalog
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamCount">
+            <summary>
+            How many teams there are in total, this should be used instead of TeamIndex.Count wherever possible as this accounts for modded teams
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.ModdedTeamCountLimit">
+            <summary>
+            The absolute maximum amount of modded teams there can be in the catalog
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.ModdedTeamCount">
+            <summary>
+            How many modded teams that have been registered
+            </summary>
+        </member>
+        <member name="M:R2API.TeamsAPI.IsModdedTeam(RoR2.TeamIndex)">
+            <summary>
+            Determines if a <see cref="T:RoR2.TeamIndex"/> is a valid modded team
+            </summary>
+            <param name="teamIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.TeamsAPI.IsValidTeam(RoR2.TeamIndex)">
+            <summary>
+            Determines if a <see cref="T:RoR2.TeamIndex"/> is valid, prefer to use this instead of comparing with <see cref="F:RoR2.TeamIndex.Count"/>
+            </summary>
+            <param name="teamIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R2API.TeamsAPI.TeamsEnumerator">
+            <summary>
+            Enumerates all registered teams, prefer to use this over iterating through [0 .. <see cref="P:R2API.TeamsAPI.TeamCount"/>) yourself
+            </summary>
+            <returns>An enumerable for all registered team indices</returns>
+            <remarks>
+            Teams are returned in order, vanilla teams first [<see cref="F:RoR2.TeamIndex.Neutral"/> .. <see cref="F:RoR2.TeamIndex.Count"/>) then modded teams, in the order they were registered.
+            </remarks>
+        </member>
+        <member name="M:R2API.TeamsAPI.RegisterTeam(RoR2.TeamDef,R2API.TeamsAPI.TeamBehavior)">
+            <summary>
+            Registers a new team to the catalog and returns it's <see cref="T:RoR2.TeamIndex"/>
+            </summary>
+            <remarks>
+            If a team has already been added with the same name configured in <paramref name="teamBehavior"/>, then the previously registered team's <see cref="T:RoR2.TeamIndex"/> will be returned.
+            </remarks>
+            <param name="teamDef">The <see cref="T:RoR2.TeamDef"/> of the new team.</param>
+            <param name="teamBehavior">Additional configuration not covered by the <see cref="T:RoR2.TeamDef"/></param>
+            <returns>The <see cref="T:RoR2.TeamIndex"/> of the newly added team, or <see cref="F:RoR2.TeamIndex.None"/> if the team limit has been reached.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="teamDef"/> or <paramref name="teamBehavior"/> are <see langword="null"/></exception>
+            <exception cref="T:System.InvalidOperationException">This method is called after game initialization has finished.</exception>
+        </member>
+        <member name="M:R2API.TeamsAPI.GetTeamBehavior(RoR2.TeamIndex)">
+            <summary>
+            Gets the <see cref="T:R2API.TeamsAPI.TeamBehavior"/> instance of a modded team
+            </summary>
+            <param name="teamIndex"></param>
+            <returns>The <see cref="T:R2API.TeamsAPI.TeamBehavior"/> instance of the modded team associated with <paramref name="teamIndex"/>, or <see langword="null"/> if <paramref name="teamIndex"/> is a vanilla team or outside the bounds of modded teams</returns>
+        </member>
+        <member name="T:R2API.TeamsAPI.TeamBehavior">
+            <summary>
+            Determines how a team should behave and interact with the game.
+            </summary>
+            <remarks>
+            Properties that support changing mid-game are marked <see langword="virtual"/>, inherit this class to implement custom behavior for them.
+            </remarks>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamBehavior.Name">
+            <summary>
+            The internal name of this team, used in place of an enum string representation
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamBehavior.Classification">
+            <summary>
+            What vanilla team's behavior this team should be based on
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamBehavior.TeamLayer">
+            <summary>
+            The layer used by members of this team, returned by <see cref="M:RoR2.LayerIndex.GetAppropriateLayerForTeam(RoR2.TeamIndex)"/> for the TeamIndex assigned to this team
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamBehavior.TeamFakeLayer">
+            <summary>
+            The fake layer used by members of this team, returned by <see cref="M:RoR2.LayerIndex.GetAppropriateFakeLayerForTeam(RoR2.TeamIndex)"/> for the TeamIndex assigned to this team
+            </summary>
+        </member>
+        <member name="P:R2API.TeamsAPI.TeamBehavior.CanPickup">
+            <summary>
+            If this team can pick up items or equipment
+            </summary>
+        </member>
+        <member name="M:R2API.TeamsAPI.TeamBehavior.#ctor(System.String,R2API.TeamsAPI.TeamClassification)">
+            <summary>
+            Constructs a <see cref="T:R2API.TeamsAPI.TeamBehavior"/> with all required values set
+            </summary>
+            <param name="name">The internal name of this team, used in place of an enum string representation</param>
+            <param name="teamClassification">What vanilla team's behavior this team should be based on</param>
+            <exception cref="T:System.ArgumentException"><paramref name="name"/> is <see langword="null"/>, empty, or contains only whitespace characters.</exception>
+        </member>
+        <member name="T:R2API.TeamsAPI.TeamClassification">
+            <summary>
+            What vanilla team's behavior a modded team should be based on
+            </summary>
+        </member>
+        <member name="F:R2API.TeamsAPI.TeamClassification.None">
+            <summary>
+            No behavior is shared
+            </summary>
+        </member>
+        <member name="F:R2API.TeamsAPI.TeamClassification.Neutral">
+            <summary>
+            Certain behavior is shared with <see cref="F:RoR2.TeamIndex.Neutral"/>
+            </summary>
+            <remarks>
+            If set, a team will not be added to <see cref="F:RoR2.TeamMask.allButNeutral"/>
+            </remarks>
+        </member>
+        <member name="F:R2API.TeamsAPI.TeamClassification.Enemy">
+            <summary>
+            Certain behavior is shared with any non-player, non-neutral teams
+            </summary>
+            <remarks>
+            Not currently implemented
+            </remarks>
+        </member>
+        <member name="F:R2API.TeamsAPI.TeamClassification.Player">
+            <summary>
+            Certain behavior is shared with <see cref="F:RoR2.TeamIndex.Player"/>
+            </summary>
+            <remarks>
+            Default implementation of <see cref="P:R2API.TeamsAPI.TeamBehavior.TeamLayer"/> and <see cref="P:R2API.TeamsAPI.TeamBehavior.TeamFakeLayer"/> checks against this for determining desired layer
+            </remarks>
+        </member>
+        <member name="F:R2API.TeamsAPI.PluginVersion">
+            <summary>
+            Version of the plugin, should be matching with the thunderstore package.
+            </summary>
+        </member>
+        <member name="T:R2API.Utils.TeamsAPINetworkExtensions">
+            <summary>
+            Network extensions for TeamsAPI
+            </summary>
+        </member>
+        <member name="M:R2API.Utils.TeamsAPINetworkExtensions.Write(UnityEngine.Networking.NetworkWriter,RoR2.TeamMask@)">
+            <summary>
+            Writes a <see cref="T:RoR2.TeamMask"/> to a network buffer
+            </summary>
+            <param name="writer"></param>
+            <param name="teamMask"></param>
+        </member>
+        <member name="M:R2API.Utils.TeamsAPINetworkExtensions.ReadTeamMask(UnityEngine.Networking.NetworkReader)">
+            <summary>
+            Reads a <see cref="T:RoR2.TeamMask"/> from a network buffer
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="T:R2API.AutoVersionGen.AutoVersionAttribute">
+            <summary>
+            Add a PluginVersion field to the attribut-ed class filled from the thunderstore.toml versionNumber field
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -95,6 +95,41 @@ namespace FortunesFromTheScrapyard
             while (!asyncAssetLoadCoroutines.isDone)
                 yield return null;
         }
+
+        private static IEnumerator LoadItemDisplayDictionaries()
+        {
+            ItemDisplayAddressedDictionary[] dictionaries = FFTSAssets.LoadAllAssets<ItemDisplayAddressedDictionary>(FFTSBundle.All);
+            if (dictionaries.Length == 0)
+            {
+                FFTSLog.Warning("No item display dictionaries were found. Rebuild and deploy the Unity asset bundles.");
+                yield break;
+            }
+
+            int appliedCount = 0;
+            foreach (ItemDisplayAddressedDictionary dictionary in dictionaries)
+            {
+                if (!dictionary.keyAsset || (!(dictionary.keyAsset is ItemDef) && !(dictionary.keyAsset is EquipmentDef)))
+                {
+                    FFTSLog.Error($"Item display dictionary {dictionary.name} has an invalid key asset.");
+                    continue;
+                }
+
+                if (dictionary.displayEntries == null || dictionary.displayEntries.Length == 0)
+                {
+                    FFTSLog.Warning($"Item display dictionary {dictionary.name} has no display entries.");
+                    continue;
+                }
+
+                IEnumerator enumerator = dictionary.AddEntries();
+                while (enumerator.MoveNext())
+                    yield return null;
+
+                appliedCount++;
+            }
+
+            FFTSLog.Info($"Applied {appliedCount} item display dictionaries.");
+        }
+
         private static IEnumerator LoadVanillaSurvivorBundles()
         {
             ParallelMultiStartCoroutine helper = new ParallelMultiStartCoroutine();
@@ -162,7 +197,8 @@ namespace FortunesFromTheScrapyard
                     EquipmentModule.AddProvider(main, ContentUtil.CreateGenericContentPieceProvider<EquipmentDef>(main, fftsContentPack));
                     return EquipmentModule.InitializeEquipments(main);
                 },
-                LoadFromAssetBundles
+                LoadFromAssetBundles,
+                LoadItemDisplayDictionaries
             };
 
             _fieldAssignDispatchers = new Action[]

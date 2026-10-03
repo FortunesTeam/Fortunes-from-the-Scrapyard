@@ -1,0 +1,3050 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f727041e2de4c654eb149643cbe8e537, type: 3}
+  m_Name: idadScrapElite
+  m_EditorClassIdentifier: 
+  keyAsset: {fileID: 11400000, guid: d67eb310a2b07de409467afec93fb0b2, type: 2}
+  displayEntries:
+  - targetIDRS:
+      m_AssetGUID: f83fd7257a4f7404ba290e9f43717960
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: BodyBase
+      localPos: {x: 0, y: 3.13327, z: 0.20945}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5.25254, y: 5.25254, z: 5.25254}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: BeakUpper
+      localPos: {x: 0.5709, y: 0.29595, z: 0.38456}
+      localAngles: {x: 279.8796, y: 289.5634, z: 262.463}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: BeakUpper
+      localPos: {x: -0.5709, y: 0.29595, z: 0.38456}
+      localAngles: {x: 280.124, y: 262.7903, z: 262.6028}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2c5041dbe428e6f43b5ac7f8b990c514
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1bd5a05e0d8dab543854f79e3bc08442
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 18e2be81afd31b64491182c8deee2581
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fadd4085e6433274b8666a2d224f3905
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 4dc93ed565737484eaa589cddedb5944
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: ffea13199016c4e4092b864bc59963ad
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0.08998, y: 0.27861, z: 0.05294}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0.46369, y: 0.46369, z: 0.46369}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.03542, y: 0.1522, z: -0.00054}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0.5, y: 0.5, z: 0.5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.03252, y: 0.17349, z: -0.00084}
+      localAngles: {x: -0.00294, y: 359.9689, z: 353.2792}
+      localScale: {x: 0.5, y: 0.5, z: 0.5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 322a5e452db7a0349bee49207cfb2123
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0.0054, y: 0.27013, z: 0.01863}
+      localAngles: {x: 297.6883, y: 212.8892, z: 160.0151}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.42924, y: 0.21632, z: -0.48748}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0.42924, y: 0.21632, z: -0.48748}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fece71c1e492a0f438075fea8832fd6f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.01988, y: 0.0586, z: -0.23537}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 4.28263, y: 4.28263, z: 4.28263}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cc54a280603ce03429294dcbe5fe2e2e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Stomach
+      localPos: {x: 0, y: -0.55352, z: 1.47282}
+      localAngles: {x: 82.24354, y: 179.9999, z: 179.9999}
+      localScale: {x: 6.43165, y: 6.43165, z: 6.43165}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 73d5735eceffe06489510a1f11a71f65
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 356.8285, y: 180, z: 180}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: ShieldL
+      localPos: {x: -0.30148, y: 0.00028, z: 0.86075}
+      localAngles: {x: -0.00001, y: 330, z: 195}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: ShieldR
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 63c4086f1b5f7c548a82d190d04fc143
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.06984, y: -1.00361, z: -0.03014}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1.66619, y: 1.66619, z: 1.66619}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.22583, y: 0.28002, z: 0.31802}
+      localAngles: {x: 78.72388, y: 110.3274, z: 125.8046}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.22583, y: 0.28002, z: 0.31802}
+      localAngles: {x: 79.47816, y: 131.5172, z: 114.5111}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8464d010b0eb5874087422831a1044e2
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: chest
+      localPos: {x: -0.02919, y: 0.4891, z: 0.06633}
+      localAngles: {x: 342.7998, y: 260.9207, z: 11.2976}
+      localScale: {x: 0.75253, y: 0.75253, z: 0.75253}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 5fa2b0eaf6b131a44b5fbe48bac602fc
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.15507, y: 0.20165, z: -0.17255}
+      localAngles: {x: 71.52275, y: 86.48927, z: 249.2253}
+      localScale: {x: 0.77133, y: 0.77133, z: 0.77133}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.00459, y: 0.1187, z: 0.00737}
+      localAngles: {x: 358.4478, y: 358.541, z: 18.22798}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.00839, y: 0.13178, z: 0.0079}
+      localAngles: {x: 1.71905, y: 0.85801, z: 343.7964}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: af09429073bdad54e93a8cee326c98e1
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0, y: 0, z: -0.52427}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: -1.68773, y: 0.89071, z: -0.04474}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: 1.68773, y: 0.89071, z: -0.04474}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b243683536da4b43b3a8ce850fbad8a
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.03987, y: 0.20667, z: -0.06599}
+      localAngles: {x: 301.5038, y: 8.53813, z: 309.7225}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.1141, y: 0.21311, z: 0.01172}
+      localAngles: {x: 358.2673, y: 356.8441, z: 351.1028}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.12914, y: 0.20195, z: 0.00505}
+      localAngles: {x: 0.02974, y: 0.02987, z: 9.88438}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cb9b6a9066bda7d43a74e51e17d44c7c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Torso
+      localPos: {x: -0.0127, y: 0.13144, z: -0.05514}
+      localAngles: {x: 79.1197, y: 242.6257, z: 230.7117}
+      localScale: {x: -0.65739, y: -0.65739, z: -0.65739}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.11483, y: -0.14899, z: -0.09961}
+      localAngles: {x: 288.4457, y: 312.7036, z: 47.7797}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.16249, y: -0.07307, z: -0.0945}
+      localAngles: {x: 284.0885, y: 317.2807, z: 42.41187}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 78c9eb3a198a3334088bab3d4a18a989
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7d6fc2aa6fd5d5b47b3b39a7abf9c951
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.03383, y: 0.19995, z: -0.00472}
+      localAngles: {x: 289.6988, y: 218.0565, z: 153.9307}
+      localScale: {x: 0.51378, y: 0.51378, z: 0.51378}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.00022, y: 0.30862, z: 0.00011}
+      localAngles: {x: 359.3873, y: 355.9913, z: 343.1797}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.00109, y: 0.29331, z: 0.00011}
+      localAngles: {x: 359.4462, y: 3.94217, z: 16.54124}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 70356ba47794caf48a34625ce3b8442f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 85.78165, y: 184.5254, z: 184.2275}
+      localScale: {x: 3.94403, y: 3.94403, z: 3.94403}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.50951, y: 0.04763, z: 0.61428}
+      localAngles: {x: 314.8491, y: 332.9526, z: 218.4115}
+      localScale: {x: 10.54834, y: 10.54834, z: 10.54834}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.27977, y: 0.70194, z: 1.14073}
+      localAngles: {x: 304.0755, y: 354.7279, z: 167.652}
+      localScale: {x: 10.54834, y: 10.54834, z: 10.54834}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b885310f48d366643a35aa3d29dddfda
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fbf59cc865daebc43bb6f64665de4051
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: df1e1b17f3786c44587a9f50be2a81c6
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: e41df75420286364199c62cd5f17f946
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b577943ff3308142a3def6a58446ecf
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.00185, y: 0.64323, z: 0.28283}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadCenter
+      localPos: {x: 0.02979, y: 0.1212, z: 0.00158}
+      localAngles: {x: 0.17988, y: 357.6284, z: 12.66891}
+      localScale: {x: 1.5, y: 1.5, z: 1.5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadCenter
+      localPos: {x: -0.02991, y: 0.1212, z: 0.00158}
+      localAngles: {x: 0.17988, y: 3, z: 348}
+      localScale: {x: 1.5, y: 1.5, z: 1.5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 3aec5746b27f9b744bc2ac3efc5847d9
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Base
+      localPos: {x: -0.06075, y: 3.7584, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.1451, y: 0.41859, z: -0.54153}
+      localAngles: {x: 270, y: 4.26621, z: 0}
+      localScale: {x: 6, y: 6, z: 6}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.1451, y: 0.41859, z: -0.54153}
+      localAngles: {x: 270, y: 356, z: 0}
+      localScale: {x: 6, y: 6, z: 6}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7033b005e9ef98c4b96fadc5d816fa62
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Base
+      localPos: {x: 0, y: 3.38809, z: 0.2343}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.06804, y: 1.33798, z: -0.49525}
+      localAngles: {x: 0, y: 0, z: 20.08438}
+      localScale: {x: 6, y: 6, z: 6}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.06804, y: 1.33798, z: -0.49525}
+      localAngles: {x: 358.5113, y: 351.5931, z: 339.9156}
+      localScale: {x: 6, y: 6, z: 6}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 35afb92e00847de4a9f73f843ff33384
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b9d4a47c45ce5154bb68a1eeea2d8010
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: d1f9100bb0816e943ab73777c4b1c9dc
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Body
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 41.99987, y: 180, z: 180}
+      localScale: {x: 1.58851, y: 1.58851, z: 1.58851}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Body
+      localPos: {x: -0.89275, y: 0.66348, z: 0.24343}
+      localAngles: {x: 0.17109, y: 1.11497, z: 342.5535}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Body
+      localPos: {x: 0.79766, y: 0.81052, z: 0.07497}
+      localAngles: {x: 0.18582, y: 358.8392, z: 18.18856}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 87379478f528bb8469d8a59106a4bd90
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: 0, y: 0.36625, z: 0.1049}
+      localAngles: {x: 356.3883, y: 0, z: 0}
+      localScale: {x: 1.47395, y: 1.47395, z: 1.47395}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: -0.71965, y: -0.00003, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: 0.74696, y: -0.00002, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: aac27bb99e7f04143bd7a9b160adbb81
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: 0, y: 0.2973, z: 0.23802}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1.26379, y: 1.26379, z: 1.26379}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: -0.86017, y: -0.00001, z: 0.00032}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Root
+      localPos: {x: 0.8602, y: 0.62114, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8c26b97be9bef2f4690d98258ff8bcb5
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 0.24931, z: -0.12734}
+      localAngles: {x: 283.3961, y: 180, z: 180}
+      localScale: {x: 1.65731, y: 1.65731, z: 1.65731}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MuzzleLaser
+      localPos: {x: -0.284, y: 0.37363, z: -0.32302}
+      localAngles: {x: 359.828, y: 1.23294, z: 17.34184}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MuzzleLaser
+      localPos: {x: 0.27334, y: 0.31898, z: -0.34236}
+      localAngles: {x: 359.9455, y: 359.441, z: 346.4899}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: cc0f862e9dd1c9b4d8df24c8a0d51577
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.04042, y: 5.21666, z: 0.36589}
+      localAngles: {x: 309.9328, y: 0.21635, z: 358.7942}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c50164cd9a54ce84383d5892edabb382
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: JarBase
+      localPos: {x: -1.38975, y: 1.24991, z: 4.16123}
+      localAngles: {x: 299.5098, y: 259.4524, z: 64.78055}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.92267, y: 1.89699, z: 0.29667}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.92267, y: 1.89699, z: 0.29667}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: dc0536c8029a5ae47abd7373e2296bb5
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MaskBase
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 41.24233, y: 180.1026, z: 180.3775}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MaskBase
+      localPos: {x: -0.19196, y: 0.34086, z: 0.27374}
+      localAngles: {x: 0, y: -0.00002, z: 24.13409}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MaskBase
+      localPos: {x: 0.22294, y: 0.40898, z: 0.24378}
+      localAngles: {x: -0.00001, y: -0.00001, z: 338.1694}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: b273a7b162d1a344f9ede92f48721886
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: -0.02001, y: -0.48523, z: -0.00181}
+      localAngles: {x: 40.21921, y: 183.1422, z: 185.2101}
+      localScale: {x: 1.51393, y: 1.51393, z: 1.51393}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 4.94872, y: 4.94872, z: 4.94872}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Core
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 4.94872, y: 4.94872, z: 4.94872}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 79e031d2a3ced264f9eab594d590128d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 89e5e01e9a5447e4ba5701873efb6074
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Base
+      localPos: {x: 0.07913, y: 0.73369, z: -0.11302}
+      localAngles: {x: 313.8718, y: 338.2759, z: 358.3136}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 073f1d77c0d808240b5404fc6d0a4c88
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0.02659, y: 0.05409, z: -0.02298}
+      localAngles: {x: 322.0005, y: 55.8246, z: 244.2996}
+      localScale: {x: 0.47969, y: 0.47969, z: 0.47969}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.01249, y: 0.21, z: -0.11364}
+      localAngles: {x: 309.0247, y: 9.02795, z: 0.82305}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.01655, y: 0.23328, z: -0.10067}
+      localAngles: {x: 311.6187, y: 8.855, z: 343.8301}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 542679c002051b844a83426dd874e4c9
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.00261, y: -0.00229, z: 0.18251}
+      localAngles: {x: 88.7187, y: 30.6024, z: 30.58554}
+      localScale: {x: 0.5806, y: 0.5806, z: 0.5806}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Neck
+      localPos: {x: -0.12434, y: -0.00451, z: -0.00167}
+      localAngles: {x: 0.49354, y: 2.73889, z: 341.0605}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Neck
+      localPos: {x: 0.13315, y: -0.02107, z: -0.00294}
+      localAngles: {x: 0.71555, y: 356.8462, z: 25.2939}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6d4b4a2d8a9b1554da3758590ac700b2
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Neck
+      localPos: {x: -0.67898, y: 0.00259, z: -0.26079}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Neck
+      localPos: {x: 0.71624, y: 0.00007, z: 0.00002}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 3afa462e93b5f1443bd8cf84b3dad515
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Hull2
+      localPos: {x: -0.08576, y: 0.52622, z: 0.1919}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1.64341, y: 1.64341, z: 1.64341}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Hull2
+      localPos: {x: -0.48424, y: 0.68816, z: -0.05872}
+      localAngles: {x: 356.4034, y: 350.3161, z: 4.33482}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Hull2
+      localPos: {x: 0.59414, y: 0.55249, z: 0.21145}
+      localAngles: {x: 1.77332, y: 7.44575, z: 337.1924}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 4409628366589f04baa797fb48bf7386
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 68.98653, y: 205.6812, z: 225.8414}
+      localScale: {x: 4.64246, y: 4.64246, z: 4.64246}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.59664, y: 0.73814, z: -0.22215}
+      localAngles: {x: 272.9409, y: 244.1568, z: 136.4628}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.54538, y: 0.9668, z: -0.23404}
+      localAngles: {x: 275.4941, y: 88.48936, z: 258.7508}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 450392afe7be1cf46b450361cbcb876c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 61.01267, y: 77.32493, z: 93.85352}
+      localScale: {x: 5, y: 5, z: 5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 1.32612, y: 1.20461, z: 0.34322}
+      localAngles: {x: 276.4929, y: 11.07009, z: 178.8776}
+      localScale: {x: 7, y: 7, z: 7}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -1.37823, y: 1.2046, z: 0.34317}
+      localAngles: {x: 271.5107, y: 258.3705, z: 262.249}
+      localScale: {x: 7, y: 7, z: 7}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 20a7e7f739f6ac84cb8b9d641a179713
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.00022, y: 0.32973, z: 0.03331}
+      localAngles: {x: 321.3744, y: 0.1052, z: 359.6998}
+      localScale: {x: 0.56074, y: 0.56074, z: 0.56074}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.00099, y: 0.18764, z: -0.00031}
+      localAngles: {x: -0.00288, y: 0.01089, z: 9.14448}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0, y: 0.18764, z: 0}
+      localAngles: {x: 359.9939, y: 359.9426, z: 347.7472}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c90b7466017dae2409bcf63d4d87a819
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MuzzleCore
+      localPos: {x: 0.01654, y: -0.54444, z: -0.34355}
+      localAngles: {x: 354.6431, y: 184.3341, z: 180.4982}
+      localScale: {x: 1.90458, y: 1.90458, z: 1.90458}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2267a1c58f2a49a4e97c1bac7c07cb03
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0, y: -0.00025, z: 0}
+      localAngles: {x: 309.9483, y: -0.00001, z: 0.00001}
+      localScale: {x: 1.83888, y: 1.83888, z: 1.83888}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.09059, y: 1.09755, z: 0}
+      localAngles: {x: -0.00001, y: 0, z: 15.44651}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.04367, y: 1.09767, z: 0.02931}
+      localAngles: {x: 0, y: 0, z: 339.321}
+      localScale: {x: 2, y: 2, z: 2}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 56fb6d72c43a44d4fb988a29bb782174
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Mask
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 2.78825, y: 2.78825, z: 2.78825}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 439b59d9c7033d444b14ca8400232532
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0.0388, y: 0.17278, z: -0.0891}
+      localAngles: {x: 309.3718, y: 72.55248, z: 261.7342}
+      localScale: {x: 0.38992, y: 0.38992, z: 0.38992}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.02, y: 0.14237, z: 0}
+      localAngles: {x: 0, y: 0, z: 25}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.02, y: 0.14237, z: 0}
+      localAngles: {x: 0, y: 0, z: 335}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 7ce0109c76dca434d90d3801cdf29e5c
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadCenter
+      localPos: {x: 0.00001, y: 0.37178, z: -0.29527}
+      localAngles: {x: 321.6996, y: 0.00152, z: -0.00052}
+      localScale: {x: 2.18675, y: 2.18675, z: 2.18675}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadCenter
+      localPos: {x: -0.56952, y: 0.08331, z: 0.00072}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadCenter
+      localPos: {x: 0.53209, y: 0.19128, z: 0.0017}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: e7051f19ae8673b42945cdf3237b02c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 391ee0e41b6ed504aa3009df76d08a39
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c3a3fa07aaccea24abc93cf90166fa0d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.0835, y: 0.04299, z: -0.24409}
+      localAngles: {x: 285.5316, y: 197.787, z: 166.2615}
+      localScale: {x: 0.75, y: 0.75, z: 0.75}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.02, y: 0.2, z: 0}
+      localAngles: {x: 0, y: 0, z: 7.00001}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.02, y: 0.2, z: 0}
+      localAngles: {x: 0, y: 0, z: 353}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f6e3e105c2d53344ea0f510d3b945abe
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.46207, y: 0.25204, z: 0.13333}
+      localAngles: {x: 355.7708, y: 264.2119, z: 356.6325}
+      localScale: {x: 1.20136, y: 1.20136, z: 1.39157}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.2388, y: 0.27349, z: -0.76433}
+      localAngles: {x: 16.33405, y: 330.1972, z: 23.58759}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.15256, y: 0.16913, z: 0.60458}
+      localAngles: {x: 30.14095, y: 221.5961, z: 342.1251}
+      localScale: {x: 3, y: 3, z: 3}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6fc9b746607b41b40bed5215e6979bb3
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: CapMid
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1.94781, y: 1.94781, z: 1.94781}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 954167ffa5109704db6a8d500c174224
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 317a62a8f32274947a964644efee737e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1b03760dbbc74a34289e67486b831f62
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2a1e3aa61263d0e48860733269971e4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0.00333, y: -0.66287, z: -1.54476}
+      localAngles: {x: 281.9361, y: 358.189, z: 1.57687}
+      localScale: {x: 3.1926, y: 3.1926, z: 3.1926}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: -0.41014, y: 0.75539, z: 0.5266}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 9.3681, y: 9.3681, z: 9.3681}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0.41014, y: 0.75539, z: 0.5266}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 9.3681, y: 9.3681, z: 9.3681}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: a4eec23ec0654b047bf06a9a93e5f30a
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 1.13062, y: -32.37845, z: 0}
+      localAngles: {x: 354.1782, y: 359.2729, z: 359.8189}
+      localScale: {x: 202.6174, y: 245.1613, z: 202.6174}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -69.40653, y: 113.711, z: -10.0275}
+      localAngles: {x: 311.7487, y: 85.70668, z: 17.05158}
+      localScale: {x: 447.917, y: 447.917, z: 447.917}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 6c5433b81cfe52e47956fee12f62ff80
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8fb06b526e229f34e802f5754f4f918f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.0842, y: 0.26631, z: 0.0027}
+      localAngles: {x: 346.3585, y: 9.39196, z: 5.85984}
+      localScale: {x: 0.5, y: 0.5, z: 0.5}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.04314, y: 0.15065, z: -0.03728}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.04314, y: 0.15065, z: -0.03728}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: bc72507d5f0ceea4a80f262f87e10016
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 2d41357d5bec41147be42ecc8a8fc5b4
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: 0.03335, y: 0.125, z: -0.44605}
+      localAngles: {x: 70.8597, y: 249.3981, z: 253.7068}
+      localScale: {x: -2.21854, y: -2.21854, z: -2.21854}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Shell
+      localPos: {x: -0.2248, y: 0.44089, z: 0.0625}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5.71656, y: 5.71656, z: 5.71656}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Shell
+      localPos: {x: 0.22628, y: 0.44052, z: 0.07986}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 5.71656, y: 5.71656, z: 5.71656}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 26a865733b30c7741af13663e7927490
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: ROOT
+      localPos: {x: -0.00067, y: 0.64949, z: 0.47259}
+      localAngles: {x: 342.4641, y: 0.13883, z: 359.7792}
+      localScale: {x: 1.88557, y: 1.88557, z: 1.88557}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f5bda7d11b594d74e9e8cffcc5ee521b
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 0, y: 1.4516, z: 0.76263}
+      localAngles: {x: 14.87092, y: 0, z: -0.00001}
+      localScale: {x: 14.38645, y: 14.38645, z: 14.38645}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: 5.39287, y: 1.48174, z: -2.04772}
+      localAngles: {x: 338.9574, y: 173.3647, z: 20.47975}
+      localScale: {x: 21.39546, y: 21.39546, z: 21.39546}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -5.19622, y: 3.12762, z: -1.02856}
+      localAngles: {x: 338.9574, y: 173.3647, z: 339.5203}
+      localScale: {x: 21.39546, y: 21.39546, z: 21.39546}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 01862a8dd15bc6e4a9ef7d03a16e37ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 0314b4d7970e7684f816e75a2c83837f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.73805, y: 0.41522, z: -1.02613}
+      localAngles: {x: 29.68795, y: 301.3521, z: 151.2365}
+      localScale: {x: 7.37444, y: 5.34076, z: 6.72794}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MuzzleLaser
+      localPos: {x: -0.07596, y: 4.49, z: -1.31767}
+      localAngles: {x: 1.16327, y: 358.7238, z: 18.67254}
+      localScale: {x: 11.41818, y: 11.41818, z: 11.41818}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: MuzzleLaser
+      localPos: {x: 0.09472, y: 4.48933, z: -1.31776}
+      localAngles: {x: 1.16327, y: 358.7238, z: 341.3275}
+      localScale: {x: 11.41818, y: 11.41818, z: 11.41818}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: f9fa5389670c16b41a3f036f547c928d
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Base
+      localPos: {x: 0, y: -0.00003, z: 3.33122}
+      localAngles: {x: 27.12666, y: 145.515, z: 177.3237}
+      localScale: {x: 6.07576, y: 6.07576, z: 6.07576}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.91615, y: 1.84157, z: 0.328}
+      localAngles: {x: 297.562, y: 341.8201, z: 224.4881}
+      localScale: {x: 8.11112, y: 8.11112, z: 8.11112}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.91689, y: 2.23246, z: 0.25344}
+      localAngles: {x: 297.562, y: 18.17991, z: 136}
+      localScale: {x: 8.11112, y: 8.11112, z: 8.11112}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 38951619ee759b1489143b3fd4f0771f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: FlowerBase
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 2.48585, y: 2.48585, z: 2.48585}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadBase
+      localPos: {x: 0.19855, y: -1.39071, z: -0.21054}
+      localAngles: {x: 288.3261, y: 178.698, z: 102.823}
+      localScale: {x: 2.39823, y: 2.39823, z: 2.39823}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HeadBase
+      localPos: {x: 0, y: -1.38125, z: -0.33959}
+      localAngles: {x: 288.6859, y: 227.7258, z: 185.9542}
+      localScale: {x: 2.39823, y: 2.39823, z: 2.39823}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 8e2ba4ec55103ff4585554d92e2611a8
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 28b0b23e9c4a2e64894aac312942a615
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: 
+      localPos: {x: 0, y: 0, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 0, y: 0, z: 0}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: ed1727397a6b0e046870e593d7a95fab
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HullCenter
+      localPos: {x: 0.19011, y: -1.68288, z: 0.01036}
+      localAngles: {x: 40.32915, y: 25.66007, z: 205.1805}
+      localScale: {x: 2.56465, y: 2.56465, z: 2.56465}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HullCenter
+      localPos: {x: 0.03433, y: 0.24884, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 7.74825, y: 7.74825, z: 7.74825}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: HullCenter
+      localPos: {x: 0.03433, y: 0.24884, z: 0}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 7.74825, y: 7.74825, z: 7.74825}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 5d5a451f70214e549961ef08134807bb
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Spine2
+      localPos: {x: 0.0009, y: 1.84441, z: 0.11053}
+      localAngles: {x: 304.1709, y: 0, z: 0}
+      localScale: {x: 2.50122, y: 2.50122, z: 2.50122}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.04518, y: 0.38821, z: -0.36859}
+      localAngles: {x: 340.0214, y: 168.9986, z: 22.94525}
+      localScale: {x: -4.12823, y: -4.12823, z: -4.12823}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.19424, y: 0.31512, z: -0.53899}
+      localAngles: {x: 340.0214, y: 168.9986, z: 337.0547}
+      localScale: {x: -4.12823, y: -4.12823, z: -4.12823}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 36904b34349627940999314e54120a1e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Base
+      localPos: {x: 0.08537, y: 0.21151, z: 0.03508}
+      localAngles: {x: 289.7319, y: 298.4446, z: 326.6256}
+      localScale: {x: 1.26306, y: 1.26306, z: 1.26306}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.28264, y: -0.40176, z: -0.14522}
+      localAngles: {x: 352.6786, y: 274.0228, z: 110.9972}
+      localScale: {x: 2.53684, y: 2.53684, z: 2.53684}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.24587, y: 0.40112, z: -0.14688}
+      localAngles: {x: 359.0446, y: 279.2251, z: 68.31569}
+      localScale: {x: 2.53684, y: 2.53684, z: 2.53684}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: c9550f1020b527d44b8d591474b24c0f
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: -0.39031, y: 1.44514, z: 0.84531}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 3.23175, y: 3.23175, z: 3.23175}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.37488, y: 0.10327, z: -0.48209}
+      localAngles: {x: 348.3275, y: 348.5023, z: 85.23878}
+      localScale: {x: 4.53157, y: 4.53157, z: 4.53157}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.42507, y: -0.15204, z: -0.36954}
+      localAngles: {x: 4.53435, y: 348.1604, z: 95.66118}
+      localScale: {x: 4.53157, y: 4.53157, z: 4.53157}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: 1011af1ee36365e47be5c6f44c08ad17
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: -0.13407, y: 15.46094, z: -1.10999}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 15.27183, y: 15.27183, z: 15.27183}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: -3.93466, y: 16.01184, z: -1.95709}
+      localAngles: {x: 0, y: 0, z: 339.1832}
+      localScale: {x: 38.2739, y: 38.2739, z: 38.2739}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Center
+      localPos: {x: 3.57305, y: 16.01184, z: -1.22971}
+      localAngles: {x: 0, y: 0, z: 20.8168}
+      localScale: {x: 38.2739, y: 38.2739, z: 38.2739}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: dc2058c94a60d83498d3f9c9d0770ed7
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -0.08068, y: 0.35357, z: 0.01027}
+      localAngles: {x: 341.104, y: 0, z: 0}
+      localScale: {x: 0.75, y: 0.75, z: 0.75}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.05395, y: 0.09525, z: -0.04041}
+      localAngles: {x: 331.8231, y: 311.6769, z: 34.93866}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.01615, y: 0.1039, z: 0.04938}
+      localAngles: {x: 347.3401, y: 304.509, z: 2.30758}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: fb3eb1bc8b7160a45821f6116e2bf642
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Chest
+      localPos: {x: -1.79267, y: 0.12257, z: 2.32629}
+      localAngles: {x: 341.5007, y: 348.2497, z: 146.3441}
+      localScale: {x: 5.98855, y: 5.98855, z: 5.98855}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: -0.05497, y: -0.09421, z: -0.50501}
+      localAngles: {x: 281.4101, y: 156.6982, z: 205.0098}
+      localScale: {x: 9.6833, y: 9.6833, z: 9.6833}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Head
+      localPos: {x: 0.07446, y: 0.23319, z: -0.20665}
+      localAngles: {x: 281.41, y: 156.6982, z: 205.0098}
+      localScale: {x: 9.6833, y: 9.6833, z: 9.6833}
+      limbMask: 0
+  - targetIDRS:
+      m_AssetGUID: de4337c3785ce044a97fcc0f95115b6e
+      m_SubObjectName: 
+      m_SubObjectType: 
+    rules:
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: c1ff231e8e7cbbb40b621966d5ff990e,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0.06974, y: 0.54381, z: -0.36245}
+      localAngles: {x: 0, y: 0, z: 0}
+      localScale: {x: 1, y: 1, z: 1}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 57f713794f29f694bb24a52eb59c8634,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: -0.14866, y: 0.71935, z: -0.56377}
+      localAngles: {x: 354.58, y: 358.0184, z: 344.8838}
+      localScale: {x: 2.28126, y: 2.28126, z: 2.28126}
+      limbMask: 0
+    - ruleType: 0
+      displayPrefab:
+        _asset: {fileID: 8077648720655750967, guid: 2c6d27fa924d62240a1e0b1b7bff8ee1,
+          type: 3}
+        _address: 
+        _useDirectReference: 1
+      childName: Muzzle
+      localPos: {x: 0.15898, y: 0.72291, z: -0.61285}
+      localAngles: {x: 356.4004, y: 0.91216, z: 6.35721}
+      localScale: {x: 2.28126, y: 2.28126, z: 2.28126}
+      limbMask: 0

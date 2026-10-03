@@ -17,37 +17,30 @@ namespace FortunesFromTheScrapyard.Items
         internal const float radius = 13f;
         internal const int noodlesDecaySteps = 10;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 0)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 50, 0)]
         public static float burnBase = 1f;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 1)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
+        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 50, 1)]
         public static float burnStack = 1f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 2f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 3)]
         public static float mspdBase = 0.07f;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 2f)]
         [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 4)]
         public static float mspdStack = 0.07f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, 5)]
         public static float regenBase = 1.5f;
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 20f)]
         [FormatToken(TOKEN, 6)]
         public static float regenStack = 1.5f;
 
-        [ConfigureField(FFTSConfig.ID_ITEMS)]
-        public static float buffDuration = 7.5f;
-
-        // Preserve the existing description's placeholders until its text is updated.
+        [FFTSConfigureField(FFTSConfig.ID_ITEMS, 0f, 60f)]
         [FormatToken(TOKEN, 2)]
-        public static int chickenCooldown = 0;
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 7)]
-        public static float healBase = 0f;
-        [FormatToken(TOKEN, FormatTokenAttribute.OperationTypeEnum.MultiplyByN, 100, 8)]
-        public static float healStack = 0f;
+        public static float buffDuration = 3f;
 
         private static readonly WeightedSelection<BuffDef> _weightedBuffSelection = new WeightedSelection<BuffDef>();
 
@@ -59,6 +52,8 @@ namespace FortunesFromTheScrapyard.Items
         public static GameObject potstickersRadiusEffect;
         public static GameObject chickenRadiusEffect;
         public static GameObject potstickerImpactEffect;
+        public static GameObject chickenExplosionEffect;
+        private static GameObject noodlesPulseEffect;
         private static NetworkSoundEventDef activationSound;
 
         public override void Initialize()
@@ -68,13 +63,17 @@ namespace FortunesFromTheScrapyard.Items
             _weightedBuffSelection.AddChoice(assetCollection.FindAsset<BuffDef>("bdTakeoutSpeed"), 10);
             _weightedBuffSelection.AddChoice(assetCollection.FindAsset<BuffDef>("bdTakeoutRegen"), 10);
 
-            assetCollection.FindAsset<BuffDef>("bdNoodles").canStack = true;
-
             noodlesRadiusEffect = CreateTakeoutEffect("NoodlesRangeIndicator", noodlesColor);
 
             potstickersRadiusEffect = CreateTakeoutEffect("PotstickersRangeIndicator", potstickersColor);
 
             chickenRadiusEffect = CreateTakeoutEffect("ChickenRangeIndicator", chickenColor);
+
+            noodlesPulseEffect = CreateNoodlesPulseEffect();
+
+            chickenExplosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/ExplodeOnDeath/WilloWispExplosion.prefab").WaitForCompletion().InstantiateClone("ChickenExplosionEffect", false);
+            chickenExplosionEffect.EnsureComponent<EffectComponent>().applyScale = true;
+            FFTSContent.CreateAndAddEffectDef(chickenExplosionEffect);
 
             AssetAsyncReferenceManager<GameObject>.LoadAsset(new AssetReferenceT<GameObject>(RoR2BepInExPack.GameAssetPaths.RoR2_Base_BeetleQueen.BeetleAcidImpact_prefab)).Completed += x =>
             {
@@ -102,6 +101,31 @@ namespace FortunesFromTheScrapyard.Items
             food.GetComponentInChildren<Collider>().enabled = false;
 
             return food;
+        }
+
+        private GameObject CreateNoodlesPulseEffect()
+        {
+            const float pulseDuration = 0.25f;
+            GameObject pulse = noodlesRadiusEffect.transform.Find("Radius").gameObject.InstantiateClone("NoodlesPulseEffect", false);
+            pulse.AddComponent<EffectComponent>().parentToReferencedTransform = true;
+
+            ObjectScaleCurve scaleCurve = pulse.AddComponent<ObjectScaleCurve>();
+            scaleCurve.timeMax = pulseDuration;
+            scaleCurve.curveX = scaleCurve.curveY = scaleCurve.curveZ = AnimationCurve.EaseInOut(0f, 0.85f, 1f, 1.15f);
+
+            AnimateShaderAlpha fade = pulse.AddComponent<AnimateShaderAlpha>();
+            fade.timeMax = pulseDuration;
+            fade.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
+            fade.initialyEnabled = true;
+            fade.OnFinished = new UnityEngine.Events.UnityEvent();
+
+            pulse.AddComponent<DestroyOnTimer>().duration = pulseDuration;
+            VFXAttributes attributes = pulse.AddComponent<VFXAttributes>();
+            attributes.vfxPriority = VFXAttributes.VFXPriority.Medium;
+            attributes.vfxIntensity = VFXAttributes.VFXIntensity.Low;
+
+            FFTSContent.CreateAndAddEffectDef(pulse);
+            return pulse;
         }
 
         public override void ModifyContentPack(ContentPack contentPack)
@@ -184,6 +208,12 @@ namespace FortunesFromTheScrapyard.Items
                     };
                     StrengthenBurnUtils.CheckDotForUpgrade(body.inventory, ref dotInfo);
                     DotController.InflictDot(ref dotInfo);
+
+                    EffectManager.SpawnEffect(chickenExplosionEffect, new EffectData
+                    {
+                        origin = body.corePosition,
+                        scale = radius
+                    }, transmit: true);
                 }
                 else if (nextFood == FFTSContent.Buffs.bdTakeoutSpeed)
                 {
@@ -192,6 +222,13 @@ namespace FortunesFromTheScrapyard.Items
                     {
                         body.AddTimedBuff(FFTSContent.Buffs.bdNoodles, buffDuration * i / noodlesDecaySteps);
                     }
+
+                    EffectData pulseData = new EffectData
+                    {
+                        origin = body.corePosition
+                    };
+                    pulseData.SetNetworkedObjectReference(body.gameObject);
+                    EffectManager.SpawnEffect(noodlesPulseEffect, pulseData, transmit: true);
                 }
                 else if (nextFood == FFTSContent.Buffs.bdTakeoutRegen)
                 {

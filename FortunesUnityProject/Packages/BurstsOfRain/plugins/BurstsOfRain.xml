@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BurstsOfRain</name>
+    </assembly>
+    <members>
+        <member name="T:BurstsOfRain.BurstsOfRainMain">
+            <summary>
+            Main class for Bursts of Rain which contains the assembly loader.
+            </summary>
+        </member>
+        <member name="F:BurstsOfRain.BurstsOfRainMain.GUID">
+            <summary>
+            GUId of the Mod
+            </summary>
+        </member>
+        <member name="F:BurstsOfRain.BurstsOfRainMain.NAME">
+            <summary>
+            Human readable name of the mod
+            </summary>
+        </member>
+        <member name="F:BurstsOfRain.BurstsOfRainMain.VERSION">
+            <summary>
+            Version of the mod
+            </summary>
+        </member>
+        <member name="M:BurstsOfRain.BurstsOfRainMain.AddBurstAssembly(BepInEx.PluginInfo,System.String)">
+            <summary>
+            Adds a new Burst compiled assembly to the Burst Runtime. The final path is <see cref="M:System.IO.Path.Combine(System.String,System.String)"/> with the <paramref name="info"/>'s <see cref="P:BepInEx.PluginInfo.Location"/> and <paramref name="assemblyName"/> as the arguments.
+            </summary>
+            <param name="info">The plugin that's adding the new assembly, this is also the starting directory for the assembly.</param>
+            <param name="assemblyName">The name of the assembly to load.</param>
+            <returns>True if the assembly was loaded succesfully, otherwise it returns false.</returns>
+        </member>
+    </members>
+</doc>

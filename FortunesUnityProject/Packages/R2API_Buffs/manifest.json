@@ -1,0 +1,12 @@
+{
+  "namespace": "RiskofThunder",
+  "name": "R2API_Buffs",
+  "description": "API for adding various stuff to BuffDef such as: Custom Stacking Display Method, Simple Sprite Animation Icon and Modded Buff Flag",
+  "version_number": "1.0.0",
+  "dependencies": [
+    "RiskofThunder-HookGenPatcher-1.2.9",
+    "RiskofThunder-R2API_Core-5.3.0"
+  ],
+  "website_url": "https://github.com/risk-of-thunder/R2API",
+  "FullName": "RiskofThunder-R2API_Buffs"
+}

@@ -31,9 +31,12 @@ namespace FortunesFromTheScrapyard
         public static ConfigFile configMonsters { get; private set; }
         public static ConfigFile configDifficulties { get; private set; }
 
-        internal static IEnumerator RegisterToModSettingsManager()
+        internal static IEnumerator AfterConfigsBound(Action configure)
         {
-            yield break;
+            while (!ConfigSystem.configsBound)
+                yield return null;
+
+            configure();
         }
 
         internal FFTSConfig(BaseUnityPlugin plugin)

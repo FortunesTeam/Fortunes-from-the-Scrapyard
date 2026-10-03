@@ -9,7 +9,7 @@ namespace EntityStates.Cloaker
 {
     public class CloakerMark : BaseSkillState
     {
-        [ConfigureField(FFTSConfig.ID_SURVIVORS, configDescOverride = "Mark animation duration in seconds before attack speed scaling.")]
+        [FFTSConfigureField(FFTSConfig.ID_SURVIVORS, 0.01f, 5f, configDescOverride = "Mark animation duration in seconds before attack speed scaling.")]
         public static float BaseDuration = 0.5f;
 
         private HurtBox victim;

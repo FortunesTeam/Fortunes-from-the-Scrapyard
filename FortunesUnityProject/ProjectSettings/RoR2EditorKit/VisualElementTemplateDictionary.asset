@@ -37,3 +37,9 @@ MonoBehaviour:
     _hexRepresentation: 574ef3f93d22177419111e3d3d646c23
   - k_templateName: HurtBoxGroupInspector
     _hexRepresentation: e2fa64d4b6ce24c4997e7ccf0b821403
+  - k_templateName: ItemDisplayMigrationWizard
+    _hexRepresentation: 7f4e3462f3b3d014b8fcf0fb50a80fc6
+  - k_templateName: ItemDisplayAddressedDictionaryInspector
+    _hexRepresentation: 3db57bc358343b841a50a8f727f36240
+  - k_templateName: ItemDefInspector
+    _hexRepresentation: 52dd9769ba8ce564ebfbe00836864b50

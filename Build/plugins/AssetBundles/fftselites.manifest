@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2870104407
+CRC: 3755145371
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c33bfdb122a0ec51098c40ff88674282
+    Hash: 2720c0b4093bb944bd3852db862c04b5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 93a2974670ed97e528bc7ce9382eff7c
+    Hash: 52a73d9e93e07a203d5e2fdb45475967
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,6 +34,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 40ba68378cc299341bc9f8594fd6d6f9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: f727041e2de4c654eb149643cbe8e537, type: 3}
+- Class: 114
   Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -51,8 +53,6 @@ ClassTypes:
   Script: {fileID: -1247058517, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1546170994, guid: b1595d7707f65be48af3202912a6f2cd, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: a4e121de46f1e5741803234bbc5af467, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 198
@@ -63,11 +63,13 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: MSU.Runtime
-  ClassName: MSU.ItemDisplayDictionary/DisplayDictionaryEntry
+  ClassName: MSU.ItemDisplayAddressedDictionary/DisplayDictionaryEntry
 - AssemblyName: MSU.Runtime
-  ClassName: MSU.ItemDisplayDictionary/DisplayRule
+  ClassName: MSU.ItemDisplayAddressedDictionary/ItemAddressedDisplayRule
 - AssemblyName: R2API.Addressables
   ClassName: R2API.AddressReferencedAssets.AddressReferencedEliteDef
+- AssemblyName: R2API.Addressables
+  ClassName: R2API.AddressReferencedAssets.AddressReferencedPrefab
 - AssemblyName: RoR2
   ClassName: RoR2.AddressableAssets.IDRSKeyAssetReference
 - AssemblyName: RoR2
@@ -82,6 +84,8 @@ SerializeReferenceClassIdentifiers:
   ClassName: Wave
 - AssemblyName: Unity.Addressables
   ClassName: UnityEngine.AddressableAssets.AssetReferenceGameObject
+- AssemblyName: Unity.Addressables
+  ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[RoR2.ItemDisplayRuleSet]
 - AssemblyName: Unity.Addressables
   ClassName: UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]
 - AssemblyName: UnityEngine.CoreModule
@@ -107,9 +111,9 @@ Assets:
 - Assets/FFTSAssets/EliteTiers/WhirlwindSpecialEliteTierDef.asset
 - Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownDiffuse.png
 - Assets/FFTSAssets/Elites/ScrapElite/texScrapCrownEmission.png
-- Assets/FFTSAssets/Elites/ScrapElite/iddScrapElite.asset
 - Assets/FFTSAssets/Elites/ScrapElite/edScrapHonor.asset
 - Assets/FFTSAssets/Elites/ScrapElite/ScrapCrown.fbx
+- Assets/FFTSAssets/Elites/ScrapElite/idadScrapElite.asset
 - Assets/FFTSAssets/Elites/ScrapElite/matEliteScrapPickup.mat
 - Assets/FFTSAssets/Elites/ScrapElite/EliteScrapEquipment.asset
 - Assets/FFTSAssets/Elites/ScrapElite/matScrapHologram.mat
